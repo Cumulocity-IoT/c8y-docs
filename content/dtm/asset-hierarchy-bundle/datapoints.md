@@ -11,7 +11,7 @@ helpContent:
   Measurements can come directly from the asset or be linked from a device. Linking lets you bring device measurements into the asset, giving you a single view of the asset's data for dashboards, analytics, and other applications.
 
 
-  Use **Link data points** to link measurements from a device. The **Status** column shows whether a data point is **Linked**, **Incomplete**, or **Source missing**. Use **Link source** or the **Source** dropdown to assign or change the source device and resolve source issues.
+  Use **Link data points** to link measurements from a device. The **Status** column shows whether a data point is **Linked**, **Incomplete**, or **Source missing**. Use **Link source** or the **Source** dropdown to assign or change the source device and resolve source issues."
 ---
 
 Data points represent the numerical measurements collected from connected devices and sensors. These are the fundamental real-time data streams that offer insights into the operational status, performance, and environmental conditions of your physical assets. These data streams are key to monitoring asset health, identifying trends, and making informed decisions over time.
