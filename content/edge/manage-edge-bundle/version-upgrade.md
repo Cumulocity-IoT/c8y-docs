@@ -37,8 +37,7 @@ If Edge is now running in an environment with no or limited internet access, you
 
 Once in the airgapped environment, run the upgrade command referencing the offline package file the tool generated:
 ```shell
-# Replace <OFFLINE-PACKAGE-FILENAME> with the path to the generated offline package file
-c8yedge upgrade -s "<OFFLINE-PACKAGE-FILENAME>"
+c8yedge upgrade -s "<OFFLINE-PACKAGE-FILE>"
 ```
 
 ### Upgrading Edge in a self-managed Kubernetes cluster {#upgrade-with-kubernetes-native}
@@ -49,13 +48,18 @@ Upgrading the version of your self-managed Kubernetes is outside the scope of th
 {{< /c8y-admon-info >}}
 
 Upgrading Edge works similarly to applying a configuration change, with the target version specified as a configuration value.
-To upgrade to the latest available version from the current release, set the version to `"{{< c8y-edge-current-version >}}"`. To upgrade to a specific patch version, use a fully qualified version string such as `"{{< c8y-edge-current-version >}}.0.1"`.
+To upgrade to the latest available version from the current release, set the version to `{{< c8y-edge-current-version >}}`. To upgrade to a specific patch version, use a fully qualified version string such as `{{< c8y-edge-current-version >}}.0.1`.
+
+{{< c8y-admon-info >}}
+If your Edge instance was installed using a private OCI-compliant registry, you must sync the artifacts for the new version `{{< c8y-edge-current-version >}}` to your private registry before beginning the upgrade. Refer to [Sync Edge artifacts to your private registry](/edge/installing-edge/#sync-edge-artifacts-to-private-registry) for the required steps.
+{{< /c8y-admon-info >}}
 
 ```bash
-kubectl --namespace=c8yedge patch edge/c8yedge --type=merge -p '{"spec":{"version":"{{< c8y-edge-current-version >}}"}}'
+kubectl patch edge c8yedge --namespace c8yedge \
+  --type merge \
+  --patch '{"spec":{"version":"{{< c8y-edge-current-version >}}"}}'	
 ```
 The operator will also upgrade itself as part of this process. See [Monitoring changes](/edge/manage-edge/#monitoring-changes) to follow the progress of the upgrade.
-
 
 ### Upgrading Edge remotely {#upgrading-edge-remotely}
 
