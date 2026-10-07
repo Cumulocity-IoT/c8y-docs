@@ -1,6 +1,6 @@
 {{- $sectors := .Site.GetPage "/sector" -}}
 {{- $optional := slice "terms_conditions" "change-logs" -}}
-# {{ partial "llms-site-title.txt" . }}
+# {{ partial "docs-title.txt" . }}
 
 > The official documentation for the Cumulocity IoT platform, covering both user and developer perspectives across device management, application enablement, analytics, and platform administration.{{ with site.Data.date_settings.version }}{{ if ne . "Latest" }} It describes yearly release {{ . }}, not the current platform.{{ end }}{{ end }}
 

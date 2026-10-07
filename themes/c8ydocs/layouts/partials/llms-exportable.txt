@@ -2,6 +2,6 @@
   Whether a page gets an index.md and an entry in llms-full.txt: a listable page with
   content of its own, so not a redirect or an external-link stub. Call with the page.
 */ -}}
-{{- $ok := partial "llms-listable.txt" . -}}
+{{- $ok := partialCached "llms-listable.txt" . .Path -}}
 {{- if or (eq .Layout "redirect") (in (slice "external" "new-tab") .Type) }}{{ $ok = false }}{{ end -}}
 {{- return $ok -}}
