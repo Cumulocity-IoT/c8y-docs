@@ -94,22 +94,22 @@ The following values can be copied:
 
 | Value | What is copied |
 |-------|----------------|
-| Primitive values, including `BigInt` | The value itself. |
-| Objects and arrays | Own enumerable properties with string keys, including array holes. Getters are called and their results are copied as plain values. Properties with symbol keys and non-enumerable properties are not copied. |
+| Primitive values, including `BigInt` | The value itself. A symbol is copied as a new symbol with the same description. |
+| Wrapper objects such as `new Number(1)` or `new String('a')` | The wrapped value. |
+| Objects and arrays | Own enumerable data properties, including properties with symbol keys. Non-enumerable properties are not copied. Holes in an array become `undefined`, and properties of an array that are not indexes are not copied. |
 | Instances of classes | Copied as plain objects with the instance's own data properties only. The copy has no class, methods, getters or private fields. This also applies to instances of `TextEncoder`, `TextDecoder` and `OPCUACodec`. |
 | `Map`, `Set` | All entries, in order. |
 | `Date` | The date and time. |
 | `RegExp` | The pattern and flags. `lastIndex` is reset to 0. |
-| `ArrayBuffer`, typed arrays such as `Uint8Array`, `DataView` | The contents. Views that share a buffer in the original also share one buffer in the copy. |
-| `Error`, `EvalError`, `RangeError`, `ReferenceError`, `SyntaxError`, `TypeError`, `URIError` | The error type, `message` and `stack`. Other error types, such as `AggregateError` or your own subclasses of `Error`, are copied as `Error`. |
+| `ArrayBuffer`, including resizable ones, and typed arrays such as `Uint8Array` | The contents. Views that share a buffer in the original also share one buffer in the copy. |
 
-Any other value causes `structuredClone` to throw a `DOMException` named `DataCloneError`, instead of returning an incomplete copy. This includes functions, symbols, `Proxy`, `WeakMap`, `WeakSet`, `WeakRef`, `Promise`, wrapper objects such as `new Number(1)`, `SharedArrayBuffer`, resizable or detached `ArrayBuffer` objects, `arguments` objects, and the `console` and `Base64` globals. A value that contains one of these anywhere inside it is rejected too:
+Any other value causes `structuredClone` to throw a `DOMException` named `DataCloneError`, instead of returning an incomplete copy. This includes functions, objects with getters of their own, `Error` objects, `DataView`, `Proxy`, `WeakMap`, `WeakSet`, `WeakRef`, `Promise`, `SharedArrayBuffer`, detached `ArrayBuffer` objects, `arguments` objects, the `console` and `Base64` globals, and values nested too deeply. A value that contains one of these anywhere inside it is rejected too:
 
 ```javascript
 try {
   structuredClone({ id: 1, format: () => 'text' });
 } catch (e) {
-  console.warn(`${e.name}: ${e.message}`); // DataCloneError: structuredClone: functions cannot be cloned
+  console.warn(`${e.name}: ${e.message}`); // DataCloneError: structuredClone: unsupported object class
 }
 ```
 
