@@ -10,7 +10,7 @@ The page works the same way for per-tenant and multi-tenant microservices. To op
 
 ### What the Logs page shows {#logs-view-content}
 
-The Logs page shows messages for your tenant that belong to the Streaming Analytics application:
+The **Logs** page shows messages for your tenant that belong to the Streaming Analytics application:
 
 - Messages from Analytics Builder models and template model instances. This includes the output of the [Logger](/streaming-analytics/block-reference/#logger) block, the `console` output of the [Smart Function](/streaming-analytics/block-reference/#smart-function) block, and errors raised while a model is running.
 - Messages from smart rules, including those created with the [Smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin/).
@@ -53,11 +53,11 @@ To view the logs, you need READ permission for "CEP management". See [Managing p
 
 #### How far back the logs go {#log-history}
 
-The Logs page reads the log of the microservice, which only keeps its most recent 35 MB of output and starts again when the microservice restarts. See [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices). If the microservice writes a lot of output, for example, because it serves many tenants, older messages are removed sooner. The page then shows "Showing recent logs. Earlier entries may no longer be visible." The Logs page is for diagnosing current problems, not a long-term log archive.
+The **Logs** page reads the log of the microservice, which only keeps its most recent 35 MB of output and starts again when the microservice restarts. See [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices). If the microservice writes a lot of output, for example, because it serves many tenants, older messages are removed sooner. The page then shows "Showing recent logs. Earlier entries may no longer be visible." The **Logs** page is for diagnosing current problems, not a long-term log archive.
 
 ### Filtering the logs by model {#filtering-logs-by-model}
 
-By default, the Logs page shows all Streaming Analytics messages for your tenant. Use the **Model** drop-down list at the top of the page to show only the messages of one Analytics Builder model:
+By default, the **Logs** page shows all Streaming Analytics messages for your tenant. Use the **Model** drop-down list at the top of the page to show only the messages of one Analytics Builder model:
 
 - Each model shows its mode and state, for example, **Production** and **Active**, or **Runtime error**. A template model shows **Template**. You can select any model, including inactive models and models that failed to activate, so that you can still see why a model stopped or failed.
 - When you select a template model, a second drop-down list named **Instance** appears, and the first instance is selected. To see the messages of a different instance, select it in the **Instance** drop-down list. A template model without any instances cannot be selected.
@@ -73,13 +73,13 @@ Smart rules created with the Smart rules (NEW) plugin are template model instanc
 
 ### Automatic refresh {#logs-auto-refresh}
 
-When you open the Logs page, or select a different model, it shows the messages from the last 10 minutes. It then checks for new messages every 10 seconds and adds them to the end of the list. If you have scrolled up, a **New logs** button appears when new entries arrive. Click it to jump to the latest entry.
+When you open the **Logs** page, or select a different model, it shows the messages from the last 10 minutes. It then checks for new messages every 10 seconds and adds them to the end of the list. If you have scrolled up, a **New logs** button appears when new entries arrive. Click it to jump to the latest entry.
 
 To pause the updates, click **Auto-refresh** in the toolbar. Click it again to resume. The page also stops checking for new messages when you leave it.
 
 ### Downloading the logs {#downloading-logs}
 
-You can download the messages that are shown on the Logs page as a text file named *&lt;tenantId&gt;-logs.log*. The download uses the same filters as the page: only your tenant's Streaming Analytics messages, and only those of the selected model or instance, if any.
+You can download the messages that are shown on the **Logs** page as a text file named *&lt;tenantId&gt;-logs.log*. The download uses the same filters as the page: only your tenant's Streaming Analytics messages, and only those of the selected model or instance, if any.
 
 #### To download the logs {#to-download-the-logs}
 

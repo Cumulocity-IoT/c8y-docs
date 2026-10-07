@@ -84,13 +84,13 @@ The **Logs** page opens in a new browser tab, with the rule already selected. If
 
 Most `console` output of a smart function is only written to the log while the logs are being viewed. This keeps the log free of output that nobody reads. Only output written with `console.error` and errors thrown by the smart function are written at all times.
 
-Console capture starts when you select a deployed rule on the Logs page, or open the Logs page with **View logs** in the rule editor. While it is active, all `console` output of the rule is written to the log and shown on the page.
+Console capture starts when you select a deployed rule on the **Logs** page, or open the **Logs** page with **View logs** in the rule editor. While it is active, all `console` output of the rule is written to the log and shown on the page.
 
 Console capture stops when any of the following happens:
 
 - You clear the selection or select a different rule.
 - You pause the automatic refresh. See [Automatic refresh](#auto-refresh).
-- You leave the Logs page.
+- You leave the **Logs** page.
 - You close the browser tab, or the browser loses its network connection.
 
 Output that a smart function writes before console capture starts, or after it stops, is not kept. To capture output over a longer period without keeping the page open, see [Capturing in the background](#background-capture).
@@ -111,19 +111,19 @@ curl --user username -X POST -H 'Content-Type: application/json' -d '{"category"
 
 #### Capturing in the background {#background-capture}
 
-Some problems only show up occasionally, for example, when a device sends an unusual message from time to time. To catch these, you can capture the `console` output of a rule for up to one hour without keeping the Logs page open. You can then come back later and look at the output.
+Some problems only show up occasionally, for example, when a device sends an unusual message from time to time. To catch these, you can capture the `console` output of a rule for up to one hour without keeping the **Logs** page open. You can then come back later and look at the output.
 
 ##### To capture the console output of a rule in the background {#to-capture-in-background}
 
-1. On the Logs page, select a deployed rule in the **Rule** drop-down list.
+1. On the **Logs** page, select a deployed rule in the **Rule** drop-down list.
 2. Click **Capture in background** and select how long to capture for: **15 minutes**, **30 minutes**, or **1 hour**.
 3. You can now close the browser tab. The capture continues until the selected time.
 
 Redeploying or deleting the rule ends the background capture. Background captures are also lost when the microservice restarts.
 
-To stop the capture early, select the rule on the Logs page again and click **Stop background capture**. If you start a background capture for a rule that already has one, the new duration replaces the old one.
+To stop the capture early, select the rule on the **Logs** page again and click **Stop background capture**. If you start a background capture for a rule that already has one, the new duration replaces the old one.
 
-To view the captured output later, open the Logs page and select the rule. The page only shows the messages from the last 10 minutes when you open it, so to see older messages, download the logs with a start date that is before the capture started. See [Downloading the logs](#download-logs).
+To view the captured output later, open the **Logs** page and select the rule. The page only shows the messages from the last 10 minutes when you open it, so to see older messages, download the logs with a start date that is before the capture started. See [Downloading the logs](#download-logs).
 
 A background capture counts toward the [limit on console capture](#console-capture-limit) for its whole duration.
 
@@ -136,13 +136,13 @@ Background capture makes sure that the output of the rule is written to the log,
 
 ### Automatic refresh {#auto-refresh}
 
-When you open the Logs page, or select a different rule, it shows the messages from the last 10 minutes. It then automatically checks for new messages and adds them to the end of the list. If you have scrolled up, a **New logs** button appears when new entries arrive. Click it to jump to the latest entry.
+When you open the **Logs** page, or select a different rule, it shows the messages from the last 10 minutes. It then automatically checks for new messages and adds them to the end of the list. If you have scrolled up, a **New logs** button appears when new entries arrive. Click it to jump to the latest entry.
 
 To pause the updates, click **Auto-refresh** in the toolbar. Click it again to resume. Pausing also stops console capture, unless a background capture is active.
 
 ### Downloading the logs {#download-logs}
 
-You can download the messages that are shown on the Logs page as a text file named *&lt;tenantId&gt;-logs.log*. The download uses the same filters as the page: only your tenant's Data Preparation messages, and only those of the selected rule, if any.
+You can download the messages that are shown on the **Logs** page as a text file named *&lt;tenantId&gt;-logs.log*. The download uses the same filters as the page: only your tenant's Data Preparation messages, and only those of the selected rule, if any.
 
 #### To download the logs {#to-download-logs}
 
