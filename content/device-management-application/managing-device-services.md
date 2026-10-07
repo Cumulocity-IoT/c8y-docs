@@ -17,7 +17,7 @@ sector:
 The Device Management application lets you monitor the data that your devices send about the services they are running.
 
 The [Services](/device-management-application/viewing-device-details/#services) tab on the device details view provides an overview of the services running on a given device and acts as an entry point to the service details view.
-There you can see detailed information about the alarms, events, and measurements sent for every service, and use the functionality that the service supports, such as logs, location, or remote access.
+There you can see detailed information about the alarms, events, and measurements sent for every service. Depending on what the service supports, further tabs such as **Logs**, **Location**, or **Remote access** are available.
 
 For services that support commands, actions like **Start**, **Stop**, **Restart**, or custom commands appear in the menu of each service. This allows users to quickly send commands without opening the full service details.
 
@@ -53,7 +53,7 @@ The following tabs are described in detail in separate sections below:
 </tr>
 <tr>
 <td align="left"><a href="#service-commands">Commands</a></td>
-<td align="left">Allows users to send command actions to a service and view the history of executed commands. Available for each service.</td>
+<td align="left">Allows users to send command actions to a service and view the history of executed commands.</td>
 </tr>
 </tbody>
 </table>
