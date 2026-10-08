@@ -1,5 +1,5 @@
 ---
-date:
+date: 2026-10-01
 title: X.509 certificate-based authentication for system-to-system integrations
 change_type:
   - value: change-QHu1GdukP
