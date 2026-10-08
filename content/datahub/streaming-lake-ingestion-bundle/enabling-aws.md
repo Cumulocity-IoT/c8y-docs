@@ -19,7 +19,7 @@ You perform the setup in the Administration application under **Settings** > **D
 The bucket must meet the following requirements:
 
 * It is in the region of your {{< product-c8y-iot >}} environment. The setup page shows the region, and the setup refuses a bucket in any other region.
-* Bucket versioning is enabled. Versioning keeps overwritten and deleted files recoverable. If it is off, the setup completes but shows a warning.
+* Bucket versioning is enabled. Versioning keeps deleted files recoverable. If it is off, the setup completes and your data arrives, but the page shows a warning and the **Setup status** shows "Provisioning failed" until you enable it and try again.
 * It uses the default S3 encryption. A bucket encrypted with a customer-managed KMS key is not supported.
 
 ### Setting up the tenant {#setting-up-the-tenant-on-aws}
@@ -60,7 +60,7 @@ If a check fails, the setup page shows the reason. If the catalog was already cr
 |The bucket is in a different region, or cannot be found.|Create a bucket in the region that the setup page shows. You cannot move a bucket.|
 |Access to the prefix is denied.|Check that the prefix in the permissions policy is the same as the one in the base location.|
 |The base location overlaps the location of another tenant.|Choose a prefix that neither contains nor is contained in the other location. Sharing the same prefix is allowed.|
-|The page warns that your storage cannot recover overwritten or deleted files.|Bucket versioning is off. Enable it, then click **Save** in the **Catalog identity** section.|
+|The page warns that data loss protection is off.|Bucket versioning is off. Enable it, then click **Save** in the **Catalog identity** section.|
 |The setup fails right after you changed the role.|IAM changes take up to a minute to become effective. Wait and try again.|
 
 If the cause is not listed, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/) with the reason that the setup page shows.
