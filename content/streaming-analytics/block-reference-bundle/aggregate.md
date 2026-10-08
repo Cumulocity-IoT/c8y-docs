@@ -71,17 +71,12 @@ This category contains the following blocks:
 `apama.analyticskit.blocks.core.Mean`
 
 <p>Calculates the mean of the values over time.</p>
-<p>This block is suitable for continuous values, even if they are irregularly sampled. The time between inputs or samples is significant, while the number of samples is not. Use this block, for example, if the input is a physical property, such as temperature, that is sampled either regularly or irregularly (for example, only generating measurement values on a change in temperature).  Use the Discrete Statistics block instead of the Average (Mean) block for independent measurements, such as ticket sales, where the number of measurements is significant, but the time between measurements is not.
-<p></p>
-The mean is defined as the sum of the input's value multiplied by how long the input has stayed at that value, within an optional window, divided by the window duration or the time since the block was started or last reset, whichever is smallest.
-<p></p>
-The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, the block uses an unbounded window. The Reset input port clears the window contents. Output is generated on any new input or, if the Output Threshold parameter is set, only when the output changes by more than the specified output threshold (which includes if no further input occurs, or the value only changes due to old entries expiring). The Sample input port can be used to force re-evaluation and generate the latest value.
-<p></p>
-See also the "Value types" topic in the Analytics Builder documentation for more details and an example of the frequency of output from this block and how values in windows behave.
-<p></p>
-If a window is configured, the block uses a set of 20 buckets, so the expired value is an approximation of the average value across a bucket.
-<p></p>
-Note: The Average (Mean) block generates the mean for an individual device. If the input comes from a range of devices, the mean is generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
+<p>This block is suitable for continuous values, even if they are irregularly sampled. The time between inputs or samples is significant, while the number of samples is not. Use this block, for example, if the input is a physical property, such as temperature, that is sampled either regularly or irregularly (for example, only generating measurement values on a change in temperature).  Use the Discrete Statistics block instead of the Average (Mean) block for independent measurements, such as ticket sales, where the number of measurements is significant, but the time between measurements is not.</p>
+<p>The mean is defined as the sum of the input's value multiplied by how long the input has stayed at that value, within an optional window, divided by the window duration or the time since the block was started or last reset, whichever is smallest.</p>
+<p>The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, the block uses an unbounded window. The Reset input port clears the window contents. Output is generated on any new input or, if the Output Threshold parameter is set, only when the output changes by more than the specified output threshold (which includes if no further input occurs, or the value only changes due to old entries expiring). The Sample input port can be used to force re-evaluation and generate the latest value.</p>
+<p>See also the "Value types" topic in the Analytics Builder documentation for more details and an example of the frequency of output from this block and how values in windows behave.</p>
+<p>If a window is configured, the block uses a set of 20 buckets, so the expired value is an approximation of the average value across a bucket.</p>
+<p>Note: The Average (Mean) block generates the mean for an individual device. If the input comes from a range of devices, the mean is generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
 
 
 #### Parameters {#average-mean-parameters}
@@ -197,9 +192,8 @@ Note: The Average (Mean) block generates the mean for an individual device. If t
 `apama.analyticskit.blocks.core.Counter`
 
 <p>Gives a count of the total inputs and repeated inputs.</p>
-<p>If two consecutive input values have different types, they are not evaluated as repeat values. For example, a float value of 1.0 will not evaluate as a repeat of an integer value of 1. All other evaluations for whether two values are equal follow the same rules as EPL. For more information, refer to <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/epl-reference/types/">Types</a>.
-<p></p>
-You can specify a maximum value for each count independently. By default, each counter returns to one, counting the first input after the maximum has been reached. This is useful, for example, if you want to trigger an action on every n<sup>th</sup> input, or if the input has repeated more often than expected. You can also set each counter to stop once it reaches the maximum value. In this mode, a pulse on the Reset input port is required to reset the count, although this resets both counters at the same time. If this dual reset is an issue, you must use a separate Counter block to deal with each count independently.</p>
+<p>If two consecutive input values have different types, they are not evaluated as repeat values. For example, a float value of 1.0 will not evaluate as a repeat of an integer value of 1. All other evaluations for whether two values are equal follow the same rules as EPL. For more information, refer to <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/epl-reference/types/">Types</a>.</p>
+<p>You can specify a maximum value for each count independently. By default, each counter returns to one, counting the first input after the maximum has been reached. This is useful, for example, if you want to trigger an action on every n<sup>th</sup> input, or if the input has repeated more often than expected. You can also set each counter to stop once it reaches the maximum value. In this mode, a pulse on the Reset input port is required to reset the count, although this resets both counters at the same time. If this dual reset is an issue, you must use a separate Counter block to deal with each count independently.</p>
 
 
 #### Parameters {#counter-parameters}
@@ -328,13 +322,10 @@ You can specify a maximum value for each count independently. By default, each c
 `apama.analyticsbuilder.blocks.DiscreteStatistics`
 
 <p>Generates statistics of sum, count, average (mean), standard deviation, minimum and maximum for discrete input values.</p>
-<p>This block is suitable for discrete time inputs, where the number of samples (or inputs) is significant, while the time between them is not. The Average (Mean) and Standard Deviation blocks are more suitable for continuous values that may be irregularly sampled, such as temperature readings. Use this block, for example, if each sample represents a transaction such as a ticket being sold.
-<p></p>
-If the Sample input port is not connected, every value is sampled. If a new value is received during the same activation period as a reset, the value is sampled after the reset, otherwise it is ignored. As every value is used, the standard deviation uses the generic formula: <tt>σ² = ∑(x - µ)² / N</tt>.
-<p></p>
-If the Sample input port is connected, the block only samples the data when the Sample input port receives a signal. In this case, the sampling standard deviation uses the formula: <tt>σ² = ∑(x - µ)² / (N-1)</tt>.
-<p></p>
-If reset and sample signals are received together, the reset is processed first.</p>
+<p>This block is suitable for discrete time inputs, where the number of samples (or inputs) is significant, while the time between them is not. The Average (Mean) and Standard Deviation blocks are more suitable for continuous values that may be irregularly sampled, such as temperature readings. Use this block, for example, if each sample represents a transaction such as a ticket being sold.</p>
+<p>If the Sample input port is not connected, every value is sampled. If a new value is received during the same activation period as a reset, the value is sampled after the reset, otherwise it is ignored. As every value is used, the standard deviation uses the generic formula: <tt>σ² = ∑(x - µ)² / N</tt>.</p>
+<p>If the Sample input port is connected, the block only samples the data when the Sample input port receives a signal. In this case, the sampling standard deviation uses the formula: <tt>σ² = ∑(x - µ)² / (N-1)</tt>.</p>
+<p>If reset and sample signals are received together, the reset is processed first.</p>
 
 
 #### Input Port Details {#discrete-statistics-inputs}
@@ -444,11 +435,9 @@ If reset and sample signals are received together, the reset is processed first.
 `apama.analyticskit.blocks.core.Gradient`
 
 <p>Calculates the weighted linear regression gradient for the values.</p>
-<p>A gradient measures the rate of change of a value over time. A positive gradient indicates an increase of the input values, and a negative gradient indicates a decrease of the input values. The magnitude of the gradient signifies the scale of change.
-<p></p>
-The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, it uses an unbounded window and the block re-evaluates for every 1 second, and uses 1-second buckets. If a window is configured, the block uses a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval. The first gradient output is generated only when a minimum of two buckets is available for computation.
-<p></p>
-The Reset input clears the content of the window. Sample input can be used to force re-evaluation and generate the latest value.</p>
+<p>A gradient measures the rate of change of a value over time. A positive gradient indicates an increase of the input values, and a negative gradient indicates a decrease of the input values. The magnitude of the gradient signifies the scale of change.</p>
+<p>The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, it uses an unbounded window and the block re-evaluates for every 1 second, and uses 1-second buckets. If a window is configured, the block uses a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval. The first gradient output is generated only when a minimum of two buckets is available for computation.</p>
+<p>The Reset input clears the content of the window. Sample input can be used to force re-evaluation and generate the latest value.</p>
 
 
 #### Parameters {#gradient-parameters}
@@ -554,13 +543,10 @@ The Reset input clears the content of the window. Sample input can be used to fo
 `apama.analyticskit.blocks.core.GroupStatistics`
 
 <p>Generates periodic aggregate values across all the devices in a group for which the block has received input values.</p>
-<p>This block generates the following aggregate values: <ul> <li>Minimum</li> <li>Maximum</li> <li>Device Count</li> <li>Average </li> <li>Standard Deviation</li> <li>Variance</li> </ul>
-<p></p>
-The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, the block uses an unbounded window. Output is generated periodically as specified by the Output Period parameter.
-<p></p>
-If a window is configured, the block uses a set of 20 buckets, so the expired value is an approximation to the nearest bucket interval.
-<p></p>
-Note: The Group Statistics block calculates and generates aggregate values for the group as a whole (not for individual devices). To generate aggregates for an individual device in a group, use the Average (Mean), Standard Deviation, or Minimum/Maximum blocks. The Group Statistics block only considers devices from which it has received input values.</p>
+<p>This block generates the following aggregate values:</p><ul> <li>Minimum</li> <li>Maximum</li> <li>Device Count</li> <li>Average </li> <li>Standard Deviation</li> <li>Variance</li> </ul>
+<p>The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, the block uses an unbounded window. Output is generated periodically as specified by the Output Period parameter.</p>
+<p>If a window is configured, the block uses a set of 20 buckets, so the expired value is an approximation to the nearest bucket interval.</p>
+<p>Note: The Group Statistics block calculates and generates aggregate values for the group as a whole (not for individual devices). To generate aggregates for an individual device in a group, use the Average (Mean), Standard Deviation, or Minimum/Maximum blocks. The Group Statistics block only considers devices from which it has received input values.</p>
 
 
 #### Parameters {#group-statistics-parameters}
@@ -696,11 +682,9 @@ Note: The Group Statistics block calculates and generates aggregate values for t
 `apama.analyticskit.blocks.core.Integral`
 
 <p>Calculates the integral of the input value over time.</p>
-<p>Integral is defined as the sum of the input's value multiplied by how long the input has stayed at that value, within an optional window, since the block was started or last reset.
-<p></p>
-The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, it uses an unbounded window. The Reset input clears the window contents. Output is generated on any new input or, if the Output Threshold parameter is set, only when the output changes by more than the specified output threshold (which includes if no further input occurs, or the value only changes due to old entries expiring). The Sample input can be used to force re-evaluation and generate the latest value.
-<p></p>
-If a window is configured, the block uses a set of 20 buckets, so the expired value is an approximation of the average value across a bucket.</p>
+<p>Integral is defined as the sum of the input's value multiplied by how long the input has stayed at that value, within an optional window, since the block was started or last reset.</p>
+<p>The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, it uses an unbounded window. The Reset input clears the window contents. Output is generated on any new input or, if the Output Threshold parameter is set, only when the output changes by more than the specified output threshold (which includes if no further input occurs, or the value only changes due to old entries expiring). The Sample input can be used to force re-evaluation and generate the latest value.</p>
+<p>If a window is configured, the block uses a set of 20 buckets, so the expired value is an approximation of the average value across a bucket.</p>
 
 
 #### Parameters {#integral-parameters}
@@ -816,13 +800,10 @@ If a window is configured, the block uses a set of 20 buckets, so the expired va
 `apama.analyticskit.blocks.core.MinMax`
 
 <p>Calculates the minimum and maximum of a value over time.</p>
-<p>The minimum is defined as the smallest value (closest to negative infinity) of  the input values in the window, and the maximum is defined as the largest value (closest to positive infinity) of the input values in the window.
-<p></p>
-The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, the block uses an unbounded window. The Reset input clears the window contents. Output is generated on any new input that exceeds the current minimum or maximum, or, if the Window Duration parameter is set, when a previous minimum or maximum expires.
-<p></p>
-If a window is configured, the block uses a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval.
-<p></p>
-Note: The Minimum/Maximum block generates the minimum and maximum for an individual device. If the input comes from a group of devices, these values are generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
+<p>The minimum is defined as the smallest value (closest to negative infinity) of  the input values in the window, and the maximum is defined as the largest value (closest to positive infinity) of the input values in the window.</p>
+<p>The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, the block uses an unbounded window. The Reset input clears the window contents. Output is generated on any new input that exceeds the current minimum or maximum, or, if the Window Duration parameter is set, when a previous minimum or maximum expires.</p>
+<p>If a window is configured, the block uses a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval.</p>
+<p>Note: The Minimum/Maximum block generates the minimum and maximum for an individual device. If the input comes from a group of devices, these values are generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
 
 
 #### Parameters {#minimum--maximum-parameters}
@@ -1032,15 +1013,11 @@ Note: The Minimum/Maximum block generates the minimum and maximum for an individ
 `apama.analyticskit.blocks.core.StandardDeviation`
 
 <p>Calculates the standard deviation and variance of the values over time.</p>
-<p>This block is suitable for continuous values, even if they are irregularly sampled. The time between inputs or samples is significant, while the number of samples is not. Use this block, for example, if the input is a physical property, such as temperature, that is sampled either regularly or irregularly (for example, only generating measurement values on a change in temperature).  Use the Discrete Statistics block instead of the Standard Deviation block for independent measurements, such as ticket sales, where the number of measurements is significant, but the time between measurements is not.
-<p></p>
-Standard deviation is a measure that is used to quantify the amount of variation or dispersion of a set of data values. A low standard deviation indicates that the data points tend to be close to the mean of the set, while a high standard deviation indicates that the data points are spread out over a wider range of values.
-<p></p>
-The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, the block uses an unbounded window. The Reset input port clears the window contents. The Sample input port can be used to force re-evaluation and generate the latest value. Output is generated on any new input or, if the Window Duration parameter is set, output is generated periodically on every new bucket that is added to the window.
-<p></p>
-If a window is configured, the block uses a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval.
-<p></p>
-Note:  The Standard Deviation block generates the standard deviation and variance for an individual device. If the input comes from a group of devices, these values are generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
+<p>This block is suitable for continuous values, even if they are irregularly sampled. The time between inputs or samples is significant, while the number of samples is not. Use this block, for example, if the input is a physical property, such as temperature, that is sampled either regularly or irregularly (for example, only generating measurement values on a change in temperature).  Use the Discrete Statistics block instead of the Standard Deviation block for independent measurements, such as ticket sales, where the number of measurements is significant, but the time between measurements is not.</p>
+<p>Standard deviation is a measure that is used to quantify the amount of variation or dispersion of a set of data values. A low standard deviation indicates that the data points tend to be close to the mean of the set, while a high standard deviation indicates that the data points are spread out over a wider range of values.</p>
+<p>The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, the block uses an unbounded window. The Reset input port clears the window contents. The Sample input port can be used to force re-evaluation and generate the latest value. Output is generated on any new input or, if the Window Duration parameter is set, output is generated periodically on every new bucket that is added to the window.</p>
+<p>If a window is configured, the block uses a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval.</p>
+<p>Note:  The Standard Deviation block generates the standard deviation and variance for an individual device. If the input comes from a group of devices, these values are generated separately for each device in that group. To calculate and generate aggregate values for the group as a whole (not for individual devices), use the Group Statistics block.</p>
 
 
 #### Parameters {#standard-deviation-parameters}

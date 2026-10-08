@@ -106,11 +106,9 @@ This category contains the following blocks:
 `apama.analyticsbuilder.blocks.AIAgent`
 
 <p>This block queries an AI Agent manager agent using its inputs and produces the agent's text response as output.</p>
-<p><b>Warning:</b> Be careful when using block inputs, as there is a risk of prompt injection attacks. Always validate and sanitize user-provided data before passing it to AI models.
-<p></p>
-<b>Note:</b> This block produces its output asynchronously after the input activation completes. If you wire this output alongside outputs from other blocks into the same downstream block, they will trigger that block in separate activations rather than being processed together.
-<p></p>
-<b>This block is currently in public preview and may be subject to change.</b></p>
+<p><b>Warning:</b> Be careful when using block inputs, as there is a risk of prompt injection attacks. Always validate and sanitize user-provided data before passing it to AI models.</p>
+<p><b>Note:</b> This block produces its output asynchronously after the input activation completes. If you wire this output alongside outputs from other blocks into the same downstream block, they will trigger that block in separate activations rather than being processed together.</p>
+<p><b>This block is currently in public preview and may be subject to change.</b></p>
 
 
 #### Parameters {#ai-agent-prompt-parameters}
@@ -236,11 +234,9 @@ This category contains the following blocks:
 `apama.analyticskit.blocks.core.CrossingCounter`
 
 <p>Detects and counts the number of threshold crossings in the specified direction.</p>
-<p>Crossing is defined as a change in the input value from one side of the threshold to the other side of the threshold (that is, from less than to greater than or vice versa).
-<p></p>
-The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, it uses an unbounded window. The Reset input clears the window contents.
-<p></p>
-If a window is configured, the block uses a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval.</p>
+<p>Crossing is defined as a change in the input value from one side of the threshold to the other side of the threshold (that is, from less than to greater than or vice versa).</p>
+<p>The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, it uses an unbounded window. The Reset input clears the window contents.</p>
+<p>If a window is configured, the block uses a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval.</p>
 
 
 #### Parameters {#crossing-counter-parameters}
@@ -622,19 +618,18 @@ If a window is configured, the block uses a set of 20 buckets, so the time of ex
 `apama.analyticskit.blocks.core.Expression`
 
 <p>Evaluates an expression to perform arithmetic or logical calculations or string operations.</p>
-<p>On change of input values (once all in-use inputs have been received), the expression specified in the parameter is re-calculated.
-<p></p>
-The expression language is much like EPL (see <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/epl-reference/introduction/">EPL reference</a>), but is restricted to <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> and <tt>boolean</tt> types.
-<p></p>
-Note: All numeric literals are treated as <tt>float</tt> type values, even if they have no fractional part. Integer values can only be obtained as the result of functions such as <tt>floor()</tt>. Similar to EPL, <tt>integer</tt> and <tt>float</tt> are not implicitly convertible within an expression. If the result of an expression is an <tt>integer</tt> value, it is converted to a <tt>float</tt> automatically (there might be a loss of precision).
-<p></p>
-Boolean values can be specified using the Boolean literals <tt>true</tt> and <tt>false</tt>. Boolean literals are case insensitive, so for example, <tt>TRUE</tt> and <tt>True</tt> are allowed. String values can be specified by enclosing string literals in double quotes, for example "my value". Special characters are encoded with a backslash (<tt>\</tt>). The following special characters (along which their encoding) are supported in string literals: <ul> <li>Double quotes - <tt>\"</tt></li> <li>Backslash - <tt>\\</tt></li> <li>Newline - <tt>\</tt><tt>n</tt></li> <li>Tab - <tt>\</tt><tt>t</tt></li> </ul>
-<p></p>
-Similar to EPL, each value type can be concatenated with a <tt>string</tt> type. The non-string value is first converted to a <tt>string</tt> and then appended to the <tt>string</tt> value.
-<p></p>
-The values of the inputs are available as <tt>input1</tt>, <tt>input2</tt>, <tt>input3</tt>, <tt>input4</tt> and <tt>input5</tt>. The input values can be of type <tt>float</tt>, <tt>string</tt>, <tt>boolean</tt> and <tt>any</tt>. Logical, relational, numerical and equality operators can be used on the values of the supported types. Logical operators are case insensitive, so for example, <tt>AND</tt> and <tt>And</tt> are allowed. The conditional (ternary) operator <tt>&lt;condition&gt; ? &lt;trueValue&gt; : &lt;falseValue&gt;</tt> evaluates only the branch selected by the <tt>boolean</tt> <tt>&lt;condition&gt;</tt>, requires <tt>&lt;trueValue&gt;</tt> and <tt>&lt;falseValue&gt;</tt> to be of the same type, has the lowest precedence of all operators, and is right-associative, so <tt>a ? b : c ? d : e</tt> is parsed as <tt>a ? b : (c ? d : e)</tt>. Built-in methods on the <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> and <tt>boolean</tt> types can be called, including <tt>x.abs()</tt> (absolute value of <tt>x</tt>), <tt>x.pow(y)</tt> (raise <tt>x</tt> to the power <tt>y</tt>), <tt>x.sin()</tt> (sine of <tt>x</tt> in radians), <tt>x.round()</tt> (rounds <tt>x</tt> to the nearest integer), and <tt>s.ltrim()</tt> (remove whitespace from the start of the string <tt>s</tt>). Built-in static methods of the supported types can be called by specifying the type name, followed by a dot (<tt>.</tt>) and the method name, for example, <tt>float.max(input1, input2)</tt> (find the larger of two input values). Built-in constants on the supported types can be accessed by specifying the type name, followed by a dot (<tt>.</tt>) and the constant name, for example, <tt>float.E</tt> (Euler's constant). Values of type <tt>any</tt> are unpacked at runtime to evaluate the expression. After unpacking, the value must be of type <tt>float</tt>, <tt>string</tt> or <tt>boolean</tt>. The type checker tries to validate the expressions during the validation phase, but this is not always possible with the <tt>any</tt> type. So if an expression contains the <tt>any</tt> type, even if it passes the validation phase, it can still fail at runtime due to a wrong type of variable being passed or an unsupported operation being performed. For a full list of built-in methods and constants, consult the API <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/related/ApamaDoc/index.html">Reference for EPL (ApamaDoc)</a>.
-<p></p>
-Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 </tt></li> <li>Convert days to seconds: <tt>input1 * 86400 </tt></li> <li>Average of 4 inputs: <tt>(input1 + input2 + input3 + input4) / 4 </tt></li> <li>Threshold comparison: <tt>input1 &gt; 3.1412 </tt> (but also see the Threshold block)</li> <li>Pythagoras to compute the hypotenuse of a right-angled triangle: <tt>(input1.pow(2) + input2.pow(2)).sqrt() </tt></li> <li>Comparison to 3 decimal places: <tt>(input1 * 1000 - (input1 * 1000).fractionalPart()) = (input2 * 1000 - (input2 * 1000).fractionalPart()) </tt></li> <li>Range check: <tt>input1 &gt;= 1 and input1 &lt;= 10</tt></li> <li>String comparison: <tt>input1 = "my value"</tt></li> <li>Larger value: <tt>float.max(input1, float.PI)</tt></li> <li>Remainder of integer division: <tt>input1.round() % input2.round()</tt></li> <li>Left shift of integer value: <tt>input1.round() &lt;&lt; 4.round()</tt></li> <li>Right shift of integer value: <tt>input1.round() &gt;&gt; 2.round()</tt></li> <li>Bitwise not of integer value: <tt>not input1.round()</tt></li> <li>Bitwise or of integer values: <tt>input1.round() or input2.round()</tt></li> <li>Bitwise and of integer values: <tt>input1.round() and input2.round()</tt></li> <li>Bitwise xor of integer values: <tt>input1.round() xor input2.round()</tt></li> <li>String and non-string concatenation: <tt>"Current temperature is " + input1 + " degrees Celsius"</tt></li> <li>Conditional (ternary) operator: <tt>input1 &gt; 0 ? "positive" : "non-positive"</tt></li> </ul></p>
+<p>On change of input values (once all in-use inputs have been received), the expression specified in the parameter is re-calculated.</p>
+<p>The expression language is much like EPL (see <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/epl-reference/introduction/">EPL reference</a>), but is restricted to <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> and <tt>boolean</tt> types.</p>
+<p>Note: All numeric literals are treated as <tt>float</tt> type values, even if they have no fractional part. Integer values can only be obtained as the result of functions such as <tt>floor()</tt>. Similar to EPL, <tt>integer</tt> and <tt>float</tt> are not implicitly convertible within an expression. If the result of an expression is an <tt>integer</tt> value, it is converted to a <tt>float</tt> automatically (there might be a loss of precision).</p>
+<p>Boolean values can be specified using the Boolean literals <tt>true</tt> and <tt>false</tt>. Boolean literals are case insensitive, so for example, <tt>TRUE</tt> and <tt>True</tt> are allowed. String values can be specified by enclosing string literals in double quotes, for example "my value". Special characters are encoded with a backslash (<tt>\</tt>). The following special characters (along which their encoding) are supported in string literals:</p><ul> <li>Double quotes - <tt>\"</tt></li> <li>Backslash - <tt>\\</tt></li> <li>Newline - <tt>\</tt><tt>n</tt></li> <li>Tab - <tt>\</tt><tt>t</tt></li> </ul>
+<p>Similar to EPL, each value type can be concatenated with a <tt>string</tt> type. The non-string value is first converted to a <tt>string</tt> and then appended to the <tt>string</tt> value.</p>
+<p>The values of the inputs are available as <tt>input1</tt>, <tt>input2</tt>, <tt>input3</tt>, <tt>input4</tt> and <tt>input5</tt>. The input values can be of type <tt>float</tt>, <tt>string</tt>, <tt>boolean</tt> and <tt>any</tt>. Logical, relational, numerical and equality operators can be used on the values of the supported types. Logical operators are case insensitive, so for example, <tt>AND</tt> and <tt>And</tt> are allowed.</p>
+<p>The conditional (ternary) operator <tt>&lt;condition&gt; ? &lt;trueValue&gt; : &lt;falseValue&gt;</tt> evaluates only the branch selected by the <tt>boolean</tt> <tt>&lt;condition&gt;</tt>, requires <tt>&lt;trueValue&gt;</tt> and <tt>&lt;falseValue&gt;</tt> to be of the same type, has the lowest precedence of all operators, and is right-associative, so <tt>a ? b : c ? d : e</tt> is parsed as <tt>a ? b : (c ? d : e)</tt>.</p>
+<p>Built-in methods on the <tt>float</tt>, <tt>integer</tt>, <tt>string</tt> and <tt>boolean</tt> types can be called, including <tt>x.abs()</tt> (absolute value of <tt>x</tt>), <tt>x.pow(y)</tt> (raise <tt>x</tt> to the power <tt>y</tt>), <tt>x.sin()</tt> (sine of <tt>x</tt> in radians), <tt>x.round()</tt> (rounds <tt>x</tt> to the nearest integer), and <tt>s.ltrim()</tt> (remove whitespace from the start of the string <tt>s</tt>).</p>
+<p>Built-in static methods of the supported types can be called by specifying the type name, followed by a dot (<tt>.</tt>) and the method name, for example, <tt>float.max(input1, input2)</tt> (find the larger of two input values). Built-in constants on the supported types can be accessed by specifying the type name, followed by a dot (<tt>.</tt>) and the constant name, for example, <tt>float.E</tt> (Euler's constant).</p>
+<p>Values of type <tt>any</tt> are unpacked at runtime to evaluate the expression. After unpacking, the value must be of type <tt>float</tt>, <tt>string</tt> or <tt>boolean</tt>. The type checker tries to validate the expressions during the validation phase, but this is not always possible with the <tt>any</tt> type. So if an expression contains the <tt>any</tt> type, even if it passes the validation phase, it can still fail at runtime due to a wrong type of variable being passed or an unsupported operation being performed.</p>
+<p>For a full list of built-in methods and constants, consult the API <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/related/ApamaDoc/index.html">Reference for EPL (ApamaDoc)</a>.</p>
+<p>Some examples:</p><ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 </tt></li> <li>Convert days to seconds: <tt>input1 * 86400 </tt></li> <li>Average of 4 inputs: <tt>(input1 + input2 + input3 + input4) / 4 </tt></li> <li>Threshold comparison: <tt>input1 &gt; 3.1412 </tt> (but also see the Threshold block)</li> <li>Pythagoras to compute the hypotenuse of a right-angled triangle: <tt>(input1.pow(2) + input2.pow(2)).sqrt() </tt></li> <li>Comparison to 3 decimal places: <tt>(input1 * 1000 - (input1 * 1000).fractionalPart()) = (input2 * 1000 - (input2 * 1000).fractionalPart()) </tt></li> <li>Range check: <tt>input1 &gt;= 1 and input1 &lt;= 10</tt></li> <li>String comparison: <tt>input1 = "my value"</tt></li> <li>Larger value: <tt>float.max(input1, float.PI)</tt></li> <li>Remainder of integer division: <tt>input1.round() % input2.round()</tt></li> <li>Left shift of integer value: <tt>input1.round() &lt;&lt; 4.round()</tt></li> <li>Right shift of integer value: <tt>input1.round() &gt;&gt; 2.round()</tt></li> <li>Bitwise not of integer value: <tt>not input1.round()</tt></li> <li>Bitwise or of integer values: <tt>input1.round() or input2.round()</tt></li> <li>Bitwise and of integer values: <tt>input1.round() and input2.round()</tt></li> <li>Bitwise xor of integer values: <tt>input1.round() xor input2.round()</tt></li> <li>String and non-string concatenation: <tt>"Current temperature is " + input1 + " degrees Celsius"</tt></li> <li>Conditional (ternary) operator: <tt>input1 &gt; 0 ? "positive" : "non-positive"</tt></li> </ul>
 
 
 #### Parameters {#expression-parameters}
@@ -753,9 +748,8 @@ Some examples: <ul> <li>Convert Fahrenheit to Celsius: <tt>(input1 - 32) * 5/9 <
 `apama.analyticsbuilder.blocks.FromBaseN`
 
 <p>Converts a base N string to a float.</p>
-<p>The input string can be in any integer base from 2 to 36, where letters of the English alphabet are used as digits for bases above 10. Common bases are 2 (binary), 8 (octal), 10 (decimal) and 16 (hexadecimal). The number being converted can contain a radix point.
-<p></p>
-Conversion between two arbitrary bases can be achieved by chaining this block with the To Base N block.</p>
+<p>The input string can be in any integer base from 2 to 36, where letters of the English alphabet are used as digits for bases above 10. Common bases are 2 (binary), 8 (octal), 10 (decimal) and 16 (hexadecimal). The number being converted can contain a radix point.</p>
+<p>Conversion between two arbitrary bases can be achieved by chaining this block with the To Base N block.</p>
 
 
 #### Parameters {#from-base-n-parameters}
@@ -857,9 +851,8 @@ Conversion between two arbitrary bases can be achieved by chaining this block wi
 `apama.analyticskit.blocks.cumulocity.KPI`
 
 <p>Compares a value against either a KPI (Key Performance Indicator) or the data point of a device, asset or group of devices.</p>
-<p>This block uses data from the KPI input port or from the device, asset or group of devices which contains data points. It extracts the units, label, and the red and yellow ranges. The output indicates whether the value is within the red or yellow range specified by the KPI or data point.
-<p></p>
-The KPI input can provide properties, typically from a KPI-managed object, which include the red and yellow ranges, the unit and the label. If the device contains a data point for the specified fragment and series, then the values from the data point override those from the KPI.</p>
+<p>This block uses data from the KPI input port or from the device, asset or group of devices which contains data points. It extracts the units, label, and the red and yellow ranges. The output indicates whether the value is within the red or yellow range specified by the KPI or data point.</p>
+<p>The KPI input can provide properties, typically from a KPI-managed object, which include the red and yellow ranges, the unit and the label. If the device contains a data point for the specified fragment and series, then the values from the data point override those from the KPI.</p>
 
 
 #### Parameters {#kpi-parameters}
@@ -1005,9 +998,8 @@ The KPI input can provide properties, typically from a KPI-managed object, which
 `apama.analyticsbuilder.blocks.Limit`
 
 <p>Outputs a value that is kept within the defined upper and lower limits.</p>
-<p>The input value is limited so that the output does not exceed the boundaries defined by the Lower Limit and Upper Limit parameters. If the input violates either limit, then the output is set to the parameter value, otherwise the value is passed through unchanged.
-<p></p>
-It is only mandatory to provide one of the limits. If this is the case, then the input is only limited in the direction of the specified parameter.</p>
+<p>The input value is limited so that the output does not exceed the boundaries defined by the Lower Limit and Upper Limit parameters. If the input violates either limit, then the output is set to the parameter value, otherwise the value is passed through unchanged.</p>
+<p>It is only mandatory to provide one of the limits. If this is the case, then the input is only limited in the direction of the specified parameter.</p>
 
 
 #### Parameters {#limit-parameters}
@@ -1107,13 +1099,10 @@ It is only mandatory to provide one of the limits. If this is the case, then the
 `apama.analyticsbuilder.blocks.ONNX`
 
 <p>Executes an ONNX model with named inputs and outputs.</p>
-<p><b>This block is currently in public preview and may be subject to change.</b>
-<p></p>
-The input pulse must contain a properties dictionary where keys are the ONNX input names and values are scalars (float, integer, boolean, string) or tensors (nested sequences of those types).
-<p></p>
-The output pulse contains a properties dictionary where keys are the ONNX output names and values are scalars or tensors matching the model's output schema.
-<p></p>
-If the model execution fails, the output properties will contain a single "error" property with the error message.</p>
+<p><b>This block is currently in public preview and may be subject to change.</b></p>
+<p>The input pulse must contain a properties dictionary where keys are the ONNX input names and values are scalars (float, integer, boolean, string) or tensors (nested sequences of those types).</p>
+<p>The output pulse contains a properties dictionary where keys are the ONNX output names and values are scalars or tensors matching the model's output schema.</p>
+<p>If the model execution fails, the output properties will contain a single "error" property with the error message.</p>
 
 
 #### Parameters {#onnx-parameters}
@@ -1203,9 +1192,8 @@ If the model execution fails, the output properties will contain a single "error
 `apama.analyticsbuilder.blocks.Range`
 
 <p>Compares the input value against the defined lower and upper range values to detect whether the input is within or out of the range, or whether it crosses the range.</p>
-<p>By default, the range includes the value for the lower range but excludes the value for the upper range. For example, if the lower range is 100 and the upper range is 200, then all values from 100 to 199 are within the range. 200 is considered to be out of the range.
-<p></p>
-A pulse is sent when the defined range is crossed. That is, when either the lower or upper range is crossed, or if the value goes from below the range to over the range (or vice versa) without ever being within the range.</p>
+<p>By default, the range includes the value for the lower range but excludes the value for the upper range. For example, if the lower range is 100 and the upper range is 200, then all values from 100 to 199 are within the range. 200 is considered to be out of the range.</p>
+<p>A pulse is sent when the defined range is crossed. That is, when either the lower or upper range is crossed, or if the value goes from below the range to over the range (or vice versa) without ever being within the range.</p>
 
 
 #### Parameters {#range-parameters}
@@ -1470,11 +1458,9 @@ A pulse is sent when the defined range is crossed. That is, when either the lowe
 `apama.analyticskit.blocks.core.Rounding`
 
 <p>Rounds the input to a specified number of decimal points or to an integer, using a selectable rule.</p>
-<p>Rounding a numerical value means replacing it by another value that is approximately equal but has a shorter and simpler representation.
-<p></p>
-The rules available for use are: <ul> <li>Up (or take the ceiling, or round towards plus infinity) rounds the input up to the nearest target number. </li> <li>Down (or take the floor, or round towards minus infinity) rounds the input down to the nearest target number.</li> <li>Towards Zero (or truncate, or round away from infinity) rounds the input towards zero to the nearest target number.</li> <li>Nearest (or round half up, or round half towards positive infinity) rounds to the nearest target number. Numbers that are equidistant from the two nearest target numbers are always rounded up. For example, value <tt>23.5</tt> gets rounded to <tt>24</tt>, but <tt>-23.5</tt> gets rounded to <tt>-23.</tt> </li> <li>Even or Nearest rounds to the nearest target number. Numbers that are equidistant from the two nearest target numbers are always rounded to the nearest even target. For example, <tt>0.5</tt> rounds down to <tt>0</tt> and <tt>1.5</tt> rounds up to <tt>2.</tt> Also known as Bankers Rounding.</li> </ul>
-<p></p>
-The value is rounded to the nearest 'target number' - this is a whole number (if the number of decimal points is zero), or rounded to the number of decimal points specified.  If the number of decimal points is negative, it is rounded to a power of 10. For example, if the number of decimal points is 2, it is rounded to the nearest 0.01 (that is, hundredths). If the number of decimal points is -3, it is rounded to the nearest 1000 (that is, thousands).</p>
+<p>Rounding a numerical value means replacing it by another value that is approximately equal but has a shorter and simpler representation.</p>
+<p>The rules available for use are:</p><ul> <li>Up (or take the ceiling, or round towards plus infinity) rounds the input up to the nearest target number. </li> <li>Down (or take the floor, or round towards minus infinity) rounds the input down to the nearest target number.</li> <li>Towards Zero (or truncate, or round away from infinity) rounds the input towards zero to the nearest target number.</li> <li>Nearest (or round half up, or round half towards positive infinity) rounds to the nearest target number. Numbers that are equidistant from the two nearest target numbers are always rounded up. For example, value <tt>23.5</tt> gets rounded to <tt>24</tt>, but <tt>-23.5</tt> gets rounded to <tt>-23.</tt> </li> <li>Even or Nearest rounds to the nearest target number. Numbers that are equidistant from the two nearest target numbers are always rounded to the nearest even target. For example, <tt>0.5</tt> rounds down to <tt>0</tt> and <tt>1.5</tt> rounds up to <tt>2.</tt> Also known as Bankers Rounding.</li> </ul>
+<p>The value is rounded to the nearest 'target number' - this is a whole number (if the number of decimal points is zero), or rounded to the number of decimal points specified.  If the number of decimal points is negative, it is rounded to a power of 10. For example, if the number of decimal points is 2, it is rounded to the nearest 0.01 (that is, hundredths). If the number of decimal points is -3, it is rounded to the nearest 1000 (that is, thousands).</p>
 
 
 #### Parameters {#rounding-parameters}
@@ -1579,35 +1565,21 @@ The value is rounded to the nearest 'target number' - this is a whole number (if
 `apama.analyticsbuilder.blocks.SmartFunction`
 
 <p>The Smart Function block allows you to write a custom JS/ECMAScript function to process up to ten inputs and produce up to ten outputs.</p>
-<p><b>This block is currently in public preview and may be subject to change.</b>
-<p></p>
-The Smart Function must export a function <tt>onInput(inputs, context)</tt> that returns a list of outputs.
-<p></p>
-Argument details: <ul> <li><tt>inputs</tt> is a list of ten <tt>Value</tt> objects, with members <tt>value</tt>, <tt>properties</tt> and <tt>timestamp</tt> corresponding to the block inputs.</li>
-<p></p>
+<p><b>This block is currently in public preview and may be subject to change.</b></p>
+<p>The Smart Function must export a function <tt>onInput(inputs, context)</tt> that returns a list of outputs.</p>
+<p>Argument details:</p><ul> <li><tt>inputs</tt> is a list of ten <tt>Value</tt> objects, with members <tt>value</tt>, <tt>properties</tt> and <tt>timestamp</tt> corresponding to the block inputs.</li>
 <li><tt>context</tt> is an object with the following members: <ul> <li><tt>params</tt> - List that contains the block parameters as specified in the block configuration.</li> <li><tt>getState(key, def = null)</tt> - Method that retrieves a value previously stored in the context under the given key. If no value is found, returns <tt>def</tt>.</li> <li><tt>setState(key, value)</tt> - Method that stores the given value in the context under the given key.</li> </ul> </li> </ul>
-<p></p>
-In addition, the <tt>console</tt> object has <tt>log</tt>, <tt>warn</tt>, <tt>error</tt>, <tt>info</tt> and <tt>debug</tt> members that can be used to log messages to the microservice log. These all have the signature:
-<p></p>
+<p>In addition, the <tt>console</tt> object has <tt>log</tt>, <tt>warn</tt>, <tt>error</tt>, <tt>info</tt> and <tt>debug</tt> members that can be used to log messages to the microservice log. These all have the signature:</p>
 <pre>function log(...args: any[]): void</pre>
-<p></p>
-Logging is configured by the block's log level parameter and the model's shared logger category threshold; the effective level is whichever is stricter. By default, the block log level is set to <tt>WARN</tt>; only <tt>console.warn</tt> and <tt>console.error</tt> are written; <tt>console.log</tt>, <tt>console.info</tt> and <tt>console.debug</tt> are not. Raise the log level to <tt>INFO</tt> or <tt>DEBUG</tt> to see more, or set it to <tt>OFF</tt> to silence everything.
-<p></p>
-If the block's label parameter is set, messages are tagged with it so that the output of several Smart Function blocks in the same model can be told apart. For example, a block labelled "temperature check" logs:
-<p></p>
+<p>Logging is configured by the block's log level parameter and the model's shared logger category threshold; the effective level is whichever is stricter. By default, the block log level is set to <tt>WARN</tt>; only <tt>console.warn</tt> and <tt>console.error</tt> are written; <tt>console.log</tt>, <tt>console.info</tt> and <tt>console.debug</tt> are not. Raise the log level to <tt>INFO</tt> or <tt>DEBUG</tt> to see more, or set it to <tt>OFF</tt> to silence everything.</p>
+<p>If the block's label parameter is set, messages are tagged with it so that the output of several Smart Function blocks in the same model can be told apart. For example, a block labelled "temperature check" logs:</p>
 <pre>INFO ... [t510007|model=87104] &lt;temperature check&gt; Processing inputs</pre>
-<p></p>
-Messages from a block with no label carry only the tenant and model prefix.
-<p></p>
-Arguments are formatted and separated by spaces. String interpolation can be done with Javascript interpolation syntax. For example:
-<p></p>
+<p>Messages from a block with no label carry only the tenant and model prefix.</p>
+<p>Arguments are formatted and separated by spaces. String interpolation can be done with Javascript interpolation syntax. For example:</p>
 <pre> console.log("Server started");<br/> // -> Server started<br/> <br/> console.log("User", "logged", "in");<br/> // -> User logged in<br/> <br/> console.log("User login", { userId: 123, role: "admin" });<br/> // -> User login { userId: 123, role: 'admin' }<br/> <br/> const userId = 123;<br/> const role = "admin";<br/> console.log(`User ${userId} logged in as ${role}`);<br/> // -> User 123 logged in as admin<br/> </pre>
-<p></p>
-The return value of the function is a list of up to ten values corresponding to the block outputs. These can either be bare values, or <tt>Value</tt> objects, with members <tt>value</tt>, <tt>properties</tt> and <tt>timestamp</tt>. If the function does not generate a value, return <tt>null</tt> instead.
-<p></p>
-For example:
-<p></p>
-<pre> export function onInput(inputs, context) {<br/> &nbsp;&nbsp;console.log("Processing inputs");<br/> &nbsp;&nbsp;context.setState("count", context.getState("count", 0) + 1);<br/> &nbsp;&nbsp;if (inputs[0].value !== null && inputs[1].value !== context.params[0]) {<br/> &nbsp;&nbsp;&nbsp;&nbsp;return [<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputs[0].value - inputs[1].value, // outputs[0]<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: inputs[0].value - inputs[1].value,<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties: { ...inputs[0].properties, ...inputs[1].properties }<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} // outputs[1]<br/> &nbsp;&nbsp;&nbsp;&nbsp;];<br/> &nbsp;&nbsp;}<br/> &nbsp;&nbsp;return null;<br/> }<br/> </pre></p>
+<p>The return value of the function is a list of up to ten values corresponding to the block outputs. These can either be bare values, or <tt>Value</tt> objects, with members <tt>value</tt>, <tt>properties</tt> and <tt>timestamp</tt>. If the function does not generate a value, return <tt>null</tt> instead.</p>
+<p>For example:</p>
+<pre> export function onInput(inputs, context) {<br/> &nbsp;&nbsp;console.log("Processing inputs");<br/> &nbsp;&nbsp;context.setState("count", context.getState("count", 0) + 1);<br/> &nbsp;&nbsp;if (inputs[0].value !== null && inputs[1].value !== context.params[0]) {<br/> &nbsp;&nbsp;&nbsp;&nbsp;return [<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputs[0].value - inputs[1].value, // outputs[0]<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: inputs[0].value - inputs[1].value,<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties: { ...inputs[0].properties, ...inputs[1].properties }<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} // outputs[1]<br/> &nbsp;&nbsp;&nbsp;&nbsp;];<br/> &nbsp;&nbsp;}<br/> &nbsp;&nbsp;return null;<br/> }<br/> </pre>
 
 
 #### Parameters {#smart-function-parameters}
@@ -1859,9 +1831,8 @@ For example:
 `apama.analyticskit.blocks.core.Threshold`
 
 <p>Compares the input value against the defined threshold value to detect whether the input breaches the threshold or whether it crosses the threshold.</p>
-<p>A breach occurs when the direction has been set to 'Above' and the input value is greater than the defined threshold value, or when the direction has been set to 'Below' and the input value is less than the defined threshold, or when the direction has been set to 'Above or Equal' and the input value is greater than or equal to the defined threshold value, or when the direction has been set to 'Below or Equal' and the input value is less than or equal to the defined threshold value.
-<p></p>
-A pulse is sent when the defined threshold value is crossed from any direction.</p>
+<p>A breach occurs when the direction has been set to 'Above' and the input value is greater than the defined threshold value, or when the direction has been set to 'Below' and the input value is less than the defined threshold, or when the direction has been set to 'Above or Equal' and the input value is greater than or equal to the defined threshold value, or when the direction has been set to 'Below or Equal' and the input value is less than or equal to the defined threshold value.</p>
+<p>A pulse is sent when the defined threshold value is crossed from any direction.</p>
 
 
 #### Parameters {#threshold-parameters}
@@ -1987,9 +1958,8 @@ A pulse is sent when the defined threshold value is crossed from any direction.<
 `apama.analyticsbuilder.blocks.ToBaseN`
 
 <p>Converts a float to a base N string.</p>
-<p>The output string can be in any integer base from 2 to 36, where letters of the English alphabet are used as digits for bases above 10. Common bases are 2 (binary), 8 (octal), 10 (decimal) and 16 (hexadecimal). The number being converted can contain a radix point. The output is calculated to a maximum precision of 16 radix places.
-<p></p>
-Conversion between two arbitrary bases can be achieved by chaining this block with the From Base N block.</p>
+<p>The output string can be in any integer base from 2 to 36, where letters of the English alphabet are used as digits for bases above 10. Common bases are 2 (binary), 8 (octal), 10 (decimal) and 16 (hexadecimal). The number being converted can contain a radix point. The output is calculated to a maximum precision of 16 radix places.</p>
+<p>Conversion between two arbitrary bases can be achieved by chaining this block with the From Base N block.</p>
 
 
 #### Parameters {#to-base-n-parameters}

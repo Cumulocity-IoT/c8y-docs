@@ -76,9 +76,8 @@ This category contains the following blocks:
 `apama.analyticsbuilder.blocks.ConstantValue`
 
 <p>Outputs a value, either when the Trigger input port receives a signal or at startup.</p>
-<p>The Trigger input port can be used to delay the output until a trigger input is received. If the Trigger input port is not connected, then the block outputs a value when the model is activated, which may trigger further processing.
-<p></p>
-The Value parameter can be treated as a string, boolean, float or JSON value. If treated as a JSON string, number or boolean, then the output is of this type. If treated as a JSON object, the output is a pulse with the properties from the object. JSON arrays are only permitted within an object.</p>
+<p>The Trigger input port can be used to delay the output until a trigger input is received. If the Trigger input port is not connected, then the block outputs a value when the model is activated, which may trigger further processing.</p>
+<p>The Value parameter can be treated as a string, boolean, float or JSON value. If treated as a JSON string, number or boolean, then the output is of this type. If treated as a JSON object, the output is a pulse with the properties from the object. JSON arrays are only permitted within an object.</p>
 
 
 #### Parameters {#constant-value-parameters}
@@ -184,19 +183,13 @@ The Value parameter can be treated as a string, boolean, float or JSON value. If
 `apama.analyticskit.blocks.core.CronTimer`
 
 <p>Sends a signal output based on cron-like periodic timer syntax.</p>
-<p>The timer tick output is sent every time the time matches the pattern. The Time Zone parameter is a case-sensitive string that can be set to any supported time zone. The other parameters can be set to an asterisk (*) to match all times, a list of comma-separated numbers to fire at those specific times, or "* / number" to fire on every multiple of the number.
-<p></p>
-For example:
-<p></p>
-To send a signal every Wednesday at 20:30: <ul> <li>Day of Week: 4</li> <li>Hour: 20</li> <li>Minute: 30</li> </ul>
-<p></p>
-To send a signal every 5 seconds: <ul> <li>Seconds: * / 5</li> </ul>
-<p></p>
-To send a signal on Europe/Berlin time zone: <ul> <li>Time Zone: Europe/Berlin</li> </ul>
-<p></p>
-The Days of Month and Days of Week parameters operate together such that if both are specified, then any match in either parameter triggers an output. For example, if Days of Month is set to 15 and Days of Week is set to 1, then there is an output on every Monday of the month and the 15th regardless of which day that is.
-<p></p>
-This block is not supported in simulation mode.</p>
+<p>The timer tick output is sent every time the time matches the pattern. The Time Zone parameter is a case-sensitive string that can be set to any supported time zone. The other parameters can be set to an asterisk (*) to match all times, a list of comma-separated numbers to fire at those specific times, or "* / number" to fire on every multiple of the number.</p>
+<p>For example:</p>
+<p>To send a signal every Wednesday at 20:30:</p><ul> <li>Day of Week: 4</li> <li>Hour: 20</li> <li>Minute: 30</li> </ul>
+<p>To send a signal every 5 seconds:</p><ul> <li>Seconds: * / 5</li> </ul>
+<p>To send a signal on Europe/Berlin time zone:</p><ul> <li>Time Zone: Europe/Berlin</li> </ul>
+<p>The Days of Month and Days of Week parameters operate together such that if both are specified, then any match in either parameter triggers an output. For example, if Days of Month is set to 15 and Days of Week is set to 1, then there is an output on every Monday of the month and the 15th regardless of which day that is.</p>
+<p>This block is not supported in simulation mode.</p>
 
 
 #### Parameters {#cron-timer-parameters}
@@ -308,13 +301,10 @@ This block is not supported in simulation mode.</p>
 `apama.analyticskit.blocks.core.Duration`
 
 <p>Measures the time elapsed from a set start time.</p>
-<p>The start time is set by a start signal which activates the block. If the block is already active, then a start signal is ignored and the existing measurement remains unaffected. The block is deactivated with a reset signal which also disables any periodic outputs.
-<p></p>
-A restart signal resets the elapsed time and immediately restarts measurement from that point, without deactivating the block.
-<p></p>
-The block generates a float output of the time elapsed since the start (or last restart) signal, measured in seconds. If the block is inactive at the time it receives a measure signal, then 0.0 is generated as the output.
-<p></p>
-If multiple signals are received at the same time, they are processed in the order of measure, restart, reset, and start. Thus, for example, if measure and reset and deactivate signals are received together, the block first generates an output with the current duration and then resets its state. Processing the inputs in this order allows the current state of the block to be output and the block to be restarted within a single unit of time, if desired.</p>
+<p>The start time is set by a start signal which activates the block. If the block is already active, then a start signal is ignored and the existing measurement remains unaffected. The block is deactivated with a reset signal which also disables any periodic outputs.</p>
+<p>A restart signal resets the elapsed time and immediately restarts measurement from that point, without deactivating the block.</p>
+<p>The block generates a float output of the time elapsed since the start (or last restart) signal, measured in seconds. If the block is inactive at the time it receives a measure signal, then 0.0 is generated as the output.</p>
+<p>If multiple signals are received at the same time, they are processed in the order of measure, restart, reset, and start. Thus, for example, if measure and reset and deactivate signals are received together, the block first generates an output with the current duration and then resets its state. Processing the inputs in this order allows the current state of the block to be output and the block to be restarted within a single unit of time, if desired.</p>
 
 
 #### Parameters {#duration-parameters}
@@ -427,27 +417,17 @@ If multiple signals are received at the same time, they are processed in the ord
 `apama.analyticskit.blocks.core.ExtractProperty`
 
 <p>Extracts the specified property from the input value and converts it to the specified type.</p>
-<p>The value in the Value input named by the Property Path parameter must be a string, number or boolean.
-<p></p>
-You can specify square brackets as part of the Property Path parameter to extract a specific element from a sequence.
-<p></p>
-You can also specify a period (.) as part of the Property Path parameter to extract nested values from a dictionary.
-<p></p>
-If you want to ignore the periods (.) and square brackets in the Property Path parameter and treat them as any other character, then you must select the Ignore Separators In Property Path checkbox.
-<p></p>
-For example: <ul> <li>If the input is <tt>{ "users" : [ { "age" : 40.375 } ] }</tt> (in JSON form), then you can extract the value of <tt>age</tt> by specifying <tt>users[0].age</tt> as the Property Path parameter.</li>
-<p></p>
+<p>The value in the Value input named by the Property Path parameter must be a string, number or boolean.</p>
+<p>You can specify square brackets as part of the Property Path parameter to extract a specific element from a sequence.</p>
+<p>You can also specify a period (.) as part of the Property Path parameter to extract nested values from a dictionary.</p>
+<p>If you want to ignore the periods (.) and square brackets in the Property Path parameter and treat them as any other character, then you must select the Ignore Separators In Property Path checkbox.</p>
+<p>For example:</p><ul> <li>If the input is <tt>{ "users" : [ { "age" : 40.375 } ] }</tt> (in JSON form), then you can extract the value of <tt>age</tt> by specifying <tt>users[0].age</tt> as the Property Path parameter.</li>
 <li>If the input is <tt>{ "location" : { "city" : "Cambridge" } }</tt> (in JSON form), then you can extract the value of <tt>city</tt> by specifying <tt>location.city</tt> as the Property Path parameter.</li>
-<p></p>
 <li>If the input is <tt>{ "location.city" : "Cambridge" }</tt> (in JSON form), then you can extract the value of <tt>location.city</tt> by specifying <tt>location.city</tt> as the Property Path parameter and selecting the Ignore Separators In Property Path checkbox.</li>
-<p></p>
 <li>If the input is <tt>{ "a.b" : { "c.d" : "foo" } }</tt> (in JSON form) and you want to extract the value of <tt>c.d</tt>, then you must use two Extract Property blocks in a chain, both with the Ignore Separators In Property Path checkbox selected: the first block to extract the value of <tt>a.b</tt> and the second block to extract the value of <tt>c.d</tt>.</li> </ul>
-<p></p>
-If the value is an object, then the properties of that object are output as properties on the Extracted Value output port.
-<p></p>
-In converting a string to a float, this block treats an empty string as a value of 0.0, rather than as not parseable.
-<p></p>
-Note: To extract a custom property from the Measurement Input block, you must add the prefix <tt>measurement_</tt> to the name of the property in the Property Path parameter of the Extract Property block. For example, if the name of the custom property you want to extract is <tt>city</tt>, you must specify <tt>measurement_city</tt> as the Property Path parameter.</p>
+<p>If the value is an object, then the properties of that object are output as properties on the Extracted Value output port.</p>
+<p>In converting a string to a float, this block treats an empty string as a value of 0.0, rather than as not parseable.</p>
+<p>Note: To extract a custom property from the Measurement Input block, you must add the prefix <tt>measurement_</tt> to the name of the property in the Property Path parameter of the Extract Property block. For example, if the name of the custom property you want to extract is <tt>city</tt>, you must specify <tt>measurement_city</tt> as the Property Path parameter.</p>
 
 
 #### Parameters {#extract-property-parameters}
@@ -681,9 +661,8 @@ Note: To extract a custom property from the Measurement Input block, you must ad
 `apama.analyticsbuilder.blocks.Logger`
 
 <p>Writes a message to the microservice log file for each input.</p>
-<p>Example log message with logger tag "demoLog" at log level "ERROR":
-<p></p>
-<pre>ERROR ... [t510007|model=87104] &lt;demoLog&gt; value=any(float,5.09) properties={"ignore":any(string,"false")}</pre></p>
+<p>Example log message with logger tag "demoLog" at log level "ERROR":</p>
+<pre>ERROR ... [t510007|model=87104] &lt;demoLog&gt; value=any(float,5.09) properties={"ignore":any(string,"false")}</pre>
 
 
 #### Parameters {#logger-parameters}
@@ -877,11 +856,9 @@ Note: To extract a custom property from the Measurement Input block, you must ad
 `apama.analyticsbuilder.blocks.SetProperties`
 
 <p>Outputs a pulse with properties set from values on the input ports.</p>
-<p>The property names are taken from the parameters and the values from the input ports. New properties are only output if they have been received. An output is sent as soon as at least one of the inputs is provided.
-<p></p>
-Properties are set on the output in the following order of precedence: <ol><li>Any properties which have been explicitly specified by the use of a parameter. If an input is a pulse, it is treated as an object using the properties of that input. If an input has a primary value (not a pulse), then the primary value is used. To use the properties instead, use the Extract Property block with the Property Path parameter not set and the Property Type parameter set to Properties which replaces the primary value with a pulse (which is ignored) and the properties are used.</li> <li>The properties of any <tt>Value</tt> object on an input port which does not have the corresponding parameter set. This is a straight merge of the <tt>properties</tt> dictionary. If two dictionaries have the same property key, then the input port with the lowest identifier has precedence. Thus any shared properties on Input 1 overwrite properties from Input 2 and down.</li> <li>Any  properties on a <tt>Value</tt> object provided to the  Merge input port are kept if they are not overwritten by either of the operations above. The optional Merge input port allows chaining or supplementing a set of properties from another block.</li></ol>
-<p></p>
-Thus, any properties set on an input are overwritten by those with the same name on a  higher precedence input, or when an input is configured for the specified property.</p>
+<p>The property names are taken from the parameters and the values from the input ports. New properties are only output if they have been received. An output is sent as soon as at least one of the inputs is provided.</p>
+<p>Properties are set on the output in the following order of precedence:</p><ol><li>Any properties which have been explicitly specified by the use of a parameter. If an input is a pulse, it is treated as an object using the properties of that input. If an input has a primary value (not a pulse), then the primary value is used. To use the properties instead, use the Extract Property block with the Property Path parameter not set and the Property Type parameter set to Properties which replaces the primary value with a pulse (which is ignored) and the properties are used.</li> <li>The properties of any <tt>Value</tt> object on an input port which does not have the corresponding parameter set. This is a straight merge of the <tt>properties</tt> dictionary. If two dictionaries have the same property key, then the input port with the lowest identifier has precedence. Thus any shared properties on Input 1 overwrite properties from Input 2 and down.</li> <li>Any  properties on a <tt>Value</tt> object provided to the  Merge input port are kept if they are not overwritten by either of the operations above. The optional Merge input port allows chaining or supplementing a set of properties from another block.</li></ol>
+<p>Thus, any properties set on an input are overwritten by those with the same name on a  higher precedence input, or when an input is configured for the specified property.</p>
 
 
 #### Parameters {#set-properties-parameters}
@@ -1043,27 +1020,17 @@ Thus, any properties set on an input are overwritten by those with the same name
 `apama.analyticsbuilder.blocks.TextSubstitution`
 
 <p>Substitutes identifiers marked with a hash and braces (for example, <tt>#{name}</tt>) in the text template with corresponding entries from the input values.</p>
-<p>At least one of the Object or Source input ports must be connected. Identifiers that cannot be resolved are not substituted.
-<p></p>
-The identifiers prefixed with <tt>source.</tt> (for example, <tt>#{source.name}</tt>) are searched for in the value received on the Source input port. For example, if the value received on the Source input port is <tt>{ "name": "sample_name" }</tt>, then the identifier <tt>#{source.name}</tt> is resolved to <tt>sample_name</tt>.
-<p></p>
-The identifiers not prefixed with <tt>source.</tt> are searched for in the value received on the Object input port.
-<p></p>
-Note: The output of Managed Object Input block must always be connected to the Source input port, and the output of any other block must always be connected to the Object input port.
-<p></p>
-Nested identifiers can be specified by separating them with a dot (.). For example, when the Object input port has received the value <tt>{ "address": { "street": { "name": "example_street" }}}</tt>, then the identifier <tt>#{address.street.name}</tt> is resolved to <tt>example_street</tt>.
-<p></p>
-Keys with a dot (.) in them are not supported, so if the Object input port value is of the form <tt>{ "address.street": { "name": "example_street" }}</tt>, then the <tt>example_street</tt> value cannot be resolved because the identifier <tt>#{address.street.name}</tt> expects <tt>street</tt> to be nested inside the <tt>address</tt> entry.
-<p></p>
-Primitive values such as <tt>integer</tt>, <tt>float</tt>, <tt>boolean</tt> and <tt>string</tt> are substituted directly, but complex values are converted to a JSON representation before substitution.
-<p></p>
-Any identifier with the text <tt>time</tt> (case-insensitive) in it and value type <tt>float</tt> is interpreted as a timestamp value and is converted into the format <tt>yyyy-MM-ddTHH:mm:ss.SSSZ</tt> before substitution. This can be modified with optional parameters using the following syntax: <tt>{time:param1="value1",param2="value2"}</tt>. Use the parameter <tt>TZ="time_zone"</tt> to specify a different time zone and/or use the parameter <tt>FORMAT="format_string"</tt> to specify a different format. For example, <tt>#{time:TZ="America/New_York",FORMAT="HH:mm:ssZ"}</tt> specifies the time zone for New York and the format to be <tt>HH:mm:ssZ</tt>. The model fails to activate if the time zone is not recognized or the format is invalid.
-<p></p>
-Note: The format string for the time must not contain quotes (") and braces ({ and }).
-<p></p>
-A hash (#) can be specified in the text template by escaping it as follows: <tt>#{#}</tt>.
-<p></p>
-For more information, see the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#supported-time-zones">list of time zones</a> and the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#format-specification-for-the-timeformat-functions">list of valid time format strings</a>.</p>
+<p>At least one of the Object or Source input ports must be connected. Identifiers that cannot be resolved are not substituted.</p>
+<p>The identifiers prefixed with <tt>source.</tt> (for example, <tt>#{source.name}</tt>) are searched for in the value received on the Source input port. For example, if the value received on the Source input port is <tt>{ "name": "sample_name" }</tt>, then the identifier <tt>#{source.name}</tt> is resolved to <tt>sample_name</tt>.</p>
+<p>The identifiers not prefixed with <tt>source.</tt> are searched for in the value received on the Object input port.</p>
+<p>Note: The output of Managed Object Input block must always be connected to the Source input port, and the output of any other block must always be connected to the Object input port.</p>
+<p>Nested identifiers can be specified by separating them with a dot (.). For example, when the Object input port has received the value <tt>{ "address": { "street": { "name": "example_street" }}}</tt>, then the identifier <tt>#{address.street.name}</tt> is resolved to <tt>example_street</tt>.</p>
+<p>Keys with a dot (.) in them are not supported, so if the Object input port value is of the form <tt>{ "address.street": { "name": "example_street" }}</tt>, then the <tt>example_street</tt> value cannot be resolved because the identifier <tt>#{address.street.name}</tt> expects <tt>street</tt> to be nested inside the <tt>address</tt> entry.</p>
+<p>Primitive values such as <tt>integer</tt>, <tt>float</tt>, <tt>boolean</tt> and <tt>string</tt> are substituted directly, but complex values are converted to a JSON representation before substitution.</p>
+<p>Any identifier with the text <tt>time</tt> (case-insensitive) in it and value type <tt>float</tt> is interpreted as a timestamp value and is converted into the format <tt>yyyy-MM-ddTHH:mm:ss.SSSZ</tt> before substitution. This can be modified with optional parameters using the following syntax: <tt>{time:param1="value1",param2="value2"}</tt>. Use the parameter <tt>TZ="time_zone"</tt> to specify a different time zone and/or use the parameter <tt>FORMAT="format_string"</tt> to specify a different format. For example, <tt>#{time:TZ="America/New_York",FORMAT="HH:mm:ssZ"}</tt> specifies the time zone for New York and the format to be <tt>HH:mm:ssZ</tt>. The model fails to activate if the time zone is not recognized or the format is invalid.</p>
+<p>Note: The format string for the time must not contain quotes (") and braces ({ and }).</p>
+<p>A hash (#) can be specified in the text template by escaping it as follows: <tt>#{#}</tt>.</p>
+<p>For more information, see the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#supported-time-zones">list of time zones</a> and the <a target="_blank" rel="external noopener" href="{{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#format-specification-for-the-timeformat-functions">list of valid time format strings</a>.</p>
 
 
 #### Parameters {#text-substitution-parameters}
@@ -1160,11 +1127,9 @@ For more information, see the <a target="_blank" rel="external noopener" href="{
 `apama.analyticskit.blocks.core.Toggle`
 
 <p>Converts two pulse inputs to a boolean output based on the set and reset signals, with optional delays.</p>
-<p>Without delays, the output state is changed to <tt>true</tt> on a set signal, and changed to <tt>false</tt> on a reset signal. If both signals are received at the same time, the output state is toggled (to <tt>true</tt> if signals are received for the first time).
-<p></p>
-If delay times are specified, the output state is only changed to <tt>true</tt> or <tt>false</tt> after the delay has been applied.
-<p></p>
-The following exception applies if both signals are received at the same time: the output state is only toggled if both delay times are the same, or have not been specified at all.</p>
+<p>Without delays, the output state is changed to <tt>true</tt> on a set signal, and changed to <tt>false</tt> on a reset signal. If both signals are received at the same time, the output state is toggled (to <tt>true</tt> if signals are received for the first time).</p>
+<p>If delay times are specified, the output state is only changed to <tt>true</tt> or <tt>false</tt> after the delay has been applied.</p>
+<p>The following exception applies if both signals are received at the same time: the output state is only toggled if both delay times are the same, or have not been specified at all.</p>
 
 
 #### Parameters {#toggle-parameters}
@@ -1188,9 +1153,8 @@ The following exception applies if both signals are received at the same time: t
 <tr>
 <th scope="row">Set Delay (secs)</th>
 <td><span>The amount of time (in seconds) after which the set signal is processed.</span>
-<p>If the parameter is not specified, then the signal is immediately processed.
-<p></p>
-This must be a finite and positive number.</p>
+<p>If the parameter is not specified, then the signal is immediately processed.</p>
+<p>This must be a finite and positive number.</p>
 </td>
 <td><span>float</span>
 </td>
@@ -1200,9 +1164,8 @@ This must be a finite and positive number.</p>
 <tr>
 <th scope="row">Reset Delay (secs)</th>
 <td><span>The amount of time (in seconds) after which the reset signal is processed.</span>
-<p>If the parameter is not specified, then the signal is immediately processed.
-<p></p>
-This must be a finite and positive number.</p>
+<p>If the parameter is not specified, then the signal is immediately processed.</p>
+<p>This must be a finite and positive number.</p>
 </td>
 <td><span>float</span>
 </td>

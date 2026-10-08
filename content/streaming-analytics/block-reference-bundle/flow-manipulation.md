@@ -61,7 +61,7 @@ This category contains the following blocks:
 `apama.analyticskit.blocks.core.Combiner`
 
 <p>Calculates the output based on the selected mode and the connected inputs.</p>
-<p>Available modes are: <ul> <li>Minimum: Outputs the minimum of the connected inputs which have received a value. All numeric literals are treated as <tt>float</tt> type.</li> <li>Maximum: Outputs the maximum of the connected inputs which have received a value. All numeric literals are treated as <tt>float</tt> type.</li> <li>Average (Mean): Outputs the average (mean) of the connected inputs for which a value has been received. All numeric literals are treated as <tt>float</tt> type.</li> <li>Latest Changed: Outputs the latest changed value. If multiple values change in a single activation, then the input port with the highest number is used. For example, if Value 1 and Value 2 get an updated value, Value 2 is selected for output. Inputs must be of the same type. When using the Latest Changed mode, a value is not considered changed if the actual value does not change. For example, when using the Latest Changed mode with temperature sensors, it outputs the sensor value whose temperature was most recently changed.</li> <li>Latest Input: Outputs the latest input value even if the actual value is unchanged. If multiple values update in a single activation, then the input port with the highest number is used. For example, if you have a number of sensors that measure the temperature periodically at different intervals and you want to get the latest temperature received by the block by all of those sensors, you can use the Combiner block with the Latest Input mode. This provides the latest published temperature, even if a sensor measures and publishes the same temperature.</li> </ul></p>
+<p>Available modes are:</p><ul> <li>Minimum: Outputs the minimum of the connected inputs which have received a value. All numeric literals are treated as <tt>float</tt> type.</li> <li>Maximum: Outputs the maximum of the connected inputs which have received a value. All numeric literals are treated as <tt>float</tt> type.</li> <li>Average (Mean): Outputs the average (mean) of the connected inputs for which a value has been received. All numeric literals are treated as <tt>float</tt> type.</li> <li>Latest Changed: Outputs the latest changed value. If multiple values change in a single activation, then the input port with the highest number is used. For example, if Value 1 and Value 2 get an updated value, Value 2 is selected for output. Inputs must be of the same type. When using the Latest Changed mode, a value is not considered changed if the actual value does not change. For example, when using the Latest Changed mode with temperature sensors, it outputs the sensor value whose temperature was most recently changed.</li> <li>Latest Input: Outputs the latest input value even if the actual value is unchanged. If multiple values update in a single activation, then the input port with the highest number is used. For example, if you have a number of sensors that measure the temperature periodically at different intervals and you want to get the latest temperature received by the block by all of those sensors, you can use the Combiner block with the Latest Input mode. This provides the latest published temperature, even if a sensor measures and publishes the same temperature.</li> </ul>
 
 
 #### Parameters {#combiner-parameters}
@@ -234,9 +234,8 @@ This category contains the following blocks:
 <tr>
 <th scope="row">Close Duration (secs)</th>
 <td><span>The amount of time (in seconds) the gate should be closed when a close signal is received.</span>
-<p>If the parameter is not specified, then after a close signal is received, the gate remains closed until an open signal is received. If the parameter is specified, then the gate automatically opens after the specified number of seconds, unless another open or close signal is received before the time has elapsed. On opening, if the gate is also enabled, then the latest input value is sent out as output.
-<p></p>
-This must be a finite and positive number.</p>
+<p>If the parameter is not specified, then after a close signal is received, the gate remains closed until an open signal is received. If the parameter is specified, then the gate automatically opens after the specified number of seconds, unless another open or close signal is received before the time has elapsed. On opening, if the gate is also enabled, then the latest input value is sent out as output.</p>
+<p>This must be a finite and positive number.</p>
 </td>
 <td><span>float</span>
 </td>
@@ -428,13 +427,10 @@ This must be a finite and positive number.</p>
 `apama.analyticskit.blocks.core.Pulse`
 
 <p>Converts a non-pulse input into a pulse output.</p>
-<p>The block can be configured to send a pulse when the value changes which is also the default conversion behavior, on every input, or on every non-zero value.
-<p></p>
-The default conversion behavior sends a pulse if the input is a string or float and the value changes, or if the input is a boolean and the value changes to <tt>true</tt>.
-<p></p>
-This is useful with blocks which consume both pulse and non-pulse values, and where the input value is treated as non-pulse without the explicit conversion.
-<p></p>
-For example, a numeric value passed to the OR block is treated as <tt>true</tt> if non-zero (as described in the "Type conversions" topic of the Analytics Builder documentation). However, when passing a numeric value to the Pulse block and then connecting the output of the Pulse block to the OR block, the numeric value is converted to a pulse so the OR block sends a pulse.</p>
+<p>The block can be configured to send a pulse when the value changes which is also the default conversion behavior, on every input, or on every non-zero value.</p>
+<p>The default conversion behavior sends a pulse if the input is a string or float and the value changes, or if the input is a boolean and the value changes to <tt>true</tt>.</p>
+<p>This is useful with blocks which consume both pulse and non-pulse values, and where the input value is treated as non-pulse without the explicit conversion.</p>
+<p>For example, a numeric value passed to the OR block is treated as <tt>true</tt> if non-zero (as described in the "Type conversions" topic of the Analytics Builder documentation). However, when passing a numeric value to the Pulse block and then connecting the output of the Pulse block to the OR block, the numeric value is converted to a pulse so the OR block sends a pulse.</p>
 
 
 #### Parameters {#pulse-parameters}
@@ -529,11 +525,9 @@ For example, a numeric value passed to the OR block is treated as <tt>true</tt> 
 `apama.analyticsbuilder.blocks.Selector`
 
 <p>Outputs a parameter value depending on which input port has a <tt>true</tt> value, lowest number taking precedence.</p>
-<p>You specify the output value that is to be sent using the parameters of this block. Only one of the parameter values is sent in the output. It is sent when the corresponding input port receives a <tt>true</tt> value. If more than one input port receives a <tt>true</tt> value, then the input port is used which has the lowest number in its name. For example, Input 1 has a higher priority than Input 2.
-<p></p>
-If all input values are <tt>false</tt>, then the value specified with the No Input parameter is sent.
-<p></p>
-Example: Input 1 has "high", Input 2 has "medium", Input 3 has "low", and the No Input parameter has the value "off". If none of the input ports receives a <tt>true</tt> value, then "off" is sent as the output value. If both the Input 2 and Input 3 ports receive a <tt>true</tt> value and Input 1 receives a <tt>false</tt> value, then "medium" is sent as the output value. This is because Input 2 has a higher priority than Input 3.</p>
+<p>You specify the output value that is to be sent using the parameters of this block. Only one of the parameter values is sent in the output. It is sent when the corresponding input port receives a <tt>true</tt> value. If more than one input port receives a <tt>true</tt> value, then the input port is used which has the lowest number in its name. For example, Input 1 has a higher priority than Input 2.</p>
+<p>If all input values are <tt>false</tt>, then the value specified with the No Input parameter is sent.</p>
+<p>Example: Input 1 has "high", Input 2 has "medium", Input 3 has "low", and the No Input parameter has the value "off". If none of the input ports receives a <tt>true</tt> value, then "off" is sent as the output value. If both the Input 2 and Input 3 ports receive a <tt>true</tt> value and Input 1 receives a <tt>false</tt> value, then "medium" is sent as the output value. This is because Input 2 has a higher priority than Input 3.</p>
 
 
 #### Parameters {#selector-parameters}
@@ -609,9 +603,8 @@ Example: Input 1 has "high", Input 2 has "medium", Input 3 has "low", and the No
 <tr>
 <th scope="row">Type</th>
 <td><span>How to interpret the parameter values and set the output type.</span>
-<p>If JSON is selected as the type, all input parameter values must be valid JSON values of the same type. This allows the Selector block to output properties which can be used, for example, with the Set Properties block to generate different sets of properties for the output blocks, depending on which input port of the Selector block is enabled.
-<p></p>
-If the Type parameter remains unselected, the type of the output value is set based on the types of all input parameter values. If all values are either <tt>true</tt> or <tt>false</tt>, the output is a boolean value. If all values are numbers, the output is a float value. In all other cases, the output is a string value.</p>
+<p>If JSON is selected as the type, all input parameter values must be valid JSON values of the same type. This allows the Selector block to output properties which can be used, for example, with the Set Properties block to generate different sets of properties for the output blocks, depending on which input port of the Selector block is enabled.</p>
+<p>If the Type parameter remains unselected, the type of the output value is set based on the types of all input parameter values. If all values are either <tt>true</tt> or <tt>false</tt>, the output is a boolean value. If all values are numbers, the output is a float value. In all other cases, the output is a string value.</p>
 </td>
 <td><span><p>Option - one of:</p>
 <ul>
@@ -713,13 +706,10 @@ If the Type parameter remains unselected, the type of the output value is set ba
 `apama.analyticsbuilder.blocks.Switch`
 
 <p>Outputs the values from a given input, or acts as a circuit breaker.</p>
-<p>If the Selected Input parameter is specified, then the given input must exist and the corresponding input port must be connected.
-<p></p>
-If the Selected Input parameter is not specified, then the block acts as a circuit breaker.
-<p></p>
-You can use the initial default names for the inputs. However, you can also rename them to be more descriptive. The input names must be unique, so two inputs cannot share the same name. Connected inputs must all be of the same type.
-<p></p>
-The expected use case is that the Selected Input parameter is set to a template parameter which can then be set individually for each model instance to decide which input is used.</p>
+<p>If the Selected Input parameter is specified, then the given input must exist and the corresponding input port must be connected.</p>
+<p>If the Selected Input parameter is not specified, then the block acts as a circuit breaker.</p>
+<p>You can use the initial default names for the inputs. However, you can also rename them to be more descriptive. The input names must be unique, so two inputs cannot share the same name. Connected inputs must all be of the same type.</p>
+<p>The expected use case is that the Selected Input parameter is set to a template parameter which can then be set individually for each model instance to decide which input is used.</p>
 
 
 #### Parameters {#switch-parameters}
