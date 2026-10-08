@@ -982,72 +982,14 @@ ORDER BY "time" DESC
 
 You can read your tables directly from your own application with any Apache Iceberg client, instead of querying them through DataHub.
 
-After you configure your data lake, the **Data Lake** page shows the catalog settings below with the values for your tenant and environment. Navigate to **Administration** > **Settings** > **Data Lake**. The page also shows the commands to manage client credentials and Java and PyIceberg examples, and you can copy each value. If your environment does not provide temporary storage credentials, the page shows no client settings.
+The **Data Lake** page shows everything your client needs, with the values for your tenant and environment filled in. Navigate to **Administration** > **Settings** > **Data Lake**. The page shows:
 
-The catalog hands your client a temporary, read-only storage credential for each table it loads, so you do not configure object store credentials yourself. The credential covers one table, expires on its own, and the client refreshes it. To receive it, send the header `X-Iceberg-Access-Delegation` with the value `vended-credentials`.
+* The catalog settings, each ready to copy.
+* The commands to create, rotate, and delete client credentials.
+* How your client receives temporary storage credentials, and the minimum client versions.
+* Java and PyIceberg examples.
 
-Create a client credential for your tenant with the principals endpoint of the service. The secret is shown once, so store it when you create it.
-
-```shell
-curl -u "<username>:<password>" -X POST \
-  "https://<your-tenant>.<environment-domain>/service/offloading/api/v1/principals/<principal-name>"
-```
-
-Both clients use the same catalog settings.
-
-|Setting|Value|
-|:---|:---|
-|`type`|`rest`|
-|`uri`|`https://iceberg.<environment-domain>:19120/api/catalog`|
-|`warehouse`|Your tenant ID|
-|`credential`|`<clientId>:<clientSecret>`|
-|`oauth2-server-uri`|`https://iceberg.<environment-domain>:19120/api/catalog/v1/oauth/tokens`|
-|`scope`|`PRINCIPAL_ROLE:ALL`|
-|`header.X-Iceberg-Access-Delegation`|`vended-credentials`|
-
-**Java**
-
-Add `org.apache.iceberg:iceberg-core` and the bundle for your object store, `iceberg-aws-bundle` for AWS S3 or `iceberg-azure-bundle` for Azure Data Lake Storage. For the full API, see the [Iceberg Java API documentation](https://iceberg.apache.org/docs/latest/api/).
-
-```java
-Map<String, String> props = new HashMap<>();
-props.put("type", "rest");
-props.put("uri", "https://iceberg.<environment-domain>:19120/api/catalog");
-props.put("warehouse", "<your-tenant-id>");
-props.put("rest.auth.type", "oauth2");
-props.put("credential", "<clientId>:<clientSecret>");
-props.put("oauth2-server-uri", "https://iceberg.<environment-domain>:19120/api/catalog/v1/oauth/tokens");
-props.put("scope", "PRINCIPAL_ROLE:ALL");
-props.put("header.X-Iceberg-Access-Delegation", "vended-credentials");
-
-RESTCatalog catalog = new RESTCatalog();
-catalog.initialize("cumulocity", props);
-
-catalog.listTables(Namespace.of("measurement")).forEach(System.out::println);
-```
-
-**Python**
-
-Install PyIceberg with the extras for your object store, `pyiceberg[s3fs,pyarrow]` for AWS S3 or `pyiceberg[adlfs,pyarrow]` for Azure Data Lake Storage. For the full API, see the [PyIceberg documentation](https://py.iceberg.apache.org/).
-
-```python
-from pyiceberg.catalog.rest import RestCatalog
-
-catalog = RestCatalog(
-    "cumulocity",
-    **{
-        "uri": "https://iceberg.<environment-domain>:19120/api/catalog",
-        "warehouse": "<your-tenant-id>",
-        "credential": "<clientId>:<clientSecret>",
-        "oauth2-server-uri": "https://iceberg.<environment-domain>:19120/api/catalog/v1/oauth/tokens",
-        "scope": "PRINCIPAL_ROLE:ALL",
-        "header.X-Iceberg-Access-Delegation": "vended-credentials",
-    },
-)
-
-table = catalog.load_table("measurement.c8y_Battery")
-print(table.scan(limit=10).to_arrow())
-```
+If your environment does not provide temporary storage credentials, the page shows no client settings.
 
 ### Ensuring good query performance {#ensuring-good-query-performance}
 
