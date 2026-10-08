@@ -1,6 +1,6 @@
 ---
-date: ""
-title: Data point labels, descriptions and units are now translated consistently
+date: '2026-10-07'
+title: 'Data point labels, descriptions and units are now translated consistently'
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67109
 version: 1024.20.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-07'
 ---
 Translations registered under **Administration** > [**Localization**](/standard-tenant/changing-settings/#localization) for a data point's label, description, or unit were applied only in some places, so many views still showed the original text regardless of the user's language. They are now applied wherever a data point's label, description, or unit is displayed: in the data explorer, the data point selector, the data point library, smart rules, the data point export (preview and exported files), and widgets such as "Data graph", "Data point list", "Data point table", "KPI", "Pie chart", "Radial gauge", "Linear gauge" and "Silo". Additionally, the "Linear gauge" and "Silo" widgets now show the data point's unit instead of the measurement's unit when the two differ.
 

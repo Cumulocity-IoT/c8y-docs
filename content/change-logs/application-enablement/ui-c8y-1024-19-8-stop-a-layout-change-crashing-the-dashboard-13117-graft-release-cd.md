@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-07'
 title: Preventing dashboard crashes when changing layout
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,16 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67837
 version: 1024.19.8
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-07'
+  - label: apj.cumulocity.com
+    date: '2026-10-07'
+  - label: jp.cumulocity.com
+    date: '2026-10-07'
+  - label: us.cumulocity.com
+    date: '2026-10-07'
+  - label: cumulocity.com
+    date: '2026-10-07'
 ---
 Changing the dashboard layout could previously crash the dashboard. This issue has been fixed, so it now stays stable when you switch between layout configurations.
