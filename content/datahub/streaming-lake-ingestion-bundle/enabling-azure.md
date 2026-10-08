@@ -6,7 +6,7 @@ layout: redirect
 
 Streaming Lake Ingestion writes your data into an Azure Data Lake Storage Gen2 container in your Azure subscription. To enable it, you complete a one-time setup in which you approve a {{< product-c8y-iot >}} application in your Microsoft Entra directory and grant it access to the container. Beyond this setup, Streaming Lake Ingestion needs no configuration.
 
-You perform the setup in the Administration application under **Settings** > **Data Lake**. The setup page guides you through each step, with instructions for the Azure portal and the Azure CLI, and fills in the values for your environment. If the page shows "You cannot complete the setup yet", contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
+You perform the setup on the **Data Lake configuration** page. In the Administration application, click **Settings** > **Data Lake**. The page guides you through each step, with instructions for the Azure portal and the Azure CLI, and fills in the values for your environment. If the page shows "You cannot complete the setup yet", contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
 ### Before you start {#before-you-start-on-azure}
 
@@ -29,7 +29,7 @@ All steps take place in the Entra directory that the subscription of your storag
 
 ### Setting up the tenant {#setting-up-the-tenant-on-azure}
 
-The setup page leads you through the following steps:
+The **Data Lake configuration** page leads you through the following steps:
 
 1. **Create the storage account and container**: Create a storage account and a container that meet the requirements above, and enter their names.
 2. **Approve the Streaming Lake Ingestion application**: Enter the ID of your Entra directory as **Entra tenant ID**, click **Consent**, and accept the prompt as an administrator of the directory. The approval creates an enterprise application for {{< product-c8y-iot >}} in your directory. The application requests no API permissions.
@@ -52,7 +52,7 @@ After the setup, the following objects give {{< product-c8y-iot >}} access. If y
 
 ### If something fails {#if-something-fails-on-azure}
 
-If a check fails, the setup page shows the reason. If the catalog was already created, the **Setup status** shows "Provisioning failed". Hover over the icon of a step to see its result. After you fix the cause, click **Retry provisioning**.
+If a check fails, the **Data Lake configuration** page shows the reason. If the catalog was already created, the **Setup status** shows "Provisioning failed". Hover over the icon of a step to see its result. After you fix the cause, click **Retry provisioning**.
 
 |Cause|Solution|
 |:---|:---|
@@ -65,7 +65,7 @@ If a check fails, the setup page shows the reason. If the catalog was already cr
 |The page warns that data loss protection is off.|Soft delete is off for blobs or for containers. Enable both, then click **Retry provisioning**.|
 |The setup fails right after you assigned the roles.|Role assignments take a few minutes to become effective. Wait and try again.|
 
-If the cause is not listed, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/) with the reason that the setup page shows.
+If the cause is not listed, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/) with the reason that the **Data Lake configuration** page shows.
 
 ### Adding more tenants {#adding-more-tenants-on-azure}
 
