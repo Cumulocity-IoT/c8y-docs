@@ -1,5 +1,7 @@
 ---
 title: "Getting started"
+description: "Start here to install Cumulocity, connect your first device, explore the user interface, and learn the core platform concepts."
+outputs: ["HTML", "llmstxt"]
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 weight: 10
 pdf: true

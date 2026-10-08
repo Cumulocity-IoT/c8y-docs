@@ -1,5 +1,7 @@
 ---
 title: Edge
+description: "Cumulocity Edge, the on-site deployment that runs locally on industrial PCs or on-premises servers."
+outputs: ["HTML", "llmstxt"]
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 type: root
 layout: redirect

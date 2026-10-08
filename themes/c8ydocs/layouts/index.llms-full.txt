@@ -1,0 +1,24 @@
+{{- $release := site.Data.date_settings.version | default "Latest" -}}
+# {{ partial "docs-title.txt" . }} — full corpus
+
+> The pages of every Cumulocity documentation spoke in llms.txt except the change logs, concatenated as plain text for LLM ingestion and ordered by topic. Redirects and links to other sites are not included; see llms.txt for those and for the change logs.
+
+Release: {{ $release }}
+
+{{- $sectors := .Site.GetPage "/sector" }}
+{{- $seen := newScratch }}
+{{- range $sectors.Pages.ByWeight }}
+  {{- if .Params.external }}{{ continue }}{{ end }}
+  {{- range .Pages.ByTitle.ByWeight }}
+    {{- if not (partialCached "llms-exportable.txt" . .Path) }}{{ continue }}{{ end }}
+    {{- if $seen.Get .Permalink }}{{ continue }}{{ end }}
+    {{- $seen.Set .Permalink true }}
+
+{{ partial "llms-page.txt" . }}
+  {{- end }}
+{{- end }}
+{{- /* The glossary is a section whose letter pages are not rendered on their own, so the loop above skips it. */}}
+{{- with site.GetPage "/glossary" }}
+
+{{ partial "llms-page.txt" . }}
+{{- end }}
