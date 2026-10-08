@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-10-07'
   - label: jp.cumulocity.com
     date: '2026-10-07'
+  - label: us.cumulocity.com
+    date: '2026-10-08'
+  - label: cumulocity.com
+    date: '2026-10-08'
 ---
 Widget changes made on one dashboard could be incorrectly saved to another dashboard. This issue has been fixed. Changes now apply only to the dashboard you're currently editing.

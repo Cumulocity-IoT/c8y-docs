@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Tenant property library plugin for administration"
-product_area: "Application enablement & solutions"
+date: '2026-10-08'
+title: Tenant property library plugin for administration
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3008"
-version: "1025.14.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3008
+version: 1025.14.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-08'
 ---
 A new Administration tenant property library plugin is now available to
 help you manage tenant-specific properties. Once installed, the plugin

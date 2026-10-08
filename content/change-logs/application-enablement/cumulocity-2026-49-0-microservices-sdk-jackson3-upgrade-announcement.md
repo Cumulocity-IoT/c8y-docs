@@ -1,5 +1,5 @@
 ---
-date:
+date: '2026-10-08'
 title: Upcoming Jackson version 3 upgrade for Microservice SDK
 change_type:
   - value: change-inv-3bw8e
@@ -13,6 +13,17 @@ build_artifact:
     label: cumulocity
 ticket: MTM-67375
 version: 2026.49.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-08'
+  - label: apj.cumulocity.com
+    date: '2026-10-07'
+  - label: jp.cumulocity.com
+    date: '2026-10-07'
+  - label: us.cumulocity.com
+    date: '2026-09-30'
+  - label: cumulocity.com
+    date: '2026-09-30'
 ---
 
 When the Microservice SDK was upgraded from Spring Boot 3 to Spring Boot 4, the Jackson library was kept at version 2 to minimize required changes to applications. 

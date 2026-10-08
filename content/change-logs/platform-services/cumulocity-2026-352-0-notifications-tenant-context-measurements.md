@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-10-08'
 title: Notifications 2.0 tenant context subscriptions now support the measurement API
 change_type:
   - value: change-QHu1GdukP
@@ -13,6 +13,9 @@ build_artifact:
     label: cumulocity
 ticket: MTM-67821
 version: 2026.352.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-08'
 ---
 
 Notifications 2.0 subscriptions in the tenant context now support the measurement API.

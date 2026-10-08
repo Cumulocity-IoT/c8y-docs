@@ -1,6 +1,8 @@
 ---
-date: 
-title: LWM2M service prevents duplicate measurements, events and alarms after platform errors
+date: '2026-10-08'
+title: >-
+  LWM2M service prevents duplicate measurements, events and alarms after
+  platform errors
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
@@ -14,7 +16,8 @@ build_artifact:
 ticket: DM-7155
 version: 1022.7.8
 environment_availability:
-
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-08'
 ---
 If the {{< product-c8y-iot >}} platform temporarily rejected requests from the LWM2M agent, for example under high load, the agent retried them. In rare cases this led to duplicate measurements, events or alarms for a device.
 
