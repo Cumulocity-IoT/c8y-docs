@@ -15,6 +15,8 @@ ticket: MTM-67375
 version: 2026.49.0
 ---
 
+When the Microservice SDK was upgraded from Spring Boot 3 to Spring Boot 4, the Jackson library was kept at version 2 to minimize required changes to applications. 
+
 Starting with Microservice SDK version **2026.49.0**, the Jackson library used in the SDK will be upgraded to version 3.1.4. Spring Boot 4 uses Jackson 3 by default.
 
 When the SDK was upgraded from Spring Boot 3 to Spring Boot 4, Jackson was kept at version 2 to minimize required changes to applications.
