@@ -19,7 +19,7 @@ You perform the setup on the **Data Lake configuration** page. In the Administra
 
 The storage account must meet the following requirements:
 
-* Hierarchical namespace is enabled. You cannot enable it later. The setup does not check it: without it, the setup succeeds, but ingestion fails later.
+* Hierarchical namespace is enabled. You cannot enable it later. The setup checks it and refuses a storage account without it.
 * The account kind is StorageV2.
 * Public network access is enabled from all networks. To restrict access to selected networks, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/) first, because only support can provide the value that your network rules need.
 * Anonymous access is disabled.
@@ -37,7 +37,7 @@ The **Data Lake configuration** page leads you through the following steps:
 4. **Provision the tenant**: Enter a path in the container, or leave it empty to use the root of the container.
 5. **Review and provision**: Check the base location `abfss://<container>@<account>.dfs.core.windows.net/<path>`, select **These values are correct**, and click **Save**.
 
-When you click **Save**, {{< product-c8y-iot >}} creates the Iceberg catalog of your tenant and tests a write and a delegation key request. If you assigned **Reader**, it also checks soft delete. If soft delete is off, the setup completes and your data arrives, but the page shows a warning and the **Setup status** shows "Provisioning failed" until you enable it and click **Retry provisioning**. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using).
+When you click **Save**, {{< product-c8y-iot >}} creates the Iceberg catalog of your tenant, tests a write and a delegation key request, and checks hierarchical namespace. If you assigned **Reader**, it also checks soft delete. If a check needs access that the setup does not have, the setup completes, and the page shows a note that names the check and the access it needs. For example, without **Reader**, the note says that soft delete was not checked. If soft delete is off, the setup completes and your data arrives, but the page shows a warning and the **Setup status** shows "Provisioning failed" until you enable it and click **Retry provisioning**. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using).
 
 {{< product-c8y-iot >}} stores your tables under `<base location>/<tenant-id>/`. Several of your tenants can therefore share one path. You cannot change the base location, the storage account, or the Entra directory after the setup. To change them, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
@@ -63,6 +63,8 @@ If a check fails, the **Data Lake configuration** page shows the reason. If the 
 |The directory is unknown, or authentication fails.|The Entra tenant ID belongs to another directory. Enter the ID of the directory that the subscription of the storage account belongs to.|
 |The base location overlaps the location of another tenant.|Choose a path that neither contains nor is contained in the other location. Sharing the same path is allowed.|
 |The page warns that data loss protection is off.|Soft delete is off for blobs or for containers. Enable both, then click **Retry provisioning**.|
+|The setup refuses the storage account because hierarchical namespace is disabled.|You cannot enable hierarchical namespace later. Create a new storage account with hierarchical namespace enabled.|
+|The page notes that some checks did not run.|The note names the access that each check needs, for example the **Reader** role on the storage account. Your data arrives without it. To have the check run, grant the access and click **Retry provisioning**. If a private endpoint allows only the `dfs` endpoint of the storage account, the hierarchical namespace check cannot run. Make sure that hierarchical namespace is enabled.|
 |The setup fails right after you assigned the roles.|Role assignments take a few minutes to become effective. Wait and try again.|
 
 If the cause is not listed, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/) with the reason that the **Data Lake configuration** page shows.
