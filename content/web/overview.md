@@ -1,5 +1,5 @@
 ---
-title: What is the Cumulocity Web SDK?
+title: Web SDK overview
 layout: redirect
 external: "https://cumulocity.com/codex/"
 ---
