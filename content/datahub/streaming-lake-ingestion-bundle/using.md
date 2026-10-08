@@ -982,14 +982,14 @@ ORDER BY "time" DESC
 
 You can read your tables directly from your own application with any Apache Iceberg client, instead of querying them through DataHub.
 
-The **Data Lake** page shows everything your client needs, with the values for your tenant and environment filled in. Navigate to **Administration** > **Settings** > **Data Lake**. The page shows:
+The **Data Lake** page shows everything your client needs, with the values for your tenant and environment filled in. Navigate to **Administration** > **Settings** > **Data Lake** and click **Show configuration for Iceberg client**. The dialog shows:
 
 * The catalog settings, each ready to copy.
 * The commands to create, rotate, and delete client credentials.
 * How your client receives temporary storage credentials, and the minimum client versions.
-* Java and PyIceberg examples.
+* Java and PyIceberg examples, and how to verify the connection.
 
-If your environment does not provide temporary storage credentials, the page shows no client settings.
+If your environment does not provide temporary storage credentials, the page does not offer the button.
 
 ### Ensuring good query performance {#ensuring-good-query-performance}
 
