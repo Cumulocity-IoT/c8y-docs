@@ -19,7 +19,7 @@ We're excited to introduce Streaming Lake Ingestion, the first capability of **D
 
 **Simpler.** Activate it and you're done — no schema design, no table mapping, no pipeline to build or maintain. The schema evolves automatically as new measurement types appear.
 
-**Fresher.** Data lands in the lake within minutes of being recorded in Cumulocity, not hours. Fresh enough to drive real-time analytics, automation, and agentic AI workflows.
+**Fresher.** Data lands in the lake within minutes of being recorded in {{< product-c8y-iot >}}, not hours. Fresh enough to drive real-time analytics, automation, and agentic AI workflows.
 
 **Open.** Built on Apache Iceberg, the data is immediately queryable by any Iceberg-compatible platform — Databricks, Snowflake, Azure Fabric, Dremio, Spark — with no proprietary connector required.
 
