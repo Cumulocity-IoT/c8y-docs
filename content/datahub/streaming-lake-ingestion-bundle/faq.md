@@ -6,7 +6,9 @@ layout: redirect
 
 ### How can I configure Streaming Lake Ingestion? {#configure-streaming-lake-ingestion}
 
-Streaming Lake Ingestion has no configuration options and stores all incoming realtime data into your lake. Depending on your use case, you can use a combination of options outside of Streaming Lake Ingestion to influence how data appears in your lake:
+Streaming Lake Ingestion stores all incoming real-time data into your lake. It has no configuration options beyond a one-time setup that points it to a folder in your object storage. For details, see [Enabling Streaming Lake Ingestion on AWS](#enabling-aws) or [Enabling Streaming Lake Ingestion on Microsoft Azure](#enabling-azure).
+
+Depending on your use case, you can use a combination of options outside of Streaming Lake Ingestion to influence how data appears in your lake:
 
 * Use Edge or Data Preparation to change data to more user friendly names, execute simple calculations or route data using processing modes.
 * Use Digital Twin Manager to promote data points to asset level.

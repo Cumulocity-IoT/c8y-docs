@@ -4,10 +4,12 @@ title: Using Streaming Lake Ingestion
 layout: redirect
 ---
 
-Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To subscribe to the service, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/). After subscription,
+Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To subscribe to the service, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/). After subscription and the one-time setup of your object storage:
 
 * Your current device and asset inventory is downloaded from the operational store into the lake.
 * All new incoming data is stored in the lake.
+
+For the setup, see [Enabling Streaming Lake Ingestion on AWS](#enabling-aws) or [Enabling Streaming Lake Ingestion on Microsoft Azure](#enabling-azure).
 
 {{< c8y-admon-info >}}
 The download may take a while to complete. For more information, see [Monitoring the data flow](#monitoring).
@@ -86,7 +88,7 @@ To connect to the {{< product-c8y-iot >}} Iceberg catalog directly — for examp
 **Prerequisites**
 
 * Your tenant must be subscribed to Streaming Lake Ingestion.
-* Your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN or the ROLE_TENANT_ADMIN permission. The **OFFLOADING_ADMINISTRATOR** global role carries ROLE_OFFLOADING_ADMIN: assign it to a user in the Administration application under **Accounts** > **Roles**.
+* Your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN permission. The OFFLOADING_ADMINISTRATOR global role carries ROLE_OFFLOADING_ADMIN: assign it to a user in the Administration application under **Accounts** > **Roles**.
 * Principal names must be strictly alphanumeric — letters and digits only, no dashes or underscores (for example, `spark1` or `dremioqa`).
 
 **Creating a principal**
