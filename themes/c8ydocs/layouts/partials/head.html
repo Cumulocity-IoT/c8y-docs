@@ -8,12 +8,7 @@
     <base href="" />
     <meta name="generator" content="Hugo {{ hugo.Version }} with theme C8yDocs">
     {{ $version := .Site.Data.date_settings.version }}
-    {{ $siteTitle := "" }}
-    {{ if eq $version "Latest" }}
-      {{ $siteTitle = "Cumulocity documentation" }}
-    {{ else }}
-      {{ $siteTitle = printf "Cumulocity Release %s documentation" $version }}
-    {{ end }}
+    {{ $siteTitle := partial "docs-title.txt" . }}
     {{if eq .Title $.Site.Title }}
       <title>{{ $siteTitle }}</title>
     {{else}}
@@ -23,9 +18,11 @@
     <meta name="keywords" content="{{ with .Keywords }}{{ delimit . ", " }}{{ end }}{{ if .Site.Params.keywords }}, {{ delimit .Site.Params.keywords ", " }}{{ end }}">
 
     <meta property="og:title" content="{{if eq .Title $.Site.Title }}{{ $siteTitle }}{{else}}{{ with .Title }}{{ . }} - {{ $siteTitle }}{{ else }}{{ $siteTitle }}{{ end }}{{end}}">
-    <meta property="og:description" content="This documentation offers comprehensive information on the Cumulocity platform both from a user and from a developer perspective. The content relates to the Cumulocity release 2026.">
+    {{- $description := partial "page-description.html" (dict "page" . "length" 160) | default (replace (replace (replace site.Params.description "var-company-sag" site.Params.company_sag) "var-enterprise-tenant" site.Params.enterprise_tenant) "var-product-c8y-iot" site.Params.product_c8y_iot) }}
+    <meta name="description" content="{{ $description }}">
+    <meta property="og:description" content="{{ $description }}">
     <meta property="og:image" content="{{ "images/cumulocity-docs-web.jpg" | absURL}}">
-    <meta property="og:url" content="https://cumulocity.com/docs/">
+    <meta property="og:url" content="{{ .Permalink }}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/favicon/apple-touch-icon.png" | absURL}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon/favicon-32x32.png" | absURL}}">
@@ -47,6 +44,15 @@
            next yearly branch, where the baseURL prefix differs. */}}
       <meta name="robots" content="noindex">
     {{ end }}
+    {{- /* Advertise the Markdown copy only on indexable pages: a .md file cannot carry the noindex above. */}}
+    {{- if and (or (eq $version "Latest") (eq .Section "edge")) (or (ne .Kind "page") (partialCached "llms-exportable.txt" . .Path)) }}
+    {{- with .OutputFormats.Get "markdown" }}
+    <link rel="alternate" type="text/markdown" href="{{ .Permalink }}">
+    {{- end }}
+    {{- end }}
+    {{- with site.Home.OutputFormats.Get "llmstxt" }}
+    <link rel="describedby" href="{{ .Permalink }}">
+    {{- end }}
 
     <meta name="msapplication-TileColor" content="#212121">
     <meta name="theme-color" content="#ffbe00">

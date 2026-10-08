@@ -7,6 +7,7 @@ sector:
 outputs:
   - html
   - json
+  - markdown
 helpcontent:
   - label: provisioned-certificates
     title: Provisioned certificates
