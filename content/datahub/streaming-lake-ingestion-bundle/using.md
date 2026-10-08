@@ -982,6 +982,8 @@ ORDER BY "time" DESC
 
 You can read your tables directly from your own application with any Apache Iceberg client, instead of querying them through DataHub.
 
+After you configure your data lake, the **Data Lake** page shows the catalog settings below with the values for your tenant and environment. Navigate to **Administration** > **Settings** > **Data Lake**. The page also shows the commands to manage client credentials and Java and PyIceberg examples, and you can copy each value. If your environment does not provide temporary storage credentials, the page shows no client settings.
+
 The catalog hands your client a temporary, read-only storage credential for each table it loads, so you do not configure object store credentials yourself. The credential covers one table, expires on its own, and the client refreshes it. To receive it, send the header `X-Iceberg-Access-Delegation` with the value `vended-credentials`.
 
 Create a client credential for your tenant with the principals endpoint of the service. The secret is shown once, so store it when you create it.
