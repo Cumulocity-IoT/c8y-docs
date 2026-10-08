@@ -15,10 +15,10 @@ The following diagnostics endpoints are available for REST requests. These requi
     Prometheus metrics from the correlator. For details, see [Monitoring with Prometheus]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/monitoring-with-prometheus) in the Apama documentation.
 - `/service/cep/diagnostics/overview`  
     GET only. ZIP file download.  
-    Obtains the *diagnostic-overview&lt;timestamp&gt;.zip* file as described above.
+    Obtains the *diagnostic-overview_&lt;timestamp&gt;.zip* file as described above.
 - `/service/cep/diagnostics/enhanced`  
     GET only. ZIP file download.  
-    Obtains the *diagnostic-enhanced&lt;timestamp&gt;.zip* file as described above.
+    Obtains the *diagnostic-enhanced_&lt;timestamp&gt;.zip* file as described above.
 - `/service/cep/diagnostics/request`  
     PUT only. JSON.  
     Gives access to generic management requests against the correlator. For details, see [Shutting down and managing components]({{< link-apama-webhelp >}}/command-line-tools/engine_management) in the Apama documentation.
