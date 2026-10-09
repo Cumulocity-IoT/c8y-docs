@@ -16,6 +16,10 @@ version: 1025.14.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-08'
+  - label: apj.cumulocity.com
+    date: '2026-10-09'
+  - label: jp.cumulocity.com
+    date: '2026-10-09'
 ---
 Previously, the Data points plugin, which is part of the Digital Twin Manager (DTM) plugins
 extention had to be installed manually into the DTM application. Now, it

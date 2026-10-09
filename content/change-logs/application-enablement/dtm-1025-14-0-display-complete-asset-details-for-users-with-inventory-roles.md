@@ -16,6 +16,10 @@ version: 1025.14.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-08'
+  - label: apj.cumulocity.com
+    date: '2026-10-09'
+  - label: jp.cumulocity.com
+    date: '2026-10-09'
 ---
 Users with inventory roles only previously saw incomplete asset
 information, including default icons, internal asset definition
