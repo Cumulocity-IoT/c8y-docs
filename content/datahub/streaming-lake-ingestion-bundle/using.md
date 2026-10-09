@@ -987,7 +987,7 @@ The **Data Lake** page shows everything your client needs, with the values for y
 * The catalog settings, each ready to copy.
 * The commands to create, rotate, and delete client credentials.
 * How your client receives temporary storage credentials, and the minimum client versions.
-* Java and PyIceberg examples, and how to verify the connection.
+* Java and PyIceberg examples that also verify the access.
 
 If your environment does not provide temporary storage credentials, the page does not offer the button.
 
