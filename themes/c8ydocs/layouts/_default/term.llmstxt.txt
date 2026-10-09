@@ -1,6 +1,5 @@
-{{- $d := .Params.description | default .Summary | default (printf "%s documentation for the Cumulocity platform." .Title) -}}
-{{- $d = truncate 240 (trim ($d | plainify | replaceRE "\\s+" " ") " ") -}}
-# {{ .Site.Title }} — {{ .Title }}
+{{- $d := partial "page-description.html" (dict "page" . "length" 240) | default (printf "%s documentation for the Cumulocity platform." .Title) -}}
+# {{ partial "docs-title.txt" . }} — {{ .Title }}
 
 > {{ $d }}
 
@@ -8,17 +7,25 @@ Part of the Cumulocity documentation. Root index: {{ (.Site.Home.OutputFormats.G
 
 ## {{ .Title }}
 {{ range .Pages.ByTitle.ByWeight -}}
-  {{- if eq .Kind "section" }}{{ continue }}{{ end -}}
-  {{- if eq .Params._build.render false }}{{ continue }}{{ end -}}
-  {{- $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end -}}
-  {{- if $isCard }}{{ continue }}{{ end -}}
+  {{- if not (partialCached "llms-listable.txt" . .Path) }}{{ continue }}{{ end -}}
   {{- $title := .Title -}}
   {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end -}}
-  {{- $pd := .Params.description | default .Summary | default "" -}}
-  {{- $pd = truncate 200 (trim ($pd | plainify | replaceRE "\\s+" " ") " ") -}}
+  {{- $pd := partial "page-description.html" (dict "page" . "length" 200) -}}
+  {{- /* Link the Markdown copy. Redirect and external pages have none: link the redirect's
+       target page (its Markdown copy when it has one), else its external URL, else the page. */ -}}
+  {{- $url := .Permalink -}}
+  {{- if partialCached "llms-exportable.txt" . .Path -}}
+    {{- with .OutputFormats.Get "markdown" }}{{ $url = .Permalink }}{{ end -}}
+  {{- else if .Params.target -}}
+    {{- with site.GetPage (printf "/%s" (strings.Trim .Params.target "/")) -}}
+      {{- $url = .Permalink }}{{ with .OutputFormats.Get "markdown" }}{{ $url = .Permalink }}{{ end -}}
+    {{- end -}}
+  {{- else if .Params.external -}}
+    {{- $url = .Params.external -}}
+  {{- end -}}
   {{- if $pd -}}
-    {{- printf "- [%s](%s): %s\n" $title .Permalink $pd -}}
+    {{- printf "- [%s](%s): %s\n" $title $url $pd -}}
   {{- else -}}
-    {{- printf "- [%s](%s)\n" $title .Permalink -}}
+    {{- printf "- [%s](%s)\n" $title $url -}}
   {{- end -}}
 {{- end -}}

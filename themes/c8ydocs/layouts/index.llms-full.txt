@@ -1,25 +1,24 @@
-# Cumulocity documentation — full corpus
+{{- $release := site.Data.date_settings.version | default "Latest" -}}
+# {{ partial "docs-title.txt" . }} — full corpus
 
-> The complete Cumulocity IoT platform documentation, concatenated as plain text for LLM ingestion. Ordered by topic; see llms.txt for the navigable index.
+> The pages of every Cumulocity documentation spoke in llms.txt except the change logs, concatenated as plain text for LLM ingestion and ordered by topic. Redirects and links to other sites are not included; see llms.txt for those and for the change logs.
+
+Release: {{ $release }}
 
 {{- $sectors := .Site.GetPage "/sector" }}
 {{- $seen := newScratch }}
 {{- range $sectors.Pages.ByWeight }}
   {{- if .Params.external }}{{ continue }}{{ end }}
   {{- range .Pages.ByTitle.ByWeight }}
-    {{- if eq .Kind "section" }}{{ continue }}{{ end }}
-    {{- if eq .Params._build.render false }}{{ continue }}{{ end }}
-    {{- $isCard := false }}{{ with .File }}{{ $isCard = strings.HasSuffix .BaseFileName "-card" }}{{ end }}
-    {{- if $isCard }}{{ continue }}{{ end }}
+    {{- if not (partialCached "llms-exportable.txt" . .Path) }}{{ continue }}{{ end }}
     {{- if $seen.Get .Permalink }}{{ continue }}{{ end }}
     {{- $seen.Set .Permalink true }}
-    {{- $title := .Title }}
-    {{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end }}
 
-# {{ $title }}
-
-Source: {{ .Permalink }}
-
-{{ .RenderShortcodes }}
+{{ partial "llms-page.txt" . }}
   {{- end }}
+{{- end }}
+{{- /* The glossary is a section whose letter pages are not rendered on their own, so the loop above skips it. */}}
+{{- with site.GetPage "/glossary" }}
+
+{{ partial "llms-page.txt" . }}
 {{- end }}

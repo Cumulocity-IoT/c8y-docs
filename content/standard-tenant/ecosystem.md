@@ -4,6 +4,7 @@ layout: bundle
 outputs:
   - html
   - json
+  - markdown
 bundlefolder: ecosystem
 sector:
   - platform_administration

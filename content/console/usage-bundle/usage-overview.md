@@ -3,6 +3,7 @@ title: Overview
 outputs:
   - html
   - json
+  - markdown
 weight: 10
 helpcontent:
   - label: usage-overview

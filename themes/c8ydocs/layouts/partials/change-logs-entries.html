@@ -1,0 +1,10 @@
+{{- /*
+  All change-log entries, newest first: the headless bundle of each product area, plus
+  Edge on yearly releases. Shared by partials/change-logs-list.html (HTML) and
+  _default/change-logs.md (Markdown), so both list the same entries.
+*/ -}}
+{{- $areas := slice "analytics" "application-enablement" "device-management" "platform-services" -}}
+{{- if site.Data.date_settings.yearly_release }}{{ $areas = $areas | append "edge" }}{{ end -}}
+{{- $entries := slice -}}
+{{- range $areas }}{{ with site.GetPage (printf "/change-logs/%s" .) }}{{ $entries = $entries | union (.Resources.ByType "page") }}{{ end }}{{ end -}}
+{{- return sort $entries ".Date" "desc" -}}

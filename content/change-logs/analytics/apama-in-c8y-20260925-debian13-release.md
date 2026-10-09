@@ -16,6 +16,10 @@ version: 27.256.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-01'
+  - label: apj.cumulocity.com
+    date: '2026-10-07'
+  - label: jp.cumulocity.com
+    date: '2026-10-07'
 ---
 
 As [previously announced](/change-logs/#apama-in-c8y-20260917-debian13-upgrade), the {{< product-c8y-iot >}} Streaming Analytics microservices have been upgraded to Debian 13 (Trixie) as their base operating system, replacing Debian 12 (Bookworm). This release delivers that change.
