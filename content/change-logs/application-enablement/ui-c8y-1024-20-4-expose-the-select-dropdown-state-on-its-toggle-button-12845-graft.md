@@ -1,6 +1,6 @@
 ---
 date: ""
-title: expose the select dropdown state on its toggle button (#12845) [GRAFT][release/cd] (#13281)
+title: Select dropdown toggle button now displays the dropdown state
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
