@@ -6,8 +6,8 @@ change_type:
   - value: change-VSkj2iV9m
     label: Fix
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+  - value: component-YdSEScrEC
+    label: Cockpit
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
