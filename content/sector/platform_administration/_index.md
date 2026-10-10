@@ -1,5 +1,7 @@
 ---
 title: "Platform administration"
+description: "Administer tenants, users, roles, permissions, authentication, and platform-wide settings across Cumulocity."
+outputs: ["HTML", "llmstxt"]
 icon: "c8y-icon c8y-icon-administration"
 weight: 20
 pdf: true
