@@ -698,9 +698,10 @@ The "SCADA" widget uses **Lit syntax** (`${...}`) for dynamic content, condition
 
 **How it works:**
 
-* Asset or device property values are accessible via `${this.c8yScadaValues?.placeholderName || '-'}`:
+* Asset or device property values are accessible via `${this.c8yScadaValues?.placeholderName ?? '-'}`:
   * use `?` because the values object may be undefined when the widget is loading,
-  * use `|| '-'` to provide a default value if the placeholder is not assigned or no value is available.
+  * use `?? '-'` to provide a default value if the placeholder is not assigned or no value is available. Do not use `|| '-'`, because it also replaces a measured value of `0`.
+* By default, a placeholder mapped to a "Last measurement" property receives the value exactly as the device sent it, for example `23.456789`. To display a value rounded to the configured number of decimal places, select **Format as numeric string** in the property configuration. The value is then a text, for example `"23.46"`, so use the unformatted value for conditions and calculations.
 * Additional utility functions are available via `${this.c8yScadaFunctions?.functionName(...)}`:
   * `goToDeviceDetails(deviceId)` – navigates to the device details,
   * `goToGroupDetails(groupId)` – navigates to the group details,
@@ -718,7 +719,7 @@ The "SCADA" widget uses **Lit syntax** (`${...}`) for dynamic content, condition
   </style>
 
   <text x="50" y="50" font-size="24" font-weight="bold">
-    Device: ${this.c8yScadaValues?.deviceName || '-'}
+    Device: ${this.c8yScadaValues?.deviceName ?? '-'}
   </text>
 
   <text x="50" y="100" font-size="20">
@@ -765,7 +766,7 @@ To use the new web component capabilities, the SVG must be migrated to Lit synta
 
 | AngularJS syntax | Lit syntax |
 |---|---|
-| `{{propertyName}}` | `${this.c8yScadaValues?.propertyName \|\| '-'}` |
+| `{{propertyName}}` | `${this.c8yScadaValues?.propertyName ?? '-'}` |
 | `ng-class="expression"` | `class="${expression}"` |
 | `ng-if="condition"` | `${condition ? '...' : ''}` |
 | `ng-show="condition"` | `style="${condition ? '' : 'display:none'}"` |
@@ -789,7 +790,7 @@ Lit:
 
 ```html
 <tspan class="${this.c8yScadaFunctions?.getActiveAlarmsStatusClass(this.c8yScadaValues?.alarmsStatus)}">
-  ${this.c8yScadaValues?.batteryValue || '-'}
+  ${this.c8yScadaValues?.batteryValue ?? '-'}
 </tspan>
 <rect @click=${() => this.c8yScadaFunctions?.goToDeviceDetails(this.c8yScadaValues?.deviceId)} />
 ```
