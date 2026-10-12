@@ -7,6 +7,7 @@ sector:
 outputs:
   - html
   - json
+  - markdown
 helpcontent:
   - label: managing-trusted-certificates
     title: Trusted certificates

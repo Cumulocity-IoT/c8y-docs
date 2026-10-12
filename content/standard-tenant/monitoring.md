@@ -5,6 +5,7 @@ layout: bundle
 outputs:
   - html
   - json
+  - markdown
 sector:
   - platform_administration
 bundlefolder: monitoring

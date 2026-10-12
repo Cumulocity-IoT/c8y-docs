@@ -7,6 +7,7 @@ sector:
 outputs:
   - html
   - json
+  - markdown
 helpcontent:
   - label: to-configure-branding-settings
     title: Branding

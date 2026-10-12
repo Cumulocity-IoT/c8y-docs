@@ -3,6 +3,7 @@ title: Cost & billing
 outputs:
   - html
   - json
+  - markdown
 weight: 30
 helpcontent:
   - label: account-cost-billing

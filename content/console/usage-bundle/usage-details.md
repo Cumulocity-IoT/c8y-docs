@@ -3,6 +3,7 @@ title: Details
 outputs:
   - html
   - json
+  - markdown
 weight: 20
 helpcontent:
   - label: usage-details
