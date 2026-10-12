@@ -19,8 +19,8 @@ Property definitions are the parameters that define an [asset definition](/dtm/a
 
 You manage property definitions on the following pages:
 
-- **Property definitions** page: In the Digital Twin Manager, navigate to **Libraries > Property definitions**.
-- **Tenant properties** page: In the Administration application, navigate to **Tenants > Tenant properties**.
+* **Property definitions** page: In the Digital Twin Manager, navigate to **Libraries > Property definitions**.
+* **Tenant properties** page: In the Administration application, navigate to **Tenants > Tenant properties**.
 
 Both pages offer the same features. This section describes the **Property definitions** page. The same steps apply to the **Tenant properties** page, unless stated otherwise.
 
@@ -32,15 +32,15 @@ Default property definitions are readily available for use on both pages. See [D
 
 In the overview you see the following categories:
 
-- **Name**: Name of the property definition.
-- **Key**: Unique identifier for the property definition.
-- **Description**: Brief description of the property definition.
-- **Data type**: The data type of the property definition, for example, String, Number, or Complex.
-- **Default**: Default value for the property definition.
-- **Min-Max**: Minimum and maximum values allowed for the property definition.
-- **Applicable to**: The asset types, alarms, measurements, operations, events, or tenant options contexts to which the property definition applies.
-- **Last updated**: Date and time of the last update.
-- **Actions**: Available actions for the property definition.
+* **Name**: Name of the property definition.
+* **Key**: Unique identifier for the property definition.
+* **Description**: Brief description of the property definition.
+* **Data type**: The data type of the property definition, for example, String, Number, or Complex.
+* **Default**: Default value for the property definition.
+* **Min-Max**: Minimum and maximum values allowed for the property definition.
+* **Applicable to**: The asset types, alarms, measurements, operations, events, or tenant options contexts to which the property definition applies.
+* **Last updated**: Date and time of the last update.
+* **Actions**: Available actions for the property definition.
 
 Click **Configure columns** to configure the displayed columns.
 
@@ -60,7 +60,7 @@ The **Tenant properties** page additionally requires the following permissions:
 
 - To view the page: READ or ADMIN permission for the "Tenant management" permission type, and CREATE, UPDATE, or ADMIN permission for the "Digital twin definitions" permission type
 - To add, import, edit, or delete property definitions: ADMIN permission for the "Tenant management" permission type
-  {{< /c8y-admon-req >}}
+{{< /c8y-admon-req >}}
 
 ### To create a property definition {#to-create-a-property-definition}
 
@@ -142,17 +142,17 @@ The following sections use assets as examples. The same rules apply when you ent
 
 Select **Text** if the value is a string, for example, a wind turbine manufacturer name. Enter a valid text.
 
-If you select **Advanced validation rules** for text, the following fields appear:
+ If you select **Advanced validation rules** for text, the following fields appear:
 
-- **Min Length** - If selected, enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
+* **Min Length** - If selected, enter the minimum length of the text that must be provided for this asset property during the asset creation. Any text below the minimum length is not accepted.
 
-- **Max Length** - If selected, enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
+* **Max Length** - If selected, enter the maximum length of the text that must be provided for this asset property during the asset creation. Any text above the maximum length is not accepted.
 
-- **RegExp** - If selected, enter a valid regular expression. During the asset creation, you must provide the asset property value, which adheres to the regular expression.
+* **RegExp** - If selected, enter a valid regular expression. During the asset creation, you must provide the asset property value, which adheres to the regular expression.
 
 **Example:**
 
-If the property definition is "Generator code" with a **Min length** of 8, a **Max length** of 20, and the **RegExp** defined as "^MCGEN[a-zA-Z0-9]\*$", the value must fulfill all three criteria: it must start with "MCGEN", be at least 8 characters long, and not exceed 20 characters.
+If the property definition is "Generator code" with a **Min length** of 8, a **Max length** of 20, and the **RegExp** defined as "^MCGEN[a-zA-Z0-9]*$", the value must fulfill all three criteria: it must start with "MCGEN", be at least 8 characters long, and not exceed 20 characters.
 
 If you do not select any of the restrictions above, it is not applicable for the asset property during asset creation.
 
@@ -162,9 +162,9 @@ For this type, you must provide a numeric value during the asset creation, for e
 
 The type **Number** contains the following fields for additional validation rules:
 
-- **Minimum** - If selected, enter a number in the field **Minimum** on the right. When you create the asset, the asset property value cannot be lower or less than provided in the field.
+* **Minimum** - If selected, enter a number in the field **Minimum** on the right. When you create the asset, the asset property value cannot be lower or less than provided in the field.
 
-- **Maximum** - If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot exceed the **Maximum** provided.
+* **Maximum** - If selected, enter a number in the field on the right. When you create the asset, the asset property value cannot exceed the **Maximum** provided.
 
 **Example:**
 
@@ -198,13 +198,14 @@ Select **Multiselect list** to define a property that accepts multiple values in
 
 If selected, the following fields appear:
 
-- **Options are of type**: Select whether the options are strings or numbers.
-- **Options**: Enter the options that apply to this property definition. Mark the options that are selected by default.
-- **Render as**: Select how the field displays the options when you enter the property value, either as a **Combobox** or as a **Group of checkboxes**.
+* **Options are of type**: Select whether the options are strings or numbers.
+* **Options**: Enter the options that apply to this property definition. Mark the options that are selected by default.
+* **Render as**: Select how the field displays the options when you enter the property value, either as a **Combobox** or as a **Group of checkboxes**.
 
 During asset creation, select one or more of the options to initialize the asset property with these options.
 
 With multiselect lists, you can build flexible data models for entities that have multiple related values.
+
 **Example:**
 
 To record the certifications of a wind turbine, create a property definition "Certifications" with the type **Multiselect list** and the options "ISO 9001", "ISO 14001", and "IEC 61400". When you create the asset, select all certifications that apply to the wind turbine.
@@ -227,7 +228,7 @@ This option allows you to upload a file during the asset creation.
 ROLES & PERMISSIONS
 
 - To add/update files: CREATE/ADMIN permission for permission type "Inventory"
-  {{< /c8y-admon-req >}}
+{{< /c8y-admon-req >}}
 
 If selected, enter the allowed file types separated by a comma in the **Allowed file types** field. Provide the maximum file size for uploads in the **Max file size in MB** field. When you create an asset with this property definition, you can only upload files that adhere to the allowed file types with their file size not exceeding the set limit.
 
@@ -243,12 +244,11 @@ To prevent security threats, sanitize your files beforehand.
 To upload the schematic diagram for a wind turbine, you name the property definition "Wind turbine schematic" and specify the file type of the schematic file. Then upload the respective file. Once the asset is created, you can view this file for future reference.
 
 #### Complex {#complex}
-
 A complex property definition consists of multiple key-value pairs, which means it contains a root object followed by one or more key-value pairs. You must define each key-value pair and provide a type for each pair. You can arrange the properties in the required order by dragging and dropping them. Hover over the row to see the drag icon. Click and drag the drag icon for reordering. On the right side of each key-value pair, you see an expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i>. Click the expand icon <i class="dlt-c8y-icon-expand-arrow text-muted icon-20"></i> to see a specific property. Note that when you add a new key-value pair, it automatically expands. To hide it, click the collapse icon <i class="dlt-c8y-icon-collapse-arrow text-muted icon-20"></i>.
 
 You see the preview of the data model on the right of the **Properties** section.
 
-**Example:**
+ **Example:**
 
 If the asset property is called "Gearbox specifications" with the key "gearbox_specifications", then power, speed increasing ratio and weight are the multiple key-value pairs defining the property "Gearbox specifications". Select the type **Complex**, enter the required information for all key-value pairs and click **Save**.
 
@@ -259,6 +259,7 @@ If the asset property is called "Gearbox specifications" with the key "gearbox_s
 1. Click the name of the property definition to view or edit the details. Alternatively, click **Edit** in the action menu to the right.
 2. Edit any content of the definition.
 3. Click **Save** to save your changes.
+
 
 ### To delete a property definition {#to-delete-a-property-definition}
 
@@ -274,13 +275,14 @@ If the property definition you want to delete is part of an existing asset or an
 
 {{< /c8y-admon-info>}}
 
+
 ### To export property definitions {#to-export-property-definitions}
 
 Follow the steps below:
 
 1. On the **Property definitions** page, click **Export**. In the resulting dialog box, you see the list of property definitions along with their description and type.
 2. Select one or more desired definitions and click **Export**.
-3. The dialog closes and a JSON file named _Export-properties.json_ downloads.
+3. The dialog closes and a JSON file named *Export-properties.json* downloads.
 
 Use the downloaded file to import the property definitions on another tenant.
 
@@ -317,10 +319,10 @@ You can import property definitions from any context, regardless of which tab yo
 
 #### Characteristics {#characteristics-of-default-property-definitions}
 
-- Default property definitions are readily available when you open the application.
-- Default property definitions cannot be deleted.
-- Only selected fields within a default property definition are editable and the editable fields vary depending on the specific property.
-- Default properties cannot be exported.
+* Default property definitions are readily available when you open the application.
+* Default property definitions cannot be deleted.
+* Only selected fields within a default property definition are editable and the editable fields vary depending on the specific property.
+* Default properties cannot be exported.
 
 #### Location {#location}
 
