@@ -16,6 +16,10 @@ version: 1025.14.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-08'
+  - label: apj.cumulocity.com
+    date: '2026-10-09'
+  - label: jp.cumulocity.com
+    date: '2026-10-09'
 ---
 The Asset API endpoint for creating and assigning subassets in a single call was previously restricted to users with specific `INVENTORY_*` permissions, even when users had the correct inventory role for the parent asset. This limitation prevented role-based users from using the POST `/service/dtm/assets/{parentAssetId}/subAssets` endpoint effectively. The permission model has been updated to respect inventory role assignments, allowing users with the appropriate role for the parent asset to create and assign subassets without requiring additional inventory permissions.
 
