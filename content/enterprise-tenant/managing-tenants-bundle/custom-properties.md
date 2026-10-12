@@ -5,7 +5,7 @@ layout: redirect
 helpcontent:
   - label: custom-properties
     title: Custom properties
-    content: "The **Custom properties** tab allows you to view and edit the values of tenant custom properties for this subtenant. The available custom properties are based on the property definitions on the **Tenant properties** page in the **Tenants** menu. To add, edit, or delete a custom property, go to the **Tenant properties** page."
+    content: "The **Custom properties** tab allows you to view and edit the values of tenant custom properties for this subtenant. The available custom properties are based on the property definitions on the **Tenant properties** page. To add, edit, or delete a custom property, go to the **Tenant properties** page."
 ---
 
 {{< c8y-admon-req >}}
@@ -17,7 +17,7 @@ ROLES & PERMISSIONS:
 
 The **Custom properties** tab allows you to view and edit the values of tenant custom properties for a subtenant.
 
-Each custom property is based on a property definition on the **Tenant properties** page. In the **Tenants** menu, click **Tenant properties** to open the page. For details on how to create, edit, and delete property definitions, see [Property definitions](/dtm/asset-types/#asset-properties).
+Each custom property is based on a property definition on the **Tenant properties** page. For details on how to open the page and how to create, edit, and delete property definitions, see [Property definitions](/dtm/asset-types/#asset-properties).
 
 Every property definition that you create on the **Tenant properties** page is automatically available in the **Custom properties** tab of each subtenant. Each subtenant stores its own values, so the same custom property can hold a different value for each subtenant.
 
