@@ -97,23 +97,35 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    kubectl logs -f pod/edge-appliance-migration -n c8yedge
    ```
 
-4. Unsubscribe and delete all the microservices from edge/management tenants.
+4. Remove the appliance microservices and the Edge Administration plugin that were restored from the Edge Appliance VM backup. Log into the {{< management-tenant >}} and open the Administration application. For details, see [Accessing Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge).
 
-5. Remove the Edge Administration plugin:
+   Unsubscribe the following microservices from the Edge tenant: **apama-ctrl**, **opcua-mgmt-service**, **smartrule**, and **sslmanagement**.
 
-   1. In the Administration application, navigate to **Ecosystem** > **Applications**.
+   1. Navigate to **Tenants** > **Subtenants**.
+   2. Open the **edge** tenant and switch to the **Applications** tab.
+   3. Under **Subscribed applications**, hover over each of the microservices listed above and click **Unsubscribe**.
+
+   Unsubscribe and delete the same microservices from the {{< management-tenant >}}.
+
+   1. Navigate to **Ecosystem** > **Microservices**.
+   2. Open each of the microservices listed above.
+   3. If the microservice is still subscribed, click **Unsubscribe**.
+   4. Click the menu icon and then click **Delete**.
+
+   Remove the Edge Administration plugin.
+
+   1. Navigate to **Ecosystem** > **Applications**.
    2. Open the **Administration** application and switch to the **Plugins** tab.
    3. Select the **{{< product-c8y-iot >}} Edge Administration** plugin and click **Delete**.
 
-
-6. Restart Edge:
+5. Restart Edge:
 
    ```shell
    kubectl rollout restart deployment -n c8yedge c8yedge-operator-controller-manager
    ```
    Ensure you are able to [access Edge](https://cumulocity.com/docs/2025/edge-kubernetes/installing-edge-on-k8/#accessing-edge) before continuing with the subsequent steps.
 
-7. Remove the */opt/edge-appliance-backup.tar* and */opt/appliance-edgedb-backup* folders: 
+6. Remove the */opt/edge-appliance-backup.tar* and */opt/appliance-edgedb-backup* folders: 
    ```shell
    rm -rf /opt/appliance-edgedb-backup /opt/edge-appliance-backup.tar
    ```
