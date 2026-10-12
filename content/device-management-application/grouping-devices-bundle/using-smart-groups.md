@@ -5,6 +5,7 @@ layout: redirect
 outputs:
   - html
   - json
+  - markdown
 helpcontent:
   - label: using-smart-groups
     title: Using smart groups

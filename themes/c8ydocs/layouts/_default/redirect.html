@@ -13,6 +13,10 @@
       {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
       {{ $sub := index $subs 0}}
       {{ $scratch.Set "url" $sub.Permalink}}
+    {{ else if .Params.external }}
+      {{/* Before the section fallback: a root-level page's "section" is the whole site,
+           which sent the Web developer codex link to the first page found. */}}
+      {{ $scratch.Set "url" .Params.external }}
     {{ else }}
       {{ $subs := where .Site.Pages "Section" .Section }}
       {{ $sub := index $subs 0}}

@@ -3,6 +3,7 @@ title: Consumption
 outputs:
   - html
   - json
+  - markdown
 weight: 20
 helpcontent:
   - label: account-consumption
