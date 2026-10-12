@@ -97,7 +97,7 @@ After installing and configuring Edge 2025, proceed to migrate the data backed u
    kubectl logs -f pod/edge-appliance-migration -n c8yedge
    ```
 
-4. Remove the appliance microservices and the Edge Administration plugin that were restored from the Edge Appliance VM backup. Log into the {{< management-tenant >}} and open the Administration application. For details, see [Accessing Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge).
+4. Remove the microservices and the Edge Administration plugin that were restored from the Edge Appliance VM backup. Log into the {{< management-tenant >}} and open the Administration application. For details, see [Accessing Edge](/edge-kubernetes/installing-edge-on-k8/#accessing-edge).
 
    Unsubscribe the following microservices from the Edge tenant: **apama-ctrl**, **opcua-mgmt-service**, **smartrule**, and **sslmanagement**.
 
