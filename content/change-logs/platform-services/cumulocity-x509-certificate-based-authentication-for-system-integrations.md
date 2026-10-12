@@ -1,5 +1,5 @@
 ---
-date: 2026-10-01
+date: '2026-10-01'
 title: X.509 certificate-based authentication for system-to-system integrations
 change_type:
   - value: change-QHu1GdukP
@@ -13,6 +13,17 @@ build_artifact:
     label: cumulocity
 ticket: MTM-65875
 version: 2026.334.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-08'
+  - label: apj.cumulocity.com
+    date: '2026-10-07'
+  - label: jp.cumulocity.com
+    date: '2026-10-07'
+  - label: us.cumulocity.com
+    date: '2026-10-12'
+  - label: cumulocity.com
+    date: '2026-09-30'
 ---
 
 {{< product-c8y-iot >}} now supports X.509 certificate-based authentication for system-to-system integrations. This enables secure, passwordless authentication using enterprise Public Key Infrastructure (PKI), replacing static credentials and legacy password grant flows.
