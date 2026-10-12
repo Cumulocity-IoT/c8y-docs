@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-3281"
 version: "1025.14.1"
 ---
-The data points page now displays contextual help to guide users in understanding the feature and its capabilities. Previously, no in-context guidance was available on this page. The contextual help provides clear explanations of data points functionality and how to use the feature effectively.
+The **Data points** page now displays contextual help to guide users in understanding the feature and its capabilities. Previously, no in-context guidance was available on this page. The contextual help provides clear explanations of the data points functionality and how to use the feature effectively.
