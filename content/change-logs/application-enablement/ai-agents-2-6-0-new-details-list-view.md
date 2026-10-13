@@ -1,6 +1,6 @@
 ---
 date: ""
-title: new details list view
+title: Agent list and details pages with improved navigation and description support
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
