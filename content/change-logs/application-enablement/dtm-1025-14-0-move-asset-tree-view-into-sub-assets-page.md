@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-10-09'
   - label: jp.cumulocity.com
     date: '2026-10-09'
+  - label: us.cumulocity.com
+    date: '2026-10-12'
+  - label: cumulocity.com
+    date: '2026-10-12'
 ---
 Previously, the asset tree was provided as a separate tab within the **Subassets** page, requiring users to switch to a different tab to access the tree view. With this change, the asset tree is now integrated directly into the **Subassets** page, allowing users to seamlessly switch between list view and tree view within the same page.
