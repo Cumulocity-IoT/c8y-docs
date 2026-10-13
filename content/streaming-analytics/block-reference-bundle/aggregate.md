@@ -324,9 +324,45 @@ This category contains the following blocks:
 <p>Generates statistics of sum, count, average (mean), standard deviation, minimum and maximum for discrete input values.</p>
 <p>This block is suitable for discrete time inputs, where the number of samples (or inputs) is significant, while the time between them is not. The Average (Mean) and Standard Deviation blocks are more suitable for continuous values that may be irregularly sampled, such as temperature readings. Use this block, for example, if each sample represents a transaction such as a ticket being sold.</p>
 <p>If the Sample input port is not connected, every value is sampled. If a new value is received during the same activation period as a reset, the value is sampled after the reset, otherwise it is ignored. As every value is used, the standard deviation uses the generic formula: <tt>σ² = ∑(x - µ)² / N</tt>.</p>
-<p>If the Sample input port is connected, the block only samples the data when the Sample input port receives a signal. In this case, the sampling standard deviation uses the formula: <tt>σ² = ∑(x - µ)² / (N-1)</tt>.</p>
+<p>If the Sample input port is connected, the block only samples the data when the Sample input port receives a signal. In this case, the sampling standard deviation uses the formula: <tt>σ² = ∑(x - µ)² / (N-1)</tt>, so it is not output while fewer than two sampled values are in the window.</p>
 <p>If reset and sample signals are received together, the reset is processed first.</p>
+<p>NaN input values are ignored. An infinite input value, or a value whose square is too large to represent, makes the outputs that depend on it infinite or NaN until it expires out of the window or the block is reset.</p>
+<p>The block can operate over a time-bounded window that is specified with the Window Duration parameter. If this parameter is not specified, the block uses an unbounded window. The Reset input port clears the window contents. Output is generated on any new sample or, if the Window Duration parameter is set, when a sample expires out of the window.</p>
+<p>No output is generated when the last sample expires out of the window or on a reset, so every output keeps its previous value until it is next output.</p>
+<p>A sample expires out of the window in its entirety once it is older than the Window Duration, so, unlike the Average (Mean) block, samples are not weighted by how long they have been in the window.</p>
+<p>If a window is configured, the block uses a set of 20 buckets, so the time of expired values is an approximation to the nearest bucket interval. Outputs for expired samples are also limited to no more than one per minimum wait time, a tenant option, so they can be delayed by up to that time.</p>
 
+
+#### Parameters {#discrete-statistics-parameters}
+
+<table>
+<colgroup>
+<col style="width: 15%; text-align: start;">
+<col style="width: 50%; text-align: start;">
+<col style="width: 25%; text-align: start;">
+<col style="width: 10%; text-align: start;">
+</colgroup>
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Description</th>
+<th scope="col">Type</th>
+<th scope="col">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Window Duration (secs)</th>
+<td><span>If present, the amount of time (in seconds) for which sampled values are to be kept in the window.</span>
+<p>This must be a finite and positive number.</p>
+</td>
+<td><span>float</span>
+</td>
+<td><span>Optional</span>
+</td>
+</tr>
+</tbody>
+</table>
 
 #### Input Port Details {#discrete-statistics-inputs}
 
@@ -407,7 +443,7 @@ This category contains the following blocks:
 </tr>
 <tr>
 <th scope="row">Standard Deviation</th>
-<td><span>Standard deviation of the sampled input values. If all values are being sampled, with the Sample input port disconnected, the generic standard deviation, <tt>σ² = ∑(x - µ)² / N</tt>, is used. Otherwise the sampling standard deviation, <tt>σ² = ∑(x - µ)² / (N-1)</tt>, is used.</span>
+<td><span>Standard deviation of the sampled input values. If all values are being sampled, with the Sample input port disconnected, the generic standard deviation, <tt>σ² = ∑(x - µ)² / N</tt>, is used. Otherwise the sampling standard deviation, <tt>σ² = ∑(x - µ)² / (N-1)</tt>, is used (not output while fewer than two sampled values are in the window).</span>
 </td>
 <td><span>float</span>
 </td>
