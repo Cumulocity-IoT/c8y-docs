@@ -1,6 +1,6 @@
 ---
 date: ""
-title: evaluate and enforce human-in-the-loop apporval policy for tool calls (#675)
+title: Evaluate and enforce human-in-the-loop approval policy for tool calls
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
