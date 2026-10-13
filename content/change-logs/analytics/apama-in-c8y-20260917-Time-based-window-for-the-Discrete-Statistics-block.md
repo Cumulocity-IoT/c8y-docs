@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-1974
-version: 27.248.0
+version: 27.275.0
 ---
 
 The **Discrete Statistics** block has a new optional **Window Duration (secs)** parameter. Set it to report statistics over the samples received within that duration, instead of over every sample since the model started.
