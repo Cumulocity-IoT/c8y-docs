@@ -27,4 +27,4 @@ environment_availability:
 ---
 The DTM Data Service, previously released as a Public Preview, is now generally available. The microservice processes data point links configured in DTM and automatically propagates incoming device measurements to the linked assets in the digital twin hierarchy. This makes operational data available directly on assets for dashboards, analytics, smart rules, and business applications, without querying individual devices.
 
-For details, see [Data points](/dtm/asset-hierarchy/#datapoints)
+For details, see [Data points](/dtm/asset-hierarchy/#datapoints).
