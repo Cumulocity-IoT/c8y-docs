@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67771
 version: 1024.20.1
 ---
-The data graph widget in the Alarms and Events application was not displaying alarm and event data correctly in some cases when there were no measurements on the chart. The visualization now properly renders all alarm and event data points in the graph, ensuring you can accurately view and analyze your alarm and event trends over time.
+The "Data graph" widget didn´t always display alarm and event data correctly when there were no measurements on the chart. The visualization now properly renders all alarm and event data points in the graph, ensuring you can accurately view and analyze your alarm and event trends over time.
