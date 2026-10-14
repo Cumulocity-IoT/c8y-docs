@@ -12,8 +12,6 @@ build_artifact:
   - value: tc-ggH2M4hf3
     label: lwm2m-agent
 ticket: DM-7764
-version: 
+version: 1022.8.2
 ---
-
-
 The LWM2M agent now reuses cached device data when creating events, measurements, and alarms from mapped resources, reducing the number of inventory requests and improving data-processing throughput under high load.
