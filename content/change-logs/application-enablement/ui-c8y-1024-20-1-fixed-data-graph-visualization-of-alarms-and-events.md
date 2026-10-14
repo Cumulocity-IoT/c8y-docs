@@ -14,19 +14,4 @@ build_artifact:
 ticket: MTM-67771
 version: 1024.20.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67771] Fixed data graph visualization of alarms
-and events](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13092)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67771]:
-https://cumulocity.atlassian.net/browse/MTM-67771?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+The data graph widget in the Alarms and Events application was not displaying alarm and event data correctly in some cases when there were no measurements on the chart. The visualization now properly renders all alarm and event data points in the graph, ensuring you can accurately view and analyze your alarm and event trends over time.
