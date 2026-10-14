@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67635
 version: 1024.20.8
 ---
-When filtering in the new asset table by the status column, the filter did not work correctly and returned unexpected results or failed to apply the selected filter criteria. The status column filtering now works as expected.
+When filtering by the status column in the new asset table, the filter did not work correctly and returned unexpected results or failed to apply the selected filter criteria. The status column filtering now works as expected.
