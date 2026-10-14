@@ -14,3 +14,7 @@ On the **Tenant properties** page, you define the tenant custom properties for y
 Each property definition that you create on this page is available in the **Custom properties** tab of each subtenant, where you set its value for that subtenant. For details, see [Custom properties](/enterprise-tenant/managing-tenants/#custom-properties).
 
 The **Tenant properties** page works the same way as the **Property definitions** page in the Digital Twin Manager. For details on how to create, edit, delete, import, and export property definitions, see [Property definitions](/dtm/asset-types/#asset-properties).
+
+{{< c8y-admon-info >}}
+The Dtm microservice automatically migrates the tenant properties defined in the former **Properties library** (**Settings > Properties library**). The **Tenant properties** page displays the migrated properties.
+{{< /c8y-admon-info >}}

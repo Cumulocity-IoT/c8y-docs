@@ -21,6 +21,10 @@ Each custom property is based on a property definition on the **Tenant propertie
 
 Every property definition that you create on the **Tenant properties** page is automatically available in the **Custom properties** tab of each subtenant. Each subtenant stores its own values, so the same custom property can hold a different value for each subtenant.
 
+{{< c8y-admon-info >}}
+Values that you set for custom properties from the former **Properties library** (**Settings > Properties library**) are kept. After the migration, the **Custom properties** tab of each subtenant displays these values.
+{{< /c8y-admon-info >}}
+
 The tab displays one field for each property definition, depending on its type:
 
 - **Text** and **Number**: An input field for the value.
