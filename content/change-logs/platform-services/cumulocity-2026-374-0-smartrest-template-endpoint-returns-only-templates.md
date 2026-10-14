@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-68002
 version: 2026.374.0
 ---
-Implemented strict type filtering on the `GET /inventory/templates/{templateId}` endpoint. It now exclusively returns inventory objects of type SmartREST template. For details, see [SmartREST 1.0](/smartrest/smartrest-one/).
+Strict type filtering has been implemented on the `GET /inventory/templates/{templateId}` endpoint. It now exclusively returns inventory objects of type SmartREST template. For details, see [SmartREST 1.0](/smartrest/smartrest-one/).
