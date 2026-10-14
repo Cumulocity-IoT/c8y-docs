@@ -1,6 +1,6 @@
 ---
 date: 
-title: Failed validation of request parameters reports undefined/validationError
+title: Failed validation of request parameters now reports undefined/validationError
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
