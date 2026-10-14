@@ -215,6 +215,12 @@ The **Related documentation** box on a recipe page is computed from the `recipes
    ```
 3. Check the rendered pages: the **Recipes** tab of each linking page, the recipe page with its **Before you start** box, the recipes overview, and the Markdown version of the recipe (`/docs/recipes/<name>/index.md`). The build fails if a `requires:` entry names no recipe.
 
+### Download as skills
+
+The **Download as skills** button on the recipes overview gives a ZIP file with one agent skill per recipe: `cumulocity-skills/cumulocity-<name>/SKILL.md`, plus a `README.md` with the install steps and the required credentials. The `cumulocity-` prefix keeps the skill names apart from other installed skills. A recipe's `index.md` is the same text as its `SKILL.md`.
+
+The build publishes the files and a `recipes/skills/manifest.json` that lists them (`layouts/recipes/list.md`, with the text from `layouts/partials/recipes/skill.txt`). The button zips them in the browser (`static/js/recipes-download.js` with JSZip in `static/js/vendor/jszip.min.js`), so there is no fixed ZIP URL.
+
 For an AI-assisted review, use the Claude Code skill `recipes` (`.claude/skills/recipes/`) or the Copilot prompt `c8y-recipe-review.prompt.md`.
 
 The templates live in the theme: `layouts/recipes/` (recipe page, overview, and their Markdown versions), `layouts/partials/recipes/`, the **Recipes** tab in `layouts/_default/bundle.html` with `initPageTabs()` in `static/js/main.js`, and the styles in `assets/scss/_page-tabs.scss`.

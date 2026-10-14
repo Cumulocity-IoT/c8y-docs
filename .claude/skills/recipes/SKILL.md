@@ -91,7 +91,9 @@ The script needs network access to `cumulocity.com`. It does not check `#tag/` o
    page (cards with "Linked from" and the API chips), and the recipes overview (the
    recipe in its topic group).
 3. Read the Markdown version, `/docs/recipes/<name>/index.md`: front matter with `name`
-   and `description`, the recipe, "API reference" grouped by API, "Related documentation".
+   (`cumulocity-<name>`) and `description`, "Before you start" with the required skills,
+   the recipe, "API reference" grouped by API, "Related documentation". It is the
+   `SKILL.md` of the skills download: check that `recipes/skills/manifest.json` lists it.
 
 ## Step 5: Report or fix
 
