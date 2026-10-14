@@ -3,8 +3,8 @@ date: '2026-10-13'
 title: SmartREST template endpoint now returns only SmartREST templates
 product_area: Platform services
 change_type:
-  - value: change-VSkj2iV9m
-    label: Fix
+  - value: change-3BQrQ6adS
+    label: API change
 component:
   - value: component-JlFdtOPva
     label: REST API
