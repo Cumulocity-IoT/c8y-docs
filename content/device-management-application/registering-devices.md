@@ -39,6 +39,10 @@ helpcontent:
     To register a device, click **Register device** at the right of the top bar, select an option from the dropdown list and follow the instructions in the device registration wizard."
 ---
 
+{{< c8y-admon-skill >}}
+**For developers and AI agents**: See the [register-devices skill](/skills/device-management/register-device.md) for AI domain knowledge on registering devices.
+{{< /c8y-admon-skill >}}
+
 ### Overview
 
 In the **Device registration** page all devices are displayed which are currently in the registration process.
@@ -83,4 +87,5 @@ The following descriptions apply to the general device registration processes. I
 {{< c8y-admon-related >}}
 * [Device management & connectivity > Device integration](/device-integration/device-integration-introduction/) for step-by-step instructions on registering devices via REST or MQTT, and for details on registering devices using various standard protocol types.
 * The [New device requests API](https://{{< domain-c8y >}}/api/core/#tag/New-device-requests) for REST API methods concerning the creation of new devices.
+* [register-devices](/skills/device-management/register-devices) for AI domain knowledge on registering devices.
 {{< /c8y-admon-related >}}
