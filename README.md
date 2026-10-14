@@ -152,6 +152,69 @@ hugo
 node scripts/lint-llmstxt.mjs
 ```
 
+## Recipes
+
+Recipes are task-focused how-tos at `/docs/recipes/`, written for people and AI agents. Each recipe describes one task, for example sending an operation to a device, with the REST API requests it needs. Documentation pages show the recipes for their topic in a **Recipes** tab, and each recipe links to the API operations it uses.
+
+Links are written in one direction only:
+
+```
+documentation page --(recipes:)--> recipe --(api:)--> API reference (<API URL>#operation/<operationId>)
+```
+
+The **Related documentation** box on a recipe page is computed from the `recipes:` lists of the documentation pages. Never add these back links by hand.
+
+### Add a recipe
+
+1. Create `content/recipes/<name>.md`. The file name is the name of the recipe: lowercase letters, digits, and hyphens. Documentation pages refer to the recipe by this name.
+2. Add the front matter:
+
+   ```yaml
+   ---
+   title: Send an operation to a device      # the task, in sentence case
+   description: Check that a device supports an operation, create the operation, ...   # one sentence, shown on cards, in llms.txt, and to AI agents
+   weight: 20                                 # order in the left navigation
+   sector:
+     - recipes                                # always first: puts the recipe in the Recipes section
+     - device_management                      # the topic: groups the recipe on the overview and adds it to that topic's llms.txt
+   api:                                       # every API operation the recipe uses, in the order of use
+     - operation: postOperationCollectionResource   # the operationId in the OpenAPI specification
+       method: POST
+       path: /devicecontrol/operations
+       title: Create an operation             # the summary of the operation in the API reference
+       spec: core                             # optional, default core: a key of data/apis.json
+   ---
+   ```
+
+3. Write the body as described in the "Recipes" section of `.github/copilot-instructions.md`: `### To ...` procedures, REST requests in `http` code blocks, each linked to its operation in the API reference. Recipes show REST requests only, no CLI commands.
+4. Link the recipe from the documentation. Add `recipes:` to the front matter of the page, or of the block in its `<page>-bundle/` folder that covers the task:
+
+   ```yaml
+   recipes:
+     - send-operation
+   ```
+
+   The page then shows the **Recipes** tab. The card of the recipe links back to the block that names it.
+
+### API references
+
+`data/apis.json` lists the API references that recipes can link to (Core, DTM, DataHub, Data Preparation): the URL of the reference and the URL of its published OpenAPI specification. Operation links have the form `<url>#operation/<operationId>` for all of them. To link to another API, add an entry. Its key is the value of `spec` in the recipes.
+
+### Verify a recipe
+
+1. Build the site. The build fails if a `recipes:` entry names no recipe, or if an `api` entry names an API that `data/apis.json` does not list. If your Hugo version rejects the HTML content files of this repository (`"text/html" is not whitelisted`), run `HUGO_SECURITY_ALLOWCONTENT='.*' hugo server`.
+2. Check the API references. The build does not compare them with the API: each operation must exist in the OpenAPI specification of its API (the `spec` URL in `data/apis.json`) with the same method and path, and the `title` must match its summary. The check script does this for the `api` front matter and for the operation links in the text:
+
+   ```bash
+   python3 scripts/check_recipe_api_refs.py            # all recipes
+   python3 scripts/check_recipe_api_refs.py content/recipes/send-operation.md
+   ```
+3. Check the rendered pages: the **Recipes** tab of each linking page, the recipe page, the recipes overview, and the Markdown version of the recipe (`/docs/recipes/<name>/index.md`).
+
+For an AI-assisted review, use the Claude Code skill `recipes` (`.claude/skills/recipes/`) or the Copilot prompt `c8y-recipe-review.prompt.md`.
+
+The templates live in the theme: `layouts/recipes/` (recipe page, overview, and their Markdown versions), `layouts/partials/recipes/`, the **Recipes** tab in `layouts/_default/bundle.html` with `initPageTabs()` in `static/js/main.js`, and the styles in `assets/scss/_page-tabs.scss`.
+
 ## Redirects
 
 Redirects must be processed through aliases. Add aliases as an array, and make sure to remove `/docs` or `/guides` out of the URL. Check the following example:
@@ -223,6 +286,7 @@ This repository includes standard prompts for reviewing documentation against Cu
 
 c8y-standard-review.prompt.md - Review of documentation with particular focus on Cumulocity standards and style.
 c8y-change-log-review.prompt.md - Specific review of a change log entry.
+c8y-recipe-review.prompt.md - Review of a recipe against the recipe design, its API references, and the style guide.
 
 ---
 Copyright © 2018-present Cumulocity GmbH. All rights reserved.

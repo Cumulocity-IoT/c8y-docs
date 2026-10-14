@@ -111,6 +111,14 @@ The base page loads but the named anchor isn't found. Check whether:
 **Fix:** update the fragment in the source Markdown to match reality. Only
 exclude the link if the fragment truly cannot be resolved any other way.
 
+**Recipes** (`content/recipes/*.md`): an `#operation/<operationId>` link in
+a recipe also has an entry in the recipe's `api` front matter, which renders
+the API chips and the "API reference" box. The Link Checker does not see
+these entries. Fix the body link and the `api` entry together (`operation`,
+`method`, `path`, `title`), then run
+`python3 scripts/check_recipe_api_refs.py <recipe>` to confirm both against
+the OpenAPI specification. See the `recipes` skill.
+
 ### Case 3: Works in a browser, times out in Cypress, and it's the *link's own* request/page that's blocked
 
 Distinguish this from Case 4 (below) carefully - they look similar but the
