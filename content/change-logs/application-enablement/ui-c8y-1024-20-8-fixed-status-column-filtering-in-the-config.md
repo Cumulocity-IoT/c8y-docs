@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed status column filtering in the new asset table configuration
+title: Fixed status column filtering in the new asset table
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
