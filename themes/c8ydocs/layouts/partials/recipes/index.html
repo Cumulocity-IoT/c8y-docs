@@ -1,0 +1,14 @@
+{{- /*
+  Returns, for every recipe, the documentation that links to it: a map from the recipe's file
+  name to a slice of dicts "page" (the bundle page), "from" and "anchor" (see
+  recipes/for-page.html). Only bundle pages render the recipes tab, so only they count.
+  The map covers the whole site: call it with partialCached and any context.
+*/ -}}
+{{- $index := newScratch -}}
+{{- range where site.RegularPages "Layout" "bundle" -}}
+  {{- $page := . -}}
+  {{- range partial "recipes/for-page.html" . -}}
+    {{- $index.Add .recipe.File.ContentBaseName (slice (dict "page" $page "from" .from "anchor" .anchor)) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $index.Values -}}

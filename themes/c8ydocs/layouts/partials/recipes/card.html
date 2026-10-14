@@ -1,0 +1,25 @@
+{{- /*
+  One recipe as a card: title, description, the documentation block that links to it (on
+  the page itself) and the API operations it uses. Call with a dict from
+  recipes/for-page.html, or (dict "recipe" $page) where there is no linking block.
+*/ -}}
+{{- $recipe := .recipe -}}
+<div class="recipe-card">
+  <a class="recipe-card__title" href="{{ $recipe.Permalink }}">
+    <i class="dlt-c8y-icon-tasklist" aria-hidden="true"></i>
+    {{ $recipe.Title }}
+  </a>
+  {{- with $recipe.Description }}
+  <p class="recipe-card__description">{{ . }}</p>
+  {{- end }}
+  {{- with .from }}
+  <p class="recipe-card__from">Linked from <a href="#{{ $.anchor }}">{{ replace . "var-product-c8y-iot" site.Params.product_c8y_iot }}</a></p>
+  {{- end }}
+  {{- with $recipe.Params.api }}
+  <ul class="recipe-card__api" aria-label="API operations">
+    {{- range . }}
+    <li>{{ partial "recipes/api-chip.html" (dict "entry" . "page" $recipe) }}</li>
+    {{- end }}
+  </ul>
+  {{- end }}
+</div>

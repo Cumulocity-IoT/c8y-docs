@@ -1,0 +1,43 @@
+{{ define "main" }}
+{{- partial "root-nav.html" . -}}
+
+<main class="main-content bundle-layout recipe-layout">
+  <div class="breadcrumbs-container">
+    {{- partial "breadcrumbs.html" . -}}
+  </div>
+  <div class="article-list">
+    <article id="recipes-overview" class="page-section single-section">
+      <div class="article-content">
+        <header class="section-header">
+          <h1 class="text-light">{{ .Title }}</h1>
+        </header>
+        <div class="lead">
+          {{ partial "headline-hash.html" .Content }}
+        </div>
+        {{/* One group per topic: the sectors a recipe has besides "recipes", in home page order */}}
+        {{ $recipes := .RegularPages.ByWeight }}
+        {{ range sort site.Taxonomies.sector ".Page.Params.weight" }}
+          {{ $term := .Page.Data.Term }}
+          {{ $topic := .Page.Title }}
+          {{ if eq $term "recipes" }}{{ continue }}{{ end }}
+          {{ with where $recipes "Params.sector" "intersect" (slice $term) }}
+          <h3 id="{{ $term }}" class="recipe-group">{{ $topic }}</h3>
+          <div class="recipe-grid">
+            {{ range . }}{{ partial "recipes/card.html" (dict "recipe" .) }}{{ end }}
+          </div>
+          {{ end }}
+        {{ end }}
+        {{ $other := slice }}
+        {{ range $recipes }}{{ if not (complement (slice "recipes") .Params.sector) }}{{ $other = $other | append . }}{{ end }}{{ end }}
+        {{ with $other }}
+        <h3 id="other" class="recipe-group">Other</h3>
+        <div class="recipe-grid">
+          {{ range . }}{{ partial "recipes/card.html" (dict "recipe" .) }}{{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </article>
+  </div>
+</main>
+{{- partial "footer.html" . -}}
+{{ end }}

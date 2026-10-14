@@ -3,6 +3,7 @@
 
 {{ $bundle := printf "%s-%s" .File.BaseFileName "bundle"  }}
 {{ $headless := .Site.GetPage $bundle }}
+{{ $recipes := partial "recipes/for-page.html" . }}
 <main class="main-content bundle-layout">
   <div class="breadcrumbs-container">
     {{- partial "breadcrumbs.html" . -}}
@@ -13,9 +14,28 @@
         <header class="section-header">
           <h1 class="text-light">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
         </header>
+        {{ with $recipes }}
+        {{/* Documentation and recipes tabs; main.js (initPageTabs) switches between them */}}
+        <div class="page-tabs" role="tablist" aria-label="Page content">
+          <button type="button" class="page-tab active" role="tab" id="page-tab-docs" data-tab="docs" aria-selected="true">
+            <i class="dlt-c8y-icon-book" aria-hidden="true"></i> Documentation
+          </button>
+          <button type="button" class="page-tab" role="tab" id="page-tab-recipes" data-tab="recipes" aria-selected="false" aria-controls="recipes" tabindex="-1">
+            <i class="dlt-c8y-icon-tasklist" aria-hidden="true"></i> Recipes <span class="page-tab__count">{{ len . }}</span>
+          </button>
+        </div>
+        {{ end }}
         <div class="lead">
           {{ partial "headline-hash.html" .Content }}
         </div>
+        {{ with $recipes }}
+        <section id="recipes" class="recipes-panel" role="tabpanel" aria-labelledby="page-tab-recipes">
+          <p class="recipes-panel__intro">Recipes are step-by-step solutions for tasks on this page, with the API requests they use. Each recipe is also available as Markdown for AI agents. <a href="{{ (site.GetPage "/recipes").Permalink }}">All recipes</a></p>
+          <div class="recipe-grid">
+            {{ range . }}{{ partial "recipes/card.html" . }}{{ end }}
+          </div>
+        </section>
+        {{ end }}
       </div>
     </article>
 

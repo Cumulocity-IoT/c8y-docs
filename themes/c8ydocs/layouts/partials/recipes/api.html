@@ -1,0 +1,13 @@
+{{- /*
+  Resolves one entry of a recipe's `api` front matter against data/apis.json and returns a
+  dict: "key" (the API, `core` when the entry names none), "title" and "label" of the API,
+  "root" (its reference) and "url" (the operation in it). An API that data/apis.json does
+  not list fails the build. Call with (dict "entry" $entry "page" $recipe).
+*/ -}}
+{{- $key := .entry.spec | default "core" -}}
+{{- $api := index site.Data.apis $key -}}
+{{- if not $api -}}
+  {{- errorf "API %q of operation %q in %s is not listed in data/apis.json" $key .entry.operation .page.File.Path -}}
+  {{- $api = dict "title" $key "label" $key "url" "https://cumulocity.com/api/" -}}
+{{- end -}}
+{{- return dict "key" $key "title" $api.title "label" $api.label "root" $api.url "url" (printf "%s#operation/%s" $api.url .entry.operation) -}}

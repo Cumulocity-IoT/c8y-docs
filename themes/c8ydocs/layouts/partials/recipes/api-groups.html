@@ -1,0 +1,20 @@
+{{- /*
+  Groups a recipe's `api` front matter by API (data/apis.json), in the order in which the
+  APIs first appear. Returns a slice of dicts "key", "title", "root" and "entries"; each
+  entry has "operation", "method", "path", "title" and "url". Call with the recipe page.
+*/ -}}
+{{- $page := . -}}
+{{- $keys := slice -}}
+{{- $groups := newScratch -}}
+{{- range .Params.api -}}
+  {{- $api := partial "recipes/api.html" (dict "entry" . "page" $page) -}}
+  {{- if not (in $keys $api.key) }}{{ $keys = $keys | append $api.key }}{{ end -}}
+  {{- $groups.Add $api.key (slice (dict "operation" .operation "method" .method "path" .path "title" .title "url" $api.url)) -}}
+  {{- $groups.Set (printf "%s/api" $api.key) $api -}}
+{{- end -}}
+{{- $result := slice -}}
+{{- range $keys -}}
+  {{- $api := $groups.Get (printf "%s/api" .) -}}
+  {{- $result = $result | append (dict "key" . "title" $api.title "root" $api.root "entries" ($groups.Get .)) -}}
+{{- end -}}
+{{- return $result -}}

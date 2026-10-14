@@ -2,6 +2,8 @@
 weight: 50
 title: Working with operations
 layout: redirect
+recipes:
+  - send-operation
 helpcontent:
 - label: to-view-single-operations
   title: Single operations
