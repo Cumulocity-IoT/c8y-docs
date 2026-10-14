@@ -16,7 +16,7 @@
         </div>
         {{/* The skills files and manifest are published by recipes/list.md */}}
         <div class="recipes-download">
-          <button type="button" class="recipes-download__button" id="download-skills" data-manifest="{{ "recipes/skills/manifest.json" | absURL }}">
+          <button type="button" class="btn btn--primary recipes-download__button" id="download-skills" data-manifest="{{ "recipes/skills/manifest.json" | absURL }}">
             <i class="dlt-c8y-icon-download" aria-hidden="true"></i> Download as skills
           </button>
           <span class="recipes-download__status" id="download-skills-status" role="status">All {{ len .RegularPages }} recipes as a ZIP file of agent skills (SKILL.md)</span>
