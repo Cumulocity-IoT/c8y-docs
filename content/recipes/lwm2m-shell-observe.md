@@ -3,7 +3,6 @@ title: Observe LWM2M resources with shell commands
 description: Set notification attributes, start and stop observations of LWM2M resources on a device with shell commands, and check that measurements arrive.
 weight: 505
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

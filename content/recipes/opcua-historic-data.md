@@ -3,7 +3,6 @@ title: Read the history of an OPC UA node
 description: Read the stored history of an OPC UA node and process it through the device protocol mappings, or export it as files to the file repository and download them.
 weight: 660
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

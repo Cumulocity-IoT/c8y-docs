@@ -3,7 +3,6 @@ title: Apply and retrieve device configuration
 description: Install configuration text or a configuration file on a device, make the device report its current configuration, and read the configuration file that the device uploads.
 weight: 300
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

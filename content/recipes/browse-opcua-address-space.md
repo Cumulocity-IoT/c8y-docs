@@ -3,7 +3,6 @@ title: Browse the address space of an OPC UA server
 description: Scan the address space of an OPC UA server with the gateway, then read nodes, list their children, follow browse paths, and search the stored address space.
 weight: 610
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

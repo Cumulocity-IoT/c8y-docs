@@ -3,7 +3,6 @@ title: Register an LWM2M device
 description: Register an LWM2M device on the LWM2M agent, one at a time or in bulk from a CSV file, check the managed object of the device, and delete the registration.
 weight: 500
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

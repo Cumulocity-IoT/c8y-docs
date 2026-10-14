@@ -3,7 +3,6 @@ title: Manage SmartREST 2.0 template collections
 description: Create a SmartREST 2.0 template collection with its X-ID, list and find collections, export a collection, and delete it.
 weight: 430
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

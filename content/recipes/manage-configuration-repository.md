@@ -3,7 +3,6 @@ title: Manage the configuration repository
 description: Upload a configuration file, create a configuration snapshot for it in the configuration repository, announce the configuration types of a device, list the snapshots, and delete a snapshot with its file.
 weight: 340
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

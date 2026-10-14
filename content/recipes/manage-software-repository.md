@@ -3,7 +3,6 @@ title: Manage the software repository
 description: Create a software in the software repository, upload software files, add versions, list the software that a device can install, and delete a software with all its versions.
 weight: 370
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

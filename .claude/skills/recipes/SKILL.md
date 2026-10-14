@@ -36,7 +36,7 @@ For each recipe in scope:
 | File name | `content/recipes/<name>.md`, `<name>` of lowercase letters, digits, and hyphens |
 | `title` | The task in sentence case, without "To" |
 | `description` | One sentence, starts with a verb, says what the reader does. It is the card text, the llms.txt note, and the skill description for AI agents |
-| `sector` | `recipes` first, then exactly the topic sector(s) of the task (keys of `content/sector/`) |
+| `sector` | Exactly the topic sector(s) of the task (keys of `content/sector/`), usually the sector of the page that links the recipe. Not the documentation set of the Recipes section: that is the sector of `content/recipes-card.md` |
 | `requires` | `authentication` for every recipe that sends REST requests; other recipes only if the reader must follow them first. Each entry names an existing recipe |
 | `api` | Every operation the body sends, in the order of use; each entry with `operation`, `method`, `path`, `title`; `spec` only for APIs other than the Core API, and then a key of `data/apis.json`. Requests to microservices without a specification in `data/apis.json` (`/service/...`) are not listed |
 | Back links | None in the recipe. The "Related documentation" box is computed from the `recipes:` lists |

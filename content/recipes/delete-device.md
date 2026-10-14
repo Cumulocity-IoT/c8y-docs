@@ -3,7 +3,6 @@ title: Delete a device
 description: Check that a managed object is a device, delete it with or without its child hierarchy, and wait until the platform has removed it.
 weight: 101
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

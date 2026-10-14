@@ -4,6 +4,10 @@
 {{ with .Params.sector}}
   {{$currentSection =  index . 0}}
 {{end}}
+{{/* Recipes list their topics in `sector`; the documentation set they belong to is the sector of the Recipes card */}}
+{{ if eq .Section "recipes" }}
+  {{ with site.GetPage "/recipes-card" }}{{ $currentSection = index .Params.sector 0 }}{{ end }}
+{{ end }}
 {{ if not .Params.hideLeftMenu }}
   <nav class="main-nav navbar">
     <header class="nav-header">

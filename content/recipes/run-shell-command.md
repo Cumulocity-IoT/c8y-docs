@@ -3,7 +3,6 @@ title: Run a shell command on a device
 description: Check that a device supports shell commands, find a predefined command for its device type, send the command as a c8y_Command operation, and read the result that the device returns.
 weight: 270
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

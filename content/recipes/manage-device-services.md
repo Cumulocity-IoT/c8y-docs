@@ -3,7 +3,6 @@ title: Manage device services
 description: List the software services of a device, announce a service and update its status, and send a start, stop, or restart command to a service.
 weight: 107
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

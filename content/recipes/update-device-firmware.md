@@ -3,7 +3,6 @@ title: Update the firmware of a device
 description: Check that a device supports firmware updates, send it a firmware image or patch with a c8y_Firmware operation, follow the operation, and check the firmware that the device reports.
 weight: 390
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

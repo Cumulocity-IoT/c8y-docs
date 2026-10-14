@@ -3,7 +3,6 @@ title: Register devices in bulk
 description: Describe devices and their credentials in a CSV file, upload the file to register all devices at once, evaluate the result for each row, and check a registered device.
 weight: 320
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

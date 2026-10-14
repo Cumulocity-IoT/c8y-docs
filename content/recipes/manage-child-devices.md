@@ -3,7 +3,6 @@ title: Manage child devices
 description: Assign a device as a child device of another device, create a new child device in one request, list the child devices, and remove the assignment again.
 weight: 104
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

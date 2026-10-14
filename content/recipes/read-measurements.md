@@ -3,7 +3,6 @@ title: Create and read measurements
 description: Create a measurement for a device, query the measurements of a device by time range, type, and series, read the values of its series, and delete the measurements of a device.
 weight: 210
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

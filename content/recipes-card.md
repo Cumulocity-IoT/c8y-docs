@@ -8,8 +8,8 @@ audience:
   - Users
   - Developers
 sector:
-  - recipes
-weight: 95
+  - app_enablement
+weight: 90
 ---
 
 Step-by-step solutions for common tasks across the platform, with the REST API requests they use. You can download all recipes as skills for AI agents.

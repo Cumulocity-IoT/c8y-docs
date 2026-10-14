@@ -3,7 +3,6 @@ title: Authenticate REST API requests
 description: Send authenticated requests to the Cumulocity REST API with basic authentication or an OAI-Secure access token, check the credentials, and keep them out of logs and replies.
 weight: 5
 sector:
-  - recipes
   - platform_administration
 api:
   - operation: getCurrentUserResource

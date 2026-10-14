@@ -3,7 +3,6 @@ title: List and query devices
 description: List the devices of your tenant, filter them by name, type, and fragment with the inventory query language, and page through all results.
 weight: 103
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

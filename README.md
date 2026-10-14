@@ -164,6 +164,8 @@ documentation page --(recipes:)--> recipe --(api:)--> API reference (<API URL>#o
 
 The **Related documentation** box on a recipe page is computed from the `recipes:` lists of the documentation pages. Never add these back links by hand.
 
+The recipes are a section of the **Application enablement & solutions** documentation set. The sector of the Recipes card, `content/recipes-card.md`, decides this: the left navigation of all recipe pages follows it. To move the recipes to another documentation set, change only that card. The `sector` of a recipe lists its topics.
+
 ### Add a recipe
 
 1. Create `content/recipes/<name>.md`. The file name is the name of the recipe: lowercase letters, digits, and hyphens. Documentation pages refer to the recipe by this name.
@@ -174,9 +176,8 @@ The **Related documentation** box on a recipe page is computed from the `recipes
    title: Send an operation to a device      # the task, in sentence case
    description: Check that a device supports an operation, create the operation, ...   # one sentence, shown on cards, in llms.txt, and to AI agents
    weight: 20                                 # order in the left navigation
-   sector:
-     - recipes                                # always first: puts the recipe in the Recipes section
-     - device_management                      # the topic: groups the recipe on the overview and adds it to that topic's llms.txt
+   sector:                                    # the topics: group the recipe on the overview and add it to their llms.txt
+     - device_management
    requires:                                  # optional: recipes to follow first, shown as "Before you start"
      - authentication                         # every recipe that sends REST requests builds on this one
    api:                                       # every API operation the recipe uses, in the order of use

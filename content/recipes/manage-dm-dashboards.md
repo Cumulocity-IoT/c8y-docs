@@ -3,7 +3,6 @@ title: Manage device dashboards
 description: Create a dashboard for a device, list the dashboards of a device, check that a dashboard belongs to the device, and delete it.
 weight: 420
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

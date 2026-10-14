@@ -3,7 +3,6 @@ title: Track the location of a device
 description: Read and set the current position of a device, record location updates, query the movement of the device in a time range, and delete a location update.
 weight: 280
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

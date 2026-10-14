@@ -3,7 +3,6 @@ title: Replace a device
 description: Replace the hardware of a device and keep its history by moving the external IDs and hardware information of a replacement device to the original device, deleting the replacement device, and recording the replacement.
 weight: 240
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

@@ -3,7 +3,6 @@ title: Read the provisioned certificates of a device
 description: Find the device user of a device and read the X.509 certificates that the platform provisioned to the device, as shown in its x509 tab.
 weight: 449
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

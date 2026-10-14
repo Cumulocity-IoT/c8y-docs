@@ -3,7 +3,6 @@ title: Manage the firmware repository
 description: Create a firmware in the firmware repository, upload firmware files, add versions and patches, list the firmware for a device type, and delete a firmware with all its versions.
 weight: 360
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

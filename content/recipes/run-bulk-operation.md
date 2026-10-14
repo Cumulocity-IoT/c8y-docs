@@ -3,7 +3,6 @@ title: Run a bulk operation on a device group
 description: Schedule an operation for every device of a group as a bulk operation, monitor its progress, retry the operations that failed, and cancel a bulk operation.
 weight: 380
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

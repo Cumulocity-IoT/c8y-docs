@@ -3,7 +3,6 @@ title: Register a device
 description: Create a registration request for a device that fetches its own credentials, wait until the device connects, accept the request, and find the managed object that the device creates.
 weight: 230
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

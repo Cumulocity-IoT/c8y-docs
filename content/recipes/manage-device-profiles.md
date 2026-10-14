@@ -3,7 +3,6 @@ title: Manage device profiles
 description: Create a device profile with a firmware version, software packages, and configuration files, read and update it, list all device profiles, and delete a profile.
 weight: 350
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

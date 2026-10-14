@@ -3,7 +3,6 @@ title: Create and manage device events
 description: Create an event for a device, query and update events, attach a file to an event, and delete the event.
 weight: 102
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

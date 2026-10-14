@@ -3,7 +3,6 @@ title: Read and write OPC UA values
 description: Read and write the values of OPC UA nodes, read node attributes, and call OPC UA methods through operations that the OPC UA gateway executes.
 weight: 620
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

@@ -3,7 +3,6 @@ title: Manage the LWM2M configuration of a device
 description: Read and replace the LWM2M configuration of a device on the LWM2M agent, section by section, for the basic settings, the servers, the connectivity, the bootstrap, and the firmware update.
 weight: 501
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

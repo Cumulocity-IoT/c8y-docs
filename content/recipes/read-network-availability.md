@@ -3,7 +3,6 @@ title: Read the network configuration and availability of a device
 description: Read the LAN, WAN, and DHCP configuration that a device reports, and check whether the platform monitors the device and whether the device is available and connected.
 weight: 220
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

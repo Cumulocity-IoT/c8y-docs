@@ -3,7 +3,6 @@ title: Re-apply OPC UA device type mappings
 description: Make the OPC UA gateway apply all device type mappings again, or read the current values of a generated device and process them through its mappings.
 weight: 650
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

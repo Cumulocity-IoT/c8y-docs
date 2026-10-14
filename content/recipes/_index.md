@@ -2,8 +2,6 @@
 title: Recipes
 description: Step-by-step solutions for common tasks across Cumulocity, with the REST API requests they use.
 weight: 1
-sector:
-  - recipes
 outputs:
   - html
   - markdown

@@ -3,7 +3,6 @@ title: Read complex values and write attributes of OPC UA nodes
 description: Read selected attributes of several OPC UA nodes in one operation, including parts of array values, and write any writable attribute of OPC UA nodes.
 weight: 630
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

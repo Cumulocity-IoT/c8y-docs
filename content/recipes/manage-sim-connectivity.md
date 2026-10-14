@@ -3,7 +3,6 @@ title: Manage the SIM card of a device
 description: Configure the SIM provider of the tenant, link a SIM card to a device, read its status, activate or deactivate it, disconnect it, read its audit and usage data, and send it an SMS.
 weight: 750
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

@@ -3,7 +3,6 @@ title: Request a log file from a device
 description: Check which logs a device supports, request a log file with a c8y_LogfileRequest operation, wait until the device uploads the file, and download it.
 weight: 250
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

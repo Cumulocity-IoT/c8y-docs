@@ -3,7 +3,6 @@ title: Provision an Actility LoRa device
 description: Select the device protocol, device profile, and connectivity plan, provision a LoRa device on Actility ThingPark, send a downlink command to it, and deprovision it.
 weight: 800
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

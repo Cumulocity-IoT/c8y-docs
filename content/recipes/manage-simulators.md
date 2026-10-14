@@ -3,7 +3,6 @@ title: Manage device simulators
 description: Check that the device simulator is available, create, read, start, and change a simulator, find the devices that it creates, and delete it.
 weight: 109
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

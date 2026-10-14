@@ -3,7 +3,6 @@ title: Manage OPC UA device types
 description: Create an OPC UA device type that maps server nodes to measurements, events, and alarms, check which nodes it matches, enable, update, and delete it with the OPC UA management service.
 weight: 640
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

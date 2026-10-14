@@ -3,7 +3,6 @@ title: Apply a device profile to a device
 description: Check that a device supports device profiles, read the profile, create a c8y_DeviceProfile operation, follow it, and check that the device reports the profile as executed.
 weight: 310
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

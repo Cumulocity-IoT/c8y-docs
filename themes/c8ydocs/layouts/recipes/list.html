@@ -21,12 +21,11 @@
           </button>
           <span class="recipes-download__status" id="download-skills-status" role="status">All {{ len .RegularPages }} recipes as a ZIP file of agent skills (SKILL.md)</span>
         </div>
-        {{/* One group per topic: the sectors a recipe has besides "recipes", in home page order */}}
+        {{/* One group per topic: the sectors of a recipe, in home page order */}}
         {{ $recipes := .RegularPages.ByWeight }}
         {{ range sort site.Taxonomies.sector ".Page.Params.weight" }}
           {{ $term := .Page.Data.Term }}
           {{ $topic := .Page.Title }}
-          {{ if eq $term "recipes" }}{{ continue }}{{ end }}
           {{ with where $recipes "Params.sector" "intersect" (slice $term) }}
           <h3 id="{{ $term }}" class="recipe-group">{{ $topic }}</h3>
           <div class="recipe-grid">
@@ -35,7 +34,7 @@
           {{ end }}
         {{ end }}
         {{ $other := slice }}
-        {{ range $recipes }}{{ if not (complement (slice "recipes") .Params.sector) }}{{ $other = $other | append . }}{{ end }}{{ end }}
+        {{ range $recipes }}{{ if not .Params.sector }}{{ $other = $other | append . }}{{ end }}{{ end }}
         {{ with $other }}
         <h3 id="other" class="recipe-group">Other</h3>
         <div class="recipe-grid">

@@ -3,7 +3,6 @@ title: Manage fieldbus device protocols
 description: Create, list, read, and delete the fieldbus device protocols that map the data of Modbus, CAN bus, and CANopen devices.
 weight: 410
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

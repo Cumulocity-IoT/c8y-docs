@@ -3,7 +3,6 @@ title: Manage trusted certificates
 description: Upload the CA certificates that a tenant trusts for device authentication, list and update them, prove possession of their private key, and remove them.
 weight: 445
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

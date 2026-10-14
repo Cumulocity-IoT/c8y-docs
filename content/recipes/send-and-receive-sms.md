@@ -3,7 +3,6 @@ title: Send and receive SMS
 description: Configure the SMS provider of the tenant, send an SMS through the SMS gateway microservice, and read the messages received for an address.
 weight: 760
 sector:
-  - recipes
   - app_enablement
 requires:
   - authentication

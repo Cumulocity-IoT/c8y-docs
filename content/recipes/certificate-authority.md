@@ -3,7 +3,6 @@ title: Create and renew the tenant certificate authority
 description: Enable and create the certificate authority of your tenant, find and renew it, and register devices that enroll for certificates signed by it.
 weight: 400
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

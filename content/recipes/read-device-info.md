@@ -3,7 +3,6 @@ title: Read and update device information
 description: Read the managed object of a device, interpret its hardware, firmware, and availability fragments, update or remove editable fragments, and switch availability monitoring off or into maintenance mode.
 weight: 200
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

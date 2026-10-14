@@ -3,7 +3,6 @@ title: Manage SSH keys for Cloud Remote Access
 description: Generate an RSA key pair for an SSH endpoint, replace the stored host key of an SSH endpoint configuration, and check whether Cloud Remote Access saves host keys automatically.
 weight: 740
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

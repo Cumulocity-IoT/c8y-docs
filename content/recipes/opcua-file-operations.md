@@ -3,7 +3,6 @@ title: Read a file from an OPC UA server
 description: Read an OPC UA file node into the file repository or upload it to an external endpoint, then find and download the stored file and remove copies that you no longer need.
 weight: 670
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

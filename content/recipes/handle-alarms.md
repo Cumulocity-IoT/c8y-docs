@@ -3,7 +3,6 @@ title: Raise, find, and clear alarms
 description: Raise an alarm for a device, list, filter, and count alarms, acknowledge and clear them, and see how the platform de-duplicates repeated alarms.
 weight: 100
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

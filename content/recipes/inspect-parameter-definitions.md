@@ -3,7 +3,6 @@ title: Inspect the definition of a device parameter
 description: Find the Digital Twin Manager property definition of a device parameter and read its contexts to see whether the platform stores the parameter on the device, shows it in the Parameters tab, and lets users edit it.
 weight: 700
 sector:
-  - recipes
   - device_management
 requires:
   - authentication

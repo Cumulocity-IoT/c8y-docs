@@ -3,7 +3,6 @@ title: Run advanced LWM2M shell commands
 description: Write binary data, send raw CoAP requests, change the serialization format, start a firmware update, or restart an LWM2M device with shell commands.
 weight: 506
 sector:
-  - recipes
   - device_management
 requires:
   - authentication
