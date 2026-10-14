@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-10-14
 title: "Upgrade of Web SDK version to 1023.14.180"
 product_area: "Application enablement & solutions"
 change_type:

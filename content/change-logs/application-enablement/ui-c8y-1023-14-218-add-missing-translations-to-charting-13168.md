@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-10-14
 title: Add missing translations to charting
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-10-14
 title: Data point labels, descriptions and units are now translated consistently
 product_area: Application enablement & solutions
 change_type:

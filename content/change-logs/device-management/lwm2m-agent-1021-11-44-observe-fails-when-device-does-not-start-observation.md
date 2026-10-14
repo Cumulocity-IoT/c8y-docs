@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-10-14
 title: Fixed stuck LWM2M observe operations
 product_area: Device management & connectivity
 change_type:
