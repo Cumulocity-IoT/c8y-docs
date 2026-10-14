@@ -2,6 +2,9 @@
 weight: 20
 title: Managing software
 layout: redirect
+recipes:
+  - install-device-software
+  - manage-software-repository
 helpcontent:
 - label: managing-software
   title: Software repository

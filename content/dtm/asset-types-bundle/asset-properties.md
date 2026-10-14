@@ -1,6 +1,8 @@
 ---
 weight: 40
 layout: redirect
+recipes:
+  - inspect-parameter-definitions
 title: Property definitions
 
 helpContent:

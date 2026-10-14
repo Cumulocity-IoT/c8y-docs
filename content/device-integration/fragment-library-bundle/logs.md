@@ -2,6 +2,8 @@
 weight: 120
 title: Logs
 layout: bundle
+recipes:
+  - request-device-logs
 sector: 
   - device_management
 ---

@@ -2,6 +2,8 @@
 weight: 45
 title: Managing device services
 layout: bundle
+recipes:
+  - manage-device-services
 sector:
   - device_management
 ---

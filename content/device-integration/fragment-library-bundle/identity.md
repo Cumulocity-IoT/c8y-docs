@@ -2,6 +2,8 @@
 weight: 110
 title: Identity
 layout: bundle
+recipes:
+  - manage-identity
 sector: 
   - device_management
 ---

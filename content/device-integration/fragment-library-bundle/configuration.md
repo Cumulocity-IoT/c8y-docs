@@ -2,6 +2,8 @@
 weight: 50
 title: Configuration
 layout: bundle
+recipes:
+  - apply-device-configuration
 sector:
   - device_management
 ---

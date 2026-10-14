@@ -2,6 +2,8 @@
 weight: 10
 title: Loriot LoRa
 layout: redirect
+recipes:
+  - provision-loriot-device
 ---
 
 ### Introduction {#loriot-introduction}

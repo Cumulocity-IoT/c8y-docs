@@ -2,6 +2,9 @@
 weight: 170
 title: Software
 layout: bundle
+recipes:
+  - manage-advanced-software
+  - install-device-software
 sector:
   - device_management
 ---

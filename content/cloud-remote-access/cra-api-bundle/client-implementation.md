@@ -2,6 +2,8 @@
 title: Client implementation
 weight: 10
 layout: bundle
+recipes:
+  - manage-remote-access-configurations
 ---
 Each device supporting Cloud Remote Access uses a fragment called `c8y_RemoteAccessList` to hold a list with the configured
 endpoints that can be accessed via this device.

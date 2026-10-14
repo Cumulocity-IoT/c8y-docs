@@ -2,6 +2,8 @@
 weight: 50
 title: Managing device types
 layout: bundle
+recipes:
+  - manage-device-protocols
 outputs:
   - html
   - json

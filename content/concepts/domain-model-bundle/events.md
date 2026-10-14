@@ -3,6 +3,9 @@
 weight: 30
 title: Events
 layout: redirect
+recipes:
+  - handle-events
+  - handle-alarms
 ---
 
 Events are used to pass real-time information through {{< product-c8y-iot >}}.

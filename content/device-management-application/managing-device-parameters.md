@@ -2,6 +2,9 @@
 weight: 65
 title: Managing parameters
 layout: bundle
+recipes:
+  - inspect-parameter-definitions
+  - read-write-device-parameters
 outputs:
   - html
   - json

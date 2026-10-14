@@ -1,7 +1,7 @@
 ---
 title: Send an operation to a device
 description: Check that a device supports an operation, create the operation, follow it until the device reports SUCCESSFUL or FAILED, and cancel an operation that stays PENDING.
-weight: 20
+weight: 295
 sector:
   - recipes
   - device_management
@@ -55,7 +55,7 @@ ROLES & PERMISSIONS:
 * To read operations: ROLE_DEVICE_CONTROL_READ
 {{< /c8y-admon-req >}}
 
-The examples use `<device_id>` for the ID of the device and `<operation_id>` for the ID of the operation. They restart the device with the `c8y_Restart` operation. Send the header `Accept: application/json` with every POST and PUT request, otherwise the response has no body.
+The examples use `<device_id>` for the ID of the device and `<operation_id>` for the ID of the operation. They restart the device with the `c8y_Restart` operation.
 
 ### To check that the device supports the operation {#to-check-that-the-device-supports-the-operation}
 
@@ -134,7 +134,7 @@ Accept: application/json
 
 {
   "status": "FAILED",
-  "failureReason": "Cancelled by operator"
+  "failureReason": "Canceled by operator"
 }
 ```
 

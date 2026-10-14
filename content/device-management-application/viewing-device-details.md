@@ -2,6 +2,15 @@
 weight: 31
 title: Viewing device details
 layout: bundle
+recipes:
+  - manage-identity
+  - read-device-info
+  - read-measurements
+  - read-network-availability
+  - request-device-logs
+  - request-diagnostics
+  - run-shell-command
+  - track-location
 sector:
   - device_management
 ---

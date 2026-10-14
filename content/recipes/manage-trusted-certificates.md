@@ -1,7 +1,7 @@
 ---
 title: Manage trusted certificates
 description: Upload the CA certificates that a tenant trusts for device authentication, list and update them, prove possession of their private key, and remove them.
-weight: 30
+weight: 445
 sector:
   - recipes
   - device_management
@@ -61,7 +61,7 @@ ROLES & PERMISSIONS:
 * To read trusted certificates: ROLE_TENANT_MANAGEMENT_READ
 {{< /c8y-admon-req >}}
 
-The examples use `<tenant_id>` for the ID of your tenant and `<fingerprint>` for the fingerprint of a trusted certificate. The platform calculates the fingerprint when you upload the certificate. To find your tenant ID, send `GET /tenant/currentTenant` and read the `name` property. Send the header `Accept: application/json` with every POST and PUT request, otherwise the response has no body.
+The examples use `<tenant_id>` for the ID of your tenant and `<fingerprint>` for the fingerprint of a trusted certificate. The platform calculates the fingerprint when you upload the certificate. To find your tenant ID, send `GET /tenant/currentTenant` and read the `name` property.
 
 ### To upload a certificate {#to-upload-a-certificate}
 

@@ -2,6 +2,9 @@
 title: Managing endpoints
 weight: 30
 layout: bundle
+recipes:
+  - manage-remote-access-configurations
+  - manage-remote-access-keys
 ---
 
 The "endpoint" is the IP address and port of the VNC, SSH or Telnet server running on the remote device. The IP address and port must be reachable from the gateway. 	

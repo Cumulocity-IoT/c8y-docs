@@ -2,6 +2,8 @@
 weight: 60
 title: Troubleshooting devices
 layout: redirect
+recipes:
+  - handle-events
 helpcontent:
 - label: troubleshooting-devices
   title: Events

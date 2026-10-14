@@ -2,6 +2,8 @@
 weight: 90
 title: Working with simulators
 layout: bundle
+recipes:
+  - manage-simulators
 outputs:
   - html
   - json

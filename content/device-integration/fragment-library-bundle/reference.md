@@ -2,6 +2,8 @@
 weight: 160
 title: Shell
 layout: bundle
+recipes:
+  - run-shell-command
 sector: 
   - device_management
 ---

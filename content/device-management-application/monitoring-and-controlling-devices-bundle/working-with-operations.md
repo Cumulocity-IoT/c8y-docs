@@ -4,6 +4,7 @@ title: Working with operations
 layout: redirect
 recipes:
   - send-operation
+  - run-bulk-operation
 helpcontent:
 - label: to-view-single-operations
   title: Single operations

@@ -2,6 +2,8 @@
 weight: 20
 title: To filter devices
 layout: redirect
+recipes:
+  - list-and-query-devices
 ---
 
 The device list offers a filtering functionality to filter devices in the list for specific criteria.

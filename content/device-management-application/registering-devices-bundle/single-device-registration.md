@@ -2,6 +2,8 @@
 weight: 10
 title: Single device registration
 layout: redirect
+recipes:
+  - register-device
 ---
 
 {{< product-c8y-iot >}} offers single device registration to connect devices manually one by one.
