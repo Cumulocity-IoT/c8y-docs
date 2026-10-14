@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-10-09'
   - label: jp.cumulocity.com
     date: '2026-10-09'
+  - label: us.cumulocity.com
+    date: '2026-10-12'
+  - label: cumulocity.com
+    date: '2026-10-12'
 ---
 A new Administration tenant property library plugin is now available to
 help you manage tenant-specific properties. Once installed, the plugin

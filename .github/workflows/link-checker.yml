@@ -46,7 +46,7 @@ jobs:
           elif [ -n "$BRANCH_INPUT" ]; then
             branches_json=$(jq -cn --arg b "$BRANCH_INPUT" '[$b]')
           else
-            branches_json='["develop", "release/y2025", "release/y2026"]'
+            branches_json='["develop", "release/y2026"]'
           fi
           echo "branches=$branches_json" >> "$GITHUB_OUTPUT"
 
