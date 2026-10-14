@@ -12,13 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 version: 2026.360.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 The new Asset table widget, which offers extended filtering options, enhanced customization, and the expanded capabilities of the data grid for a more powerful and flexible way to view and manage asset data, is now generally available (GA). For more details on the enhancements, see the original [{{< product-c8y-iot >}} announcement](https://cumulocity.com/docs/change-logs/?productarea=.productarea-application-enablement-solutions&component=.component-web-sdk&change-type=.change-type-feature#ui-c8y-1023-49-0-add-configurable-data-grid-as-asset-table-widget).
