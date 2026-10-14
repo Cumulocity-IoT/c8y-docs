@@ -53,6 +53,18 @@
           {{ end }}
         </div>
 
+        {{ with partial "recipes/requires.html" . }}
+        <div class="admonition req recipe-requires">
+          <div class="title">Before you start</div>
+          <div class="content">
+            <p>This recipe builds on the following recipes:</p>
+            <ul>
+              {{ range . }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
+            </ul>
+          </div>
+        </div>
+        {{ end }}
+
         {{ partial "headline-hash.html" .Content }}
 
         {{ with .OutputFormats.Get "markdown" }}

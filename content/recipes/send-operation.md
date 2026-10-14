@@ -5,6 +5,8 @@ weight: 20
 sector:
   - recipes
   - device_management
+requires:
+  - authentication
 api:
   - operation: getManagedObjectResource
     method: GET

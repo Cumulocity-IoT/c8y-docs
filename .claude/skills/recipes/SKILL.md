@@ -37,7 +37,8 @@ For each recipe in scope:
 | `title` | The task in sentence case, without "To" |
 | `description` | One sentence, starts with a verb, says what the reader does. It is the card text, the llms.txt note, and the skill description for AI agents |
 | `sector` | `recipes` first, then exactly the topic sector(s) of the task (keys of `content/sector/`) |
-| `api` | Every operation the body sends, in the order of use; each entry with `operation`, `method`, `path`, `title`; `spec` only for APIs other than the Core API, and then a key of `data/apis.json` |
+| `requires` | `authentication` for every recipe that sends REST requests; other recipes only if the reader must follow them first. Each entry names an existing recipe |
+| `api` | Every operation the body sends, in the order of use; each entry with `operation`, `method`, `path`, `title`; `spec` only for APIs other than the Core API, and then a key of `data/apis.json`. Requests to microservices without a specification in `data/apis.json` (`/service/...`) are not listed |
 | Back links | None in the recipe. The "Related documentation" box is computed from the `recipes:` lists |
 | Linked | At least one documentation page or bundle block lists the recipe in `recipes:`. A recipe nobody links to has no Recipes tab entry |
 

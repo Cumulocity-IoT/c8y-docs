@@ -10,6 +10,14 @@ description: {{ .Description | jsonify }}
 ---
 
 {{ partial "llms-page.txt" . }}
+{{- with partial "recipes/requires.html" . }}
+## Before you start
+
+Follow these recipes first:
+
+{{ range . }}- [{{ .Title }}]({{ with .OutputFormats.Get "markdown" }}{{ .Permalink }}{{ end }})
+{{ end }}
+{{- end }}
 {{- with partial "recipes/api-groups.html" . }}
 ## API reference
 {{ range . }}

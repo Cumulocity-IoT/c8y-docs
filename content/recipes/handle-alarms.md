@@ -5,6 +5,8 @@ weight: 10
 sector:
   - recipes
   - device_management
+requires:
+  - authentication
 api:
   - operation: postAlarmCollectionResource
     method: POST

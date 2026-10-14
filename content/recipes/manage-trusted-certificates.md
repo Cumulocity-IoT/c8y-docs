@@ -5,6 +5,8 @@ weight: 30
 sector:
   - recipes
   - device_management
+requires:
+  - authentication
 api:
   - operation: postTrustedCertificateCollectionResource
     method: POST

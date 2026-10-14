@@ -3,7 +3,7 @@ weight: 30
 title: Alarms
 layout: bundle
 recipes:
-  - alarm-deduplication
+  - handle-alarms
 sector: 
   - device_management
 ---

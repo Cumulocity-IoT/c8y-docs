@@ -177,6 +177,8 @@ The **Related documentation** box on a recipe page is computed from the `recipes
    sector:
      - recipes                                # always first: puts the recipe in the Recipes section
      - device_management                      # the topic: groups the recipe on the overview and adds it to that topic's llms.txt
+   requires:                                  # optional: recipes to follow first, shown as "Before you start"
+     - authentication                         # every recipe that sends REST requests builds on this one
    api:                                       # every API operation the recipe uses, in the order of use
      - operation: postOperationCollectionResource   # the operationId in the OpenAPI specification
        method: POST
@@ -185,6 +187,8 @@ The **Related documentation** box on a recipe page is computed from the `recipes
        spec: core                             # optional, default core: a key of data/apis.json
    ---
    ```
+
+   `api` lists only operations of the APIs in `data/apis.json`. Requests to microservices without a published OpenAPI specification (for example `/service/opcua-mgmt-service/...`) appear only in the text of the recipe.
 
 3. Write the body as described in the "Recipes" section of `.github/copilot-instructions.md`: `### To ...` procedures, REST requests in `http` code blocks, each linked to its operation in the API reference. Recipes show REST requests only, no CLI commands.
 4. Link the recipe from the documentation. Add `recipes:` to the front matter of the page, or of the block in its `<page>-bundle/` folder that covers the task:
@@ -209,7 +213,7 @@ The **Related documentation** box on a recipe page is computed from the `recipes
    python3 scripts/check_recipe_api_refs.py            # all recipes
    python3 scripts/check_recipe_api_refs.py content/recipes/send-operation.md
    ```
-3. Check the rendered pages: the **Recipes** tab of each linking page, the recipe page, the recipes overview, and the Markdown version of the recipe (`/docs/recipes/<name>/index.md`).
+3. Check the rendered pages: the **Recipes** tab of each linking page, the recipe page with its **Before you start** box, the recipes overview, and the Markdown version of the recipe (`/docs/recipes/<name>/index.md`). The build fails if a `requires:` entry names no recipe.
 
 For an AI-assisted review, use the Claude Code skill `recipes` (`.claude/skills/recipes/`) or the Copilot prompt `c8y-recipe-review.prompt.md`.
 

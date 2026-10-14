@@ -2,6 +2,8 @@
 title: Basic settings
 weight: 70
 layout: bundle
+recipes:
+  - authentication
 outputs:
   - html
   - json
