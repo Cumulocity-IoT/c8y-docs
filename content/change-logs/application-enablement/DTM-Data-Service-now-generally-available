@@ -27,8 +27,4 @@ environment_availability:
 ---
 The DTM Data Service, previously released as a Public Preview, is now generally available. The microservice processes data point links configured in DTM and automatically propagates incoming device measurements to the linked assets in the digital twin hierarchy. This makes operational data available directly on assets for dashboards, analytics, smart rules, and business applications, without querying individual devices.
 
-{{< c8y-admon-info >}}
-The DTM Data Service is not enabled by default. To enable it for your tenant, contact [{{< product-c8y-iot >}} support](/additional-resources/contacting-support).
-{{< /c8y-admon-info >}}
-
 For details, see [Data points](/dtm/asset-hierarchy/#datapoints)
