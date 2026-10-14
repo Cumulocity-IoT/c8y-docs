@@ -1,17 +1,21 @@
 ---
 date: ""
-title: Offloading settings plugin is now enabled by default
-product_area: Platform services
+title: New Data Lake settings page for Streaming Lake Ingestion
+product_area: Analytics
 change_type:
-  - value: change-QHu1GdukP
-    label: Feature
+  - value: change-pXAlHAWka
+    label: Preview
 component:
-  - value: component-0UgqXH1Ys
-    label: Administration
+  - value: component-A8vMaVaTg
+    label: DataHub
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: CDH-6696
 version: 1024.19.0
 ---
-The offloading settings plugin was previously disabled by default, requiring manual configuration to enable it in your installation. The plugin is now enabled by default, allowing you to immediately use offloading features without additional setup steps. This change simplifies the initial configuration of your system and makes offloading capabilities available out of the box for all new installations.
+{{< c8y-admon-preview >}}
+This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
+{{< /c8y-admon-preview >}}
+
+The Administration application now provides a **Data Lake** page under **Settings**. There you connect [Streaming Lake Ingestion](/datahub/streaming-lake-ingestion/), the first capability of DataHub 2.0, to your own data lake on AWS or Azure. The page guides you through the setup and checks the access before it saves the configuration. It is only shown on tenants on which Streaming Lake Ingestion is activated.
