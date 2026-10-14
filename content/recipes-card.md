@@ -12,4 +12,4 @@ sector:
 weight: 95
 ---
 
-Step-by-step solutions for common tasks across the platform, with the REST API requests they use. Each recipe is also available as Markdown for AI agents.
+Step-by-step solutions for common tasks across the platform, with the REST API requests they use. You can download all recipes as skills for AI agents.

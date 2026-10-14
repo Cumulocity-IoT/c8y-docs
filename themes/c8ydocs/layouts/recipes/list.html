@@ -14,6 +14,13 @@
         <div class="lead">
           {{ partial "headline-hash.html" .Content }}
         </div>
+        {{/* The skills files and manifest are published by recipes/list.md */}}
+        <div class="recipes-download">
+          <button type="button" class="recipes-download__button" id="download-skills" data-manifest="{{ "recipes/skills/manifest.json" | absURL }}">
+            <i class="dlt-c8y-icon-download" aria-hidden="true"></i> Download as skills
+          </button>
+          <span class="recipes-download__status" id="download-skills-status" role="status">All {{ len .RegularPages }} recipes as a ZIP file of agent skills (SKILL.md)</span>
+        </div>
         {{/* One group per topic: the sectors a recipe has besides "recipes", in home page order */}}
         {{ $recipes := .RegularPages.ByWeight }}
         {{ range sort site.Taxonomies.sector ".Page.Params.weight" }}

@@ -30,7 +30,7 @@
         </div>
         {{ with $recipes }}
         <section id="recipes" class="recipes-panel" role="tabpanel" aria-labelledby="page-tab-recipes">
-          <p class="recipes-panel__intro">Recipes are step-by-step solutions for tasks on this page, with the API requests they use. Each recipe is also available as Markdown for AI agents. <a href="{{ (site.GetPage "/recipes").Permalink }}">All recipes</a></p>
+          <p class="recipes-panel__intro">Recipes are step-by-step solutions for tasks on this page, with the API requests they use. To use them with an AI agent, download all recipes as skills from the <a href="{{ (site.GetPage "/recipes").Permalink }}">recipes overview</a>.</p>
           <div class="recipe-grid">
             {{ range . }}{{ partial "recipes/card.html" . }}{{ end }}
           </div>

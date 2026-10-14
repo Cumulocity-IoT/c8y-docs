@@ -66,12 +66,6 @@
         {{ end }}
 
         {{ partial "headline-hash.html" .Content }}
-
-        {{ with .OutputFormats.Get "markdown" }}
-        <p class="recipe-markdown">
-          <a href="{{ .Permalink }}"><i class="dlt-c8y-icon-ai-sparkles" aria-hidden="true"></i> View this recipe as Markdown for AI agents</a>
-        </p>
-        {{ end }}
       </div>
     </article>
   </div>

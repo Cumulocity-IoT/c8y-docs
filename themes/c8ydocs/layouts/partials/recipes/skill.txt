@@ -1,0 +1,43 @@
+{{- /*
+  Returns a recipe in agent skill format (SKILL.md): front matter with `name` and
+  `description`, then the recipe as in llms-full.txt with the recipes it builds on inserted
+  after the metadata lines, then the API operations it uses and the documentation that links
+  to it. The recipe's index.md and the skills download both use it. Call with the recipe page.
+*/ -}}
+{{- $page := . -}}
+{{- $usedIn := index (partialCached "recipes/index.html" site) .File.ContentBaseName -}}
+
+{{- /* llms-page.txt returns "# Title", the metadata lines and the body, separated by blank lines */ -}}
+{{- $parts := split (partial "llms-page.txt" .) "\n\n" -}}
+{{- $sections := slice (index $parts 0) (index $parts 1) -}}
+{{- with partial "recipes/requires.html" . -}}
+  {{- $lines := slice -}}
+  {{- range . -}}
+    {{- $lines = $lines | append (printf "- `%s` skill: [%s](%s)" (partial "recipes/skill-name.html" .) .Title (.OutputFormats.Get "markdown").Permalink) -}}
+  {{- end -}}
+  {{- $sections = $sections | append (printf "## Before you start\n\nFollow these recipes first. They are available as the following skills:\n\n%s" (delimit $lines "\n")) -}}
+{{- end -}}
+{{- $sections = $sections | append (strings.Trim (delimit (after 2 $parts) "\n\n") "\n") -}}
+
+{{- with partial "recipes/api-groups.html" . -}}
+  {{- $groups := slice -}}
+  {{- range . -}}
+    {{- $lines := slice -}}
+    {{- range .entries }}{{ $lines = $lines | append (printf "- [%s %s](%s): %s" .method .path .url .title) }}{{ end -}}
+    {{- $groups = $groups | append (printf "### %s\n\nReference: %s\n\n%s" .title .root (delimit $lines "\n")) -}}
+  {{- end -}}
+  {{- $sections = $sections | append (printf "## API reference\n\n%s" (delimit $groups "\n\n")) -}}
+{{- end -}}
+
+{{- with $usedIn -}}
+  {{- $lines := slice -}}
+  {{- range . -}}
+    {{- $title := replace .page.Title "var-product-c8y-iot" site.Params.product_c8y_iot -}}
+    {{- with .from }}{{ $title = printf "%s > %s" $title (replace . "var-product-c8y-iot" site.Params.product_c8y_iot) }}{{ end -}}
+    {{- $lines = $lines | append (printf "- [%s](%s%s)" $title .page.Permalink (cond (ne .anchor "") (printf "#%s" .anchor) "")) -}}
+  {{- end -}}
+  {{- $sections = $sections | append (printf "## Related documentation\n\n%s" (delimit $lines "\n")) -}}
+{{- end -}}
+
+{{- $frontMatter := printf "---\nname: %s\ndescription: %s\n---" (partial "recipes/skill-name.html" .) (.Description | jsonify) -}}
+{{- return printf "%s\n\n%s\n" $frontMatter (delimit $sections "\n\n") -}}

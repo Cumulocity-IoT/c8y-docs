@@ -1,0 +1,2 @@
+{{- /* Returns the agent skill name of a recipe: its file name with a `cumulocity-` prefix, so that it does not collide with other installed skills. Call with the recipe page. */ -}}
+{{- return printf "cumulocity-%s" .File.ContentBaseName -}}
