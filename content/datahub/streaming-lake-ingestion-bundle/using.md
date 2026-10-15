@@ -683,6 +683,8 @@ Characters are case-sensitive, but identifiers of tables and columns must be uni
 This is a reliability measure. The Iceberg specification considers tables and column names as case sensitive. However, upstream query engines do not generally support case sensitivity and may not be able to query such tables.
 {{< /c8y-admon-info >}}
 
+The service also appends this suffix when a top-level property has the same name as the `eventType` column, which records the type of change. For example, the service stores a string property `eventType` in the column `eventType__8`, in both change data capture and latest tables. A value of another type goes to the matching overflow column, for example `eventType__d` for a number.
+
 #### Flat views {#flat-views}
 
 Streaming Lake Ingestion offers [Apache Iceberg views](https://iceberg.apache.org/view-spec/) on top of the data ingested into the data lake tables.
