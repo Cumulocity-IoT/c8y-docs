@@ -218,6 +218,14 @@ Skills are a documentation set of their own: the `skills` sector (`content/secto
    ```
 3. Check the rendered pages: the **Skills** tab of each linking page, the skill page with its **Before you start** box, the skills overview, and the Markdown version of the skill (`/docs/skills/<name>/index.md`). The build fails if a `requires:` entry names no skill.
 
+### Machines first
+
+The pages put the agent skill first and the reading view second:
+
+- A skill page opens with **Use with an AI agent**: the skill name, where to save the `SKILL.md`, the skills it builds on, and the buttons **Copy SKILL.md** and **Download skill** (a ZIP file with the `cumulocity-<name>/SKILL.md` folder). The text for people follows.
+- Every skill card, in the **Skills** tab and on the overview, shows the skill name and links its `SKILL.md`.
+- The overview offers **Download all skills** and links the skills `llms.txt` for agents.
+
 ### Download all skills
 
 The **Download all skills** button on the skills overview gives a ZIP file with one folder per skill: `cumulocity-skills/cumulocity-<name>/SKILL.md`, plus a `README.md` with the install steps and the required credentials. The `cumulocity-` prefix keeps the skill names apart from other installed skills. A skill's `index.md` is the same text as its `SKILL.md`.

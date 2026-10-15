@@ -15,6 +15,26 @@
         </header>
         {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
 
+        {{/* Machines first: the agent skill (index.md, the same text as SKILL.md) comes before the page for people. static/js/skills-download.js handles the buttons. */}}
+        {{ $name := partial "skills/skill-name.html" . }}
+        {{ with .OutputFormats.Get "markdown" }}
+        <section class="skill-agent" aria-labelledby="skill-agent-title">
+          {{/* Not a heading: buildToc() in main.js takes the first h2 of an article as the title of the table of contents */}}
+          <p class="skill-agent__title" id="skill-agent-title"><i class="dlt-c8y-icon-ai-sparkles" aria-hidden="true"></i> Use with an AI agent</p>
+          <p class="skill-agent__text">
+            This page is the agent skill <code>{{ $name }}</code>. Save it as <code>{{ $name }}/SKILL.md</code> in the skills folder of your agent, for example <code>.claude/skills/</code> for Claude Code.
+            {{ with partial "skills/requires.html" $ }}It builds on {{ range $i, $r := . }}{{ if $i }}, {{ end }}<code>{{ partial "skills/skill-name.html" $r }}</code>{{ end }}: install {{ if gt (len .) 1 }}these skills{{ else }}that skill{{ end }} too.{{ end }}
+          </p>
+          <div class="skill-agent__actions">
+            <button type="button" class="skill-button" data-skill-copy="{{ .Permalink }}"><i class="dlt-c8y-icon-clipboard" aria-hidden="true"></i> Copy SKILL.md</button>
+            <button type="button" class="skill-button skill-button--secondary" data-skill-download="{{ .Permalink }}" data-skill-name="{{ $name }}"><i class="dlt-c8y-icon-download" aria-hidden="true"></i> Download skill</button>
+            <a class="skill-agent__link" href="{{ .Permalink }}">View SKILL.md</a>
+            <a class="skill-agent__link" href="{{ (site.GetPage "/skills").Permalink }}">Download all skills</a>
+          </div>
+          <span class="skill-agent__status" role="status"></span>
+        </section>
+        {{ end }}
+
         <div class="skill-links">
           {{ $page := . }}
           {{ with partial "skills/api-groups.html" . }}

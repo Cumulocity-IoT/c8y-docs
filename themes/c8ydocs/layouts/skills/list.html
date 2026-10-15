@@ -16,10 +16,13 @@
         </div>
         {{/* The skills files and manifest are published by skills/list.md */}}
         <div class="skills-download">
-          <button type="button" class="btn btn--primary skills-download__button" id="download-skills" data-manifest="{{ "skills/download/manifest.json" | absURL }}">
+          <button type="button" class="btn btn--primary skill-button skills-download__button" id="download-skills" data-manifest="{{ "skills/download/manifest.json" | absURL }}">
             <i class="dlt-c8y-icon-download" aria-hidden="true"></i> Download all skills
           </button>
           <span class="skills-download__status" id="download-skills-status" role="status">All {{ len .RegularPages }} skills as one ZIP file, a SKILL.md folder per skill</span>
+          {{ with site.GetPage "/sector/skills" }}{{ with .OutputFormats.Get "llmstxt" }}
+          <span class="skills-download__llms">Agents can also read the skills index: <a href="{{ .Permalink }}">llms.txt</a></span>
+          {{ end }}{{ end }}
         </div>
         {{/* One group per topic: the sectors of a skill, in home page order */}}
         {{ $skills := .RegularPages.ByWeight }}

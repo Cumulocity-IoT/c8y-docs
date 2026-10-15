@@ -30,7 +30,7 @@
         </div>
         {{ with $skills }}
         <section id="skills" class="skills-panel" role="tabpanel" aria-labelledby="page-tab-skills">
-          <p class="skills-panel__intro">Skills are step-by-step solutions for tasks on this page, with the API requests they use. To use them with an AI agent, download all skills as skills from the <a href="{{ (site.GetPage "/skills").Permalink }}">skills overview</a>.</p>
+          <p class="skills-panel__intro">Skills are instructions for AI agents and step-by-step guides for people, for the tasks on this page. Give a skill's SKILL.md to your agent, or download all skills from the <a href="{{ (site.GetPage "/skills").Permalink }}">skills overview</a>.</p>
           <div class="skill-grid">
             {{ range . }}{{ partial "skills/card.html" . }}{{ end }}
           </div>

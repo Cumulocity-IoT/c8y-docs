@@ -9,6 +9,9 @@
     <i class="dlt-c8y-icon-tasklist" aria-hidden="true"></i>
     {{ $skill.Title }}
   </a>
+  {{- with $skill.OutputFormats.Get "markdown" }}
+  <p class="skill-card__agent"><code>{{ partial "skills/skill-name.html" $skill }}</code> <a href="{{ .Permalink }}">SKILL.md</a></p>
+  {{- end }}
   {{- with $skill.Description }}
   <p class="skill-card__description">{{ . }}</p>
   {{- end }}

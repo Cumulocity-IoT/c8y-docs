@@ -86,7 +86,7 @@ The script needs network access to `cumulocity.com`. It does not check `#tag/` o
 
 1. Build the site (see README "Skills > Verify a skill" for the Hugo version note). The
    build fails on an unknown skill name in `skills:` or an unknown `spec`.
-2. Open the rendered pages: the skill page (API reference and Related documentation
+2. Open the rendered pages: the skill page (the **Use with an AI agent** box with the skill name and working **Copy SKILL.md** and **Download skill** buttons, the API reference and Related documentation
    boxes, the procedures in the table of contents), the **Skills** tab of each linking
    page (cards with "Linked from" and the API chips), and the skills overview (the
    skill in its topic group).
