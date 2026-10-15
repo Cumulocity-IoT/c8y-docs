@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-10-13'
   - label: jp.cumulocity.com
     date: '2026-10-13'
+  - label: us.cumulocity.com
+    date: '2026-10-14'
+  - label: cumulocity.com
+    date: '2026-10-14'
 ---
 The **Data points** page now displays contextual help to guide users in understanding the feature and its capabilities. Previously, no in-context guidance was available on this page. The contextual help provides clear explanations of the data points functionality and how to use the feature effectively.
