@@ -54,7 +54,7 @@ After the setup, the following objects give {{< product-c8y-iot >}} access. If y
 
 If a check fails, the **Data Lake configuration** page shows the reason. If the catalog was already created, the **Setup status** shows "Provisioning failed". Hover over the icon of a step to see its result. After you fix the cause, click **Retry provisioning**.
 
-A failed check stops the setup. The data lake catalog stays, but nothing after it is created: not the data stream, not the settings that DataHub needs, not the offloading status object in the device inventory, and not the Dremio source. Data does not reach the lake until you fix the cause and try again. The next successful try completes the setup.
+A failed check stops the setup. The data lake catalog stays, but the setup creates nothing after it: no data stream, no DataHub settings, no offloading status object in the device inventory, and no Dremio source. Data does not reach the lake until you fix the cause and try again.
 
 |Cause|Solution|
 |:---|:---|
@@ -62,7 +62,7 @@ A failed check stops the setup. The data lake catalog stays, but nothing after i
 |The application does not appear in the member search.|Search by display name. Check that you approved the application in the directory of the storage account.|
 |The check for short-lived credentials fails.|**Storage Blob Delegator** is missing or assigned to the container. Assign it to the storage account.|
 |The storage cannot be reached.|Check that **Storage Blob Data Contributor** is assigned to the container, and that the storage account allows public network access.|
-|The page says that the catalog could not reach your storage or could not obtain credentials for it.|Check the role assignments that you gave the application on the storage account and on the container. Then click **Retry provisioning**. If the grant is correct, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).|
+|The page says "it could not reach your storage" or "it could not obtain credentials for your storage".|Check the role assignments of the application on the storage account and the container. Then click **Retry provisioning**. If they are correct, contact support.|
 |The directory is unknown, or authentication fails.|The Entra tenant ID belongs to another directory. Enter the ID of the directory that the subscription of the storage account belongs to.|
 |The base location overlaps the location of another tenant.|Choose a path that neither contains nor is contained in the other location. Sharing the same path is allowed.|
 |The page warns that data loss protection is off.|Soft delete is off for blobs or for containers. Enable both, then click **Retry provisioning**.|
