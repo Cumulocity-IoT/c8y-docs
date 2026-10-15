@@ -18,6 +18,10 @@ version: 1022.7.8
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-08'
+  - label: apj.cumulocity.com
+    date: '2026-10-14'
+  - label: jp.cumulocity.com
+    date: '2026-10-14'
 ---
 If the {{< product-c8y-iot >}} platform temporarily rejected requests from the LWM2M agent, for example under high load, the agent retried them. In rare cases this led to duplicate measurements, events or alarms for a device.
 
