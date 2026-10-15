@@ -2,7 +2,7 @@
 weight: 100
 title: Firmware
 layout: bundle
-recipes:
+skills:
   - update-device-firmware
 sector:
   - device_management

@@ -2,7 +2,7 @@
 weight: 60
 title: Connecting the gateway to the server
 layout: redirect
-recipes:
+skills:
   - manage-opcua-gateway-and-servers
 ---
 

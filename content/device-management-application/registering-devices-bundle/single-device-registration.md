@@ -2,7 +2,7 @@
 weight: 10
 title: Single device registration
 layout: redirect
-recipes:
+skills:
   - register-device
 ---
 

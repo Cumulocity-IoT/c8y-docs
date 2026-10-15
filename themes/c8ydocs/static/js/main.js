@@ -79,7 +79,7 @@ var main = (function ($) {
     // set Table of contents
     buildToc();
 
-    // set Documentation / Recipes tabs
+    // set Documentation / Skills tabs
     initPageTabs();
 
     // set Breadcrumbs
@@ -278,8 +278,8 @@ function findVisibleElement(id) {
   return elem ? elem.id : null;
 }
 
-// Switches a bundle page between its documentation and its recipes (_default/bundle.html).
-// The URL hash #recipes opens the recipes; any other hash points into the documentation.
+// Switches a bundle page between its documentation and its skills (_default/bundle.html).
+// The URL hash #skills opens the skills; any other hash points into the documentation.
 function initPageTabs() {
   const main = document.querySelector("main.bundle-layout");
   const tabs = main ? Array.from(main.querySelectorAll(".page-tab")) : [];
@@ -288,7 +288,7 @@ function initPageTabs() {
   }
 
   function show(tab) {
-    main.classList.toggle("show-recipes", tab === "recipes");
+    main.classList.toggle("show-skills", tab === "skills");
     tabs.forEach((button) => {
       const active = button.dataset.tab === tab;
       button.classList.toggle("active", active);
@@ -303,7 +303,7 @@ function initPageTabs() {
       show(tab);
       // replaceState fires no hashchange, so the page does not jump
       const url = window.location.pathname + window.location.search;
-      history.replaceState(null, "", tab === "recipes" ? url + "#recipes" : url);
+      history.replaceState(null, "", tab === "skills" ? url + "#skills" : url);
     });
     button.addEventListener("keydown", (event) => {
       if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") {
@@ -316,17 +316,17 @@ function initPageTabs() {
     });
   });
 
-  // A link into the documentation (left navigation, "Linked from" on a recipe card) may
-  // target an element that was hidden while the recipes were shown: scroll to it again.
+  // A link into the documentation (left navigation, "Linked from" on a skill card) may
+  // target an element that was hidden while the skills were shown: scroll to it again.
   window.addEventListener("hashchange", () => {
     const hash = window.location.hash;
-    show(hash === "#recipes" ? "recipes" : "docs");
+    show(hash === "#skills" ? "skills" : "docs");
     const target = hash.length > 1 && document.getElementById(decodeURIComponent(hash.substring(1)));
-    if (target && hash !== "#recipes") {
+    if (target && hash !== "#skills") {
       target.scrollIntoView();
     }
   });
-  show(window.location.hash === "#recipes" ? "recipes" : "docs");
+  show(window.location.hash === "#skills" ? "skills" : "docs");
 }
 
 // Adds the section to the breadcrumbs

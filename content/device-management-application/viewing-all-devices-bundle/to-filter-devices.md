@@ -2,7 +2,7 @@
 weight: 20
 title: To filter devices
 layout: redirect
-recipes:
+skills:
   - list-and-query-devices
 ---
 

@@ -23,7 +23,7 @@
 {{ if eq .Title "Release notes" }}
 <script src="{{ "js/vendor/isotope.pkgd.min.js" | absURL }}"></script>
 {{ end }}
-{{ if and .IsSection (eq .Section "recipes") }}
+{{ if and .IsSection (eq .Section "skills") }}
 <script src="{{ "js/vendor/jszip.min.js" | absURL }}"></script>
-<script src="{{ "js/recipes-download.js" | absURL }}"></script>
+<script src="{{ "js/skills-download.js" | absURL }}"></script>
 {{ end }}

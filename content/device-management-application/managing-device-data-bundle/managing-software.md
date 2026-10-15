@@ -2,7 +2,7 @@
 weight: 20
 title: Managing software
 layout: redirect
-recipes:
+skills:
   - install-device-software
   - manage-software-repository
 helpcontent:

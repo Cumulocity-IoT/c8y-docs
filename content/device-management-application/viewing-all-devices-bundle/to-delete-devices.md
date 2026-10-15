@@ -2,7 +2,7 @@
 weight: 30
 title: To delete a device from the list
 layout: redirect
-recipes:
+skills:
   - delete-device
 ---
 

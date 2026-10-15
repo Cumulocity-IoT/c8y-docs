@@ -2,7 +2,7 @@
 weight: 110
 title: Operations
 layout: redirect
-recipes:
+skills:
   - read-write-opcua-values
   - opcua-advanced-operations
   - opcua-historic-data

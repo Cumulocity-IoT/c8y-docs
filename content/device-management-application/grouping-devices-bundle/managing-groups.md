@@ -2,7 +2,7 @@
 weight: 10
 title: Managing groups
 layout: redirect
-recipes:
+skills:
   - manage-device-groups
 helpcontent:
   - label: grouping-devices

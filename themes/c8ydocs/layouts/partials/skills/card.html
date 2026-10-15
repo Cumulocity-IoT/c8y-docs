@@ -1,0 +1,25 @@
+{{- /*
+  One skill as a card: title, description, the documentation block that links to it (on
+  the page itself) and the API operations it uses. Call with a dict from
+  skills/for-page.html, or (dict "skill" $page) where there is no linking block.
+*/ -}}
+{{- $skill := .skill -}}
+<div class="skill-card">
+  <a class="skill-card__title" href="{{ $skill.Permalink }}">
+    <i class="dlt-c8y-icon-tasklist" aria-hidden="true"></i>
+    {{ $skill.Title }}
+  </a>
+  {{- with $skill.Description }}
+  <p class="skill-card__description">{{ . }}</p>
+  {{- end }}
+  {{- with .from }}
+  <p class="skill-card__from">Linked from <a href="#{{ $.anchor }}">{{ replace . "var-product-c8y-iot" site.Params.product_c8y_iot }}</a></p>
+  {{- end }}
+  {{- with $skill.Params.api }}
+  <ul class="skill-card__api" aria-label="API operations">
+    {{- range . }}
+    <li>{{ partial "skills/api-chip.html" (dict "entry" . "page" $skill) }}</li>
+    {{- end }}
+  </ul>
+  {{- end }}
+</div>

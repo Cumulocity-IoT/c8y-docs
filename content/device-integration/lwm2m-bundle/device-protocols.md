@@ -2,7 +2,7 @@
 weight: 40
 title: LWM2M device protocols
 layout: redirect
-recipes:
+skills:
   - manage-object-mappings
 ---
 

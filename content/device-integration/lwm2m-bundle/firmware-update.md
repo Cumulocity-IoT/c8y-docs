@@ -2,7 +2,7 @@
 weight: 90
 title: LWM2M device firmware update (FOTA)
 layout: redirect
-recipes:
+skills:
   - lwm2m-firmware-update
 ---
 

@@ -2,7 +2,7 @@
 weight: 60
 title: Managing device profiles
 layout: redirect
-recipes:
+skills:
   - apply-device-profile
   - manage-device-profiles
 helpcontent:

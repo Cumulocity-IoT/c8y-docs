@@ -55,8 +55,8 @@ Example:
 - End with result description (not as list item)
 - Break procedures over 7 steps into sections
 
-### Recipes
-These rules apply only to recipes, the files in content/recipes/. The recipe design (front matter, linking) is described in the "Recipes" section of README.md.
+### Skills
+These rules apply only to skills, the files in content/skills/. The skill design (front matter, linking) is described in the "Skills" section of README.md.
 - Title: the task in sentence case, without "To" ("Send an operation to a device")
 - `description` front matter: one sentence that starts with a verb and names what the reader does
 - Structure the body as "To [accomplish task]" procedures with heading IDs

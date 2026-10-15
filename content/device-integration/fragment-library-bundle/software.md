@@ -2,7 +2,7 @@
 weight: 170
 title: Software
 layout: bundle
-recipes:
+skills:
   - manage-advanced-software
   - install-device-software
 sector:

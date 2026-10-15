@@ -2,7 +2,7 @@
 weight: 20
 title: To replace a device
 layout: redirect
-recipes:
+skills:
   - replace-device
 ---
 

@@ -2,7 +2,7 @@
 weight: 180
 title: Tracking
 layout: bundle
-recipes:
+skills:
   - track-location
 sector:
   - device_management

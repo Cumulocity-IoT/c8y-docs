@@ -2,7 +2,7 @@
 weight: 80
 title: SmartREST templates
 layout: bundle
-recipes:
+skills:
   - manage-smartrest-templates
 outputs:
   - html

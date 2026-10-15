@@ -2,7 +2,7 @@
 weight: 100
 title: REST APIs
 layout: redirect
-recipes:
+skills:
   - manage-opcua-gateway-and-servers
   - browse-opcua-address-space
   - manage-opcua-device-types

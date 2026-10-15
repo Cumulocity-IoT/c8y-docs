@@ -2,7 +2,7 @@
 weight: 60
 title: Handling LWM2M shell commands
 layout: redirect
-recipes:
+skills:
   - lwm2m-shell-resources
   - lwm2m-shell-observe
   - lwm2m-shell-advanced

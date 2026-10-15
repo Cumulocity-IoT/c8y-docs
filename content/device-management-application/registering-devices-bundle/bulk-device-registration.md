@@ -2,7 +2,7 @@
 weight: 30
 title: Bulk device registration
 layout: redirect
-recipes:
+skills:
   - bulk-register-devices
 ---
 

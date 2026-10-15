@@ -2,7 +2,7 @@
 weight: 130
 title: Measurements
 layout: bundle
-recipes:
+skills:
   - read-measurements
 sector: 
   - device_management

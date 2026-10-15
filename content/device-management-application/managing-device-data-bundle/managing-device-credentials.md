@@ -2,7 +2,7 @@
 weight: 50
 title: Managing device credentials
 layout: redirect
-recipes:
+skills:
   - manage-device-credentials
 helpcontent:
 - label: managing-device-credentials

@@ -2,7 +2,7 @@
 title: Managing endpoints
 weight: 30
 layout: bundle
-recipes:
+skills:
   - manage-remote-access-configurations
   - manage-remote-access-keys
 ---

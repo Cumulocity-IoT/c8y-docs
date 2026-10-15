@@ -2,7 +2,7 @@
 weight: 70
 title: Authentication
 layout: redirect
-recipes:
+skills:
   - browse-opcua-address-space
 ---
 

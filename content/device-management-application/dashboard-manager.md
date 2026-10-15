@@ -2,7 +2,7 @@
 weight: 35
 title: Dashboard manager
 layout: bundle
-recipes:
+skills:
   - manage-dm-dashboards
 sector:
   - device_management

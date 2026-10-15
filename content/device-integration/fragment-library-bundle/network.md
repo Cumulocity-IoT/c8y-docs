@@ -2,7 +2,7 @@
 weight: 140
 title: Network
 layout: bundle
-recipes:
+skills:
   - read-network-availability
 sector: 
   - device_management

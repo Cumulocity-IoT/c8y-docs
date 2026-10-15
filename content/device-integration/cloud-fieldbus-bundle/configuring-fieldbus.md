@@ -2,7 +2,7 @@
 weight: 40
 title: Configuring fieldbus device protocols
 layout: redirect
-recipes:
+skills:
   - manage-device-protocols
 ---
 

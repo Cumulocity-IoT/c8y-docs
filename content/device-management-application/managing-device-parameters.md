@@ -2,7 +2,7 @@
 weight: 65
 title: Managing parameters
 layout: bundle
-recipes:
+skills:
   - inspect-parameter-definitions
   - read-write-device-parameters
 outputs:

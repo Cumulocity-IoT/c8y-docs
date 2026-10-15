@@ -2,7 +2,7 @@
 weight: 40
 title: Using smart groups
 layout: redirect
-recipes:
+skills:
   - manage-device-groups
 outputs:
   - html

@@ -2,7 +2,7 @@
 weight: 20
 title: Registering LWM2M devices
 layout: redirect
-recipes:
+skills:
   - register-lwm2m-device
 ---
 

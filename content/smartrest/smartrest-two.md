@@ -2,7 +2,7 @@
 weight: 20
 title: SmartREST 2.0
 layout: bundle
-recipes:
+skills:
   - manage-smartrest-templates
 sector:
   - device_management

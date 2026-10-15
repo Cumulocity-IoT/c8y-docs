@@ -152,23 +152,25 @@ hugo
 node scripts/lint-llmstxt.mjs
 ```
 
-## Recipes
+## Skills
 
-Recipes are task-focused how-tos at `/docs/recipes/`, written for people and AI agents. Each recipe describes one task, for example sending an operation to a device, with the REST API requests it needs. Documentation pages show the recipes for their topic in a **Recipes** tab, and each recipe links to the API operations it uses.
+Skills are task-focused instructions at `/docs/skills/`, written for AI agents first and people second. Each skill describes one task, for example sending an operation to a device, with the REST API requests it needs. Every skill is published as an agent skill (`/docs/skills/<name>/index.md`, the same text as its `SKILL.md` in the download) and as a page for people. Documentation pages show the skills for their topic in a **Skills** tab, and each skill links to the API operations it uses.
+
+These documentation skills are not the Claude Code skills in `.claude/skills/`, which help to maintain this repository.
 
 Links are written in one direction only:
 
 ```
-documentation page --(recipes:)--> recipe --(api:)--> API reference (<API URL>#operation/<operationId>)
+documentation page --(skills:)--> skill --(api:)--> API reference (<API URL>#operation/<operationId>)
 ```
 
-The **Related documentation** box on a recipe page is computed from the `recipes:` lists of the documentation pages. Never add these back links by hand.
+The **Related documentation** box on a skill page is computed from the `skills:` lists of the documentation pages. Never add these back links by hand.
 
-The recipes are a section of the **Application enablement & solutions** documentation set. The sector of the Recipes card, `content/recipes-card.md`, decides this: the left navigation of all recipe pages follows it. To move the recipes to another documentation set, change only that card. The `sector` of a recipe lists its topics.
+Skills are a documentation set of their own: the `skills` sector (`content/sector/skills/_index.md`) adds a tile to the home page that opens `/docs/skills/`, and an entry to `llms.txt`. The left navigation of all skill pages follows the sector of the Skills card, `content/skills-card.md`. To move the skills into another documentation set, change the sector of that card and remove the sector page. The `sector` of a skill lists its topics.
 
-### Add a recipe
+### Add a skill
 
-1. Create `content/recipes/<name>.md`. The file name is the name of the recipe: lowercase letters, digits, and hyphens. Documentation pages refer to the recipe by this name.
+1. Create `content/skills/<name>.md`. The file name is the name of the skill: lowercase letters, digits, and hyphens. Documentation pages refer to the skill by this name.
 2. Add the front matter:
 
    ```yaml
@@ -176,11 +178,11 @@ The recipes are a section of the **Application enablement & solutions** document
    title: Send an operation to a device      # the task, in sentence case
    description: Check that a device supports an operation, create the operation, ...   # one sentence, shown on cards, in llms.txt, and to AI agents
    weight: 20                                 # order in the left navigation
-   sector:                                    # the topics: group the recipe on the overview and add it to their llms.txt
+   sector:                                    # the topics: group the skill on the overview and add it to their llms.txt
      - device_management
-   requires:                                  # optional: recipes to follow first, shown as "Before you start"
-     - authentication                         # every recipe that sends REST requests builds on this one
-   api:                                       # every API operation the recipe uses, in the order of use
+   requires:                                  # optional: skills to follow first, shown as "Before you start"
+     - authentication                         # every skill that sends REST requests builds on this one
+   api:                                       # every API operation the skill uses, in the order of use
      - operation: postOperationCollectionResource   # the operationId in the OpenAPI specification
        method: POST
        path: /devicecontrol/operations
@@ -189,42 +191,42 @@ The recipes are a section of the **Application enablement & solutions** document
    ---
    ```
 
-   `api` lists only operations of the APIs in `data/apis.json`. Requests to microservices without a published OpenAPI specification (for example `/service/opcua-mgmt-service/...`) appear only in the text of the recipe.
+   `api` lists only operations of the APIs in `data/apis.json`. Requests to microservices without a published OpenAPI specification (for example `/service/opcua-mgmt-service/...`) appear only in the text of the skill.
 
-3. Write the body as described in the "Recipes" section of `.github/copilot-instructions.md`: `### To ...` procedures, REST requests in `http` code blocks, each linked to its operation in the API reference. Recipes show REST requests only, no CLI commands.
-4. Link the recipe from the documentation. Add `recipes:` to the front matter of the page, or of the block in its `<page>-bundle/` folder that covers the task:
+3. Write the body as described in the "Skills" section of `.github/copilot-instructions.md`: `### To ...` procedures, REST requests in `http` code blocks, each linked to its operation in the API reference. Skills show REST requests only, no CLI commands.
+4. Link the skill from the documentation. Add `skills:` to the front matter of the page, or of the block in its `<page>-bundle/` folder that covers the task:
 
    ```yaml
-   recipes:
+   skills:
      - send-operation
    ```
 
-   The page then shows the **Recipes** tab. The card of the recipe links back to the block that names it.
+   The page then shows the **Skills** tab. The card of the skill links back to the block that names it.
 
 ### API references
 
-`data/apis.json` lists the API references that recipes can link to (Core, DTM, DataHub, Data Preparation): the URL of the reference and the URL of its published OpenAPI specification. Operation links have the form `<url>#operation/<operationId>` for all of them. To link to another API, add an entry. Its key is the value of `spec` in the recipes.
+`data/apis.json` lists the API references that skills can link to (Core, DTM, DataHub, Data Preparation): the URL of the reference and the URL of its published OpenAPI specification. Operation links have the form `<url>#operation/<operationId>` for all of them. To link to another API, add an entry. Its key is the value of `spec` in the skills.
 
-### Verify a recipe
+### Verify a skill
 
-1. Build the site. The build fails if a `recipes:` entry names no recipe, or if an `api` entry names an API that `data/apis.json` does not list. If your Hugo version rejects the HTML content files of this repository (`"text/html" is not whitelisted`), run `HUGO_SECURITY_ALLOWCONTENT='.*' hugo server`.
+1. Build the site. The build fails if a `skills:` entry names no skill, or if an `api` entry names an API that `data/apis.json` does not list. If your Hugo version rejects the HTML content files of this repository (`"text/html" is not whitelisted`), run `HUGO_SECURITY_ALLOWCONTENT='.*' hugo server`.
 2. Check the API references. The build does not compare them with the API: each operation must exist in the OpenAPI specification of its API (the `spec` URL in `data/apis.json`) with the same method and path, and the `title` must match its summary. The check script does this for the `api` front matter and for the operation links in the text:
 
    ```bash
-   python3 scripts/check_recipe_api_refs.py            # all recipes
-   python3 scripts/check_recipe_api_refs.py content/recipes/send-operation.md
+   python3 scripts/check_skill_api_refs.py            # all skills
+   python3 scripts/check_skill_api_refs.py content/skills/send-operation.md
    ```
-3. Check the rendered pages: the **Recipes** tab of each linking page, the recipe page with its **Before you start** box, the recipes overview, and the Markdown version of the recipe (`/docs/recipes/<name>/index.md`). The build fails if a `requires:` entry names no recipe.
+3. Check the rendered pages: the **Skills** tab of each linking page, the skill page with its **Before you start** box, the skills overview, and the Markdown version of the skill (`/docs/skills/<name>/index.md`). The build fails if a `requires:` entry names no skill.
 
-### Download as skills
+### Download all skills
 
-The **Download as skills** button on the recipes overview gives a ZIP file with one agent skill per recipe: `cumulocity-skills/cumulocity-<name>/SKILL.md`, plus a `README.md` with the install steps and the required credentials. The `cumulocity-` prefix keeps the skill names apart from other installed skills. A recipe's `index.md` is the same text as its `SKILL.md`.
+The **Download all skills** button on the skills overview gives a ZIP file with one folder per skill: `cumulocity-skills/cumulocity-<name>/SKILL.md`, plus a `README.md` with the install steps and the required credentials. The `cumulocity-` prefix keeps the skill names apart from other installed skills. A skill's `index.md` is the same text as its `SKILL.md`.
 
-The build publishes the files and a `recipes/skills/manifest.json` that lists them (`layouts/recipes/list.md`, with the text from `layouts/partials/recipes/skill.txt`). The button zips them in the browser (`static/js/recipes-download.js` with JSZip in `static/js/vendor/jszip.min.js`), so there is no fixed ZIP URL.
+The build publishes the files and a `skills/download/manifest.json` that lists them (`layouts/skills/list.md`, with the text from `layouts/partials/skills/skill.txt`). The button zips them in the browser (`static/js/skills-download.js` with JSZip in `static/js/vendor/jszip.min.js`), so there is no fixed ZIP URL.
 
-For an AI-assisted review, use the Claude Code skill `recipes` (`.claude/skills/recipes/`) or the Copilot prompt `c8y-recipe-review.prompt.md`.
+For an AI-assisted review, use the Claude Code skill `doc-skills` (`.claude/skills/doc-skills/`) or the Copilot prompt `c8y-skill-review.prompt.md`.
 
-The templates live in the theme: `layouts/recipes/` (recipe page, overview, and their Markdown versions), `layouts/partials/recipes/`, the **Recipes** tab in `layouts/_default/bundle.html` with `initPageTabs()` in `static/js/main.js`, and the styles in `assets/scss/_page-tabs.scss`.
+The templates live in the theme: `layouts/skills/` (skill page, overview, and their Markdown versions), `layouts/partials/skills/`, the **Skills** tab in `layouts/_default/bundle.html` with `initPageTabs()` in `static/js/main.js`, and the styles in `assets/scss/_page-tabs.scss`.
 
 ## Redirects
 
@@ -297,7 +299,7 @@ This repository includes standard prompts for reviewing documentation against Cu
 
 c8y-standard-review.prompt.md - Review of documentation with particular focus on Cumulocity standards and style.
 c8y-change-log-review.prompt.md - Specific review of a change log entry.
-c8y-recipe-review.prompt.md - Review of a recipe against the recipe design, its API references, and the style guide.
+c8y-skill-review.prompt.md - Review of a skill against the skill design, its API references, and the style guide.
 
 ---
 Copyright © 2018-present Cumulocity GmbH. All rights reserved.

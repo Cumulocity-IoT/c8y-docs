@@ -19,7 +19,8 @@
   <div class="product-card">
     <a href='{{ if eq .Page.Params.type "change-log"}}/change-logs
              {{else if .Page.Params.external}}{{.Page.Params.external}}
-             {{else}}{{.Page.Permalink}}{{end}}' 
+             {{else if .Page.Params.target}}{{ printf "%s%s" site.BaseURL .Page.Params.target }}
+             {{else}}{{.Page.Permalink}}{{end}}'
       {{ if eq .Page.Params.type "new-tab" }} target="_blank" rel="noopener noreferrer"{{ end }}>
       <div class="product-card__header">
         <i class="c8y-icon-duocolor {{.Page.Params.icon}}"></i>

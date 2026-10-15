@@ -2,7 +2,7 @@
 weight: 10
 title: Loriot LoRa
 layout: redirect
-recipes:
+skills:
   - provision-loriot-device
 ---
 

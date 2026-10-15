@@ -2,7 +2,7 @@
 weight: 60
 title: Provisioned certificates
 layout: bundle
-recipes:
+skills:
   - read-provisioned-certificates
 sector:
   - device_management

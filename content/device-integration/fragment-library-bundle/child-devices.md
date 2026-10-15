@@ -2,7 +2,7 @@
 weight: 40
 title: Child devices
 layout: bundle
-recipes:
+skills:
   - manage-child-devices
 sector: 
   - device_management

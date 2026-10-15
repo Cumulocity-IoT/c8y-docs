@@ -2,7 +2,7 @@
 weight: 90
 title: Working with simulators
 layout: bundle
-recipes:
+skills:
   - manage-simulators
 outputs:
   - html

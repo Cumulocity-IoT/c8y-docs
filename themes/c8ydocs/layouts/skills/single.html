@@ -1,0 +1,74 @@
+{{ define "main" }}
+{{- partial "root-nav.html" . -}}
+
+{{ $usedIn := index (partialCached "skills/index.html" site) .File.ContentBaseName }}
+<main class="main-content bundle-layout skill-layout">
+  <div class="breadcrumbs-container">
+    {{- partial "breadcrumbs.html" . -}}
+  </div>
+  <div class="article-list">
+    <article id="{{ .File.ContentBaseName }}" class="page-section single-section">
+      <div class="article-content">
+        <header class="section-header skill-header">
+          <span class="skill-label"><i class="dlt-c8y-icon-tasklist" aria-hidden="true"></i> Skill</span>
+          <h1 class="text-light">{{ .Title }}</h1>
+        </header>
+        {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+
+        <div class="skill-links">
+          {{ $page := . }}
+          {{ with partial "skills/api-groups.html" . }}
+          <div class="admonition related skill-links__api">
+            <div class="title">API reference</div>
+            <div class="content">
+              {{ range . }}
+              <p class="skill-links__api-name"><a href="{{ .root }}">{{ .title }}</a></p>
+              <ul class="skill-card__api">
+                {{ range .entries }}
+                <li>
+                  {{ partial "skills/api-chip.html" (dict "entry" . "page" $page "showApi" false) }}
+                  <span class="skill-links__api-title">{{ .title }}</span>
+                </li>
+                {{ end }}
+              </ul>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+          {{ with $usedIn }}
+          <div class="admonition related skill-links__docs">
+            <div class="title">Related documentation</div>
+            <div class="content">
+              <ul class="skill-links__docs-list">
+                {{ range . }}
+                {{ $pageTitle := replace .page.Title "var-product-c8y-iot" site.Params.product_c8y_iot }}
+                <li>
+                  <a href="{{ .page.Permalink }}{{ with .anchor }}#{{ . }}{{ end }}">{{ with .from }}{{ replace . "var-product-c8y-iot" site.Params.product_c8y_iot }}{{ else }}{{ $pageTitle }}{{ end }}</a>
+                  {{ with .from }}<span class="skill-links__docs-page">in {{ $pageTitle }}</span>{{ end }}
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+
+        {{ with partial "skills/requires.html" . }}
+        <div class="admonition req skill-requires">
+          <div class="title">Before you start</div>
+          <div class="content">
+            <p>This skill builds on the following skills:</p>
+            <ul>
+              {{ range . }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
+            </ul>
+          </div>
+        </div>
+        {{ end }}
+
+        {{ partial "headline-hash.html" .Content }}
+      </div>
+    </article>
+  </div>
+</main>
+{{- partial "footer.html" . -}}
+{{ end }}

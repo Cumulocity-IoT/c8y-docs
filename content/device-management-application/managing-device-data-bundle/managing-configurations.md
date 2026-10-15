@@ -2,7 +2,7 @@
 weight: 30
 title: Managing configurations
 layout: redirect
-recipes:
+skills:
   - apply-device-configuration
   - manage-configuration-repository
 helpcontent:

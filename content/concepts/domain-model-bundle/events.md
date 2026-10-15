@@ -3,7 +3,7 @@
 weight: 30
 title: Events
 layout: redirect
-recipes:
+skills:
   - handle-events
   - handle-alarms
 ---

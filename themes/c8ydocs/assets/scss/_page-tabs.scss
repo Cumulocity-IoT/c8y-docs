@@ -1,5 +1,5 @@
-// Documentation / Recipes tabs on bundle pages (_default/bundle.html, main.js initPageTabs),
-// recipe cards and the recipe pages (layouts/recipes/).
+// Documentation / Skills tabs on bundle pages (_default/bundle.html, main.js initPageTabs),
+// skill cards and the skill pages (layouts/skills/).
 
 .page-tabs {
   display: flex;
@@ -67,14 +67,14 @@
   line-height: 1.4;
 }
 
-// The recipes panel replaces the page's documentation while its tab is active
-.recipes-panel {
+// The skills panel replaces the page's documentation while its tab is active
+.skills-panel {
   display: none;
   padding-bottom: 4rem;
 }
 
-.bundle-layout.show-recipes {
-  .recipes-panel {
+.bundle-layout.show-skills {
+  .skills-panel {
     display: block;
   }
   .article-list > article.page-section:not(:first-child),
@@ -84,20 +84,20 @@
   }
 }
 
-.recipes-panel__intro {
+.skills-panel__intro {
   max-width: 660px;
   margin-bottom: 1.5rem;
   color: var(--c8y-text-muted);
 }
 
-.recipe-grid {
+.skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
-.recipe-card {
+.skill-card {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -113,7 +113,7 @@
   }
 }
 
-.recipe-card__title {
+.skill-card__title {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -126,11 +126,11 @@
   }
 }
 
-.recipe-card__from {
+.skill-card__from {
   color: var(--c8y-text-muted);
 }
 
-.recipe-card__api {
+.skill-card__api {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -202,8 +202,8 @@
   white-space: nowrap;
 }
 
-// Recipe pages
-.recipe-label {
+// Skill pages
+.skill-label {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
@@ -221,41 +221,41 @@
 
 @media (min-width: $grid-breakpoint) {
   // The label takes over the header's top padding
-  .article-list > .page-section:first-child .article-content .recipe-header {
+  .article-list > .page-section:first-child .article-content .skill-header {
     padding-top: 0;
   }
 }
 
-.recipe-links {
+.skill-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   align-items: start;
   gap: 0 1.5rem;
   margin-top: 2rem;
 
-  .recipe-card__api {
+  .skill-card__api {
     flex-direction: column;
     gap: 0.75rem;
   }
 }
 
-.recipe-links__api-name {
+.skill-links__api-name {
   margin: 0 0 0.75rem;
   font-weight: 500;
 
-  .recipe-card__api + & {
+  .skill-card__api + & {
     margin-top: 1.5rem;
   }
 }
 
-.recipe-links__api-title {
+.skill-links__api-title {
   display: block;
   margin-top: 0.125rem;
   color: var(--c8y-text-muted);
   font-size: 12px;
 }
 
-.recipe-links__docs-list {
+.skill-links__docs-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -265,14 +265,14 @@
   }
 }
 
-.recipe-links__docs-page {
+.skill-links__docs-page {
   display: block;
   color: var(--c8y-text-muted);
   font-size: 12px;
 }
 
-// "Download as skills" on the recipes overview (static/js/recipes-download.js)
-.recipes-download {
+// "Download all skills" on the skills overview (static/js/skills-download.js)
+.skills-download {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -281,7 +281,7 @@
   font-size: 14px;
 }
 
-.recipes-download__button {
+.skills-download__button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -308,6 +308,6 @@
   }
 }
 
-.recipes-download__status {
+.skills-download__status {
   color: var(--c8y-text-muted);
 }

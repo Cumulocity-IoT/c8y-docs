@@ -2,7 +2,7 @@
 weight: 31
 title: Viewing device details
 layout: bundle
-recipes:
+skills:
   - manage-identity
   - read-device-info
   - read-measurements

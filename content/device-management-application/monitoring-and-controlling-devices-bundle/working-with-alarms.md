@@ -2,7 +2,7 @@
 weight: 40
 title: Working with alarms
 layout: redirect
-recipes:
+skills:
   - handle-alarms
 helpcontent:
 - label: working-with-alarms

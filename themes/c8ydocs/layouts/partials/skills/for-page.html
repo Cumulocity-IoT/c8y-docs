@@ -1,0 +1,36 @@
+{{- /*
+  Returns the skills a documentation page links to with its `skills` front matter (a list
+  of file names in content/skills/), as a slice of dicts:
+  - "skill": the skill page
+  - "from": title of the bundle block that names the skill, empty for the page itself
+  - "anchor": id of that block (its file name, as _default/bundle.html renders it)
+  Bundle pages also collect the `skills` of the blocks in their headless <name>-bundle
+  folder, in weight order. Each skill is returned once. A name that matches no skill
+  fails the build. Call with the page.
+*/ -}}
+{{- $refs := slice -}}
+{{- $path := "" }}{{ with .File }}{{ $path = .Path }}{{ end -}}
+{{- range .Params.skills }}{{ $refs = $refs | append (dict "slug" . "from" "" "anchor" "" "file" $path) }}{{ end -}}
+{{- with .File -}}
+  {{- with site.GetPage (printf "%s-bundle" .BaseFileName) -}}
+    {{- range sort (.Resources.ByType "page") ".Params.weight" -}}
+      {{- $block := . -}}
+      {{- range .Params.skills -}}
+        {{- $refs = $refs | append (dict "slug" . "from" $block.Title "anchor" (substr $block.Name 0 -3) "file" $block.File.Path) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $seen := slice -}}
+{{- $result := slice -}}
+{{- range $refs -}}
+  {{- if in $seen .slug }}{{ continue }}{{ end -}}
+  {{- $seen = $seen | append .slug -}}
+  {{- $skill := site.GetPage (printf "/skills/%s" .slug) -}}
+  {{- if not $skill -}}
+    {{- errorf "skill %q referenced by %s does not exist in content/skills/" .slug .file -}}
+    {{- continue -}}
+  {{- end -}}
+  {{- $result = $result | append (dict "skill" $skill "from" .from "anchor" .anchor) -}}
+{{- end -}}
+{{- return $result -}}

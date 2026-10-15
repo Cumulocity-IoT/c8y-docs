@@ -2,7 +2,7 @@
 weight: 20
 title: Actility LoRa
 layout: redirect
-recipes:
+skills:
   - provision-actility-device
 ---
 

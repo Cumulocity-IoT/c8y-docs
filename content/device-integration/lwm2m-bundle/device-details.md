@@ -2,7 +2,7 @@
 weight: 50
 title: LWM2M device details
 layout: redirect
-recipes:
+skills:
   - manage-lwm2m-configuration
 ---
 
