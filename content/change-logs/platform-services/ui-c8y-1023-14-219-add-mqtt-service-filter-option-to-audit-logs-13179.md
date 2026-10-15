@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-10-14
 title: Filter audit logs by MQTT service
 product_area: Platform services
 change_type:
