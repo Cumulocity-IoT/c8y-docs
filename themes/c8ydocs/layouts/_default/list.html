@@ -17,6 +17,7 @@
           <h1>{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
 
           {{.Content}}
+          {{ if eq .Data.Term "skills" }}{{ partial "skills/download.html" (dict "page" .) }}{{ end }}
 
       {{- if .Params.pdf -}}
       {{- $zip := (printf "zips/%s.zip" .Data.Term) | absURL -}}
@@ -36,6 +37,8 @@ the PDFs in this section"
   <div class="home-grid">
     {{$scratch := newScratch}}
     {{ range where .Pages "Type" "root" }}
+      {{/* Reset per card: a card without pages in a top-level section (the skill topics) must not keep the previous card's link */}}
+      {{ $scratch.Set "url" "" }}
       {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
       {{/* grab the link from the first child page  */}}
       {{ range $sub := first 1 $subs}}

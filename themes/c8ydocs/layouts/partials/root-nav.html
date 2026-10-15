@@ -4,10 +4,6 @@
 {{ with .Params.sector}}
   {{$currentSection =  index . 0}}
 {{end}}
-{{/* Skills list their topics in `sector`; the documentation set they belong to is the sector of the Skills card */}}
-{{ if eq .Section "skills" }}
-  {{ with site.GetPage "/skills-card" }}{{ $currentSection = index .Params.sector 0 }}{{ end }}
-{{ end }}
 {{ if not .Params.hideLeftMenu }}
   <nav class="main-nav navbar">
     <header class="nav-header">
@@ -58,7 +54,8 @@
 
                 {{/* Check the current page to highlight the right root section  */}}
                 {{$rootclass.Set "active" "" }}
-                {{ if eq .Params.bundlefolder $current.Section }}
+                {{/* Skills are grouped in topic sections (content/skills/<topic>/): their cards name that nested folder */}}
+                {{ if or (eq .Params.bundlefolder $current.Section) (and (eq $current.Section "skills") (eq (printf "/%s" .Params.bundlefolder) $current.CurrentSection.Path)) }}
                   {{$rootclass.Set "active" "active" }}
                   <span class="current-app">
                     {{if hasSuffix .Params.icon ".svg"}}
@@ -104,7 +101,9 @@
 
     <nav id="main-nav"
       class="nav-sections">
-      {{ range $i, $slot := where .Site.Pages "Section" .Section }}
+      {{ $navPages := where .Site.Pages "Section" .Section }}
+      {{ if eq .Section "skills" }}{{ $navPages = .CurrentSection.RegularPages.ByWeight }}{{ end }}
+      {{ range $i, $slot := $navPages }}
       {{ if .IsPage }}
       <div class="{{if eq $current.Permalink .Permalink }} slot-active {{ end}}">
         {{ $parentUrl := .Permalink }}

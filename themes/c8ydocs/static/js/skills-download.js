@@ -1,5 +1,6 @@
 // Skill downloads, loaded on all pages of the skills section (partials/footer.html):
-// - "Download all skills" on the overview (layouts/skills/list.html) fetches the skill files
+// - "Download all skills" (Skills landing page) and "Download these skills" (topic pages),
+//   both partials/skills/download.html, fetch the skill files
 //   that layouts/skills/list.md publishes, as listed in their manifest, and zips them.
 // - "Copy SKILL.md" and "Download skill" on a skill page (layouts/skills/single.html) use the
 //   page's index.md, which is the same text as its SKILL.md.
@@ -47,12 +48,15 @@
         const manifestUrl = new URL(all.dataset.manifest, window.location.href);
         const manifest = await (await fetchOk(manifestUrl)).json();
         const base = new URL(manifest.root, manifestUrl);
+        // On a topic page only the topic's skills, the skills they build on, and the README
+        const topic = all.dataset.topic;
+        const files = topic ? manifest.topics[topic].files : manifest.files;
         const zip = new JSZip();
         const texts = await Promise.all(
-          manifest.files.map(async (file) => (await fetchOk(new URL(file, base))).text())
+          files.map(async (file) => (await fetchOk(new URL(file, base))).text())
         );
-        manifest.files.forEach((file, index) => zip.file(manifest.root + file, texts[index]));
-        saveBlob(await zip.generateAsync({ type: "blob" }), `${manifest.name}.zip`);
+        files.forEach((file, index) => zip.file(manifest.root + file, texts[index]));
+        saveBlob(await zip.generateAsync({ type: "blob" }), topic ? `${manifest.name}-${topic}.zip` : `${manifest.name}.zip`);
       })
     );
   }

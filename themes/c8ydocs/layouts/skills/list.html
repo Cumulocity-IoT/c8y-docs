@@ -1,49 +1,23 @@
 {{ define "main" }}
 {{- partial "root-nav.html" . -}}
 
+{{/* A topic page (content/skills/<topic>/_index.md). The root page /skills/ redirects to the Skills landing page. */}}
 <main class="main-content bundle-layout skill-layout">
   <div class="breadcrumbs-container">
     {{- partial "breadcrumbs.html" . -}}
   </div>
   <div class="article-list">
-    <article id="skills-overview" class="page-section single-section">
+    <article id="skills-topic" class="page-section single-section">
       <div class="article-content">
         <header class="section-header">
           <h1 class="text-light">{{ .Title }}</h1>
         </header>
-        <div class="lead">
-          {{ partial "headline-hash.html" .Content }}
-        </div>
-        {{/* The skills files and manifest are published by skills/list.md */}}
-        <div class="skills-download">
-          <button type="button" class="btn btn--primary skill-button skills-download__button" id="download-skills" data-manifest="{{ "skills/download/manifest.json" | absURL }}">
-            <i class="dlt-c8y-icon-download" aria-hidden="true"></i> Download all skills
-          </button>
-          <span class="skills-download__status" id="download-skills-status" role="status">All {{ len .RegularPages }} skills as one ZIP file, a SKILL.md folder per skill</span>
-          {{ with site.GetPage "/sector/skills" }}{{ with .OutputFormats.Get "llmstxt" }}
-          <span class="skills-download__llms">Agents can also read the skills index: <a href="{{ .Permalink }}">llms.txt</a></span>
-          {{ end }}{{ end }}
-        </div>
-        {{/* One group per topic: the sectors of a skill, in home page order */}}
-        {{ $skills := .RegularPages.ByWeight }}
-        {{ range sort site.Taxonomies.sector ".Page.Params.weight" }}
-          {{ $term := .Page.Data.Term }}
-          {{ $topic := .Page.Title }}
-          {{ with where $skills "Params.sector" "intersect" (slice $term) }}
-          <h3 id="{{ $term }}" class="skill-group">{{ $topic }}</h3>
-          <div class="skill-grid">
-            {{ range . }}{{ partial "skills/card.html" (dict "skill" .) }}{{ end }}
-          </div>
-          {{ end }}
-        {{ end }}
-        {{ $other := slice }}
-        {{ range $skills }}{{ if not .Params.sector }}{{ $other = $other | append . }}{{ end }}{{ end }}
-        {{ with $other }}
-        <h3 id="other" class="skill-group">Other</h3>
+        {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+        {{ partial "headline-hash.html" .Content }}
+        {{ partial "skills/download.html" (dict "page" . "topic" .) }}
         <div class="skill-grid">
-          {{ range . }}{{ partial "skills/card.html" (dict "skill" .) }}{{ end }}
+          {{ range .RegularPages.ByWeight }}{{ partial "skills/card.html" (dict "skill" .) }}{{ end }}
         </div>
-        {{ end }}
       </div>
     </article>
   </div>

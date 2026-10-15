@@ -154,7 +154,7 @@ node scripts/lint-llmstxt.mjs
 
 ## Skills
 
-Skills are task-focused instructions at `/docs/skills/`, written for AI agents first and people second. Each skill describes one task, for example sending an operation to a device, with the REST API requests it needs. Every skill is published as an agent skill (`/docs/skills/<name>/index.md`, the same text as its `SKILL.md` in the download) and as a page for people. Documentation pages show the skills for their topic in a **Skills** tab, and each skill links to the API operations it uses.
+Skills are task-focused instructions at `/docs/skills/`, written for AI agents first and people second. Each skill describes one task, for example sending an operation to a device, with the REST API requests it needs. Every skill is published as an agent skill (`/docs/skills/<topic>/<name>/index.md`, the same text as its `SKILL.md` in the download) and as a page for people. Documentation pages show the skills for their topic in a **Skills** tab, and each skill links to the API operations it uses.
 
 These documentation skills are not the Claude Code skills in `.claude/skills/`, which help to maintain this repository.
 
@@ -166,11 +166,19 @@ documentation page --(skills:)--> skill --(api:)--> API reference (<API URL>#ope
 
 The **Related documentation** box on a skill page is computed from the `skills:` lists of the documentation pages. Never add these back links by hand.
 
-Skills are a documentation set of their own: the `skills` sector (`content/sector/skills/_index.md`) adds a tile to the home page that opens `/docs/skills/`, and an entry to `llms.txt`. The left navigation of all skill pages follows the sector of the Skills card, `content/skills-card.md`. To move the skills into another documentation set, change the sector of that card and remove the sector page. The `sector` of a skill lists its topics.
+Skills are a documentation set of their own, structured like the others:
+
+- The `skills` sector (`content/sector/skills/_index.md`) adds the **Skills** tile to the home page and an entry to `llms.txt`. Its landing page, `/docs/sector/skills/`, offers **Download all skills** and shows one tile per topic.
+- Each topic is a folder, `content/skills/<topic>/`, with an `_index.md` and a card, `content/skills-<topic>-card.md` (`bundlefolder: skills/<topic>`). The topics are `platform-administration`, `device-management`, and `application-enablement`.
+- The `_index.md` of a topic gives every skill in its folder its sectors through `cascade`: `skills`, which puts the skill into the Skills documentation set, and the topic sector, which adds it to that topic's `llms.txt`. A skill has no `sector` of its own.
+- The topic page, `/docs/skills/<topic>/`, lists the skills of the topic and offers **Download these skills**. On a skill page, the left navigation lists the skills of its topic.
+- `/docs/skills/` redirects to the landing page. Its `index.md` is the catalog of all skills.
+
+To add a topic, add a folder with an `_index.md` (copy one, then change `title`, `description`, `weight`, and the topic sector in `sector` and `cascade`) and a card.
 
 ### Add a skill
 
-1. Create `content/skills/<name>.md`. The file name is the name of the skill: lowercase letters, digits, and hyphens. Documentation pages refer to the skill by this name.
+1. Create `content/skills/<topic>/<name>.md`. The file name is the name of the skill: lowercase letters, digits, and hyphens, unique across all topics. Documentation pages refer to the skill by this name.
 2. Add the front matter:
 
    ```yaml
@@ -178,8 +186,6 @@ Skills are a documentation set of their own: the `skills` sector (`content/secto
    title: Send an operation to a device      # the task, in sentence case
    description: Check that a device supports an operation, create the operation, ...   # one sentence, shown on cards, in llms.txt, and to AI agents
    weight: 20                                 # order in the left navigation
-   sector:                                    # the topics: group the skill on the overview and add it to their llms.txt
-     - device_management
    requires:                                  # optional: skills to follow first, shown as "Before you start"
      - authentication                         # every skill that sends REST requests builds on this one
    api:                                       # every API operation the skill uses, in the order of use
@@ -216,25 +222,27 @@ Skills are a documentation set of their own: the `skills` sector (`content/secto
    python3 scripts/check_skill_api_refs.py            # all skills
    python3 scripts/check_skill_api_refs.py content/skills/send-operation.md
    ```
-3. Check the rendered pages: the **Skills** tab of each linking page, the skill page with its **Before you start** box, the skills overview, and the Markdown version of the skill (`/docs/skills/<name>/index.md`). The build fails if a `requires:` entry names no skill.
+3. Check the rendered pages: the **Skills** tab of each linking page, the skill page with its **Before you start** box, the topic page, and the Markdown version of the skill (`/docs/skills/<topic>/<name>/index.md`). The build fails if a `requires:` entry names no skill, or if two skills have the same name.
 
 ### Machines first
 
 The pages put the agent skill first and the reading view second:
 
 - A skill page opens with **Use with an AI agent**: the skill name, where to save the `SKILL.md`, the skills it builds on, and the buttons **Copy SKILL.md** and **Download skill** (a ZIP file with the `cumulocity-<name>/SKILL.md` folder). The text for people follows.
-- Every skill card, in the **Skills** tab and on the overview, shows the skill name and links its `SKILL.md`.
-- The overview offers **Download all skills** and links the skills `llms.txt` for agents.
+- Every skill card, in the **Skills** tab and on the topic pages, shows the skill name and links its `SKILL.md`.
+- The landing page offers **Download all skills** and links the skills `llms.txt` for agents. Each topic page offers **Download these skills**.
 
 ### Download all skills
 
-The **Download all skills** button on the skills overview gives a ZIP file with one folder per skill: `cumulocity-skills/cumulocity-<name>/SKILL.md`, plus a `README.md` with the install steps and the required credentials. The `cumulocity-` prefix keeps the skill names apart from other installed skills. A skill's `index.md` is the same text as its `SKILL.md`.
+The **Download all skills** button on the landing page gives a ZIP file with one folder per skill: `cumulocity-skills/cumulocity-<name>/SKILL.md`, plus a `README.md` with the install steps and the required credentials. The `cumulocity-` prefix keeps the skill names apart from other installed skills. A skill's `index.md` is the same text as its `SKILL.md`.
 
-The build publishes the files and a `skills/download/manifest.json` that lists them (`layouts/skills/list.md`, with the text from `layouts/partials/skills/skill.txt`). The button zips them in the browser (`static/js/skills-download.js` with JSZip in `static/js/vendor/jszip.min.js`), so there is no fixed ZIP URL.
+**Download these skills** on a topic page gives the skills of the topic, the skills they build on (`requires`), and the README.
+
+The build publishes the files and a `skills/download/manifest.json` that lists them, all and per topic (`layouts/skills/list.md`, with the text from `layouts/partials/skills/skill.txt`). The buttons come from `layouts/partials/skills/download.html`. The button zips them in the browser (`static/js/skills-download.js` with JSZip in `static/js/vendor/jszip.min.js`), so there is no fixed ZIP URL.
 
 For an AI-assisted review, use the Claude Code skill `doc-skills` (`.claude/skills/doc-skills/`) or the Copilot prompt `c8y-skill-review.prompt.md`.
 
-The templates live in the theme: `layouts/skills/` (skill page, overview, and their Markdown versions), `layouts/partials/skills/`, the **Skills** tab in `layouts/_default/bundle.html` with `initPageTabs()` in `static/js/main.js`, and the styles in `assets/scss/_page-tabs.scss`.
+The templates live in the theme: `layouts/skills/` (skill page, topic page, the `/skills/` redirect, and their Markdown versions), `layouts/partials/skills/`, the **Skills** tab in `layouts/_default/bundle.html` with `initPageTabs()` in `static/js/main.js`, and the styles in `assets/scss/_page-tabs.scss`.
 
 ## Redirects
 

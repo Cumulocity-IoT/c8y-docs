@@ -1,15 +1,15 @@
 {{- /*
   Returns the skills that a skill builds on (its `requires` front matter, a list of file
-  names in content/skills/) as a slice of pages. A name that matches no skill fails the
+  names in content/skills/<topic>/) as a slice of pages. A name that matches no skill fails the
   build. Call with the skill page.
 */ -}}
 {{- $page := . -}}
 {{- $result := slice -}}
 {{- range .Params.requires -}}
-  {{- with site.GetPage (printf "/skills/%s" .) -}}
+  {{- with index (partialCached "skills/by-name.html" site) . -}}
     {{- $result = $result | append . -}}
   {{- else -}}
-    {{- errorf "skill %q required by %s does not exist in content/skills/" . $page.File.Path -}}
+    {{- errorf "skill %q required by %s does not exist in content/skills/<topic>/" . $page.File.Path -}}
   {{- end -}}
 {{- end -}}
 {{- return $result -}}

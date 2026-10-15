@@ -1,11 +1,12 @@
 {{- /* Returns the README.md of the skills download (skills/list.md). Call with the skills section page. */ -}}
 {{- $release := site.Data.date_settings.version | default "Latest" -}}
 {{- $skills := slice -}}
-{{- range .RegularPages.ByWeight -}}
+{{- $landing := (site.GetPage "/sector/skills").Permalink -}}
+{{- range (where site.RegularPages "Section" "skills").ByWeight -}}
   {{- $skills = $skills | append (printf "- `%s`: %s" (partial "skills/skill-name.html" .) .Description) -}}
 {{- end -}}
 {{- $auth := "" -}}
-{{- with site.GetPage "/skills/authentication" }}{{ $auth = printf "`%s`" (partial "skills/skill-name.html" .) }}{{ else }}{{ errorf "the skills README refers to content/skills/authentication.md, which does not exist" }}{{ end -}}
+{{- with index (partialCached "skills/by-name.html" site) "authentication" }}{{ $auth = printf "`%s`" (partial "skills/skill-name.html" .) }}{{ else }}{{ errorf "the skills README refers to the skill authentication, which does not exist" }}{{ end -}}
 {{- $text := printf `# Cumulocity skills
 
 Agent skills from the Cumulocity documentation.
@@ -32,5 +33,5 @@ The skills send requests to the Cumulocity REST API. Before you use them, set th
 ## Updates
 
 The skills reflect the documentation at the time of the download. To update them, download them again from %s.
-` $release (now.Format "2006-01-02") .Permalink (delimit $skills "\n") "`cumulocity-`" "`~/.claude/skills/`" "`.claude/skills/`" "`C8Y_BASEURL`" "`C8Y_TENANT`" "`C8Y_USER`" "`C8Y_PASSWORD`" $auth .Permalink -}}
+` $release (now.Format "2006-01-02") $landing (delimit $skills "\n") "`cumulocity-`" "`~/.claude/skills/`" "`.claude/skills/`" "`C8Y_BASEURL`" "`C8Y_TENANT`" "`C8Y_USER`" "`C8Y_PASSWORD`" $auth $landing -}}
 {{- return $text -}}

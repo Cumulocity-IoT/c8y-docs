@@ -1,6 +1,6 @@
 {{- /*
   Returns the skills a documentation page links to with its `skills` front matter (a list
-  of file names in content/skills/), as a slice of dicts:
+  of file names in content/skills/<topic>/), as a slice of dicts:
   - "skill": the skill page
   - "from": title of the bundle block that names the skill, empty for the page itself
   - "anchor": id of that block (its file name, as _default/bundle.html renders it)
@@ -26,9 +26,9 @@
 {{- range $refs -}}
   {{- if in $seen .slug }}{{ continue }}{{ end -}}
   {{- $seen = $seen | append .slug -}}
-  {{- $skill := site.GetPage (printf "/skills/%s" .slug) -}}
+  {{- $skill := index (partialCached "skills/by-name.html" site) .slug -}}
   {{- if not $skill -}}
-    {{- errorf "skill %q referenced by %s does not exist in content/skills/" .slug .file -}}
+    {{- errorf "skill %q referenced by %s does not exist in content/skills/<topic>/" .slug .file -}}
     {{- continue -}}
   {{- end -}}
   {{- $result = $result | append (dict "skill" $skill "from" .from "anchor" .anchor) -}}

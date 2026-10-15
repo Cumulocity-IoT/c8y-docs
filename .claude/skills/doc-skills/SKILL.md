@@ -19,7 +19,7 @@ workflow.
 - **The user names files or skills** - use them.
 - **Otherwise** - take the changes of the current branch:
   `git diff --name-only origin/develop...HEAD` plus `git status --short`. In scope are
-  `content/skills/*.md`, `data/apis.json`, and every content file whose diff adds or
+  `content/skills/**/*.md`, `data/apis.json`, and every content file whose diff adds or
   removes a `skills:` entry.
 - **A changed documentation page** - also review the skills it names.
 - **A changed skill** - also find the pages that link to it:
@@ -33,10 +33,10 @@ For each skill in scope:
 
 | Check | Rule |
 |---|---|
-| File name | `content/skills/<name>.md`, `<name>` of lowercase letters, digits, and hyphens |
+| File | `content/skills/<topic>/<name>.md` in the folder of its topic; `<name>` of lowercase letters, digits, and hyphens, unique across topics. A skill outside a topic folder is a finding |
 | `title` | The task in sentence case, without "To" |
 | `description` | One sentence, starts with a verb, says what the reader does. It is the card text, the llms.txt note, and the skill description for AI agents |
-| `sector` | Exactly the topic sector(s) of the task (keys of `content/sector/`), usually the sector of the page that links the skill. Not the documentation set of the Skills section: that is the sector of `content/skills-card.md` |
+| `sector` | None in the skill: the `cascade` of the topic `_index.md` sets it. A skill that lists `sector` itself is a finding |
 | `requires` | `authentication` for every skill that sends REST requests; other skills only if the reader must follow them first. Each entry names an existing skill |
 | `api` | Every operation the body sends, in the order of use; each entry with `operation`, `method`, `path`, `title`; `spec` only for APIs other than the Core API, and then a key of `data/apis.json`. Requests to microservices without a specification in `data/apis.json` (`/service/...`) are not listed |
 | Back links | None in the skill. The "Related documentation" box is computed from the `skills:` lists |
@@ -50,7 +50,7 @@ block (file in `<page>-bundle/`) that covers the task, and names existing skills
 Run the check script on the skills in scope (without arguments it checks all skills):
 
 ```bash
-python3 scripts/check_skill_api_refs.py content/skills/<name>.md
+python3 scripts/check_skill_api_refs.py content/skills/<topic>/<name>.md
 ```
 
 It downloads the OpenAPI specifications from the `spec` URLs in `data/apis.json` and
@@ -88,9 +88,9 @@ The script needs network access to `cumulocity.com`. It does not check `#tag/` o
    build fails on an unknown skill name in `skills:` or an unknown `spec`.
 2. Open the rendered pages: the skill page (the **Use with an AI agent** box with the skill name and working **Copy SKILL.md** and **Download skill** buttons, the API reference and Related documentation
    boxes, the procedures in the table of contents), the **Skills** tab of each linking
-   page (cards with "Linked from" and the API chips), and the skills overview (the
-   skill in its topic group).
-3. Read the Markdown version, `/docs/skills/<name>/index.md`: front matter with `name`
+   page (cards with "Linked from" and the API chips), and the topic page (the skill
+   card, and the skill in the left navigation).
+3. Read the Markdown version, `/docs/skills/<topic>/<name>/index.md`: front matter with `name`
    (`cumulocity-<name>`) and `description`, "Before you start" with the required skills,
    the skill, "API reference" grouped by API, "Related documentation". It is the
    `SKILL.md` of the skills download: check that `skills/download/manifest.json` lists it.

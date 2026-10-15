@@ -29,7 +29,7 @@
             <button type="button" class="skill-button" data-skill-copy="{{ .Permalink }}"><i class="dlt-c8y-icon-clipboard" aria-hidden="true"></i> Copy SKILL.md</button>
             <button type="button" class="skill-button skill-button--secondary" data-skill-download="{{ .Permalink }}" data-skill-name="{{ $name }}"><i class="dlt-c8y-icon-download" aria-hidden="true"></i> Download skill</button>
             <a class="skill-agent__link" href="{{ .Permalink }}">View SKILL.md</a>
-            <a class="skill-agent__link" href="{{ (site.GetPage "/skills").Permalink }}">Download all skills</a>
+            <a class="skill-agent__link" href="{{ (site.GetPage "/sector/skills").Permalink }}">Download all skills</a>
           </div>
           <span class="skill-agent__status" role="status"></span>
         </section>

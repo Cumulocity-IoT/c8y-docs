@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check the API references of skills against the published OpenAPI specifications.
 
-For each skill (content/skills/*.md, or the files given as arguments) this checks:
+For each skill (content/skills/<topic>/*.md, or the files given as arguments) this checks:
 - every `api` front matter entry: its API is listed in data/apis.json, its operation
   exists in that API's specification, and `method` and `path` match the specification;
   a `title` that differs from the operation summary is a warning
@@ -13,7 +13,7 @@ The specifications are downloaded from the `spec` URLs in data/apis.json. Only t
 standard library is used: JSON specifications are parsed as JSON, YAML specifications with
 a line-based reader for the `paths` section.
 
-Usage: python3 scripts/check_skill_api_refs.py [content/skills/<name>.md ...]
+Usage: python3 scripts/check_skill_api_refs.py [content/skills/<topic>/<name>.md ...]
 Exit status: 1 if there are errors, otherwise 0.
 """
 
@@ -174,7 +174,7 @@ def check(file, apis, report):
 def main():
     apis = json.load(open(os.path.join(ROOT, "data", "apis.json"), encoding="utf-8"))
     files = sys.argv[1:] or sorted(
-        f for f in glob.glob(os.path.join(ROOT, "content", "skills", "*.md")) if not f.endswith("_index.md"))
+        f for f in glob.glob(os.path.join(ROOT, "content", "skills", "**", "*.md"), recursive=True) if not f.endswith("_index.md"))
     counts = {"ERROR": 0, "WARN": 0}
 
     def report(level, where, message):
