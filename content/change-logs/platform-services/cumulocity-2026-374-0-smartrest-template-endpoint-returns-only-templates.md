@@ -1,5 +1,5 @@
 ---
-date: '2026-10-13'
+date: 
 title: SmartREST template endpoint now returns only SmartREST templates
 product_area: Platform services
 change_type:
