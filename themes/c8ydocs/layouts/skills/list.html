@@ -14,7 +14,6 @@
         </header>
         {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
         {{ partial "headline-hash.html" .Content }}
-        {{ partial "skills/download.html" (dict "page" . "topic" .) }}
         <div class="skill-grid">
           {{ range .RegularPages.ByWeight }}{{ partial "skills/card.html" (dict "skill" .) }}{{ end }}
         </div>

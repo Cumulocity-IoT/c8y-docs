@@ -6,7 +6,8 @@
   skills/download/cumulocity-skills/<skill name>/SKILL.md (skills/skill.txt), a README.md, and
   skills/download/manifest.json. The manifest lists all files, and per topic the files of the
   topic's skills, the skills they build on (`requires`), and the README. The download buttons
-  (partials/skills/download.html, static/js/skills-download.js) zip them in the browser.
+  on the Skills cards (partials/skills/download-button.html, static/js/skills-download.js)
+  zip them in the browser.
   Publish returns only an error, so each call sits in a `with`: in a plain-text template a bare
   call would print <nil> into this page.
 */ -}}

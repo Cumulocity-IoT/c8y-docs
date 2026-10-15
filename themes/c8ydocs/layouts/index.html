@@ -52,6 +52,9 @@ the PDFs in this section"
         </a>
       </div>
     {{- end -}}
+    {{- if eq .Page.Data.Term "skills" }}
+      <div class="m-l-32 m-b-24 p-relative">{{ partial "skills/download-button.html" (dict) }}</div>
+    {{- end }}
   </div>
   {{ end }}
 </div>

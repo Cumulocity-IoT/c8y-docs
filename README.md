@@ -168,10 +168,10 @@ The **Related documentation** box on a skill page is computed from the `skills:`
 
 Skills are a documentation set of their own, structured like the others:
 
-- The `skills` sector (`content/sector/skills/_index.md`) adds the **Skills** tile to the home page and an entry to `llms.txt`. Its landing page, `/docs/sector/skills/`, offers **Download all skills** and shows one tile per topic.
+- The `skills` sector (`content/sector/skills/_index.md`) adds the **Skills** tile to the home page and an entry to `llms.txt`. The tile offers **Download all skills**. Its landing page, `/docs/sector/skills/`, shows one tile per topic, each with **Download skills** for that topic.
 - Each topic is a folder, `content/skills/<topic>/`, with an `_index.md` and a card, `content/skills-<topic>-card.md` (`bundlefolder: skills/<topic>`). The topics are `platform-administration`, `device-management`, and `application-enablement`.
 - The `_index.md` of a topic gives every skill in its folder its sectors through `cascade`: `skills`, which puts the skill into the Skills documentation set, and the topic sector, which adds it to that topic's `llms.txt`. A skill has no `sector` of its own.
-- The topic page, `/docs/skills/<topic>/`, lists the skills of the topic and offers **Download these skills**. On a skill page, the left navigation lists the skills of its topic.
+- The topic page, `/docs/skills/<topic>/`, lists the skills of the topic. On a skill page, the left navigation lists the skills of its topic.
 - `/docs/skills/` redirects to the landing page. Its `index.md` is the catalog of all skills.
 
 To add a topic, add a folder with an `_index.md` (copy one, then change `title`, `description`, `weight`, and the topic sector in `sector` and `cascade`) and a card.
@@ -230,15 +230,15 @@ The pages put the agent skill first and the reading view second:
 
 - A skill page opens with **Use with an AI agent**: the skill name, where to save the `SKILL.md`, the skills it builds on, and the buttons **Copy SKILL.md** and **Download skill** (a ZIP file with the `cumulocity-<name>/SKILL.md` folder). The text for people follows.
 - Every skill card, in the **Skills** tab and on the topic pages, shows the skill name and links its `SKILL.md`.
-- The landing page offers **Download all skills** and links the skills `llms.txt` for agents. Each topic page offers **Download these skills**.
+- The downloads sit on the cards one level up, like **Download PDFs** on other cards: **Download all skills** on the **Skills** card of the home page, and **Download skills** on each topic card of the landing page.
 
 ### Download all skills
 
-The **Download all skills** button on the landing page gives a ZIP file with one folder per skill: `cumulocity-skills/cumulocity-<name>/SKILL.md`, plus a `README.md` with the install steps and the required credentials. The `cumulocity-` prefix keeps the skill names apart from other installed skills. A skill's `index.md` is the same text as its `SKILL.md`.
+The **Download all skills** button on the **Skills** card of the home page gives a ZIP file with one folder per skill: `cumulocity-skills/cumulocity-<name>/SKILL.md`, plus a `README.md` with the install steps and the required credentials. The `cumulocity-` prefix keeps the skill names apart from other installed skills. A skill's `index.md` is the same text as its `SKILL.md`.
 
-**Download these skills** on a topic page gives the skills of the topic, the skills they build on (`requires`), and the README.
+**Download skills** on a topic card gives the skills of the topic, the skills they build on (`requires`), and the README.
 
-The build publishes the files and a `skills/download/manifest.json` that lists them, all and per topic (`layouts/skills/list.md`, with the text from `layouts/partials/skills/skill.txt`). The buttons come from `layouts/partials/skills/download.html`. The button zips them in the browser (`static/js/skills-download.js` with JSZip in `static/js/vendor/jszip.min.js`), so there is no fixed ZIP URL.
+The build publishes the files and a `skills/download/manifest.json` that lists them, all and per topic (`layouts/skills/list.md`, with the text from `layouts/partials/skills/skill.txt`). The card buttons come from `layouts/partials/skills/download-button.html`. They zip the files in the browser (`static/js/skills-download.js`, which loads JSZip from `static/js/vendor/jszip.min.js` on the first download), so there is no fixed ZIP URL.
 
 For an AI-assisted review, use the Claude Code skill `doc-skills` (`.claude/skills/doc-skills/`) or the Copilot prompt `c8y-skill-review.prompt.md`.
 
