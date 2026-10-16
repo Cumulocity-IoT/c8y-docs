@@ -103,6 +103,17 @@ Significantly higher quotas can be configured for dedicated environments.
 | Maximum number of Loriot devices that can be registered per deployment                       | Soft | 40000 |
 | Maximum number of Loriot devices that can be registered per tenant                           | Soft | 20000 |
 
+### Cloud Remote Access {#cloud-remote-access}
+
+| Quota                                                                                                   | Type | Value     |
+| ------------------------------------------------------------------------------------------------------- | ---- | --------: |
+| Concurrent remote access sessions per tenant                                                            | Soft |        50 |
+| Concurrent remote access sessions per device                                                            | Soft |         3 |
+| New remote access connection attempts per tenant                                                        | Soft | 30/minute |
+| Remote access session lifetime                                                                          | Soft |   4 hours |
+
+See also the [Cloud Remote Access service-level agreement](/service-terms/service-level/#cloud-remote-access-sla).
+
 ### DataHub
 
 | Quota                                                                                            | Type |   Value |
