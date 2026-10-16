@@ -54,12 +54,15 @@ After the setup, the following objects give {{< product-c8y-iot >}} access. If y
 
 If a check fails, the **Data Lake configuration** page shows the reason. If the catalog was already created, the **Setup status** shows "Provisioning failed". Hover over the icon of a step to see its result. After you fix the cause, click **Retry provisioning**.
 
+A failed check stops the setup. The data lake catalog stays, but the setup creates nothing after it: no data stream, no DataHub settings, no offloading status object in the device inventory, and no Dremio source. Data does not reach the lake until you fix the cause and try again.
+
 |Cause|Solution|
 |:---|:---|
 |The application cannot be found, or Azure asks for a single-tenant application.|Your account cannot approve applications. Sign in as **Cloud Application Administrator** or **Application Administrator** and approve again.|
 |The application does not appear in the member search.|Search by display name. Check that you approved the application in the directory of the storage account.|
 |The check for short-lived credentials fails.|**Storage Blob Delegator** is missing or assigned to the container. Assign it to the storage account.|
 |The storage cannot be reached.|Check that **Storage Blob Data Contributor** is assigned to the container, and that the storage account allows public network access.|
+|The page says "it could not reach your storage" or "it could not obtain credentials for your storage".|Check the role assignments of the application on the storage account and the container. Then click **Retry provisioning**. If they are correct, contact the [{{< company-c8y >}} support.|
 |The directory is unknown, or authentication fails.|The Entra tenant ID belongs to another directory. Enter the ID of the directory that the subscription of the storage account belongs to.|
 |The base location overlaps the location of another tenant.|Choose a path that neither contains nor is contained in the other location. Sharing the same path is allowed.|
 |The page warns that data loss protection is off.|Soft delete is off for blobs or for containers. Enable both, then click **Retry provisioning**.|
