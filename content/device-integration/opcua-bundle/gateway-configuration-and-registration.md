@@ -98,12 +98,6 @@ gateway:
         deviceId: Thin-Edge_Device
 ```
 
-
-
-
-
-{{< c8y-admon-preview-feature >}}
-
 ### MQTT Forwarding mode {#mqtt-forwarding-mode}
 
 The OPC UA gateway supports an MQTT Forwarding mode that can be used together with the thin-edge.io mode. In addition to the OPC UA gateway being registered as a child device of the thin-edge.io device and the OPC UA gateway using credentials provided by thin-edge.io, in MQTT Forwarding mode the OPC UA gateway also uses thin-edge.io to send the data it receives from OPC UA servers to {{< product-c8y-iot >}}. When using cyclic reads, the data received in a single cyclic read that is mapped to measurements, events, or custom actions can be batched into a single message.
@@ -149,8 +143,6 @@ The configuration `gateway.thinEdge.useForDataForwarding` controls if MQTT Forwa
 * `gateway.thinEdge.mqttMaxInFlight` (default: 1000) - maximum number of unacknowledged messages in the MQTT client. If this limit is reached, additional messages will fail.
 
 For cyclic reads the configuration `gateway.mappings.mergeCyclicRead` can be enabled. The default is false. If this configuration is enabled cyclic reads mapped to measurements, events, or custom actions in a device protocol that use the same data reporting are merged into single messages. For measurements and events, the type can be controlled by the `gateway.mappings.mergedMeasurementType` and `gateway.mappings.mergedEventType` configuration. This is optional, and if not configured `c8y_OpcuaEvent` and `c8y_OpcuaMeasurement` respectively are used.
-
-{{< /c8y-admon-preview-feature >}}
 
 ### Configuration profile location on the filesystem {#configuration-profile-location-on-the-filesystem}
 
