@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-16'
 title: Fixed status column filtering in the new asset table
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,8 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67635
 version: 1024.20.8
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-16'
 ---
 When filtering by the status column in the new asset table, the filter did not work correctly and returned unexpected results or failed to apply the selected filter criteria. The status column filtering now works as expected.
