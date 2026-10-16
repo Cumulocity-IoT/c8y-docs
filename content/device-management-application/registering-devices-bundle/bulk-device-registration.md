@@ -2,6 +2,8 @@
 weight: 30
 title: Bulk device registration
 layout: redirect
+skills:
+  - bulk-register-devices
 ---
 
 To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means, to register larger amounts of devices by uploading a CSV file.

@@ -1,0 +1,26 @@
+{
+  "core": {
+    "title": "Core API",
+    "label": "Core",
+    "url": "https://cumulocity.com/api/core/",
+    "spec": "https://cumulocity.com/api/core/dist/c8y-oas.yml"
+  },
+  "dtm": {
+    "title": "Digital Twin Manager API",
+    "label": "DTM",
+    "url": "https://cumulocity.com/api/dtm/",
+    "spec": "https://cumulocity.com/api/dtm/dist/c8y-dtm-oas.json"
+  },
+  "datahub": {
+    "title": "DataHub API",
+    "label": "DataHub",
+    "url": "https://cumulocity.com/api/datahub/",
+    "spec": "https://cumulocity.com/api/datahub/dist/c8y-datahub-oas.yml"
+  },
+  "data-preparation": {
+    "title": "Data Preparation API",
+    "label": "Data Preparation",
+    "url": "https://cumulocity.com/api/data-preparation/",
+    "spec": "https://cumulocity.com/api/data-preparation/dist/c8y-dataprep-oas.json"
+  }
+}

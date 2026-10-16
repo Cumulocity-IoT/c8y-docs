@@ -2,6 +2,8 @@
 weight: 40
 title: Using smart groups
 layout: redirect
+skills:
+  - manage-device-groups
 outputs:
   - html
   - json

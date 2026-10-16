@@ -3,6 +3,7 @@
 
 {{ $bundle := printf "%s-%s" .File.BaseFileName "bundle"  }}
 {{ $headless := .Site.GetPage $bundle }}
+{{ $skills := partial "skills/for-page.html" . }}
 <main class="main-content bundle-layout">
   <div class="breadcrumbs-container">
     {{- partial "breadcrumbs.html" . -}}
@@ -13,9 +14,28 @@
         <header class="section-header">
           <h1 class="text-light">{{replace (replace (replace .Title "var-company-sag" .Site.Params.company_sag) "var-enterprise-tenant" .Site.Params.enterprise_tenant)  "var-product-c8y-iot" .Site.Params.product_c8y_iot}}</h1>
         </header>
+        {{ with $skills }}
+        {{/* Documentation and skills tabs; main.js (initPageTabs) switches between them */}}
+        <div class="page-tabs" role="tablist" aria-label="Page content">
+          <button type="button" class="page-tab active" role="tab" id="page-tab-docs" data-tab="docs" aria-selected="true">
+            <i class="dlt-c8y-icon-book" aria-hidden="true"></i> Documentation
+          </button>
+          <button type="button" class="page-tab" role="tab" id="page-tab-skills" data-tab="skills" aria-selected="false" aria-controls="skills" tabindex="-1">
+            <i class="dlt-c8y-icon-tasklist" aria-hidden="true"></i> Skills <span class="page-tab__count">{{ len . }}</span>
+          </button>
+        </div>
+        {{ end }}
         <div class="lead">
           {{ partial "headline-hash.html" .Content }}
         </div>
+        {{ with $skills }}
+        <section id="skills" class="skills-panel" role="tabpanel" aria-labelledby="page-tab-skills">
+          <p class="skills-panel__intro">Skills are instructions for AI agents and step-by-step guides for people, for the tasks on this page. Give a skill's SKILL.md to your agent, or download all skills from the <a href="{{ (site.GetPage "/sector/skills").Permalink }}">Skills page</a>.</p>
+          <div class="skill-grid">
+            {{ range . }}{{ partial "skills/card.html" . }}{{ end }}
+          </div>
+        </section>
+        {{ end }}
       </div>
     </article>
 

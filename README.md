@@ -152,6 +152,98 @@ hugo
 node scripts/lint-llmstxt.mjs
 ```
 
+## Skills
+
+Skills are task-focused instructions at `/docs/skills/`, written for AI agents first and people second. Each skill describes one task, for example sending an operation to a device, with the REST API requests it needs. Every skill is published as an agent skill (`/docs/skills/<topic>/<name>/index.md`, the same text as its `SKILL.md` in the download) and as a page for people. Documentation pages show the skills for their topic in a **Skills** tab, and each skill links to the API operations it uses.
+
+These documentation skills are not the Claude Code skills in `.claude/skills/`, which help to maintain this repository.
+
+Links are written in one direction only:
+
+```
+documentation page --(skills:)--> skill --(api:)--> API reference (<API URL>#operation/<operationId>)
+```
+
+The **Related documentation** box on a skill page is computed from the `skills:` lists of the documentation pages. Never add these back links by hand.
+
+Skills are a documentation set of their own, structured like the others:
+
+- The `skills` sector (`content/sector/skills/_index.md`) adds the **Skills** tile to the home page and an entry to `llms.txt`. The tile offers **Download all skills**. Its landing page, `/docs/sector/skills/`, shows one tile per topic, each with **Download skills** for that topic.
+- Each topic is a folder, `content/skills/<topic>/`, with an `_index.md` and a card, `content/skills-<topic>-card.md` (`bundlefolder: skills/<topic>`). The topics are `platform-administration`, `device-management`, and `application-enablement`.
+- The `_index.md` of a topic gives every skill in its folder its sectors through `cascade`: `skills`, which puts the skill into the Skills documentation set, and the topic sector, which adds it to that topic's `llms.txt`. A skill has no `sector` of its own.
+- The topic page, `/docs/skills/<topic>/`, lists the skills of the topic. On a skill page, the left navigation lists the skills of its topic.
+- `/docs/skills/` redirects to the landing page. Its `index.md` is the catalog of all skills.
+
+To add a topic, add a folder with an `_index.md` (copy one, then change `title`, `description`, `weight`, and the topic sector in `sector` and `cascade`) and a card.
+
+### Add a skill
+
+1. Create `content/skills/<topic>/<name>.md`. The file name is the name of the skill: lowercase letters, digits, and hyphens, unique across all topics. Documentation pages refer to the skill by this name.
+2. Add the front matter:
+
+   ```yaml
+   ---
+   title: Send an operation to a device      # the task, in sentence case
+   description: Check that a device supports an operation, create the operation, ...   # one sentence, shown on cards, in llms.txt, and to AI agents
+   weight: 20                                 # order in the left navigation
+   requires:                                  # optional: skills to follow first, shown as "Before you start"
+     - authentication                         # every skill that sends REST requests builds on this one
+   api:                                       # every API operation the skill uses, in the order of use
+     - operation: postOperationCollectionResource   # the operationId in the OpenAPI specification
+       method: POST
+       path: /devicecontrol/operations
+       title: Create an operation             # the summary of the operation in the API reference
+       spec: core                             # optional, default core: a key of data/apis.json
+   ---
+   ```
+
+   `api` lists only operations of the APIs in `data/apis.json`. Requests to microservices without a published OpenAPI specification (for example `/service/opcua-mgmt-service/...`) appear only in the text of the skill.
+
+3. Write the body as described in the "Skills" section of `.github/copilot-instructions.md`: `### To ...` procedures, REST requests in `http` code blocks, each linked to its operation in the API reference. Skills show REST requests only, no CLI commands.
+4. Link the skill from the documentation. Add `skills:` to the front matter of the page, or of the block in its `<page>-bundle/` folder that covers the task:
+
+   ```yaml
+   skills:
+     - send-operation
+   ```
+
+   The page then shows the **Skills** tab. The card of the skill links back to the block that names it.
+
+### API references
+
+`data/apis.json` lists the API references that skills can link to (Core, DTM, DataHub, Data Preparation): the URL of the reference and the URL of its published OpenAPI specification. Operation links have the form `<url>#operation/<operationId>` for all of them. To link to another API, add an entry. Its key is the value of `spec` in the skills.
+
+### Verify a skill
+
+1. Build the site. The build fails if a `skills:` entry names no skill, or if an `api` entry names an API that `data/apis.json` does not list. If your Hugo version rejects the HTML content files of this repository (`"text/html" is not whitelisted`), run `HUGO_SECURITY_ALLOWCONTENT='.*' hugo server`.
+2. Check the API references. The build does not compare them with the API: each operation must exist in the OpenAPI specification of its API (the `spec` URL in `data/apis.json`) with the same method and path, and the `title` must match its summary. The check script does this for the `api` front matter and for the operation links in the text:
+
+   ```bash
+   python3 scripts/check_skill_api_refs.py            # all skills
+   python3 scripts/check_skill_api_refs.py content/skills/send-operation.md
+   ```
+3. Check the rendered pages: the **Skills** tab of each linking page, the skill page with its **Before you start** box, the topic page, and the Markdown version of the skill (`/docs/skills/<topic>/<name>/index.md`). The build fails if a `requires:` entry names no skill, or if two skills have the same name.
+
+### Machines first
+
+The pages put the agent skill first and the reading view second:
+
+- A skill page opens with **Use with an AI agent**: the skill name, where to save the `SKILL.md`, the skills it builds on, and the buttons **Copy SKILL.md** and **Download skill** (a ZIP file with the `cumulocity-<name>/SKILL.md` folder). The text for people follows.
+- Every skill card, in the **Skills** tab and on the topic pages, shows the skill name and links its `SKILL.md`.
+- The downloads sit on the cards one level up, like **Download PDFs** on other cards: **Download all skills** on the **Skills** card of the home page, and **Download skills** on each topic card of the landing page.
+
+### Download all skills
+
+The **Download all skills** button on the **Skills** card of the home page gives a ZIP file with one folder per skill: `cumulocity-skills/cumulocity-<name>/SKILL.md`, plus a `README.md` with the install steps and the required credentials. The `cumulocity-` prefix keeps the skill names apart from other installed skills. A skill's `index.md` is the same text as its `SKILL.md`.
+
+**Download skills** on a topic card gives the skills of the topic, the skills they build on (`requires`), and the README.
+
+The build publishes the files and a `skills/download/manifest.json` that lists them, all and per topic (`layouts/skills/list.md`, with the text from `layouts/partials/skills/skill.txt`). The card buttons come from `layouts/partials/skills/download-button.html`. They zip the files in the browser (`static/js/skills-download.js`, which loads JSZip from `static/js/vendor/jszip.min.js` on the first download), so there is no fixed ZIP URL.
+
+For an AI-assisted review, use the Claude Code skill `doc-skills` (`.claude/skills/doc-skills/`) or the Copilot prompt `c8y-skill-review.prompt.md`.
+
+The templates live in the theme: `layouts/skills/` (skill page, topic page, the `/skills/` redirect, and their Markdown versions), `layouts/partials/skills/`, the **Skills** tab in `layouts/_default/bundle.html` with `initPageTabs()` in `static/js/main.js`, and the styles in `assets/scss/_page-tabs.scss`.
+
 ## Redirects
 
 Redirects must be processed through aliases. Add aliases as an array, and make sure to remove `/docs` or `/guides` out of the URL. Check the following example:
@@ -223,6 +315,7 @@ This repository includes standard prompts for reviewing documentation against Cu
 
 c8y-standard-review.prompt.md - Review of documentation with particular focus on Cumulocity standards and style.
 c8y-change-log-review.prompt.md - Specific review of a change log entry.
+c8y-skill-review.prompt.md - Review of a skill against the skill design, its API references, and the style guide.
 
 ---
 Copyright © 2018-present Cumulocity GmbH. All rights reserved.

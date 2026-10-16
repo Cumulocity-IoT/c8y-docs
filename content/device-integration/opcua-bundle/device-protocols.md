@@ -2,6 +2,9 @@
 weight: 80
 title: Device protocols
 layout: redirect
+skills:
+  - manage-opcua-device-types
+  - opcua-mapping-operations
 ---
 
 ### Adding a new device protocol {#adding-a-new-device-protocol}

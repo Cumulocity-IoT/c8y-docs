@@ -2,6 +2,8 @@
 weight: 30
 title: Alarms
 layout: bundle
+skills:
+  - handle-alarms
 sector: 
   - device_management
 ---

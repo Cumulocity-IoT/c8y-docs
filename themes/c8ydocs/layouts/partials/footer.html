@@ -23,3 +23,7 @@
 {{ if eq .Title "Release notes" }}
 <script src="{{ "js/vendor/isotope.pkgd.min.js" | absURL }}"></script>
 {{ end }}
+{{/* Skill downloads: the Skills card on the home page, the topic cards, and the skill pages. JSZip loads on the first download. */}}
+{{ if or .IsHome (eq .Section "skills") (eq .Data.Term "skills") }}
+<script src="{{ "js/skills-download.js" | absURL }}" data-jszip="{{ "js/vendor/jszip.min.js" | absURL }}"></script>
+{{ end }}
