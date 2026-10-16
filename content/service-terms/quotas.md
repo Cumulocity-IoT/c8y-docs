@@ -108,7 +108,7 @@ Significantly higher quotas can be configured for dedicated environments.
 | Quota                                                                                                   | Type | Value     |
 | ------------------------------------------------------------------------------------------------------- | ---- | --------: |
 | Concurrent remote access sessions per tenant                                                            | Soft |        50 |
-| Concurrent remote access sessions per device                                                            | Soft |         5 |
+| Concurrent remote access sessions per device                                                            | Soft |         3 |
 | New remote access connection attempts per tenant                                                        | Soft | 30/minute |
 | Remote access session lifetime                                                                          | Soft |   4 hours |
 
