@@ -42,7 +42,7 @@ Customer acknowledges the following limitations and constraints in using Service
 * **Device-side data traffic:** The Service itself does not send additional data, such as heartbeats, to the device. The tunneled protocols, however, create data traffic as long as a session is open, for example, SSH keepalive messages or VNC screen updates. The Service does not close idle sessions automatically. {{< company-c8y >}} is not responsible for the cost of this data traffic, in particular on metered or cellular connections.
 * **Throughput and latency:** Throughput and latency within an established session depend on the network connection of the device and of the client. {{< company-c8y >}} does not guarantee throughput or latency within a session.
 * **Device reachability:** The Service can only connect to a device if the device and its device agent are online and reachable. The availability of the device, of the device agent, of the device-side endpoints, and of Customer's networks and firewalls is outside the scope of this agreement.
-* **Service quotas:** Customer acknowledges the existence of soft quotas, for example, for the number of concurrent sessions, as detailed in [Service quotas](/service-terms/quotas/). Exceeding them can lead to a reduced service level.
+* **Service quotas:** Customer acknowledges the existence of soft quotas for the number of concurrent sessions, the rate of new connection attempts, and the session lifetime, as detailed in [Service quotas](/service-terms/quotas/#cloud-remote-access). Exceeding them can lead to a reduced service level.
 
 ### Service availability {#cra-service-availability}
 
@@ -63,9 +63,7 @@ Connections to Customer's devices are not part of the availability calculation, 
 
 Service credits are calculated as outlined in the [platform's service credit commitment](/service-terms/service-level/#service-credit-commitment).
 
-### Service quality
-
-#### Service-level objectives
+#### Informational service-level objectives {#cra-service-level-objectives}
 
 The following objectives measure the quality of the Service. They are for information purposes only and are not subject to service credits.
 
@@ -73,9 +71,7 @@ The following objectives measure the quality of the Service. They are for inform
 | ------------------------ | ---------------------------------------------------- |
 | Connection success rate  | ≥ 99.9%                                              |
 | Session setup time       | 99% of successful session setups ≤ 5 seconds         |
-| Session drop rate        | TBD                                                  |
-
-#### Service-level indicator definitions
+| Session drop rate        | ≤ 1%                                                 |
 
 The service quality indicators are defined as follows:
 
@@ -88,7 +84,3 @@ The service quality indicators are defined as follows:
 Support and maintenance are provided as outlined in the [platform service-level agreement](/service-terms/service-level/#support-and-maintenance).
 
 Support can assist with the configuration of remote access endpoints in {{< product-c8y-iot >}}. Support can generally not assist with troubleshooting device agents, device-side endpoints, or Customer's networks.
-
-### Acceptance
-
-By using the Services provided by {{< company-c8y >}}, Customer agrees to adhere to the terms outlined in this SLA.
