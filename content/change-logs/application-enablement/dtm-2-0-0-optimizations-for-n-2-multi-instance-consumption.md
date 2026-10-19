@@ -14,5 +14,4 @@ build_artifact:
 ticket: "CTM-3183"
 version: "2.0.0"
 ---
-Optimized measurement subscriptions and its monitoring for
-multi-instance consumption.
+DTM Data Service has optimized Notifications 2.0 measurement subscriptions and monitoring to ensure reliable consumption and stable processing when multiple service instances run simultaneously.
