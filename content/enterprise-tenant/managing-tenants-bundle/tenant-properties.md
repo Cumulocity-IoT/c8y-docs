@@ -6,6 +6,7 @@ layout: redirect
 
 {{< c8y-admon-req >}}
 * Your tenant must be subscribed to the Dtm-plugins extension and the Dtm microservice.
+* Your tenant must be the {{< management-tenant >}} or a tenant that is allowed to create subtenants.
 * For the required roles and permissions, see [Property definitions](/dtm/asset-types/#asset-properties).
 {{< /c8y-admon-req >}}
 

@@ -58,7 +58,7 @@ ROLES & PERMISSIONS
 
 The **Tenant properties** page additionally requires the following permissions:
 
-- To view the page: READ or ADMIN permission for the "Tenant management" permission type, and CREATE, UPDATE, or ADMIN permission for the "Digital twin definitions" permission type
+- To view the page: READ permission for the "Tenant management" permission type, and CREATE, UPDATE, or ADMIN permission for the "Digital twin definitions" permission type
 - To add, import, edit, or delete property definitions: ADMIN permission for the "Tenant management" permission type
 {{< /c8y-admon-req >}}
 
