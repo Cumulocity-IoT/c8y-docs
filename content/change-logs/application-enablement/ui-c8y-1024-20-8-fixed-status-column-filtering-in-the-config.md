@@ -16,5 +16,9 @@ version: 1024.20.8
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-16'
+  - label: apj.cumulocity.com
+    date: '2026-10-19'
+  - label: jp.cumulocity.com
+    date: '2026-10-19'
 ---
 When filtering by the status column in the new asset table, the filter did not work correctly and returned unexpected results or failed to apply the selected filter criteria. The status column filtering now works as expected.

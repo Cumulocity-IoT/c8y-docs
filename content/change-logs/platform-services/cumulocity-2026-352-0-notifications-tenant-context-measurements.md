@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-10-14'
   - label: jp.cumulocity.com
     date: '2026-10-14'
+  - label: us.cumulocity.com
+    date: '2026-10-19'
 ---
 
 Notifications 2.0 subscriptions in the tenant context now support the measurement API.

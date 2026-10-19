@@ -16,5 +16,9 @@ version: 1024.20.4
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-16'
+  - label: apj.cumulocity.com
+    date: '2026-10-19'
+  - label: jp.cumulocity.com
+    date: '2026-10-19'
 ---
 A select dropdown's toggle button now reflects whether the dropdown is open or closed, giving users clear visual feedback and making dropdowns more intuitive across your applications.

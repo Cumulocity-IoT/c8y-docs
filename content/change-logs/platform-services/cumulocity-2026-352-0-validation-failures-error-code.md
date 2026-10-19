@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-10-14'
   - label: jp.cumulocity.com
     date: '2026-10-14'
+  - label: us.cumulocity.com
+    date: '2026-10-19'
 ---
 
 Previously, a request that failed the validation of its parameters was rejected with the status code 422, but the error response contained the error `general/internalError`, which suggested a server fault.

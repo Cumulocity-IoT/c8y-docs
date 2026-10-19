@@ -1,6 +1,8 @@
 ---
-date: 
-title: Error responses of inventory and measurement bulk requests identify the failed element
+date: '2026-10-19'
+title: >-
+  Error responses of inventory and measurement bulk requests identify the failed
+  element
 change_type:
   - value: change-2c7RdTdXo4
     label: Improvement
@@ -13,6 +15,9 @@ build_artifact:
     label: cumulocity
 ticket: MTM-67179
 version: 2026.377.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-19'
 ---
 
 Previously, the error response of a failed bulk request did not tell you which element caused the error,

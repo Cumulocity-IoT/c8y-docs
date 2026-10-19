@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-10-16'
   - label: jp.cumulocity.com
     date: '2026-10-16'
+  - label: us.cumulocity.com
+    date: '2026-10-19'
+  - label: cumulocity.com
+    date: '2026-10-19'
 ---
 The "Data graph" widget didn´t always display alarm and event data correctly when there were no measurements on the chart. The visualization now properly renders all alarm and event data points in the graph, ensuring you can accurately view and analyze your alarm and event trends over time.
