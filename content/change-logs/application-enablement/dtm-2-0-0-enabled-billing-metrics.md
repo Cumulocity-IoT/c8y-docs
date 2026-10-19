@@ -14,7 +14,4 @@ build_artifact:
 ticket: "CTM-3272"
 version: "2.0.0"
 ---
-Report the metrics for measurements on euch subscribed tenant to the
-Cumulocity billing. Metrics include measurements received, created and
-reprocessed, with created and reprocessed also split into persistent and
-transient.
+DTM Data Service now reports measurement metrics to  {{< product-c8y-iot >}} billing for every subscribed tenant, providing better visibility into how measurement data is processed. The metrics cover measurements received, created, and reprocessed. Created and reprocessed measurements are further categorized as persistent or transient, helping you distinguish between data that is stored and data that is processed without being stored.
