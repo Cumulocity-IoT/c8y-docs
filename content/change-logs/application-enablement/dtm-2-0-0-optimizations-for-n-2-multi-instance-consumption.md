@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Optimizations for n2 multi-instance consumption"
+title: "Optimized Notifications 2.0 subscriptions for multiple instances"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
