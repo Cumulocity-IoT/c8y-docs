@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67771
 version: 1023.14.223
 ---
-Fixed data graph visualization of alarms and events
+The "Data graph" widget didn´t always display alarm and event data correctly when there were no measurements on the chart. The visualization now properly renders all alarm and event data points in the graph, ensuring you can accurately view and analyze your alarm and event trends over time.
