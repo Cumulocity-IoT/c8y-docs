@@ -1,5 +1,5 @@
 ---
-date: "2026-10-14"
+date: 
 title: New Asset table widget moved to General Availability
 product_area: Application enablement & solutions
 change_type:
