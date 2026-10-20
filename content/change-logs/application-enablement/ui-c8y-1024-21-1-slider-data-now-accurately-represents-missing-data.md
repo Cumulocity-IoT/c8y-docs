@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Slider data now accurately represents missing data.
+title: Slider data now accurately represents missing data
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
