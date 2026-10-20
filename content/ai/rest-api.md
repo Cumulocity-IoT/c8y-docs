@@ -4,6 +4,7 @@ layout: bundle
 outputs:
   - html
   - json
+  - markdown
 sector:
   - app_enablement
 weight: 60

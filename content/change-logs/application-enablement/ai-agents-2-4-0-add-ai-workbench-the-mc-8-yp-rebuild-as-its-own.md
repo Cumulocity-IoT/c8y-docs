@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-09-24'
 title: AI Workbench microservice now available enabling code-mode MCP
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: ai-agents
 ticket: MTM-67405
 version: 2.4.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-09-24'
+  - label: apj.cumulocity.com
+    date: '2026-09-22'
+  - label: jp.cumulocity.com
+    date: '2026-09-22'
+  - label: us.cumulocity.com
+    date: '2026-09-23'
+  - label: cumulocity.com
+    date: '2026-09-23'
 ---
 AI Workbench is a new microservice that provides a dedicated runtime environment for code mode. In code mode, an AI agent writes and runs code against the available tools and platform APIs instead of invoking every tool through a separate model call. This significantly reduces the number of round trips to the model and the volume of intermediate data that has to pass through its context, so agents resolve multi-step tasks faster, at lower token cost, and with more consistent results — particularly when working with large datasets or chaining many tools together.
 

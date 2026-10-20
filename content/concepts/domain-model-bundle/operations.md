@@ -45,7 +45,7 @@ At some point in time, the agent responsible for the device will request operati
 
 The agent will execute the operations on the devices that it manages (Step "3"), and will update {{< product-c8y-iot >}} with the results of the execution (Step "4"). The devices that the agent manages are direct or indirect children ("childDevices") of the agent.
 
-Finally, the application can query the results of the operation (Step "5"). Audit records are generated both for the original request to run the device control operation and for the acknowledgement that the operation was actually run.
+Finally, the application can query the results of the operation (Step "5"). Audit records are generated both for the original request to run the device control operation and for the acknowledgment that the operation was actually run.
 
 ![Device control architecture](/images/concepts-guide/control.png)
 

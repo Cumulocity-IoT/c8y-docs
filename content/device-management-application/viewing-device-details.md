@@ -296,6 +296,7 @@ If the LAN configuration is disabled, the DHCP configuration is automatically di
 
 The **Services** tab provides a list of all services running on a device with their status, name, type and date of the last update.
 Every column allows services to be filtered and/or sorted by the respective value displayed.
+Click a service to open its details view. See [Managing device services](/device-management-application/managing-device-services/) for the tabs available for a service.
 
 ![Services overview](/images/users-guide/DeviceManagement/devmgmt-services-overview.png)
 
