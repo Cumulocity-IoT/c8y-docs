@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add approval screen for human-in-the-loop interactions in AI chat
+title: Added approval screen for human-in-the-loop interactions in AI chat
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
