@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Build approval screen for human in the loop in the loop in ai chat component
+title: Add approval screen for human-in-the-loop interactions in AI chat
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,22 +14,4 @@ build_artifact:
 ticket: MTM-67222
 version: 1024.16.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-67222] Build approval screen for human in the
-loop in the loop in ai chat component
-(#12575)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12575)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67222]:
-https://cumulocity.atlassian.net/browse/MTM-67222?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
-Co-authored-by: Jan Hommes <janhommes@users.noreply.github.com>
+The AI chat component now includes an approval screen that enables human review and validation of AI-generated responses before they are sent to users. Previously, AI responses were sent directly without any opportunity for human intervention or approval. With this change, you can now review and approve AI chat responses in a dedicated approval interface, giving you greater control over the quality and accuracy of AI-generated content in your applications. This enhancement is particularly valuable when using AI chat in critical business processes where human oversight is required to ensure responses meet your standards and comply with your organizational policies.
