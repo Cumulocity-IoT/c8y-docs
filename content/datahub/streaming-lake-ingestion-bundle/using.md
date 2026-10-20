@@ -166,7 +166,7 @@ For example, if your tenant is `mytenant.cumulocity.com`, the URL is
 `https://iceberg.cumulocity.com/api/catalog/v1/oauth/tokens`.
 
 {{< c8y-admon-important >}}
-The Iceberg catalog uses the standard HTTPS port 443. Port 19120 is deprecated. The general availability release of Streaming Lake Ingestion removes it. If your client configuration contains port 19120, remove the port from the catalog URL and from the OpenID Connect server URL.
+The Iceberg catalog uses the standard HTTPS port 443. Port 19120 is deprecated. The General Availability release of Streaming Lake Ingestion removes it. If your client configuration contains port 19120, remove the port from the catalog URL and from the OpenID Connect server URL.
 {{< /c8y-admon-important >}}
 
 Run Spark SQL queries with the {{< product-c8y-iot >}} Iceberg catalog on an AWS S3 object store using the example below. In the example, replace
