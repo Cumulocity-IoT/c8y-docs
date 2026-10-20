@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-67234
 version: 1024.21.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67234] Slider data now accurately represents
-missing
-data.](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12422)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67234]:
-https://cumulocity.atlassian.net/browse/MTM-67234?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+ The data points graph slider's preview now accurately reflects where measurement data is missing. Previously a time range with only partial data or a gap in the middle of the range could stretch the aggregated preview across the whole slider, making it look like data existed everywhere. The slider shadow is now aligned to the chart's time axis and uses the aggregation interval to distinguish a genuine data gap from normal bucket spacing, so empty ranges render as empty while the still-open final bucket isn't clipped.
