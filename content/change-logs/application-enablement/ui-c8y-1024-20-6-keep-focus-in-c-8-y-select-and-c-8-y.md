@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-16'
 title: Keep focus in c8y-select and c8y-typeahead after selecting an option
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,16 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67187
 version: 1024.20.6
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-16'
+  - label: apj.cumulocity.com
+    date: '2026-10-19'
+  - label: jp.cumulocity.com
+    date: '2026-10-19'
+  - label: us.cumulocity.com
+    date: '2026-10-20'
+  - label: cumulocity.com
+    date: '2026-10-20'
 ---
 The c8y-select and c8y-typeahead components now keep focus after you select an option from the dropdown list, so you no longer need to click back into the component to continue.
