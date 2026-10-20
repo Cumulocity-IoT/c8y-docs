@@ -1,6 +1,6 @@
 ---
 date: ""
-title: keep focus in c8y-select and c8y-typeahead after a choice
+title: Keep focus in c8y-select and c8y-typeahead after selecting an option
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
