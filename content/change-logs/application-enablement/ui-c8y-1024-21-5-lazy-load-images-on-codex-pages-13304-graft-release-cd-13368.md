@@ -14,19 +14,6 @@ build_artifact:
 ticket: MTM-68096
 version: 1024.21.5
 ---
-# Backport
+Images on Codex pages are now lazy-loaded. The first image on each page still loads immediately. It is often the page's largest visible element, and lazy-loading it would slow down how quickly the page appears. Images that already set their own `loading` or `decoding` attribute keep their values.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-68096] lazy-load images on Codex pages
-(#13304)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13304)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-68096]:
-https://cumulocity.atlassian.net/browse/MTM-68096?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+This change only affects the Codex documentation. Applications built with the Web SDK are not affected.
