@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fix issues with SVG rendering in SCADA widget legacy mode (#13292) [GRAFT][release/cd] (#13371)
+title: Fixed rendering issues in SCADA widgets created with the previous widget version
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,21 @@ build_artifact:
 ticket: MTM-67868
 version: 1024.21.4
 ---
-# Backport
+With the **SCADA widget v2** preview feature enabled, some SCADA widgets created with the previous version of the widget did not display correctly. This affected widgets whose SVG shows or hides parts of the drawing depending on a placeholder value, for example with `ng-if="value==0"`. Such parts could appear when they should have been hidden, or the other way round, because:
 
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Cockpit): [MTM-67868] Fix issues with SVG rendering in SCADA
-widget legacy mode
-(#13292)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13292)
+* A placeholder without a value no longer worked in such conditions as before.
+* A placeholder mapped to *Last measurement* returned the value as rounded text, for example `"0.00"`, instead of a number.
 
-<!--- Backport version: unknown -->
+These widgets now display as they did in the previous version.
 
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
+The following issues are also fixed:
 
-[MTM-67868]:
-https://cumulocity.atlassian.net/browse/MTM-67868?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
+* Placeholders mapped to a nested property, for example `c8y_Position.lat`, now show the value.
+* Placeholders mapped to *Last measurement* now update as soon as the first measurement of a series arrives. Previously, you had to reload the page.
 
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+Additionally, *Last measurement* properties now have a **Format as numeric string** option:
+
+* If selected, the value is rounded to the configured number of decimal places.
+* If cleared, the measurement value is shown unchanged. In SCADA widgets, you can use this value directly in conditions and calculations in the SVG.
+
+The option is cleared by default for new *Last measurement* properties, wherever they are used, for example in the asset table. Existing properties keep their formatted value.
