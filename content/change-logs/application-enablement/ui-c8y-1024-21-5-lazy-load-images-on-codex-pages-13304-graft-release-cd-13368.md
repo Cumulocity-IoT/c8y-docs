@@ -1,6 +1,6 @@
 ---
 date: ""
-title: lazy-load images on Codex pages (#13304) [GRAFT][release/cd] (#13368)
+title: Faster page loads in the Codex documentation through lazy-loaded images
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
