@@ -14,4 +14,6 @@ build_artifact:
 version: 2026.360.0
 ---
 
-The new "Asset table" widget, which offers extended filtering options, enhanced customization, and the expanded capabilities of the data grid for a more powerful and flexible way to view and manage asset data, is now generally available (GA). For details, see [Asset table](/cockpit/widgets-collection/#asset-table) in the documentation. For more details on the enhancements, see also the original [{{< product-c8y-iot >}} announcement](https://cumulocity.com/docs/change-logs/?productarea=.productarea-application-enablement-solutions&component=.component-web-sdk&change-type=.change-type-feature#ui-c8y-1023-49-0-add-configurable-data-grid-as-asset-table-widget).
+The enhanced “Asset table” available as a preview feature, is now generally available (GA).
+The widget uses the data grid to provide extended filtering options and enhanced customization, offering a more powerful and flexible way to view and manage asset data.
+For more details on the enhancements, see the original [{{< product-c8y-iot >}} announcement](https://cumulocity.com/docs/change-logs/?productarea=.productarea-application-enablement-solutions&component=.component-web-sdk&change-type=.change-type-feature#ui-c8y-1023-49-0-add-configurable-data-grid-as-asset-table-widget).
