@@ -159,11 +159,15 @@ To obtain client credentials for the Iceberg catalog, see [Obtaining Iceberg cat
 
 The URL of the OpenID Connect server is
 
-`https://iceberg.<INSTANCE>:19120/api/catalog/v1/oauth/tokens`
+`https://iceberg.<INSTANCE>/api/catalog/v1/oauth/tokens`
 
 For example, if your tenant is `mytenant.cumulocity.com`, the URL is
 
-`https://iceberg.cumulocity.com:19120/api/catalog/v1/oauth/tokens`.
+`https://iceberg.cumulocity.com/api/catalog/v1/oauth/tokens`.
+
+{{< c8y-admon-important >}}
+The Iceberg catalog uses the standard HTTPS port 443. Port 19120 is deprecated. The General Availability release of Streaming Lake Ingestion removes it. If your client configuration contains port 19120, remove the port from the catalog URL and from the OpenID Connect server URL.
+{{< /c8y-admon-important >}}
 
 Run Spark SQL queries with the {{< product-c8y-iot >}} Iceberg catalog on an AWS S3 object store using the example below. In the example, replace
 
@@ -177,12 +181,12 @@ bin/spark-sql \
   --packages org.apache.iceberg:iceberg-spark-runtime-4.0_2.13:1.10.1,org.apache.iceberg:iceberg-aws-bundle:1.10.1 \
   --conf spark.sql.extensions=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions \
   --conf spark.sql.catalog.polaris.credential="<CLIENT_ID>:<CLIENT_SECRET>" \
-  --conf spark.sql.catalog.polaris.oauth2-server-uri="https://iceberg.<INSTANCE>:19120/api/catalog/v1/oauth/tokens" \
+  --conf spark.sql.catalog.polaris.oauth2-server-uri="https://iceberg.<INSTANCE>/api/catalog/v1/oauth/tokens" \
   --conf spark.sql.catalog.polaris.scope="PRINCIPAL_ROLE:ALL" \
   --conf spark.sql.catalog.c8y.rest-metrics-reporting-enabled=false \
   --conf spark.sql.catalog.c8y=org.apache.iceberg.spark.SparkCatalog \
   --conf spark.sql.catalog.c8y.type=rest \
-  --conf spark.sql.catalog.c8y.uri=https://iceberg.<INSTANCE>:19120/api/catalog \
+  --conf spark.sql.catalog.c8y.uri=https://iceberg.<INSTANCE>/api/catalog \
   --conf spark.sql.catalog.c8y.warehouse=<TENANT_ID> \
   --conf spark.sql.catalog.c8y.io-impl=org.apache.iceberg.aws.s3.S3FileIO \
   --conf spark.sql.catalog.c8y.s3.endpoint=https://s3.amazonaws.com \
@@ -206,7 +210,7 @@ spark-sql (default)> select * from c8y.cdc_inventory.inventory;
 Access the catalog from other applications using the `curl` example below. To obtain the `<CLIENT_ID>` and `<CLIENT_SECRET>` referenced in this section, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials). First, get an access token to the catalog.
 
 ```shell
-$  curl -X POST https://iceberg.<INSTANCE>:19120/api/catalog/v1/oauth/tokens \
+$  curl -X POST https://iceberg.<INSTANCE>/api/catalog/v1/oauth/tokens \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "grant_type=client_credentials" \
   -d "client_id=<CLIENT_ID>" \
@@ -219,7 +223,7 @@ $  curl -X POST https://iceberg.<INSTANCE>:19120/api/catalog/v1/oauth/tokens \
 Then use the token to access the catalog configuration and metadata:
 
 ```shell
-$ curl "https://iceberg.<INSTANCE>:19120/api/catalog/v1/config?warehouse=<TENANT>" \
+$ curl "https://iceberg.<INSTANCE>/api/catalog/v1/config?warehouse=<TENANT>" \
   -H "Authorization: Bearer <ACCESS_TOKEN>"
 
 {
@@ -237,7 +241,7 @@ $ curl "https://iceberg.<INSTANCE>:19120/api/catalog/v1/config?warehouse=<TENANT
     …
 }
 
-$ curl https://iceberg.<INSTANCE>:19120/api/catalog/v1/<TENANT>/namespaces/cdc_inventory/tables/inventory' \
+$ curl https://iceberg.<INSTANCE>/api/catalog/v1/<TENANT>/namespaces/cdc_inventory/tables/inventory' \
   -H "Authorization: Bearer <ACCESS_TOKEN>"
 
 {
@@ -1000,10 +1004,10 @@ Both clients use the same catalog settings.
 |Setting|Value|
 |:---|:---|
 |`type`|`rest`|
-|`uri`|`https://iceberg.<environment-domain>:19120/api/catalog`|
+|`uri`|`https://iceberg.<environment-domain>/api/catalog`|
 |`warehouse`|Your tenant ID|
 |`credential`|`<clientId>:<clientSecret>`|
-|`oauth2-server-uri`|`https://iceberg.<environment-domain>:19120/api/catalog/v1/oauth/tokens`|
+|`oauth2-server-uri`|`https://iceberg.<environment-domain>/api/catalog/v1/oauth/tokens`|
 |`scope`|`PRINCIPAL_ROLE:ALL`|
 |`header.X-Iceberg-Access-Delegation`|`vended-credentials`|
 
@@ -1014,11 +1018,11 @@ Add `org.apache.iceberg:iceberg-core` and the bundle for your object store, `ice
 ```java
 Map<String, String> props = new HashMap<>();
 props.put("type", "rest");
-props.put("uri", "https://iceberg.<environment-domain>:19120/api/catalog");
+props.put("uri", "https://iceberg.<environment-domain>/api/catalog");
 props.put("warehouse", "<your-tenant-id>");
 props.put("rest.auth.type", "oauth2");
 props.put("credential", "<clientId>:<clientSecret>");
-props.put("oauth2-server-uri", "https://iceberg.<environment-domain>:19120/api/catalog/v1/oauth/tokens");
+props.put("oauth2-server-uri", "https://iceberg.<environment-domain>/api/catalog/v1/oauth/tokens");
 props.put("scope", "PRINCIPAL_ROLE:ALL");
 props.put("header.X-Iceberg-Access-Delegation", "vended-credentials");
 
@@ -1038,10 +1042,10 @@ from pyiceberg.catalog.rest import RestCatalog
 catalog = RestCatalog(
     "cumulocity",
     **{
-        "uri": "https://iceberg.<environment-domain>:19120/api/catalog",
+        "uri": "https://iceberg.<environment-domain>/api/catalog",
         "warehouse": "<your-tenant-id>",
         "credential": "<clientId>:<clientSecret>",
-        "oauth2-server-uri": "https://iceberg.<environment-domain>:19120/api/catalog/v1/oauth/tokens",
+        "oauth2-server-uri": "https://iceberg.<environment-domain>/api/catalog/v1/oauth/tokens",
         "scope": "PRINCIPAL_ROLE:ALL",
         "header.X-Iceberg-Access-Delegation": "vended-credentials",
     },
