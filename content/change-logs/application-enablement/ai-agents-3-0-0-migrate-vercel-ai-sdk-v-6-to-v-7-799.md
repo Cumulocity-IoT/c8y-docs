@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-22'
 title: AI agents upgraded to Vercel AI SDK 7 with stricter API validation
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ai-agents
 ticket: MTM-67854
 version: 3.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-22'
 ---
 The AI Agents microservice now uses version 7 of the Vercel AI SDK. You can now define an agent's system prompt as a single system message or as a list of system messages. This lets you set provider-specific options on the system prompt, for example, to enable Anthropic prompt caching and reduce cost and latency for repeated requests.
 

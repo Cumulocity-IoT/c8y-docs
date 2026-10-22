@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-10-22'
 title: New Asset table widget moved to General Availability
 product_area: Application enablement & solutions
 change_type:
@@ -12,6 +12,17 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 version: 2026.360.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-22'
+  - label: apj.cumulocity.com
+    date: '2026-10-20'
+  - label: jp.cumulocity.com
+    date: '2026-10-20'
+  - label: us.cumulocity.com
+    date: '2026-10-21'
+  - label: cumulocity.com
+    date: '2026-10-21'
 ---
 
 The enhanced “Asset table” widget, previously available as a preview feature, is now generally available (GA).

@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-10-22'
 title: New Logs page in the Streaming Analytics application
 change_type:
   - value: change-QHu1GdukP
@@ -13,6 +13,17 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-5355
 version: 27.250.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-22'
+  - label: apj.cumulocity.com
+    date: '2026-10-21'
+  - label: jp.cumulocity.com
+    date: '2026-10-21'
+  - label: us.cumulocity.com
+    date: '2026-10-19'
+  - label: cumulocity.com
+    date: '2026-10-20'
 ---
 
 The Streaming Analytics application has a new **Logs** page, which shows the log messages of Analytics Builder models, smart rules, and the Streaming Analytics framework for your tenant. You no longer need access to the Administration application to find out why a model fails to activate or does not produce the expected output.

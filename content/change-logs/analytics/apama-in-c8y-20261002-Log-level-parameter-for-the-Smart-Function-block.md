@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-10-22'
 title: New Log level parameter for the Smart Function block
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,6 +13,17 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-5353
 version: 27.228.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-22'
+  - label: apj.cumulocity.com
+    date: '2026-10-21'
+  - label: jp.cumulocity.com
+    date: '2026-10-21'
+  - label: us.cumulocity.com
+    date: '2026-10-19'
+  - label: cumulocity.com
+    date: '2026-10-20'
 ---
 
 To keep the log of the Apama-ctrl microservice readable, you can now control how much `console` output the [Smart Function](/streaming-analytics/block-reference/#smart-function) block writes to the log. The block, which is in Public Preview, has a new **Log level** parameter with the values `OFF`, `ERROR`, `WARN`, `INFO`, and `DEBUG`.

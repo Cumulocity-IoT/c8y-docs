@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-10-22'
 title: Diagnostics available for multi-tenant Streaming Analytics microservices
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,6 +13,9 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-5360
 version: 27.278.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-22'
 ---
 
 You can now download basic diagnostics information from the Streaming Analytics application when it uses a multi-tenant microservice. Previously, only the tenant that owns the microservice could download diagnostics information.

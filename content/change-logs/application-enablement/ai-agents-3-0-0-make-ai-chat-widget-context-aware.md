@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-22'
 title: AI chat widget now provides the selected asset as context to the agent
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ai-agents
 ticket: MTM-67463
 version: 3.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-22'
 ---
 The AI chat widget can now pass the device or group it is configured for to the selected AI agent, so you can ask questions such as "What is this?" or "Are there any active alarms?" without naming the asset in your prompt.
 

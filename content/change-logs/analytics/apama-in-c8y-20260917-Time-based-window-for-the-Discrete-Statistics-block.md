@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-10-22'
 title: Time-based window for the Discrete Statistics block in Analytics Builder
 change_type:
   - value: change-QHu1GdukP
@@ -13,6 +13,9 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-1974
 version: 27.275.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-22'
 ---
 
 The **Discrete Statistics** block has a new optional **Window Duration (secs)** parameter. Set it to report statistics over the samples received within that duration, instead of over every sample since the model started.

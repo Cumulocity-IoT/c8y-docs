@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-10-22'
 title: Activate models from the Analytics Builder model editor
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,6 +13,17 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-5359
 version: 27.244.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-22'
+  - label: apj.cumulocity.com
+    date: '2026-10-21'
+  - label: jp.cumulocity.com
+    date: '2026-10-21'
+  - label: us.cumulocity.com
+    date: '2026-10-19'
+  - label: cumulocity.com
+    date: '2026-10-20'
 ---
 
 You can now activate and deactivate an Analytics Builder model without leaving the model editor, so that you can try out a change, check its log messages, and go back to editing in one place.
