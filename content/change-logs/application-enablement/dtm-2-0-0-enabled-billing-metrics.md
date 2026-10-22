@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Enabled billing metrics"
+title: "DTM Data Service now reports billing metrics"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
