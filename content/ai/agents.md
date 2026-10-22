@@ -24,7 +24,7 @@ Each agent is shown as a card with the following information:
 - **Output**: The agent type, **Text** or **Object**. See [Text and object agents](/ai/agents/#text-and-object-agents).
 - **Description**: An optional short summary of what the agent does.
 - **Source**: **custom** for agents created in your tenant, **subscribed** for agents provided by an application. Hover over the **subscribed** tag to see the source application.
-- **Provider / model**: The provider and model the agent uses. This is the local provider of the agent, if defined, otherwise the global provider. A warning tag indicates that no model is set, so calls to the agent fail until a model is configured.
+- **Provider/model**: The provider and model the agent uses. This is the local provider of the agent, if defined, otherwise the global provider. A warning tag indicates that no model is set, so calls to the agent fail until a model is configured.
 
 Custom agents that override a subscribed agent of the same name show an **overrides** tag, and the overridden subscribed agent shows an **overridden** tag with a dimmed icon. See [Overruling subscribed agents](/ai/agents/#aligning-subscribed-agents).
 
@@ -67,7 +67,7 @@ The header of the page shows the agent type and the following information:
 - **Name** and **Description**: For custom agents, click the name or the description to edit it. If you rename an agent, the URL changes to the new name.
 - **Status**: **overrides** or **overridden**, if the agent overrides or is overridden by another agent.
 - **Source**: **custom** or **subscribed**. For subscribed agents, **Application** shows the source application.
-- **Provider / model**: The provider and model the agent uses.
+- **Provider/model**: The provider and model the agent uses.
 
 You align a custom agent to your needs using the following tabs:
 

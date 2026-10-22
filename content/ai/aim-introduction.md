@@ -20,10 +20,10 @@ helpcontent:
   You create specialized assistants for specific use cases like equipment monitoring or device troubleshooting. Connect agents to Cumulocity IoT data through built-in tools or extend them with custom tools via MCP servers. The built-in test interface shows you what tools the agent is calling and how it reasons.
 
   
-  The AI Agent Manager has three pages in the navigator: Control panel, Agents, and Tools. In the control panel, you turn all AI agents on or off for your tenant and configure the default provider, model, and API key.
+  The AI Agent Manager has three pages in the navigator: **Control panel**, **Agents**, and **Tools**. In the control panel, you turn all AI agents on or off for your tenant and configure the default provider, model, and API key.
 
   
-  To get started, open AI Agent Manager > Control panel in the Administration application and add a model configuration. Tested providers include Anthropic, OpenAI, Google Gemini, and Azure OpenAI. Use Test configuration to validate your settings before saving them. Without a model configuration, the Cumulocity IoT platform is never connected to any external Large Language Model provider."
+To get started, open **AI Agent Manager** > **Control panel** in the Administration application and add a model configuration. Tested providers include Anthropic, OpenAI, Google Gemini, and Azure OpenAI. Use **Test configuration** to validate your settings before saving them. Without a model configuration, the Cumulocity platform is never connected to any external Large Language Model (LLM) provider."
 ---
 
 
@@ -61,9 +61,9 @@ Once configured, users interact with agents through natural language without nee
 
 ### Navigating the AI Agent Manager {#navigating-the-ai-agent-manager}
 
-Once the preview feature is enabled, the **AI Agent Manager** appears as its own entry in the navigator of the **Administration** application. It contains the following pages:
+Once the preview feature is enabled, the **AI Agent Manager** appears as its own entry in the navigator of the Administration application. It contains the following pages:
 
-- **Control panel**: Turn all AI agents on or off for your tenant and configure the default provider, model, and API key. This page is only visible to users with the `ROLE_AI_AGENT_ADMIN` permission. See [Control panel](/ai/control-panel/).
+- **Control panel**: Turn all AI agents on or off for your tenant and configure the default provider, model, and API key. This page is only visible to users with the ROLE_AI_AGENT_ADMIN permission. See [Control panel](/ai/control-panel/).
 - **Agents**: Browse, create, configure, and test agents. See [Agents](/ai/agents/).
 - **Tools**: Browse and test the available tools and configure MCP servers. See [Tools and MCP](/ai/tools-mcp/).
 
@@ -72,7 +72,7 @@ If AI agents are disabled in the control panel, the **Agents** and **Tools** pag
 ### Getting started by configuring a model {#getting-started-by-configuring-a-global-provider}
 
 {{< c8y-admon-important >}}
-Without a model configuration (global provider), the {{< product-c8y-iot >}} platform is never connected to any external Large Language Model provider, even if the list already shows subscribed agents.
+Without a model configuration (global provider), the {{< product-c8y-iot >}} platform is never connected to any external Large Language Model (LLM) provider, even if the list already shows subscribed agents.
 {{< /c8y-admon-important >}}
 
 Start by configuring the default provider and model in the control panel. This model configuration, also called the global provider, is used by default on each agent interaction as long as the agent does not define another provider or model in its local provider configuration.
@@ -85,7 +85,7 @@ Start by configuring the default provider and model in the control panel. This m
    - Google Gemini (**Google Generative AI**)
    - Azure OpenAI
 
-   Additional providers are supported but not tested by the {{< product-c8y-iot >}} team. They work without guarantee. The same applies to open source models based on the OpenAI API, which are supported by selecting **Custom / self-hosted** and entering the base URL of the endpoint.
+   Additional providers are supported but not tested by the {{< product-c8y-iot >}} team. They work without guarantee. The same applies to open-source models based on the OpenAI API, which are supported by selecting **Custom/self-hosted** and entering the base URL of the endpoint.
 4. Enter the model to use.
 5. Add an API key provided by your provider. This is securely stored inside the platform and cannot be read afterwards.
 6. Add provider-specific settings in the **Custom provider settings** editor, if necessary.

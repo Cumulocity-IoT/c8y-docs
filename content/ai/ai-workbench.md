@@ -82,7 +82,7 @@ The [AI agent availability switch](/ai/control-panel/#ai-agent-availability) of 
 
 ### Prerequisites {#prerequisites}
 
-The `ai-workbench` microservice must be available in your tenant. You can check this in the **Administration** application under **Ecosystem** > **Microservices**.
+The `ai-workbench` microservice must be available in your tenant. You can check this in the Administration application under **Ecosystem** > **Microservices**.
 
 ### Using code mode in agents {#using-code-mode-in-agents}
 

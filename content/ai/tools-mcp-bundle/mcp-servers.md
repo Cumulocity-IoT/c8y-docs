@@ -26,7 +26,7 @@ To add an MCP server to the AI Agent Manager:
 3. Select the **MCP server transport type**: **Streamable HTTP** (default) or **HTTP with SSE**.
 4. Enter the URL for your MCP server in the **Add a new MCP server** field. Use an absolute URL, for example, `https://mcp.example.com/mcp`, or a relative URL for a microservice in your tenant, for example, `/service/mcp-server`.
 5. Click **Test connection**.
-6. If the connection is successful, you see a list of tools the server exposes. Scroll to the bottom of that list, to give the server a name and description and configure authentication or additional headers.
+6. If the connection is successful, you see a list of tools the server exposes. Scroll to the bottom of the list to add a name and description for the server and configure authentication or additional headers.
 7. Click **Save** to persist the configuration and start using it in agents.
 
 The system connects to the MCP server and discovers available tools.

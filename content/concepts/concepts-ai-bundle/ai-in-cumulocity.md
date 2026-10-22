@@ -95,7 +95,7 @@ A. Yes. {{< product-c8y-iot >}}'s AI integration is provider-agnostic which supp
 
 **Q. Can I use open-source or self-hosted AI models?**
 
-A. Yes. Open-source and self-hosted models that expose an OpenAI-compatible API can be used. In the [model configuration](/ai/control-panel/#model-configuration) of the AI Agent Manager, select **Custom / self-hosted** and enter the base URL of the endpoint. To use such a model only for specific agents, configure it as a [local provider](/ai/agents/#local-providers) with the `openai` provider and the `baseURL` of the endpoint.
+A. Yes. Open-source and self-hosted models that expose an OpenAI-compatible API can be used. In the [model configuration](/ai/control-panel/#model-configuration) of the AI Agent Manager, select **Custom/self-hosted** and enter the base URL of the endpoint. To use such a model only for specific agents, configure it as a [local provider](/ai/agents/#local-providers) with the `openai` provider and the `baseURL` of the endpoint.
 
 **Q. Is Customer data used to train LLMs?**  
 

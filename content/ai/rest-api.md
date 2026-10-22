@@ -20,7 +20,7 @@ The API is exposed by the AI Agent Manager microservice at:
 /service/ai/
 ```
 
-All API endpoints require authentication with valid {{< product-c8y-iot >}} credentials. The API supports standard CRUD operations for agents, tools, providers, and tenant settings that mostly require the `ROLE_AI_AGENT_ADMIN` permission. You best explore the full CRUD API via the OpenAPI documentation. You access this documentation in multiple ways:
+All API endpoints require authentication with valid {{< product-c8y-iot >}} credentials. The API supports standard CRUD operations for agents, tools, providers, and tenant settings that mostly require the ROLE_AI_AGENT_ADMIN permission. You best explore the full CRUD API via the OpenAPI documentation. You access this documentation in multiple ways:
 
 - Download the OpenAPI JSON from `/service/ai/api-json`. You can load this file into a tool like Postman.
 - To browse the API interactively within your tenant, subscribe to and install the **Api-doc** extension from **Administration** > **Ecosystem** > **Extensions**, then open the **API documentation** application. It lists the APIs of all microservices in your tenant that provide an OpenAPI specification, including the AI Agent Manager.
@@ -129,7 +129,7 @@ x-from-app: my-app@1.0.1
 }
 ```
 
-If a custom agent with the same name exists, it still takes precedence over the agent of the application. The AI Agent Manager forwards the header automatically to all agent-to-agent calls, so sub-agents are resolved from the same application.
+If a custom agent with the same name exists, it still takes precedence over the agent of the application. The AI Agent Manager forwards the header automatically to all agent-to-agent calls, so subagents are resolved from the same application.
 
 The header is supported by the endpoints that read, test, and talk to a single agent. The `fromApp` query parameter, which was used for the same purpose, is deprecated. Use the `x-from-app` header instead.
 
@@ -182,9 +182,9 @@ The `usage` objects are shortened in this example. The `start-step` events don't
 
 ### Testing agent definitions {#testing-agent-definitions}
 
-Users with the `ROLE_AI_AGENT_ADMIN` permission can test an agent definition without saving it, with `POST /service/ai/agent/test/text` for text agents and `POST /service/ai/agent/test/object` for object agents. The request body is a complete agent definition, including the `prompt` to send. Streaming and `?fullResponse=true` work the same way as for saved agents.
+Users with the ROLE_AI_AGENT_ADMIN permission can test an agent definition without saving it, with `POST /service/ai/agent/test/text` for text agents and `POST /service/ai/agent/test/object` for object agents. The request body is a complete agent definition, including the `prompt` to send. Streaming and `?fullResponse=true` work the same way as for saved agents.
 
-To test integrations without calling an LLM provider and without costs, use the `echo` provider. For text agents, it returns the input with the prefix "Echo: ". For object agents, it returns a mock object based on the JSON schema:
+To test integrations without calling an LLM provider and without costs, use the `echo` provider. For text agents, it returns the input with the prefix `"Echo: "`. For object agents, it returns a mock object based on the JSON schema:
 
 ```
 POST /service/ai/agent/test/text
@@ -207,9 +207,9 @@ Returns `Echo: Hello world`.
 
 The tenant-wide settings of the AI Agent Manager, such as the kill switch of the [control panel](/ai/control-panel/#ai-agent-availability), are available at `/service/ai/settings`:
 
-- `GET /service/ai/settings` returns the current settings. Requires the `ROLE_AI_AGENT_ADMIN` or `ROLE_AI_AGENT_READ` permission.
-- `PUT /service/ai/settings` updates the provided fields and keeps all other fields. Requires the `ROLE_AI_AGENT_ADMIN` permission.
-- `POST /service/ai/settings` replaces all settings. Fields that are not provided are reset to their default value. Requires the `ROLE_AI_AGENT_ADMIN` permission.
+- `GET /service/ai/settings` returns the current settings. Requires the ROLE_AI_AGENT_ADMIN or ROLE_AI_AGENT_READ permission.
+- `PUT /service/ai/settings` updates the provided fields and keeps all other fields. Requires the ROLE_AI_AGENT_ADMIN permission.
+- `POST /service/ai/settings` replaces all settings. Fields that are not provided are reset to their default value. Requires the ROLE_AI_AGENT_ADMIN permission.
 
 | Field | Default | Description |
 |-------|---------|-------------|

@@ -73,7 +73,7 @@ If the global provider is also `openai`, this configuration is merged with it, s
 
 After configuring a local provider:
 
-1. Check the **Provider / model** field in the header of the agent. It shows the provider and model the agent uses.
+1. Check the **Provider/model** field in the header of the agent. It shows the provider and model the agent uses.
 2. Navigate to the **Test** tab of the agent.
 3. Enter a test prompt.
 4. Verify the response uses the local provider.
