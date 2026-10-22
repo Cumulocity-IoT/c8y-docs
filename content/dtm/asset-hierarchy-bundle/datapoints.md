@@ -69,7 +69,7 @@ Propagated asset measurements are regular measurements in {{< product-c8y-iot >}
 
 #### To enable or disable measurement propagation {#enable-measurement-propagation}
 
-Measurement propagation is enabled automatically for your tenant when the first data point is linked to a source device. When you create the first linked data point, the DTM application shows a dialog that allows you to opt out of measurement propagation.
+Measurement propagation is enabled automatically for your tenant when the first data point is linked to a source device.
 
 You can disable or enable measurement propagation at any time using the following API:
 
@@ -88,13 +88,13 @@ The following modes are available:
 | `on` | Measurements are always propagated.
 | `off` | Measurements are not propagated. Linked data points are kept, but no asset measurements are created.
 
-To get the current state of measurement propagation, use `GET /service/dtmdata/enabled`. Both endpoints require the `ROLE_DIGITAL_TWIN_ADMIN` permission.
+To get the current state of measurement propagation, use `GET /service/dtmdata/enabled`.
+
+Changing the mode requires the `ROLE_DIGITAL_TWIN_ADMIN` permission. Getting the current state requires the `ROLE_DIGITAL_TWIN_ADMIN` permission or the CREATE, UPDATE or ADMIN permission for permission type "Digital twin assets" or "Digital twin linking".
 
 #### Fan-out limit {#fan-out-limit}
 
-The number of asset measurements created for a single device measurement is limited. By default, a device measurement is propagated to at most 5 assets. Measurements for further linked assets are not created.
-
-If the limit is exceeded, an alarm of type `c8y_DtmMeasurementFanOutLimitExceeded` with severity MINOR is raised on the source device. The alarm text names the measurement, the number of asset measurements it would create, and the limit. The alarm is raised at most once per minute while the limit is exceeded and is not cleared automatically. To request a different limit for your tenant, contact [{{< product-c8y-iot >}} support](/additional-resources/contacting-support).
+The number of assets a single device measurement is propagated to is limited. If the limit is exceeded, measurements for further linked assets are not created and an alarm of type `c8y_DtmMeasurementFanOutLimitExceeded` is raised on the source device. For the default limit and how to request a different limit, see [Fan-out](/service-terms/service-level/#dtm-fan-out) in the service-level agreement for measurement propagation.
 
 ### To view data points {#view-datapoints}
 
