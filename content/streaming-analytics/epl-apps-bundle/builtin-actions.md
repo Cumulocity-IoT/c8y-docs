@@ -125,7 +125,7 @@ monitor Example {
 }
 ```
 
-For more information on `TimeFormat` and its functions, see [Using the TimeFormat Event Library]({{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#using-the-timeformat-event-library) in the Apama documentation and the API Reference for EPL (ApamaDoc).
+For more information on `TimeFormat` and its functions, see [Using the TimeFormat Event Library]({{< link-apama-webhelp >}}/developing-apama-applications-in-epl/using-epl-plug-ins/#using-the-timeFormat-event-library) in the Apama documentation and the API Reference for EPL (ApamaDoc).
 
 #### inMaintenanceMode {#inmaintenancemode}
 
