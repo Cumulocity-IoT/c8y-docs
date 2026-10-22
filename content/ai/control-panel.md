@@ -65,7 +65,7 @@ If no model is configured yet, the section shows "No model configured yet". Othe
 3. Select a provider.
    ![Select a provider in the model configuration](/images/agents/configuring_a_provider.png)
    The providers are grouped as follows:
-   - **Recommended providers**: OpenAI, Anthropic, Google Generative AI, and Azure OpenAI. These providers are tested by the {{< company-c8y> }} team.
+   - **Recommended providers**: OpenAI, Anthropic, Google Generative AI, and Azure OpenAI. These providers are tested by the {{< company-c8y >}} team.
    - **Supported providers**: XAI, Groq, DeepInfra, Mistral, TogetherAI, Cohere, Fireworks, DeepSeek, Cerebras, Perplexity, Ollama, Echo, and **Custom/self-hosted**. These providers are supported but not tested and work without guarantee.
 4. In the **Model** field, enter the exact model identifier from the documentation of your provider, for example, `claude-sonnet-4-6`.
 5. In the **API key** field, enter the API key of your provider. The API key is optional for Ollama and **Custom/self-hosted**.
