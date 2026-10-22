@@ -1,6 +1,6 @@
 ---
 date: ""
-title: migrate Vercel AI SDK v6 to v7 (#799)
+title: AI agents upgraded to Vercel AI SDK 7 with stricter API validation (breaking changes)
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
