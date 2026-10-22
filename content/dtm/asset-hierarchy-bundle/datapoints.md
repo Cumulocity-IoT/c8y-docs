@@ -199,3 +199,16 @@ Possible issues include:
 - **Warning**: The measurement type, if configured for the data point, is not matching the measurement type of the latest measurement received from the source device.
 
 By hovering over the warning or error icon, you can see more details about the issue. This helps in troubleshooting and resolving any problems with the linked data points. To resolve the issues, use the context menu actions available for the source.
+
+### Troubleshooting measurement propagation {#troubleshooting-measurement-propagation}
+
+1. **No measurements are propagated to the asset**
+   - Check the status of the linked data point. Only linked data points with the status **Linked** propagate measurements, see [Understanding states](#understanding-states) and [Source warnings and errors](#source-warnings-and-errors).
+   - Check that measurement propagation is enabled for your tenant. The response of `GET /service/dtmdata/enabled` contains `measurements.enabled` and `measurements.mode`. If the mode is `off`, enable measurement propagation, see [To enable or disable measurement propagation](#enable-measurement-propagation).
+   - Check that the source of the linked data point is a device. Measurements with an asset as source are not propagated.
+   - Check that the source device sends measurements with exactly the fragment and series configured as source of the linked data point, including upper and lower case. This applies in particular to custom data points.
+   - Check that the measurements were received after the data point was linked. Measurements received earlier are not propagated, see [Limitations and constraints](/service-terms/service-level/#dtm-limitations-and-constraints) in the service-level agreement for measurement propagation.
+2. **Measurements are propagated to some of the linked assets only**
+   - Check the source device for an alarm of type `c8y_DtmMeasurementFanOutLimitExceeded`. If the alarm exists, the device measurement is linked to more assets than allowed, see [Fan-out limit](#fan-out-limit).
+3. **Propagated measurements are not shown for the expected time range**
+   - Propagated asset measurements have the time of the device measurement. If a device sends measurements with a time in the past, for example after reconnecting or because of a wrong device clock, the asset measurements are shown at that time as well. Check the time of the measurements of the source device.
