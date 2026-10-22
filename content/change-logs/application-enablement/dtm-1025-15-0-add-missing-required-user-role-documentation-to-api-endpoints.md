@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Add missing required user role documentation to Asset API endpoints"
+title: "Added missing required user role documentation to Asset API endpoints"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
