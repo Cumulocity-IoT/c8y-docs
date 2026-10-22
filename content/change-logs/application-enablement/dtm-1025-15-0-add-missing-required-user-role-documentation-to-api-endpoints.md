@@ -14,17 +14,8 @@ build_artifact:
 ticket: "CTM-3279"
 version: "1025.15.0"
 ---
-Several endpoints of the Asset API, particularly those under
-`/service/dtm/definitions/`, were missing documentation about required
-user roles and permissions. This made it unclear what access level users
-needed to successfully call these endpoints.
+Several endpoints of the Asset API, particularly those under `/service/dtm/definitions/`, were missing documentation about required user roles and permissions. This made it unclear what access level users needed to successfully call these endpoints.
 
-The API documentation now includes complete required user role
-statements for all endpoints. Users can now see exactly which
-permissions are needed before making API calls, reducing errors from
-insufficient access levels and improving the developer experience when
-integrating with the platform.
+The API documentation now includes complete required user role statements for all endpoints. Users can now see exactly which permissions are needed before making API calls, reducing errors from insufficient access levels and improving the developer experience when integrating with the platform.
 
-This change ensures consistency across the API documentation and helps
-developers quickly identify permission requirements for any endpoint
-they use.
+This change ensures consistency across the API documentation and helps developers quickly identify permission requirements for any endpoint they use.
