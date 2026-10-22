@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Enforce permission checks for Asset API endpoints managing linked series"
+title: "Enforced permission checks for Asset API endpoints managing linked series"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
