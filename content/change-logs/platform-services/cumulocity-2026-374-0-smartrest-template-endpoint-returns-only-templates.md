@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-10-20'
   - label: jp.cumulocity.com
     date: '2026-10-20'
+  - label: us.cumulocity.com
+    date: '2026-10-21'
+  - label: cumulocity.com
+    date: '2026-10-21'
 ---
 Strict type filtering has been implemented on the `GET /inventory/templates/{templateId}` endpoint. It now exclusively returns inventory objects of type SmartREST template. For details, see [SmartREST 1.0](/smartrest/smartrest-one/).

@@ -22,6 +22,10 @@ environment_availability:
     date: '2026-10-20'
   - label: jp.cumulocity.com
     date: '2026-10-20'
+  - label: us.cumulocity.com
+    date: '2026-10-21'
+  - label: cumulocity.com
+    date: '2026-10-21'
 ---
 
 Previously, the error response of a failed bulk request did not tell you which element caused the error,
