@@ -18,6 +18,14 @@ version: 1024.20.3
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-16'
+  - label: apj.cumulocity.com
+    date: '2026-10-19'
+  - label: jp.cumulocity.com
+    date: '2026-10-19'
+  - label: us.cumulocity.com
+    date: '2026-10-20'
+  - label: cumulocity.com
+    date: '2026-10-20'
 ---
 With the **SCADA widget v2** preview feature enabled, SCADA and HTML widgets on template dashboards showed the values of the device that last saved the template, instead of the device being viewed. This affected SCADA widgets created with either version of the widget, including placeholders mapped to properties such as *Last measurement*. These widgets now display the data of the device for which the dashboard is opened.
 
