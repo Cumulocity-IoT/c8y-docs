@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-15'
 title: Fixed stuck LWM2M observe operations
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-7469
 version: 1022.7.13
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-15'
+  - label: apj.cumulocity.com
+    date: '2026-10-21'
+  - label: jp.cumulocity.com
+    date: '2026-10-21'
 ---
 Previously, when an LWM2M device answered an observe operation without starting the observation, the operation stayed in EXECUTING and never completed. Now the operation fails with the reason "Device did not establish the observation". This applies to both single and composite observe operations.

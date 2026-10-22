@@ -16,6 +16,14 @@ version: 2026.352.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-08'
+  - label: apj.cumulocity.com
+    date: '2026-10-14'
+  - label: jp.cumulocity.com
+    date: '2026-10-14'
+  - label: us.cumulocity.com
+    date: '2026-10-19'
+  - label: cumulocity.com
+    date: '2026-10-21'
 ---
 
 Notifications 2.0 subscriptions in the tenant context now support the measurement API.
