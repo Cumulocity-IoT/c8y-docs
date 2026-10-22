@@ -38,7 +38,6 @@ The **DTM Data Service** processes configured data point links and automatically
 
 Note that the number of measurements propagated to assets through data point linking depends on the number of linked assets per incoming measurement. For example, if a device measurement is linked to 3 different assets, the DTM Data Service will create 3 measurements on the asset level for each incoming device measurement. 
 
-DTM Data Service and automated measurement propagation is currently _not_ enabled by default. To get it enabled for your tenant, please contact [{{< product-c8y-iot >}} support](/additional-resources/contacting-support).
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-req >}}
