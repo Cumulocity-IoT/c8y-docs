@@ -116,7 +116,7 @@ Click **Model settings** and specify a model name. See also [Changing the name, 
 
 You can edit \(or view\) each model that is currently listed in the model manager.
 
-When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything.
+When a model is active, the model editor opens the model in read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. For a model without template parameters, you can deactivate the model directly in the model editor to edit it. See [Activating a model from the model editor](/streaming-analytics/analytics-builder/#activating-a-model-from-the-model-editor).
 
 #### To edit a model {#to-edit-a-model}
 
@@ -124,7 +124,7 @@ On the **Models** tab of the model manager, simply click the card that is shown 
 
 Alternatively, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the card and then click **Edit**.
 
-When the model is active, a dialog appears informing you that you can only view the model. When you click **Continue**, the model editor appears and you can view the model, but you cannot change it. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for further information.
+When the model is active, the model editor appears and you can view the model, but you cannot edit it. The toolbar shows **Editing is disabled**. For a template model with active instances, a dialog first appears informing you that you can only view the model. Click **Continue** to open the model editor. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for further information.
 
 {{< c8y-admon-info>}}
 If you do not have sufficient permissions \(that is, you only have READ permission for "CEP management" instead of ADMIN permission\), the actions menu provides a **View** command instead of the **Edit** command.
@@ -164,7 +164,7 @@ A model \(or instance\) can have one of two states. The current state is always 
 
 The inputs that a model receives and what happens to its outputs depends on the mode to which the model is set. Each model can be set to one of the following modes:
 
--   **Draft**. The model is still under development. \(New models are created in draft mode.\)
+-   **Draft**. The model is still under development.
 -   **Test**. This mode is only permitted for models using a single device. When active, the model is deployed to the Apama correlator so that the measurements and events from the device are processed. The output of the model is only stored \(and recorded as an `Operation` or `Measurement` object of a "virtual device"\) and not sent back to the device.
 
     {{< c8y-admon-info>}}
@@ -173,6 +173,8 @@ Test mode is not supported for a model which contains a custom block which consu
 
 -   **Simulation**. This mode is only permitted for models using a single device. When active, the model uses historical input data \(replayed in real time from previously received data\) and is deployed to the Apama correlator. The output of the model is only stored \(and recorded as an `Operation` or `Measurement` object of a "virtual device"\) and not sent back to the device. To start a simulation, you must define the time range from which the input data is to be used. When all data from the time range has been replayed, the model is automatically undeployed from Apama and the model state is changed to **Inactive**. The timestamps of the historical data entries remain unchanged for easier comparison of simulation runs. See also [Model simulation](/streaming-analytics/analytics-builder/#model-simulation).
 -   **Production**. When active, the model is deployed to the Apama correlator so that the measurements and events from the devices are processed. The output of the model is stored and sent back to the devices.
+
+New models and new template model instances are created in production mode and inactive state. They only start processing data when you activate them.
 
 A model in draft mode can only be in the inactive state. A model in test, simulation or production mode can be in either the active or inactive state.
 
@@ -187,6 +189,8 @@ When a model is imported by loading a JSON file, it is always imported as an ina
 1.  On the **Models** tab of the model manager, click the drop-down menu on the card for the model that you want to deploy and select one of **Production**, **Test** or **Simulation**.
 2.  If you have selected simulation mode, click the calendar icon <i class="dlt-c8y-icon-calendar text-muted icon-20"></i> which is now shown, specify the time span that is to be used, and click **Apply**. See also [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
 3.  When the toggle button currently shows **Inactive**, click this button to change the state to **Active**. For simulation mode, you can only set the state to **Active** when a valid time range has been defined.
+
+You can also activate and deactivate a model in the model editor. See [Activating a model from the model editor](/streaming-analytics/analytics-builder/#activating-a-model-from-the-model-editor).
 
 ### Undeploying a model {#undeploying-a-model}
 
