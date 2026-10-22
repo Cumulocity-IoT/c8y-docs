@@ -19,4 +19,4 @@ The Asset API endpoints for managing linked series relationships were missing pr
 - PUT `/service/dtm/assets/{assetId}/linkedSeries/{fragment}/{series}/reconcileOpposite`
 - DELETE `/service/dtm/assets/{assetId}/linkedSeries`
 
-With this fix, the Asset API now validates user permissions before allowing reconciliation of opposite links or deletion of linked series data. The API documentation has been updated to reflect these permission requirements. Existing applications using these endpoints must ensure they have the appropriate permissions  configured, or requests will be rejected with a permission error.
+With this fix, the Asset API now validates user permissions before allowing reconciliation of opposite links or deletion of linked series data. The Asset API documentation has been updated to reflect these permission requirements. Existing applications using these endpoints must ensure they have the appropriate permissions configured, or requests will be rejected with a permission error.
