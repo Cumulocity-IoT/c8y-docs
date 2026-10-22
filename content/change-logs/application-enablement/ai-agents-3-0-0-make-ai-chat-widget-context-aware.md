@@ -1,6 +1,6 @@
 ---
 date: ""
-title: make AI chat widget context aware
+title: AI chat widget now provides the selected asset as context to the agent
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
