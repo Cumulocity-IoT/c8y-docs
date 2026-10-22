@@ -18,7 +18,7 @@ To see all agents of your tenant, navigate to **AI Agent Manager** > **Agents** 
 
 ![The agent list shows custom and subscribed agents](/images/agents/agent_list.png)
 
-Each agent is shown as a card with the following information:
+Each agent is shown in a list with the following information:
 
 - **Name**: The name of the agent. The icon shows the provider the agent uses.
 - **Output**: The agent type, **Text** or **Object**. See [Text and object agents](/ai/agents/#text-and-object-agents).
