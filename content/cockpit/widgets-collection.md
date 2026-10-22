@@ -8,12 +8,12 @@ sector:
 
 The Cockpit application includes pre-set widget types. Each widget type provides different parameters to configure and different data to be displayed.
 
-
 {{< c8y-admon-related >}}
+
 - [Application enablement & solutions > Cockpit > Data explorer](/cockpit/data-explorer/) for details on visualizing your data when working with widgets.
 - [Platform administration > {{< standard-tenant >}} administration > Managing the ecosystem > Managing applications](/standard-tenant/ecosystem/#managing-applications) for details on managing applications.
 - Refer to the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}) for a tutorial on customized widgets in the {{< product-c8y-iot >}} environment.
-{{< /c8y-admon-related >}}
+  {{< /c8y-admon-related >}}
 
 ### Alarm list {#alarm-list}
 
@@ -23,16 +23,16 @@ The "Alarm list" widget shows a list of alarms, filtered by objects, alarm sever
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is used as title.
-|Target assets or devices|Select groups or devices, optional HTML expressions which should be evaluated.
-|Status|Only show devices with alarms of of the selected alarm status.
-|Type|Only show alarms of the specified type(s). Details can be seen when clicking once on an alarm.
-|Severities|Only show alarms of the selected alarm severity.
-|Order|Alarms may be ordered by the active status (followed by severity and time, the default), by date (followed by time, either in descending or ascending order), or by severity (followed by time).
-|Auto refresh|Enables you to automatically refresh the alarm list at the frequency you select.
-|Show alarms from child devices|Show or hide the alarms of child devices.
+| Field                          | Description                                                                                                                                                                                      |
+| :----------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                          | Widget title. By default, the widget type is used as title.                                                                                                                                      |
+| Target assets or devices       | Select groups or devices, optional HTML expressions which should be evaluated.                                                                                                                   |
+| Status                         | Only show devices with alarms of of the selected alarm status.                                                                                                                                   |
+| Type                           | Only show alarms of the specified type(s). Details can be seen when clicking once on an alarm.                                                                                                   |
+| Severities                     | Only show alarms of the selected alarm severity.                                                                                                                                                 |
+| Order                          | Alarms may be ordered by the active status (followed by severity and time, the default), by date (followed by time, either in descending or ascending order), or by severity (followed by time). |
+| Auto refresh                   | Enables you to automatically refresh the alarm list at the frequency you select.                                                                                                                 |
+| Show alarms from child devices | Show or hide the alarms of child devices.                                                                                                                                                        |
 
 ### Asset notes {#asset-notes}
 
@@ -48,14 +48,13 @@ The "Asset properties" widget displays a user-defined list of attributes of the 
 
 ![Asset properties widget](/images/users-guide/cockpit/cockpit-widget-asset-properties.png)
 
-
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is used as title.
-|Target assets or devices|Select groups or devices.
-|Properties|List of properties, see [Asset table](#asset-table).
+| Field                    | Description                                                 |
+| :----------------------- | :---------------------------------------------------------- |
+| Title                    | Widget title. By default, the widget type is used as title. |
+| Target assets or devices | Select groups or devices.                                   |
+| Properties               | List of properties, see [Asset table](#asset-table).        |
 
 {{< c8y-admon-info >}}
 In the view mode, this widget only displays the properties which are not empty.
@@ -63,38 +62,31 @@ In the view mode, this widget only displays the properties which are not empty.
 
 ### Asset table {#asset-table}
 
-The "Asset table" widget shows details of a selected asset and all its child devices in a table. This is a very powerful widget, allowing you to arrange selected properties of objects in a table.
-
-{{< c8y-admon-preview >}}
-This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
-
-The new asset table widget provides enhanced customization and flexibility. You can configure columns, filter data, and view all descendants of the selected asset. The following settings are available:
+The "Asset table" widget shows details of a selected asset and all its child devices in a table. This is a very powerful widget, allowing you to arrange selected properties of objects in a table. You can configure columns, filter data, and view all descendants of the selected asset. The following settings are available:
 
 **Settings options**
 
-| Setting | Description |
-|:---|:---|
-| **Include descendants** | Show all descendant assets of the currently selected asset. (As a reference, the old widget was only displaying direct children of the selected asset.) |
-| **Show status icon column** | Display a status icon column which matches the type of the asset. |
-| **Table header** | Display the data grid header. |
-| **Active filters** | Show applied filters in the header. |
-| **Configure columns** | Enable column customization and show configuration button. |
-| **Striped rows** | Alternate row background for readability. |
-| **Hover highlight** | Change row background color on hover. |
-| **Loading indicator** | Show a spinner while data loads. |
-| **Cell borders** | Draw borders around table cells. |
-| **Icon with value** | When cell rendering is set to icon, show both icon and value. |
-| **First column link** | Render the first column (excluding computed and alarm types) as a link to asset details. |
-
-{{< /c8y-admon-preview >}}
+| Setting                     | Description                                                                                                                                             |
+| :-------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Include descendants**     | Show all descendant assets of the currently selected asset. (As a reference, the old widget was only displaying direct children of the selected asset.) |
+| **Show status icon column** | Display a status icon column which matches the type of the asset.                                                                                       |
+| **Table header**            | Display the data grid header.                                                                                                                           |
+| **Active filters**          | Show applied filters in the header.                                                                                                                     |
+| **Configure columns**       | Enable column customization and show configuration button.                                                                                              |
+| **Striped rows**            | Alternate row background for readability.                                                                                                               |
+| **Hover highlight**         | Change row background color on hover.                                                                                                                   |
+| **Loading indicator**       | Show a spinner while data loads.                                                                                                                        |
+| **Cell borders**            | Draw borders around table cells.                                                                                                                        |
+| **Icon with value**         | When cell rendering is set to icon, show both icon and value.                                                                                           |
+| **First column link**       | Render the first column (excluding computed and alarm types) as a link to asset details.                                                                |
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Target assets or devices|Select for which object all child devices should be shown. This is typically a group object.
-|Properties|Select properties or actions of an object to visualize them as columns in the table.
+| Field                    | Description                                                                                  |
+| :----------------------- | :------------------------------------------------------------------------------------------- |
+| Title                    | Widget title. By default, the widget type is simply used as title.                           |
+| Target assets or devices | Select for which object all child devices should be shown. This is typically a group object. |
+| Properties               | Select properties or actions of an object to visualize them as columns in the table.         |
 
 **Example**
 
@@ -221,15 +213,14 @@ You can select one data point for the gauge, and multiple data points shown with
 
 You must enable at least one data point in each section to create the "Info gauge" widget.
 
-
 ### HTML {#html}
 
 The "HTML" widget displays user-defined content that can be formatted using HTML and dynamically populated with data from the selected asset or device. Additionally, you can switch the widget into advanced mode, which allows you to build complex web components with JavaScript code.
 
 **Parameters to configure**
 
-* **Asset selection**: Optionally, select the asset whose managed object will be accessible via `c8yContext` expressions.
-* **Asset properties**: In the **Asset properties** section, you can add mappings to properties. Click **Add mappings**. Then select an asset and select properties from the **Asset properties**, **Custom properties**, and **Computed properties** tabs. Use the icon buttons to copy a code expression, clear a mapping, assign another property, or remove a mapping. At runtime, all mapped values are accessible in the HTML code under `c8yProperties`, a plain object keyed by the mapping names. If you rename a mapping key, the references in the HTML code will be updated.
+- **Asset selection**: Optionally, select the asset whose managed object will be accessible via `c8yContext` expressions.
+- **Asset properties**: In the **Asset properties** section, you can add mappings to properties. Click **Add mappings**. Then select an asset and select properties from the **Asset properties**, **Custom properties**, and **Computed properties** tabs. Use the icon buttons to copy a code expression, clear a mapping, assign another property, or remove a mapping. At runtime, all mapped values are accessible in the HTML code under `c8yProperties`, a plain object keyed by the mapping names. If you rename a mapping key, the references in the HTML code will be updated.
 
 The widget offers two distinct modes:
 
@@ -240,11 +231,11 @@ The widget offers two distinct modes:
 2. **Advanced mode**: When enabled, you can build complex web components using the Lit framework. You can import supported ECMAScript modules. By default, leaflet, echarts, fetch, and lit are provided. Whatever is rendered in the web component will be displayed to the end user. Additional requests can be performed by importing the fetch library. The following shows the available imports:
 
    ```javascript
-   import { LitElement, html, css } from 'lit';
-   import { styleImports } from 'styles';
-   import { L } from 'leaflet';
-   import * as echarts from 'echarts';
-   import { fetch } from 'fetch'; // Use this instead of default fetch to avoid potential issues
+   import { LitElement, html, css } from "lit";
+   import { styleImports } from "styles";
+   import { L } from "leaflet";
+   import * as echarts from "echarts";
+   import { fetch } from "fetch"; // Use this instead of default fetch to avoid potential issues
    ```
 
 **Inserting mapped properties into the code**
@@ -288,8 +279,8 @@ Migrating a legacy widget to the new format requires familiarity with JavaScript
 
 Depending on the complexity of your original widget, there are two migration approaches:
 
-* **Simple mode**: Replace placeholders and template syntax. Use this mode if your widget does not contain custom JavaScript logic in a `<script>` tag.
-* **Advanced mode**: Build complex web components with custom JavaScript. Use this mode if your widget contains custom JavaScript logic or event handlers.
+- **Simple mode**: Replace placeholders and template syntax. Use this mode if your widget does not contain custom JavaScript logic in a `<script>` tag.
+- **Advanced mode**: Build complex web components with custom JavaScript. Use this mode if your widget contains custom JavaScript logic or event handlers.
 
 **Step 1: Assess your widget**
 
@@ -298,13 +289,13 @@ Check your current widget code. If it contains specific JavaScript logic in a `<
 **Step 2: Migrate placeholders in simple mode**
 
 The following example shows legacy widget code:
+
 ```html
-<p ng-if="device.name === 'Alpine Hiker #1'">
-  Hello {{device.name}}.
-</p>
+<p ng-if="device.name === 'Alpine Hiker #1'">Hello {{device.name}}.</p>
 ```
 
 Migrated to the template syntax, this is:
+
 ```js
 ${ this.c8yContext.name === 'Alpine Hiker #1' ? html`<p>Hello ${this.c8yContext.name}</p>` : '' }
 ```
@@ -314,7 +305,7 @@ ${ this.c8yContext.name === 'Alpine Hiker #1' ? html`<p>Hello ${this.c8yContext.
 Create a new widget with your migrated code. HTML widgets that are migrated use an AngularJS legacy mode which you can view by opening the "advanced mode" to inspect the generated code:
 
 ```js
-import { angular } from 'angular';
+import { angular } from "angular";
 
 // NOTE: This is a legacy template for the HTML widget.
 // It is used to compile the HTML content in the context of the AngularJS application.
@@ -323,38 +314,44 @@ import { angular } from 'angular';
 // It is recommended to use a web component instead.
 
 if (!angular) {
-  throw new Error('AngularJS is not available. Please make sure to include AngularJS in your project.');
+  throw new Error(
+    "AngularJS is not available. Please make sure to include AngularJS in your project.",
+  );
 }
 
-const $injector = angular.element(document.querySelector('c8y-ui-root')).injector();
+const $injector = angular
+  .element(document.querySelector("c8y-ui-root"))
+  .injector();
 if (!$injector) {
-  throw new Error('AngularJS injector is not available. Maybe not an hybrid application?');
+  throw new Error(
+    "AngularJS injector is not available. Maybe not an hybrid application?",
+  );
 }
 
 // defining a new scope
-const $rootScope = $injector.get('$rootScope');
+const $rootScope = $injector.get("$rootScope");
 const $scope = $rootScope.$new(true);
 
-// faking the old angularjs config 
+// faking the old angularjs config
 $scope.child = {
   config: {
     device: { id: "2698590822", name: "Alpine Hiker #1" },
     html: `<div ng-controller="HtmlWidgetCtrl"><p ng-if="device.name === 'Alpine Hiker #1'">
   Hello {{device.name}}.
 </p>
-</div>`
-  }
+</div>`,
+  },
 };
 
 // load the needed services
-const $compile = $injector.get('$compile');
-const $controller = $injector.get('$controller');
+const $compile = $injector.get("$compile");
+const $controller = $injector.get("$controller");
 
 // create the element
 const htmlElement = angular.element($scope.child.config.html);
 
 // The default controller providing the context
-$controller('HtmlWidgetCtrl', { $scope });
+$controller("HtmlWidgetCtrl", { $scope });
 
 // Compile the element
 $compile(htmlElement)($scope);
@@ -363,7 +360,7 @@ $compile(htmlElement)($scope);
 $rootScope.$apply();
 
 export default htmlElement[0];
-``` 
+```
 
 The generated legacy mode code enables backward compatibility.
 
@@ -372,19 +369,17 @@ The generated legacy mode code enables backward compatibility.
 To use the new web component-based approach, copy your code to a new widget and enable the advanced mode. The following shows how the Lit-based HTML layout works:
 
 ```js
-
-import { LitElement, html, css } from 'lit';
-import { styleImports } from 'styles';
+import { LitElement, html, css } from "lit";
+import { styleImports } from "styles";
 
 export default class DefaultWebComponent extends LitElement {
   static styles = css`
-    
-:host > div {
-  padding: var(--c8y-root-component-padding-default);
-}
-span.branded { 
-  color: var(--brand-primary, var(--c8y-brand-primary)); 
-}
+    :host > div {
+      padding: var(--c8y-root-component-padding-default);
+    }
+    span.branded {
+      color: var(--brand-primary, var(--c8y-brand-primary));
+    }
   `;
 
   static properties = {
@@ -401,7 +396,9 @@ span.branded {
       <style>
         ${styleImports}
       </style>
-      ${this.c8yContext.name === 'Alpine Hiker #1' ? html`<p>Hello ${this.c8yContext.device}</p>` : ''}
+      ${this.c8yContext.name === "Alpine Hiker #1"
+        ? html`<p>Hello ${this.c8yContext.device}</p>`
+        : ""}
     `;
   }
 }
@@ -449,12 +446,11 @@ This example shows how to handle click events and update the component state.
 
 After migration, test the widget to ensure:
 
-* All data displays correctly.
-* Interactive elements work as expected.
-* The widget responds to the device or asset selection.
+- All data displays correctly.
+- Interactive elements work as expected.
+- The widget responds to the device or asset selection.
 
 By leveraging the [Lit web components](https://lit.dev/docs/v3/) framework, you migrate nearly every custom AngularJS or JavaScript implementation in a legacy widget. To request additional data, import the `fetch` library to directly request data from the platform.
-
 
 ### KPI {#kpi}
 
@@ -468,10 +464,11 @@ On the left side, select the data point you want to display.
 You must select only one active data point to create the "KPI" widget. If you select multiple data points at once, you cannot save the configuration.
 
 On the right side, you can adjust how the data point is going to be displayed. This includes:
-* Icon: The icon to be displayed next to the data point
-* Number of decimal places
-* Display: Allows to toggle whether the timestamp, icon and trend indicator should be displayed
-* Font size of measurement value
+
+- Icon: The icon to be displayed next to the data point
+- Number of decimal places
+- Display: Allows to toggle whether the timestamp, icon and trend indicator should be displayed
+- Font size of measurement value
 
 ### Linear Gauge {#linear-gauge}
 
@@ -499,24 +496,24 @@ You can drag the map and move its content, and you can zoom in and out by using 
 
 The icons representing the devices are color-coded. The color used follows these rules:
 
-* Red = At least one CRITICAL alarm
-* Orange = At least one MAJOR alarm
-* Yellow = At least one MINOR alarm
-* Blue = At least one WARNING
-* Grey = No alarm
+- Red = At least one CRITICAL alarm
+- Orange = At least one MAJOR alarm
+- Yellow = At least one MINOR alarm
+- Blue = At least one WARNING
+- Grey = No alarm
 
 Click a device icon, to open a popup with the following information:
 
-* The device name. When clicked, the application navigates to the device.
-* The date at which the device last reported its location, if available.
+- The device name. When clicked, the application navigates to the device.
+- The date at which the device last reported its location, if available.
 
 **Parameters to configure**
 
-* Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group, including those in subgroups, are visible.
-* Marker icon: Icon of the marker on the map.
-* Zoom level: Default zoom level of the map.
-* Center bound: The default map coordinates.
-* Refresh interval: The refresh interval for the selected device or asset. If only one device is selected, instead of refresh interval, realtime option can be selected together with "follow selected" device toggle which would follow the device after location update.
+- Target assets or devices: Select which devices are shown on the map. If a group is selected, all devices in that group, including those in subgroups, are visible.
+- Marker icon: Icon of the marker on the map.
+- Zoom level: Default zoom level of the map.
+- Center bound: The default map coordinates.
+- Refresh interval: The refresh interval for the selected device or asset. If only one device is selected, instead of refresh interval, realtime option can be selected together with "follow selected" device toggle which would follow the device after location update.
 
 {{< c8y-admon-info >}}
 If none of the target device(s) has a known location, then the widget shows a world map without icons.
@@ -530,9 +527,9 @@ The "Markdown" widget can be used to display markdown content. Using the “Mark
 
 There are several ways to provide markdown content:
 
-* Upload a markdown file.
-* Provide a URL to an external source.
-* Add "/README.md" as a relative file path in order to provide the README file of the current application as source.
+- Upload a markdown file.
+- Provide a URL to an external source.
+- Add "/README.md" as a relative file path in order to provide the README file of the current application as source.
 
 ### Message sending {#message-sending}
 
@@ -595,48 +592,48 @@ For full control, click **Show advanced options** to customize the gauge's appea
 
 **Advanced options reference**
 
-| Category         | Property                                             | Description                                           |
-| ---------------- | ---------------------------------------------------- | ----------------------------------------------------- |
-| **General**      | `name`                                               | Name of the gauge preset                              |
-|                  | `radius`                                             | Radius of the gauge (for example, "90%")              |
+| Category         | Property                                             | Description                                                  |
+| ---------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
+| **General**      | `name`                                               | Name of the gauge preset                                     |
+|                  | `radius`                                             | Radius of the gauge (for example, "90%")                     |
 |                  | `center`                                             | Center position of the gauge (for example, `["50%", "50%"]`) |
-|                  | `startAngle`, `endAngle`                             | Start and end angles of the gauge arc                 |
-| **Split lines**  | `splitNumber`                                        | Number of segments in the gauge                       |
-|                  | `splitLineLength`, `splitLineLengthRatio`            | Length of split lines (absolute or ratio)             |
-|                  | `splitLineDistance`, `splitLineDistanceRatio`        | Distance of split lines from axis (absolute or ratio) |
-|                  | `splitLineColor`, `splitLineWidth`                   | Color and width of split lines                        |
-| **Ticks**        | `tickShow`                                           | Whether to show ticks                                 |
-|                  | `tickWidth`, `tickColor`                             | Width and color of ticks                              |
-|                  | `tickDistance`, `tickDistanceRatio`                  | Distance of ticks from center (absolute or ratio)     |
-|                  | `tickLength`, `tickLengthRatio`                      | Length of ticks (absolute or ratio)                   |
-| **Axis**         | `axisLabelDistance`, `axisLabelDistanceRatio`        | Distance of axis labels from center                   |
-|                  | `axisLabelColor`                                     | Color of axis labels                                  |
-|                  | `axisLabelFontSize`, `axisLabelFontSizeRatio`        | Font size of labels (absolute or ratio)               |
-|                  | `axisLabelFontSizeMin`, `axisLabelFontSizeMax`       | Minimum and maximum font size for labels              |
-|                  | `axisLineWidth`, `axisLineWidthRatio`                | Width of the axis line (absolute or ratio)            |
-| **Pointer**      | `showPointer`                                        | Whether to show the pointer                           |
-|                  | `pointerStyle`, `pointerColor`                       | Style and color of the pointer                        |
-|                  | `pointerWidth`, `pointerWidthRatio`                  | Width of pointer (absolute or ratio)                  |
-|                  | `pointerLength`, `pointerLenghtRatio`                | Length of pointer (absolute or ratio)                 |
-|                  | `pointerOffset`                                      | Offset of pointer from center                         |
-| **Progress bar** | `progressBar`                                        | Enable progress bar                                   |
-|                  | `progressBarWidth`                                   | Width of the progress bar                             |
-|                  | `progressBarRoundCap`                                | Rounded caps on progress bar ends                     |
-|                  | `progressBarColor`                                   | Color of the progress bar                             |
-|                  | `additionalGaugeColors`                              | Extra colors for segmented gauge bars                 |
-| **Typography**   | `measurementValueFontRatio`                          | Font size ratio of the measurement value              |
-|                  | `measurementValueFontMin`, `measurementValueFontMax` | Min and max font size for measurement value           |
-|                  | `measurementValueColor`                              | Color of the measurement value text                   |
-|                  | `unitFontSize`, `unitFontRatio`                      | Font size or ratio of the unit label                  |
-|                  | `unitFontMin`, `unitFontMax`                         | Min and max font size for the unit label              |
-|                  | `unitColor`                                          | Color of the unit label                               |
-|                  | `dateFontSize`, `dateFontRatio`                      | Font size or ratio of the timestamp                   |
-|                  | `dateFontMin`, `dateFontMax`                         | Min and max font size for the timestamp               |
-|                  | `dateColor`                                          | Color of the timestamp                                |
-| **Details**      | `showDetail`                                         | Show detailed information like value or markers       |
-|                  | `valueFontSize`                                      | Font size for the displayed value                     |
-|                  | `detailOffsetCenter`                                 | Offset of detail from center                          |
-|                  | `showMarkPoint`                                      | Show mark points on the gauge                         |
+|                  | `startAngle`, `endAngle`                             | Start and end angles of the gauge arc                        |
+| **Split lines**  | `splitNumber`                                        | Number of segments in the gauge                              |
+|                  | `splitLineLength`, `splitLineLengthRatio`            | Length of split lines (absolute or ratio)                    |
+|                  | `splitLineDistance`, `splitLineDistanceRatio`        | Distance of split lines from axis (absolute or ratio)        |
+|                  | `splitLineColor`, `splitLineWidth`                   | Color and width of split lines                               |
+| **Ticks**        | `tickShow`                                           | Whether to show ticks                                        |
+|                  | `tickWidth`, `tickColor`                             | Width and color of ticks                                     |
+|                  | `tickDistance`, `tickDistanceRatio`                  | Distance of ticks from center (absolute or ratio)            |
+|                  | `tickLength`, `tickLengthRatio`                      | Length of ticks (absolute or ratio)                          |
+| **Axis**         | `axisLabelDistance`, `axisLabelDistanceRatio`        | Distance of axis labels from center                          |
+|                  | `axisLabelColor`                                     | Color of axis labels                                         |
+|                  | `axisLabelFontSize`, `axisLabelFontSizeRatio`        | Font size of labels (absolute or ratio)                      |
+|                  | `axisLabelFontSizeMin`, `axisLabelFontSizeMax`       | Minimum and maximum font size for labels                     |
+|                  | `axisLineWidth`, `axisLineWidthRatio`                | Width of the axis line (absolute or ratio)                   |
+| **Pointer**      | `showPointer`                                        | Whether to show the pointer                                  |
+|                  | `pointerStyle`, `pointerColor`                       | Style and color of the pointer                               |
+|                  | `pointerWidth`, `pointerWidthRatio`                  | Width of pointer (absolute or ratio)                         |
+|                  | `pointerLength`, `pointerLenghtRatio`                | Length of pointer (absolute or ratio)                        |
+|                  | `pointerOffset`                                      | Offset of pointer from center                                |
+| **Progress bar** | `progressBar`                                        | Enable progress bar                                          |
+|                  | `progressBarWidth`                                   | Width of the progress bar                                    |
+|                  | `progressBarRoundCap`                                | Rounded caps on progress bar ends                            |
+|                  | `progressBarColor`                                   | Color of the progress bar                                    |
+|                  | `additionalGaugeColors`                              | Extra colors for segmented gauge bars                        |
+| **Typography**   | `measurementValueFontRatio`                          | Font size ratio of the measurement value                     |
+|                  | `measurementValueFontMin`, `measurementValueFontMax` | Min and max font size for measurement value                  |
+|                  | `measurementValueColor`                              | Color of the measurement value text                          |
+|                  | `unitFontSize`, `unitFontRatio`                      | Font size or ratio of the unit label                         |
+|                  | `unitFontMin`, `unitFontMax`                         | Min and max font size for the unit label                     |
+|                  | `unitColor`                                          | Color of the unit label                                      |
+|                  | `dateFontSize`, `dateFontRatio`                      | Font size or ratio of the timestamp                          |
+|                  | `dateFontMin`, `dateFontMax`                         | Min and max font size for the timestamp                      |
+|                  | `dateColor`                                          | Color of the timestamp                                       |
+| **Details**      | `showDetail`                                         | Show detailed information like value or markers              |
+|                  | `valueFontSize`                                      | Font size for the displayed value                            |
+|                  | `detailOffsetCenter`                                 | Offset of detail from center                                 |
+|                  | `showMarkPoint`                                      | Show mark points on the gauge                                |
 
 ### Relay array control {#relay-array-control}
 
@@ -652,13 +649,13 @@ The "Rotation" widget lets you render an object model of a device.
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Target assets or devices|Select group or device to be displayed.
-|Object model for rendering|Select an object model type for rendering. May be one of "Box model" or "Phone model".
-|Wireframe|Turn "Wireframe" on or off (default = on). The "wireframe" mode displays the object in a skeletal representation.
-|Camera type|Select the type of camera to be used. May be one of "Orthographic camera" or "Perspective camera".
+| Field                      | Description                                                                                                       |
+| :------------------------- | :---------------------------------------------------------------------------------------------------------------- |
+| Title                      | Widget title. By default, the widget type is simply used as title.                                                |
+| Target assets or devices   | Select group or device to be displayed.                                                                           |
+| Object model for rendering | Select an object model type for rendering. May be one of "Box model" or "Phone model".                            |
+| Wireframe                  | Turn "Wireframe" on or off (default = on). The "wireframe" mode displays the object in a skeletal representation. |
+| Camera type                | Select the type of camera to be used. May be one of "Orthographic camera" or "Perspective camera".                |
 
 In the "Rotation" widget you can rotate the object by dragging and moving it around. Zoom in and out by using the mouse.
 
@@ -684,6 +681,7 @@ To configure the "SCADA" widget, follow these steps:
    - **Generate with AI** — the AI agent analyzes the selected asset's properties, measurements, alarms, and events. Use the built-in suggestions to get started quickly: **Analyze and suggest** proposes up to 3 distinct visualization options to explore, while **Best guess** automatically selects the most useful single visualization. You can also type a custom prompt — effective prompts typically describe the type of system or device (for example, "water pump", "cooling unit", "temperature monitoring panel"), the key values to display (for example, "show temperature, pressure, and flow rate"), and any visual preferences such as color-coded alarm indicators. The agent can look up available measurements automatically, so you do not need to know the exact fragment or series names.
 
    If you upload or paste your own SVG files, you can enhance them with Lit syntax for dynamic content — see [Preparing SVG files for the "SCADA" widget](#preparing-svg-files-for-the-scada-widget) for details.
+
 5. Optionally, configure **Display settings** — see [Display options](#display-options-scada) below.
 6. **Add placeholders**: If the imported SVG file does not have the desired placeholders yet, in the preview area, click `text` or `tspan` elements to convert them into dynamic placeholders.
 7. For each placeholder, assign an asset/device property in **Placeholder mappings** — these properties (like ID, name, status, temperature) will be displayed dynamically in the SVG.
@@ -698,14 +696,14 @@ The "SCADA" widget uses **Lit syntax** (`${...}`) for dynamic content, condition
 
 **How it works:**
 
-* Asset or device property values are accessible via `${this.c8yScadaValues?.placeholderName || '-'}`:
-  * use `?` because the values object may be undefined when the widget is loading,
-  * use `|| '-'` to provide a default value if the placeholder is not assigned or no value is available.
-* Additional utility functions are available via `${this.c8yScadaFunctions?.functionName(...)}`:
-  * `goToDeviceDetails(deviceId)` – navigates to the device details,
-  * `goToGroupDetails(groupId)` – navigates to the group details,
-  * `getActiveAlarmsStatusClass(alarmsStatus)` – takes the alarm status object and returns a CSS class that can be used for styling: `none`, `warning`, `minor`, `major`, `critical`.
-* JavaScript expressions and template literals within SVG attributes and content are supported.
+- Asset or device property values are accessible via `${this.c8yScadaValues?.placeholderName || '-'}`:
+  - use `?` because the values object may be undefined when the widget is loading,
+  - use `|| '-'` to provide a default value if the placeholder is not assigned or no value is available.
+- Additional utility functions are available via `${this.c8yScadaFunctions?.functionName(...)}`:
+  - `goToDeviceDetails(deviceId)` – navigates to the device details,
+  - `goToGroupDetails(groupId)` – navigates to the group details,
+  - `getActiveAlarmsStatusClass(alarmsStatus)` – takes the alarm status object and returns a CSS class that can be used for styling: `none`, `warning`, `minor`, `major`, `critical`.
+- JavaScript expressions and template literals within SVG attributes and content are supported.
 
 **Example SVG template with Lit syntax:**
 
@@ -741,10 +739,9 @@ The "SCADA" widget uses **Lit syntax** (`${...}`) for dynamic content, condition
 
 **Key points:**
 
-* Use `${this.c8yScadaValues?.property}` for asset data (such as device name, battery, status).
-* Use utility functions like `${this.c8yScadaFunctions?.goToDeviceDetails(...)}` for interactivity.
-* You can apply conditional classes, calculations, and custom JavaScript inside `${...}`.
-
+- Use `${this.c8yScadaValues?.property}` for asset data (such as device name, battery, status).
+- Use utility functions like `${this.c8yScadaFunctions?.goToDeviceDetails(...)}` for interactivity.
+- You can apply conditional classes, calculations, and custom JavaScript inside `${...}`.
 
 #### Display options {#display-options-scada}
 
@@ -763,15 +760,15 @@ Old "SCADA" widgets relying on AngularJS syntax continue to work as before — t
 
 To use the new web component capabilities, the SVG must be migrated to Lit syntax. You can either adapt the existing SVG following the conversion table below and upload or paste it, or paste the existing SVG directly into the AI generation chat and ask it to convert it to the new Lit-based syntax.
 
-| AngularJS syntax | Lit syntax |
-|---|---|
-| `{{propertyName}}` | `${this.c8yScadaValues?.propertyName \|\| '-'}` |
-| `ng-class="expression"` | `class="${expression}"` |
-| `ng-if="condition"` | `${condition ? '...' : ''}` |
-| `ng-show="condition"` | `style="${condition ? '' : 'display:none'}"` |
-| `ng-style="{ color: val }"` | `style="color: ${this.c8yScadaValues?.val}"` |
+| AngularJS syntax                         | Lit syntax                                                            |
+| ---------------------------------------- | --------------------------------------------------------------------- |
+| `{{propertyName}}`                       | `${this.c8yScadaValues?.propertyName \|\| '-'}`                       |
+| `ng-class="expression"`                  | `class="${expression}"`                                               |
+| `ng-if="condition"`                      | `${condition ? '...' : ''}`                                           |
+| `ng-show="condition"`                    | `style="${condition ? '' : 'display:none'}"`                          |
+| `ng-style="{ color: val }"`              | `style="color: ${this.c8yScadaValues?.val}"`                          |
 | `ng-click="goToDeviceDetails(deviceId)"` | `@click=${() => this.c8yScadaFunctions?.goToDeviceDetails(deviceId)}` |
-| `ng-repeat="item in list"` | ``${list.map(item => `...`).join('')}`` |
+| `ng-repeat="item in list"`               | ``${list.map(item => `...`).join('')}``                               |
 
 **Example migration:**
 
@@ -782,16 +779,21 @@ AngularJS:
 <tspan ng-class="getActiveAlarmsStatusClass(alarmsStatus)">
   {{batteryValue}}
 </tspan>
-<rect ng-click="goToDeviceDetails(deviceId)"/>
+<rect ng-click="goToDeviceDetails(deviceId)" />
 ```
 
 Lit:
 
 ```html
-<tspan class="${this.c8yScadaFunctions?.getActiveAlarmsStatusClass(this.c8yScadaValues?.alarmsStatus)}">
+<tspan
+  class="${this.c8yScadaFunctions?.getActiveAlarmsStatusClass(this.c8yScadaValues?.alarmsStatus)}"
+>
   ${this.c8yScadaValues?.batteryValue || '-'}
 </tspan>
-<rect @click=${() => this.c8yScadaFunctions?.goToDeviceDetails(this.c8yScadaValues?.deviceId)} />
+<rect @click="${()" ="">
+  this.c8yScadaFunctions?.goToDeviceDetails(this.c8yScadaValues?.deviceId)}
+  /></rect
+>
 ```
 
 {{< /c8y-admon-preview-feature >}}
@@ -811,9 +813,10 @@ To use the "SCADA" widget, follow these steps:
 7. After assigning all placeholders, a preview of the widget with the current values of the properties is shown. Click **Save** to place the widget on the dashboard.
 
 The following code sanitization options can be selected:
- - **strict** - Does not allow any JS or AngularJS directives.
- - **lax** (default) - Allows partly JS (events) and all AngularJS directives.
- - **none** - Allows everything.
+
+- **strict** - Does not allow any JS or AngularJS directives.
+- **lax** (default) - Allows partly JS (events) and all AngularJS directives.
+- **none** - Allows everything.
 
 !["SCADA" widget](/images/users-guide/cockpit/cockpit-widget-scada.png)
 
@@ -907,8 +910,8 @@ The "Traffic light" widget visualizes the states of a device as traffic light.
 
 **Parameters to configure**
 
-|Field|Description|
-|:---|:---|
-|Title|Widget title. By default, the widget type is simply used as title.
-|Target assets or devices|Select group or device to be displayed.
-|States mapping|Select a property for each light. The value of the property must be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number.
+| Field                    | Description                                                                                                                                                                   |
+| :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                    | Widget title. By default, the widget type is simply used as title.                                                                                                            |
+| Target assets or devices | Select group or device to be displayed.                                                                                                                                       |
+| States mapping           | Select a property for each light. The value of the property must be one of the following to have the respective light on: true, 1, any non-empty string, any non-null number. |
