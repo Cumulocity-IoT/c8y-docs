@@ -82,7 +82,7 @@ Content-Type: application/json
 
 The following modes are available:
 
-| Mode | Description
+| <span style="display: inline-block; width: 100px;">Mode</span> | Description
 | ---------- | -----------
 | `auto` | Default. Measurements are propagated while the tenant has data points linked to a source device.
 | `on` | Measurements are always propagated.
