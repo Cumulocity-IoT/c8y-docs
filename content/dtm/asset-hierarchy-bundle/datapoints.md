@@ -90,7 +90,7 @@ The following modes are available:
 
 To get the current state of measurement propagation, use `GET /service/dtmdata/enabled`.
 
-Changing the mode requires the `ROLE_DIGITAL_TWIN_ADMIN` permission. Getting the current state requires the `ROLE_DIGITAL_TWIN_ADMIN` permission or the CREATE, UPDATE or ADMIN permission for permission type "Digital twin assets" or "Digital twin linking".
+Changing the mode requires the ROLE_DIGITAL_TWIN_ADMIN permission. Getting the current state requires the ROLE_DIGITAL_TWIN_ADMIN permission or the CREATE, UPDATE or ADMIN permission for permission type "Digital twin assets" or "Digital twin linking".
 
 #### Fan-out limit {#fan-out-limit}
 
