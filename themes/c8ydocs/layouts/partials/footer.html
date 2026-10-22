@@ -23,7 +23,7 @@
 {{ if eq .Title "Release notes" }}
 <script src="{{ "js/vendor/isotope.pkgd.min.js" | absURL }}"></script>
 {{ end }}
-{{/* Skill downloads: the Skills card on the home page, the topic cards, and the skill pages. JSZip loads on the first download. */}}
-{{ if or .IsHome (eq .Section "skills") (eq .Data.Term "skills") }}
+{{/* Skill downloads: the Skills card on the home page, the topic cards, the skill pages, and the skill cards in the Skills tab of documentation pages. JSZip loads on the first download. */}}
+{{ if or .IsHome (eq .Section "skills") (eq .Data.Term "skills") (and (eq .Layout "bundle") (partial "skills/for-page.html" .)) }}
 <script src="{{ "js/skills-download.js" | absURL }}" data-jszip="{{ "js/vendor/jszip.min.js" | absURL }}"></script>
 {{ end }}

@@ -21,7 +21,7 @@
             <i class="dlt-c8y-icon-book" aria-hidden="true"></i> Documentation
           </button>
           <button type="button" class="page-tab" role="tab" id="page-tab-skills" data-tab="skills" aria-selected="false" aria-controls="skills" tabindex="-1">
-            <i class="dlt-c8y-icon-tasklist" aria-hidden="true"></i> Skills <span class="page-tab__count">{{ len . }}</span>
+            <i class="dlt-c8y-icon-ai-sparkles" aria-hidden="true"></i> Skills <span class="page-tab__count">{{ len . }}</span>
           </button>
         </div>
         {{ end }}
@@ -30,7 +30,7 @@
         </div>
         {{ with $skills }}
         <section id="skills" class="skills-panel" role="tabpanel" aria-labelledby="page-tab-skills">
-          <p class="skills-panel__intro">Skills are instructions for AI agents and step-by-step guides for people, for the tasks on this page. Give a skill's SKILL.md to your agent, or download all skills from the <a href="{{ (site.GetPage "/sector/skills").Permalink }}">Skills page</a>.</p>
+          <p class="skills-panel__intro">Skills are instructions for AI agents and step-by-step guides for people, for the tasks on this page. Give a skill's SKILL.md to your agent. The <a href="{{ (site.GetPage "/sector/skills").Permalink }}">Skills page</a> has all skills to download.</p>
           <div class="skill-grid">
             {{ range . }}{{ partial "skills/card.html" . }}{{ end }}
           </div>

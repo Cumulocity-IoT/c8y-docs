@@ -9,5 +9,6 @@
   {{- if and (ne $api.key "core") (ne .showApi false) }}
   <span class="api-chip__api">{{ $api.label }}</span>
   {{- end }}
-  <code>{{ .entry.path }}</code>
+  {{- /* Long paths break after a slash, not inside a segment */}}
+  <code>{{ replace (.entry.path | htmlEscape) "/" "/<wbr>" | safeHTML }}</code>
 </a>

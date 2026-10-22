@@ -6,18 +6,30 @@
 {{- $skill := .skill -}}
 <div class="skill-card">
   <a class="skill-card__title" href="{{ $skill.Permalink }}">
-    <i class="dlt-c8y-icon-tasklist" aria-hidden="true"></i>
+    <i class="dlt-c8y-icon-ai-sparkles" aria-hidden="true"></i>
     {{ $skill.Title }}
   </a>
-  {{- with $skill.OutputFormats.Get "markdown" }}
-  <p class="skill-card__agent"><code>{{ partial "skills/skill-name.html" $skill }}</code> <a href="{{ .Permalink }}">SKILL.md</a></p>
-  {{- end }}
-  {{- with $skill.Description }}
-  <p class="skill-card__description">{{ . }}</p>
-  {{- end }}
-  {{- with .from }}
-  <p class="skill-card__from">Linked from <a href="#{{ $.anchor }}">{{ replace . "var-product-c8y-iot" site.Params.product_c8y_iot }}</a></p>
-  {{- end }}
+  <div class="skill-card__main">
+    {{- $md := $skill.OutputFormats.Get "markdown" }}
+    {{- with $md }}
+    <p class="skill-card__agent"><code>{{ partial "skills/skill-name.html" $skill }}</code></p>
+    {{- end }}
+    {{- with $skill.Description }}
+    <p class="skill-card__description">{{ . }}</p>
+    {{- end }}
+    {{- with $md }}
+    {{- /* Downloads the skill as a ZIP file, like "Download skill" on the skill page; static/js/skills-download.js runs it. The path in the tooltip is on its own line, with non-breaking hyphens so that the name does not break. */}}
+    {{- $name := partial "skills/skill-name.html" $skill }}
+    {{- $path := printf "%s/SKILL.md" (replace $name "-" "‑") }}
+    <button type="button" class="btn-metadata btn-tooltip skills-download skill-card__download" data-skill-download="{{ .Permalink }}" data-skill-name="{{ $name }}" aria-label="Download skill: {{ $skill.Title }}" data-tooltip="A ZIP file to unzip into the skills folder of your agent. It contains&#10;{{ $path }}">
+      <i class="dlt-c8y-icon-download" aria-hidden="true"></i>
+      <span class="skills-download__label">Download skill</span>
+    </button>
+    {{- end }}
+    {{- with .from }}
+    <p class="skill-card__from">Linked from <a href="#{{ $.anchor }}">{{ replace . "var-product-c8y-iot" site.Params.product_c8y_iot }}</a></p>
+    {{- end }}
+  </div>
   {{- with $skill.Params.api }}
   <ul class="skill-card__api" aria-label="API operations">
     {{- range . }}

@@ -3,8 +3,9 @@
 //   of the home page and "Download skills" on each topic card of the Skills landing page. They
 //   fetch the skill files that layouts/skills/list.md publishes, as listed in their manifest
 //   (all files, or the files of one topic), and zip them.
-// - "Copy SKILL.md" and "Download skill" on a skill page (layouts/skills/single.html) use the
-//   page's index.md, which is the same text as its SKILL.md.
+// - "Copy SKILL.md" and "Download skill" on a skill page (layouts/skills/single.html), and
+//   "Download skill" on the skill cards (partials/skills/card.html), use the skill's index.md,
+//   which is the same text as its SKILL.md.
 // JSZip (the script's data-jszip URL) loads on the first download.
 (function () {
   const jszipUrl = document.currentScript && document.currentScript.dataset.jszip;
@@ -63,12 +64,21 @@
     }
   }
 
-  // Card buttons: the progress shows in the button label
-  document.querySelectorAll("[data-skills-download]").forEach((button) => {
+  // One skill as a ZIP file with its folder, ready to unpack into the skills folder of an agent
+  async function downloadSkill(button) {
+    await loadJSZip();
+    const name = button.dataset.skillName;
+    const zip = new JSZip();
+    zip.file(`${name}/SKILL.md`, await (await fetchOk(button.dataset.skillDownload)).text());
+    saveBlob(await zip.generateAsync({ type: "blob" }), `${name}.zip`);
+  }
+
+  // For card buttons: show(text) puts the progress in the button label
+  function labelProgress(button) {
     const label = button.querySelector(".skills-download__label");
     const initialLabel = label.textContent;
     let resetTimer = null;
-    const show = (text) => {
+    return (text) => {
       clearTimeout(resetTimer);
       label.textContent = text === null ? initialLabel : text;
       // A failure shows briefly in the label, then the button reads as before
@@ -76,6 +86,11 @@
         resetTimer = setTimeout(() => (label.textContent = initialLabel), 4000);
       }
     };
+  }
+
+  // Card buttons: the progress shows in the button label
+  document.querySelectorAll("[data-skills-download]").forEach((button) => {
+    const show = labelProgress(button);
     button.addEventListener("click", () =>
       run(button, show, "Preparing…", null, "Download failed", async () => {
         await loadJSZip();
@@ -95,15 +110,38 @@
     );
   });
 
+  // "Download skill" on the skill cards (partials/skills/card.html) of the topic pages and the
+  // Skills tabs: the progress shows in the button label
+  document.querySelectorAll(".skill-card [data-skill-download]").forEach((button) => {
+    const show = labelProgress(button);
+    button.addEventListener("click", () =>
+      run(button, show, "Preparing…", null, "Download failed", () => downloadSkill(button))
+    );
+  });
+
   // Skill pages: the progress shows in the status line of the box
   document.querySelectorAll(".skill-agent").forEach((box) => {
     const status = box.querySelector(".skill-agent__status");
-    const show = (text) => (status.textContent = text === null ? "" : text);
+    const show = (text) => {
+      status.classList.remove("sr-only");
+      status.textContent = text === null ? "" : text;
+    };
 
+    // Copying shows "Copied!" above the button, like the copy buttons of code blocks (main.js,
+    // clipboardCode). The status line says it only to screen readers, and shows errors.
     const copy = box.querySelector("[data-skill-copy]");
+    const copied = "SKILL.md copied to the clipboard.";
+    const showCopy = (text) => {
+      show(text);
+      if (text === copied) {
+        status.classList.add("sr-only");
+        copy.classList.add("copied");
+        setTimeout(() => copy.classList.remove("copied"), 1500);
+      }
+    };
     if (copy && navigator.clipboard) {
       copy.addEventListener("click", () =>
-        run(copy, show, "Copying…", "SKILL.md copied to the clipboard.", "That did not work. Reload the page and try again.", async () => {
+        run(copy, showCopy, null, copied, "That did not work. Reload the page and try again.", async () => {
           const text = await (await fetchOk(copy.dataset.skillCopy)).text();
           await navigator.clipboard.writeText(text);
         })
@@ -112,17 +150,10 @@
       copy.hidden = true;
     }
 
-    // The skill as a ZIP file with its folder, ready to unpack into the skills folder
     const download = box.querySelector("[data-skill-download]");
     if (download) {
       download.addEventListener("click", () =>
-        run(download, show, "Preparing the download…", null, "That did not work. Reload the page and try again.", async () => {
-          await loadJSZip();
-          const name = download.dataset.skillName;
-          const zip = new JSZip();
-          zip.file(`${name}/SKILL.md`, await (await fetchOk(download.dataset.skillDownload)).text());
-          saveBlob(await zip.generateAsync({ type: "blob" }), `${name}.zip`);
-        })
+        run(download, show, "Preparing the download…", null, "That did not work. Reload the page and try again.", () => downloadSkill(download))
       );
     }
   });
