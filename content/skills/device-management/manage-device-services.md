@@ -1,6 +1,7 @@
 ---
 title: Manage device services
 description: List the software services of a device, announce a service and update its status, and send a start, stop, or restart command to a service.
+when: "the user wants to list the services of a device, report the status of a service, or start, stop, or restart a service"
 weight: 107
 requires:
   - authentication

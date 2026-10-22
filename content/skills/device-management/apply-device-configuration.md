@@ -1,6 +1,7 @@
 ---
 title: Apply and retrieve device configuration
 description: Install configuration text or a configuration file on a device, make the device report its current configuration, and read the configuration file that the device uploads.
+when: "the user wants to send a configuration to a device, make a device report its current configuration, or download the configuration file that a device uploaded"
 weight: 300
 requires:
   - authentication

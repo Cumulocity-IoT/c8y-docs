@@ -1,6 +1,7 @@
 ---
 title: Read and write device parameters
 description: Read a device parameter from the device managed object, send a new value to the device with a c8y_ParameterUpdate operation, and check the value that the device reports back.
+when: "the user wants to read a device parameter or change its value on the device"
 weight: 710
 requires:
   - authentication

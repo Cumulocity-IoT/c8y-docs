@@ -1,6 +1,7 @@
 ---
 title: Send and receive SMS
 description: Configure the SMS provider of the tenant, send an SMS through the SMS gateway microservice, and read the messages received for an address.
+when: "the user wants to send an SMS to a phone or device, read the SMS received for an address, or set up the SMS provider of a tenant"
 weight: 760
 requires:
   - authentication

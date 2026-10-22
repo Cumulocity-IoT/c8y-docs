@@ -1,6 +1,7 @@
 ---
 title: List and query devices
 description: List the devices of your tenant, filter them by name, type, and fragment with the inventory query language, and page through all results.
+when: "the user wants to list the devices of a tenant or find devices by name, type, or fragment"
 weight: 103
 requires:
   - authentication

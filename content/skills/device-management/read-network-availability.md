@@ -1,6 +1,7 @@
 ---
 title: Read the network configuration and availability of a device
 description: Read the LAN, WAN, and DHCP configuration that a device reports, and check whether the platform monitors the device and whether the device is available and connected.
+when: "the user wants to read the network configuration of a device, or check whether a device is available and connected"
 weight: 220
 requires:
   - authentication

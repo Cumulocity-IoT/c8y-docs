@@ -23,6 +23,7 @@ Agent skills from the Cumulocity documentation.
 
 Each folder that starts with %s is one skill with a SKILL.md file. Copy these folders to the skills directory of your AI agent:
 
+- Codex, GitHub Copilot, Cursor, and Gemini CLI: %s for all your projects, or %s in a project.
 - Claude Code: %s for all your projects, or %s in a project.
 - Other agents that support the Agent Skills format: see the documentation of the agent.
 
@@ -33,5 +34,5 @@ The skills send requests to the Cumulocity REST API. Before you use them, set th
 ## Updates
 
 The skills reflect the documentation at the time of the download. To update them, download them again from %s.
-` $release (now.Format "2006-01-02") $landing (delimit $skills "\n") "`cumulocity-`" "`~/.claude/skills/`" "`.claude/skills/`" "`C8Y_BASEURL`" "`C8Y_TENANT`" "`C8Y_USER`" "`C8Y_PASSWORD`" $auth $landing -}}
+` $release (now.Format "2006-01-02") $landing (delimit $skills "\n") "`cumulocity-`" "`~/.agents/skills/`" "`.agents/skills/`" "`~/.claude/skills/`" "`.claude/skills/`" "`C8Y_BASEURL`" "`C8Y_TENANT`" "`C8Y_USER`" "`C8Y_PASSWORD`" $auth $landing -}}
 {{- return $text -}}

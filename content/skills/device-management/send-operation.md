@@ -1,6 +1,7 @@
 ---
 title: Send an operation to a device
 description: Check that a device supports an operation, create the operation, follow it until the device reports SUCCESSFUL or FAILED, and cancel an operation that stays PENDING.
+when: "the user wants to send an operation to a device, follow its status, or cancel a pending operation"
 weight: 295
 requires:
   - authentication

@@ -1,6 +1,7 @@
 ---
 title: Authenticate REST API requests
 description: Send authenticated requests to the Cumulocity REST API with basic authentication or an OAI-Secure access token, check the credentials, and keep them out of logs and replies.
+when: "another Cumulocity skill sends REST requests, or the user wants to check the credentials for the Cumulocity REST API"
 weight: 5
 api:
   - operation: getCurrentUserResource

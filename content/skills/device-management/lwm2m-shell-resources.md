@@ -1,6 +1,7 @@
 ---
 title: Read and write LWM2M resources with shell commands
 description: Read, write, execute, discover, create, and delete LWM2M resources on a device by sending shell commands as c8y_Command operations, and interpret the results.
+when: "the user wants to read, write, execute, discover, create, or delete the resources of an LWM2M device"
 weight: 504
 requires:
   - authentication

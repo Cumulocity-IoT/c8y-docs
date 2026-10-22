@@ -1,6 +1,7 @@
 ---
 title: Register a device
 description: Create a registration request for a device that fetches its own credentials, wait until the device connects, accept the request, and find the managed object that the device creates.
+when: "the user wants to connect a new device to the platform with a registration request"
 weight: 230
 requires:
   - authentication

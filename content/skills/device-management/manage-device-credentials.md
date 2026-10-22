@@ -1,6 +1,7 @@
 ---
 title: Manage device credentials
 description: List the device users of your tenant, find the device user that a device authenticates with, and disable or enable it to block or allow the login of the device.
+when: "the user wants to find the device user of a device, or block or allow the login of a device"
 weight: 105
 requires:
   - authentication

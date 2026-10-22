@@ -1,6 +1,7 @@
 ---
 title: Read the provisioned certificates of a device
 description: Find the device user of a device and read the X.509 certificates that the platform provisioned to the device, as shown in its x509 tab.
+when: "the user wants to read the X.509 certificates that the platform provisioned to a device"
 weight: 449
 requires:
   - authentication

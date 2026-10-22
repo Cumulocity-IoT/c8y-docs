@@ -1,6 +1,7 @@
 ---
 title: Manage the configuration repository
 description: Upload a configuration file, create a configuration snapshot for it in the configuration repository, announce the configuration types of a device, list the snapshots, and delete a snapshot with its file.
+when: "the user wants to add, list, or delete configuration files in the configuration repository, or announce the configuration types of a device"
 weight: 340
 requires:
   - authentication

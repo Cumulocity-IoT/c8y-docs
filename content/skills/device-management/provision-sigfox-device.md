@@ -1,6 +1,7 @@
 ---
 title: Register a Sigfox device
 description: Select the device protocol and the contract, register a device on the Sigfox Cloud through the Sigfox agent, and send a downlink command to it.
+when: "the user wants to register a Sigfox device or send it a downlink command"
 weight: 820
 requires:
   - authentication

@@ -1,6 +1,7 @@
 ---
 title: Delete a device
 description: Check that a managed object is a device, delete it with or without its child hierarchy, and wait until the platform has removed it.
+when: "the user wants to delete a device, with or without its child devices"
 weight: 101
 requires:
   - authentication

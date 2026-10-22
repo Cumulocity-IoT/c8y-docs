@@ -1,6 +1,7 @@
 ---
 title: Manage child devices
 description: Assign a device as a child device of another device, create a new child device in one request, list the child devices, and remove the assignment again.
+when: "the user wants to assign, create, list, or remove the child devices of a device"
 weight: 104
 requires:
   - authentication

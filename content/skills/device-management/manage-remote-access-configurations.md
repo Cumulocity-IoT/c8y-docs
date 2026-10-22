@@ -1,6 +1,7 @@
 ---
 title: Manage remote access endpoints of a device
 description: List, create, read, update, and delete the Cloud Remote Access endpoint configurations of a device, so that users can connect to SSH, Telnet, VNC, and passthrough services behind the device.
+when: "the user wants to set up SSH, Telnet, VNC, or passthrough access to a device with Cloud Remote Access"
 weight: 730
 requires:
   - authentication

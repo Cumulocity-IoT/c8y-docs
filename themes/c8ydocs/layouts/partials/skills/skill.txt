@@ -1,6 +1,6 @@
 {{- /*
-  Returns a skill in agent skill format (SKILL.md): front matter with `name` and
-  `description`, then the skill as in llms-full.txt with the skills it builds on inserted
+  Returns a skill in agent skill format (SKILL.md): front matter with `name`, `description`,
+  and `compatibility`, then the skill as in llms-full.txt with the skills it builds on inserted
   after the metadata lines, then the API operations it uses and the documentation that links
   to it. The skill's index.md and the skills download both use it. Call with the skill page.
 */ -}}
@@ -39,5 +39,11 @@
   {{- $sections = $sections | append (printf "## Related documentation\n\n%s" (delimit $lines "\n")) -}}
 {{- end -}}
 
-{{- $frontMatter := printf "---\nname: %s\ndescription: %s\n---" (partial "skills/skill-name.html" .) (.Description | jsonify) -}}
+{{- /* Agents pick a skill from its description alone, so the Agent Skills specification asks for
+  what the skill does and when to use it: the page description, then the `when` front matter.
+  `compatibility` (optional in the specification) names what the requests need. */ -}}
+{{- $description := .Description -}}
+{{- with .Params.when }}{{ $description = printf "%s Use when %s." $description . }}{{ end -}}
+{{- $compatibility := "Requires network access to a Cumulocity tenant and the C8Y_BASEURL, C8Y_TENANT, C8Y_USER, and C8Y_PASSWORD environment variables." -}}
+{{- $frontMatter := printf "---\nname: %s\ndescription: %s\ncompatibility: %s\n---" (partial "skills/skill-name.html" .) ($description | jsonify) ($compatibility | jsonify) -}}
 {{- return printf "%s\n\n%s\n" $frontMatter (delimit $sections "\n\n") -}}

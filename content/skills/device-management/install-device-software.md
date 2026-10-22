@@ -1,6 +1,7 @@
 ---
 title: Install software on a device
 description: Check which software operation a device supports, create a c8y_SoftwareUpdate, c8y_SoftwareList, or c8y_Software operation to install a software package, and follow the operation until the device reports the result.
+when: "the user wants to install a software package on a device"
 weight: 330
 requires:
   - authentication

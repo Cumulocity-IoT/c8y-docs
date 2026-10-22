@@ -1,6 +1,7 @@
 ---
 title: Manage OPC UA device types
 description: Create an OPC UA device type that maps server nodes to measurements, events, and alarms, check which nodes it matches, enable, update, and delete it with the OPC UA management service.
+when: "the user wants to map the nodes of an OPC UA server to measurements, events, or alarms with a device type"
 weight: 640
 requires:
   - authentication

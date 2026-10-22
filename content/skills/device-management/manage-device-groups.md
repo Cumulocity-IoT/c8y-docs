@@ -1,6 +1,7 @@
 ---
 title: Manage device groups
 description: Create a device group, assign devices to it and remove them, list and query its members, create a smart group whose members are the result of a stored query, and delete groups.
+when: "the user wants to create a device group or smart group, add or remove its devices, list its members, or delete it"
 weight: 106
 requires:
   - authentication

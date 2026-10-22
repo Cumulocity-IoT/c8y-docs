@@ -1,6 +1,7 @@
 ---
 title: Request a diagnostics report from a device
 description: Check that a device supports diagnostics reports, request a report with a c8y_DiagnosticReport operation, download the report file, and delete it.
+when: "the user wants to get a diagnostics report from a device"
 weight: 260
 requires:
   - authentication

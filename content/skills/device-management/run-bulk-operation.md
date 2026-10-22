@@ -1,6 +1,7 @@
 ---
 title: Run a bulk operation on a device group
 description: Schedule an operation for every device of a group as a bulk operation, monitor its progress, retry the operations that failed, and cancel a bulk operation.
+when: "the user wants to send the same operation to every device of a group, follow its progress, retry it, or cancel it"
 weight: 380
 requires:
   - authentication

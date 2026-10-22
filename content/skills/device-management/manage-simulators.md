@@ -1,6 +1,7 @@
 ---
 title: Manage device simulators
 description: Check that the device simulator is available, create, read, start, and change a simulator, find the devices that it creates, and delete it.
+when: "the user wants to create, start, change, or delete device simulators"
 weight: 109
 requires:
   - authentication

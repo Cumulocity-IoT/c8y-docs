@@ -1,6 +1,7 @@
 ---
 title: Manage the software repository
 description: Create a software in the software repository, upload software files, add versions, list the software that a device can install, and delete a software with all its versions.
+when: "the user wants to add software or software versions to the software repository, list them, or delete them"
 weight: 370
 requires:
   - authentication

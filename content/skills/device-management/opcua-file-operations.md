@@ -1,6 +1,7 @@
 ---
 title: Read a file from an OPC UA server
 description: Read an OPC UA file node into the file repository or upload it to an external endpoint, then find and download the stored file and remove copies that you no longer need.
+when: "the user wants to read a file node of an OPC UA server and store or download the file"
 weight: 670
 requires:
   - authentication

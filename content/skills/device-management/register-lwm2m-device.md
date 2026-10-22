@@ -1,6 +1,7 @@
 ---
 title: Register an LWM2M device
 description: Register an LWM2M device on the LWM2M agent, one at a time or in bulk from a CSV file, check the managed object of the device, and delete the registration.
+when: "the user wants to register LWM2M devices, one at a time or in bulk, or delete their registration"
 weight: 500
 requires:
   - authentication

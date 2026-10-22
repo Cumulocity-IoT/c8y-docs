@@ -1,6 +1,7 @@
 ---
 title: Manage the installed software list of a device
 description: Read, replace, extend, and shorten the list of software packages that the Advanced Software Management microservice records as installed on a device.
+when: "the user wants to read or change the list of software that the Advanced Software Management microservice records as installed on a device"
 weight: 720
 requires:
   - authentication

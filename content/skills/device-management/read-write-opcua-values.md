@@ -1,6 +1,7 @@
 ---
 title: Read and write OPC UA values
 description: Read and write the values of OPC UA nodes, read node attributes, and call OPC UA methods through operations that the OPC UA gateway executes.
+when: "the user wants to read or write the values of OPC UA nodes, read the attributes of a node, or call OPC UA methods"
 weight: 620
 requires:
   - authentication

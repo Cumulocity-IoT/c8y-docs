@@ -1,6 +1,7 @@
 ---
 title: Manage LWM2M object mappings
 description: List the LWM2M object mappings of your tenant, create or replace a mapping from JSON or from a DDF file, and delete the mappings of an LWM2M object.
+when: "the user wants to list, create, replace, or delete LWM2M object mappings, for example from a DDF file"
 weight: 502
 requires:
   - authentication

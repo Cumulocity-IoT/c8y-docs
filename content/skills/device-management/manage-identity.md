@@ -1,6 +1,7 @@
 ---
 title: Manage the external IDs of a device
 description: Create an external ID for a device, find the device by its external ID, list all external IDs of the device, and delete an external ID.
+when: "the user wants to create, list, or delete the external IDs of a device, or find a device by its external ID"
 weight: 108
 requires:
   - authentication

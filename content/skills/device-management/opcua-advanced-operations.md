@@ -1,6 +1,7 @@
 ---
 title: Read complex values and write attributes of OPC UA nodes
 description: Read selected attributes of several OPC UA nodes in one operation, including parts of array values, and write any writable attribute of OPC UA nodes.
+when: "the user wants to read several attributes or parts of array values of OPC UA nodes at once, or write the attributes of OPC UA nodes"
 weight: 630
 requires:
   - authentication

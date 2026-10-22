@@ -1,6 +1,7 @@
 ---
 title: Replace a device
 description: Replace the hardware of a device and keep its history by moving the external IDs and hardware information of a replacement device to the original device, deleting the replacement device, and recording the replacement.
+when: "the user wants to replace the hardware of a device and keep its history"
 weight: 240
 requires:
   - authentication

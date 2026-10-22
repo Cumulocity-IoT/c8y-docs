@@ -1,6 +1,7 @@
 ---
 title: Read and update device information
 description: Read the managed object of a device, interpret its hardware, firmware, and availability fragments, update or remove editable fragments, and switch availability monitoring off or into maintenance mode.
+when: "the user wants to read the information of a device, such as its hardware and firmware fragments, update its hardware information, remove a fragment, or switch its availability monitoring off or into maintenance mode"
 weight: 200
 requires:
   - authentication

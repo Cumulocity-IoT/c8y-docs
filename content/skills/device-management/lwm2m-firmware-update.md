@@ -1,6 +1,7 @@
 ---
 title: Update the firmware of an LWM2M device
 description: Check an LWM2M device and the firmware in the repository, start an over-the-air firmware update with a c8y_Firmware operation, follow it, and cancel an update that does not complete.
+when: "the user wants to update the firmware of an LWM2M device over the air, or cancel such an update"
 weight: 503
 requires:
   - authentication

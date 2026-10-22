@@ -1,6 +1,7 @@
 ---
 title: Manage device dashboards
 description: Create a dashboard for a device, list the dashboards of a device, check that a dashboard belongs to the device, and delete it.
+when: "the user wants to create, list, or delete the dashboards of a device"
 weight: 420
 requires:
   - authentication

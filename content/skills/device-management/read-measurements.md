@@ -1,6 +1,7 @@
 ---
 title: Create and read measurements
 description: Create a measurement for a device, query the measurements of a device by time range, type, and series, read the values of its series, and delete the measurements of a device.
+when: "the user wants to create, query, or delete the measurements of a device, for example the sensor values in a time range"
 weight: 210
 requires:
   - authentication

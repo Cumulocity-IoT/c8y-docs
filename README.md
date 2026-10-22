@@ -185,8 +185,9 @@ To add a topic, add a folder with an `_index.md` (copy one, then change `title`,
    ---
    title: Send an operation to a device      # the task, in sentence case
    description: Check that a device supports an operation, create the operation, ...   # one sentence, shown on cards, in llms.txt, and to AI agents
+   when: "the user wants to send an operation to a device, ..."   # when an agent should use the skill: SKILL.md adds "Use when <when>." to the description
    weight: 20                                 # order in the left navigation
-   requires:                                  # optional: skills to follow first, shown as "Before you start"
+   requires:                                  # optional: skills to follow first, listed in the Requirements box and as "Before you start" in SKILL.md
      - authentication                         # every skill that sends REST requests builds on this one
    api:                                       # every API operation the skill uses, in the order of use
      - operation: postOperationCollectionResource   # the operationId in the OpenAPI specification
@@ -222,14 +223,15 @@ To add a topic, add a folder with an `_index.md` (copy one, then change `title`,
    python3 scripts/check_skill_api_refs.py            # all skills
    python3 scripts/check_skill_api_refs.py content/skills/send-operation.md
    ```
-3. Check the rendered pages: the **Skills** tab of each linking page, the skill page with its **Before you start** box, the topic page, and the Markdown version of the skill (`/docs/skills/<topic>/<name>/index.md`). The build fails if a `requires:` entry names no skill, or if two skills have the same name.
+3. Check the rendered pages: the **Skills** tab of each linking page, the skill page with the required skills in its **Requirements** box, the topic page, and the Markdown version of the skill (`/docs/skills/<topic>/<name>/index.md`). The build fails if a `requires:` entry names no skill, or if two skills have the same name.
+4. Check the agent skill format. The pull request build runs the validator of the Agent Skills specification, [skills-ref](https://github.com/agentskills/agentskills/tree/main/skills-ref), on the `SKILL.md` of every skill (`.github/workflows/pull-request.yml`). It checks the front matter and that the name matches the folder.
 
 ### Machines first
 
 The pages put the agent skill first and the reading view second:
 
 - A skill page opens with **Use with an AI agent**: the skill name, where to save the `SKILL.md`, the skills it builds on, and the buttons **Copy SKILL.md** and **Download skill** (a ZIP file with the `cumulocity-<name>/SKILL.md` folder). The text for people follows.
-- Every skill card, in the **Skills** tab and on the topic pages, shows the skill name and links its `SKILL.md`.
+- Every skill card, in the **Skills** tab and on the topic pages, shows the skill name and a **Download skill** button.
 - The downloads sit on the cards one level up, like **Download PDFs** on other cards: **Download all skills** on the **Skills** card of the home page, and **Download skills** on each topic card of the landing page.
 
 ### Download all skills

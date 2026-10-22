@@ -1,6 +1,7 @@
 ---
 title: Track the location of a device
 description: Read and set the current position of a device, record location updates, query the movement of the device in a time range, and delete a location update.
+when: "the user wants to read, set, or track the position of a device"
 weight: 280
 requires:
   - authentication

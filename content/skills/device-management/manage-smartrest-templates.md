@@ -1,6 +1,7 @@
 ---
 title: Manage SmartREST 2.0 template collections
 description: Create a SmartREST 2.0 template collection with its X-ID, list and find collections, export a collection, and delete it.
+when: "the user wants to create, find, export, or delete SmartREST 2.0 template collections"
 weight: 430
 requires:
   - authentication

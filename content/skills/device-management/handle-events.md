@@ -1,6 +1,7 @@
 ---
 title: Create and manage device events
 description: Create an event for a device, query and update events, attach a file to an event, and delete the event.
+when: "the user wants to create, find, update, or delete the events of a device, or attach a file to an event"
 weight: 102
 requires:
   - authentication

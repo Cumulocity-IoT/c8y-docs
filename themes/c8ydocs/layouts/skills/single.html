@@ -21,7 +21,7 @@
           {{/* Not a heading: buildToc() in main.js takes the first h2 of an article as the title of the table of contents */}}
           <div class="title" id="skill-agent-title">Use with an AI agent</div>
           <p class="skill-agent__text">
-            This page is the agent skill <code>{{ $name }}</code>. Save it as <code>{{ $name }}/SKILL.md</code> in the skills folder of your agent, for example <code>.claude/skills/</code> for Claude Code.
+            This page is the agent skill <code>{{ $name }}</code>. Save it as <code>{{ $name }}/SKILL.md</code> in the skills folder of your agent: <code>.agents/skills/</code> for Codex, GitHub Copilot, Cursor, and Gemini CLI, or <code>.claude/skills/</code> for Claude Code.
             {{ with partial "skills/requires.html" $ }}It builds on {{ range $i, $r := . }}{{ if $i }}, {{ end }}<code>{{ partial "skills/skill-name.html" $r }}</code>{{ end }}: install {{ if gt (len .) 1 }}these skills{{ else }}that skill{{ end }} too.{{ end }}
           </p>
           <div class="skill-agent__actions">

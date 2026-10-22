@@ -1,6 +1,7 @@
 ---
 title: Manage trusted certificates
 description: Upload the CA certificates that a tenant trusts for device authentication, list and update them, prove possession of their private key, and remove them.
+when: "the user wants to upload, list, update, verify, or remove the trusted CA certificates that devices authenticate with"
 weight: 445
 requires:
   - authentication

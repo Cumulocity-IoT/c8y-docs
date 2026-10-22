@@ -1,6 +1,7 @@
 ---
 title: Manage the OPC UA servers of a gateway
 description: Check an OPC UA gateway, connect an OPC UA server to it, list, read, and update its servers, and delete a server with the OPC UA management service.
+when: "the user wants to connect an OPC UA server to a gateway, or list, update, or delete the servers of a gateway"
 weight: 600
 requires:
   - authentication

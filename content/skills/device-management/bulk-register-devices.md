@@ -1,6 +1,7 @@
 ---
 title: Register devices in bulk
 description: Describe devices and their credentials in a CSV file, upload the file to register all devices at once, evaluate the result for each row, and check a registered device.
+when: "the user wants to register many devices at once from a CSV file"
 weight: 320
 requires:
   - authentication

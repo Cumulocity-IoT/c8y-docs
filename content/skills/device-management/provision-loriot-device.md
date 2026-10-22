@@ -1,6 +1,7 @@
 ---
 title: Register a Loriot LoRa device
 description: Select the Loriot connection, application, and device protocol, register a LoRa device on the Loriot network server, send a downlink command, and move the device to another Loriot application.
+when: "the user wants to register a LoRa device on Loriot, send it a downlink command, or move it to another Loriot application"
 weight: 810
 requires:
   - authentication

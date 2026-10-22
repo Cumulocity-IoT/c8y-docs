@@ -1,6 +1,7 @@
 ---
 title: Browse the address space of an OPC UA server
 description: Scan the address space of an OPC UA server with the gateway, then read nodes, list their children, follow browse paths, and search the stored address space.
+when: "the user wants to scan, browse, or search the nodes of an OPC UA server that is connected to an OPC UA gateway"
 weight: 610
 requires:
   - authentication
