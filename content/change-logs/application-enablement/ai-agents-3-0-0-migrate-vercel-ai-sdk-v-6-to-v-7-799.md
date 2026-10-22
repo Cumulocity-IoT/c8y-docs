@@ -1,6 +1,6 @@
 ---
 date: ""
-title: AI agents upgraded to Vercel AI SDK 7 with stricter API validation (breaking changes)
+title: AI agents upgraded to Vercel AI SDK 7 with stricter API validation
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
