@@ -16,7 +16,7 @@ version: 3.0.0
 ---
 The AI Agents microservice now uses version 7 of the Vercel AI SDK. You can now define an agent's system prompt as a single system message or as a list of system messages. This lets you set provider-specific options on the system prompt, for example, to enable Anthropic prompt caching and reduce cost and latency for repeated requests.
 
-This release contains breaking changes to the agent API. If you call agents directly through the API, review the following changes and update your integrations accordingly:
+**Important**: This release contains breaking changes to the agent API. If you call agents directly through the API, review the following changes and update your integrations accordingly:
 
 * Requests to `POST /agent/text/{name}` and `POST /agent/object/{name}` now accept only the `messages`, `prompt` and `variables` fields. Requests that contain any other field are rejected with HTTP status 400.
 * The `messages` field can no longer contain messages with `role: "system"`. Define the system prompt in the `system` field of the agent definition instead.
