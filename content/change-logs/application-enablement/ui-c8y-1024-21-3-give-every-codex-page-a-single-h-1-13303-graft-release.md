@@ -1,6 +1,6 @@
 ---
 date: ""
-title: give every Codex page a single h1 (#13303) [GRAFT][release/cd] (#13339)
+title: Codex pages now have a single main heading
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,19 +14,6 @@ build_artifact:
 ticket: MTM-68096
 version: 1024.21.3
 ---
-# Backport
+Every {{< product-c8y-iot >}} Codex page now has exactly one H1 heading: the page title in the header. Other headings keep their look but no longer use H1. This gives each page a clearer structure for screen readers and search engines.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-68096] give every Codex page a single h1
-(#13303)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13303)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-68096]:
-https://cumulocity.atlassian.net/browse/MTM-68096?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+This change only affects the Codex documentation. Applications built with the Web SDK are not affected.
