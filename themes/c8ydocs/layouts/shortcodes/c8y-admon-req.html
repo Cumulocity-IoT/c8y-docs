@@ -3,7 +3,8 @@
 {{- if eq .Page.Section "skills" -}}
   {{- with partial "skills/requires.html" .Page -}}
     {{- $items := slice -}}
-    {{- range . }}{{ $items = $items | append (printf "* [%s](%s)" .Title .RelPermalink) }}{{ end -}}
+    {{- /* Permalink, not RelPermalink: with relativeURLs, Hugo rewrites "/docs/..." against the site root and the link gets /docs twice */ -}}
+    {{- range . }}{{ $items = $items | append (printf "* [%s](%s)" .Title .Permalink) }}{{ end -}}
     {{- $inner = printf "SKILLS:\n\n%s\n\n%s" (delimit $items "\n") $inner -}}
   {{- end -}}
 {{- end -}}
