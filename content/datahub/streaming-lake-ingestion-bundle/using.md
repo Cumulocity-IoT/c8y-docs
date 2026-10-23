@@ -654,11 +654,11 @@ Note that the order in which messages are sent to {{< product-c8y-iot >}} and th
 
 ##### Type conflicts in arrays {#type-conflicts-in-arrays}
 
-An Iceberg list has a single element type. The service uses the data type of the first array item that holds a value. Items that are "null", `{}`, or `[]` hold no value and never cause a conflict. The following rules apply at every nesting level:
+An Iceberg list has a single element type. The service uses the data type of the first array item that holds a value. Items that are "null", `{}`, or `[]` hold no value and never cause a conflict. The same applies to an object whose contents are all moved to the `trash` table. The following rules apply at every nesting level:
 
 * **Items of different types**: An item whose data type differs from the data type of the array is moved to the `trash` table with the cause `UNRESOLVABLE_TYPE_CONFLICT`. Each such item gets its own row, and the `path` of the row contains the position of the item. The array keeps the remaining items. This also applies to an array that mixes objects with other values.
 * **Objects with different property types**: When the objects in an array use different data types for the same property, the service creates an overflow property inside the object, as described above. No data is moved to the `trash` table.
-* **Arrays of arrays**: An array whose first item is a non-empty array is a multidimensional array. The service creates no column for it. Each of its items is moved to the `trash` table as its own row with the cause `MULTI_DIMENSIONAL_ARRAY_DETECTED`, and the `path` of the row contains the position of the item.
+* **Arrays inside arrays**: Only one-dimensional arrays are supported. Every item that is itself a non-empty array is moved to the `trash` table as its own row with the cause `MULTI_DIMENSIONAL_ARRAY_DETECTED`, and the `path` of the row contains the position of the item. The other items of the array are handled by the rules above, so the array keeps a column if they hold values. For example, `[[1, 2], 3]` stores `[3]` and moves `[1, 2]` to the `trash` table.
 * **Arrays and properties of other types**: When an array is sent for a property that stores another data type, or another value is sent for an array property, the whole array goes to an overflow column, for example, `someproperty__lb` for a list of booleans. The service never splits an array across columns.
 
 For example, the following array mixes strings, a number, and a boolean:
