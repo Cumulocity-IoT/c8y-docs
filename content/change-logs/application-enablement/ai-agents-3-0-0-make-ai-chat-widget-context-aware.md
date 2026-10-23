@@ -16,6 +16,10 @@ version: 3.0.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-22'
+  - label: apj.cumulocity.com
+    date: '2026-10-23'
+  - label: jp.cumulocity.com
+    date: '2026-10-23'
 ---
 The AI chat widget can now pass the device or group it is configured for to the selected AI agent, so you can ask questions such as "What is this?" or "Are there any active alarms?" without naming the asset in your prompt.
 

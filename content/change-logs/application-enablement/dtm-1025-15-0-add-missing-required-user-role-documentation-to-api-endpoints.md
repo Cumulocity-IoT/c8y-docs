@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Added missing required user role documentation to Asset API endpoints"
-product_area: "Application enablement & solutions"
+date: '2026-10-23'
+title: Added missing required user role documentation to Asset API endpoints
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-VSkj2iV9m"
-      label: "Fix"
+  - value: change-VSkj2iV9m
+    label: Fix
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3279"
-version: "1025.15.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3279
+version: 1025.15.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-23'
 ---
 Several endpoints of the Asset API, particularly those under `/service/dtm/definitions/`, were missing documentation about required user roles and permissions. This made it unclear what access level users needed to successfully call these endpoints.
 

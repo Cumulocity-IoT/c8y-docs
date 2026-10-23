@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-23'
 title: Faster page loads in the Codex documentation through lazy-loaded images
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-68096
 version: 1024.21.5
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-23'
 ---
 Images on {{< product-c8y-iot >}} Codex pages are now lazy-loaded. The first image on each page still loads immediately. It is often the page's largest visible element, and lazy-loading it would slow down how quickly the page appears. Images that already set their own `loading` or `decoding` attribute keep their values.
 

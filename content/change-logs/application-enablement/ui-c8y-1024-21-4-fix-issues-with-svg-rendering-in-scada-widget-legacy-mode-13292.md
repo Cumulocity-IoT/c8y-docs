@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Fixed rendering issues in SCADA widgets created with the previous widget version
+date: '2026-10-23'
+title: >-
+  Fixed rendering issues in SCADA widgets created with the previous widget
+  version
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -13,6 +15,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67868
 version: 1024.21.4
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-23'
 ---
 With the **SCADA widget v2** preview feature enabled, some SCADA widgets created with the previous version of the widget did not display correctly. This affected widgets whose SVG shows or hides parts of the drawing depending on a placeholder value, for example with `ng-if="value==0"`. Such parts could appear when they should have been hidden, or the other way round, because:
 
