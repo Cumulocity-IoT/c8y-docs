@@ -565,7 +565,7 @@ The columns represent the [properties of a {{< product-c8y-iot >}} operation](ht
 {{< product-c8y-iot >}} relies on JSON as data exchange format in its APIs. JSON data types map to Iceberg data types as follows:
 
 * Strings parsed as timestamps become the Iceberg `timestamptz` data type. Otherwise, they become the Iceberg `string` data type.
-* Numbers are stored as Iceberg `decimal` with a maximum precision of 38 and scale of 9.
+* Numbers are stored as Iceberg `decimal` with a maximum precision of 38 and scale of 9. A number with more than 9 decimal places is stored rounded to 9 decimal places, and its exact value is also moved to the `trash` table with the cause `SIZE_EXCEEDED`, so that no digit is lost. A number with more than 29 digits before the decimal point is moved to the `trash` table with the cause `SIZE_EXCEEDED`.
 * Booleans (true/false) map to the equivalent Iceberg `boolean` data type.
 * JSON lists become the equivalent Iceberg `list` data type.
 * JSON objects become the equivalent Iceberg `struct` data type.
@@ -809,7 +809,7 @@ The following limits apply to data processed by Streaming Lake Ingestion. If any
 
 * Multidimensional arrays. (Note that arrays holding nested `struct` types are permitted.)
 * Array items whose data type differs from the data type of the array. For details, see [Type conflicts in arrays](#type-conflicts-in-arrays).
-* Numbers requiring larger precision than the maximum Iceberg `decimal` precision of (38, 9).
+* Numbers with more than 29 digits before the decimal point, which exceed the Iceberg `decimal` precision of (38, 9). Numbers with more than 9 decimal places are stored rounded, and their exact value is moved to the `trash` table. For details, see [Data types](#data-types).
 * More than 1,000 fragments per data type (inventory, alarms, …; corresponding to tables in a namespace).
 * More than 1,000 total leaf properties per fragment (corresponding to leaf columns in an Iceberg table; across all data for the same fragment including columns generated as part of conflict resolution and base columns like type, source, and time).
 
