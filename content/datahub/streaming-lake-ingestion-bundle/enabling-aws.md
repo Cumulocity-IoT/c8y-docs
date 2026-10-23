@@ -34,7 +34,7 @@ The **Data Lake configuration** page leads you through the following steps:
 
 The **Data Lake configuration** page shows both policies with your values filled in. The external ID protects your role against use on behalf of anyone else. Keep the suggested value or use your own with at least 32 characters. Use a different external ID for each tenant and keep a record of it. After the setup, the page shows only its last characters.
 
-When you click **Save**, {{< product-c8y-iot >}} assumes your role, tests a write, a read, and a delete under the base location, creates the Iceberg catalog of your tenant, and checks bucket versioning. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using).
+When you click **Save**, {{< product-c8y-iot >}} assumes your role, tests a write, a read, and a delete under the base location, creates the Iceberg catalog of your tenant, and checks bucket versioning. If the policy of the role does not allow a check, for example, to locate the bucket or to read its versioning setting, the setup completes, and the page shows a note that names the check and the permission it needs. When all checks pass, the **Setup status** shows "Provisioned", and your data arrives as described in [Using Streaming Lake Ingestion](#using).
 
 {{< product-c8y-iot >}} stores your tables under `s3://<bucket>/<prefix>/<tenant-id>/`. Several of your tenants can therefore share one prefix. You cannot change the base location after the setup. To change it, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
@@ -64,6 +64,7 @@ A failed check stops the setup. The data lake catalog stays, but the setup creat
 |The page says "it could not reach your storage" or "it could not obtain credentials for your storage".|Check the permissions policy of the role. Then click **Save** in the **Catalog identity** section. If the policy is correct, contact the [{{< company-c8y >}} support.|
 |The base location overlaps the location of another tenant.|Choose a prefix that neither contains nor is contained in the other location. Sharing the same prefix is allowed.|
 |The page warns that data loss protection is off.|Bucket versioning is off. Enable it, then click **Save** in the **Catalog identity** section.|
+|The page notes that some checks did not run.|The permissions policy of the role does not allow `s3:GetBucketLocation` or `s3:GetBucketVersioning`. Your data arrives without them. To have the checks run, add them to the policy, then click **Save** in the **Catalog identity** section.|
 |The setup fails right after you changed the role.|IAM changes take up to a minute to become effective. Wait and try again.|
 
 If the cause is not listed, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/) with the reason that the **Data Lake configuration** page shows.
