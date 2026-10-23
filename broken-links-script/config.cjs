@@ -23,6 +23,11 @@ module.exports = {
     // Medium blog uses anti-bot protection, Cypress cannot reliably load it
     "https://medium.com/@polanitzer/prediction-of-remaining-useful-life-of-an-engine-based-on-sensors-building-a-random-forest-in-ffad82c8a1c6",
 
+    // Intermittent CI navigation failure: all 11 cy.visit attempts failed on
+    // develop in run 39208104560, while this exact URL passed on release/y2026
+    // in the same run. Keep the valid documentation link unchanged.
+    "https://www.gainsight.com/product-experience/",
+
     // Links from opentelemetry.io always time out although they load fine in a browser
     /https:\/\/opentelemetry.io\//,
 
