@@ -2,6 +2,8 @@
 weight: 190
 title: Device parameter
 layout: bundle
+skills:
+  - read-write-device-parameters
 sector:
   - device_management
 ---

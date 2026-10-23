@@ -1,6 +1,8 @@
 ---
 weight: 40
 layout: redirect
+skills:
+  - inspect-parameter-definitions
 title: Property definitions
 
 helpContent:
