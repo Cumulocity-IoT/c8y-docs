@@ -45,38 +45,15 @@ Customer acknowledges the following limitations and constraints in using Service
 
 ### Service availability {#cra-service-availability}
 
-{{< company-c8y >}} is committed to providing reliable service. The specific service availability targets for {{< product-c8y-iot >}} Cloud Remote Access are as follows:
+{{< company-c8y >}} is committed to providing reliable service and continuously monitors the availability of {{< product-c8y-iot >}} Cloud Remote Access. Availability is measured and reported for information purposes and is not subject to service credits.
 
-| Deployment type | Production environments | Non-production environments |
-| --------------- | ----------------------- | --------------------------- |
-| Shared Cloud    | 99.00%                  | 95.00%                      |
-| Dedicated Cloud | 99.90%                  | 95.00%                      |
-
-Service availability for {{< product-c8y-iot >}} Cloud Remote Access is calculated as follows:
+Service availability for {{< product-c8y-iot >}} Cloud Remote Access is measured as follows:
 
 * {{< company-c8y >}} tests the availability of the Service every minute with a synthetic remote access connection to a reference device operated by {{< company-c8y >}}. The synthetic connection uses the same public endpoints as Customer's clients and devices.
 * A minute counts as available if the synthetic connection reaches an established tunnel and transfers data through it.
 * The service availability for a month is the share of available minutes in the calendar month, excluding planned downtimes and emergency maintenance, as outlined in the [platform's service availability section](/service-terms/service-level/#service-availability).
 
 Connections to Customer's devices are not part of the availability calculation, as they depend on factors outside of the control of {{< company-c8y >}}.
-
-Service credits are calculated as outlined in the [platform's service credit commitment](/service-terms/service-level/#service-credit-commitment).
-
-#### Informational service-level objectives {#cra-service-level-objectives}
-
-The following objectives measure the quality of the Service. They are for information purposes only and are not subject to service credits.
-
-| Service level indicator  | Monthly target                                       |
-| ------------------------ | ---------------------------------------------------- |
-| Connection success rate  | ≥ 99.9%                                              |
-| Session setup time       | 99% of successful session setups ≤ 5 seconds         |
-| Session drop rate        | ≤ 1%                                                 |
-
-The service quality indicators are defined as follows:
-
-* **Connection success rate:** The share of connection attempts that reach an established tunnel, measured over a calendar month. Attempts that fail for reasons outside of the control of {{< company-c8y >}} are excluded, for example, an unreachable device, a missing device password, an unsupported protocol version on the device, or a client that closes the connection during setup.
-* **Session setup time:** The time the Service needs to establish the protocol session (SSH or VNC) after the device agent connected. The time the device agent needs to receive and process the remote access operation is excluded.
-* **Session drop rate:** The share of established sessions that are closed unexpectedly by the Service, measured over a calendar month.
 
 ### Support and maintenance
 
