@@ -20,7 +20,7 @@ Tenants are managed via the [Tenant API](https://cumulocity.com/api/core/#tag/Te
 
 ### Tenant diagnostic archive {#tenant-diagnostic-archive}
 
-A tenant diagnostic archive is a ZIP file of diagnostics information that a user downloads from the Streaming Analytics or Data Preparation application, for example, to investigate a problem with its models or rules. It only contains data of the user's own [tenant](#tenant), such as its models, [smart rules](#smart-rules), alarms, and log messages. The archive from the Data Preparation application also contains the [Data Preparation rules](#data-preparation-rule) of the tenant. When the [microservice](#microservice) is shared by several tenants, the archive contains no data from other tenants and no information about the shared microservice as a whole.
+A tenant diagnostic archive is a ZIP file of diagnostics information that a user downloads from the Streaming Analytics or Data Preparation application, for example, to investigate a problem with its models or rules. It only contains data of the user's own [tenant](#tenant), such as its models, [smart rules](#smart-rules), alarms, and log messages (Streaming Analytics), or its [Data Preparation rules](#data-preparation-rule) and configuration (Data Preparation). When the [microservice](#microservice) is shared by several tenants, the archive contains no data from other tenants and no information about the shared microservice as a whole.
 
 See also [Downloading diagnostics and logs](/streaming-analytics/troubleshooting/#diagnostics-download) and [Downloading diagnostics](/data-preparation/logs-and-diagnostics/#download-diagnostics) in the documentation.
 
@@ -73,7 +73,7 @@ Tenant policies are stored in the inventory and managed through the [Inventory A
 
 ### Tenant-scoped log view {#tenant-scoped-log-view}
 
-A tenant-scoped log view is the **Logs** page of the Streaming Analytics or Data Preparation application. It shows the log messages that the application writes for the user's own [tenant](#tenant), without requiring access to the Administration application, and can be narrowed to a single Analytics Builder [model](#model) or [Data Preparation rule](#data-preparation-rule). Messages of other tenants are never shown, even when the [microservice](#microservice) is shared by several tenants.
+A tenant-scoped log view is the **Logs** page of the Streaming Analytics or Data Preparation application. It shows the log messages that the application writes for the user's own [tenant](#tenant), without requiring access to the Administration application, and can be narrowed to a single Analytics Builder [model](#model), template model instance, or [Data Preparation rule](#data-preparation-rule). Messages of other tenants are never shown, even when the [microservice](#microservice) is shared by several tenants.
 
 See also [Viewing logs in the Streaming Analytics application](/streaming-analytics/troubleshooting/#logs-view) and [Logs and diagnostics](/data-preparation/logs-and-diagnostics/) in the documentation.
 

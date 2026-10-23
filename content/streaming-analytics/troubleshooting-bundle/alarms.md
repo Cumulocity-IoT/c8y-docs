@@ -11,7 +11,7 @@ You can view alarms in the following ways:
 1. In the Cockpit application. See [Cockpit](/cockpit/) for detailed information.
 2. In the Administration application, under **Ecosystem** > **Microservices**. Click the Apama-ctrl microservice and then click **Status**.
    See [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices) for detailed information.
-3. From the Streaming Analytics application. Click the **User** button to display the right drawer and then click **Download diagnostics** in the **Diagnostics** section to download a ZIP file that contains alarms information. For a per-tenant microservice, the alarms are under */alarm/alarms_apama-ctrl-object.json*. For a multi-tenant microservice, the ZIP file contains the alarms of your tenant instead. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information.
+3. From the Streaming Analytics application. Click the **User** button to display the right drawer and then click **Download diagnostics** in the **Diagnostics** section to download a ZIP file that contains alarms information under */alarm/alarms_apama-ctrl-object.json*. For a multi-tenant microservice, these are the alarms of your own tenant. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information.
 
 ### Alarm severities {#alarm-severities}
 
