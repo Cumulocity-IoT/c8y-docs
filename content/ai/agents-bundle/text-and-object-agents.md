@@ -75,11 +75,14 @@ When creating an object agent, define the expected response structure using JSON
       "enum": ["normal", "warning", "critical"]
     }
   },
-  "required": ["temperature", "humidity", "status"]
+  "required": ["temperature", "humidity", "status"],
+  "additionalProperties": false
 }
 ```
 
-The agent uses this schema to structure its response, ensuring consistent output format.
+Every object in the schema, including nested objects, must declare `"additionalProperties": false`. Otherwise, the agent cannot be saved.
+
+The agent uses this schema to structure its response, ensuring consistent output format. The response is validated against the schema, including string formats such as `date-time` or `email`. If the generated object doesn't match the schema, the call fails with the HTTP status 400.
 
 **API endpoint:**
 
@@ -119,11 +122,10 @@ When creating an object agent a new **Schema** tab is shown. In this view you ca
 
 You test both agent types in the AI Agent Manager:
 
-1. Navigate to **Administration** > **AI Agent Manager**.
-2. Create or open an agent.
-3. The agent type is selected during creation and cannot be changed later.
-4. For object agents, define the JSON schema in the configuration.
-5. Use the **Test** tab to verify responses match your expectations.
+1. Navigate to **AI Agent Manager** > **Agents**.
+2. Create or open an agent. The **Output** column of the agent list and the header of the agent details show the agent type, **Text** or **Object**. The agent type is selected during creation and cannot be changed later.
+3. For object agents, define the JSON schema in the **Schema** tab.
+4. Use the **Test** tab to verify responses match your expectations.
 
 ### Converting between types {#converting-between-types}
 

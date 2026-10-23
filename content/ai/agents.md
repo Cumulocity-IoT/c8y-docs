@@ -12,19 +12,77 @@ weight: 20
 
 Agents are the basic building block of any agentic workflow. The AI Agent Manager simplifies the creation of agents by providing a UI that lets you quickly define an agent with a system prompt that then, on its own, calls tools. This quick starts agentic workflows in a couple of minutes, not hours. 
 
+### Agent list {#ai-agent-list}
+
+To see all agents of your tenant, navigate to **AI Agent Manager** > **Agents** in the **Administration** application. The list shows your custom agents and the [subscribed agents](/ai/agents/#subscribed-agents) provided by applications.
+
+![The agent list shows custom and subscribed agents](/images/agents/agent_list.png)
+
+Each agent is shown in a list with the following information:
+
+- **Name**: The name of the agent. The icon shows the provider the agent uses.
+- **Output**: The agent type, **Text** or **Object**. See [Text and object agents](/ai/agents/#text-and-object-agents).
+- **Description**: An optional short summary of what the agent does.
+- **Source**: **custom** for agents created in your tenant, **subscribed** for agents provided by an application. Hover over the **subscribed** tag to see the source application.
+- **Provider/model**: The provider and model the agent uses. This is the local provider of the agent, if defined, otherwise the global provider. A warning tag indicates that no model is set, so calls to the agent fail until a model is configured.
+
+Custom agents that override a subscribed agent of the same name show an **overrides** tag, and the overridden subscribed agent shows an **overridden** tag with a dimmed icon. See [Overruling subscribed agents](/ai/agents/#aligning-subscribed-agents).
+
+Use the action bar to find and organize agents:
+
+- **Filter**: Search by name, description, or source application.
+- **All**, **Custom**, **Subscribed**: Show all agents, only custom agents, or only subscribed agents.
+- **Hide overridden**: Hide subscribed agents that are overridden by a custom agent.
+- **Display as**: Show the agents as **Grid** or **List**. **Auto** shows a grid for fewer than 12 agents and a list for 12 or more agents.
+- **Add agent**: Create a new custom agent.
+- **Reload**: Reload the list.
+
+Click a card to open the agent. The actions menu of each card provides the following actions:
+
+- **Open**: Open the agent details.
+- **Clone**: Create a custom copy of the agent and open it. Cloning a subscribed agent that is not overridden yet keeps its name, so the copy overrides the subscribed agent. All other copies get the suffix `-clone`.
+- **Delete**: Delete the agent after confirmation. This action cannot be undone. If the agent overrides a subscribed agent, the subscribed agent is used again. Subscribed agents cannot be deleted.
+
 ### Custom agents {#ai-agent-custom-agents}
 
-To create a custom agent, navigate to **Administration** > **AI Agent Manager** and click **Add agent**. Select an agent name and the type of agent. This introduction only describes text agents. For details about object agents, refer to [Text and object agents](/ai/agents/#text-and-object-agents). When selecting a name, remember that naming conflicts can occur with subscribed agents provided from applications or plugins. It is good practice to use a prefix other than `c8y-`, as this is the default prefix used by the platform.
+To create a custom agent:
 
-Once the custom agent is created, you align it to your needs using the following tabs:
+1. Navigate to **AI Agent Manager** > **Agents** and click **Add agent** in the action bar.
+2. Enter an agent name, or keep the generated one. The name must be unique and can only include letters, numbers, spaces, underscores, or hyphens.
+3. Optionally, enter a description of what the agent does. The description is shown in the agent list.
+4. Select the agent type. This introduction only describes text agents. For details about object agents, refer to [Text and object agents](/ai/agents/#text-and-object-agents).
+5. Click **Add agent**.
+   ![Adding a new agent](/images/agents/adding_an_agent.png)
+
+The agent is saved with a placeholder system prompt and its details open.
+
+When selecting a name, remember that naming conflicts can occur with subscribed agents provided from applications or plugins. It is good practice to use a prefix other than `c8y-`, as this is the default prefix used by the platform.
+
+### Agent details {#ai-agent-details}
+
+Each agent has its own page, which you can bookmark or share. The URL contains the agent name, for example, `#/ai-agents/list/my-agent`. Links to subscribed agents also contain the ID of the source application, for example, `#/ai-agents/list/my-agent?source=12345`, to distinguish them from a custom agent with the same name. Use the breadcrumb **Agents** to return to the list.
+
+The header of the page shows the agent type and the following information:
+
+- **Name** and **Description**: For custom agents, click the name or the description to edit it. If you rename an agent, the URL changes to the new name.
+- **Status**: **overrides** or **overridden**, if the agent overrides or is overridden by another agent.
+- **Source**: **custom** or **subscribed**. For subscribed agents, **Application** shows the source application.
+- **Provider/model**: The provider and model the agent uses.
+
+You align a custom agent to your needs using the following tabs:
 
 - **Test**: Test your agent directly in the AI Agent Manager.
-- **Settings**: Allows to set settings like the maximum output tokens or temperature.
+- **Settings**: Set options like the maximum output tokens, the temperature, or the maximum number of steps.
 - **Test variables**: Set variable values for your test.
 - **System prompt**: The system prompt of the agent. You align it and then test the changes. The system prompt persists only when you save it.
-- **Tools**: Assign tools to your agent. 
-- **Local provider**: Allows to set different LLM provider or models for one agent ((read more)[(/ai/agents/#local-providers)]).
- - **Advanced**: Enables advanced settings in JSON format.
+- **Tools**: Assign tools to your agent. Only available for text agents.
+- **Schema**: Define the JSON schema of the response. Only available for object agents.
+- **Local provider**: Set a different LLM provider or model for this agent (see [Local providers](/ai/agents/#local-providers)).
+- **Advanced**: Edit advanced settings in JSON format.
+
+Subscribed agents are read-only and only show the **Test**, **Settings**, **Test variables**, and **System prompt** tabs.
+
+Changes are only persisted when you save them. Click **Save** to save and stay on the page. To save and return to the list instead, use the arrow next to the button to switch it to **Save and close**. The **System prompt**, **Schema**, **Local provider**, and **Advanced** tabs provide a **Revert** button to undo unsaved changes of that tab. If you leave the page with unsaved changes, for example with **Cancel**, the navigator, or the breadcrumb, you are asked to confirm that the changes are discarded.
 
 ### System prompts {#ai-agent-system-prompt}
 
@@ -78,7 +136,7 @@ You are a monitoring assistant for factory {{factoryId}}. When users ask about e
 
 #### Providing variable values {#providing-variable-values}
 
-When testing in the AI Agent Manager, use the **Test variables** tab to set values for your variables before testing the agent. You simply provide the variable as JSON where the key is the variable name and the value is the value you want the variable to be. For the above example you would need to add to the **Test variables** tab the following JSON:
+When testing in the AI Agent Manager, use the **Test variables** tab to set values for your variables before testing the agent. You simply provide the variable as JSON where the key is the variable name and the value is the value you want the variable to be. Test variables are only used for testing and are not stored with the agent. For the above example you would need to add to the **Test variables** tab the following JSON:
 
 ```JSON
 {
@@ -119,22 +177,26 @@ The settings allow you to fine-tune the agent's behavior using parameters from t
 
 #### Common settings {#ai-agent-common-settings}
 
-There are common settings that you can set in the **Setting** tab:
+The **Settings** tab groups the common settings into the sections **Output**, **Sampling**, **Repetition**, and **Requests**. If you leave a field empty, the default value applies.
 
-| Parameter           | Range      | Description          |
-|---------------------|------------|----------------------|
-| maxOutputTokens | Number (min: 1) | Sets the maximum length of the response in tokens. Use this to enforce concise responses or prevent excessively long outputs. |
-| temperature | 0.0 to 1.0 | Controls response randomness. Higher values make output more random, lower values more deterministic. Note: Cannot be used simultaneously with topP. |
-| topP | 0.0 to 1.0 | Nucleus sampling parameter. Only tokens with top probability mass are considered (e.g., 0.1 = top 10%). Note: Cannot be used simultaneously with temperature. |
-| topK | Number (min: 1) | Limits sampling to the top K options. For example, 40 means only the top 40 token options are considered. |
-| presencePenalty | -1.0 to 1.0 | Encourages the model to introduce new topics. Positive values make the agent less likely to repeat topics already mentioned. |
-| frequencyPenalty | -1.0 to 1.0 | Reduces repetition of tokens based on their frequency in the response. Positive values discourage repeated words. |
-| seed | Number (min: 0) | Sets a seed for reproducible results. Using the same seed with the same inputs produces consistent outputs. |
-| maxRetries | Number (min: 0) | Number of times to retry the request on failure. For example, 2 means the system will retry up to 2 times. |
-| stopSequences | Array of strings | Sequences that, when generated, will stop the response. For example, "END" or "\n\n". Only available for text agents. |
+| Section | UI field (parameter) | Range | Description |
+|---------|----------------------|-------|-------------|
+| Output | Maximum output tokens (`maxOutputTokens`) | Number (min: 1) | Sets the maximum length of the response in tokens. Use this to enforce concise responses or prevent excessively long outputs. |
+| Output | Stop sequences (`stopSequences`) | Array of strings | Sequences that, when generated, will stop the response. For example, "END" or "\n\n". Only available for text agents. |
+| Sampling | Temperature (`temperature`) | 0.0 to 1.0 | Controls response randomness. Higher values make output more random, lower values more deterministic. |
+| Sampling | Top P (`topP`) | 0.0 to 1.0 | Nucleus sampling parameter. Only tokens with top probability mass are considered (e.g., 0.1 = top 10%). |
+| Sampling | Top K (`topK`) | Number (min: 1) | Limits sampling to the top K options. For example, 40 means only the top 40 token options are considered. |
+| Sampling | Seed (`seed`) | Number (min: 0) | Sets a seed for reproducible results. Using the same seed with the same inputs produces consistent outputs. |
+| Repetition | Presence penalty (`presencePenalty`) | -1.0 to 1.0 | Encourages the model to introduce new topics. Positive values make the agent less likely to repeat topics already mentioned. |
+| Repetition | Frequency penalty (`frequencyPenalty`) | -1.0 to 1.0 | Reduces repetition of tokens based on their frequency in the response. Positive values discourage repeated words. |
+| Requests | Maximum retries (`maxRetries`) | Number (min: 0) | Number of times to retry the request on failure. For example, 2 means the system will retry up to 2 times. |
+| Requests | Timeout (`timeout`) | Number (min: 1) | Timeout of the call in milliseconds, for example, 30000. |
+| Requests | Maximum steps (`maxSteps`) | Number (min: 1) | Maximum number of steps (tool-calling iterations) per agent run. If empty, the default of 40 steps applies. Select **Unlimited** to remove the limit. Only available for text agents. |
+
+Temperature and Top P cannot be used at the same time. Use **Randomness control** to select **None**, **Temperature**, or **Top P (nucleus sampling)**.
 
 #### Advanced settings {#advanced-settings}
-In the **Advanced settings** tab a user can specify more options, which don't have yet an UI form. The options are based on the used Vercel AI SDK. For a complete list of available parameters and provider-specific options, refer to the [Vercel AI SDK documentation](https://sdk.vercel.ai/docs/ai-sdk-core/generating-text).
+In the **Advanced** tab, you can specify more options in JSON format that don't have a UI form yet. The options are based on the used Vercel AI SDK. For a complete list of available parameters and provider-specific options, refer to the [Vercel AI SDK documentation](https://sdk.vercel.ai/docs/ai-sdk-core/generating-text).
 
 #### Provider-specific options {#provider-specific-options}
 
@@ -151,10 +213,27 @@ Some AI providers support additional features configured through the `providerOp
 }
 ```
 
+To set provider options on the system prompt itself, such as the prompt caching of Anthropic, store `system` as a system message, or an array of system messages, instead of a string. Edit it in the **Advanced** tab:
+
+```json
+{
+  "system": {
+    "role": "system",
+    "content": "You are a device troubleshooting assistant.",
+    "providerOptions": {
+      "anthropic": { "cacheControl": { "type": "ephemeral" } }
+    }
+  }
+}
+```
+
+A system prompt stored this way is shown read-only in the **System prompt** tab.
+
 #### When to use settings {#when-to-use-settings}
 
 - Adjust temperature when responses are too random or too rigid.
-- Set maxTokens to control costs or enforce response brevity.
+- Set the maximum output tokens to control costs or enforce response brevity.
+- Limit the maximum steps to prevent long-running tool-calling loops.
 - Use penalties to reduce repetitive language in longer conversations.
 - Enable provider-specific features for specialized capabilities.
 
@@ -166,10 +245,12 @@ Tools extend your agent's capabilities by allowing it to access data and perform
 
 To assign tools to an agent:
 
-1. Navigate to the **Tools** tab in the agent configuration.
-2. Browse the list of available tools from configured MCP servers.
+1. Navigate to the **Tools** tab in the agent details.
+2. Browse or search the list of available tools from configured MCP servers. A tag shows the MCP server of each tool.
 3. Select the tools your agent needs to answer user questions.
 4. Click **Save** to update the agent configuration.
+
+If a tool assigned to the agent is no longer available, for example because it was removed or renamed on the MCP server or the server is unavailable, the tool is marked as unavailable and a warning is shown. Remove such tools from the agent or ask your administrator to verify the tool availability.
 
 The agent automatically determines when to call assigned tools based on user questions and tool descriptions. For example, if you assign a "get device measurements" tool, the agent calls it when users ask about current temperature or sensor readings.
 
@@ -185,10 +266,20 @@ The **Test** tab provides an interactive interface to test your agent directly i
 
 To test an agent:
 
-1. Open the agent configuration in the AI Agent Manager.
-2. Navigate to the **Test** tab.
-3. If your agent uses variables, set them in the **Test variables** tab first.
-4. Enter a prompt in the chat interface.
-5. Review the agent's response.
+1. Navigate to **AI Agent Manager** > **Agents** and open the agent. The **Test** tab is selected by default.
+2. If your agent uses variables, set them in the **Test variables** tab first.
+3. Enter a prompt in the chat interface.
+4. Review the agent's response.
 
-The test interface maintains conversation context, allowing you to have multi-turn conversations and verify the agent remembers previous messages.
+The test uses the current configuration of the agent, including unsaved changes. The test interface maintains conversation context, allowing you to have multi-turn conversations and verify the agent remembers previous messages. Each response shows the tools the agent called and the tokens used. Click **Clear messages** to start a new conversation.
+
+Depending on the agent configuration, tool calls can require your approval before they run. Below the message field, select how such tool calls are handled:
+
+- **Manual**: You are asked to approve the tool call before the tool runs.
+- **Auto**: Tools run without asking.
+
+Your selection is saved as a user preference.
+
+{{< c8y-admon-important >}}
+Tests run with your user permissions and the tools of the agent can add, change, or delete data. Test agents in a testing environment.
+{{< /c8y-admon-important >}}

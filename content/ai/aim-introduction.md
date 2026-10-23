@@ -20,17 +20,20 @@ helpcontent:
   You create specialized assistants for specific use cases like equipment monitoring or device troubleshooting. Connect agents to Cumulocity IoT data through built-in tools or extend them with custom tools via MCP servers. The built-in test interface shows you what tools the agent is calling and how it reasons.
 
   
-  To get started, configure a global provider and model in the Administration application. Tested providers include Anthropic, OpenAI, and Google Gemini. After configuring your provider, validate it by creating a test agent. Without a global LLM provider configured, the Cumulocity IoT platform is never connected to any external Large Language Model provider."
+  The AI Agent Manager has three pages in the navigator: **Control panel**, **Agents**, and **Tools**. In the control panel, you turn all AI agents on or off for your tenant and configure the default provider, model, and API key.
+
+  
+To get started, open **AI Agent Manager** > **Control panel** in the Administration application and add a model configuration. Tested providers include Anthropic, OpenAI, Google Gemini, and Azure OpenAI. Use **Test configuration** to validate your settings before saving them. Without a model configuration, the Cumulocity platform is never connected to any external Large Language Model (LLM) provider."
 ---
 
 
 {{< c8y-admon-preview >}}
-The feature is currently in public preview and might change or is not feature complete. While we try to keep changes as low as possible, breaking changes and feature removals happen. To enable the feature, open the right drawer (by clicking on your username initials) in the **Administration** application and select **Manage preview features**. Then activate the toggle next to **AI Agent Manager**.
+The feature is currently in Public Preview and might change or is not feature complete. While we try to keep changes as low as possible, breaking changes and feature removals happen. To enable the feature, open the right drawer (by clicking on your username initials) in the Administration application and select **Manage preview features**. Then activate the toggle next to **AI Agent Manager**.
 {{< /c8y-admon-preview >}}
 
 The AI Agent Manager enables you to create and manage AI agents—intelligent assistants that help users interact with your IoT data and systems through natural language conversations. Instead of building custom AI integrations from scratch, you configure pre-built agents that understand your specific use cases and have access to the tools required to be helpful.
 
-![The AI Manager default view and a test prompt](/images/agents/testing_an_agent.png)
+![Testing an agent in the AI Agent Manager](/images/agents/testing_an_agent.png)
 
 ### What is an AI agent? {#what-is-an-ai-agent}
 
@@ -52,39 +55,57 @@ Once configured, users interact with agents through natural language without nee
 
 - **Provide conversational interfaces**: Once configured, agents maintain conversations with context, using variables to personalize responses and access to tools to fetch real-time data.
 
-- **Manage AI providers**: Configure which AI provider and model to use globally or for specific agents. The system supports multiple providers including OpenAI, Anthropic, Google, and others, abstracting away the complexity of working with different APIs.
+- **Manage AI providers**: Configure the default provider and model for all agents in the control panel and override them for specific agents. The system supports multiple providers including OpenAI, Anthropic, Google, and others, abstracting away the complexity of working with different APIs.
 
-### Getting started by configuring a global provider {#getting-started-by-configuring-a-global-provider}
+- **Control AI usage**: Turn off all AI agents in your tenant at once with the kill switch in the control panel, for example, to stop AI activity immediately.
+
+### Navigating the AI Agent Manager {#navigating-the-ai-agent-manager}
+
+Once the preview feature is enabled, the **AI Agent Manager** appears as its own entry in the navigator of the Administration application. It contains the following pages:
+
+- **Control panel**: Turn all AI agents on or off for your tenant and configure the default provider, model, and API key. This page is only visible to users with the ROLE_AI_AGENT_ADMIN permission. See [Control panel](/ai/control-panel/).
+- **Agents**: Browse, create, configure, and test agents. See [Agents](/ai/agents/).
+- **Tools**: Browse and test the available tools and configure MCP servers. See [Tools and MCP](/ai/tools-mcp/).
+
+If AI agents are disabled in the control panel, the **Agents** and **Tools** pages are hidden.
+
+### Getting started by configuring a model {#getting-started-by-configuring-a-global-provider}
 
 {{< c8y-admon-important >}}
-Without a global LLM provider configured, the {{< product-c8y-iot >}} platform is never connected to any external Large Language Model provider, even if the list already shows subscribed agents.
+Without a model configuration (global provider), the {{< product-c8y-iot >}} platform is never connected to any external Large Language Model (LLM) provider, even if the list already shows subscribed agents.
 {{< /c8y-admon-important >}}
 
-Start by configuring a global provider and model. A global provider is the LLM provider and model that is used by default on each agent interaction as long as the agent does not define another provider or model in its local provider configuration. Use the AI Agent Manager UI in the **Administration** application:
+Start by configuring the default provider and model in the control panel. This model configuration, also called the global provider, is used by default on each agent interaction as long as the agent does not define another provider or model in its local provider configuration.
 
-1. Open the AI Agent Manager main view. You see a list of agents provided in your instance.
-2. In the toolbar, click **Add global provider**.
-3. In the modal, configure your provider. The tested providers are:
+1. Navigate to **AI Agent Manager** > **Control panel**.
+2. In the **Model configuration** section, click **Add configuration**.
+3. Select a provider. The tested providers are:
    - Anthropic
    - OpenAI
-   - Google Gemini
-   
-   Additional providers are supported but not tested by the {{< product-c8y-iot >}} team. They work without guarantee. The same applies to open source models based on the OpenAI API, which are supported by using the OpenAI provider and changing the baseURL and the strict mode in the advanced settings.
-   ![The modal helps to configure your global provider](/images/agents/configuring_a_provider.png)
-4. Define the model to use.
+   - Google Gemini (**Google Generative AI**)
+   - Azure OpenAI
+
+   Additional providers are supported but not tested by the {{< product-c8y-iot >}} team. They work without guarantee. The same applies to open-source models based on the OpenAI API, which are supported by selecting **Custom/self-hosted** and entering the base URL of the endpoint.
+4. Enter the model to use.
 5. Add an API key provided by your provider. This is securely stored inside the platform and cannot be read afterwards.
-6. Add advanced provider-specific settings if necessary. The advanced settings editor accepts JSON and validates via a JSON schema.
-7. Save the provider.
+6. Add provider-specific settings in the **Custom provider settings** editor, if necessary.
+7. Click **Test configuration**. The provider responds to a short test prompt if the configuration is correct.
+8. Click **Save**.
 
-The next step is to validate your provider. The easiest way is to create a new agent:
+For details on all fields, see [Model configuration](/ai/control-panel/#model-configuration).
 
-1. Click **Add agent** at the bottom of the list.
-2. Select **Test** and write "Hello world".
-3. The agent responds with a hello message.
+You can also validate your configuration by creating a new agent:
+
+1. Navigate to **AI Agent Manager** > **Agents**.
+2. Click **Add agent** in the action bar, keep the generated name, and click **Add agent**. The new agent opens with the **Test** tab selected.
+3. Write "Hello world" and send the message.
+4. The agent responds with a hello message.
 
 If successful, your provider is correctly configured, and you can start to use and test AI agents. Next, learn more about subscribed agents, object agents, local providers, and MCP tools:
+ - Learn how to turn AI agents on or off and manage the model configuration in the [control panel](/ai/control-panel/).
  - Learn what [subscribed agents](/ai/agents/#what-are-subscribed-agents) are and how you can align them.
  - Understand the difference between an [object and a text agent](/ai/agents/#text-and-object-agents).
  - See how you can leverage [local providers](/ai/agents/#local-providers) to overwrite the provider or model of a global provider.
  - Understand the available [tools and how you can extend them with MCP](/ai/tools-mcp/).
+ - Let agents work with the complete API of your tenant in [code mode with AI Workbench](/ai/ai-workbench/).
  - You can also manage agents programmatically [via the REST API](/ai/rest-api/) for integration into your own applications and workflows. 
