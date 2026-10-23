@@ -288,17 +288,25 @@ Do not add real content or navigation failures here.
 
 ### 4. Update shortcode resolution
 
-If docs introduce new Hugo shortcodes used inside links, update `Extractlinks.js`.
+Shortcodes used inside links are resolved automatically from `themes/c8ydocs/layouts/shortcodes/`, as long as the template is a single string literal:
 
-Specifically, extend the `shortcodeMapping` object.
+```
+{{- "https://example.com" -}}
+```
 
-Example:
+No change to the checker is needed when such a shortcode is added, or when its value changes on a release branch.
+
+If a template contains logic (for example `{{ .Page.Site.BaseURL | lower }}`), add an entry to `shortcodeOverrides` in `Extractlinks.js`:
 
 ```js
-const shortcodeMapping = {
-  "my-shortcode": "https://example.com"
+const shortcodeOverrides = {
+  "my-shortcode": `${BASE_URL}/`
 };
 ```
+
+If a link uses a shortcode that can't be resolved this way, `Extractlinks.js` fails and names the shortcode and the files that use it.
+
+The base URL for internal links is also derived automatically: Hugo's `baseURL` from `config.toml`, plus the value of `c8y-current-version` (empty on `develop`, `2026` on `release/y2026`). This matches how `staging.yml` publishes each branch, so there is nothing to update per release branch.
 
 Without this, extracted URLs may be incomplete or wrong.
 
