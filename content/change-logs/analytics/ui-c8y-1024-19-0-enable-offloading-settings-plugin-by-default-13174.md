@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-16'
 title: New DataHub settings page for Streaming Lake Ingestion
 product_area: Analytics
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: ui-c8y
 ticket: CDH-6696
 version: 1024.19.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-16'
+  - label: apj.cumulocity.com
+    date: '2026-10-19'
+  - label: jp.cumulocity.com
+    date: '2026-10-19'
+  - label: us.cumulocity.com
+    date: '2026-10-20'
+  - label: cumulocity.com
+    date: '2026-10-20'
 ---
 {{< c8y-admon-preview >}}
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-22'
 title: Reduced inventory requests when processing LWM2M device data
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,8 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-7764
 version: 1022.8.2
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-22'
 ---
 The LWM2M agent now reuses cached device data when creating events, measurements, and alarms from mapped resources, reducing the number of inventory requests and improving data-processing throughput under high load.

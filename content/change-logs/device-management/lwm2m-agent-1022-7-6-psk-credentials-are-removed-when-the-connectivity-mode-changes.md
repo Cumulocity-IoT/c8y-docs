@@ -22,6 +22,8 @@ environment_availability:
     date: '2026-10-14'
   - label: us.cumulocity.com
     date: '2026-10-19'
+  - label: cumulocity.com
+    date: '2026-10-20'
 ---
 A bootstrap or server PSK ID must be unique across all tenants, so a PSK ID that stays attached to a device blocks any other device from using it. Previously, switching the bootstrap or server authentication of an LWM2M device away from **PSK** kept the stored PSK ID and key attached to the device until the device was deleted, and only disabling the server authentication cleared the security information.
 

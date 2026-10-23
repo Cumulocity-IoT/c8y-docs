@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-10-22'
 title: LWM2M agent REST API returns specific error codes for invalid requests
 product_area: Device management & connectivity
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-6305
 version: 1022.8.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-22'
 ---
 Previously, many invalid requests to the LWM2M agent REST API failed with a generic server error (HTTP 500), and the OpenAPI description of the agent listed only successful responses.
 
