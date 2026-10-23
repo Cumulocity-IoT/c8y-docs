@@ -52,7 +52,7 @@ These permissions are categorized under two main permissions: "Digital twin asse
 
 ### Measurement propagation {#measurement-propagation}
 
-With data point linking, the DTM application automatically propagates incoming device measurements to the linked assets. As soon as a data point link is created, new measurements of the source device are propagated to the linked data point on the asset.
+With data point linking, the DTM application automatically propagates incoming device measurements to the linked assets. After a data point link is created, new measurements of the source device are propagated to the linked data point on the asset.
 
 For each incoming device measurement, one measurement is created for each linked asset:
 
@@ -207,7 +207,7 @@ By hovering over the warning or error icon, you can see more details about the i
    - Check that measurement propagation is enabled for your tenant. The response of `GET /service/dtmdata/enabled` contains `measurements.enabled` and `measurements.mode`. If the mode is `off`, enable measurement propagation, see [To enable or disable measurement propagation](#enable-measurement-propagation).
    - Check that the source of the linked data point is a device. Measurements with an asset as source are not propagated.
    - Check that the source device sends measurements with exactly the fragment and series configured as source of the linked data point, including upper and lower case. This applies in particular to custom data points.
-   - Check that the measurements were received after the data point was linked. Measurements received earlier are not propagated, see [Limitations and constraints](/service-terms/service-level/#dtm-limitations-and-constraints) in the service-level agreement for measurement propagation.
+   - Check that the measurements were received after the data point was linked or its source was changed. A new or changed link takes effect with a short delay of up to about a minute. Measurements received earlier are not propagated, see [Limitations and constraints](/service-terms/service-level/#dtm-limitations-and-constraints) in the service-level agreement for measurement propagation.
 2. **Measurements are propagated to some of the linked assets only**
    - Check the source device for an alarm of type `c8y_DtmMeasurementFanOutLimitExceeded`. If the alarm exists, the device measurement is linked to more assets than allowed, see [Fan-out limit](#fan-out-limit).
 3. **Propagated measurements are not shown for the expected time range**
