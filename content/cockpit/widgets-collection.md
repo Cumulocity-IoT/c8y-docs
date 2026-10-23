@@ -785,16 +785,14 @@ AngularJS:
 
 Lit:
 
+<!-- prettier-ignore -->
 ```html
 <tspan
   class="${this.c8yScadaFunctions?.getActiveAlarmsStatusClass(this.c8yScadaValues?.alarmsStatus)}"
 >
   ${this.c8yScadaValues?.batteryValue ?? '-'}
 </tspan>
-<rect @click="${()" ="">
-  this.c8yScadaFunctions?.goToDeviceDetails(this.c8yScadaValues?.deviceId)}
-  /></rect
->
+<rect @click=${() => this.c8yScadaFunctions?.goToDeviceDetails(this.c8yScadaValues?.deviceId)} />
 ```
 
 {{< /c8y-admon-preview-feature >}}
