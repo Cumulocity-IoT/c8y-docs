@@ -29,9 +29,8 @@ This agreement defines the service level of {{< product-c8y-iot >}} Cloud Remote
 Customers are encouraged to review the [{{< product-c8y-iot >}} Cloud Remote Access documentation](/cloud-remote-access/cra-introduction/). In particular, Customer acknowledges the following Customer responsibilities:
 
 * **Device side:** Customer selects, operates, and maintains the device-side software, including the device agent on each device or gateway. The device agent implements the [`c8y_RemoteAccessConnect` operation](/cloud-remote-access/cra-api/#device-agent-implementation) and is connected to {{< product-c8y-iot >}}. Customer can use an existing agent that supports Cloud Remote Access, for example, [thin-edge.io](https://thin-edge.io), or Customer's own implementation. Device-side software is under Customer's sole responsibility, as outlined in the [platform service-level agreement](/service-terms/service-level/#platform-sla).
-* **Reconnect behavior:** Customer's clients and device agents implement an [exponential backoff strategy](https://en.wikipedia.org/wiki/Exponential_backoff) for connection retries. Clients and devices must not repeatedly request connections in short intervals.
 * **Device-side endpoints:** Customer operates and secures the endpoints that are accessed on the device or in the local network of the gateway, for example, SSH, VNC, or Telnet servers. This includes the credentials configured for remote access, and the rotation of SSH host keys.
-* **Session management:** Customer closes remote sessions when they are no longer needed. Customer is responsible for the cost of the data traffic of open sessions, see [Limitations and constraints](#cra-limitations-and-constraints).
+* **Session management:** Customer closes remote sessions when they are no longer needed and does not leave sessions open beyond their use, as open sessions hold resources on the Service.
 * **Access management:** Customer grants the remote access permission only to qualified users, see [Prerequisites](/cloud-remote-access/setting-up-cloud-remote-access/#prerequisites).
 
 ### Limitations and constraints {#cra-limitations-and-constraints}
