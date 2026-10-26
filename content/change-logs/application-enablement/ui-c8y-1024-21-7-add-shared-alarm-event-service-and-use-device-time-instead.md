@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Alarms and events in the alarms, events and data explorer pages now show device time.
+title: Timestamps in the Alarms, Events, and Data explorer pages now show the device time
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
