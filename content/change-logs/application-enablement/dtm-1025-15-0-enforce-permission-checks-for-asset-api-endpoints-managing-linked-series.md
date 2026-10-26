@@ -16,6 +16,10 @@ version: 1025.15.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-23'
+  - label: apj.cumulocity.com
+    date: '2026-10-26'
+  - label: jp.cumulocity.com
+    date: '2026-10-26'
 ---
 The Asset API endpoints for managing linked series relationships were missing proper permission validation, which could allow unauthorized users to perform sensitive operations. The following endpoints now enforce the required permission checks:
 - PUT `/service/dtm/assets/{assetId}/linkedSeries/reconcileOpposite`

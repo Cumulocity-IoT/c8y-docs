@@ -16,6 +16,10 @@ version: 1025.15.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-23'
+  - label: apj.cumulocity.com
+    date: '2026-10-26'
+  - label: jp.cumulocity.com
+    date: '2026-10-26'
 ---
 Several endpoints of the Asset API, particularly those under `/service/dtm/definitions/`, were missing documentation about required user roles and permissions. This made it unclear what access level users needed to successfully call these endpoints.
 

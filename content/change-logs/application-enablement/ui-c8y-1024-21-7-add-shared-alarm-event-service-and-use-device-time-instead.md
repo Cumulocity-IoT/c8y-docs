@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Timestamps in the Alarms, Events, and Data explorer pages now show the device time
+date: '2026-10-26'
+title: >-
+  Timestamps in the Alarms, Events, and Data explorer pages now show the device
+  time
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +15,8 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67768
 version: 1024.21.7
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-10-26'
 ---
 Timestamps across the **Alarms**, **Events**, and **Data explorer** pages, as well as the "Data graph" widget, now display the actual device time rather than the server time.
