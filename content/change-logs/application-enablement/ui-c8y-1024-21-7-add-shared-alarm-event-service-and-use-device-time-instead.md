@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67768
 version: 1024.21.7
 ---
-Device Time Display for Alarms and Events: Timestamps across the Alarms, Events, and Data Explorer pages as well as the Data Graph widget now display the actual device time rather than the server time.
+Timestamps across the **Alarms**, **Events**, and **Data explorer** pages, as well as the "Data graph" widget, now display the actual device time rather than the server time.
