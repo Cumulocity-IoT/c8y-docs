@@ -157,15 +157,40 @@ in `.github/workflows/link-checker.yml` (search for `branches_json=`).
 
 ### What happens in CI
 
-For each branch, the workflow:
+The check runs in two passes per branch.
+
+**First pass** (`link-check` job):
 
 1. checks out the branch (or, for the PR-label trigger, that PR's head commit)
 2. installs dependencies
-3. runs the broken-link test suite
-4. uploads the full Cypress log as an artifact (kept for 8 days)
-5. for the default scheduled/full-matrix runs only: creates a
-   branch-specific label if needed, and a GitHub issue if the test fails
-6. for the PR-label trigger only: posts a summary comment on the PR
+3. runs the broken-link test suite - at the end, Cypress writes
+   `link-check-result.json` with the totals and every failed link
+4. uploads the Cypress log and `link-check-result.json` as the
+   `cypress-log-<branch>` artifact (kept for 8 days)
+
+Failed links don't fail this job, and nothing is reported yet.
+
+**Re-check** (`recheck` job, starts once the whole first-pass matrix is done):
+
+1. checks out the same commit, so the same `config.cjs` applies
+2. if the first pass had failures, checks only those links again
+   (`npm test -- --recheck=<first-pass link-check-result.json>`) and uploads
+   that log as the `recheck-log-<branch>` artifact
+3. writes a report (`summarize-failures.cjs`) to the job summary: links that
+   failed both passes are **broken**; links that failed only the first pass
+   are listed as **recovered on re-check** (flaky) but not reported as broken
+4. for the default scheduled/full-matrix runs only, if any links are broken:
+   creates a branch-specific label if needed, and a GitHub issue with the
+   report
+5. for the PR-label trigger only: posts the report as a comment on the PR
+6. fails if any links are broken, or if either pass didn't complete
+
+The re-check runs as a separate job, so it gets a different runner VM -
+usually with a different egress IP - minutes after the first attempt. This
+gets past runner-IP blocks and short outages, which the first pass's
+back-to-back Cypress retries can't, without excluding those links from the
+check. With `diagnostics` on, the re-check is skipped and the first pass is
+reported as is.
 
 ## Where to update the code
 
