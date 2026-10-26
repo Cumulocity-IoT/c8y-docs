@@ -33,7 +33,7 @@ The platform invokes the function when an object that `onMessage` returns has an
 
 - The platform invokes the function once for each missing external ID, in the order in which they appear in `onMessage`'s outputs.
 - The platform does not invoke the function for a missing external ID already returned by an earlier call for the same input message.
-- After the platform creates the objects, it knows the external ID, so later messages do not invoke the function for it.
+- After the platform creates and links the objects, it knows the external ID, so later messages do not invoke the function for it.
 - If the function returns `[]`, the platform does not remember the result. The next message that names the same external ID invokes the function again.
 
 ### Inputs {#device-create-inputs}

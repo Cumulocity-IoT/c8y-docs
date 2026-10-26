@@ -92,9 +92,15 @@ The platform creates the objects from all calls for one message together, with t
 
 If an object that `onDeviceCreate` returns has an external ID that already exists, the platform uses the existing object and does not create it again. It registers any other external IDs of the object for the existing object. If two calls for one message return the same object, the platform creates it once.
 
-A parent is either an object that already exists, or an object listed earlier in the returned list. If a parent is listed after its child, the platform rejects the result and creates nothing.
+A parent must be one of the following:
 
-If a parent does not exist and is not in the returned list, the platform creates the object without the link to that parent. It raises an alarm that names the missing parent, and never creates a parent in its place. The platform does not try to make the link later, so create the link yourself, for example, in the Device Management application.
+- An object that already exists.
+- An object listed earlier in the returned list.
+- An object that another call for the same message returns.
+
+If a parent is listed after its child in the same returned list, the platform rejects the result and creates nothing.
+
+If a parent does not exist and no call for the message returns it, the platform creates the object without the link to that parent. It raises an alarm that names the missing parent, and never creates a parent in its place. Create the link yourself, for example, in the Device Management application.
 
 An object does not need an external ID. However, an object with no external IDs cannot be named as a parent, and the platform can create it a second time when it retries a failed attempt.
 
@@ -123,7 +129,7 @@ If both set the same fragment, the platform keeps the value from `onMessage`, be
 
 A gateway message often contains readings for many sensors, so `onMessage` returns outputs for many missing external IDs. If `onDeviceCreate` returns the gateway and all of its sensors on the first call, the result already covers the external IDs of the other sensors. The platform then does not invoke `onDeviceCreate` again for the message. For an example, see [Create a gateway and its sensors](#gateway-and-sensors).
 
-If the function returns only one device for each call, the platform invokes it once for each sensor. In this case, each sensor names a gateway that does not exist yet, so the platform creates each sensor without the link to the gateway. To avoid this, return the gateway and all of its sensors in one call.
+If the function returns only one device for each call, the platform invokes it once for each sensor. The platform links the sensors to the gateway only if a call for the message returns the gateway, for example, the call for the external ID of the gateway. Otherwise, each sensor names a gateway that does not exist, so the platform creates each sensor without the link to the gateway. To avoid this, return the gateway and all of its sensors in one call.
 
 ### Ways to use onDeviceCreate {#ways-to-use-ondevicecreate}
 
