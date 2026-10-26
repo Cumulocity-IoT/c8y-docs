@@ -24,6 +24,10 @@ The following directories must be preserved for disaster recovery. Implement app
 
 * `/var/lib/rancher/k3s`
 
+{{< c8y-admon-important >}}
+Preserve the entire directory including all filesystem metadata: ownership, permissions, and symbolic links. Restoring without this metadata can cause undefined behaviour in Edge, including a failure to start.
+{{< /c8y-admon-important >}}
+
 ---
 
 #### Step 2 - Prepare the restore target {#step-2---prepare-the-restore-target}
