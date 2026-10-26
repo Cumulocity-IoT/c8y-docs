@@ -28,7 +28,7 @@ Each log entry is shown on one line with the following structure:
 <timestamp> <level> [<origin>] <message>
 ```
 
-- `<timestamp>` is the date and time at which the message was written.
+- `<timestamp>` is the date and time at which the message was written. Timestamps are shown in the time zone of the microservice, with its UTC offset.
 - `<level>` is the log level of the message: for example `INFO`, `WARN`, or `ERROR`.
 - `<origin>` shows where the message comes from:
   - `model=<id>` for a message from an Analytics Builder model, where `<id>` is the ID of the model. For a template model instance, it is the ID of the instance. You can find the ID of a model in the URL of the model editor.
@@ -46,14 +46,14 @@ For example:
 Entries are listed oldest first. A download contains the entries in the same format and order. See [Downloading the logs](#downloading-logs).
 
 {{< c8y-admon-info >}}
-The **Log level** parameter of the Smart Function block sets which `console` output is written: the default `WARN` writes only `console.warn` and `console.error`, and `INFO` adds `console.log` and `console.info`. Note that `DEBUG` requires the correlator log level to also be set to `DEBUG` or higher to output `console.debug` logs.
+The **Log level** parameter of the Smart Function block sets which `console` output is written: the default `WARN` writes only `console.warn` and `console.error`, and `INFO` adds `console.log` and `console.info`. In {{< product-c8y-iot >}}, `console.debug` output is not written even with `DEBUG`, because the microservice logs at `INFO`. `DEBUG` is for testing models locally with the [Analytics Builder Block SDK](https://cumulocity-iot.github.io/apama-analytics-builder-block-sdk/).
 {{< /c8y-admon-info >}}
 
 To view the logs, you need READ permission for "CEP management". See [Managing permissions and roles](/standard-tenant/managing-permissions/) for more information.
 
 #### How far back the logs go {#log-history}
 
-The **Logs** page reads the log of the microservice, which only keeps its most recent 35 MB of output and starts again when the microservice restarts. See [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices). If the microservice writes a lot of output, for example, because it serves many tenants, older messages are removed sooner. The page then shows "Showing recent logs. Earlier entries may no longer be visible." The **Logs** page is for diagnosing current problems, not a long-term log archive.
+The **Logs** page reads the log of the microservice, which only keeps the most recent part of its output (about 30 MB) and starts again when the microservice restarts. See [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices). If the microservice writes a lot of output, for example, because it serves many tenants, older messages are removed sooner. The page then shows "Showing recent logs. Earlier entries may no longer be visible." The **Logs** page is for diagnosing current problems, not a long-term log archive.
 
 ### Filtering the logs by model {#filtering-logs-by-model}
 
@@ -84,7 +84,7 @@ You can download the messages that are shown on the **Logs** page as a text file
 #### To download the logs {#to-download-the-logs}
 
 1. Click **Download** in the toolbar.
-2. Optionally select a **Start** and **End** date and time. If no dates are selected, the last 10 minutes of logs are downloaded.
+2. Optionally select a **Start** date and time, and an **End** date and time. If you select only a start, the logs up to now are downloaded. An end requires a start. The **Start** and **End** are in your browser's time zone. If no dates are selected, the last 10 minutes of logs are downloaded.
 3. Click **Download**.
 
 Messages that the microservice log no longer holds cannot be downloaded. See [How far back the logs go](#log-history).
