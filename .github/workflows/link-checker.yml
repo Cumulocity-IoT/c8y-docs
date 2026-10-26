@@ -82,6 +82,9 @@ jobs:
           cd broken-links-script
           npm install
 
+      - name: TEMP - log runner egress IP
+        run: echo "runner-egress-ip=$(curl -s --max-time 5 https://ifconfig.me || echo unknown) runner=$RUNNER_NAME"
+
       - name: Run Cypress tests
         # Failing links don't fail this job: the recheck job re-checks them on
         # a fresh runner and decides what gets reported. A run that broke
@@ -186,6 +189,10 @@ jobs:
         run: |
           cd broken-links-script
           npm install
+
+      - name: TEMP - log runner egress IP
+        if: steps.plan.outputs.recheck == 'true'
+        run: echo "runner-egress-ip=$(curl -s --max-time 5 https://ifconfig.me || echo unknown) runner=$RUNNER_NAME"
 
       - name: Re-check failed links
         if: steps.plan.outputs.recheck == 'true'
