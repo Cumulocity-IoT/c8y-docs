@@ -127,7 +127,7 @@ To view the captured output later, open the **Logs** page and select the rule. T
 
 A background capture counts toward the [limit on console capture](#console-capture-limit) for its whole duration.
 
-To allow only shorter background captures, set the tenant option `consoleCapture.maxBackgroundDurationSecs` in the category `dataprep` to the maximum duration in seconds, in the same way as for the [limit on console capture](#console-capture-limit). The value must be between 10 and 3600 seconds (one hour). Durations above it are no longer offered. A change takes effect within one minute.
+To allow only shorter background captures, set the tenant option `consoleCapture.maxBackgroundDurationSecs` in the category `dataprep` to the maximum duration in seconds, in the same way as for the [limit on console capture](#console-capture-limit). The value must be between 10 and 3600 seconds (one hour). A change takes effect within one minute.
 
 
 {{< c8y-admon-important >}}
