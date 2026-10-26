@@ -68,6 +68,8 @@ Archives are subject to the following limits:
 - Maximum **10 MB** total extracted size (`dataprep` / `rule-import.max-total-size`).
 - Entries containing path traversal segments (`..`) are rejected.
 
+The server reads YAML values strictly. Only lowercase `true` and `false` are booleans, only `null` or an empty value is null, and numbers must be plain decimals. The server reads other forms, such as `True`, `~`, or `0x1F`, as strings. The `npm run deploy` script writes test files in this form automatically, but sends *data-prep.yaml* as written.
+
 #### *data-prep.yaml* schema {#data-prep-yaml-schema}
 
 | Field | Type | Required | Description |
@@ -76,7 +78,7 @@ Archives are subject to the following limits:
 | `input` | object | Yes | Transport and topic configuration (see below). |
 | `description` | string | No | Human-readable rule description. |
 | `tags` | string[] | No | Tag list. |
-| `disabled` | boolean | No | Whether the rule deploys as disabled; defaults to `false`. |
+| `disabled` | boolean | No | Whether the rule deploys as disabled. Use lowercase `true` or `false`. Defaults to `false`. |
 
 The `input` object:
 
@@ -159,7 +161,7 @@ The rule name comes from the URL path, not from the archive. If a rule with the 
 | Response code | Meaning |
 |---------------|---------|
 | `200` | Rule deployed successfully. |
-| `400` | Malformed archive, missing required files, invalid YAML, or invalid rule name. |
+| `400` | Malformed archive, missing required files, invalid YAML, a `disabled` value that is not `true` or `false`, or invalid rule name. |
 | `413` | An archive entry exceeds the maximum permitted size. |
 | `422` | Package is structurally valid but the rule fails domain validation (for example, `topicPattern` contains `**`). |
 
