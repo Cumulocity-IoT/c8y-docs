@@ -129,7 +129,7 @@ If both set the same fragment, the platform keeps the value from `onMessage`, be
 
 A gateway message often contains readings for many sensors, so `onMessage` returns outputs for many missing external IDs. If `onDeviceCreate` returns the gateway and all of its sensors on the first call, the result already covers the external IDs of the other sensors. The platform then does not invoke `onDeviceCreate` again for the message. For an example, see [Create a gateway and its sensors](#gateway-and-sensors).
 
-If the function returns only one device for each call, the platform invokes it once for each sensor. The platform links the sensors to the gateway only if a call for the message returns the gateway, for example, the call for the external ID of the gateway. Otherwise, each sensor names a gateway that does not exist, so the platform creates each sensor without the link to the gateway. To avoid this, return the gateway and all of its sensors in one call.
+If the function returns only one device for each call, the platform invokes it once for each sensor. In this case, each sensor names a gateway that does not exist yet, so the platform creates each sensor without the link to the gateway. To avoid this, return the gateway and all of its sensors in one call.
 
 ### Ways to use onDeviceCreate {#ways-to-use-ondevicecreate}
 
