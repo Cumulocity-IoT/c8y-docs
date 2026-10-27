@@ -22,6 +22,10 @@ environment_availability:
     date: '2026-10-26'
   - label: jp.cumulocity.com
     date: '2026-10-26'
+  - label: us.cumulocity.com
+    date: '2026-10-27'
+  - label: cumulocity.com
+    date: '2026-10-27'
 ---
 With the **SCADA widget v2** preview feature enabled, some SCADA widgets created with the previous version of the widget did not display correctly. This affected widgets whose SVG shows or hides parts of the drawing depending on a placeholder value, for example with `ng-if="value==0"`. Such parts could appear when they should have been hidden, or the other way round, because:
 

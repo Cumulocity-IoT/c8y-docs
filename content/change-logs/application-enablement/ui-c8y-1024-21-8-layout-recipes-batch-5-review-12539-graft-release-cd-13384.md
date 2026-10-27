@@ -16,6 +16,10 @@ version: 1024.21.8
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-26'
+  - label: apj.cumulocity.com
+    date: '2026-10-27'
+  - label: jp.cumulocity.com
+    date: '2026-10-27'
 ---
 The {{< product-c8y-iot >}} Codex design system now has a **Layout recipes** section. It includes an app shell guide and nine ready-to-use page layouts, such as entity detail, split view, dashboard, and full-page list, each with a live example. This section replaces the previous **Layout patterns** page.
 

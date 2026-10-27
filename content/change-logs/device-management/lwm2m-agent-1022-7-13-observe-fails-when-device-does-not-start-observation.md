@@ -22,5 +22,7 @@ environment_availability:
     date: '2026-10-21'
   - label: us.cumulocity.com
     date: '2026-10-26'
+  - label: cumulocity.com
+    date: '2026-10-27'
 ---
 Previously, when an LWM2M device answered an observe operation without starting the observation, the operation stayed in EXECUTING and never completed. Now the operation fails with the reason "Device did not establish the observation". This applies to both single and composite observe operations.
