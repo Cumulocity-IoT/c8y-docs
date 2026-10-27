@@ -18,17 +18,17 @@ To edit a model, you can simply click on the card that is shown for the model \(
 
 There are two types of models, and the cards for these models look different:
 
+![Card for a model without template parameters and card for a template model](/images/streaming-analytics/analytics-builder/model-card-types.png)
+
 -   When a card shows a mode \(such as **Draft** or **Production**\) and state \(**Active** or **Inactive**\), it pertains to a model that has no template parameters. Such a model can be activated immediately in the model manager. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more information.
 
     If a runtime time error icon <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Error icon" style="display:inline-block; margin:0"> is shown on the card of a deployed model, this model is no longer processing events. Click the runtime error icon to display information on what went wrong.
 
--   When a model has template parameters, it acts as a template. In this case, the number of defined and active instances is shown on the card. A template model is not activated directly in the model manager. Instead, you use the instance editor to create a number of instances, where each instance provides values for the template parameters. Each instance has a mode and can be activated and deactivated in the instance editor, as with models without any template parameters.
+-   When a model has template parameters, it acts as a template. In this case, the card shows the number of active instances out of the total number of defined instances (for example, **Active: 0/4**), or **No instances** if no instances have been defined yet. A template model is not activated directly in the model manager. Instead, you use the instance editor to create a number of instances, where each instance provides values for the template parameters. Each instance has a mode and can be activated and deactivated in the instance editor, as with models without any template parameters.
 
-    To edit the instances, you can simply click the total number of instances \(see also [Editing the instances of a model](/streaming-analytics/analytics-builder/#editing-the-instances-of-a-model)\). This invokes the instance editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
+    To edit the instances, click **Edit instances** on the card \(see also [Editing the instances of a model](/streaming-analytics/analytics-builder/#editing-the-instances-of-a-model)\). This invokes the instance editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
 
-    You can flip the card for a template model to show more details. Click **Show instances summary** to do this. You can then see the number of instances in the different modes.
-
-    If an error icon such as <img src="/images/streaming-analytics/analytics-builder/instance-error.png" alt="Error icon with 1 error" style="display:inline-block; margin:0"> is shown on the card of a template model, at least one of the instances is no longer processing events. Click the error icon to display information on what went wrong.
+    If an error indicator such as **2 errors** is shown on the card of a template model, at least one of the instances is no longer processing events. Click the error indicator to display information on what went wrong.
 
 As long as a model has no template parameters, there will be zero instances and the card shows the controls for selecting a mode and activating it.
 
@@ -137,20 +137,17 @@ When one or more blocks in a model use template parameters \(see also [Managing 
 Each instance can then use different values for the template parameters and can be activated independently from the other instances. The instances are defined and activated in the instance editor.
 
 {{< c8y-admon-info>}}
-The actions below are only available when template parameters have been defined for the model, that is, when the card for the model shows the number of defined instances.
+The actions below are only available when template parameters have been defined for the model, that is, when the card for the model shows the **Edit instances** button.
 {{< /c8y-admon-info>}}
 
 #### To edit the instances of a model {#to-edit-the-instances-of-a-model}
 
-On the **Models** tab of the model manager, click the total number of instances on the front of the card.
+On the **Models** tab of the model manager, click **Edit instances** on the card.
 
-Alternatively, you can also do one the following:
-
-- Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the card and then click **Instances**.
-- Or click **Show instances summary** to flip the card and then click the **Edit Instances** button on the back of the card.
+Alternatively, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the card and then click **Instances**.
 
 {{< c8y-admon-info>}}
-**Show instances summary** is only visible \(and thus you can only get to the back of the card\) if there are any instances \(regardless of state\).
+If you do not have sufficient permissions \(that is, you only have READ permission for "CEP management" instead of ADMIN permission\), the button is labeled **View instances** instead of **Edit instances**.
 {{< /c8y-admon-info>}}
 
 This invokes the instance editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for further information.
