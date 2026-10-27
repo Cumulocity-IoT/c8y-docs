@@ -45,6 +45,8 @@ After the setup, the following objects in your AWS account give {{< product-c8y-
 * The IAM role of the tenant. Its trust policy names the {{< product-c8y-iot >}} principal shown on the **Data Lake configuration** page and requires the external ID of the tenant.
 * The inline policy "c8y-streaming-lake-ingestion" on the role. It allows the role to locate the bucket, read its versioning setting, list the prefix, and read, write, and delete objects under the prefix.
 
+{{< product-c8y-iot >}} checks this access every hour. If the access is withdrawn, an alarm appears. For details, see [Lake access check](#lake-access-check).
+
 ### Changing the role or the external ID {#changing-the-role-or-the-external-id}
 
 You can replace the role or the external ID at any time in the **Catalog identity** section on the **Data Lake** page. When you click **Save**, the setup checks the new values again. The new role must be in the same AWS account as the current one.
@@ -62,6 +64,8 @@ A failed check stops the setup. The data lake catalog stays, but the setup creat
 |The bucket is in a different region, or cannot be found.|Create a bucket in the region that the **Data Lake configuration** page shows. You cannot move a bucket.|
 |Access to the prefix is denied.|Check that the prefix in the permissions policy is the same as the one in the base location.|
 |The page says "it could not reach your storage" or "it could not obtain credentials for your storage".|Check the permissions policy of the role. Then click **Save** in the **Catalog identity** section. If the policy is correct, contact the [{{< company-c8y >}} support.|
+|The page says "Provisioning did not start", although the role can write under the prefix.|Check that the permissions policy allows `s3:DeleteObject` under the prefix. The setup tests a delete, and {{< product-c8y-iot >}} needs it to maintain your tables.|
+|The page says "Provisioning did not start", and you changed nothing in AWS.|AWS did not answer the checks. Wait a few minutes and click **Save** again. If the problem persists, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).|
 |The base location overlaps the location of another tenant.|Choose a prefix that neither contains nor is contained in the other location. Sharing the same prefix is allowed.|
 |The page warns that data loss protection is off.|Bucket versioning is off. Enable it, then click **Save** in the **Catalog identity** section.|
 |The setup fails right after you changed the role.|IAM changes take up to a minute to become effective. Wait and try again.|

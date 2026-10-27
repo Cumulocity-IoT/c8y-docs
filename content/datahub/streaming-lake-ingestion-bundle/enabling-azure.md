@@ -50,6 +50,8 @@ After the setup, the following objects give {{< product-c8y-iot >}} access. If y
 * The **Storage Blob Delegator** role of the application on the storage account. Assigned on the container, it does not work.
 * Optionally, the **Reader** role of the application on the storage account.
 
+{{< product-c8y-iot >}} checks this access every hour. If the access is withdrawn, an alarm appears. For details, see [Lake access check](#lake-access-check).
+
 ### If something fails {#if-something-fails-on-azure}
 
 If a check fails, the **Data Lake configuration** page shows the reason. If the catalog was already created, the **Setup status** shows "Provisioning failed". Hover over the icon of a step to see its result. After you fix the cause, click **Retry provisioning**.
@@ -63,6 +65,8 @@ A failed check stops the setup. The data lake catalog stays, but the setup creat
 |The check for short-lived credentials fails.|**Storage Blob Delegator** is missing or assigned to the container. Assign it to the storage account.|
 |The storage cannot be reached.|Check that **Storage Blob Data Contributor** is assigned to the container, and that the storage account allows public network access.|
 |The page says "it could not reach your storage" or "it could not obtain credentials for your storage".|Check the role assignments of the application on the storage account and the container. Then click **Retry provisioning**. If they are correct, contact the [{{< company-c8y >}} support.|
+|The page says "Provisioning did not start", although the application can write to the container.|Check that no role assignment condition or deny assignment blocks deletes under the base location. The setup tests a delete, and {{< product-c8y-iot >}} needs it to maintain your tables.|
+|The page says "Provisioning did not start", and you changed nothing in Azure.|Check that the name of the storage account is spelled correctly. If it is, Azure did not answer the checks. Wait a few minutes and click **Retry provisioning**. If the problem persists, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).|
 |The directory is unknown, or authentication fails.|The Entra tenant ID belongs to another directory. Enter the ID of the directory that the subscription of the storage account belongs to.|
 |The base location overlaps the location of another tenant.|Choose a path that neither contains nor is contained in the other location. Sharing the same path is allowed.|
 |The page warns that data loss protection is off.|Soft delete is off for blobs or for containers. Enable both, then click **Retry provisioning**.|

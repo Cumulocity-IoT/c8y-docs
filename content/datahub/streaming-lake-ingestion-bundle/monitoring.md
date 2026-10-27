@@ -36,3 +36,19 @@ The event lists all new tables and columns added during that period. This helps 
 
   ![Schema violation alarm in alarm UI](/images/datahub-guide/schema-evolution-alarm-ui.png)
 
+### Lake access check {#lake-access-check}
+
+If your data lake is in your own AWS account or Azure subscription, {{< product-c8y-iot >}} checks every hour that it can still reach it. The check runs the same tests as the setup: it writes, reads, and deletes a test file under the base location, and it requests short-lived credentials for your storage.
+
+If the access is withdrawn, the **Lake access lost** alarm (`c8y_StreamingLakeIngestion_LakeAccessLost`) appears in the alarm viewer with severity MAJOR. {{< product-c8y-iot >}} raises it on the offloading status object in the device inventory. Typical causes are a deleted role, bucket, or container, a changed policy, a revoked approval of the application, or a removed role assignment.
+
+The alarm works as follows:
+
+* The alarm appears when two checks in a row fail for the same reason. A change that takes a few minutes to become effective therefore raises no alarm.
+* The alarm text names what to fix, for example, the permission or the role assignment that is missing.
+* While the alarm is active, no data reaches your data lake.
+* After you fix the cause, the next check clears the alarm. This takes up to one hour.
+* If AWS or Azure does not answer, the check leaves the alarm as it is.
+
+Problems on the {{< company-c8y >}} side do not raise this alarm. {{< company-c8y >}} monitors them.
+
