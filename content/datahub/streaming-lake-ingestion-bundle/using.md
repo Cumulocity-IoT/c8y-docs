@@ -565,14 +565,14 @@ The columns represent the [properties of a {{< product-c8y-iot >}} operation](ht
 {{< product-c8y-iot >}} relies on JSON as data exchange format in its APIs. JSON data types map to Iceberg data types as follows:
 
 * Strings parsed as timestamps become the Iceberg `timestamptz` data type. Otherwise, they become the Iceberg `string` data type.
-* Numbers are stored as Iceberg `decimal` with a maximum precision of 38 and scale of 9.
+* Numbers are stored as Iceberg `decimal` with a maximum precision of 38 and scale of 9. A number with more than 9 decimal places is stored rounded to 9 decimal places, and its exact value is also moved to the `trash` table with the cause `SIZE_EXCEEDED`, so that no digit is lost. A number with more than 29 digits before the decimal point is moved to the `trash` table with the cause `SIZE_EXCEEDED`.
 * Booleans (true/false) map to the equivalent Iceberg `boolean` data type.
 * JSON lists become the equivalent Iceberg `list` data type.
 * JSON objects become the equivalent Iceberg `struct` data type.
 
 "Null" values are stored as Iceberg "null" values.
 
-Empty JSON objects (`{}`) and empty arrays (`[]`) carry no data to store. They are omitted from the input and treated the same as an absent or "null" property, rather than being converted to a value of the column's data type.
+Empty JSON objects (`{}`) and empty arrays (`[]`) carry no data to store. They are omitted from the input and treated the same as an absent or "null" property, rather than being converted to a value of the column's data type. The same applies to an object or an array that holds only such values, for example, `{"a": null}` or `[{}]`.
 
 {{< c8y-admon-info >}}
 For more information related to Iceberg data types, refer to the [Iceberg specification](https://iceberg.apache.org/spec/#semi-structured-types). Note that there are various [structural limits](#limits-of-streaming-lake-ingestion) that the service implements to ensure that common upstream query engines can interact with the data produced by the service.
@@ -651,6 +651,44 @@ The result of schema conflict resolution depends on the order in which messages 
 
 Note that the order in which messages are sent to {{< product-c8y-iot >}} and the order in which they are processed do not necessarily coincide. For more details on ordering guarantees, visit the [Messaging Service documentation](https://{{< domain-c8y >}}/api/core/#tag/About-notifications-2.0).
 {{< /c8y-admon-info >}}
+
+##### Type conflicts in arrays {#type-conflicts-in-arrays}
+
+An Iceberg list has a single element type. The service uses the data type of the first array item that holds a value. Items that are "null", `{}`, or `[]` hold no value and never cause a conflict. The same applies to an object whose contents are all moved to the `trash` table. The following rules apply at every nesting level:
+
+* **Items of different types**: An item whose data type differs from the data type of the array is moved to the `trash` table with the cause `UNRESOLVABLE_TYPE_CONFLICT`. Each such item gets its own row, and the `path` of the row contains the position of the item. The item keeps its position in the array with the value "null", so the position in the `path` matches the stored array. This also applies to an array that mixes objects with other values.
+* **Objects with different property types**: When the objects in an array use different data types for the same property, the service creates an overflow property inside the object, as described above. No data is moved to the `trash` table.
+* **Arrays inside arrays**: Only one-dimensional arrays are supported. Every item that is itself a non-empty array is moved to the `trash` table as its own row with the cause `MULTI_DIMENSIONAL_ARRAY_DETECTED`, and the `path` of the row contains the position of the item. The other items of the array are handled by the rules above, so the array keeps a column if they hold values. For example, `[[1, 2], 3]` stores `[null, 3]` and moves `[1, 2]` to the `trash` table.
+* **Arrays and properties of other types**: When an array is sent for a property that stores another data type, or another value is sent for an array property, the whole array goes to an overflow column, for example, `someproperty__lb` for a list of booleans. The service never splits an array across columns.
+
+For example, the following array mixes strings, a number, and a boolean:
+
+```json
+{
+    "fragment": {
+        "listField": ["Some string", 5.1, false, null]
+    }
+}
+```
+
+The column `listField` stores `["Some string", null, null, null]`. The values `5.1` and `false` are moved to the `trash` table as two rows, with the paths `/fragment/listField/1` and `/fragment/listField/2`. If the array starts with the number instead, the column stores the number and the strings are moved to the `trash` table. The order of the items decides the result.
+
+The following array contains objects that use different data types for the property `value`:
+
+```json
+{
+    "fragment": {
+        "items": [
+            { "value": 1 },
+            { "value": "text" }
+        ]
+    }
+}
+```
+
+The column `items` is a list of objects with the properties `value` (decimal) and `value__s` (string). The first object stores `1` in `value`, and the second object stores "text" in `value__s`.
+
+If an array mixes types and is sent for a property of another data type, the service first moves the items of other types to the `trash` table and then stores the array in the overflow column of its own type. For example, if the property `someProperty` is a string column and a device sends `"someProperty": [1, "a"]`, the column `someproperty__ld` stores `[1, null]` and the string `"a"` is moved to the `trash` table.
 
 #### Naming {#naming}
 
@@ -748,6 +786,7 @@ To ensure robustness data storage and queryability of the data, the service enfo
 | 47635                                                           | EVENT_CREATE                                                        | EVENT                                                              | 2025-07-29T13:15:43Z                                           | /event_fragment_1/c8y_TooLargeProperty                         | IuS4gOefs+S6jOmzpeS4gOefs+S.......                             | SIZE_EXCEEDED                                                   | Property size exceeded the limit of 32768                        | event_fragment_1                                                    | 12345                                                       |
 | 47638                                                           | MANAGED_OBJECT_CREATE                                               | INVENTORY                                                          | 2025-07-29T14:15:43Z                                           | /inventory_fragment_2/level_1/level_2....level_17/name         | IlRoZSBhYnlzcyI=                                               | MAX_DEPTH_EXCEEDED                                              | Property depth exceeded the limit of 16                          | inventory_fragment_2                                                | 12346                                                       |
 | 47640                                                           | EVENT_CREATE                                                        | EVENT                                                              | 2025-07-29T15:15:43Z                                           | /event_fragment_2/nestedObject/invalidFieldName###ASD!ASD!@    | InRlc3Qi                                                       | ILLEGAL_FIELD_NAME                                              | Illegal field name                                               | event_fragment_2                                                    | 12347                                                       |
+| 47641                                                           | EVENT_CREATE                                                        | EVENT                                                              | 2025-07-29T16:15:43Z                                           | /fragment/listField/1                                          | NS4x                                                           | UNRESOLVABLE_TYPE_CONFLICT                                      | transition to type decimal(38, 9) is not supported               | fragment                                                            | 12348                                                       |
 
 The following schema is used:
 
@@ -769,8 +808,8 @@ The following limits apply to data processed by Streaming Lake Ingestion. If any
 **Schema limits**
 
 * Multidimensional arrays. (Note that arrays holding nested `struct` types are permitted.)
-* Arrays with inconsistent types in the array fields.
-* Numbers requiring larger precision than the maximum Iceberg `decimal` precision of (38, 9).
+* Array items whose data type differs from the data type of the array. For details, see [Type conflicts in arrays](#type-conflicts-in-arrays).
+* Numbers with more than 29 digits before the decimal point, which exceed the Iceberg `decimal` precision of (38, 9). Numbers with more than 9 decimal places are stored rounded, and their exact value is moved to the `trash` table. For details, see [Data types](#data-types).
 * More than 1,000 fragments per data type (inventory, alarms, …; corresponding to tables in a namespace).
 * More than 1,000 total leaf properties per fragment (corresponding to leaf columns in an Iceberg table; across all data for the same fragment including columns generated as part of conflict resolution and base columns like type, source, and time).
 
@@ -876,7 +915,7 @@ The same rule applies to fragment (table) names and to a number in the first pos
 }
 ```
 
-**Unresolvable type conflict**: Field has inconsistent data types across array elements.
+**Unresolvable type conflict**: An array item has a different data type than the array. The data type of the first item that holds a value decides the data type of the array. For details, see [Type conflicts in arrays](#type-conflicts-in-arrays).
 
 ```json
 {
@@ -885,6 +924,8 @@ The same rule applies to fragment (table) names and to a number in the first pos
     }
 }
 ```
+
+The column `listField` stores `["Some string", null, null, null]`. The values `5.1` and `false` are moved to the `trash` table as two rows, with the paths `/fragment/listField/1` and `/fragment/listField/2`.
 
 ### Example queries {#example-queries}
 
