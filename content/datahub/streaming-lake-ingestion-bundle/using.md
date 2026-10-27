@@ -656,9 +656,9 @@ Note that the order in which messages are sent to {{< product-c8y-iot >}} and th
 
 An Iceberg list has a single element type. The service uses the data type of the first array item that holds a value. Items that are "null", `{}`, or `[]` hold no value and never cause a conflict. The same applies to an object whose contents are all moved to the `trash` table. The following rules apply at every nesting level:
 
-* **Items of different types**: An item whose data type differs from the data type of the array is moved to the `trash` table with the cause `UNRESOLVABLE_TYPE_CONFLICT`. Each such item gets its own row, and the `path` of the row contains the position of the item. The array keeps the remaining items. This also applies to an array that mixes objects with other values.
+* **Items of different types**: An item whose data type differs from the data type of the array is moved to the `trash` table with the cause `UNRESOLVABLE_TYPE_CONFLICT`. Each such item gets its own row, and the `path` of the row contains the position of the item. The item keeps its position in the array with the value "null", so the position in the `path` matches the stored array. This also applies to an array that mixes objects with other values.
 * **Objects with different property types**: When the objects in an array use different data types for the same property, the service creates an overflow property inside the object, as described above. No data is moved to the `trash` table.
-* **Arrays inside arrays**: Only one-dimensional arrays are supported. Every item that is itself a non-empty array is moved to the `trash` table as its own row with the cause `MULTI_DIMENSIONAL_ARRAY_DETECTED`, and the `path` of the row contains the position of the item. The other items of the array are handled by the rules above, so the array keeps a column if they hold values. For example, `[[1, 2], 3]` stores `[3]` and moves `[1, 2]` to the `trash` table.
+* **Arrays inside arrays**: Only one-dimensional arrays are supported. Every item that is itself a non-empty array is moved to the `trash` table as its own row with the cause `MULTI_DIMENSIONAL_ARRAY_DETECTED`, and the `path` of the row contains the position of the item. The other items of the array are handled by the rules above, so the array keeps a column if they hold values. For example, `[[1, 2], 3]` stores `[null, 3]` and moves `[1, 2]` to the `trash` table.
 * **Arrays and properties of other types**: When an array is sent for a property that stores another data type, or another value is sent for an array property, the whole array goes to an overflow column, for example, `someproperty__lb` for a list of booleans. The service never splits an array across columns.
 
 For example, the following array mixes strings, a number, and a boolean:
@@ -671,7 +671,7 @@ For example, the following array mixes strings, a number, and a boolean:
 }
 ```
 
-The column `listField` stores `["Some string", null]`. The values `5.1` and `false` are moved to the `trash` table as two rows, with the paths `/fragment/listField/1` and `/fragment/listField/2`. If the array starts with the number instead, the column stores the number and the strings are moved to the `trash` table. The order of the items decides the result.
+The column `listField` stores `["Some string", null, null, null]`. The values `5.1` and `false` are moved to the `trash` table as two rows, with the paths `/fragment/listField/1` and `/fragment/listField/2`. If the array starts with the number instead, the column stores the number and the strings are moved to the `trash` table. The order of the items decides the result.
 
 The following array contains objects that use different data types for the property `value`:
 
@@ -688,7 +688,7 @@ The following array contains objects that use different data types for the prope
 
 The column `items` is a list of objects with the properties `value` (decimal) and `value__s` (string). The first object stores `1` in `value`, and the second object stores "text" in `value__s`.
 
-If an array mixes types and is sent for a property of another data type, the service first removes the items of other types and then stores the array in the overflow column of its own type. For example, if the property `someProperty` is a string column and a device sends `"someProperty": [1, "a"]`, the column `someproperty__ld` stores `[1]` and the string `"a"` is moved to the `trash` table.
+If an array mixes types and is sent for a property of another data type, the service first moves the items of other types to the `trash` table and then stores the array in the overflow column of its own type. For example, if the property `someProperty` is a string column and a device sends `"someProperty": [1, "a"]`, the column `someproperty__ld` stores `[1, null]` and the string `"a"` is moved to the `trash` table.
 
 #### Naming {#naming}
 
@@ -925,7 +925,7 @@ The same rule applies to fragment (table) names and to a number in the first pos
 }
 ```
 
-The column `listField` stores `["Some string", null]`. The values `5.1` and `false` are moved to the `trash` table as two rows, with the paths `/fragment/listField/1` and `/fragment/listField/2`.
+The column `listField` stores `["Some string", null, null, null]`. The values `5.1` and `false` are moved to the `trash` table as two rows, with the paths `/fragment/listField/1` and `/fragment/listField/2`.
 
 ### Example queries {#example-queries}
 
