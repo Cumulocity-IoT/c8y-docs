@@ -540,10 +540,6 @@ There is one important difference for measurements compared to other data types:
 
 Every measurement table contains the column `creationTime` in addition to `time`. The device sets `time`, which records when the value was measured. {{< product-c8y-iot >}} sets `creationTime` when it stores the measurement. Use `creationTime`, for example, to find measurements that a device sent with a delay.
 
-{{< c8y-admon-info >}}
-Measurement tables that existed before the `creationTime` column was introduced receive the column automatically. In these tables, the column is empty (`NULL`) for all measurements that were stored before the column was added.
-{{< /c8y-admon-info >}}
-
 This example also demonstrates how the service handles nested properties: Like the {{< product-c8y-iot >}} APIs and its operational store, Apache Iceberg supports nested data. Just like with the above JSON example, the property `voltage` is a nested structure containing two properties `value` and `unit`. You can query the contained properties from SQL using path expressions such as `"voltage"."value"`. For more information on querying the data from SQL, see [Example queries](#example-queries).
 
 #### Operations {#operations}
@@ -691,8 +687,6 @@ This is a reliability measure. The Iceberg specification considers tables and co
 {{< /c8y-admon-info >}}
 
 The service also appends this suffix when a top-level property has the same name as the `eventType` column, which records the type of change. For example, the service stores a string property `eventType` in the column `eventType__8`, in both change data capture and latest tables. A value of another type goes to the matching overflow column, for example `eventType__d` for a number.
-
-The same applies to a property inside a measurement fragment that has the same name as the `time`, `type`, or `creationTime` column. For example, the service stores a property `creationTime` inside the fragment `c8y_Battery` in the column `creationTime__8` of the table `cdc_measurement.c8y_Battery`. The column `creationTime` always contains the creation time of the measurement.
 
 #### Flat views {#flat-views}
 
