@@ -111,7 +111,7 @@ A. While {{< company-c8y >}} supports the integration and connectivity to config
 
 **Q. Can a {{< company-c8y >}} employee read our prompts?**
 
-A. Prompts pass through the platform with access inside {{< product-c8y-iot >}} governed by the controls in your tenant and by the {{< product-c8y-iot >}} DPA.  Access inside the LLM provider’s systems is governed by that provider’s terms.  Certain out-of-the-box features (such as Data Preparation) utilize automated telemetry via Gainsight (which can be disabled) and pre-delivery testing to evaluate system health, token consumption, response quality, and overall product performance. This information is used for performance assessment and product improvement.
+A. Prompts pass through the platform with access inside {{< product-c8y-iot >}} governed by the controls in your tenant and by the {{< product-c8y-iot >}} DPA.  Access inside the LLM provider’s systems is governed by that provider’s terms.  Certain out-of-the-box features (such as Data Preparation) utilize automated telemetry via Gainsight (which can be disabled) and pre-delivery testing to evaluate system health, token consumption, response quality, and overall product performance. This information is used for performance assessment and product improvement. Depending on the environment, the AI Agent Manager exports traces of agent runs, including prompts and responses but not user IDs, to an OpenTelemetry collector operated by {{< company-c8y >}}. Tenant administrators can opt out of this export via the [REST API](/ai/rest-api/#managed-telemetry-export).
 
 **Q. Are subscribed agents (provided by installed applications) different?**
 
