@@ -58,7 +58,7 @@ To test a tool:
 3. Optionally, click **Show details** to see the tool properties, such as its parameters, and the MCP server that provides the tool.
 4. Enter a message in the chat to test the tool. A test agent calls the tool and shows the results.
 
-Before you test, select under **User approval when testing this tool** whether the test agent asks for your approval before calling the tool: **No**, **Yes** (the default), or **Always**. For the meaning of each option, see [Requiring user approval](#user-approval).
+Before you test, select under **User approval when testing this tool** whether the test agent asks for your approval before calling the tool: **No**, **Yes** or **Always**. It starts at the option the tool gets when you assign it to an agent. For the meaning of each option, see [Requiring user approval](#user-approval).
 
 ### Assigning tools to agents {#assigning-tools}
 
@@ -70,7 +70,7 @@ To enable an agent to use tools:
 4. Select the tools the agent needs.
 5. Click **Save**.
 
-The agent now accesses these tools during conversations when needed. Each tool asks for user approval unless it declares that it only reads data and doesn't contact external systems. To change this, see [Requiring user approval](#user-approval).
+The agent now accesses these tools during conversations when needed. Each tool gets a user approval option that depends on what it declares, see [Setting user approval for a tool](#setting-user-approval).
 
 {{< c8y-admon-info >}}
 Object agents cannot use custom tools. They use tools internally to structure their responses according to the defined schema.
@@ -116,19 +116,25 @@ For each tool, an agent uses one of the following options:
 
 #### Setting user approval for a tool {#setting-user-approval}
 
-Without further settings, each tool of an agent uses the option its hints call for: **No** if the tool is **Read-only** and doesn't contact **External systems**, otherwise **Yes**. The **Tools** tab shows this option under **Approval required** on the tool's row.
+When you assign a tool to an agent, it gets an option based on its hints:
+
+- **Always** if the tool may be **Destructive** or contact **External systems**. This includes tools that declare nothing.
+- **Yes** if the tool changes data but isn't destructive and doesn't contact external systems.
+- **No** if the tool is **Read-only** and doesn't contact external systems.
+
+The **Tools** tab shows the option under **Approval required** on the tool's row.
 
 To set user approval for a tool yourself:
 
 1. Navigate to **AI Agent Manager** > **Agents** and open the agent.
 2. Navigate to the **Tools** tab.
-3. On the tool's row, select **Override** next to **Approval required**. The option starts at the one the tool had.
+3. On the tool's row, select **Override** next to **Approval required**.
 4. Select **No**, **Yes** or **Always**.
 5. Click **Save**.
 
-To let the tool use the option its hints call for again, clear **Override**.
+To go back to the option the tool got when it was assigned, clear **Override**.
 
-If the agent was configured through the REST API with approval settings for a whole MCP server, rows without **Override** show the option those settings result in.
+Rows without **Override** of an agent configured through the REST API show the option the agent's configuration results in. For example, a destructive tool configured without approval settings shows **Yes**.
 
 #### User approval in the chat {#user-approval-in-the-chat}
 
