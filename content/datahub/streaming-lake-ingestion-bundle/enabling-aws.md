@@ -61,7 +61,7 @@ A failed check stops the setup. The data lake catalog stays, but the setup creat
 |The external ID is rejected.|Use at least 32 characters from `A-Z a-z 0-9 _ + = , . @ : / -`. Change the value in the trust policy and on the **Data Lake configuration** page.|
 |The bucket is in a different region, or cannot be found.|Create a bucket in the region that the **Data Lake configuration** page shows. You cannot move a bucket.|
 |Access to the prefix is denied.|Check that the prefix in the permissions policy is the same as the one in the base location.|
-|The page says "it could not reach your storage" or "it could not obtain credentials for your storage".|Check the permissions policy of the role. Then click **Save** in the **Catalog identity** section. If the policy is correct, contact the [{{< company-c8y >}} support.|
+|The page says "it could not reach your storage" or "it could not obtain credentials for your storage".|Check the permissions policy of the role. Then click **Save** in the **Catalog identity** section. If the policy is correct, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).|
 |The base location overlaps the location of another tenant.|Choose a prefix that neither contains nor is contained in the other location. Sharing the same prefix is allowed.|
 |The page warns that data loss protection is off.|Bucket versioning is off. Enable it, then click **Save** in the **Catalog identity** section.|
 |The page notes that some checks did not run.|The permissions policy of the role does not allow `s3:GetBucketLocation` or `s3:GetBucketVersioning`. Your data arrives without them. To have the checks run, add them to the policy, then click **Save** in the **Catalog identity** section.|
