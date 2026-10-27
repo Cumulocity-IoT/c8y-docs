@@ -1,6 +1,6 @@
 ---
 date: ""
-title: associate template dashboards with the current device type (#13306) [GRAFT][release/cd] (#13404)
+title: Dashboard templates now always apply to the device's current type
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-68123
 version: 1024.22.4
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Cockpit): [MTM-68123] associate template dashboards with the
-current device type
-(#13306)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13306)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-68123]:
-https://cumulocity.atlassian.net/browse/MTM-68123?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+When a dashboard was created for a device whose type was changed later, turning on **Dashboard template** in the dashboard settings made it a template for the device's previous type. The dashboard was then shown on devices of the previous type instead of the current one. This issue has been fixed. A dashboard now becomes a template for the type the device has when you turn on **Dashboard template**.
