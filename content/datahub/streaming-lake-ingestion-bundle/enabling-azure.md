@@ -50,8 +50,6 @@ After the setup, the following objects give {{< product-c8y-iot >}} access. If y
 * The **Storage Blob Delegator** role of the application on the storage account. Assigned on the container, it does not work.
 * Optionally, the **Reader** role of the application on the storage account.
 
-{{< product-c8y-iot >}} checks this access every hour. If the access is withdrawn, an alarm appears. For details, see [Lake access check](#lake-access-check).
-
 ### If something fails {#if-something-fails-on-azure}
 
 If a check fails, the **Data Lake configuration** page shows the reason. If the catalog was already created, the **Setup status** shows "Provisioning failed". Hover over the icon of a step to see its result. After you fix the cause, click **Retry provisioning**.

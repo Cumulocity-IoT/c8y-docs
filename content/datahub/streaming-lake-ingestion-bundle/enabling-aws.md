@@ -45,8 +45,6 @@ After the setup, the following objects in your AWS account give {{< product-c8y-
 * The IAM role of the tenant. Its trust policy names the {{< product-c8y-iot >}} principal shown on the **Data Lake configuration** page and requires the external ID of the tenant.
 * The inline policy "c8y-streaming-lake-ingestion" on the role. It allows the role to locate the bucket, read its versioning setting, list the prefix, and read, write, and delete objects under the prefix.
 
-{{< product-c8y-iot >}} checks this access every hour. If the access is withdrawn, an alarm appears. For details, see [Lake access check](#lake-access-check).
-
 ### Changing the role or the external ID {#changing-the-role-or-the-external-id}
 
 You can replace the role or the external ID at any time in the **Catalog identity** section on the **Data Lake** page. When you click **Save**, the setup checks the new values again. The new role must be in the same AWS account as the current one.
