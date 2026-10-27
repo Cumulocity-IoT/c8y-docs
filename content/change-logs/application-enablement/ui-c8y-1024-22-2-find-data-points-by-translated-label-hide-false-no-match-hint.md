@@ -1,6 +1,6 @@
 ---
 date: ""
-title: find data points by translated label, hide false no-match hint (#13266) [GRAFT][release/cd] (#13399)
+title: Data point selector now finds data points by their translated label
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-68095
 version: 1024.22.2
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-68095] find data points by translated label, hide
-false no-match hint
-(#13266)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13266)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-68095]:
-https://cumulocity.atlassian.net/browse/MTM-68095?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+In the data point selector, the **Available data points** search and the **Data point template** field matched only the original labels of data points and data point templates. If a label had a translation registered under **Administration** > [**Localization**](/standard-tenant/changing-settings/#localization), searching for the translated label returned no results. Both searches now also match translated labels. Original labels still match, and the **Available data points** search still matches fragment and series. The "No match found." hint below the **Data point template** field now appears only when no template matches.
