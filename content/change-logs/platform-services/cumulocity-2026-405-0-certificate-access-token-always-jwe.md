@@ -12,6 +12,6 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-68156
-version:
+version: 2026.405.0
 ---
 The `POST /tenant/oauth/certificate` endpoint now always returns the access token as a JWE encrypted with the public key from the presented certificate. The `X-Cumulocity-Token-Response-Mode` header is no longer supported and the `response_mode` field has been removed from the response. For details, see [Retrieving a platform token using an X.509 certificate](/authentication/oai-secure/#retrieving-a-platform-token-using-an-x509-certificate).
