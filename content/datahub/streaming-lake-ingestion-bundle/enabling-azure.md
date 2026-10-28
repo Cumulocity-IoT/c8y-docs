@@ -20,6 +20,7 @@ You perform the setup on the **Data Lake configuration** page. In the Administra
 The storage account must meet the following requirements:
 
 * Hierarchical namespace is enabled. You cannot enable it later. The setup checks it and refuses a storage account without it.
+* It is in the region of your {{< product-c8y-iot >}} environment. The **Data Lake configuration** page shows the region. The setup does not check it.
 * The account kind is StorageV2.
 * Public network access is enabled from all networks. To restrict access to selected networks, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/) first, because only support can provide the value that your network rules need.
 * Anonymous access is disabled.
