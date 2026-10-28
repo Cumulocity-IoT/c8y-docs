@@ -22,5 +22,9 @@ environment_availability:
     date: '2026-10-27'
   - label: jp.cumulocity.com
     date: '2026-10-27'
+  - label: us.cumulocity.com
+    date: '2026-10-28'
+  - label: cumulocity.com
+    date: '2026-10-28'
 ---
 Timestamps across the **Alarms**, **Events**, and **Data explorer** pages, as well as the "Data graph" widget, now display the actual device time rather than the server time.

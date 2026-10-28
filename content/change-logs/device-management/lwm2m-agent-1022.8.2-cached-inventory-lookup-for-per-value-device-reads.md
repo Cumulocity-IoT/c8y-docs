@@ -16,5 +16,9 @@ version: 1022.8.2
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-10-22'
+  - label: apj.cumulocity.com
+    date: '2026-10-28'
+  - label: jp.cumulocity.com
+    date: '2026-10-28'
 ---
 The LWM2M agent now reuses cached device data when creating events, measurements, and alarms from mapped resources, reducing the number of inventory requests and improving data-processing throughput under high load.
