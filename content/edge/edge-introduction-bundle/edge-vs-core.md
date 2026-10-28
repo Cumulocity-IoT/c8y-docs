@@ -17,7 +17,7 @@ The following differences apply:
 |Multi-tenancy|No; single tenant|Yes
 |Cluster|No; single server|Yes
 |High availability|HA capabilities depend on the underlying virtualization technology, server failure could lead to temporary downtime|Full HA: No downtime on server failure, optionally even for data center failure
-|Vertical scalability|Yes, limited to appr. 100 tps per CPU core|Yes, but not used
+|Vertical scalability|Yes, Edge automatically uses additional CPU and memory added to the host. For details, see [Prerequisites](/edge/installing-edge/#prerequisites) and [Benchmarks](/edge/benchmarks/)|Yes, but not used
 |Horizontal scalability|No|Yes, nearly unlimited scalability
 |Upgrades with no downtime|No|Yes
 |Root access|Yes|Yes, if customer is hosting
