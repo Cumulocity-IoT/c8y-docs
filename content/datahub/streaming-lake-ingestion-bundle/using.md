@@ -538,7 +538,7 @@ This results in the following data in the data lake:
 
 There is one important difference for measurements compared to other data types: There is no `cdc_measurement.measurement` table. All relevant data is present in the fragment tables.
 
-Every measurement table contains the column `creationTime` in addition to `time`. The device sets `time`, which records when the value was measured. {{< product-c8y-iot >}} sets `creationTime` when it stores the measurement. Use `creationTime`, for example, to find measurements that a device sent with a delay.
+Every measurement table contains the column `creationTime` in addition to `time`. The device sets `time`, which records when the value was measured. {{< product-c8y-iot >}} sets `creationTime` when it stores the measurement.
 
 This example also demonstrates how the service handles nested properties: Like the {{< product-c8y-iot >}} APIs and its operational store, Apache Iceberg supports nested data. Just like with the above JSON example, the property `voltage` is a nested structure containing two properties `value` and `unit`. You can query the contained properties from SQL using path expressions such as `"voltage"."value"`. For more information on querying the data from SQL, see [Example queries](#example-queries).
 
