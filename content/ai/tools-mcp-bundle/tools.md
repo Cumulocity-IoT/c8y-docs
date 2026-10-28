@@ -111,7 +111,7 @@ For each tool, an agent uses one of the following options:
 | Option | Behavior |
 |---|---|
 | **No** | The tool runs without asking for approval, even when it changes data. |
-| **Yes** | The chat user approves calls to the tool, unless it's **Read-only** and doesn't contact **External systems**. With **Auto** in the chat, calls run without asking. |
+| **Yes** | The chat user approves calls to the tool, also when the tool is **Read-only**. With **Auto** in the chat, calls run without asking. |
 | **Always** | The chat user approves every call to the tool, even with **Auto** in the chat. |
 
 #### Setting user approval for a tool {#setting-user-approval}
