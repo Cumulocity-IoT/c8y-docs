@@ -27,8 +27,10 @@ This flag is called _Clean Start_ in MQTT version 5.0.
 If this flag is not set, the client connection will be rejected by the MQTT Service.
 
 {{< c8y-admon-caution >}}
-This means that messages sent _to_ a device while it is disconnected will **not** be automatically delivered to it when it reconnects.
+This means that messages sent _to_ a device on generic topics while it is disconnected will **not** be automatically delivered to it when it reconnects.
 Your devices and clients should implement an application-level protocol to send missed messages if this is important for your use case.
+
+The exception is pending operations for MQTT clients using [Core MQTT topics](#core-mqtt-topics), which are re-sent by the {{< product-c8y-iot >}} core when the client subscribes to its operation topics.
 {{< /c8y-admon-caution >}}
 
 #### Quality of Service {#quality-of-service-qos}
