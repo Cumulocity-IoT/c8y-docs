@@ -14,6 +14,8 @@
 {{ $sortedsections := sort $sections ".Page.Params.weight" }}
 <div class="home-grid">
   {{ range $sortedsections }}
+  {{- /* A sector with hideInNavigation has no card here and no entry in the Sections menu (sections-selector.html); its page stays reachable */ -}}
+  {{ if .Page.Params.hideInNavigation }}{{ continue }}{{ end }}
   {{ $pages := where .Pages "Type" "!=" "page" }}
   {{ $page := index $pages 0 }}
   <div class="product-card">
