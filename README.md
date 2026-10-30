@@ -164,7 +164,7 @@ Links are written in one direction only:
 documentation page --(skills:)--> skill --(api:)--> API reference (<API URL>#operation/<operationId>)
 ```
 
-The **Related documentation** box on a skill page is computed from the `skills:` lists of the documentation pages. Never add these back links by hand.
+The **Linked from the documentation** box on a skill page is computed from the `skills:` lists of the documentation pages. Never add these back links by hand.
 
 Skills are a documentation set of their own, structured like the others:
 
@@ -209,6 +209,8 @@ To add a topic, add a folder with an `_index.md` (copy one, then change `title`,
    ```
 
    The page then shows the **Skills** tab. The card of the skill links back to the block that names it.
+
+   The skill cards link to the API reference, so the **Related topics** box of the page (`c8y-admon-related`) lists documentation pages only. Remove the links to the APIs that the skills of the page cover. Keep a link to an API that no skill of the page covers.
 
 ### API references
 

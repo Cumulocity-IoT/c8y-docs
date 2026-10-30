@@ -20,10 +20,6 @@ helpcontent:
     Click **Create smart group** at the top right to create a group which is built based on the filter criteria. This type of group can be used, for example, for bulk upgrades of devices of a certain type to a new software or firmware version."
 ---
 
-{{< c8y-admon-related >}}
-* The [managed objects API](https://{{< domain-c8y >}}/api/core/#tag/Managed-objects) for REST API methods concerning managed objects (devices or groups of devices).
-{{< /c8y-admon-related >}}
-
 To view all devices connected to your account, click **All devices** in the **Devices** menu in the navigator.
 
 A detailed device list will be displayed.

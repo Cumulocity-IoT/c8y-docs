@@ -6,8 +6,8 @@ layout: redirect
 bundlefolder: skills/platform-administration
 target: skills/platform-administration/
 audience:
-  - Users
   - Developers
+  - AI agents
 sector:
   - skills
 weight: 10

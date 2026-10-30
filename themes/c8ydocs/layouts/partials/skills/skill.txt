@@ -36,7 +36,7 @@
     {{- with .from }}{{ $title = printf "%s > %s" $title (replace . "var-product-c8y-iot" site.Params.product_c8y_iot) }}{{ end -}}
     {{- $lines = $lines | append (printf "- [%s](%s%s)" $title .page.Permalink (cond (ne .anchor "") (printf "#%s" .anchor) "")) -}}
   {{- end -}}
-  {{- $sections = $sections | append (printf "## Related documentation\n\n%s" (delimit $lines "\n")) -}}
+  {{- $sections = $sections | append (printf "## Linked from the documentation\n\n%s" (delimit $lines "\n")) -}}
 {{- end -}}
 
 {{- /* Agents pick a skill from its description alone, so the Agent Skills specification asks for

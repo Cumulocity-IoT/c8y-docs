@@ -6,8 +6,8 @@ layout: redirect
 bundlefolder: skills/application-enablement
 target: skills/application-enablement/
 audience:
-  - Users
   - Developers
+  - AI agents
 sector:
   - skills
 weight: 30

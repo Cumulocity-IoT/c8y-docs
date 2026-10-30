@@ -39,11 +39,13 @@ For each skill in scope:
 | `sector` | None in the skill: the `cascade` of the topic `_index.md` sets it. A skill that lists `sector` itself is a finding |
 | `requires` | `authentication` for every skill that sends REST requests; other skills only if the reader must follow them first. Each entry names an existing skill |
 | `api` | Every operation the body sends, in the order of use; each entry with `operation`, `method`, `path`, `title`; `spec` only for APIs other than the Core API, and then a key of `data/apis.json`. Requests to microservices without a specification in `data/apis.json` (`/service/...`) are not listed |
-| Back links | None in the skill. The "Related documentation" box is computed from the `skills:` lists |
+| Back links | None in the skill. The "Linked from the documentation" box is computed from the `skills:` lists |
 | Linked | At least one documentation page or bundle block lists the skill in `skills:`. A skill nobody links to has no Skills tab entry |
 
 For each documentation page in scope: `skills:` sits on the page itself or on the bundle
-block (file in `<page>-bundle/`) that covers the task, and names existing skills.
+block (file in `<page>-bundle/`) that covers the task, and names existing skills. Its
+**Related topics** box (`c8y-admon-related`) has no link to an API that a skill of the
+page covers; links to APIs that no skill of the page covers stay.
 
 ## Step 2: Verify the API references
 
@@ -86,13 +88,13 @@ The script needs network access to `cumulocity.com`. It does not check `#tag/` o
 
 1. Build the site (see README "Skills > Verify a skill" for the Hugo version note). The
    build fails on an unknown skill name in `skills:` or an unknown `spec`.
-2. Open the rendered pages: the skill page (the **Use with an AI agent** box with the skill name and working **Copy SKILL.md** and **Download skill** buttons, the API reference and Related documentation
+2. Open the rendered pages: the skill page (the **Use with an AI agent** box with the skill name and working **Copy SKILL.md** and **Download skill** buttons, the "API reference" and "Linked from the documentation"
    boxes, the procedures in the table of contents), the **Skills** tab of each linking
    page (cards with "Linked from" and the API chips), and the topic page (the skill
    card, and the skill in the left navigation).
 3. Read the Markdown version, `/docs/skills/<topic>/<name>/index.md`: front matter with `name`
    (`cumulocity-<name>`) and `description`, "Before you start" with the required skills,
-   the skill, "API reference" grouped by API, "Related documentation". It is the
+   the skill, "API reference" grouped by API, "Linked from the documentation". It is the
    `SKILL.md` of the skills download: check that `skills/download/manifest.json` lists it.
 
 ## Step 5: Report or fix

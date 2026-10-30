@@ -6,8 +6,8 @@ layout: redirect
 bundlefolder: skills/device-management
 target: skills/device-management/
 audience:
-  - Users
   - Developers
+  - AI agents
 sector:
   - skills
 weight: 20

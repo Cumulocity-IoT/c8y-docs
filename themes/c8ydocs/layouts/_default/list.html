@@ -97,6 +97,8 @@ the PDFs in this section"
               label-info
               {{ else if eq $t "Business"}}
                 label-warning
+              {{ else if eq $t "AI agents"}}
+                label-default
               {{end}}
                 ">
               <i class='
@@ -108,6 +110,8 @@ the PDFs in this section"
                 dlt-c8y-icon-programming
               {{ else if eq $t "Business"}}
                 dlt-c8y-icon-permanent-job
+              {{ else if eq $t "AI agents"}}
+                dlt-c8y-icon-bot
               {{end}}
               '></i> 
               {{$t}}
@@ -119,8 +123,9 @@ the PDFs in this section"
         {{- if $skillsCard }}
           <div class="m-l-auto">{{ partial "skills/download-button.html" (dict "topic" (path.Base .Params.bundlefolder)) }}</div>
         {{- end }}
-        {{- if $pdf -}}
-          <form class="{{ if not $skillsCard }}m-l-auto {{ end }}pdf-download-form" data-pdf="{{ $pdf }}">
+        {{- /* No PDF for skill topics: they download as skills instead */ -}}
+        {{- if and $pdf (not $skillsCard) -}}
+          <form class="m-l-auto pdf-download-form" data-pdf="{{ $pdf }}">
             <button type="submit" class="btn-tooltip bnt-dot" aria-label="Download PDF" data-tooltip="Download PDF">
               <i class="dlt-c8y-icon-export-pdf" style="font-size: 20px;"></i>
             </button>
