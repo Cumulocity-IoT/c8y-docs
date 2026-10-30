@@ -15,6 +15,8 @@ pdf-generator/tmp/
 pdf-generator/node_modules/
 CLAUDE.md
 broken-links-script/cypress-output.log
-broken-links-script/pr-comment.md
+broken-links-script/link-check-report.md
+broken-links-script/link-check-result.json
+broken-links-script/recheck-output.log
 broken-links-script/all_links.json
 broken-links-script/cypress/downloads/

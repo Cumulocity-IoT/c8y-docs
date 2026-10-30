@@ -63,9 +63,17 @@ message names the file(s) that link came from; cross-check against
 `node Extractlinks.js` if it's not already present) if the log doesn't make
 the source obvious.
 
-If a PR-comment run exists for this failure, `broken-links-script/summarize-failures.cjs`
-already produced a compact "N of M failed" list with URLs - that's a fast
-way to get the failing-URL list without re-parsing the raw log yourself.
+The check runs in two passes: every link that fails the first pass
+(`link-check` job) is checked again on a fresh runner by the `recheck` job,
+and only links that fail **both** passes are reported as broken. The
+`recheck` job's summary (`gh run view <run-id>`, or the filed issue's body,
+or the PR comment) already lists them as "N of M checked links failed",
+with source files and the error - start from that list, not the first-pass
+log. Links listed under "failed at first but passed when re-checked" need no
+fix. Note them only if the same link keeps showing up there week after week.
+The re-check's own log is in the `recheck-log-<sanitized-branch>` artifact,
+and both artifacts also contain the pass's `link-check-result.json` (failed
+links with their source files, as JSON).
 
 Build a checklist of every distinct failing URL before triaging any of
 them - triage each one independently; don't stop at the first plausible
@@ -127,8 +135,13 @@ branches** - the same URL passes cleanly on one branch/run and fails
 completely on a sibling branch/run around the same time, or passes fast via
 `curl`/locally but times out only in CI. This pattern matches
 IP-reputation-based blocking of GitHub Actions' ephemeral runner IPs by the
-target site, not a real problem with the content. Retries won't help since
-the block persists for the whole job lifetime.
+target site, not a real problem with the content. Retries within a job won't
+help since the block persists for the whole job lifetime - that's why the
+workflow re-checks failures on a fresh runner, which absorbs most one-off
+cases of this. So a Case 3 link that still gets reported failed on two
+different runners. Before excluding it, check whether it's reported in
+several weekly runs or blocked on every runner. A single reported failure
+is usually not enough to exclude a link.
 
 To confirm Case 3 rather than Case 1 or Case 4:
 

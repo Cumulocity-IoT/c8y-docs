@@ -1,5 +1,50 @@
 // cypress.config.js
+const fs = require("fs");
+const path = require("path");
 const { defineConfig } = require("cypress");
+
+const RESULT_FILE = path.join(__dirname, "link-check-result.json");
+const TITLE_PREFIX = "should validate URL: ";
+
+// Writes link-check-result.json at the end of a run: totals plus every
+// failed link, in the same {link, files} shape as all_links.json so that
+// `run.cjs --recheck` can feed them straight back in. The workflow re-checks
+// these on a fresh runner, and summarize-failures.cjs reports from this file.
+// `completed: false` (or no file at all) means the run itself broke, which
+// must never be mistaken for "no broken links".
+function writeRunResult(results) {
+  if (!results || results.status === "failed") {
+    const error = (results && results.message) || "Cypress run failed";
+    fs.writeFileSync(RESULT_FILE, JSON.stringify({ completed: false, error }, null, 2));
+    return;
+  }
+
+  const allLinks = JSON.parse(fs.readFileSync(path.join(__dirname, "all_links.json"), "utf8"));
+  const filesByLink = new Map(allLinks.map((item) => [item.link, item.files]));
+
+  const failed = [];
+  const runErrors = [];
+  for (const run of results.runs) {
+    if (run.error) runErrors.push(run.error);
+    for (const test of run.tests) {
+      if (test.state !== "failed") continue;
+      const title = test.title[test.title.length - 1];
+      const link = title.startsWith(TITLE_PREFIX) ? title.slice(TITLE_PREFIX.length) : title;
+      const error = (test.displayError || "").split("\n")[0].replace(/^\w*Error: /, "");
+      failed.push({ link, files: filesByLink.get(link) || [], error });
+    }
+  }
+
+  fs.writeFileSync(RESULT_FILE, JSON.stringify({
+    completed: runErrors.length === 0,
+    error: runErrors.length ? runErrors.join("\n") : undefined,
+    totalTests: results.totalTests,
+    totalPassed: results.totalPassed,
+    totalFailed: results.totalFailed,
+    totalPending: results.totalPending,
+    failed,
+  }, null, 2));
+}
 
 module.exports = defineConfig({
   screenshotOnRunFailure: false,
@@ -13,6 +58,8 @@ module.exports = defineConfig({
           return null;
         },
       });
+
+      on('after:run', writeRunResult);
 
       // Diagnostics mode: fewer retries and a longer page load timeout give
       // faster, more informative single-shot runs when investigating one
