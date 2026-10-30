@@ -72,6 +72,8 @@ In addition, for devices connecting to the MQTT Service:
 
 1. The _Common Name_ (CN) field of the certificate **must** match the client ID field in the MQTT `CONNECT` packet.
    If the client ID and the certificate CN do not match, the connection will be rejected.
+   For backward compatibility with devices previously registered through Core MQTT, a client ID with the `d:` prefix also matches a CN without it.
+   For example, a device connecting with the client ID `d:myDevice` can use a certificate with the CN `d:myDevice` or `myDevice`.
 2. The device **should** specify the tenant ID in the username field of the MQTT `CONNECT` packet.
    If the tenant ID is provided, it must correspond to a tenant that trusts the given certificate; otherwise, the connection will be rejected.
    Similarly, if a trust anchor is trusted by multiple tenants and the tenant ID is _not_ provided, the connection will be rejected.
