@@ -134,7 +134,7 @@ In the PSK and X509 security modes, the device and the LWM2M agent agree on a DT
 | TLS_PSK_WITH_AES_256_CCM                | 0xC0A5 |
 
 {{< c8y-admon-info >}}
-These are the default cipher suites. Your platform administrator can change them and can confirm which cipher suites your platform accepts. At startup, the LWM2M agent logs the cipher suites it accepts. In the log, TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384 (0xD002) and TLS_PSK_WITH_AES_256_GCM_SHA384 (0x00A9) end in SHA378 instead of SHA384. They are the same cipher suites.
+These are the default cipher suites. Your platform administrator can change them and can confirm which cipher suites your platform accepts. At startup, the LWM2M agent logs the cipher suites it accepts. Some versions of the LWM2M agent log TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384 (0xD002) and TLS_PSK_WITH_AES_256_GCM_SHA384 (0x00A9) with SHA378 instead of SHA384. They are the same cipher suites.
 {{< /c8y-admon-info >}}
 
 ##### More details on X.509 security {#more-details-on-x509-security}
