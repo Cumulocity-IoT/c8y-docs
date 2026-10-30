@@ -1,0 +1,103 @@
+{{ define "main" }}
+{{- partial "root-nav.html" . -}}
+
+{{ $usedIn := index (partialCached "skills/index.html" site) .File.ContentBaseName }}
+<main class="main-content bundle-layout skill-layout">
+  <div class="breadcrumbs-container">
+    {{- partial "breadcrumbs.html" . -}}
+  </div>
+  <div class="article-list">
+    <article id="{{ .File.ContentBaseName }}" class="page-section single-section">
+      <div class="article-content">
+        <header class="section-header">
+          <h1 class="text-light">{{ .Title }}</h1>
+        </header>
+        {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+
+        {{/* Machines first: the agent skill (index.md, the same text as SKILL.md) comes before the page for people. static/js/skills-download.js handles the buttons. */}}
+        {{ $name := partial "skills/skill-name.html" . }}
+        {{ with .OutputFormats.Get "markdown" }}
+        <section class="admonition agent skill-agent" aria-labelledby="skill-agent-title">
+          {{/* Not a heading: buildToc() in main.js takes the first h2 of an article as the title of the table of contents */}}
+          <div class="title" id="skill-agent-title">Use with an AI agent</div>
+          <p class="skill-agent__text">
+            This page is the agent skill <code>{{ $name }}</code>. Save it as <code>{{ $name }}/SKILL.md</code> in the skills folder of your agent: <code>.agents/skills/</code> for Codex, GitHub Copilot, Cursor, and Gemini CLI, or <code>.claude/skills/</code> for Claude Code.
+            {{ with partial "skills/requires.html" $ }}It builds on {{ range $i, $r := . }}{{ if $i }}, {{ end }}<code>{{ partial "skills/skill-name.html" $r }}</code>{{ end }}: install {{ if gt (len .) 1 }}these skills{{ else }}that skill{{ end }} too.{{ end }}
+          </p>
+          <div class="skill-agent__actions">
+            <button type="button" class="btn-metadata" data-skill-copy="{{ .Permalink }}"><i class="dlt-c8y-icon-clipboard" aria-hidden="true"></i> Copy SKILL.md</button>
+            <button type="button" class="btn-metadata" data-skill-download="{{ .Permalink }}" data-skill-name="{{ $name }}"><i class="dlt-c8y-icon-download" aria-hidden="true"></i> Download skill</button>
+            <a class="btn-metadata" href="{{ .Permalink }}"><i class="dlt-c8y-icon-file-code-o" aria-hidden="true"></i> View SKILL.md</a>
+            <a class="btn-metadata" href="{{ (site.GetPage "/sector/skills").Permalink }}"><i class="dlt-c8y-icon-ai-sparkles" aria-hidden="true"></i> All skills</a>
+          </div>
+          <span class="skill-agent__status" role="status"></span>
+        </section>
+        {{ end }}
+
+        {{/* Reference material in one card, not admonitions. The column titles are not headings, for the same reason as above. */}}
+        {{ $page := . }}
+        {{ $apiGroups := partial "skills/api-groups.html" . }}
+        {{ if or $apiGroups $usedIn }}
+        <div class="skill-links">
+          {{ with $apiGroups }}
+          {{ $groups := . }}
+          <div class="skill-links__api">
+            {{/* The title with a link to each API reference as a button. With more than one API, a label names the API of each list. */}}
+            <div class="skill-links__header">
+              <p class="skill-links__title">API reference</p>
+              {{ range $groups }}
+              <a class="btn-metadata" href="{{ .root }}"><i class="dlt-c8y-icon-external-link" aria-hidden="true"></i> {{ .title }}</a>
+              {{ end }}
+            </div>
+            {{ range $groups }}
+            {{ if gt (len $groups) 1 }}<p class="skill-links__api-name">{{ .title }}</p>{{ end }}
+            <ul class="skill-card__api">
+              {{ range .entries }}
+              <li>
+                {{ partial "skills/api-chip.html" (dict "entry" . "page" $page "showApi" false) }}
+                <span class="skill-links__api-title">{{ .title }}</span>
+              </li>
+              {{ end }}
+            </ul>
+            {{ end }}
+          </div>
+          {{ end }}
+          {{ with $usedIn }}
+          <div class="skill-links__docs">
+            <div class="skill-links__header">
+              <p class="skill-links__title">Linked from the documentation</p>
+            </div>
+            <ul class="skill-links__docs-list">
+              {{ range . }}
+              {{ $pageTitle := replace .page.Title "var-product-c8y-iot" site.Params.product_c8y_iot }}
+              <li>
+                <a href="{{ .page.Permalink }}{{ with .anchor }}#{{ . }}{{ end }}">{{ with .from }}{{ replace . "var-product-c8y-iot" site.Params.product_c8y_iot }}{{ else }}{{ $pageTitle }}{{ end }}</a>
+                {{ with .from }}<span class="skill-links__docs-page">in {{ $pageTitle }}</span>{{ end }}
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* The Requirements box of the page (shortcodes/c8y-admon-req.html) lists the skills this one builds on. Only a skill without one gets this box. */}}
+        {{ with and (not (strings.Contains .RawContent "c8y-admon-req")) (partial "skills/requires.html" .) }}
+        <div class="admonition req skill-requires">
+          <div class="title">Before you start</div>
+          <div class="content">
+            <p>This skill builds on the following skills:</p>
+            <ul>
+              {{ range . }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
+            </ul>
+          </div>
+        </div>
+        {{ end }}
+
+        {{ partial "headline-hash.html" .Content }}
+      </div>
+    </article>
+  </div>
+</main>
+{{- partial "footer.html" . -}}
+{{ end }}

@@ -2,6 +2,8 @@
 weight: 20
 title: Registering LWM2M devices
 layout: redirect
+skills:
+  - register-lwm2m-device
 ---
 
 The data provided during registration must enable LWM2M communication and holds information for factory bootstrap and client-initiated bootstrap.

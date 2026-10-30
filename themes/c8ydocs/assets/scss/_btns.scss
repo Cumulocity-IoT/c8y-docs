@@ -45,6 +45,40 @@
   }
 }
 
+// "Copied!" above a copy button, while it has the copied class (main.js, clipboardCode)
+%copied-tooltip {
+  position: relative;
+  &:before {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-left: 0;
+    padding: 5px 3px 3px;
+    border-radius: 3px;
+    background: var(--c8y-brand-dark);
+    color: white;
+    content: "Copied!";
+    font-size: 12px;
+    // Not the label style of the button (uppercase btn-metadata)
+    font-weight: normal;
+    text-transform: none;
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-left: 0;
+    width: 0;
+    height: 0;
+    border-width: 5px 5px 5px 5px;
+    border-style: solid;
+    border-color: var(--c8y-brand-dark) transparent transparent;
+    content: "";
+  }
+}
+
 .btn-copy-code{
   background-image: none;
   background-color: transparent;
@@ -67,34 +101,8 @@
     outline-offset: -2px;
   }
   &.copied {
-    position: relative;
+    @extend %copied-tooltip;
     opacity: 1 !important;
-    &:before {
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translate(-50%, 0);
-      margin-left: 0;
-      padding: 5px 3px 3px;
-      border-radius: 3px;
-      background: var(--c8y-brand-dark);
-      color: white;
-      content: "Copied!";
-      font-size: 12px;
-    }
-    &:after {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
-      margin-left: 0;
-      width: 0;
-      height: 0;
-      border-width: 5px 5px 5px 5px;
-      border-style: solid;
-      border-color: var(--c8y-brand-dark) transparent transparent;
-      content: "";
-    }
   }
 }
 
@@ -271,6 +279,8 @@ body:has(.home-top){
     content: "";
   }
   &:hover{
+    // Above the buttons next to it, so they don't cover the tooltip
+    z-index: 10;
     &:before {
       bottom: 100%;
       left: 50%;
@@ -281,7 +291,11 @@ body:has(.home-top){
       background: var(--c8y-palette-gray-30);
       color: white;
       content: attr(data-tooltip);
-      white-space: nowrap;
+      // Long tooltips wrap instead of running over the elements around them
+      width: max-content;
+      max-width: 16rem;
+      white-space: normal;
+      text-wrap: pretty;
       font-size: 12px;
       text-transform: none;
       font-weight: normal;
@@ -312,7 +326,8 @@ body:has(.home-top){
     line-height: 1;
     gap: 4px;
     &:before {
-      white-space: pre;
+      // Keeps the line breaks written in data-tooltip, and wraps long lines
+      white-space: pre-line;
       text-align: center;
       line-height: 1.2;
     }

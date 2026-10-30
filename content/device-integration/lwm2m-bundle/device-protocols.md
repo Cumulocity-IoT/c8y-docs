@@ -2,6 +2,8 @@
 weight: 40
 title: LWM2M device protocols
 layout: redirect
+skills:
+  - manage-object-mappings
 ---
 
 To process data from LWM2M devices, {{< product-c8y-iot >}} uses device protocols.
