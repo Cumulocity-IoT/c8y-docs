@@ -24,7 +24,7 @@ If a rule does not define `onDeviceCreate`, the platform creates each device wit
 The external ID that triggered the creation is registered as an external identity for the new device.
 
 {{< c8y-admon-info >}}
-The properties of automatically created devices cannot be customized. To customize device creation, define `onDeviceCreate` in the rule. For details, see [Customizing device creation](#customizing-device-creation).
+Devices created automatically have fixed properties. To customize them, define `onDeviceCreate` in the rule. For details, see [Customizing device creation](#customizing-device-creation).
 {{< /c8y-admon-info >}}
 
 ### Customizing device creation {#customizing-device-creation}
@@ -47,7 +47,7 @@ export function onDeviceCreate(inputMsg, externalId, context) {
   const siteId = inputMsg.topic.split("/")[1];
   const data = JSON.parse(new TextDecoder().decode(inputMsg.payload));
 
-  const site = { type: "c8y_Asset", externalId: siteId };
+  const site = { type: "acme_SiteId", externalId: siteId };
   const gateway = { type: "c8y_Serial", externalId: inputMsg.clientID };
 
   return [
@@ -84,13 +84,13 @@ The platform invokes `onDeviceCreate` once for each missing external ID, in the 
 
 When `onDeviceCreate` returns `[]`, the platform does not remember the result. A later message that names the same external ID invokes `onDeviceCreate` again. The platform can then still create the device, for example, from its registration message.
 
-If several rules produce outputs for the same missing external ID, a rule with `onDeviceCreate` takes priority over the automatic creation. If several of these rules define `onDeviceCreate`, the platform only invokes the function of the rule whose name comes first in alphabetical order. It writes a warning to the log of each of these rules.
+If several rules produce outputs for the same missing external ID, a rule with `onDeviceCreate` takes priority over the automatic creation. If several of these rules define `onDeviceCreate`, the platform only invokes the function of the rule whose name comes first in alphabetical order (uppercase before lowercase). It writes a warning to the log of each of these rules.
 
 #### How the objects are created {#how-the-objects-are-created}
 
 The platform creates the objects from all calls for one message together, with their external IDs. Then it links the objects to their parents. Messages from other devices on the same transport wait until the creation is complete, so the more objects a call returns, the longer they wait.
 
-If an object that `onDeviceCreate` returns has an external ID that already exists, the platform uses the existing object and does not create it again. It registers any other external IDs of the object for the existing object. If two calls for one message return the same object, the platform creates it once.
+If an object that `onDeviceCreate` returns has an external ID that already exists, the platform uses the existing object and does not create it again. It registers any other external IDs of the object for the existing object. If two calls for one message return the same object with an external ID, the platform creates it once. The object must have the same kind and the same external IDs in both calls, otherwise the platform rejects the later result.
 
 A parent must be one of the following:
 
@@ -114,7 +114,7 @@ The platform drops the output and raises an alarm of type `c8y_DataPrep_DeviceCr
 
 The platform does not remember a failure, so the next message that names the external ID tries again. If the failed attempt created some of the objects, the platform finds and uses them, and does not create them again.
 
-#### Managed object updates from onMessage {#managed-object-updates-and-device-creation}
+#### Managed object updates from onMessage {#managed-object-updates-from-onmessage}
 
 A managed object update from `onMessage` is an output like any other. If its device does not exist, `onDeviceCreate` decides what the platform creates, and then the platform applies the update to the new device. This gives you two places to set the fields of a device:
 
@@ -222,13 +222,17 @@ Name existing parents by their external IDs. If a parent does not exist, the pla
 ```javascript
 export function onDeviceCreate(inputMsg, externalId, context) {
   const siteId = inputMsg.topic.split("/")[1];      // for example, sites/site-3/gw-1
-  return [{
+  const device = {
     cumulocityType: "device",
     externalSource: [externalId],
     payload: { name: "Pump " + externalId.externalId, type: "acme_pump" },
-    parentDevice: { type: "c8y_Serial", externalId: inputMsg.clientID },
-    parentAssets: [{ type: "c8y_Asset", externalId: siteId }]
-  }];
+    parentAssets: [{ type: "acme_SiteId", externalId: siteId }]
+  };
+  // The gateway's own data names the gateway, which can't be its own parent
+  if (externalId.externalId !== inputMsg.clientID) {
+    device.parentDevice = { type: "c8y_Serial", externalId: inputMsg.clientID };
+  }
+  return [device];
 }
 ```
 
@@ -263,7 +267,7 @@ If the asset already exists, the platform uses it rather than creating it again.
 ```javascript
 export function onDeviceCreate(inputMsg, externalId, context) {
   const siteId = inputMsg.topic.split("/")[1];
-  const site = { type: "c8y_Asset", externalId: siteId };
+  const site = { type: "acme_SiteId", externalId: siteId };
   return [
     {
       cumulocityType: "asset",

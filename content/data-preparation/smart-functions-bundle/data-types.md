@@ -145,8 +145,8 @@ A device to create.
 |-------|------|----------|-------------|
 | `name` | `string` | No | The display name of the device. |
 | `type` | `string` | No | The device type. |
-| `owner` | `string` | No | The owner of the device. The owner must be a user in the tenant. |
-| `requiredAvailability` | `number` | No | The number of minutes without data after which {{< product-c8y-iot >}} reports the device as unavailable. |
+| `owner` | `string` | No | The owner of the device. The owner must be a user in the tenant. If not set, the owner is the service user of the Data Preparation microservice that creates the device. |
+| `requiredAvailability` | `number` | No | The number of minutes without data after which {{< product-c8y-iot >}} reports the device as unavailable. Must be a whole number. |
 | `[fragment: string]` | `any` | No | Any custom fragment. |
 
 #### CreateAsset {#create-asset}
@@ -164,7 +164,7 @@ An asset to create, for example, a site or a building.
 |-------|------|----------|-------------|
 | `type` | `string` | Yes | The asset type. |
 | `name` | `string` | No | The display name of the asset. |
-| `owner` | `string` | No | The owner of the asset. The owner must be a user in the tenant. |
+| `owner` | `string` | No | The owner of the asset. The owner must be a user in the tenant. If not set, the owner is the service user of the Data Preparation microservice that creates the asset. |
 | `[fragment: string]` | `any` | No | Any custom fragment. |
 
 #### CreateGroup {#create-group}
@@ -181,6 +181,6 @@ A group to create.
 | Payload field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `name` | `string` | No | The display name of the group. |
-| `owner` | `string` | No | The owner of the group. The owner must be a user in the tenant. |
+| `owner` | `string` | No | The owner of the group. The owner must be a user in the tenant. If not set, the owner is the service user of the Data Preparation microservice that creates the group. |
 | `[fragment: string]` | `any` | No | Any custom fragment. |
 

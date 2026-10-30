@@ -54,7 +54,7 @@ The function returns an array of objects to create: `CreateDevice`, `CreateAsset
 
 For the full list of fields of these objects, see [Objects to create](#objects-to-create).
 
-A result is invalid in the following cases:
+Invalid results include:
 
 - Two objects in the result have the same external ID.
 - An object names a parent that comes later in the result. List parents before their children.
