@@ -281,10 +281,20 @@ We strongly recommend that generic MQTT devices avoid using any topic names that
 ##### Client identifiers {#core-mqtt-client-ids}
 
 The structured MQTT [client identifiers](/device-integration/mqtt/#mqtt-clientid) allowed by Core MQTT are not supported by the MQTT Service.
-* If the client ID includes a `:defaultTemplateIdentifier` suffix, this will be treated simply as part of the client ID, with no special handling.
-* If the client ID includes a `d:` (connection type) prefix, this will be recognized to allow **previously registered** Core MQTT devices to connect to the MQTT Service and be handled as the same device by Core MQTT.
-  However, the `d:` prefix will **not** be handled specially for new devices connecting to the {{< product-c8y-iot >}} platform for the first time.
-  When a new device connects for the first time, any `d:` prefix will be treated as simply part of the client ID, with no special handling.
+The MQTT Service treats the client ID as a literal string, exactly as the device sent it in the MQTT `CONNECT` packet.
+As a result, a default SmartREST template cannot be set through the client ID.
+
+For backward compatibility, devices that were previously registered through Core MQTT keep working when they connect to the MQTT Service with the same client ID, with or without the `d:` prefix.
+For example, a device registered through Core MQTT with the client ID `d:myDevice` is recognized as the same device when it connects to the MQTT Service as either `d:myDevice` or `myDevice`.
+The device keeps its identity, history, and child devices, and needs no configuration changes.
+
+Note that after a device has connected through the MQTT Service, it must keep using the same client ID.
+If it switches between the forms with and without the `d:` prefix, it may not receive its operations.
+
+{{< c8y-admon-important >}}
+When working with the MQTT Service, use the full client ID exactly as the device sends it, including any `d:` prefix.
+This is required for new devices and recommended for devices migrated from Core MQTT.
+{{< /c8y-admon-important >}}
 
 #### Device error handling {#core-mqtt-error-handling}
 
