@@ -58,7 +58,7 @@ To test a tool:
 3. Optionally, click **Show details** to see the tool properties, such as its parameters, and the MCP server that provides the tool.
 4. Enter a message in the chat to test the tool. A test agent calls the tool and shows the results.
 
-Tools that may delete or overwrite data ask for your approval before they run, unless you select **Auto** below the message field.
+Before you test, select under **User approval when testing this tool** whether the test agent asks for your approval before calling the tool: **No**, **Yes** or **Always**. It starts at the option the tool gets when you assign it to an agent. For the meaning of each option, see [Requiring user approval](#user-approval).
 
 ### Assigning tools to agents {#assigning-tools}
 
@@ -70,15 +70,86 @@ To enable an agent to use tools:
 4. Select the tools the agent needs.
 5. Click **Save**.
 
-The agent now accesses these tools during conversations when needed.
+The agent now accesses these tools during conversations when needed. Each tool gets a user approval option that depends on what it declares, see [Setting user approval for a tool](#setting-user-approval).
 
 {{< c8y-admon-info >}}
 Object agents cannot use custom tools. They use tools internally to structure their responses according to the defined schema.
 {{< /c8y-admon-info >}}
 
+### Requiring user approval {#user-approval}
+
+Before an agent calls a tool, it can pause and ask the chat user to approve the call. The user sees the tool and its parameters, and approves or denies the call. This lets a person check calls that change data or contact external systems before they run.
+
+User approval is required by default. A tool call runs without approval only when the tool declares that it only reads data and doesn't contact external systems, or when the agent configuration explicitly turns approval off for the tool.
+
+#### What tools declare about themselves {#tool-declarations}
+
+The developer of an MCP server can describe what each tool does, as hints defined by the [Model Context Protocol](https://modelcontextprotocol.io/specification/2026-07-28/schema#tool-annotations). In the **Tools** tab of an agent, each tool shows these hints as tags:
+
+| Tag | Meaning |
+|---|---|
+| **Read-only** | The tool only reads data. |
+| **Changes data** | The tool adds or changes data but doesn't delete or overwrite it. |
+| **Destructive** | The tool may delete or overwrite data. |
+| **External systems** | The tool may contact systems outside {{< product-c8y-iot >}}, for example to send an email. |
+| **Not declared** | The tool declares nothing, so it counts as both **Destructive** and **External systems**. |
+
+A hint the tool doesn't declare counts as the riskier option:
+
+- A tool that doesn't declare that it is read-only counts as changing data.
+- A tool that doesn't declare that it is non-destructive counts as destructive.
+- A tool that doesn't declare that it stays inside {{< product-c8y-iot >}} counts as contacting external systems.
+
+{{< c8y-admon-important >}}
+The MCP server that provides a tool also provides its hints. {{< product-c8y-iot >}} can't verify them. Assign tools only from MCP servers you trust.
+{{< /c8y-admon-important >}}
+
+#### Approval options {#approval-options}
+
+For each tool, an agent uses one of the following options:
+
+| Option | Behavior |
+|---|---|
+| **No** | The tool runs without asking for approval, even when it changes data. |
+| **Yes** | The chat user approves calls to the tool, also when the tool is **Read-only**. With **Auto** in the chat, calls run without asking. |
+| **Always** | The chat user approves every call to the tool, even with **Auto** in the chat. |
+
+#### Setting user approval for a tool {#setting-user-approval}
+
+When you assign a tool to an agent, it gets an option based on its hints:
+
+- **Always** if the tool may be **Destructive** or contact **External systems**. This includes tools that declare nothing.
+- **Yes** if the tool changes data but isn't destructive and doesn't contact external systems.
+- **No** if the tool is **Read-only** and doesn't contact external systems.
+
+The **Tools** tab shows the option under **Approval required** on the tool's row.
+
+To set user approval for a tool yourself:
+
+1. Navigate to **AI Agent Manager** > **Agents** and open the agent.
+2. Navigate to the **Tools** tab.
+3. On the tool's row, select **Override** next to **Approval required**.
+4. Select **No**, **Yes** or **Always**.
+5. Click **Save**.
+
+To go back to the option the tool got when it was assigned, clear **Override**.
+
+Rows without **Override** of an agent configured through the REST API show the option the agent's configuration results in. For example, a destructive tool configured without approval settings shows **Yes**.
+
+#### User approval in the chat {#user-approval-in-the-chat}
+
+Below the message field of a chat, users select how approval requests are handled. With **Manual**, the user approves each call. With **Auto**, calls of tools set to **Yes** run without asking. Calls of tools set to **Always** still ask for approval every time, even with **Auto**.
+
+#### Agents configured through the REST API {#user-approval-rest-api}
+
+An agent configured through the REST API without any approval settings requires approval for every tool call, unless the tool declares that it only reads data and doesn't contact external systems. In the chat, **Auto** answers these approval requests.
+
+Applications that call an agent through the REST API must handle approval requests: the agent stops at the tool call and returns an approval request. To continue, the application sends the conversation again, including the user's decision.
 
 ### Best practices {#best-practices}
 
 - **Tool selection**: Assign only the tools an agent actually needs. Too many tools confuse the agent and increase processing time.
 
 - **Performance**: Tools that take a long time to execute slow down agent responses. Optimize tool performance or use caching where appropriate.
+
+- **User approval**: Keep **Always** for tools that change important data or contact external systems. Use **No** only for tools that can't do harm, such as read-only tools that stay inside {{< product-c8y-iot >}}.
