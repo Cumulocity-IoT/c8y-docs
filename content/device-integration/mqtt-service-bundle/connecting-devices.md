@@ -32,8 +32,8 @@ Devices in different tenants can be connected at the same time using the same cl
 Empty client IDs are not permitted.
 
 Note that in general, the client ID will be treated as an unstructured identifier that is not interpreted by the MQTT Service in any way.
-However, some special handling is done for **previously registered** Core MQTT devices connecting to the MQTT Service.
-See the [Core MQTT device support](#core-mqtt-support) section for more details.
+Devices previously registered through Core MQTT are the exception.
+See [Client identifiers](#core-mqtt-client-ids) for details.
 
 See the table of [limits and quotas](/service-terms/quotas/#mqtt-service) for details of the maximum allowed client ID length.
 
