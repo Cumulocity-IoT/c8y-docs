@@ -12,10 +12,10 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-68518
-version: 2026.408.0
+version:
 ---
 
-Cumulocity now rejects a self-signed trusted certificate that is valid for more than 5 years. This change follows recommended security practice for trusted certificates. The validity period is the time between the `notBefore` and `notAfter` dates of the certificate.
+The trusted certificate upload endpoints now reject a self-signed certificate that is valid for more than 5 years. This change follows recommended security practice for trusted certificates. The validity period is the time between the `notBefore` and `notAfter` dates of the certificate.
 
 The following endpoints return the status code 422 for such a certificate:
 
