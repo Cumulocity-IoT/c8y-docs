@@ -57,6 +57,8 @@ If your function throws synchronously, the returned promise rejects, or the retu
 
 To drop a message without raising an error, return an empty array (`[]`).
 
+Errors in `onDeviceCreate` are handled in the same way, except that the alarm has the type `c8y_DataPrep_DeviceCreateFailure`. For details, see [Device creation](#function-device-create).
+
 ### Logs {#logs}
 
 For a deployed rule, output written with `console.error`, and errors thrown by the smart function, are always written to the Apama microservice log file. Output written with `console.log`, `console.info`, `console.warn`, and `console.debug` is only written while the Data Preparation **Logs** page is open with the rule selected, or while a background capture is running for it.
