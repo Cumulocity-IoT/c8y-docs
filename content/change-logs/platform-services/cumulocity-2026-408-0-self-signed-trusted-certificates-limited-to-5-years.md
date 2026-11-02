@@ -15,7 +15,7 @@ ticket: MTM-68518
 version: 2026.408.0
 ---
 
-Cumulocity now rejects a self-signed trusted certificate that is valid for more than 5 years. This follows the Technical Guideline TR-03116 of the German Federal Office for Information Security (BSI). The validity period is the time between the `notBefore` and `notAfter` dates of the certificate.
+Cumulocity now rejects a self-signed trusted certificate that is valid for more than 5 years. This change follows recommended security practice for trusted certificates. The validity period is the time between the `notBefore` and `notAfter` dates of the certificate.
 
 The following endpoints return the status code 422 for such a certificate:
 
