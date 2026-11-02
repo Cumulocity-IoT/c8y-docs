@@ -114,6 +114,8 @@ The platform drops the output and raises an alarm of type `c8y_DataPrep_DeviceCr
 
 The platform does not remember a failure, so the next message that names the external ID tries again. If the failed attempt created some of the objects, the platform finds and uses them, and does not create them again.
 
+The platform writes a message to the log of the rule for each output that it drops, including when `onDeviceCreate` returns `[]`. For details on logging, see [Logs and diagnostics](/data-preparation/logs-and-diagnostics/).
+
 #### Managed object updates from onMessage {#managed-object-updates-from-onmessage}
 
 A managed object update from `onMessage` is an output like any other. If its device does not exist, `onDeviceCreate` decides what the platform creates, and then the platform applies the update to the new device. This gives you two places to set the fields of a device:
