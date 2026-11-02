@@ -1,6 +1,6 @@
 ---
 date: ""
-title: fill in the static Codex shell for crawlers (#13301) [GRAFT][release/cd] (#13468)
+title: Fill in the static Codex shell for crawlers
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
