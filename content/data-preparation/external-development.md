@@ -165,7 +165,7 @@ Each item in `objects` has the following fields:
 |-------|------|----------|-------------|
 | `cumulocityType` | string | Yes | One of `device`, `asset`, or `group`. |
 | `externalSource` | array | No | The external IDs of the object. Each item has a `type` and an `externalId`. |
-| `managedObject` | object | Yes | The managed object that the platform creates. The test ignores the marker fragments that the platform adds for the `cumulocityType`, so omit `c8y_IsDevice`, `com_cumulocity_model_Agent`, `c8y_IsAsset`, and `c8y_IsDeviceGroup`. |
+| `managedObject` | object | Yes | The managed object that the platform creates. The comparison ignores the marker fragments that the platform adds for the `cumulocityType`, so you can omit `c8y_IsDevice`, `com_cumulocity_model_Agent`, `c8y_IsAsset`, and `c8y_IsDeviceGroup`. |
 
 The test matches objects that have external IDs by those IDs, in any order. It matches objects without external IDs by their order relative to each other.
 
