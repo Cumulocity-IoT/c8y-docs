@@ -14,12 +14,4 @@ build_artifact:
 ticket: "CTM-3142"
 version: "1025.15.1"
 ---
-The assets breadcrumb link in Digital Twin Manager previously navigated
-to the Groups page instead of the Assets page, creating confusion in the
-navigation flow. Now clicking the Assets breadcrumb link correctly
-navigates you to the Assets page, ensuring breadcrumb navigation behaves
-as expected.
-
-This change improves navigation consistency in Digital Twin Manager,
-allowing you to quickly return to the main Assets page from any nested
-view.
+In Digital Twin Manager, the Assets breadcrumb link opened the Groups page instead of the Assets page. The link now opens the Assets page, so you can quickly return to it from any nested view in DTM.
