@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Enable navigation to the assets page via the assets breadcrumb link in Digital Twin Manager"
+title: "Assets breadcrumb link in Digital Twin Manager now opens the Assets page"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-VSkj2iV9m"
