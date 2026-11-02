@@ -123,6 +123,28 @@ When working with binary data, provide either:
 
 If the AI cannot determine the format, it asks for clarification rather than guessing.
 
+### Customizing device creation {#device-creation-ai}
+
+When a rule sends data for a device that does not exist yet, the platform creates a basic device for it. To control what the platform creates, ask the AI. The AI then writes an `onDeviceCreate` function in addition to `onMessage`. For details on how the function works, see [Customizing device creation](/data-preparation/device-onboarding/#customizing-device-creation).
+
+The AI only writes `onDeviceCreate` when you ask to control how new devices are created, for example:
+
+- The name, type, or fragments of new devices.
+- Additional external IDs.
+- Parent devices, assets, or groups.
+- Not creating new devices for some conditions.
+
+**Examples of prompts for device creation:**
+
+| Prompt | Result |
+|--------|--------|
+| "Only send data for devices that are already registered in Cumulocity. Don't create new devices for clients it doesn't know." | `onDeviceCreate` returns `[]`, so the platform creates nothing. |
+| "When a new device first sends data, create it with the name 'Climate sensor' followed by its client ID, and the type 'acme_climate'. Have it reported unavailable after 30 minutes without data." | Each new device gets the name, type, and required availability that you specify. |
+| "Messages arrive on `sites/<site>/<device>`. Put each new device under an asset for its site, named 'Site' followed by the site from the topic. Create the site's asset if it doesn't exist yet." | The platform creates the site as an asset, and the device under it. |
+| "Each message comes from a gateway and has readings for its sensors. Create new sensors as child devices of the gateway, and create the gateway too if it's new." | The platform creates the gateway, and its sensors as child devices. |
+
+Before you deploy the rule, review the generated `onDeviceCreate` function and its test outputs. Check that the new objects to be created have the correct external IDs, parents, and other required fields.
+
 ### Test generation {#test-generation}
 
 Ask the AI to generate test cases for your current code. The AI creates tests that cover:
