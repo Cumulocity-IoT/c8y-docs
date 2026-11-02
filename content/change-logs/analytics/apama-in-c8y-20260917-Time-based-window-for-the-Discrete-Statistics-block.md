@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-10-28'
   - label: jp.cumulocity.com
     date: '2026-10-28'
+  - label: us.cumulocity.com
+    date: '2026-11-02'
 ---
 
 The **Discrete Statistics** block has a new optional **Window Duration (secs)** parameter. Set it to report statistics over the samples received within that duration, instead of over every sample since the model started.

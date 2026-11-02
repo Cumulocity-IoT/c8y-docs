@@ -1,5 +1,5 @@
 ---
-date:
+date: '2026-11-02'
 title: Password field is now ignored in general user APIs
 product_area: Platform services
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: cumulocity
 ticket: MTM-66897
 version: 2026.400.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-02'
+  - label: apj.cumulocity.com
+    date: '2026-10-30'
+  - label: jp.cumulocity.com
+    date: '2026-10-30'
+  - label: us.cumulocity.com
+    date: '2026-11-02'
+  - label: cumulocity.com
+    date: '2026-11-02'
 ---
 
 As announced earlier in [Deprecation of password updates via general user APIs](/change-logs/#cumulocity-2026-168-0-deprecation-of-password-updates-via-general-user-apis), the `password` field is now ignored in the following endpoints:

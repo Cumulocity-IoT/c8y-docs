@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-10-28'
   - label: jp.cumulocity.com
     date: '2026-10-28'
+  - label: us.cumulocity.com
+    date: '2026-11-02'
 ---
 
 You can now download basic diagnostics information from the Streaming Analytics application when it uses a multi-tenant microservice. Previously, only the tenant that owns the microservice could download diagnostics information.
