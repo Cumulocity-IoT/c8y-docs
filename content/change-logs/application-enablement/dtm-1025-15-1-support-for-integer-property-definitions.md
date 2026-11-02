@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Support for integer property definitions"
+title: "Support for integer-only number properties in Digital Twin Manager"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-2c7RdTdXo4"
