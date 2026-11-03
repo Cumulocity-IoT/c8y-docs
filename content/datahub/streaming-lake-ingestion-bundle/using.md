@@ -285,6 +285,7 @@ The following columns are present in some tables, depending on the type of data:
 * `source`: For alarms, events, or measurement, this column contains the [managed object ID](/concepts/domain-model/#object-identification) of the device or asset associated with the change.
 * `deviceId`: For operations, this column contains the [managed object ID](/concepts/domain-model/#object-identification) of the device targeted for the operation.
 * `time`: The timestamp of the change as sent by the device. This column is present for alarms, events, and measurements.
+* `creationTime`: The timestamp when {{< product-c8y-iot >}} created the record. This column is present for inventory, measurements, and operations.
 * `type`: The type property of the device, measurement and so on.
 
 For change data capture tables and views, the following column is present:
@@ -534,12 +535,14 @@ This results in the following data in the data lake:
 
 **Table: cdc_measurement.c8y_Battery**
 
-| <span style="display: inline-block; width: 50px;">id</span> | <span style="display: inline-block; width: 50px;">source</span> | <span style="display: inline-block; width: 200px;">eventType</span> | <span style="display: inline-block; width: 210px;">time</span> | <span style="display: inline-block; width: 200px;">type</span> | <span style="display: inline-block; width: 90px;">voltage</span> | <span style="display: inline-block; width: 110px;">stateOfCharge</span> | <span style="display: inline-block; width: 100px;">temperature</span> |
-| ----------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
-|                                                             |                                                                 |                                                                     |                                                                |                                                                | value \| unit                                                    | value \| unit                                                           | value \| unit                                                         |
-| 12345                                                       | 47635                                                           | MEASUREMENT_CREATE                                                  | 2025-08-20T13:42:39.678Z                                       | c8y_BatteryMeasurement                                         | 12.8 \| V                                                        | 85.5 \| %                                                               | 22.5 \| C                                                             |
+| <span style="display: inline-block; width: 50px;">id</span> | <span style="display: inline-block; width: 50px;">source</span> | <span style="display: inline-block; width: 200px;">eventType</span> | <span style="display: inline-block; width: 210px;">time</span> | <span style="display: inline-block; width: 200px;">type</span> | <span style="display: inline-block; width: 210px;">creationTime</span> | <span style="display: inline-block; width: 90px;">voltage</span> | <span style="display: inline-block; width: 110px;">stateOfCharge</span> | <span style="display: inline-block; width: 100px;">temperature</span> |
+| ----------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
+|                                                             |                                                                 |                                                                     |                                                                |                                                                |                                                                        | value \| unit                                                    | value \| unit                                                           | value \| unit                                                         |
+| 12345                                                       | 47635                                                           | MEASUREMENT_CREATE                                                  | 2025-08-20T13:42:39.678Z                                       | c8y_BatteryMeasurement                                         | 2025-08-20T13:42:40.012Z                                               | 12.8 \| V                                                        | 85.5 \| %                                                               | 22.5 \| C                                                             |
 
 There is one important difference for measurements compared to other data types: There is no `cdc_measurement.measurement` table. All relevant data is present in the fragment tables.
+
+Every measurement table contains the column `creationTime` in addition to `time`. The device sets `time`, which records when the value was measured. {{< product-c8y-iot >}} sets `creationTime` when it stores the measurement.
 
 This example also demonstrates how the service handles nested properties: Like the {{< product-c8y-iot >}} APIs and its operational store, Apache Iceberg supports nested data. Just like with the above JSON example, the property `voltage` is a nested structure containing two properties `value` and `unit`. You can query the contained properties from SQL using path expressions such as `"voltage"."value"`. For more information on querying the data from SQL, see [Example queries](#example-queries).
 
@@ -716,10 +719,10 @@ This results in a table like the following:
 
 **Table: cdc_measurement.c8y_Battery**
 
-| <span style="display: inline-block; width: 50px;">id</span> | <span style="display: inline-block; width: 50px;">source</span> | <span style="display: inline-block; width: 200px;">eventType</span> | <span style="display: inline-block; width: 210px;">time</span> | <span style="display: inline-block; width: 200px;">type</span> | <span style="display: inline-block; width: 90px;">voltage</span> | <span style="display: inline-block; width: 110px;">stateOfCharge</span> | <span style="display: inline-block; width: 100px;">temperature</span> |
-| ----------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
-|                                                             |                                                                 |                                                                     |                                                                |                                                                | value \| unit                                                    | value \| unit                                                           | value \| unit                                                         |
-| 12345                                                       | 47635                                                           | MEASUREMENT_CREATE                                                  | 2026-02-19T13:09:39.678Z                                       | c8y_BatteryMeasurement                                         | 12.8 \| V                                                        | 85.5 \| %                                                               | 22.5 \| C                                                             |
+| <span style="display: inline-block; width: 50px;">id</span> | <span style="display: inline-block; width: 50px;">source</span> | <span style="display: inline-block; width: 200px;">eventType</span> | <span style="display: inline-block; width: 210px;">time</span> | <span style="display: inline-block; width: 200px;">type</span> | <span style="display: inline-block; width: 210px;">creationTime</span> | <span style="display: inline-block; width: 90px;">voltage</span> | <span style="display: inline-block; width: 110px;">stateOfCharge</span> | <span style="display: inline-block; width: 100px;">temperature</span> |
+| ----------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
+|                                                             |                                                                 |                                                                     |                                                                |                                                                |                                                                        | value \| unit                                                    | value \| unit                                                           | value \| unit                                                         |
+| 12345                                                       | 47635                                                           | MEASUREMENT_CREATE                                                  | 2026-02-19T13:09:39.678Z                                       | c8y_BatteryMeasurement                                         | 2026-02-19T13:09:40.012Z                                               | 12.8 \| V                                                        | 85.5 \| %                                                               | 22.5 \| C                                                             |
 
 
 Note that there are three columns which are of structured type: `voltage`, `stateOfCharge` and `temperature`.
@@ -728,9 +731,9 @@ Corresponding to the table, a view is created automatically as shown below. Note
 
 **View: view_measurement.c8y_Battery**
 
-| <span style="display: inline-block; width: 50px;">id</span> | <span style="display: inline-block; width: 60px;">source</span> | <span style="display: inline-block; width: 200px;">eventType</span> | <span style="display: inline-block; width: 210px;">time</span> | <span style="display: inline-block; width: 200px;">type</span> | <span style="display: inline-block; width: 130px;">voltage\\value</span> | <span style="display: inline-block; width: 110px;">voltage\\unit</span> | <span style="display: inline-block; width: 30px;">...</span> | <span style="display: inline-block; width: 160px;">temperature\\value</span> | <span style="display: inline-block; width: 160px;">temperature\\unit</span> |
-| ----------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| 12345                                                       | 47635                                                           | MEASUREMENT_CREATE                                                  | 2026-02-19T13:09:39.678Z                                       | c8y_BatteryMeasurement                                         | 12.8                                                                     | V                                                                       | ...                                                          | 22.5                                                                         | C                                                                           |
+| <span style="display: inline-block; width: 50px;">id</span> | <span style="display: inline-block; width: 60px;">source</span> | <span style="display: inline-block; width: 200px;">eventType</span> | <span style="display: inline-block; width: 210px;">time</span> | <span style="display: inline-block; width: 200px;">type</span> | <span style="display: inline-block; width: 210px;">creationTime</span> | <span style="display: inline-block; width: 130px;">voltage\\value</span> | <span style="display: inline-block; width: 110px;">voltage\\unit</span> | <span style="display: inline-block; width: 30px;">...</span> | <span style="display: inline-block; width: 160px;">temperature\\value</span> | <span style="display: inline-block; width: 160px;">temperature\\unit</span> |
+| ----------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| 12345                                                       | 47635                                                           | MEASUREMENT_CREATE                                                  | 2026-02-19T13:09:39.678Z                                       | c8y_BatteryMeasurement                                         | 2026-02-19T13:09:40.012Z                                               | 12.8                                                                     | V                                                                       | ...                                                          | 22.5                                                                         | C                                                                           |
 
 This makes it possible to operate directly on nested fields and, for example, do analytics for measurement values in BI tools.
 
@@ -990,70 +993,14 @@ ORDER BY "time" DESC
 
 You can read your tables directly from your own application with any Apache Iceberg client, instead of querying them through DataHub.
 
-The catalog hands your client a temporary, read-only storage credential for each table it loads, so you do not configure object store credentials yourself. The credential covers one table, expires on its own, and the client refreshes it. To receive it, send the header `X-Iceberg-Access-Delegation` with the value `vended-credentials`.
+The **Data Lake** page shows everything your client needs, with the values for your tenant and environment filled in. Navigate to **Administration** > **Settings** > **Data Lake** and click **Show configuration for Iceberg client**. The dialog shows:
 
-Create a client credential for your tenant with the principals endpoint of the service. The secret is shown once, so store it when you create it.
+* The catalog settings, each ready to copy.
+* The commands to create, rotate, and delete client credentials.
+* How your client receives temporary storage credentials, and the minimum client versions.
+* Java and PyIceberg examples that also verify the access.
 
-```shell
-curl -u "<username>:<password>" -X POST \
-  "https://<your-tenant>.<environment-domain>/service/offloading/api/v1/principals/<principal-name>"
-```
-
-Both clients use the same catalog settings.
-
-|Setting|Value|
-|:---|:---|
-|`type`|`rest`|
-|`uri`|`https://iceberg.<environment-domain>/api/catalog`|
-|`warehouse`|Your tenant ID|
-|`credential`|`<clientId>:<clientSecret>`|
-|`oauth2-server-uri`|`https://iceberg.<environment-domain>/api/catalog/v1/oauth/tokens`|
-|`scope`|`PRINCIPAL_ROLE:ALL`|
-|`header.X-Iceberg-Access-Delegation`|`vended-credentials`|
-
-**Java**
-
-Add `org.apache.iceberg:iceberg-core` and the bundle for your object store, `iceberg-aws-bundle` for AWS S3 or `iceberg-azure-bundle` for Azure Data Lake Storage. For the full API, see the [Iceberg Java API documentation](https://iceberg.apache.org/docs/latest/api/).
-
-```java
-Map<String, String> props = new HashMap<>();
-props.put("type", "rest");
-props.put("uri", "https://iceberg.<environment-domain>/api/catalog");
-props.put("warehouse", "<your-tenant-id>");
-props.put("rest.auth.type", "oauth2");
-props.put("credential", "<clientId>:<clientSecret>");
-props.put("oauth2-server-uri", "https://iceberg.<environment-domain>/api/catalog/v1/oauth/tokens");
-props.put("scope", "PRINCIPAL_ROLE:ALL");
-props.put("header.X-Iceberg-Access-Delegation", "vended-credentials");
-
-RESTCatalog catalog = new RESTCatalog();
-catalog.initialize("cumulocity", props);
-
-catalog.listTables(Namespace.of("measurement")).forEach(System.out::println);
-```
-
-**Python**
-
-Install PyIceberg with the extras for your object store, `pyiceberg[s3fs,pyarrow]` for AWS S3 or `pyiceberg[adlfs,pyarrow]` for Azure Data Lake Storage. For the full API, see the [PyIceberg documentation](https://py.iceberg.apache.org/).
-
-```python
-from pyiceberg.catalog.rest import RestCatalog
-
-catalog = RestCatalog(
-    "cumulocity",
-    **{
-        "uri": "https://iceberg.<environment-domain>/api/catalog",
-        "warehouse": "<your-tenant-id>",
-        "credential": "<clientId>:<clientSecret>",
-        "oauth2-server-uri": "https://iceberg.<environment-domain>/api/catalog/v1/oauth/tokens",
-        "scope": "PRINCIPAL_ROLE:ALL",
-        "header.X-Iceberg-Access-Delegation": "vended-credentials",
-    },
-)
-
-table = catalog.load_table("measurement.c8y_Battery")
-print(table.scan(limit=10).to_arrow())
-```
+If your environment does not provide temporary storage credentials, the page does not offer the button.
 
 ### Ensuring good query performance {#ensuring-good-query-performance}
 

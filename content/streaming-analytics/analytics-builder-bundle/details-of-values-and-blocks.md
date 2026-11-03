@@ -182,6 +182,8 @@ To illustrate this, we exaggerate the effect by simulating an **Average \(Mean\)
 
 Note that not only is the timing of the expiry of the anomalous values less precise, the exact shape of the output is lost. The bucketed average changes uniformly between time 00:13 and 00:14. Remember, the product blocks use 20 buckets, so the effect would be less pronounced in this case.
 
+Blocks that aggregate discrete-time samples, such as the **Discrete Statistics** block, cannot apply a fractional proportion to a bucket, because a sample is either counted or it is not. These blocks discard each bucket whole. A sample therefore stays in the window for the window duration plus up to one bucket duration.
+
 ### Pulse signals {#pulse-signals}
 
 A pulse is used to signal a point in time or a change of state. Examples of use cases for pulses are:
@@ -227,6 +229,10 @@ When dealing with discrete-time inputs, you should use the **Discrete Statistics
 |00:20|8|10.8|9.33|
 
 Compare this to the table in [On-change inputs and time windows](/streaming-analytics/analytics-builder/#on-change-inputs-and-time-windows), looking at times 00:10 onwards \(that is, what would be in a window from 00:10 to 00:20\). Note that the continuous-time block would generate a different output if the inputs occurred at different times, while a block averaging values based on discrete-time would not.
+
+The **Discrete Statistics** block also supports a time-based window. Set its **Window Duration \(secs\)** parameter to report statistics over recent samples only. Every sample in the window counts equally, however long it has been there, and the time between samples does not affect the result. The **Reset** input port clears the window. If you leave the parameter empty, the block keeps every sample since it started or was last reset.
+
+The window is an approximation. A sample stays in the window for the window duration plus up to one bucket duration. See [Windows and buckets](/streaming-analytics/analytics-builder/#windows-and-buckets) for detailed information.
 
 Note that by default measurements are treated as continuous-time values. So it is possible, for example, to calculate the difference between two values:
 

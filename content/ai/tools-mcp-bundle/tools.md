@@ -32,27 +32,41 @@ Agent process:
 
 ### Using and testing built-in {{< product-c8y-iot >}} tools {#builtin-tools}
 
-The AI Agent Manager provides default tools for accessing {{< product-c8y-iot >}} data:
+The AI Agent Manager provides default tools for accessing {{< product-c8y-iot >}} data. They are provided by the `cumulocity-default` MCP server and include, among others:
 
-- **Device queries**: Search and retrieve device information.
-- **Measurement retrieval**: Access current and historical measurements.
-- **Alarm management**: Query alarms and their status.
-- **Event access**: Retrieve events from devices.
-- **Operation status**: Check operation execution status.
+- **Inventory**: Search, retrieve, create, update, and delete managed objects such as devices, and list their child objects.
+- **Measurements**: Find the supported series of a device, retrieve measurements, and create measurements.
+- **Alarms and events**: Raise and list alarms and events, and update the status of alarms.
+- **Operations**: Execute and list operations, and request device actions such as a restart, a shell command, or a log file.
+- **API requests**: Send GET requests to the {{< product-c8y-iot >}} REST API.
+- **Further tools**: Read and update tenant options, send emails, read the {{< product-c8y-iot >}} documentation, and call other agents.
 
 {{< c8y-admon-important >}}
 These tools access and also change the data that the executing user has access to. Test such tools in a testing environment.
 {{< /c8y-admon-important >}}
 
-These tools are available automatically and require no additional configuration. Test these tools by accessing the **Tools** section of the AI Agent Manager. Open a tool, which displays the tool's description and parameters. Enter something into the chat box to test the tool. These tools always use the authorization of the current user and therefore cannot access more data than the user accesses. However, be aware that they change or delete data.
+These tools are available automatically and require no additional configuration. They always use the authorization of the current user and therefore cannot access more data than the user accesses. However, be aware that they change or delete data.
+
+To give an agent access to the complete API of your tenant through a single tool, use the `codemode` tool of [AI Workbench](/ai/ai-workbench/).
+
+### Testing tools {#testing-tools}
+
+To test a tool:
+
+1. Navigate to **AI Agent Manager** > **Tools**. The list shows all tools of all configured MCP servers, with the name of the MCP server as a tag.
+2. Select a tool. The details show the description of the tool.
+3. Optionally, click **Show details** to see the tool properties, such as its parameters, and the MCP server that provides the tool.
+4. Enter a message in the chat to test the tool. A test agent calls the tool and shows the results.
+
+Tools that may delete or overwrite data ask for your approval before they run, unless you select **Auto** below the message field.
 
 ### Assigning tools to agents {#assigning-tools}
 
 To enable an agent to use tools:
 
-1. Open the agent configuration.
+1. Navigate to **AI Agent Manager** > **Agents** and open the agent.
 2. Navigate to the **Tools** tab.
-3. Browse available tools.
+3. Browse or search the available tools.
 4. Select the tools the agent needs.
 5. Click **Save**.
 

@@ -59,7 +59,11 @@ To drop a message without raising an error, return an empty array (`[]`).
 
 ### Logs {#logs}
 
-All output written with `console.log`, `console.info`, `console.warn`, `console.error`, and `console.debug` is written to the Apama microservice log file. For per-tenant microservices, this log is visible in the Administration application. More details are available in the [Streaming Analytics documentation](/streaming-analytics/troubleshooting/#logfiles).
+For a deployed rule, output written with `console.error`, and errors thrown by the smart function, are always written to the Apama microservice log file. Output written with `console.log`, `console.info`, `console.warn`, and `console.debug` is only written while the Data Preparation **Logs** page is open with the rule selected, or while a background capture is running for it.
+
+By default, this increased `console` log level can be written for up to 3 rules of a tenant at the same time. See [Limit on console capture](/data-preparation/logs-and-diagnostics/#console-capture-limit).
+
+To view the log output of your rules, open the **Logs** page of the Data Preparation application. Select a deployed rule there to see all of its `console` output. See [Logs and diagnostics](/data-preparation/logs-and-diagnostics/).
 
 When running tests in the rule editor before deployment, all log output is also shown directly in the test UI.
 

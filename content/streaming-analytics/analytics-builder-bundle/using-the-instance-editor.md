@@ -62,6 +62,8 @@ When a text box requires a value that has not yet been specified, a message is s
 
 You can activate \(that is, deploy\) each instance separately. For example, one instance can be in production mode and another in test mode. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more information on the different modes; that information applies to both regular models and template models.
 
+New instances are created in production mode and inactive state.
+
 When you activate an instance, all changes for that instance are first saved and the instance is then activated.
 
 When an instance is activated, the template parameter values, where supplied, are taken and applied to those block parameters in the model which use a template parameter binding. If no template parameter value is provided, then a default value for that template parameter is used, if there is one. If no template parameter value is supplied in the case of a required template parameter, then the instance will fail to activate.
