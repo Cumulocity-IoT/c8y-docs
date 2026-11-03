@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Support for integer-only number properties in Digital Twin Manager"
-product_area: "Application enablement & solutions"
+date: '2026-11-03'
+title: Support for integer-only number properties in Digital Twin Manager
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-2c7RdTdXo4"
-      label: "Improvement"
+  - value: change-2c7RdTdXo4
+    label: Improvement
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3320"
-version: "1025.15.1"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3320
+version: 1025.15.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-03'
 ---
 In Digital Twin Manager, the Number (Float, Integer) property type now includes an Allow integers only checkbox, allowing you to define properties that accept only whole numbers.
 
