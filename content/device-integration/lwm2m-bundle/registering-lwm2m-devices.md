@@ -134,7 +134,7 @@ In the PSK and X509 security modes, the device and the LWM2M agent agree on a DT
 | TLS_PSK_WITH_AES_256_CCM                | 0xC0A5 |
 
 {{< c8y-admon-info >}}
-Cumulocity may extend this list in the future.
+{{< product-c8y-iot >}} may extend this list in the future.
 {{< /c8y-admon-info >}}
 
 ##### More details on X.509 security {#more-details-on-x509-security}
