@@ -31,7 +31,7 @@ For any Linux-based device, we recommend integrating it via [thin-edge.io](https
 * **Zero-code device management**: Native out-of-the-box support for all device management features - including software management, configuration updates, log retrieval, and remote access.
 * **Native SmartREST efficiency**: Improved bandwidth-efficiency through the use of {{< product-c8y-iot >}}’s highly efficient SmartREST protocol.
 * **Automatic child device routing**: No custom gateway logic is required as data is published with child IDs to automatically provision external connected sensors and devices in the inventory and route telemetry accordingly. 
-* **Modular extensibility**: The architecture is designed around plugins, allowing you to extend functionality like the OPC UA gateway without having to recompile the core agent. Plugins can be deployed and managed via Cumulocity.
+* **Modular extensibility**: The architecture is designed around plugins, allowing you to extend functionality like the OPC UA gateway without having to recompile the core agent. Plugins can be deployed and managed via {{< product-c8y-iot >}}.
 * **Language-agnostic decoupling**: Because thin-edge.io uses a local MQTT bus for communication, your application logic can be written in any language and remains completely isolated from the connectivity logic.
 * **Automated certificate lifecycle**: The built-in CLI tools handle the generation, signing, uploading, and rotation of X.509 certificates which can be securely stored in HSMs. 
 
