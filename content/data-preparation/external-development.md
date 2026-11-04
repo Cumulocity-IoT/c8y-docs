@@ -47,7 +47,7 @@ curl -u '<username>' 'https://<your-tenant>/service/dataprep/v3/api-docs'
 
 ### Rule package format {#rule-package-format}
 
-Rules are deployed as a gzip-compressed TAR archive (*tar.gz*). This section describes the archive structure required by the deploy endpoint. The `npm run deploy` script in the [template repository](https://github.com/Cumulocity-IoT/data-preparation-rules-template) builds archives in this format automatically.
+Rules are deployed as a gzip-compressed TAR archive (*tar.gz*). This section describes the archive structure required by the deploy endpoint. The `npm run deploy` script in the [template repository](https://github.com/Cumulocity-IoT/data-preparation-rules-template) builds archives in this format automatically. Rules exported from the Data Preparation application also use this format, with the smart function in *smartFunction.js*. For details, see [To export a rule](/data-preparation/rule-creation-management/#export-rule).
 
 #### Archive structure {#archive-structure}
 
@@ -58,6 +58,7 @@ Files must be at the **root level** of the archive:
 | *data-prep.yaml* | Yes | Rule configuration (see below). |
 | `<smartFunctionFile>` | Yes | Bundled Javascript file. The filename must match the `smartFunctionFile` field in *data-prep.yaml*. |
 | *tests/\*.yaml* | No | Test cases; each file becomes a named test stored on the deployed rule. |
+| *ai-chat.yaml* | No | The chat history of the AI assistant for the rule. If the archive does not contain this file, the rule keeps its existing chat history. |
 
 Any other files in the archive are silently ignored.
 
@@ -67,6 +68,8 @@ Archives are subject to the following limits:
 - Maximum **1 MB** per file (`dataprep` / `rule-import.max-file-size`).
 - Maximum **10 MB** total extracted size (`dataprep` / `rule-import.max-total-size`).
 - Entries containing path traversal segments (`..`) are rejected.
+
+Exporting a rule from the Data Preparation application fails if the package would exceed these limits.
 
 The server reads YAML values strictly. Only lowercase `true` and `false` are booleans, only `null` or an empty value is null, and numbers must be plain decimals. The server reads other forms, such as `True`, `~`, or `0x1F`, as strings. The `npm run deploy` script writes test files in this form automatically, but sends *data-prep.yaml* as written.
 
@@ -106,6 +109,10 @@ input:
 #### Test file format {#test-file-format}
 
 Each *.yaml* file under *tests/* defines a named test case. The filename without extension is the test name. Test files are optional — if included in the archive they are stored server-side on the deployed rule.
+
+In a filename, `%` followed by two hexadecimal digits is a UTF-8 byte, as in a URL. Use this for characters in a test name that are not allowed in filenames, such as `/` or `:`. For example, *tests/inlet%2Foutlet.yaml* defines the test `inlet/outlet`. A `%` that is not followed by two hexadecimal digits stays as it is. Each test name must be unique within the archive.
+
+When you export a rule, the Data Preparation application writes `%`, control characters, a `.` at the start of a test name, and the characters `/ \ : * ? " < > |` in this form.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -161,7 +168,7 @@ The rule name comes from the URL path, not from the archive. If a rule with the 
 | Response code | Meaning |
 |---------------|---------|
 | `200` | Rule deployed successfully. |
-| `400` | Malformed archive, missing required files, invalid YAML, a `disabled` value that is not `true` or `false`, or invalid rule name. |
+| `400` | Malformed archive, missing required files, invalid YAML, a `disabled` value that is not `true` or `false`, two test files with the same test name, or invalid rule name. |
 | `413` | An archive entry exceeds the maximum permitted size. |
 | `422` | Package is structurally valid but the rule fails domain validation (for example, `topicPattern` contains `**`). |
 
