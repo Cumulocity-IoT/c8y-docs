@@ -8,7 +8,7 @@ sector:
 
 {{< company-c8y >}} offers a wide range of functionality for interfacing IoT devices and other IoT-related data sources with the {{< product-c8y-iot >}} platform.
 
-The integration approach depends on the device capabilities and use cases. As a quick reference, please consult the following diagram. Each provided option is described in detail below.
+The integration approach depends on the device capabilities and use cases. For a quick reference, see the diagram below. Each provided option is described in detail here.
 
 ![Device integration overview](/images/device-protocols/introduction/device-integration-overview.png)
 
