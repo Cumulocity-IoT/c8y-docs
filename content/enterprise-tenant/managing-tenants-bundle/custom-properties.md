@@ -25,16 +25,17 @@ Every property definition that you create on the **Tenant properties** page is a
 Values that you set for custom properties from the former **Properties library** (**Settings > Properties library**) are kept. After the migration, the **Custom properties** tab of each subtenant displays these values.
 {{< /c8y-admon-info >}}
 
-The tab displays one field for each property definition, depending on its type:
+The tab displays one field for each property definition. Enter a value in each field according to its type:
 
-- **Text** and **Number**: An input field for the value.
-- **Date picker**: A date that you select from the calendar.
-- **Enumeration**: A selection of the values defined in the property definition.
-- **Multiselect list**: Multiple values that you select from the values defined in the property definition.
-- **Boolean**: A checkbox.
-- **File upload**: A file to upload. Click the name of a stored file to download it.
-- **Complex**: A group of fields labeled with the name of the property, in the order configured in the property definition.
-- **Location**: The latitude and longitude that you enter or select on the map. **Location** is a default property definition and the tab always displays it.
+- **Text**: Enter a text value.
+- **Number**: Enter a number, for example, 12.5. If the property definition uses **Allow integers only**, enter a whole number, for example, 12.
+- **Date picker**: Select a date from the calendar.
+- **Enumeration**: Select one of the defined values.
+- **Multiselect list**: Select one or more of the defined values.
+- **Boolean**: Select the checkbox for "true" or clear it for "false".
+- **File upload**: Upload a file. To download a stored file, click its name.
+- **Complex**: Enter a value in each field of the group. The group shows the name of the property, and its fields follow the order in the property definition.
+- **Location**: Enter the latitude and longitude, or select the location on the map. **Location** is a default property definition, and the tab always displays it.
 
 The validation rules configured in the property definition apply when you enter a value, for example, minimum and maximum values, length restrictions, or regular expressions.
 
