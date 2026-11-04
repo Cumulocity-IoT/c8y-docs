@@ -30,9 +30,9 @@ Subscribed agents properties:
 
 To view subscribed agents:
 
-1. Navigate to **Administration** > **AI Agent Manager**.
-2. In the agents list, subscribed agents display with a badge indicating their source application.
-3. Click on a subscribed agent to view its details, including the system prompt and available tools.
+1. Navigate to **AI Agent Manager** > **Agents**.
+2. In the action bar, click **Subscribed** to only show subscribed agents. Subscribed agents show a **subscribed** tag. Hover over the tag to see the source application.
+3. Click a subscribed agent to view its details. The header shows the source **Application**, and the **System prompt** tab shows the system prompt of the agent.
 
 ![You can investigate the system prompt of a subscribed agent](/images/agents/viewing_a_subscribed_agent.png)
 
@@ -46,7 +46,16 @@ You test subscribed agents the same way as custom agents:
 
 ### Overruling subscribed agents {#aligning-subscribed-agents}
 
-While you cannot change the core configuration of subscribed agents, you align them by overruling the agent. Click the three dots next to the subscribed agent and select **Clone agent**. The cloned agent then aligns to your needs, and all subscribed agents by any app only use this new custom agent.
+While you cannot change the core configuration of subscribed agents, you align them by overruling the agent with a custom agent of the same name. To do so, use one of the following options:
+
+- In the agent list, click the actions menu of the subscribed agent and select **Clone**.
+- In the details of the subscribed agent, click **Clone agent** in the information banner.
+
+The clone keeps the name of the subscribed agent and opens, so you can align it to your needs. From now on, all calls to this agent name, from any application, use the new custom agent.
+
+In the agent list, the custom agent shows an **overrides** tag, and the subscribed agent shows an **overridden** tag and a dimmed icon. The details of an overridden agent show a warning that it is not used while the custom agent exists. To hide overridden agents from the list, turn on **Hide overridden** in the action bar.
+
+To use the subscribed agent again, delete the custom agent that overrides it.
 
 ### Subscribed agent versioning {#versioning-agents}
 
@@ -54,4 +63,4 @@ While agents in general are not versioned, subscribed agents are versioned. They
 
 ### Removing subscribed agents {#removing-subscribed-agents}
 
-Subscribed agents are removed automatically when you uninstall or remove the providing application. You cannot manually delete subscribed agents while their source application remains installed. If the source application is subscribed, you need to unsubscribe this application to uninstall the agent.
+Subscribed agents are removed automatically when you uninstall or remove the providing application. You cannot manually delete subscribed agents while their source application remains installed, so the **Delete** action is disabled for them. If the source application is subscribed, you need to unsubscribe this application to uninstall the agent.

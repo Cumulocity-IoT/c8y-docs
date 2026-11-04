@@ -12,7 +12,7 @@ Verify that your user's role includes the required permissions:
 | Permission type | Level | Access granted |
 |---|---|--|
 | Data Preparation rules | ADMIN | View, create, edit, and delete draft rules. |
-| Data Preparation rules | READ | View rules. |
+| Data Preparation rules | READ | View rules, view their logs, and download the diagnostics archive. |
 | Data Preparation deployments | ADMIN | Deploy and undeploy rules to production. Does not include permission to view or edit the rules. |
 | Data Preparation deployments | READ | View deployment status and errors. |
 

@@ -91,6 +91,7 @@ This separation lets you safely iterate on a rule --- including with the AI assi
 Your rule now appears on the Data Preparation rule list with its deployment status. From here you can:
 
 - Continue to work on the rule. Open it from the rules list page and edit the draft. Click **Save and deploy** to push your changes live.
+- Check that the deployed rule processes live messages as expected. In the rule editor, click **More…** and select **View logs** to watch the log output of the rule. See [Logs and diagnostics](/data-preparation/logs-and-diagnostics/).
 - Create additional rules for other topics, transports, or message formats.
 - Learn more about the editor and what each panel does in [Rule editor](/data-preparation/rule-editor/).
 - Learn how to write smart functions directly, including the full API and examples, in [Smart functions](/data-preparation/smart-functions/).

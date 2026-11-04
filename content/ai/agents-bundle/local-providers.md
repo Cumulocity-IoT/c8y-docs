@@ -34,7 +34,7 @@ Consider the following:
 | Aspect | Global provider | Local provider |
 |--------|-----------------|----------------|
 | Scope | All agents without local providers | Single agent only |
-| Configuration location | AI Agent Manager settings | Individual agent settings |
+| Configuration location | **Control panel** > **Model configuration** | **Local provider** tab of the agent |
 | Fallback | Used when no local provider is defined | Overrides global provider |
 | Use case | Default for most agents | Special requirements |
 
@@ -42,30 +42,41 @@ Consider the following:
 
 To configure a local provider for an agent:
 
-1. Navigate to **Administration** > **AI Agent Manager**.
-2. Open the agent you want to configure or create a new agent.
-3. In the agent configuration, expand the **Local provider** tab.
+1. Navigate to **AI Agent Manager** > **Agents**.
+2. Open the custom agent you want to configure or create a new agent. Subscribed agents don't provide a **Local provider** tab, clone them first.
+3. Open the **Local provider** tab.
+4. Define the local provider in JSON format. The editor validates the configuration against the settings of the selected provider.
+5. Click **Save**.
 
-In this view you can configure your local provider (only with JSON). Therefore (depending on the provider to use) 
-you can define a new `provider`, `model` or `apiKey`. This settings are always merged with the "global provider" and therefore allow to e.g. only overwrite the model to be used.
+Depending on the provider to use, you can define the provider `name`, the `model`, the `apiKey`, and further provider-specific settings. The `name` is one of `openai`, `anthropic`, `google`, `azure`, `xai`, `groq`, `deepinfra`, `mistral`, `togetherai`, `cohere`, `fireworks`, `deepseek`, `cerebras`, `perplexity`, `ollama`, or `echo`. How the local provider is combined with the global provider depends on the provider name:
 
-For example to use an Open AI API like LLM hosted for example on an own infrastructure, the following configuration could be used:
+- If the local provider uses the same provider `name` as the global provider, or doesn't define a `name`, its settings are merged with the global provider. The local settings take precedence. This allows you to, for example, only overwrite the model to be used:
+  ```json
+  {
+    "model": "claude-haiku-4-5"
+  }
+  ```
+- If the local provider uses a different provider `name`, only the local settings are used. The agent doesn't inherit the model, API key, or other settings of the global provider, so define all required settings, including the `apiKey`.
+
+For example, to use an OpenAI-compatible LLM hosted on your own infrastructure, the following configuration could be used:
 ```json
 {
-  "provider": "openai",
+  "name": "openai",
   "model": "my-custom-gpt",
-  "baseURL": "https://your-custom-endpoint.com/v1",
-  "strictMode": false
+  "baseURL": "https://your-custom-endpoint.com/v1"
 }
 ```
+
+If the global provider is also `openai`, this configuration is merged with it, so the global API key would be sent to your endpoint. In this case, add the `apiKey` your endpoint expects.
 
 ### Testing local providers {#testing-local-providers}
 
 After configuring a local provider:
 
-1. Navigate to the **Test** tab of the agent.
-2. Enter a test prompt.
-3. Verify the response uses the local provider.
+1. Check the **Provider/model** field in the header of the agent. It shows the provider and model the agent uses.
+2. Navigate to the **Test** tab of the agent.
+3. Enter a test prompt.
+4. Verify the response uses the local provider.
 
 ### Managing multiple local providers {#managing-multiple-providers}
 
@@ -91,4 +102,4 @@ To remove a local provider and revert to the global provider simply empty the JS
 
 - **Different results than expected**: Check the model selection and advanced settings in the local provider configuration.
 
-- **Provider not available**: Ensure the provider is supported by the AI Agent Manager. For the current list of supported providers, refer to the Vercel AI SDK documentation.
+- **Provider not available**: Ensure the provider is supported by the AI Agent Manager. For the list of supported providers, see [Model configuration](/ai/control-panel/#adding-model-configuration).
