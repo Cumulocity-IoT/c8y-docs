@@ -13,7 +13,7 @@ The integration approach depends on the device capabilities and use cases. For a
 ![Device integration overview](/images/device-protocols/introduction/device-integration-overview.png)
 
 
-### Certified Devices {#icertified-devices}
+### Certified devices {#icertified-devices}
 
 Choosing pre-certified hardware from our device partner catalogue removes the overhead of custom integrations. Every listed device undergoes annual recertification testing against core platform capabilities to ensure full interoperability and complete transparency into integration depth.
 Any certified device is automatically added to our device partner catalogue and referenced as a preferred connectivity option. Visit the [device certification page](https://ecosystem.cumulocity.com/partner-program/device-certification-and-partner/) to learn more about the program and how the certification process works.
