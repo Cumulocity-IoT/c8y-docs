@@ -23,7 +23,7 @@ Any certified device is automatically added to our device partner catalogue and 
 
 ### Integration via thin-edge.io {#integration-via-thin-edge-io}
 
-For any Linux-based device, we recommend integrating it via [thin-edge.io](https://thin-edge.io/), an open-source, cloud-agnostic edge framework optimized for lightweight IoT devices. [Thin-edge.io](https://thin-edge.io/) is fully integrated with the device management feature set and we commit ourselves to also adopt new features for [thin-edge.io](https://thin-edge.io/) as {{< product-c8y-iot >}} evolves. By requiring less than 16 MB of memory, it is suitable even for constrained devices while supporting both x86_64 and ARM-based processor architectures. 
+For any Linux-based device, we recommend integrating it via [thin-edge.io](https://thin-edge.io/), an open-source, cloud-agnostic edge framework optimized for lightweight IoT devices. Thin-edge.io is fully integrated with the device management feature set, and we commit ourselves to also adopting new features for thin-edge.io as {{< product-c8y-iot >}} evolves. By requiring less than 16 MB of memory, it is suitable even for constrained devices while supporting both x86_64 and ARM-based processor architectures. 
 
 
 **Advantages of using thin-edge.io:**
