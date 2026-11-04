@@ -65,8 +65,8 @@ Any other files in the archive are silently ignored.
 Archives are subject to the following limits:
 
 - Maximum **100 entries** per archive.
-- Maximum **1 MB** per file (`dataprep` / `rule-import.max-file-size`).
-- Maximum **10 MB** total extracted size (`dataprep` / `rule-import.max-total-size`).
+- Maximum **1 MB** per file (`dataprep` / `ruleImport.maxFileSize`).
+- Maximum **10 MB** total extracted size (`dataprep` / `ruleImport.maxTotalSize`).
 - Entries containing path traversal segments (`..`) are rejected.
 
 Exporting a rule from the Data Preparation application fails if the package would exceed these limits.
