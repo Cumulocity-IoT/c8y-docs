@@ -160,6 +160,8 @@ If you do not select any of the restrictions above, it is not applicable for the
 
 For this type, you must provide a numeric value during the asset creation, for example, the height of a wind turbine tower.
 
+Select **Allow integers only** if the property accepts only whole numbers, for example, the number of blades of a wind turbine. The property definition then uses the Integer data type, and the **Default value**, **Minimum**, and **Maximum** fields accept only whole numbers. If you enter a decimal value for the property, for example, when you create an asset or in the "Asset properties" widget, the form displays the error "Invalid type, expected integer."
+
 The type **Number** contains the following fields for additional validation rules:
 
 * **Minimum** - If selected, enter a number in the field **Minimum** on the right. When you create the asset, the asset property value cannot be lower or less than provided in the field.
