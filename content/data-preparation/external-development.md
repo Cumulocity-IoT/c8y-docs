@@ -69,7 +69,7 @@ Archives are subject to the following limits:
 - Maximum **10 MB** total extracted size (`dataprep` / `ruleImport.maxTotalSize`).
 - Entries containing path traversal segments (`..`) are rejected.
 
-Exporting a rule from the Data Preparation application fails if the package would exceed these limits.
+Exporting a rule from the Data Preparation application fails if the package would exceed the limits of the tenant that exports it. Importing or deploying the package into a tenant with lower limits can still fail.
 
 The server reads YAML values strictly. Only lowercase `true` and `false` are booleans, only `null` or an empty value is null, and numbers must be plain decimals. The server reads other forms, such as `True`, `~`, or `0x1F`, as strings. The `npm run deploy` script writes test files in this form automatically, but sends *data-prep.yaml* as written.
 
