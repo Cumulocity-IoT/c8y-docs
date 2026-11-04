@@ -187,6 +187,40 @@ The "Event list" widget lets you monitor events for a selected device.
 
 Additionally, a specific date range can be set and the events can be monitored in realtime.
 
+### Event image view {#event-image-view}
+
+The "Event image view" widget shows the images attached to the events of a selected device or group, for example, camera snapshots. Below the image, the widget shows the source, the type, and the time of the event.
+
+![Event image view widget](/images/users-guide/cockpit/cockpit-widget-event-image-view.png)
+
+If the widget loads more than one image, use the slider to move between the images. The newest image is at the right end of the slider. The counter shows the position of the current image and the number of loaded images.
+
+**Live mode** shows the newest image. When auto-refresh is enabled, the widget moves to each new image. If you move the slider to an older image, the widget keeps showing that image. The widget checks the latest 50 events with an attached file, including files that are not images.
+
+**History mode** shows the images from the selected time range. The widget loads 50 events at a time. If the time range contains more events, the counter shows a plus sign, for example, "50 / 50+". To load older images, move the slider to the oldest image and click **Load older images**.
+
+To show the loaded images as a slideshow, click **Play slideshow**.
+
+If the widget loads more than one image in history mode, the widget header provides the following actions:
+
+- **Download loaded images**: Downloads the loaded images as a ZIP file.
+- **Export loaded images to GIF**: Creates an animated GIF file from the loaded JPG, PNG, and BMP images.
+
+Otherwise, click **Download** in the widget header to download the current image.
+
+**Parameters to configure**
+
+![Event image view widget configuration](/images/users-guide/cockpit/cockpit-widget-event-image-view-config.png)
+
+| Field           | Description                                                                                                                                                                                                          |
+| :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Widget title    | Widget title. By default, the widget type is the title.                                                                                                                                                              |
+| Asset selection | The device or group with the events.                                                                                                                                                                                 |
+| Time context    | Select **Dashboard** to use the time range of the dashboard or **Widget** to set a time range for the widget. Select **Hide in widget** to hide the time controls in the widget. For details, see [Global time context](/cockpit/global-time-context/). |
+| Type            | Only show the images of events of the specified type. Leave the field empty to show the images of all event types.                                                                                                  |
+| Child devices   | Select **Show events** to also show the images of child devices.                                                                                                                                                     |
+| Slideshow       | Select **Play in loop** to restart the slideshow after the newest image. Available in history mode only.                                                                                                            |
+
 ### Fieldbus device {#fieldbus-device}
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
