@@ -1,6 +1,6 @@
 ---
 date: '2026-11-02'
-title: Password field is now ignored in general user APIs
+title: Passwords can no longer be changed via general user APIs
 product_area: Platform services
 change_type:
   - value: change-3BQrQ6adS
