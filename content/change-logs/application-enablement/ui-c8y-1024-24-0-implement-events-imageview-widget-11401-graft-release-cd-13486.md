@@ -1,35 +1,24 @@
 ---
 date: ""
-title: Implement events imageview widget (#11401) [GRAFT][release/cd] (#13486)
+title: New "Event image view" widget shows images attached to events
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
     label: Feature
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+  - value: component-YdSEScrEC
+    label: Cockpit
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: MTM-66153
 version: 1024.24.0
 ---
-# Backport
+A new "Event image view" widget is available. It shows the images attached to the events of a device or group, for example, camera snapshots. Below each image, it shows the source, the type, and the time of the event.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-66153] Implement events imageview widget
-(#11401)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/11401)
+* In live mode, the widget shows the newest image. With auto-refresh enabled, it moves to each new image.
+* In history mode, the widget shows the images from the selected time range and loads 50 events at a time. To load older images, move the slider to the oldest image and click **Load older images**.
+* To move between the images, use the slider. To show them as a slideshow, click **Play slideshow**.
+* In live mode, click **Download** to save the current image. In history mode, you can download the loaded images as a ZIP file or export them to an animated GIF file.
 
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66153]:
-https://cumulocity.atlassian.net/browse/MTM-66153?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
----------
-
-Co-authored-by: Lukasz Janusz <114157358+luja-c8y@users.noreply.github.com>
-Co-authored-by: Dawid Janusz <dawid.janusz@cumulocity.com>
+You can limit the widget to one event type and include the events of child devices. For details, see [Event image view](/cockpit/widgets-collection/#event-image-view).
