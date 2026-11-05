@@ -42,12 +42,10 @@ In {{< product-c8y-iot >}}, data points are inherently associated with managed o
 
 **Direct association:** Any managed object in {{< product-c8y-iot >}}, including an asset, can directly receive measurements and have measurements directly associated. This means that an asset itself can be the source of a measurement. For example, if a building asset has its own sensors directly integrated with {{< product-c8y-iot >}}, the measurements from these sensors will directly be associated with that building asset.
 
-**Linked association:** The Digital Twin Manager allows linking of data points from one managed object (typically a device) to an asset. This means the asset itself does not generate the measurement and does not have the measurement directly associated, but it points to a measurement originating from another source, usually a connected device that is part of or related to the asset's hierarchy. Measurements of the source device are automatically propagated to the linked data points on the asset.
+**Linked association:** The Digital Twin Manager allows linking of data points from one managed object (typically a device) to an asset. This means the asset itself does not generate the measurement and does not have the measurement directly associated, but it points to a measurement originating from another source, usually a connected device that is part of or related to the asset's hierarchy. The [DTM Data Service](/dtm/dtm-data-service/) propagates the measurements of the source device to the linked data points on the asset.
  
 {{< c8y-admon-info >}}
-Data point linking enables the contextualization of raw, device-level measurements within the logical framework of an asset hierarchy. This linking allows for a unified view of an asset's performance and status by aggregating relevant data from multiple underlying devices into the asset, transforming disparate sensor readings into actionable information for the asset itself. 
-
-The DTM Data Service propagates measurements of linked data points from the source device to the asset, see [Measurement propagation](#measurement-propagation). In the default mode, the first data point linked to a source device enables the DTM Data Service for your tenant. You can disable or enable it at any time, see [To manage the DTM Data Service](#enable-measurement-propagation).
+Data point linking enables the contextualization of raw, device-level measurements within the logical framework of an asset hierarchy. This linking allows for a unified view of an asset's performance and status by aggregating relevant data from multiple underlying devices into the asset.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-req >}}
@@ -63,85 +61,6 @@ These permissions are categorized under two main permissions: "Digital twin asse
 - To create, update and delete linked data points: ADMIN permission for permission type "Digital twin assets" or "Digital twin linking"
 {{< /c8y-admon-req >}}
 
-### Measurement propagation {#measurement-propagation}
-
-*Measurement propagation* means that each new measurement of a source device is copied to every asset with a data point linked to it. The copy is a new measurement with the asset as source. The device measurement itself is not changed.
-
-The *DTM Data Service* is the {{< product-c8y-iot >}} service that propagates the measurements. It propagates measurements only while it is enabled for your tenant, see [To manage the DTM Data Service](#enable-measurement-propagation). After a data point link is created, new measurements of the source device are propagated to the linked data point on the asset.
-
-For each incoming device measurement, one measurement is created for each linked asset:
-
-- The source of the measurement is the asset.
-- Time and type of the measurement are taken from the device measurement.
-- The measurement contains the fragment `c8y_dtm_data_service`. The fragment identifies the measurement as propagated by the DTM Data Service.
-- Each linked series is created with the fragment and series of the linked data point on the asset, and with the value and unit of the device measurement. If several data points of the same asset are linked to the same device measurement, they are combined into one asset measurement.
-- Fragments and series of the device measurement which are not linked are not copied to the asset.
-
-Device measurements are matched to linked data points by fragment and series only. The measurement type configured for a linked data point does not affect propagation.
-
-Only measurements with a device as source are propagated. Measurements with an asset as source, including propagated asset measurements, are not propagated further.
-
-Propagated asset measurements are regular measurements in {{< product-c8y-iot >}}. For details on load, limits, delivery and cost implications, see the [service-level agreement for measurement propagation](/service-terms/service-level/#dtm-data-service-sla).
-
-#### To manage the DTM Data Service {#enable-measurement-propagation}
-
-In the default mode `auto`, the first data point linked to a source device enables the DTM Data Service for your tenant. It stays enabled while your tenant has data points linked to a source device. You can disable or enable it at any time. The setting applies to all assets of your tenant.
-
-To view or change the state of the DTM Data Service:
-
-1. Select an asset from the hierarchy on the **Assets** page and switch to the **Data points** tab.
-2. Click **Manage DTM Data Service** at the top right. The dialog shows whether the DTM Data Service is enabled for your tenant.
-3. Select one of the following:
-   - If the DTM Data Service is enabled, click **Disable for all assets** to stop measurement propagation, or click **Close** to keep it enabled.
-   - If the DTM Data Service is disabled, click **Enable for all assets** to start measurement propagation, or click **Skip for now** to keep it disabled.
-
-![Manage DTM Data Service](/images/dtm/data-points/asset-data-points-manage-data-service.png)
-
-When you disable the DTM Data Service, it stops propagating new device measurements to the assets. Disabling does not delete your data point links or the measurements already propagated to the assets. When you enable the DTM Data Service again, it does not propagate the device measurements received while it was disabled.
-
-The **Data points** tab shows the **Manage DTM Data Service** button if the DTM Data Service is enabled for your tenant, or if it is disabled and your tenant has at least one linked data point. The tab hides the button in the following cases:
-
-- Your tenant is not subscribed to the DTM Data Service.
-- You do not have the permission to get the state of the DTM Data Service, see the permissions below.
-- The platform operator has set the DTM Data Service for all tenants. In this case, you cannot change the setting for your tenant.
-
-When you link the first data point of your tenant to a source device and the DTM Data Service is not enabled yet, the dialog opens automatically after you save the link:
-
-- In the default mode `auto`, the first link enables the DTM Data Service. The dialog confirms that the DTM Data Service is enabled.
-- If the DTM Data Service was disabled for your tenant before, the dialog asks you to enable it. You can create data point links while the DTM Data Service is disabled, but no measurements are propagated until you enable it.
-
-{{< c8y-admon-info >}}
-Only users with the ROLE_DIGITAL_TWIN_ADMIN permission can enable or disable the DTM Data Service. For other users, the dialog only shows the state of the DTM Data Service and a **Close** button. If the DTM Data Service is disabled, contact your tenant administrator to enable it or to get the ROLE_DIGITAL_TWIN_ADMIN permission.
-{{< /c8y-admon-info >}}
-
-##### To manage the DTM Data Service using the REST API
-
-You can also disable or enable the DTM Data Service using the following API:
-
-```
-PUT /service/dtmdata/enabled/measurements
-Content-Type: application/json
-
-{ "mode": "off" }
-```
-
-The following modes are available:
-
-| <span style="display: inline-block; width: 100px;">Mode</span> | Description
-| ---------- | -----------
-| `auto` | Default. Measurements are propagated while the tenant has data points linked to a source device.
-| `on` | Measurements are always propagated.
-| `off` | Measurements are not propagated. Linked data points are kept, but no asset measurements are created.
-
-In the **Manage DTM Data Service** dialog, **Disable for all assets** sets the mode `off`. **Enable for all assets** sets the mode `auto`, or the mode `on` if the mode is already `auto`.
-
-To get the current state of the DTM Data Service, use `GET /service/dtmdata/enabled`.
-
-Changing the mode requires the ROLE_DIGITAL_TWIN_ADMIN permission. Getting the current state requires the ROLE_DIGITAL_TWIN_ADMIN permission or the CREATE, UPDATE or ADMIN permission for permission type "Digital twin assets" or "Digital twin linking".
-
-#### Fan-out limit {#fan-out-limit}
-
-The number of assets a single device measurement is propagated to is limited. If the limit is exceeded, measurements for further linked assets are not created and an alarm of type `c8y_DtmMeasurementFanOutLimitExceeded` is raised on the source device. For the default limit and how to request a different limit, see [Fan-out](/service-terms/service-level/#dtm-fan-out) in the service-level agreement for measurement propagation.
 
 ### To view data points {#view-datapoints}
 
@@ -169,7 +88,7 @@ The **Status** column provides immediate feedback on the state of a data point. 
 
 | Status | Description
 | ---------- | -----------
-| Linked | The data point is a linked data point and is successfully connected to its designated source (managed object/device). This indicates a fully operational link, however, it does not indicate if the link source is actively receiving measurements. If the [DTM Data Service](#enable-measurement-propagation) is enabled, measurements of the source are propagated to the asset.
+| Linked | The data point is a linked data point and is successfully connected to its designated source (managed object/device). This indicates a fully operational link, however, it does not indicate if the link source is actively receiving measurements. If the [DTM Data Service](/dtm/dtm-data-service/#enable-measurement-propagation) is enabled, measurements of the source are propagated to the asset.
 | <span style="white-space: nowrap;">Source missing</span> | The managed object (device) configured as the source for this linked data point cannot be found in the {{< product-c8y-iot >}} inventory. This could be the case because the device has been deleted. The link itself is defined, but its source is not found.
 | Incomplete | The data point link has been initiated, but it requires further action to become fully operational. Typically, this means a specific source device needs to be selected and assigned to the data point for the link to become operational.
 | (empty) | The DTM Data Service did not create the latest measurement of the asset for this data point. This is the case for data points with direct association, where the asset itself is the source of the measurements.
@@ -178,11 +97,11 @@ The **Status** column depends on the latest measurement of the asset for the dat
 
 - If the DTM Data Service created the latest measurement of the asset, the column shows the status of the link, for example, **Linked**.
 - If another source created the latest measurement of the asset, the status is empty. This also applies to linked data points, for example, if a device integration writes measurements with the same fragment and series directly to the asset.
-- If the asset has no measurement for the data point, the column shows the status of the link. If the status is **Linked** but the asset has no measurements, see [Troubleshooting measurement propagation](#troubleshooting-measurement-propagation).
+- If the asset has no measurement for the data point, the column shows the status of the link. If the status is **Linked** but the asset has no measurements, see [Troubleshooting measurement propagation](/dtm/dtm-data-service/#troubleshooting-measurement-propagation).
 
 ![Asset Data point states](/images/dtm/data-points/asset-data-points-status.png)
 
-In case of an error or warning status for a data point, the **Source** column shows the warning <i class="c8y-icon dlt-c8y-icon-warning icon-16" style="color: rgb(255, 136, 0);"></i>  or error <i class="dlt-c8y-icon-error text-danger icon-16"></i> indicators and provides options to troubleshoot and resolve the issue via the context menu. For example, in the case of a *Source missing* status, you can select a new source device to link the data point to.
+For the warning and error indicators in the **Source** column, see [Source warnings and errors](#source-warnings-and-errors).
 
 ### To create linked data points {#to-create-linked-datapoints}
 
@@ -198,7 +117,7 @@ All data points associated with an asset can be created in the **Data points** t
 6. The right panel displays the data points you have selected for linking. Review your selections here.
 7. Once you have made your selections, click the **Add data points** button at the bottom of the dialog to finalize the linking process.
 
-For each selected data point, a new data point will be created for the asset, pointing to the source device and its specific measurement series. If this is the first data point of your tenant linked to a source device and the DTM Data Service is not enabled yet, the **Manage DTM Data Service** dialog opens, see [To manage the DTM Data Service](#enable-measurement-propagation).
+For each selected data point, a new data point will be created for the asset, pointing to the source device and its specific measurement series.
 
 ![Create asset data points](/images/dtm/data-points/asset-data-point-selector.png)
 
@@ -216,6 +135,12 @@ When creating a new linked data point, the data point on the asset is created wi
 If fragment and series on the asset and the source device are different, the source will have the name of the source device and the fragment and series will be displayed as "DeviceName - c8y_Temperature → T". This helps to clearly identify the source of the linked data point.
 {{< /c8y-admon-info>}}
 
+
+### On creating the first linked data point {#first-link-dialog}
+
+In the default configuration, the first data point of your tenant linked to a source device enables the DTM Data Service. After you save the link, the **Manage DTM Data Service** dialog opens and confirms that the service is enabled. Measurements of the source device are then propagated to the asset.
+
+If the dialog does not open, the DTM Data Service is already enabled, or your tenant has a different configuration. For details, see [To manage the DTM Data Service](/dtm/dtm-data-service/#enable-measurement-propagation).
 
 ### To modify linked data points {#to-modify-linked-datapoints}
 
@@ -252,20 +177,4 @@ Possible issues include:
 - **Warning**: The measurement type is required but is not configured for the data point.
 - **Warning**: The measurement type, if configured for the data point, is not matching the measurement type of the latest measurement received from the source device.
 
-By hovering over the warning or error icon, you can see more details about the issue. This helps in troubleshooting and resolving any problems with the linked data points. To resolve the issues, use the context menu actions available for the source.
-
-### Troubleshooting measurement propagation {#troubleshooting-measurement-propagation}
-
-1. **No measurements are propagated to the asset**
-   - Check the status of the linked data point. Only linked data points with the status **Linked** propagate measurements, see [Understanding states](#understanding-states) and [Source warnings and errors](#source-warnings-and-errors).
-   - Check that the DTM Data Service is enabled for your tenant. Click **Manage DTM Data Service** in the **Data points** tab, or use `GET /service/dtmdata/enabled`. The response contains `measurements.enabled` and `measurements.mode`. If the DTM Data Service is disabled, enable it, see [To manage the DTM Data Service](#enable-measurement-propagation).
-   - A value in the **Latest value** column does not mean that measurements are propagated. If the asset has no measurement for the data point, the column shows the latest measurement of the source device.
-   - Check that the source of the linked data point is a device. Measurements with an asset as source are not propagated.
-   - Check that the source device sends measurements with exactly the fragment and series configured as source of the linked data point, including upper and lower case. This applies in particular to custom data points.
-   - Check that the measurements were received after the data point was linked or its source was changed. A new or changed link takes effect with a short delay of up to about a minute. Measurements received earlier are not propagated, see [Limitations and constraints](/service-terms/service-level/#dtm-limitations-and-constraints) in the service-level agreement for measurement propagation.
-2. **Measurements are propagated to some of the linked assets only**
-   - Check the source device for an alarm of type `c8y_DtmMeasurementFanOutLimitExceeded`. If the alarm exists, the device measurement is linked to more assets than allowed, see [Fan-out limit](#fan-out-limit).
-3. **The status of a linked data point is empty**
-   - The DTM Data Service did not create the latest measurement of the asset for this data point. Check whether another source, for example, a device integration, writes measurements with the same fragment and series directly on the asset. Propagated measurements contain the fragment `c8y_dtm_data_service`.
-4. **Propagated measurements are not shown for the expected time range**
-   - Propagated asset measurements have the time of the device measurement. If a device sends measurements with a time in the past, for example after reconnecting or because of a wrong device clock, the asset measurements are shown at that time as well. Check the time of the measurements of the source device.
+By hovering over the warning or error icon, you can see more details about the issue. To resolve the issue, use the context menu actions available for the source. For example, in the case of a *Source missing* status, you can select a new source device to link the data point to.
