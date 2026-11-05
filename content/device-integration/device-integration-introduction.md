@@ -29,11 +29,11 @@ For any Linux-based device, we recommend integrating it via [thin-edge.io](https
 **Advantages of using thin-edge.io:**
 
 * **Zero-code device management**: Native out-of-the-box support for all device management features - including software management, configuration updates, log retrieval, and remote access.
-* **Native SmartREST efficiency**: Improved bandwidth-efficiency through the use of {{< product-c8y-iot >}}’s highly efficient SmartREST protocol.
 * **Automatic child device routing**: No custom gateway logic is required as data is published with child IDs to automatically provision external connected sensors and devices in the inventory and route telemetry accordingly. 
 * **Modular extensibility**: The architecture is designed around plugins, allowing you to extend functionality like the OPC UA gateway without having to recompile the core agent. Plugins can be deployed and managed via {{< product-c8y-iot >}}.
+* **Community plugins**: A growing collection of open source plugins covers common edge use cases, such as Node-RED flow management, a demo container for evaluation, and a monit setup for process monitoring. 
 * **Language-agnostic decoupling**: Because thin-edge.io uses a local MQTT bus for communication, your application logic can be written in any language and remains completely isolated from the connectivity logic.
-* **Automated certificate lifecycle**: The built-in CLI tools handle the generation, signing, uploading, and rotation of X.509 certificates which can be securely stored in HSMs. 
+* **Secure by design**: Certificate-based authentication by default, a memory-safe Rust codebase, and TLS-encrypted, outbound-only cloud connections.
 
 See the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) for an easy-to-follow and hands-on example.
 
@@ -48,10 +48,10 @@ Alternatively, data can also be sent via a gateway. [Thin-edge.io](https://thin-
 Some devices communicate via protocols used on field or control level and do not directly connect to the internet. In such cases, IoT gateways act as intermediaries, collecting data from devices and forwarding it to {{< product-c8y-iot >}}. Several data integration options are available:
 * **Partner gateways**: Use pre-integrated partner gateways that bring support for the required protocol. Explore certified partner devices in the [Device Partner Portal](https://ecosystem.cumulocity.com/).
 * **[OPC UA](/device-integration/opcua/)**: Deploy {{< product-c8y-iot >}}'s OPC UA gateway with [thin-edge.io](https://thin-edge.io/) to connect to PLCs, data historians or SCADA servers.
-* **Protocol Gateway:** Extend [thin-edge.io](https://thin-edge.io/) with the Protocol Gateway which supports 320+ device types and protocols like BACnet, CAN or IEC 61850
+* **[Protocol Gateway](https://github.com/thin-edge/takebishi-devicegateway):** Extend [thin-edge.io](https://thin-edge.io/) with the Protocol Gateway which supports 320+ device types and protocols like BACnet, CAN or IEC 61850
 * **[thin-edge.io](https://thin-edge.io/)** protocol drivers: Extend thin-edge.io with custom protocol support for proprietary or specialized device protocols.
 
 ### LPWAN integration {#lpwan-integration}
 
 A low-power, wide-area network (LPWAN) is a wireless telecommunication network designed for long-range, low bit-rate communication between IoT devices. This technology is critical for deployment scenarios requiring low-cost devices to operate on a single battery for years, transmit small amounts of data intermittently, and maintain reliable connectivity across distributed or hard-to-reach locations.
-{{< product-c8y-iot >}} provides dedicated integrations for various LPWAN technologies including LoRa and [Sigfox](/device-integration/lpwan/#sigfox) for non-IP devices. Refer to [LoRa Actility](/device-integration/lpwan/#actility-lora), [LoRa LORIOT](/device-integration/lpwan/#loriot-lora), and [Sigfox](/device-integration/lpwan/#sigfox) for details. For cellular devices using NB-IoT or LTE-M, we recommend using [LWM2M](/device-integration/lwm2m/).
+{{< product-c8y-iot >}} integrates with LoRa Network Servers for non-IP devices. Refer to [ Actility LoRa](/device-integration/lpwan/#actility-lora) and [Loriot LoRa](/device-integration/lpwan/#loriot-lora) for details. For cellular devices using NB-IoT or LTE-M, we recommend using [LWM2M](/device-integration/lwm2m/).
