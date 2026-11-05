@@ -22,6 +22,8 @@ environment_availability:
     date: '2026-10-28'
   - label: us.cumulocity.com
     date: '2026-11-02'
+  - label: cumulocity.com
+    date: '2026-11-03'
 ---
 Previously, many invalid requests to the LWM2M agent REST API failed with a generic server error (HTTP 500), and the OpenAPI description of the agent listed only successful responses.
 
