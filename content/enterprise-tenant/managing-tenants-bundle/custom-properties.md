@@ -13,6 +13,7 @@ ROLES & PERMISSIONS:
 
 - To view the **Custom properties** tab: READ permission for the "Tenant management" permission type
 - To save custom property values: READ, ADMIN permission for the "Tenant management" permission type
+- To upload or update files: CREATE or ADMIN permission for the "Inventory" permission type
   {{< /c8y-admon-req >}}
 
 The **Custom properties** tab allows you to view and edit the values of tenant custom properties for a subtenant.
