@@ -13,13 +13,6 @@ build_artifact:
     label: cumulocity
 ticket: MTM-68150
 version: 2026.416.0
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
 
 The enhanced "SCADA" widget, previously available as a preview feature, is now generally available (GA).
