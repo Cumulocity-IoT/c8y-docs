@@ -1,5 +1,5 @@
 ---
-date: '2026-11-05'
+date: 
 title: New SCADA widget moved to General Availability
 product_area: Application enablement & solutions
 change_type:
