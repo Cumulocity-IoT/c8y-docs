@@ -191,7 +191,7 @@ Additionally, a specific date range can be set and the events can be monitored i
 
 The "Event image view" widget shows the images attached to the events of a selected device or group, for example, camera snapshots. Below the image, the widget shows the source, the type, and the time of the event.
 
-![Event image view widget](/images/users-guide/cockpit/cockpit-widget-event-image-view.png)
+![Event image view widget showing an AI-generated camera image of a seedling tray](/images/users-guide/cockpit/cockpit-widget-event-image-view.png)
 
 If the widget loads more than one image, use the slider to move between the images. The newest image is at the right end of the slider. The counter shows the position of the current image and the number of loaded images.
 
@@ -210,7 +210,7 @@ Otherwise, click **Download** in the widget header to download the current image
 
 **Parameters to configure**
 
-![Event image view widget configuration](/images/users-guide/cockpit/cockpit-widget-event-image-view-config.png)
+![Event image view widget configuration with an AI-generated camera image in the preview](/images/users-guide/cockpit/cockpit-widget-event-image-view-config.png)
 
 | Field           | Description                                                                                                                                                                                                          |
 | :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
