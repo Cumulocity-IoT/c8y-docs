@@ -214,7 +214,8 @@ The tenant-wide settings of the AI Agent Manager, such as the kill switch of the
 | Field | Default | Description |
 |-------|---------|-------------|
 | `killSwitch` | `false` | If `true`, all AI agents of the tenant are disabled. |
-| `telemetryOptOut` | `false` | If `true`, the tenant opted out of telemetry collection. Currently, no telemetry is collected. |
+| `telemetryOptOut` | `false` | If `true`, the tenant opts out of the [{{< company-c8y >}}-managed telemetry export](#managed-telemetry-export). |
+| `telemetryExport` | `{"enabled": false}` | The configuration of the [OpenTelemetry export](/ai/control-panel/#opentelemetry-export) to your own collector, see below. |
 
 For example, to disable all AI agents of the tenant:
 
@@ -226,3 +227,98 @@ PUT /service/ai/settings
 ```
 
 While `killSwitch` is `true`, every agent run is rejected with the HTTP status 403 (Forbidden) and the message "AI agents are disabled for this tenant". This applies to text and object agents, streaming calls, and tests.
+
+#### OpenTelemetry export {#opentelemetry-export}
+
+The `telemetryExport` object configures the [OpenTelemetry export](/ai/control-panel/#opentelemetry-export) of the control panel. Some of its fields are only available via the REST API.
+
+| Field | Default | Description |
+|-------|---------|-------------|
+| `enabled` | `false` | Required. If `true`, a trace of every agent run is exported to `endpoint`. |
+| `endpoint` | - | The OTLP/HTTP base URL of the collector, for example, `https://collector.example.com:4318`. The path `/v1/traces` is appended automatically. |
+| `protocol` | `http/protobuf` | The OTLP/HTTP encoding, `http/protobuf` or `http/json`. Only available via the REST API. |
+| `serviceName` | `c8y-ai-agents` | The resource attribute `service.name` of the exported traces. Only available via the REST API. |
+| `sampleRatio` | `1` | The share of agent runs that is exported, from `0` to `1`. For example, `0.25` exports every fourth run on average. Only available via the REST API. |
+| `recordContent` | `true` | If `true`, the prompts, responses, and tool call arguments and results are included in the traces. |
+| `recordUserId` | `false` | If `true`, the ID of the user who ran the agent is included in the traces. |
+| `traceViewerUrlTemplate` | - | A URL with the placeholder `{telemetryId}` that the [Observability](/ai/observability/) page uses to link runs to their trace. |
+
+`PUT /service/ai/settings` replaces the `telemetryExport` object as a whole, so always provide all of its fields that you want to keep. For example, to export half of the agent runs as JSON without content:
+
+```
+PUT /service/ai/settings
+{
+  "telemetryExport": {
+    "enabled": true,
+    "endpoint": "https://collector.example.com:4318",
+    "protocol": "http/json",
+    "sampleRatio": 0.5,
+    "recordContent": false,
+    "recordUserId": false,
+    "traceViewerUrlTemplate": "https://grafana.example.com/explore?traceID={telemetryId}"
+  }
+}
+```
+
+The auth token of the export is not part of the settings. It is stored encrypted and managed at `/service/ai/settings/telemetry/credentials`. All requests require the ROLE_AI_AGENT_ADMIN permission:
+
+- `GET /service/ai/settings/telemetry/credentials` returns whether a token is stored and the header name, for example, `{"configured": true, "authHeaderName": "Authorization"}`. The token is never returned.
+- `PUT /service/ai/settings/telemetry/credentials` stores the token. Provide the full header value as `authToken`, for example, `{"authHeaderName": "Authorization", "authToken": "Bearer <token>"}`. If `authHeaderName` is not provided, `Authorization` is used. To change only the header name and keep the stored token, send `***` as `authToken`.
+- `DELETE /service/ai/settings/telemetry/credentials` removes the token.
+
+#### {{< company-c8y >}}-managed telemetry export {#managed-telemetry-export}
+
+Depending on your {{< product-c8y-iot >}} environment, the AI Agent Manager also exports a trace of every agent run to an OpenTelemetry collector operated by {{< company-c8y >}}. These traces include the prompts, responses, and tool call arguments and results of the agent runs, but never the ID of the user who ran the agent. This export is independent of your own `telemetryExport` and of its `recordContent` setting.
+
+To opt out of the {{< company-c8y >}}-managed telemetry export, set `telemetryOptOut` to `true`:
+
+```
+PUT /service/ai/settings
+{
+  "telemetryOptOut": true
+}
+```
+
+The opt-out is only available via the REST API. It does not affect your own `telemetryExport` or the [Observability](/ai/observability/) page, which keep working.
+
+### Observability {#observability}
+
+The audit trail of the [Observability](/ai/observability/) page is available at `/service/ai/observability`. Both requests require the ROLE_AI_AGENT_ADMIN or ROLE_AI_AGENT_READ permission and only return metadata, never the content of a run.
+
+`GET /service/ai/observability` returns the agent runs of the tenant, newest first. It supports the following query parameters:
+
+| Parameter | Description |
+|-----------|-------------|
+| `pageSize` | The number of runs per page. The default is 50. |
+| `currentPage` | The page to return, starting with 1. |
+| `dateFrom`, `dateTo` | Only return runs in this time range, as ISO 8601 date. |
+| `sortOrder` | `desc` (default) for newest first, `asc` for oldest first. |
+| `agentName` | Only return runs of agents whose name contains this text, regardless of upper or lower case. Only the 2000 newest runs of the date range are searched. |
+
+For example, `GET /service/ai/observability?pageSize=1&agentName=weather` returns:
+
+```json
+{
+  "records": [
+    {
+      "id": "8712",
+      "time": "2026-10-27T09:41:12.512Z",
+      "kind": "run",
+      "agentName": "weather-agent",
+      "runResult": "succeeded",
+      "durationMs": 2380,
+      "usage": { "inputTokens": 1820, "outputTokens": 164, "totalTokens": 1984 },
+      "finishReason": "stop",
+      "telemetryId": "4bf92f3577b34da6a3ce929d0e0e4736",
+      "user": "jane.doe"
+    }
+  ],
+  "currentPage": 1,
+  "pageSize": 1,
+  "totalRecords": 12
+}
+```
+
+`runResult` is `succeeded` or `failed`. The `telemetryId` is the ID of the OpenTelemetry trace of the run.
+
+`GET /service/ai/observability/tools?telemetryId=<telemetryId>` returns the tool calls of a run in the order they were called, in the same format with `kind` set to `tool`. Each record has a `toolName` and a `toolCallResult`, which is `succeeded`, `failed`, or `denied` if the user rejected the tool call. Only the 10000 newest tool calls of the date range are searched. To find the tool calls of older runs, limit the request to the time of the run with `dateFrom` and `dateTo`. The `time` of a run is the time when it ended, so use the `time` minus the `durationMs` of the run as `dateFrom` and the `time` as `dateTo`, with a few seconds of margin on both sides.
