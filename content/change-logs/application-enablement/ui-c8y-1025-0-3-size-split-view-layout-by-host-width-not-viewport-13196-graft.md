@@ -1,6 +1,6 @@
 ---
 date: ""
-title: size split view layout by host width, not viewport (#13196) [GRAFT][release/cd] (#13524)
+title: Split view layout sizes by host width instead of viewport
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
