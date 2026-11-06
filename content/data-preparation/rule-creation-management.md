@@ -144,6 +144,35 @@ Duplicating a rule creates a new, independent rule that starts with the same sou
 
 The new rule is created as an undeployed draft, even if the original rule was deployed. Deploy it separately from the rule editor when you are ready. Duplicating a rule always uses the original rule's latest saved draft, whether or not that draft has been deployed.
 
+### To export a rule {#export-rule}
+
+Exporting a rule downloads it as a rule package, a *tar.gz* file named after the rule. You can import the package into this or another tenant. Use this, for example, to move a rule from a test tenant to a production tenant.
+
+To export a rule, you need READ or ADMIN permission for "Data Preparation rules".
+
+- In the rules list, hover over the rule and click the export icon <i class="dlt-c8y-icon-data-export icon-20 text-primary"></i>. The icon may be shown under a 3-dot menu.
+
+Alternatively, in the rule editor, click **More…** in the action bar and select **Export rule**.
+
+The package contains the rule's latest saved draft. If the rule has no draft, it contains the deployed rule. The package contains the source configuration, description, tags, smart function code, test data, and AI chat history of the rule. It does not contain the deployment status. The export does not include unsaved changes in the rule editor. If you have unsaved changes, a warning reminds you to save the rule and export it again.
+
+The export fails if the package would exceed the import limits of your tenant, so that you can import it into the same tenant. Each tenant can change its limits, so importing the package into another tenant with lower limits can still fail. For the limits, see [Rule package format](/data-preparation/external-development/#rule-package-format).
+
+### To import a rule {#import-rule}
+
+Importing a rule creates a new rule from a rule package. To import a rule, you need ADMIN permission for "Data Preparation rules".
+
+1. In the rules list, click **Import** in the action bar.
+2. Select the *tar.gz* file of the rule package.
+3. Enter a name for the new rule. The name of the file without its extension is pre-filled, and you can change it. The name must be unique among existing rules.
+4. Click **Import**.
+
+The new rule is created as an undeployed draft. Review it in the rule editor, and deploy it when you are ready. Importing never replaces an existing rule.
+
+If the import fails, the dialog shows the reason. For example, the file is not a valid rule package, or the rule in the package is not valid. If a rule with this name already exists, enter a different name and click **Import** again.
+
+You can also create a rule package outside the Data Preparation application. For the format, see [Rule package format](/data-preparation/external-development/#rule-package-format).
+
 ### To delete a rule {#delete-rule}
 
 - Click the delete icon <i class="dlt-c8y-icon-editing-trash text-danger icon-20"></i> next to the rule in the list. The rule is permanently deleted from both the draft and deployed state. This action cannot be undone.
