@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-67098
 version: 1025.0.3
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67098] size split view layout by host width, not
-viewport
-(#13196)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13196)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67098]:
-https://cumulocity.atlassian.net/browse/MTM-67098?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+The split view now switches between two columns and a stacked layout based on the width of its own container, not the browser window. For example, opening the AI assistant next to the alarms list in the Cockpit application now stacks the list and details instead of squeezing them into two columns.
