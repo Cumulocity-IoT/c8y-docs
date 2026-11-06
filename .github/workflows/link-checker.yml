@@ -82,7 +82,15 @@ jobs:
           cd broken-links-script
           npm install
 
+      - name: TEMP - log runner egress IP
+        run: echo "runner-egress-ip=$(curl -s --max-time 5 https://ifconfig.me || echo unknown) runner=$RUNNER_NAME"
+
       - name: Run Cypress tests
+        # Failing links don't fail this job: the recheck job re-checks them on
+        # a fresh runner and decides what gets reported. A run that broke
+        # down is still caught there, since it leaves no complete
+        # link-check-result.json behind.
+        continue-on-error: true
         env:
           URLS_WITH_INPUT: ${{ inputs.urlsWith }}
           DIAGNOSTICS_INPUT: ${{ inputs.diagnostics }}
@@ -110,11 +118,127 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cypress-log-${{ steps.sanitize-branch.outputs.name }}
-          path: broken-links-script/cypress-output.log
+          path: |
+            broken-links-script/cypress-output.log
+            broken-links-script/link-check-result.json
           retention-days: 8
 
+  # Links that failed the first pass are checked once more here, in a separate
+  # job and so on a different runner VM - usually with a different egress IP -
+  # and only after the whole first-pass matrix has finished. That gets past the
+  # runner-IP blocks and short outages that the first pass's back-to-back
+  # retries can't, without excluding those links from the check. Only links
+  # that fail again are reported as broken.
+  recheck:
+    name: Re-check failures and report
+    needs: [determine-branches, link-check]
+    # always(): a branch whose first pass broke down must still be reported,
+    # and must not skip the other branches' re-checks.
+    if: always() && needs.determine-branches.result == 'success'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: ${{ fromJson(needs.determine-branches.outputs.branches) }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || matrix.branch }}
+
+      - name: Sanitize branch name for artifact naming
+        id: sanitize-branch
+        env:
+          BRANCH_NAME: ${{ matrix.branch }}
+        run: echo "name=${BRANCH_NAME//\//-}" >> "$GITHUB_OUTPUT"
+
+      - name: Download first-pass results
+        # A missing artifact is reported as an incomplete run by the
+        # summary step below, not as a failure of this step.
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: cypress-log-${{ steps.sanitize-branch.outputs.name }}
+          path: first-pass
+
+      - name: Decide whether to re-check
+        id: plan
+        env:
+          DIAGNOSTICS_INPUT: ${{ inputs.diagnostics }}
+        # Diagnostics runs are reported straight from the first pass, which
+        # is the run being investigated.
+        run: |
+          result=first-pass/link-check-result.json
+          if [ "$DIAGNOSTICS_INPUT" != "true" ] && [ -f "$result" ] \
+            && jq -e '.completed and (.failed | length > 0)' "$result" > /dev/null; then
+            echo "recheck=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "recheck=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup Node.js
+        if: steps.plan.outputs.recheck == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+
+      - name: Install Dependencies
+        if: steps.plan.outputs.recheck == 'true'
+        run: |
+          cd broken-links-script
+          npm install
+
+      - name: TEMP - log runner egress IP
+        if: steps.plan.outputs.recheck == 'true'
+        run: echo "runner-egress-ip=$(curl -s --max-time 5 https://ifconfig.me || echo unknown) runner=$RUNNER_NAME"
+
+      - name: Re-check failed links
+        if: steps.plan.outputs.recheck == 'true'
+        continue-on-error: true
+        env:
+          URLS_WITH_INPUT: ${{ inputs.urlsWith }}
+        # --urls-with is passed on because it also disables excludedLinks
+        # (see link-checker.cy.js) - without it, an excluded link that was
+        # checked on purpose in the first pass would be skipped here and
+        # wrongly count as passing.
+        run: |
+          cd broken-links-script
+          set -o pipefail
+          args=("--recheck=../first-pass/link-check-result.json")
+          if [ -n "$URLS_WITH_INPUT" ]; then
+            args+=("--urls-with=$URLS_WITH_INPUT")
+          fi
+          npm test -- "${args[@]}" 2>&1 | tee recheck-output.log
+
+      - name: Upload re-check log
+        if: always() && steps.plan.outputs.recheck == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: recheck-log-${{ steps.sanitize-branch.outputs.name }}
+          path: |
+            broken-links-script/recheck-output.log
+            broken-links-script/link-check-result.json
+          retention-days: 8
+
+      - name: Summarize results
+        id: summary
+        if: always()
+        env:
+          RECHECKED: ${{ steps.plan.outputs.recheck }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          cd broken-links-script
+          args=("--first-pass=../first-pass/link-check-result.json" "--run-url=$RUN_URL")
+          if [ "$RECHECKED" = "true" ]; then
+            args+=("--recheck=link-check-result.json")
+          fi
+          node summarize-failures.cjs "${args[@]}" > link-check-report.md
+          cat link-check-report.md >> "$GITHUB_STEP_SUMMARY"
+
       - name: Determine label based on branch
-        if: always() && github.event_name != 'pull_request' && !inputs.branch
+        if: always() && steps.summary.outputs.failed == 'true' && github.event_name != 'pull_request' && !inputs.branch
         id: label
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -131,8 +255,8 @@ jobs:
           fi
           echo "label=$LABEL_NAME" >> $GITHUB_OUTPUT
 
-      - name: Create GitHub issue if tests fail
-        if: failure() && github.event_name != 'pull_request' && !inputs.branch
+      - name: Create GitHub issue if links are broken
+        if: always() && steps.summary.outputs.failed == 'true' && github.event_name != 'pull_request' && !inputs.branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LABEL: ${{ steps.label.outputs.label }}
@@ -144,7 +268,7 @@ jobs:
 
           issue_url=$(gh issue create \
             --title "Weekly Link Check Failed for ${branch_name}" \
-            --body "Broken links detected in workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --body-file broken-links-script/link-check-report.md \
             --label "${label}" \
             --assignee "BeateRixen")
 
@@ -155,12 +279,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          cd broken-links-script
-          node summarize-failures.cjs cypress-output.log "$RUN_URL" > pr-comment.md
-
           # A new comment per broken-link-check label addition, so the PR
           # history shows when each check was requested and what it found.
-          gh api "repos/$GH_REPO/issues/$PR_NUMBER/comments" -X POST -F body=@pr-comment.md
+          gh api "repos/$GH_REPO/issues/$PR_NUMBER/comments" -X POST -F body=@broken-links-script/link-check-report.md
+
+      - name: Fail if links are broken
+        # Also fails when the summary step itself broke and set no output.
+        if: always() && steps.summary.outputs.failed != 'false'
+        run: exit 1
