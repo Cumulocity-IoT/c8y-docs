@@ -2,6 +2,8 @@
 weight: 50
 title: Connectivity
 layout: bundle
+skills:
+  - manage-sim-connectivity
 sector:
   - device_management
 ---

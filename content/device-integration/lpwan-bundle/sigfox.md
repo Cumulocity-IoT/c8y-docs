@@ -2,6 +2,8 @@
 weight: 30
 title: Sigfox
 layout: redirect
+skills:
+  - provision-sigfox-device
 ---
 
 ### Introduction {#sigfox-introduction}

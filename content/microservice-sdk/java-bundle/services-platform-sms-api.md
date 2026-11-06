@@ -1,6 +1,8 @@
 ---
 weight: 50
 layout: redirect
+skills:
+  - send-and-receive-sms
 title: Services platform and SMS API
 ---
 

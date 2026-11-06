@@ -1,0 +1,450 @@
+// Documentation / Skills tabs on bundle pages (_default/bundle.html, main.js initPageTabs),
+// skill cards and the skill pages (layouts/skills/).
+
+.page-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0 2rem;
+  border-bottom: var(--c8y-nav-tabs-border-width-default) solid var(--c8y-nav-tabs-border-color-default);
+
+  + .lead:empty {
+    display: none;
+  }
+}
+
+.page-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: calc(var(--c8y-nav-tabs-border-width-default) * -1);
+  padding: var(--c8y-nav-tabs-padding-vertical) var(--c8y-nav-tabs-padding-horizontal);
+  border: 0;
+  border-bottom: var(--c8y-nav-tabs-border-width-active) solid transparent;
+  background: var(--c8y-nav-tabs-background-default);
+  color: var(--c8y-nav-tabs-color-default);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+
+  i {
+    color: var(--c8y-nav-tabs-icon-color-default);
+    font-size: var(--c8y-nav-tabs-icon-size);
+  }
+
+  &:hover {
+    background: var(--c8y-nav-tabs-background-hover);
+    i {
+      color: var(--c8y-nav-tabs-icon-color-hover);
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--c8y-brand-primary);
+    outline-offset: -2px;
+  }
+
+  &.active {
+    border-bottom-color: var(--c8y-brand-primary);
+    background: var(--c8y-nav-tabs-background-active);
+    color: var(--c8y-nav-tabs-color-active);
+    i {
+      color: var(--c8y-nav-tabs-icon-color-active);
+    }
+  }
+}
+
+.page-tab__count {
+  min-width: 1.5em;
+  padding: 0.1em 0.5em;
+  border-radius: 1em;
+  background-color: var(--c8y-palette-gray-80);
+  color: var(--c8y-text-color);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+// The skills panel replaces the page's documentation while its tab is active
+.skills-panel {
+  display: none;
+  padding-bottom: 4rem;
+}
+
+.bundle-layout.show-skills {
+  .skills-panel {
+    display: block;
+  }
+  .article-list > article.page-section:not(:first-child),
+  .article-list > article.page-section:first-child > .toc-container,
+  .article-list > article.page-section:first-child .article-content > .lead {
+    display: none;
+  }
+}
+
+.skills-panel__intro {
+  max-width: 660px;
+  margin-bottom: 1.5rem;
+  color: var(--c8y-text-muted);
+}
+
+.skill-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+// Same look as .product-card (_layout.scss). Full width: the title across the card, below it
+// the skill on the left and its API operations in a column on the right
+.skill-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem 2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  background-color: var(--c8y-palette-high);
+  box-shadow: var(--c8y-elevation-sm);
+  font-size: 14px;
+  transition: box-shadow 0.25s ease;
+
+  p {
+    margin: 0;
+  }
+
+  &:hover,
+  &:focus-within {
+    box-shadow: var(--c8y-elevation-hover);
+
+    .skill-card__title {
+      color: var(--c8y-brand-primary);
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    > .skill-card__title {
+      grid-column: 1 / -1;
+    }
+
+    > .skill-card__api {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+.skill-card__main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-card__download {
+  align-self: flex-start;
+
+  // The button sits at the left edge of the card: the tooltip opens to the right
+  &:hover:before {
+    left: 0;
+    transform: translate(0, -8px);
+    // Wide enough for the longest SKILL.md path on one line
+    max-width: 24rem;
+    text-align: left;
+  }
+}
+
+.skill-card__title {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--c8y-text-color);
+  font-family: $headings-font-family;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+
+  &:hover,
+  &:focus {
+    color: var(--c8y-brand-primary);
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--c8y-brand-primary);
+    outline-offset: 2px;
+  }
+
+  i {
+    font-size: 20px;
+  }
+}
+
+.skill-card__from {
+  color: var(--c8y-text-muted);
+}
+
+.skill-card__api {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+  }
+}
+
+.api-chip {
+  display: inline-flex;
+  align-items: stretch;
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--c8y-root-component-border-color);
+  border-radius: 0.25rem;
+  background-color: var(--c8y-root-component-background-default);
+  color: var(--c8y-text-color);
+  font-size: 12px;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--c8y-text-color);
+    text-decoration: none;
+  }
+
+  code {
+    padding: 0.15em 0.5em;
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
+    overflow-wrap: anywhere;
+  }
+
+  &:hover {
+    border-color: var(--c8y-brand-primary);
+  }
+}
+
+.api-chip__method {
+  // Same width for every method, wide enough for DELETE
+  flex: 0 0 5.5em;
+  padding: 0.15em 0.5em;
+  background-color: var(--c8y-palette-gray-50);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+
+  // The method colors of the API reference (cumulocity.com/api/core/)
+  &--get {
+    background-color: #6bbd6e;
+  }
+  &--post {
+    background-color: #248fb2;
+  }
+  &--put {
+    background-color: #9b708b;
+  }
+  &--delete {
+    background-color: #e27a7a;
+  }
+}
+
+// The API an operation belongs to, shown for APIs other than the Core API
+.api-chip__api {
+  padding: 0.15em 0.5em;
+  border-left: 1px solid var(--c8y-root-component-border-color);
+  color: var(--c8y-text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+// Skill pages: API reference and related documentation in one card, like .skill-card. The
+// API reference is the wider column, on a light gray background up to the card edges
+.skill-links {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0 0 2.5rem;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  background-color: var(--c8y-palette-high);
+  box-shadow: var(--c8y-elevation-sm);
+  font-size: 14px;
+
+  @media (min-width: $screen-md-min) {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+
+    > :only-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .skill-card__api {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.skill-links__api,
+.skill-links__docs {
+  padding: 1.5rem 2rem;
+}
+
+.skill-links__api {
+  background-color: var(--c8y-palette-gray-90);
+}
+
+// The column title, and the API reference buttons next to it. The same height in both columns,
+// so that the lists below start at the same line
+.skill-links__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  min-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.article-content .skill-links__title {
+  margin: 0;
+  font-family: $headings-font-family;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.skill-links__api-name {
+  margin: 0 0 0.75rem;
+  font-weight: 500;
+
+  .skill-card__api + & {
+    margin-top: 1.5rem;
+  }
+}
+
+.skill-links__api-title {
+  display: block;
+  margin-top: 0.125rem;
+  color: var(--c8y-text-muted);
+  font-size: 12px;
+}
+
+.skill-links__docs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.skill-links__docs-page {
+  display: block;
+  color: var(--c8y-text-muted);
+  font-size: 12px;
+}
+
+// Skill download buttons on the Skills cards (partials/skills/download-button.html), in the
+// style of "Download PDFs" (btn-metadata); static/js/skills-download.js runs them
+.skills-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  white-space: nowrap;
+
+  &:disabled {
+    cursor: progress;
+  }
+}
+
+// "Use with an AI agent" at the top of a skill page (layouts/skills/single.html): an
+// admonition (_admonitions.scss) in the yellow of the top bar button and the link underline,
+// with the dark shade for the title so that it stays readable
+.agent {
+  border-color: var(--c8y-palette-yellow-60);
+  background-color: var(--c8y-palette-yellow-80);
+}
+
+.agent .title {
+  color: var(--c8y-palette-yellow-30);
+  &:before {
+    @include dlt-c8y-icon('ai-sparkles');
+  }
+}
+
+// The card buttons (btn-metadata) in the agent box and the API reference, with the label style
+// that _btns.scss gives them only with btn-tooltip: these buttons have no tooltip
+.skill-agent .btn-metadata,
+.skill-links .btn-metadata {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.skill-agent {
+  margin-top: 1.5rem;
+
+  code {
+    overflow-wrap: anywhere;
+  }
+
+  .btn-metadata {
+    // On the yellow of the box: no fill and a darker border than on white; the fill comes back
+    // on hover
+    border-color: var(--c8y-palette-gray-50);
+    background: transparent;
+
+    &:hover {
+      background: var(--c8y-root-component-background-default);
+    }
+
+    &:disabled {
+      cursor: progress;
+    }
+
+    // "Copied!" like the copy buttons of code blocks
+    &.copied {
+      @extend %copied-tooltip;
+    }
+  }
+}
+
+.skill-agent__text {
+  margin: 0 0 1rem;
+}
+
+.skill-agent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.skill-agent__status {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--c8y-text-muted);
+
+  &:empty {
+    display: none;
+  }
+}
+
+.skill-card__agent {
+  font-size: 12px;
+}

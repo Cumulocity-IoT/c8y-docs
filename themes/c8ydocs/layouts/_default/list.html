@@ -36,6 +36,8 @@ the PDFs in this section"
   <div class="home-grid">
     {{$scratch := newScratch}}
     {{ range where .Pages "Type" "root" }}
+      {{/* Reset per card: a card without pages in a top-level section (the skill topics) must not keep the previous card's link */}}
+      {{ $scratch.Set "url" "" }}
       {{ $subs := where .Site.Pages "Section" .Params.bundlefolder }}
       {{/* grab the link from the first child page  */}}
       {{ range $sub := first 1 $subs}}
@@ -95,6 +97,8 @@ the PDFs in this section"
               label-info
               {{ else if eq $t "Business"}}
                 label-warning
+              {{ else if eq $t "AI agents"}}
+                label-default
               {{end}}
                 ">
               <i class='
@@ -106,13 +110,21 @@ the PDFs in this section"
                 dlt-c8y-icon-programming
               {{ else if eq $t "Business"}}
                 dlt-c8y-icon-permanent-job
+              {{ else if eq $t "AI agents"}}
+                dlt-c8y-icon-bot
               {{end}}
               '></i> 
               {{$t}}
             </div>
           {{end}}
         {{end}}
-        {{- if $pdf -}}
+        {{/* Skill topics: download the topic's skills from its card (static/js/skills-download.js) */}}
+        {{- $skillsCard := eq $.Data.Term "skills" -}}
+        {{- if $skillsCard }}
+          <div class="m-l-auto">{{ partial "skills/download-button.html" (dict "topic" (path.Base .Params.bundlefolder)) }}</div>
+        {{- end }}
+        {{- /* No PDF for skill topics: they download as skills instead */ -}}
+        {{- if and $pdf (not $skillsCard) -}}
           <form class="m-l-auto pdf-download-form" data-pdf="{{ $pdf }}">
             <button type="submit" class="btn-tooltip bnt-dot" aria-label="Download PDF" data-tooltip="Download PDF">
               <i class="dlt-c8y-icon-export-pdf" style="font-size: 20px;"></i>

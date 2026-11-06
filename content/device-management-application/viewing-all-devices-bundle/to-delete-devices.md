@@ -2,6 +2,8 @@
 weight: 30
 title: To delete a device from the list
 layout: redirect
+skills:
+  - delete-device
 ---
 
 1. Hover over the row of the device you want to delete.

@@ -1,0 +1,15 @@
+{{- /*
+  A card button that downloads skills as one ZIP file of SKILL.md folders, built in the browser
+  by static/js/skills-download.js from the files and the manifest that skills/list.md publishes.
+  Call with (dict) on the Skills card of the home page for all skills, or with
+  (dict "topic" "<topic folder>") on a topic card for the skills of that topic and the skills
+  they build on.
+*/ -}}
+{{- $topic := .topic | default "" -}}
+{{- $tip := "All skills as one ZIP file, a SKILL.md folder per skill" -}}
+{{- $label := "Download all skills" -}}
+{{- with $topic }}{{ $tip = "The skills of this topic and the skills they build on, as one ZIP file" }}{{ $label = "Download skills" }}{{ end -}}
+<button type="button" class="btn-metadata btn-tooltip skills-download" data-skills-download="{{ "skills/download/manifest.json" | absURL }}"{{ with $topic }} data-topic="{{ . }}"{{ end }} aria-label="{{ $tip }}" data-tooltip="{{ $tip }}">
+  <i class="dlt-c8y-icon-download" aria-hidden="true"></i>
+  <span class="skills-download__label">{{ $label }}</span>
+</button>

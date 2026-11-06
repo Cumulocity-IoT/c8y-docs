@@ -2,6 +2,8 @@
 weight: 20
 title: Managing trusted certificates
 layout: bundle
+skills:
+  - manage-trusted-certificates
 sector:
   - device_management
 outputs:
