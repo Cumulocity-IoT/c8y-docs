@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-67319
 version: 1024.23.7
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67319] keep resizable grid panes at their minimum
-width when dragged or the window shrinks
-(#13110)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13110)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67319]:
-https://cumulocity.atlassian.net/browse/MTM-67319?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+In applications with resizable grid panes using the split view component, a pane now stops at its minimum width when you drag its edge or make the browser window smaller. Before, panes could get too narrow to show their content.
