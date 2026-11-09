@@ -25,8 +25,6 @@ environment_availability:
   - label: cumulocity.com
     date: '2026-11-05'
 ---
-In Digital Twin Manager, the Number (Float, Integer) property type now includes an Allow integers only checkbox, allowing you to define properties that accept only whole numbers.
+In the Digital Twin Manager, the **Number (Float, Integer) property type** now includes an **Allow integers only** checkbox, allowing you to define properties that accept only whole numbers. When enabled, the property definition is saved with the integer data type. The **Default value**, **Minimum**, and **Maximum** fields also accept only whole numbers. If a decimal value is entered for an integer property on an asset or subasset, or in the "Asset properties" widget, the form displays the validation error: “Invalid type, expected integer”.
 
-When enabled, the property definition is saved with the Integer data type. The Default value, Minimum, and Maximum fields also accept only whole numbers. If a decimal value is entered for an integer property on an asset or subasset, or in the Asset Properties widget, the form displays the validation error: “Invalid type, expected integer.”
-
-You can also import property definitions and asset definitions containing integer properties. Existing property definitions and assets retain their Number data type and continue to work as before, without requiring any changes.
+You can also import property definitions and asset definitions containing integer properties. Existing property definitions and assets retain their number data type and continue to work as before, without requiring any changes.
