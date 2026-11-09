@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Filtering for roles in the users list also filters sub-users correctly.
+title: Role filter in the users list applies to sub-users
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-68272
 version: 1023.14.234
 ---
-Filtering for roles in the users list also filters sub-users correctly.
+In the Administration application, filtering the Accounts list by global role now returns only users who have the selected role. Previously, when a top-level user matched the filter, the list also showed all of that user’s subordinate users, including subordinates who did not have the selected role.
