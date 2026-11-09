@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-68272
 version: 1023.14.234
 ---
-In the Administration application, filtering the Accounts list by global role now returns only users who have the selected role. Previously, when a top-level user matched the filter, the list also showed all of that user’s subordinate users, including subordinates who did not have the selected role.
+In the Administration application, filtering the accounts list by global role now returns only users who have the selected role. Previously, when a top-level user matched the filter, the list also showed all of that user’s subordinate users, including subordinates who did not have the selected role.
