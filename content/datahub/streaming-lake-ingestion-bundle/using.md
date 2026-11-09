@@ -574,6 +574,19 @@ The columns represent the [properties of a {{< product-c8y-iot >}} operation](ht
 
 Empty JSON objects (`{}`) and empty arrays (`[]`) carry no data to store. They are omitted from the input and treated the same as an absent or "null" property, rather than being converted to a value of the column's data type. The same applies to an object or an array that holds only such values, for example, `{"a": null}` or `[{}]`.
 
+Inside an array that also holds values, an empty or "null" item is not removed. It keeps its position in the array as "null" and does not decide the data type of the array. For example:
+
+```json
+{
+    "fragment": {
+        "readings": [null, 3, null],
+        "items": [{}, { "value": 5 }, {}]
+    }
+}
+```
+
+The column `readings` is a list of numbers and stores `[null, 3, null]`. The column `items` is a list of objects with the property `value` (decimal) and stores `[null, {"value": 5}, null]`. No data is moved to the `trash` table.
+
 {{< c8y-admon-info >}}
 For more information related to Iceberg data types, refer to the [Iceberg specification](https://iceberg.apache.org/spec/#semi-structured-types). Note that there are various [structural limits](#limits-of-streaming-lake-ingestion) that the service implements to ensure that common upstream query engines can interact with the data produced by the service.
 {{< /c8y-admon-info >}}
@@ -687,19 +700,6 @@ The following array contains objects that use different data types for the prope
 ```
 
 The column `items` is a list of objects with the properties `value` (decimal) and `value__s` (string). The first object stores `1` in `value`, and the second object stores "text" in `value__s`.
-
-Empty items keep their positions in the array as "null", and they do not decide the data type of the array. For example:
-
-```json
-{
-    "fragment": {
-        "readings": [null, 3, null],
-        "items": [{}, { "value": 5 }, {}]
-    }
-}
-```
-
-The column `readings` is a list of numbers and stores `[null, 3, null]`. The column `items` is a list of objects with the property `value` (decimal) and stores `[null, {"value": 5}, null]`. No data is moved to the `trash` table.
 
 If an array mixes types and is sent for a property of another data type, the service first moves the items of other types to the `trash` table and then stores the array in the overflow column of its own type. For example, if the property `someProperty` is a string column and a device sends `"someProperty": [1, "a"]`, the column `someproperty__ld` stores `[1, null]` and the string `"a"` is moved to the `trash` table.
 
