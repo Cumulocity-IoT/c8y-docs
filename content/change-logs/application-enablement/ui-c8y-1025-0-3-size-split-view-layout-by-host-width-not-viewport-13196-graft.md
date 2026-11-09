@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Split view layout sizes by host width instead of viewport
+title: Improved split view layout sizing
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
