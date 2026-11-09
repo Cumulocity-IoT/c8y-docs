@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-68096
 version: 1024.23.5
 ---
-Crawlers that don't run JavaScript, such as search engine bots, now get a filled-in static Codex page instead of an empty shell, so they can index Codex content. This change only affects the Codex documentation. Applications built with the Web SDK are not affected.
+Crawlers that don't run JavaScript, such as search engine bots, now get a filled-in static Codex page instead of an empty shell, so they can index Codex content. This change only affects the {{< product-c8y-iot >}} Codex documentation. Applications built with the Web SDK are not affected.
