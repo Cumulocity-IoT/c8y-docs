@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed data explorer clearing all data when encountering a data point without permissions
+title: Data explorer no longer clears all data when encountering missing permission for a data point
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
