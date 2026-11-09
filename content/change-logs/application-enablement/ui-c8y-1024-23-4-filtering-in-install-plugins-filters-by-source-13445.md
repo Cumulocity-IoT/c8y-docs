@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Install plugin search filters by source
+title: Install plugin search now allows filtering by source
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
