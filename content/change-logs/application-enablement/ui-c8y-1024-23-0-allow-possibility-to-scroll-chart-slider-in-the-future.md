@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67464
 version: 1024.23.0
 ---
-The time range slider now scrolls forward past the selected end date, up to the current time. "Load more" works at both ends of the slider. This change requires no configuration. Existing dashboards and applications keep their current settings and continue to work without changes.
+The time range slider in the data explorer and the "Data graph" widget now scrolls forward past the selected end date, up to the current time. "Load more" works at both ends of the slider. This change requires no configuration. Existing dashboards and applications keep their current settings and continue to work without changes.
