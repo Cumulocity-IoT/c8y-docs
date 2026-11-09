@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Keep resizable grid panes at their minimum width when dragged or the window shrinks
+title: Resizable grid panes kept at their minimum width when dragged or when the window shrinks
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
