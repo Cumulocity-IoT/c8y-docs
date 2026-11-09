@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Y-axis label now dynamically moves from the tick labels to avoid overlapping.
+title: Y-axis label no longer overlaps tick labels
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67231
 version: 1023.14.237
 ---
-Y-axis label now dynamically moves from the tick labels to avoid overlapping.
+Previously, the Y-axis label in charts could overlap the tick labels, which made both hard to read. The Y-axis label now moves dynamically away from the tick labels, so the two stay separate and readable.
