@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Allow forward scrolling in the Data graph and data explorer time range slider
+title: Allowing forward scrolling in the data graph and data explorer time range slider
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
