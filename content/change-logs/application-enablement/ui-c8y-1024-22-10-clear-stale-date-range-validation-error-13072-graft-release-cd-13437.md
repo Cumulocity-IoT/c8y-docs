@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67772
 version: 1024.22.10
 ---
-In custom date ranges, for example in the **Data explorer**, dashboard time contexts, and alarm filters, the validation error stayed visible after you corrected the range, and ranges shorter than one minute could be applied. This issue has been fixed. The error now clears as soon as the range is valid, and ranges under one minute are rejected.
+In custom date ranges, for example, in the data explorer, in dashboard time contexts, and in alarm filters, the validation error stayed visible after you corrected the range, and you could apply ranges shorter than one minute. This issue has been fixed. The error now clears as soon as the range is valid, and ranges under one minute are rejected.
