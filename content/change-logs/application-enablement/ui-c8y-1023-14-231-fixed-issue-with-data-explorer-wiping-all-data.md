@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67455
 version: 1023.14.231
 ---
-The data explorer previously cleared all displayed data when it encountered a data point that the user did not have permissions to access. This issue has been fixed so that the data explorer now handles permission restrictions gracefully and retains all accessible data in the view.
+The data explorer previously cleared all displayed data when it encountered a data point that the user did not have permission to access. This issue has been fixed so that the data explorer now handles permission restrictions gracefully and retains all accessible data in the view.
