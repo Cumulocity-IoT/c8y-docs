@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Role filter in the users list applies to sub-users
+title: Filtering for roles in the user list now also filters sub-users correctly
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
