@@ -1,6 +1,6 @@
 ---
 date: ""
-title: New "Event image view" widget shows images attached to events
+title: New Event image view widget shows images attached to events
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
