@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Chart dynamic tooltip and legend improvements
+title: Improved dynamic tooltip and legend in charts
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,21 +14,4 @@ build_artifact:
 ticket: MTM-67619
 version: 1025.1.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-67619] Chart dynamic tooltip and legend
-improvements
-](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/12975)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67619]:
-https://cumulocity.atlassian.net/browse/MTM-67619?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+Charts in applications built with the Cumulocity Web SDK show tooltips and legends that help you read In the Data graph widget and the Data explorer, the compact tooltip now appears in a more consistent position and takes up less space on the chart. It also shows the time and date of the measurements it lists, which the compact view previously left out.
