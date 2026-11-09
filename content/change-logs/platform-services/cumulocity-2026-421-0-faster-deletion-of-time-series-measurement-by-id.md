@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-68691
-version: 2026.420.0
+version: 2026.421.0
 ---
 The request to remove a single measurement by ID, `DELETE /measurement/measurements/{id}`, now accepts the optional query parameters `source` and `time`. On tenants that read measurements from time series, {{< product-c8y-iot >}} uses them to find the measurement through its indexes instead of searching by ID alone, which makes the removal faster.
 
