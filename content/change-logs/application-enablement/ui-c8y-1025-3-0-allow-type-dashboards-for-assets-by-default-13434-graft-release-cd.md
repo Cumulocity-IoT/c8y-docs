@@ -1,33 +1,22 @@
 ---
 date: ""
-title: allow type dashboards for assets by default (#13434) [GRAFT][release/cd] (#13535)
+title: Dashboard templates available for typed assets and groups
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
     label: Feature
 component:
-  - value: component-YbYJ3gLU_
-    label: Web SDK
+  - value: component-YdSEScrEC
+    label: Cockpit
 build_artifact:
   - value: tc-pjJiURv9Y
     label: ui-c8y
 ticket: MTM-66560
 version: 1025.3.0
 ---
-# Backport
+You can now apply a dashboard to all assets or groups of the same type. In the dashboard settings of an asset or group that has a type, turn on **Apply dashboard to all assets of type**. The dashboard then appears on every object of that type and shows each object's own data. Before, this was only possible for devices.
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-66560] allow type dashboards for assets by
-default
-(#13434)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13434)
+* A template dashboard shows widgets and data of the displayed asset or group only. References to child devices or sub-assets show the data of the displayed asset itself, or no data.
+* Cockpit assigns the types "Group" and "Subgroup" to plain groups. A template saved on a top-level group appears on all top-level groups, and a template saved on a subgroup appears on all subgroups.
 
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-66560]:
-https://cumulocity.atlassian.net/browse/MTM-66560?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+For details, see [Dashboard template](/cockpit/working-with-dashboards/#dashboard-template). Application developers can turn the switch off again by setting the `hideTypeDashboardForAssets` option to `true`.
