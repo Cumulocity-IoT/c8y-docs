@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Add shared alarm/event service and use device time instead.
+title: Timestamps in the Alarms, Events, and Data explorer pages now show the device time
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-67768
 version: 1023.14.232
 ---
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+Timestamps across the **Alarms**, **Events**, and **Data explorer** pages, as well as the "Data graph" widget, now display the actual device time rather than the server time.
