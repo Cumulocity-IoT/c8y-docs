@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-11-04'
   - label: jp.cumulocity.com
     date: '2026-11-04'
+  - label: us.cumulocity.com
+    date: '2026-11-05'
+  - label: cumulocity.com
+    date: '2026-11-05'
 ---
 In Digital Twin Manager, the Number (Float, Integer) property type now includes an Allow integers only checkbox, allowing you to define properties that accept only whole numbers.
 
