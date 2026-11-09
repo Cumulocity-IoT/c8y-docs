@@ -688,6 +688,19 @@ The following array contains objects that use different data types for the prope
 
 The column `items` is a list of objects with the properties `value` (decimal) and `value__s` (string). The first object stores `1` in `value`, and the second object stores "text" in `value__s`.
 
+Empty items keep their positions in the array as "null", and they do not decide the data type of the array. For example:
+
+```json
+{
+    "fragment": {
+        "readings": [null, 3, null],
+        "items": [{}, { "value": 5 }, {}]
+    }
+}
+```
+
+The column `readings` is a list of numbers and stores `[null, 3, null]`. The column `items` is a list of objects with the property `value` (decimal) and stores `[null, {"value": 5}, null]`. No data is moved to the `trash` table.
+
 If an array mixes types and is sent for a property of another data type, the service first moves the items of other types to the `trash` table and then stores the array in the overflow column of its own type. For example, if the property `someProperty` is a string column and a device sends `"someProperty": [1, "a"]`, the column `someproperty__ld` stores `[1, null]` and the string `"a"` is moved to the `trash` table.
 
 #### Naming {#naming}
