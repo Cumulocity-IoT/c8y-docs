@@ -45,7 +45,9 @@ Use the **Export** and **Import** feature to transfer property definitions betwe
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS
 
-- To add/update/delete/import property definitions: CREATE/ADMIN permission for permission type "Inventory"
+- To add or import property definitions: CREATE or ADMIN permission for the "Inventory" permission type, and CREATE or ADMIN permission for the "Digital twin definitions" permission type
+- To edit property definitions: CREATE or ADMIN permission for the "Inventory" permission type, and UPDATE or ADMIN permission for the "Digital twin definitions" permission type
+- To delete property definitions: CREATE or ADMIN permission for the "Inventory" permission type, and ADMIN permission for the "Digital twin definitions" permission type
 {{< /c8y-admon-req >}}
 
 ### To create a property definition {#to-create-a-property-definition}
@@ -89,12 +91,12 @@ Note that the key is automatically generated based on the label. You can modify 
 </tr>
 <tr>
 <td style="text-align:left"><b>Applicable to</b></td>
-<td style="text-align:left">The context the property definition is applicable to.<br/> Available contexts: Asset, Alarm, Measurement, Operation and Event.</td>
+<td style="text-align:left">The context the property definition is applicable to.<br/> Available contexts: Asset, Alarm, Measurement, Operation, and Event.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
 <td style="text-align:left"><b>Type</b></td>
-<td style="text-align:left">Defines the type of the property definition. It can be any of the following categories – <a href="#text" class="no-ajaxy">Text</a>, <a href="#number" class="no-ajaxy">Number</a>, <a href="#date-picker" class="no-ajaxy">Date picker</a>, <a href="#enumeration" class="no-ajaxy">Enumeration</a>, <a href="#boolean" class="no-ajaxy">Boolean</a>, <a href="#file-upload" class="no-ajaxy">File upload</a> or <a href="#complex" class="no-ajaxy">Complex</a>.</td>
+<td style="text-align:left">Defines the type of the property definition. It can be any of the following categories – <a href="#text" class="no-ajaxy">Text</a>, <a href="#number" class="no-ajaxy">Number</a>, <a href="#date-picker" class="no-ajaxy">Date picker</a>, <a href="#enumeration" class="no-ajaxy">Enumeration</a>, <a href="#multiselect-list" class="no-ajaxy">Multiselect list</a>, <a href="#boolean" class="no-ajaxy">Boolean</a>, <a href="#file-upload" class="no-ajaxy">File upload</a>, or <a href="#complex" class="no-ajaxy">Complex</a>.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -144,6 +146,8 @@ If you do not select any of the restrictions above, it is not applicable for the
 
 For this type, you must provide a numeric value during the asset creation, for example, the height of a wind turbine tower.
 
+Select **Allow integers only** if the property accepts only whole numbers, for example, the number of blades of a wind turbine. The property definition then uses the integer data type. The **Default value**, **Minimum**, and **Maximum** fields accept only whole numbers. If you enter a decimal value for this property in an asset, a subasset, or the "Asset properties" widget, the form displays the error "Invalid type, expected integer."
+
 The type **Number** contains the following fields for additional validation rules:
 
 * **Minimum** - If selected, enter a number in the field **Minimum** on the right. When you create the asset, the asset property value cannot be lower or less than provided in the field.
@@ -175,6 +179,24 @@ During asset creation, these values appear as options in the dropdown menu. Sele
 To create an asset property for a wind turbine "drivetrain type" and the type must be either Gearbox or Direct-drive, you must provide these options separated by a comma when creating the property definition.
 
 ![Property definition enumeration](/images/dtm/custom-property/dtm-property-library-type-enum.png)
+
+#### Multiselect list {#multiselect-list}
+
+Select **Multiselect list** to define a property that accepts multiple values in a single field. The property value is an array of the selected options.
+
+If selected, the following fields appear:
+
+* **Options are of type**: Select whether the options are strings or numbers.
+* **Options**: Enter the options that apply to this property definition. Mark the options that are selected by default.
+* **Render as**: Select how the field displays the options when you enter the property value, either as a **Combobox** or as a **Group of checkboxes**.
+
+During asset creation, select one or more of the options to initialize the asset property with these options.
+
+With multiselect lists, you can build flexible data models for entities that have multiple related values.
+
+**Example:**
+
+To record the certifications of a wind turbine, create a property definition "Certifications" with the type **Multiselect list** and the options "ISO 9001", "ISO 14001", and "IEC 61400". When you create the asset, select all certifications that apply to the wind turbine.
 
 #### Boolean {#boolean}
 
