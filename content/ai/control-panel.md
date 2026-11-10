@@ -32,7 +32,7 @@ When you turn the switch off:
 
 - The AI Agent Manager blocks every agent run in the tenant. This includes calls to text and object agents, streaming calls, and tests in the AI Agent Manager. Such calls fail with the HTTP status 403 (Forbidden) and the message "AI agents are disabled for this tenant".
 - Applications and features that rely on AI agents, such as AI chat widgets or AI assistants in other applications, no longer get a response from their agents.
-- The **Agents** and **Tools** pages are hidden in the navigator. The **Control panel** and the [Observability](/ai/observability/) page remain available, so you can still review past agent runs.
+- The **Agents** and **Tools** pages are hidden in the navigator. The **Control panel** and the [**Observability**](/ai/observability/) page remain available, so you can still review past agent runs.
 - All agent definitions, MCP server configurations, and the model configuration are kept. You can still edit the model configuration in the **Control panel**.
 
 To disable all AI agents:
@@ -99,7 +99,7 @@ Agents that do not define their own local provider cannot run until you configur
 
 The **OpenTelemetry export** section sends a trace of every agent run to your own [OpenTelemetry](https://opentelemetry.io/) collector, for example, to analyze agent runs in Grafana, Jaeger, or another tracing backend. The export uses the OTLP/HTTP protocol.
 
-The export is independent of the [Observability](/ai/observability/) page. The AI Agent Manager always records the metadata of every agent run there, whether the export is on or off.
+The export is independent of the [**Observability**](/ai/observability/) page. The AI Agent Manager always records the metadata of every agent run there, whether the export is on or off.
 
 ![The OpenTelemetry export section of the control panel](/images/agents/control_panel_telemetry_export.png)
 
@@ -112,7 +112,7 @@ The export is independent of the [Observability](/ai/observability/) page. The A
 5. Select which data is exported:
    - **Include prompt and response content in exported traces**: Exports the prompts, system prompts, tool definitions, tool call arguments and results, and responses. This switch is on by default. If you turn it off, the traces only contain metadata such as timings, token usage, the model, and the agent and tool names.
    - **Include the user ID in exported traces**: Adds the ID of the user who ran the agent. This switch is off by default.
-6. Optionally, enter a **Trace viewer URL template** to link the runs on the [Observability](/ai/observability/#ai-agent-runs) page to their trace in your tracing backend. Use the placeholder `{telemetryId}` for the trace ID, for example, `https://grafana.example.com/explore?traceID={telemetryId}`.
+6. Optionally, enter a **Trace viewer URL template** to link the runs on the [**Observability**](/ai/observability/#ai-agent-runs) page to their trace in your tracing backend. Use the placeholder `{telemetryId}` for the trace ID, for example, `https://grafana.example.com/explore?traceID={telemetryId}`.
 7. Click **Save export settings**.
 
 The changes apply to the next agent run. To stop the export, turn off **Export agent traces to an OTLP/HTTP collector** and click **Save export settings**.
@@ -138,7 +138,7 @@ Each agent run creates one trace. Its root span is named `agent:<agent name>`, a
 | `c8y.agent.name` | The name of the agent. |
 | `c8y.agent.mode` | `generate` or `stream` for text agents, `object` for object agents. |
 | `c8y.tenant` | The ID of the tenant. Also set as a resource attribute. |
-| `c8y.telemetry_id` | The trace ID, which is also shown on the [Observability](/ai/observability/) page. |
+| `c8y.telemetry_id` | The trace ID, which is also shown on the [**Observability**](/ai/observability/) page. |
 | `user.id` | The ID of the user who ran the agent. Only if **Include the user ID in exported traces** is on. |
 
 The resource attribute `service.name` is `c8y-ai-agents`, unless you set a different service name via the REST API.

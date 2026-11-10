@@ -241,7 +241,7 @@ The `telemetryExport` object configures the [OpenTelemetry export](/ai/control-p
 | `sampleRatio` | `1` | The share of agent runs that is exported, from `0` to `1`. For example, `0.25` exports every fourth run on average. Only available via the REST API. |
 | `recordContent` | `true` | If `true`, the prompts, responses, and tool call arguments and results are included in the traces. |
 | `recordUserId` | `false` | If `true`, the ID of the user who ran the agent is included in the traces. |
-| `traceViewerUrlTemplate` | - | A URL with the placeholder `{telemetryId}` that the [Observability](/ai/observability/) page uses to link runs to their trace. |
+| `traceViewerUrlTemplate` | - | A URL with the placeholder `{telemetryId}` that the [**Observability**](/ai/observability/) page uses to link runs to their trace. |
 
 `PUT /service/ai/settings` replaces the `telemetryExport` object as a whole, so always provide all of its fields that you want to keep. For example, to export half of the agent runs as JSON without content:
 
@@ -279,11 +279,11 @@ PUT /service/ai/settings
 }
 ```
 
-The opt-out is only available via the REST API. It does not affect your own `telemetryExport` or the [Observability](/ai/observability/) page, which keep working.
+The opt-out is only available via the REST API. It does not affect your own `telemetryExport` or the [**Observability**](/ai/observability/) page, which keep working.
 
 ### Observability {#observability}
 
-The audit trail of the [Observability](/ai/observability/) page is available at `/service/ai/observability`. Both requests require the ROLE_AI_AGENT_ADMIN or ROLE_AI_AGENT_READ permission and only return metadata, never the content of a run.
+The audit trail of the [**Observability**](/ai/observability/) page is available at `/service/ai/observability`. Both requests require the ROLE_AI_AGENT_ADMIN or ROLE_AI_AGENT_READ permission and only return metadata, never the content of a run.
 
 `GET /service/ai/observability` returns the agent runs of the tenant, newest first. It supports the following query parameters:
 
