@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-11-10
 title: Reduced inventory requests when processing LWM2M device data
 product_area: Device management & connectivity
 change_type:
