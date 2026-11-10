@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-11-10
 title: Fixed validation of custom date ranges
 product_area: Application enablement & solutions
 change_type:

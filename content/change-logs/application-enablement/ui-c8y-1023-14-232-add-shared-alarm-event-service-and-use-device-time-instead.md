@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-11-10
 title: Timestamps in the Alarms, Events, and Data explorer pages now show the device time
 product_area: Application enablement & solutions
 change_type:

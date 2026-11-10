@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-11-10
 title: Fixed data graph visualization of alarms and events
 product_area: Application enablement & solutions
 change_type:

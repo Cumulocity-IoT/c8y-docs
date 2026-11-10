@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-11-10
 title: Dashboard templates now always apply to the device's current type
 product_area: Application enablement & solutions
 change_type:

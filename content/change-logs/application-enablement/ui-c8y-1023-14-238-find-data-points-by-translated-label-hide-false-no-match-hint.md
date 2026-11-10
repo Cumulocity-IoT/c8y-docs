@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-11-10
 title: Data point selector now finds data points by their translated label
 product_area: Application enablement & solutions
 change_type:

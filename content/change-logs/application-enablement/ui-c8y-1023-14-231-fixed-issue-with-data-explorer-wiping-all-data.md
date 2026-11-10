@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-11-10
 title: Data explorer no longer clears all data when encountering missing permission for a data point
 product_area: Application enablement & solutions
 change_type:
