@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Observabiltiy and Audit trails
+title: Observabiltiy and audit trails
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
