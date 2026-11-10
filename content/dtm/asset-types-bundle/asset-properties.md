@@ -6,29 +6,22 @@ title: Property definitions
 helpContent:
 - label: asset-properties
   title: Property definitions
-  content: "Property definitions are the parameters that define an asset definition in the Digital Twin Manager and the custom properties of subtenants in the Administration application.
+  content: "Property definitions are the parameters that define an asset definition. One or more property definitions are used to define an asset definition.
 
 
-  You can reuse property definitions in multiple asset definitions. Build your property definitions library by adding property definitions that you can use to define any asset definition or tenant custom property.
+  Property definitions can be reused in multiple asset definitions. You can build your property definitions library by adding property definitions which can be used to define any asset definition.
 
 
-  To add a new property definition, click **Add property definition**."
+  To add a new Property definition, click **Add property definition**."
 ---
 
-Property definitions are the parameters that define an [asset definition](/dtm/asset-types/#asset-models) in the Digital Twin Manager and the [custom properties](/enterprise-tenant/managing-tenants/#custom-properties) of subtenants in the Administration application. One or more property definitions are used to define an asset definition.
+Property definitions are the parameters that define an [asset definition](/dtm/asset-types/#asset-models). One or more property definitions are used to define an asset definition. Property definitions are created in the **Property definitions** page.
 
-You manage property definitions on the following pages:
-
-* **Property definitions** page: In the Digital Twin Manager, navigate to **Libraries > Property definitions**.
-* **Tenant properties** page: In the Administration application, navigate to **Tenants > Tenant properties**.
-
-Both pages offer the same features. This section describes the **Property definitions** page. The same steps apply to the **Tenant properties** page, unless stated otherwise.
+To reach the **Property definitions** page, navigate to **Libraries > Property definitions**.
 
 In the **Property definitions** page, you see tabs for different contexts: **All**, **Asset**, **Alarm**, **Measurement**, **Operation**, and **Event**. The **All** tab displays property definitions applicable to all contexts, while each other tab displays property definitions specific to that context.
 
-The **Tenant properties** page has no tabs. It only displays the property definitions for the "Tenant options" context. Every property definition on this page is available in the **Custom properties** tab of each subtenant. For details, see [Custom properties](/enterprise-tenant/managing-tenants/#custom-properties).
-
-Default property definitions are readily available for use on both pages. See [Default property definitions](#default-property-definitions) to view the list of properties available.
+When you open the DTM application, default property definitions are readily available for use. See [Default property definitions](#default-property-definitions) to view the list of properties available.
 
 In the overview you see the following categories:
 
@@ -38,7 +31,7 @@ In the overview you see the following categories:
 * **Data type**: The data type of the property definition, for example, String, Number, or Complex.
 * **Default**: Default value for the property definition.
 * **Min-Max**: Minimum and maximum values allowed for the property definition.
-* **Applicable to**: The asset types, alarms, measurements, operations, events, or tenant options contexts to which the property definition applies.
+* **Applicable to**: The asset types, alarms, measurements, operations, or events contexts to which the property definition applies.
 * **Last updated**: Date and time of the last update.
 * **Actions**: Available actions for the property definition.
 
@@ -55,11 +48,6 @@ ROLES & PERMISSIONS
 - To add or import property definitions: CREATE or ADMIN permission for the "Inventory" permission type, and CREATE or ADMIN permission for the "Digital twin definitions" permission type
 - To edit property definitions: CREATE or ADMIN permission for the "Inventory" permission type, and UPDATE or ADMIN permission for the "Digital twin definitions" permission type
 - To delete property definitions: CREATE or ADMIN permission for the "Inventory" permission type, and ADMIN permission for the "Digital twin definitions" permission type
-
-The **Tenant properties** page additionally requires the following permissions:
-
-- To view the page: READ permission for the "Tenant management" permission type, and CREATE, UPDATE, or ADMIN permission for the "Digital twin definitions" permission type
-- To add, import, edit, or delete property definitions: ADMIN permission for the "Tenant management" permission type
 {{< /c8y-admon-req >}}
 
 ### To create a property definition {#to-create-a-property-definition}
@@ -70,7 +58,7 @@ To create a property definition, click **Add property definition** on the top me
 
 ![Create a new property definition](/images/dtm/custom-property/dtm-property-library-create-property.png)
 
-Property definitions have the following parameters:
+Asset properties have the following parameters:
 
 <table>
 <col width="20">
@@ -91,7 +79,7 @@ Property definitions have the following parameters:
 </tr>
 <tr>
 <td style="text-align:left"><b>Key</b></td>
-<td style="text-align:left">Used to uniquely identify and store the property definition.<br/><br/>
+<td style="text-align:left">Used to uniquely identify and store the property definition in the DTM application.<br/><br/>
 Note that the key is automatically generated based on the label. You can modify the automatically generated key to suit to your needs only during property definition creation. You cannot edit the key after the definition is created.
 </td>
 <td style="text-align:left">Mandatory</td>
@@ -103,7 +91,7 @@ Note that the key is automatically generated based on the label. You can modify 
 </tr>
 <tr>
 <td style="text-align:left"><b>Applicable to</b></td>
-<td style="text-align:left">The context the property definition is applicable to.<br/> Available contexts: Asset, Alarm, Measurement, Operation, Event, and Tenant options.<br/>On the <b>Tenant properties</b> page, the context is always "Tenant options" and you cannot change it.</td>
+<td style="text-align:left">The context the property definition is applicable to.<br/> Available contexts: Asset, Alarm, Measurement, Operation and Event.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
@@ -113,7 +101,7 @@ Note that the key is automatically generated based on the label. You can modify 
 </tr>
 <tr>
 <td style="text-align:left"><b>Default value</b></td>
-<td style="text-align:left">Defines the default value for the property. You can modify this value when you enter the property value, for example, when you create an asset or edit the custom properties of a subtenant.<br/>
+<td style="text-align:left">Defines the default value for the property. You can modify this value when creating an asset.<br/>
 If this field is left empty in the property defintion and marked as required in the asset definition, you must enter a value during the asset creation.</td>
 <td style="text-align:left">Optional</td>
 </tr>
@@ -130,13 +118,11 @@ The **Default value** field is only shown if the selected **Type** is either "Te
 The default value must adhere to all validations provided beforehand.
 {{< /c8y-admon-info>}}
 
-In the Digital Twin Manager, once you have defined all necessary property definitions for your project, you must define the [asset definitions](/dtm/asset-types/#asset-models).
+Once you have defined all necessary property definitions for your project, you must define the [asset definitions](/dtm/asset-types/#asset-models).
 
 ### Property definition types {#property-definition-types}
 
-To further define the type of content a property definition holds, you can select one of the following options listed under **Type**.
-
-The following sections use assets as examples. The same rules apply when you enter the custom property values of a subtenant.
+To further define the type of content a property definition holds, you can select one of the following options listed under **Type**:
 
 #### Text {#text}
 
@@ -286,7 +272,7 @@ Follow the steps below:
 2. Select one or more desired definitions and click **Export**.
 3. The dialog closes and a JSON file named *Export-properties.json* downloads.
 
-Use the downloaded file to import the property definitions on another tenant.
+Use the downloaded file to import the property definitions into a DTM application on another tenant.
 
 {{< c8y-admon-info>}}
 Default property definitions are not listed under **Export**. See [Default property definitions](#default-property-definitions) to view the list of definitions available.
@@ -298,10 +284,10 @@ When exporting from a specific context tab, only definitions from that context a
 
 ### To import property definitions {#to-import-property-definitions}
 
-To import property definitions, follow the steps below:
+To import asset properties into the DTM application, follow the steps below:
 
 1. On the **Property definitions** page, click **Import**.
-2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file that contains the exported property definitions from another tenant.
+2. Upload the JSON file in the drop file area of the resulting dialog. The JSON file is the file containing exported property definitions from a DTM application on another tenant.
 3. Click **Next** to preview the property definitions before importing them.
 4. Click **Import** to import the property definitions.
 5. Alternatively, click **Back** to go to previous step. Hover over the file name and click the **Delete** icon to remove the current file and upload a different one.
@@ -328,7 +314,7 @@ You can import property definitions from any context, regardless of which tab yo
 
 #### Location {#location}
 
-The **Location** property definition enables you to assign location (latitude and longitude) to an asset or a subtenant. You can set the default values of the latitude and longitude by entering the corresponding values or alternatively using the map view.
+The **Location** property definition enables you to assign location (latitude and longitude) to an asset. You can set the default values of the latitude and longitude by entering the corresponding values or alternatively using the map view.
 
 To set the default values for the latitude and longitude using the map view, click anywhere on the map. Click the full screen icon <i class="dlt-c8y-icon-resize-expand text-muted icon-20"></i> at the top right corner of the map to view it in full screen. Without values for latitude and longitude, the marker is hidden. To see the marker, click anywhere on the map. Click or drag the marker to the preferred position to select the default value for latitude and longitude.
 

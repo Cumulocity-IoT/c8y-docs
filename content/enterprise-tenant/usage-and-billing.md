@@ -166,7 +166,7 @@ Moreover custom properties are displayed, if configured.
 You can set custom property values in the [Custom properties](/enterprise-tenant/managing-tenants/#custom-properties) tab of the tenant.
 
 {{< c8y-admon-info >}}
-The usage statistics only display custom properties that existed before the introduction of the **Tenant properties** page. The usage statistics currently do not display custom properties that you create as [property definitions](/dtm/asset-types/#asset-properties) on the **Tenant properties** page.
+The usage statistics only display custom properties that existed before the introduction of the **Tenant properties** page. The usage statistics currently do not display custom properties that you create on the [Tenant properties](/enterprise-tenant/managing-tenants/#tenant-properties) page.
 {{< /c8y-admon-info >}}
 
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Apply**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
