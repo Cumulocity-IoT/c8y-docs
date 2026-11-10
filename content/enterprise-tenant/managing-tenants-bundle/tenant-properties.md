@@ -5,7 +5,7 @@ layout: redirect
 ---
 
 {{< c8y-admon-req >}}
-* Your tenant must be subscribed to the Dtm-plugins extension and the Dtm microservice.
+* Your tenant must be subscribed to the Dtm microservice.
 * Your tenant must be the {{< management-tenant >}} or a tenant that can create subtenants.
 
 ROLES & PERMISSIONS:
@@ -32,7 +32,9 @@ The list of tenant property definitions displays the following columns:
 * **Data type**: The data type of the property definition, for example, String, Number, or Complex.
 * **Default**: The default value of the property definition.
 * **Min-Max**: The minimum and maximum values allowed for the property definition.
+* **Applicable to**: The context of the property definition. On the **Tenant properties** page, the context is always "Tenant options".
 * **Last updated**: The date and time of the last update.
+* **Actions**: The actions available for the property definition. This column is only displayed if you have the permissions to edit property definitions.
 
 Click **Configure columns** to select the columns that the list displays. Click **Reload** to reload the list.
 
