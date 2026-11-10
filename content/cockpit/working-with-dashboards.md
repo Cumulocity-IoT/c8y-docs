@@ -20,7 +20,7 @@ helpcontent:
     Click **Add dashboard** in the tab bar to add a new dashboard. Enable the edit mode by clicking **Edit widgets** in the top menu bar. Then click **Add widget** to add a new widget to the dashboard. Use the cogwheel icon to edit or remove widgets. Rearrange widgets by drag and drop. Resize widgets using the diagonal arrows icon located in the bottom right corner of the widget.
 
 
-    To copy a dashboard to another group or device, open the **More** dropdown menu and select **Copy dashboard**. To share a dashboard with all devices or assets of the same type, click **Dashboard settings** and enable the **Dashboard template** option.
+    To copy a dashboard to another group or device, open the **More** dropdown menu and select **Copy dashboard**. To share a dashboard with devices or assets of the same type, click **Dashboard settings** and enable the **Dashboard template** option.
 
 
     Cumulocity includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
