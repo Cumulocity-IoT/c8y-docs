@@ -91,7 +91,7 @@ Note that the key is automatically generated based on the label. You can modify 
 </tr>
 <tr>
 <td style="text-align:left"><b>Applicable to</b></td>
-<td style="text-align:left">The context the property definition is applicable to.<br/> Available contexts: Asset, Alarm, Measurement, Operation and Event.</td>
+<td style="text-align:left">The context the property definition is applicable to.<br/> Available contexts: Asset, Alarm, Measurement, Operation, and Event.</td>
 <td style="text-align:left">Mandatory</td>
 </tr>
 <tr>
