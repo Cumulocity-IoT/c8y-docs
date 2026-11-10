@@ -14,9 +14,4 @@ build_artifact:
 ticket: "CTM-3335"
 version: "1025.16.0"
 ---
-Previously, the latest measurement was always fetched from the linked
-device. Now, asset-level measurements are prioritized when available,
-with device-level measurements used as a fallback. For direct
-measurements on an asset, no status/type is displayed, unless the
-measurement is created by the Data Service, in which case the source
-status is retained.
+Previously, the latest measurement was always fetched from the linked device. Now, asset-level measurements are prioritized when available, with device-level measurements used as a fallback. For direct measurements on an asset, no status/type is displayed, unless the measurement is created by the Data Service, in which case the source status is retained.
