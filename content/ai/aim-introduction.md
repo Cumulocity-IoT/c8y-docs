@@ -65,7 +65,7 @@ Once configured, users interact with agents through natural language without nee
 
 Once the preview feature is enabled, the **AI Agent Manager** appears as its own entry in the navigator of the Administration application. It contains the following pages:
 
-- **Control panel**: Turn all AI agents on or off for your tenant, configure the default provider, model, and API key, and set up the OpenTelemetry export. This page is only visible to users with the ROLE_AI_AGENT_ADMIN permission. See [Control panel](/ai/control-panel/).
+- **Control panel**: Turn all AI agents on or off for your tenant, configure the default provider, model, and API key, and set up the OpenTelemetry export. This page is only visible to users with ADMIN permission for the permission type "AI agent". See [Control panel](/ai/control-panel/).
 - **Agents**: Browse, create, configure, and test agents. See [Agents](/ai/agents/).
 - **Tools**: Browse and test the available tools and configure MCP servers. See [Tools and MCP](/ai/tools-mcp/).
 - **Observability**: Review the agent runs of your tenant and their tool calls. See [Observability](/ai/observability/).

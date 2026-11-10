@@ -10,13 +10,15 @@ sector:
 weight: 57
 ---
 
-The **Observability** page shows an audit trail of all agent runs in your tenant and the tool calls of each run. Use it to see which agents run, who runs them, whether they succeed, how long they take, and how many tokens they use. To open it, navigate to **AI Agent Manager** > **Observability** in the Administration application.
+The **Observability** page shows an audit trail of all agent runs in your tenant and the tool calls of each run. Use it to see which agents run, who runs them, whether they succeed, how long they take, and how many tokens they use. To open it, navigate to **AI Agent Manager** > **Observability** in the Administration application. The page remains available while AI agents are disabled with the [kill switch](/ai/control-panel/#ai-agent-availability), so you can still review past agent runs.
 
 The AI Agent Manager records every agent run, including calls via the REST API, AI chat widgets, AI assistants in other applications, and tests in the AI Agent Manager. The audit trail only contains metadata and never the content of a run, see [What is recorded](/ai/observability/#what-is-recorded).
 
-{{< c8y-admon-info >}}
-The **Observability** page is available to users with the ROLE_AI_AGENT_ADMIN or the ROLE_AI_AGENT_READ permission. It remains available while AI agents are disabled with the [kill switch](/ai/control-panel/#ai-agent-availability), so you can still review past agent runs.
-{{< /c8y-admon-info >}}
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+- To view the **Observability** page: READ or ADMIN permission for the permission type "AI agent".
+{{< /c8y-admon-req >}}
 
 ### AI agent runs {#ai-agent-runs}
 

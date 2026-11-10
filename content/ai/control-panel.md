@@ -21,7 +21,7 @@ The control panel has three sections:
 - **OpenTelemetry export**: Export a trace of every agent run to your own OpenTelemetry collector.
 
 {{< c8y-admon-info >}}
-The control panel is only available to users with the ROLE_AI_AGENT_ADMIN permission. Users with only the ROLE_AI_AGENT_READ permission see the **Agents** and **Tools** pages, but not the control panel.
+The control panel is only available to users with ADMIN permission for the permission type "AI agent". Users with only READ permission see the **Agents**, **Tools**, and **Observability** pages, but not the control panel.
 {{< /c8y-admon-info >}}
 
 ### AI agent availability (kill switch) {#ai-agent-availability}
