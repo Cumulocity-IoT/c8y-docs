@@ -16,5 +16,9 @@ version: 1024.23.5
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-11-09'
+  - label: apj.cumulocity.com
+    date: '2026-11-10'
+  - label: jp.cumulocity.com
+    date: '2026-11-10'
 ---
 Crawlers that don't run JavaScript, such as search engine bots, now get a filled-in static Codex page instead of an empty shell, so they can index Codex content. This change only affects the {{< product-c8y-iot >}} Codex documentation. Applications built with the Web SDK are not affected.

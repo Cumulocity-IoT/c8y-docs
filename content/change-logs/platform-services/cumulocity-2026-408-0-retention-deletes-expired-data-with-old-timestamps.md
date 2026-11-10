@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-11-09'
   - label: jp.cumulocity.com
     date: '2026-11-09'
+  - label: us.cumulocity.com
+    date: '2026-11-10'
+  - label: cumulocity.com
+    date: '2026-11-10'
 ---
 Previously, retention rules did not delete all expired alarms, events, measurements, operations, and audit records. If the data that a retention rule matched had a gap of more than 10 years, the retention process stopped at this gap and kept all data older than the gap. This affected, for example, measurements with the time 1970-01-01 from devices with an unset clock.
 
