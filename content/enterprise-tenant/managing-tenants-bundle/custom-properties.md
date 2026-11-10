@@ -60,4 +60,4 @@ To discard your changes and return to the list of subtenants, click **Cancel**.
 If you delete a property definition or change its type, the tab no longer displays a stored value that does not match the definition. The subtenant keeps the stored value until you save a new value for this custom property.
 {{< /c8y-admon-info >}}
 
-The [Usage statistics](/enterprise-tenant/usage-and-billing/#to-view-usage-statistics) page displays custom properties that existed before the introduction of the **Tenant properties** page as columns. The **Usage statistics** page currently does not display custom properties that you create on the **Tenant properties** page.
+The [**Usage statistics**](/enterprise-tenant/usage-and-billing/#to-view-usage-statistics) page displays custom properties that existed before the introduction of the **Tenant properties** page as columns. The **Usage statistics** page currently does not display custom properties that you create on the **Tenant properties** page.
