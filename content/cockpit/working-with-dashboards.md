@@ -68,7 +68,7 @@ To create your individualized dashboard, execute the following steps:
 - This functionality is entirely based on client-side solutions. If users have an accurate link to the dashboard, they will still be able to access it.
     {{< /c8y-admon-info >}}
 
-5. Enable the option **Dashboard template** to share the dashboard with all devices or assets of this type. See [Dashboard template](#dashboard-template).
+5. Enable the option **Dashboard template** to share the dashboard with devices or assets of this type. See [Dashboard template](#dashboard-template).
 
 6. In the **Appearance** tab, you can select a theme for the dashboard (one of "Match UI", "Light", "Dark" or "Branded"), a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"), and the gap between the widgets. Moreover, you can select from two different layout modes:
  - **Grid**: The default one, which lets each widget snap into a fixed grid.
