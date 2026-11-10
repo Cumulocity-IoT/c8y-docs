@@ -16,4 +16,6 @@ version: 2.6.0
 ---
 The AI Agent Manager previously displayed agents in a split view, with a list on the left and an editor on the right, and only kept your selection in memory. The interface now splits into two separate pages: a card list view that you can display as a grid or list, and individual detail pages for each agent. 
 
-Additionally, search and filter capabilities have been added to the card list view. Each agent card now displays an optional description field, and agents with the same name show visual indicators instead of being grouped into collapsible rows. This improves the readability of the agent list and allows deep-linking to a detail view of an agent. See the [documentation](https://cumulocity.com/docs/ai/agents/#ai-agent-list) for more information.
+Additionally, search and filter capabilities have been added to the card list view. Each agent card now displays an optional description field, and agents with the same name show visual indicators instead of being grouped into collapsible rows. This improves the readability of the agent list and allows deep-linking to a detail view of an agent. 
+
+See the [documentation](https://cumulocity.com/docs/ai/agents/#ai-agent-list) for more information.
