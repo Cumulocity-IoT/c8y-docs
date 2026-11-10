@@ -1,5 +1,5 @@
 ---
-date: "2026-11-10"
+date: ""
 title: "Run the bundled smart function in the monitoring probe tenant"
 product_area: "Application enablement & solutions"
 change_type:
