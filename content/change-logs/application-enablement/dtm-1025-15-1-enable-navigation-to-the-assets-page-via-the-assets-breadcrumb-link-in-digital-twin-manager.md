@@ -1,6 +1,6 @@
 ---
 date: '2026-11-03'
-title: Assets breadcrumb link in Digital Twin Manager now opens the Assets page
+title: Assets breadcrumb link in the Digitial Twin Manager now opens the Assets page
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -25,4 +25,4 @@ environment_availability:
   - label: cumulocity.com
     date: '2026-11-05'
 ---
-In Digital Twin Manager, the Assets breadcrumb link opened the Groups page instead of the Assets page. The link now opens the Assets page, so you can quickly return to it from any nested view in DTM.
+In the Digital Twin Manager, the assets breadcrumb link opened the **Groups** page instead of the **Assets** page. This issue has been fixed. The link now correctly opens the **Assets** page, so you can quickly return to it from any nested view in the Digital Twin Manager.
