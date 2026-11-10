@@ -1,6 +1,6 @@
 ---
 date: ""
-title: observabiltiy and OTel integration
+title: Observabiltiy and Audit trails
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -14,11 +14,6 @@ build_artifact:
 ticket: MTM-67396
 version: 3.1.0
 ---
-## Summary
-
-This branch adds **observability / audit trail** for agent runs, and
-refactors the Control Panel around them. Admins can now stop all agent
-activity instantly, inspect every run and tool call, and optionally ship
-OpenTelemetry traces to their own tracing backend — while the built-in
-audit trail stays metadata-only by default. It also de-duplicates
-provider names between frontend and backend.
+This change adds observability and audit trail for agent runs. Admins can now inspect every
+run and tool call, and optionally ship OpenTelemetry traces to their
+own tracing backend — while the built-in audit trail stays metadata-only by default.
