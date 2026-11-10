@@ -11,7 +11,7 @@ You will need Helm version 3.x available on your system. Refer to [Installing He
 {{< c8y-admon-info >}}
 Edge is tested and officially supported on Kubernetes version 1.36.x, which is the recommended version. Support is limited to this version, as earlier Kubernetes versions are either out of support or approaching end of support.
 Edge supports deployment on CNCF-certified Kubernetes distributions, provided they use upstream Kubernetes version 1.36.x and meet the documented resource and environment prerequisites.
-{{< company-c8y >}} aligns Edge support with the Kubernetes release lifecycle and will validate newer Kubernetes versions in future maintenance releases.
+{{< company-c8y >}} aligns Edge support with the Kubernetes support timelines. This means that we will validate newer Kubernetes versions in future maintenance releases of {{< c8y-edge-current-version >}}, should the supported Kubernetes version pass its end of support date while Edge {{< c8y-edge-current-version >}} is in support.
 
 **Important:**
 * Edge requires that your Kubernetes cluster has support for **LoadBalancer services**.
