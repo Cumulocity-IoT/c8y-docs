@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-11-10
 title: Filtering for roles in the user list now also filters sub-users correctly
 product_area: Application enablement & solutions
 change_type:

@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-11-10
 title: Y-axis label no longer overlaps tick labels
 product_area: Application enablement & solutions
 change_type:
