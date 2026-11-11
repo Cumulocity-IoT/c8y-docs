@@ -14,4 +14,4 @@ build_artifact:
 ticket: "CTM-3292"
 version: "2.1.0"
 ---
-**Stack** (merge bottom-up):
+When an administrator changes the measurement processing of the DTM Data Service, the service writes a record to the tenant's audit log (Administration > Audit logs). The record has the activity "Measurement processing changed" and names the user and the previous and new setting.

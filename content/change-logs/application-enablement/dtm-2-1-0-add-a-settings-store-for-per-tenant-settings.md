@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Add a settings store for per-tenant settings"
+title: "Per-tenant settings of the DTM Data Service kept in one managed object"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
@@ -14,7 +14,4 @@ build_artifact:
 ticket: "CTM-3297"
 version: "2.1.0"
 ---
-Adds a shared store for settings that operators set per tenant, so the
-fan-out limit per incoming measurement (CTM-3295) can keep its setting
-in one place, with no managed object or poll of its own. No feature uses
-it yet.
+The DTM Data Service now keeps the settings that apply to individual tenants, such as the fan-out limit per incoming measurement and whether a tenant's measurements are processed, in one managed object of type `c8y_DtmDataSettings` in the management tenant. All instances of the service read it every 30 seconds, so a change applies without a restart.

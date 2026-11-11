@@ -14,5 +14,4 @@ build_artifact:
 ticket: "CTM-3292"
 version: "2.1.0"
 ---
-Processes a tenant's measurements only while it needs them (CTM-3292,
-[ADR-0004](https://github.com/Cumulocity-IoT/dtm-data-service/blob/feat/CTM-3292-n2-switch/main/docs/adrs/ADR-0004-subscribe-only-tenants-with-links.md)).
+The DTM Data Service now processes a tenant's measurements only while the tenant has data points linked to a source device. It turns on within seconds of the first link and turns off a few minutes after the last link is removed. Measurements received while it is off are not propagated later. Administrators can check the state and turn it on or off in the Data Points plugin, see [Managing the service](/dtm/dtm-data-service/#enable-measurement-propagation).
