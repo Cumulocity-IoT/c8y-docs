@@ -1,6 +1,6 @@
 ---
 date: ""
-title: make tabs keyboard accessible with the ARIA tabs pattern (#13076) [GRAFT][release/cd] (#13541)
+title: Tabs are now keyboard accessible
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
