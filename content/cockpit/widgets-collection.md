@@ -195,18 +195,18 @@ The "Event image view" widget shows the images attached to the events of a selec
 
 If the widget loads more than one image, use the slider to move between the images. The newest image is at the right end of the slider. The counter shows the position of the current image and the number of loaded images.
 
-**Live mode** shows the newest image. When auto-refresh is enabled, the widget moves to each new image. If you move the slider to an older image, the widget keeps showing that image. The widget checks the latest 50 events with an attached file, including files that are not images.
+**Live mode** shows the newest image. When auto-refresh is enabled, the widget moves to each new image. If you move the slider to an older image, the widget keeps showing that image. The widget checks the latest 50 events with an attached file, regardless of the file type. For a file that is not an image, the widget shows a message instead of the image.
 
 **History mode** shows the images from the selected time range. The widget loads 50 events at a time. If the time range contains more events, the counter shows a plus sign, for example, "50 / 50+". To load older images, move the slider to the oldest image and click **Load older images**.
 
 To show the loaded images as a slideshow, click **Play slideshow**.
 
-If the widget loads more than one image in history mode, the widget header provides the following actions:
+In history mode with more than one loaded image, the widget header provides the following actions:
 
 - **Download loaded images**: Downloads the loaded images as a ZIP file.
 - **Export loaded images to GIF**: Creates an animated GIF file from the loaded JPG, PNG, and BMP images.
 
-Otherwise, click **Download** in the widget header to download the current image.
+In live mode, or in history mode with only one loaded image, click **Download** in the widget header to download the current image.
 
 **Parameters to configure**
 
