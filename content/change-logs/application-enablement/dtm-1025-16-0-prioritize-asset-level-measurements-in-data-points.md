@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Prioritize Asset-Level Measurements in Data Points"
+title: "Prioritizing asset-level measurements in data points"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
