@@ -1,6 +1,6 @@
 ---
 date:
-title: Faster latest value queries for time series measurements, available as public preview
+title: Faster latest value queries for time series measurements
 product_area: Platform services
 change_type:
   - value: change-pXAlHAWka
