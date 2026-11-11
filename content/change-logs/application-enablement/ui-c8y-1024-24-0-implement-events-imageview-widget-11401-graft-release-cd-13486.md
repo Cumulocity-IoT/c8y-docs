@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-11-10'
   - label: jp.cumulocity.com
     date: '2026-11-10'
+  - label: us.cumulocity.com
+    date: '2026-11-11'
+  - label: cumulocity.com
+    date: '2026-11-11'
 ---
 A new "Event image view" widget is available. It shows the images attached to the events of a device or group, for example, camera snapshots. Below each image, it shows the source, the type, and the time of the event.
 

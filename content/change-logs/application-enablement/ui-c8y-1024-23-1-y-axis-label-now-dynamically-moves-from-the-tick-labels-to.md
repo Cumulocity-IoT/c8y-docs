@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-11-10'
   - label: jp.cumulocity.com
     date: '2026-11-10'
+  - label: us.cumulocity.com
+    date: '2026-11-11'
+  - label: cumulocity.com
+    date: '2026-11-11'
 ---
 Previously, the Y-axis label in charts could overlap the tick labels, which made both hard to read. The Y-axis label now moves dynamically away from the tick labels, so the two stay separate and readable.

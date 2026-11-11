@@ -22,5 +22,9 @@ environment_availability:
     date: '2026-11-10'
   - label: jp.cumulocity.com
     date: '2026-11-10'
+  - label: us.cumulocity.com
+    date: '2026-11-11'
+  - label: cumulocity.com
+    date: '2026-11-11'
 ---
 In applications with resizable grid panes using the split view component, a pane now stops at its minimum width when you drag its edge or make the browser window smaller. Before, panes could get too narrow to show their content.
