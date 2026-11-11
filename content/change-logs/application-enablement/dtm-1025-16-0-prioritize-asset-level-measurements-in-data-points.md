@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Prioritize Asset-Level Measurements in Data Points"
+title: "Latest value column prefers the asset's own measurements"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
@@ -14,4 +14,6 @@ build_artifact:
 ticket: "CTM-3335"
 version: "1025.16.0"
 ---
-Previously, the latest measurement was always fetched from the linked device. Now, asset-level measurements are prioritized when available, with device-level measurements used as a fallback. For direct measurements on an asset, no status/type is displayed, unless the measurement is created by the Data Service, in which case the source status is retained.
+The **Latest value** column of the **Data points** tab now shows the latest measurement of the asset itself. Only when the asset has no measurement for a data point yet does it show the latest measurement of the linked source device. The tooltip of the value now shows when it was measured.
+
+For a measurement created directly on the asset, the **Status** column stays empty. For a measurement that the DTM Data Service propagated from the source device, it shows the status of the link, for example **Linked**.

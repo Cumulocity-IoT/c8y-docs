@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Data points tab displays DTM data service management controls for the tenant"
+title: "DTM Data Service status and controls in the Data points tab"
 product_area: "Application enablement & solutions"
 change_type:
     - value: "change-QHu1GdukP"
@@ -14,8 +14,10 @@ build_artifact:
 ticket: "CTM-3306"
 version: "1025.16.0"
 ---
-The data points tab now includes a **Manage DTM Data Service** button that displays the replication status of linked data points to assets for your tenant. Users with the ROLE_DIGITAL_TWIN_ADMIN role can enable or disable the service directly from the dialog, while other users see instructions for enabling it. The button appears only when the service status is available, the operator has not set a global policy for all tenants, or the tenant has existing data point links.
+The **Data points** tab of an asset now has a **Manage DTM Data Service** button. It opens a dialog that shows whether the DTM Data Service is enabled for your tenant, that is, whether it propagates measurements from source devices to their linked assets. Users with the `ROLE_DIGITAL_TWIN_ADMIN` role can enable or disable the service in the dialog, for all assets of the tenant. Other users see the status, and while the service is disabled, the dialog asks them to contact their tenant administrator.
 
-When you create your first data point link, the system automatically checks the DTM Data Service status and reloads it to reflect any changes. The dialog retrieves the service status from the `GET /service/dtmdata/enabled` endpoint, and users with appropriate permissions can modify the replication mode using the `PUT /service/dtmdata/enabled/measurements` endpoint. If the service is unavailable or you lack the required permission, the system handles these cases silently without displaying error alerts.
+The button appears when the service is enabled, or when it is disabled and the tenant has data points linked to a source device. It does not appear when a tenant administrator of the management tenant has enabled or disabled the service for all tenants, with the tenant option `n2Subscription.measurements.allTenants` in the category `dtmdata`. When you link the first data point in your tenant, the dialog opens automatically. While the service is disabled and the tenant has links, a warning is shown once per session.
 
-This change improves visibility into data point replication and gives tenant administrators direct control over the DTM Data Service without requiring operator intervention. Existing tenants with data point links can now enable or disable automatic replication based on their needs.
+The dialog reads the status with `GET /service/dtmdata/enabled` and changes it with `PUT /service/dtmdata/enabled/measurements`.
+
+For details, see [To enable or disable measurement propagation](/dtm/asset-hierarchy/#enable-measurement-propagation).
