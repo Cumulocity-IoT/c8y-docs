@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-11-09'
 title: New Event image view widget shows images attached to events
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66153
 version: 1024.24.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-09'
+  - label: apj.cumulocity.com
+    date: '2026-11-10'
+  - label: jp.cumulocity.com
+    date: '2026-11-10'
 ---
 A new "Event image view" widget is available. It shows the images attached to the events of a device or group, for example, camera snapshots. Below each image, it shows the source, the type, and the time of the event.
 
