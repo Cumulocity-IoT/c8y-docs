@@ -48,7 +48,7 @@ Alternatively, data can also be sent via a gateway. [Thin-edge.io](https://thin-
 Some devices communicate via protocols used on field or control level and do not directly connect to the internet. In such cases, IoT gateways act as intermediaries, collecting data from devices and forwarding it to {{< product-c8y-iot >}}. Several data integration options are available:
 * **Partner gateways**: Use pre-integrated partner gateways that bring support for the required protocol. Explore certified partner devices in the [Device Partner Portal](https://ecosystem.cumulocity.com/).
 * **[OPC UA](/device-integration/opcua/)**: Deploy {{< product-c8y-iot >}}'s OPC UA gateway with [thin-edge.io](https://thin-edge.io/) to connect to PLCs, data historians or SCADA servers.
-* **[Protocol Gateway](https://github.com/thin-edge/takebishi-devicegateway):** Extend [thin-edge.io](https://thin-edge.io/) with the Protocol Gateway which supports 320+ device types and protocols like BACnet, CAN or IEC 61850
+* **[Protocol Gateway](https://github.com/thin-edge/takebishi-devicegateway):** Extend [thin-edge.io](https://thin-edge.io/) with the Protocol Gateway which supports 320+ device types and protocols like BACnet, CAN or IEC 61850.
 * **[thin-edge.io](https://thin-edge.io/)** protocol drivers: Extend thin-edge.io with custom protocol support for proprietary or specialized device protocols.
 
 ### LPWAN integration {#lpwan-integration}
