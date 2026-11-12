@@ -1,6 +1,6 @@
 ---
 date: ""
-title: "Data Preparation AI assistant improved, and Haiku-5-5 is now recommended"
+title: "Data Preparation AI assistant improved, and Haiku-5-5 is now recommended model"
 product_area: "Device management & connectivity"
 change_type:
   - value: "change-2c7RdTdXo4"
