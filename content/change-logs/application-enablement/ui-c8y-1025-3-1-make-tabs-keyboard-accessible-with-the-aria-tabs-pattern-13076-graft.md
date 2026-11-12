@@ -14,20 +14,4 @@ build_artifact:
 ticket: MTM-67186
 version: 1025.3.1
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Web SDK): [MTM-67186] make tabs keyboard accessible with the ARIA
-tabs pattern
-(#13076)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13076)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67186]:
-https://cumulocity.atlassian.net/browse/MTM-67186?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Carlos Ceia <carlos.ceia@cumulocity.com>
+Tabs in applications now follow the ARIA tabs pattern, so screen readers announce the tab list and the selected tab. Use the arrow keys, Home, or End to move between tabs, and Enter or Space to open one.
