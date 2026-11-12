@@ -24,6 +24,8 @@ A horizontal scrollbar is available if not all template parameters \(columns\) c
 
 The right side of the table shows the mode and status of each instance. You activate \(deploy\) and deactivate \(undeploy\) the instances from here. See also [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance) and [Undeploying an instance](/streaming-analytics/analytics-builder/#undeploying-an-instance).
 
+If you have ADMIN permission for "CEP management", the toolbar also shows the **N/M instances active** drop-down menu, which lets you activate or deactivate all instances at once. See [Activating and deactivating all instances](/streaming-analytics/analytics-builder/#activating-and-deactivating-all-instances).
+
 Each row that is shown for an instance has an actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the very right which contains commands for managing the instance \(for example, to delete the instance\).
 
 You can control the list of instances by filtering and sorting. See [Filtering and sorting the instances](/streaming-analytics/analytics-builder/#filtering-and-sorting-the-instances) for more information.
@@ -70,6 +72,8 @@ When an instance is activated, the template parameter values, where supplied, ar
 
 Once an instance is active, you cannot modify the template parameter values or mode without deactivating the instance first. If any instances are active, then the model is read-only and cannot be modified until all instances are deactivated.
 
+To activate all instances in one step, see [Activating and deactivating all instances](/streaming-analytics/analytics-builder/#activating-and-deactivating-all-instances).
+
 #### To deploy an instance {#to-deploy-an-instance}
 
 1.  In the **Run Mode** column of the instance editor, click the drop-down menu for the instance that you want to deploy and select one of **Production**, **Test** or **Simulation**.
@@ -86,9 +90,93 @@ You can deactivate \(that is, undeploy\) each instance that is currently in prod
 
 When you undeploy an instance, the instance is stopped and no longer processes incoming data. Any state built up in the instance is lost. For simulation mode, this means that the instance is stopped before all historical data from the specified time range has been replayed.
 
+To deactivate all instances in one step, see [Activating and deactivating all instances](/streaming-analytics/analytics-builder/#activating-and-deactivating-all-instances).
+
 #### To undeploy an instance {#to-undeploy-an-instance}
 
 In the **Status** column of the instance editor, click the toggle button for the instance that you want to undeploy so that **Inactive** is then shown on the button.
+
+### Activating and deactivating all instances {#activating-and-deactivating-all-instances}
+
+For a template model, you can activate or deactivate all instances in one step instead of changing each instance separately. The commands are available from the **N/M instances active** drop-down menu, for example **3/5 instances active**, where N is the number of active instances and M is the total number of instances of the model.
+
+The drop-down menu is shown in these places:
+
+- In the toolbar of the model editor, for a saved template model.
+- In the toolbar of the instance editor, when the model has at least one instance.
+
+To use the commands, you must have ADMIN permission for "CEP management". The drop-down menu is not shown for models without template parameters. For these models, use the toggle button in the model editor or the model manager.
+
+![Instance editor with the instances drop-down menu open](/images/streaming-analytics/analytics-builder/activate-all-menu.png)
+
+The drop-down menu contains these commands:
+
+- **Activate all**. Activates the instances that are eligible, as described below.
+- **Deactivate all**. Deactivates all active instances.
+- **Go to instances table**. Opens the instance editor. This command is only shown in the model editor.
+
+The commands change only the activation state of the instances. They do not change the template parameter values, modes, or names.
+
+#### Which instances are affected {#which-instances-are-affected}
+
+**Deactivate all** deactivates every active instance, regardless of its mode.
+
+**Activate all** activates only the instances that meet all of the following conditions:
+
+- The instance is inactive and in production mode. Instances in draft, test, or simulation mode are not activated. To activate such an instance, see [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance).
+- The instance has a name.
+- The instance has a value for each required template parameter.
+
+**Activate all** is available as long as the model has at least one production instance and not all instances are active. If none of the inactive instances is a production instance, the dialog box reports that there are no instances to activate. In the instance editor, the drop-down menu is disabled and shows the tooltip **There are no production instances to activate or deactivate.** when the model has no production instances.
+
+#### To activate all instances {#to-activate-all-instances}
+
+1.  In the model editor or the instance editor, click the **N/M instances active** drop-down menu and select **Activate all**.
+    Unsaved changes are saved first. In the model editor, the model is saved before the instances are activated. In the instance editor, the edited rows are saved before the instances are activated.
+
+2.  In the **Activate all instances?** dialog box, check the number of instances. The dialog box shows, for example, **3 production instances will be activated. This might take some time.**
+    Instances that are not eligible are not counted. They are listed in the result after the operation.
+
+3.  Click **Activate all** to start. To leave without changing anything, click **Cancel**.
+
+![Confirmation dialog box for activating all instances](/images/streaming-analytics/analytics-builder/activate-all-confirm.png)
+
+#### To deactivate all instances {#to-deactivate-all-instances}
+
+1.  In the model editor or the instance editor, click the **N/M instances active** drop-down menu and select **Deactivate all**.
+    In the instance editor, unsaved changes are saved first. In the model editor, nothing is saved before the instances are deactivated.
+
+2.  In the **Deactivate all instances?** dialog box, check the number of instances. The dialog box shows, for example, **2 instances will be deactivated. This might take some time.**
+
+3.  Click **Deactivate all** to start. To leave without changing anything, click **Cancel**.
+
+#### Progress, cancellation, and results {#progress-cancellation-and-results}
+
+When you open the dialog box, it first shows **Loading instances.** while the current instances are read. If they cannot be read, the dialog box shows **The instances could not be loaded.** and a **Close** button. If no instance is eligible, the dialog box skips the confirmation and goes directly to the result, which shows **There are no instances to activate.** or **There are no active instances to deactivate.**
+
+After you confirm, the instances are changed one after the other. The dialog box shows the progress, for example **Activating 2 of 5** or **Deactivating 2 of 5**. You cannot close the dialog box by clicking outside of it or by pressing the Escape key.
+
+To stop the operation, click **Cancel**. The dialog box then shows **Cancelling after the current instance.** The instance that is currently being changed is completed and no further instances are changed. Instances that were already changed stay changed. The result then shows **The operation was cancelled.**
+
+![Finished dialog box after an activation that failed, with the details shown](/images/streaming-analytics/analytics-builder/activate-all-finished.png)
+
+When the operation ends, the dialog box is titled **Finished** and shows a summary table with these rows:
+
+- **Instances**. The total number of instances.
+- **Active**. The number of active instances after the operation.
+- **Non-production**. The number of instances that are not in production mode.
+
+After an activation, the table also shows **Skipped: no name** and **Skipped: missing required parameter** when there are instances without a name or with a missing required template parameter. These rows show the number of such instances.
+
+If one or more instances could not be changed, the dialog box shows a message such as **2 of 5 instances could not be activated.** or **2 of 5 instances could not be deactivated.** When a single instance was requested and failed, the message is **The instance could not be activated.** or **The instance could not be deactivated.** Click **Show details** to list the reasons. Instances that failed for the same reason are grouped under **Affected instances (N):**. A group shows up to 10 instance names, followed by **and N more** if there are more. If the server gave no reason, the dialog box shows **No reason was given.** Click **Hide details** to collapse the list.
+
+Click **Close** to close the dialog box. The counts in the drop-down menu are then updated. In the instance editor, the table is reloaded.
+
+#### Editing while instances are active {#editing-while-instances-are-active}
+
+If at least one instance of a template model is active, the model is read-only. The toolbar of the model editor then shows **Editing is disabled**. Use **Deactivate all** to make the model editable again.
+
+In the instance editor, the **N/M instances active** drop-down menu is also disabled while the instances are loading or being saved.
 
 ### Filtering and sorting the instances {#filtering-and-sorting-the-instances}
 
