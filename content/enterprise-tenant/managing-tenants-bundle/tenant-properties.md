@@ -2,6 +2,13 @@
 weight: 25
 title: Tenant properties
 layout: redirect
+helpcontent:
+  - label: tenant-properties
+    title: Tenant properties
+    content: "On the **Tenant properties** page, you define the tenant custom properties for your subtenants. Each property definition is available in the **Custom properties** tab of each subtenant, where you set its value for that subtenant.
+
+
+    Click **Add property definition** to create a property definition. Use **Export** and **Import** to transfer property definitions between tenants."
 ---
 
 {{< c8y-admon-req >}}
