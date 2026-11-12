@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-11-10
 title: Bulk operation details dialog no longer opens empty
 product_area: Device management & connectivity
 change_type:
