@@ -150,3 +150,14 @@ The UI is available in the following languages:
 |Korean|ko|
 |Polish|pl|
 |Spanish|es|
+
+{{< c8y-admon-info >}}
+The UI does not support right-to-left (RTL) languages, such as Arabic and Hebrew. It does not provide a mirrored right-to-left layout, and it does not support bi-directional (BiDi) display or printing of text.
+{{< /c8y-admon-info >}}
+
+Some UI content is available in fewer languages:
+
+* The contextual help that opens from the help icon is available in English only.
+* The static text of the Digital Twin Manager application is available in English and German only.
+
+To add or change translations of static text in the UI, use the [Localization](/standard-tenant/changing-settings/#localization) feature.

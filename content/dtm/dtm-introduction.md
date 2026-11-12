@@ -38,6 +38,10 @@ For details on editing a dashboard, refer to [Working with dashboards](/cockpit/
 * Your tenant must be subscribed to the Digital Twin Manager application, the Dtm-plugins extension, and the Dtm microservice.
 {{< /c8y-admon-req >}}
 
+{{< c8y-admon-info >}}
+The static text of the Digital Twin Manager application is available in English and German. To translate it into another UI language, use the [Localization](/standard-tenant/changing-settings/#localization) feature.
+{{< /c8y-admon-info >}}
+
 {{< c8y-admon-related >}}
 * See [Subscribing applications](/enterprise-tenant/managing-tenants/#subscribing-applications) for more information on how to access the DTM application in your tenant.
 

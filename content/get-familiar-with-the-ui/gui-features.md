@@ -129,6 +129,18 @@ On certain pages, the filter mechanism only searches through items shown on a pa
 
 For details on the filtering mechanism in the devices list refer to [To filter devices](/device-management-application/viewing-all-devices/#to-filter-devices).
 
+#### Sorting {#sorting}
+
+In many lists and tables, you can sort the entries by a column. Click the sort icon <i class="dlt-c8y-icon-sort-arrow icon-20"></i> in the column header to sort the entries in ascending or descending order.
+
+The UI sorts text by character code. It does not apply language-specific or region-specific sorting rules, such as the German DIN 5007 dictionary order or phone book order. This has the following effects:
+
+* Uppercase letters come before lowercase letters: A < B < ... < Z < a < b < ... < z.
+* Letters with accents or umlauts, such as é, ä, or ö, come after the letters A–Z and a–z. For example, *Ölpumpe* comes after *Zylinder*.
+* Text in non-Latin scripts, such as Chinese, Japanese, or Cyrillic, follows the code of each character and not the dictionary order of the language.
+
+[PLACEHOLDER: Confirm how text filters handle case, accents, and umlauts, for example, whether a filter for "a" matches "ä". Add one sentence here.]
+
 ### Real-time behavior of the navigator {#real-time-behavior-of-the-navigator}
 
 In the navigator, changes are not updated in real time, meaning new, removed or renamed devices or groups are not updated immediately.
