@@ -1,5 +1,5 @@
 ---
-date: '2026-11-XX'
+date: '2026-11-12'
 title: >-
   Java SDK supports bulk create and update of managed objects
 product_area: Application enablement & solutions
@@ -15,12 +15,7 @@ build_artifact:
 ticket: MTM-68529
 version: 2026.60.0
 environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
+
 ---
 
 The REST API accepts bulk requests for inventory managed objects (from version 2026.377.0 of {{< product-c8y-iot >}} Core), but the Java SDK had no methods for them. The `InventoryApi` of the Java SDK now provides `createBulk()` and `updateBulk()`, which create or update up to 50 managed objects with a single request.
@@ -34,4 +29,4 @@ Classes that implement or decorate the `InventoryApi` or `RestOperations` interf
 {{< /c8y-admon-caution >}}
 
 
-For details, see [Error responses of inventory and measurement bulk requests identify the failed element](/change-logs/#cumulocity-2026-377-0-bulk-request-error-details).
+For details, see [the Inventory API documentation](https://cumulocity.com/api/core/#operation/postManagedObjectCollectionResource).
