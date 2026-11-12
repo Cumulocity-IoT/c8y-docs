@@ -56,11 +56,7 @@ We recommend that you plan the migration before April 2027:
 
 1. **Check whether you are affected.** Query the Measurement API for your Sigfox devices with `type=c8y_BatteryMeasurement` or `type=c8y_TemperatureMeasurement`, or check the **Measurements** tab of a Sigfox device in the Device Management application. If these measurements are present, review which dashboards, smart rules, alarms, and integrations use them.
 2. **Change the device firmware** so that the device transmits battery voltage and temperature as part of its regular Sigfox application payload, as recommended by Sigfox.
-3. **Map the payload in the device protocol.** In **Device Management** > **Device types** > **Device protocols**, open the Sigfox device protocol of the affected device type and add the byte ranges that carry battery voltage and temperature. Select **Send measurement** as the action. To keep existing dashboards and rules working, use the same fragment and series names as before, that is `c8y_BatteryMeasurement` with the series `c8y_Battery.level` in the unit `V`, and `c8y_TemperatureMeasurement` with the series `c8y_TemperatureMeasurement.T` in the unit `C`. See [Creating device protocols](/device-integration/lpwan/#sigfox-creating-device-protocols).
+3. **Map the payload in the device protocol.** In **Device Management** > **Device types** > **Device protocols**, open the Sigfox device protocol of the affected device type and add the byte ranges that carry battery voltage and temperature. Select **Send measurement** as the action. To keep existing dashboards and rules working, use the same fragment and series names as before, that is `c8y_BatteryMeasurement` with the series `c8y_Battery.level` in the unit `V`, and `c8y_TemperatureMeasurement` with the series `c8y_TemperatureMeasurement.T` in the unit `C`. 
 4. **Update dependent configuration** if you decide to use different fragment or series names, for example data point selections in dashboards, smart rules, and any external integrations that filter on the measurement type.
 
 If your devices cannot be changed to transmit battery and temperature values in their application messages, be aware that these values are not available in {{< product-c8y-iot >}} after April 2027.
-
-**Documentation**
-
-See [Sigfox](/device-integration/lpwan/#sigfox) in the device integration documentation.
