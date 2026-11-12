@@ -1,5 +1,5 @@
 ---
-date: '2026-11-12'
+date: 
 title: >-
   Java SDK supports bulk create and update of managed objects
 product_area: Application enablement & solutions
