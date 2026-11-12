@@ -18,6 +18,6 @@ version: ""
 This feature is in Public Preview, that is, it is not enabled by default and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
-We improved the Data Preparation AI assistant and tested it with `claude-haiku-5-5`, the now recommended model. We recommend switching to Haiku 5.5 for the AI assistant.
+We improved the Data Preparation AI assistant and tested it with `claude-haiku-5-5`, the now recommended model. We recommend switching to Haiku 5.5 for the AI assistant. It is significantly cheaper than the previously recommended model.
 
 For details, see [AI assistant](/data-preparation/rule-editor/#ai-assistant).
