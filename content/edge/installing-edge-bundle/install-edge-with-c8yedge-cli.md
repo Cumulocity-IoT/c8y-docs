@@ -73,6 +73,5 @@ The c8yedge tool installs [Lightweight Kubernetes (K3s)](https://docs.k3s.io/), 
 
 Once in the airgapped environment, run the installation command referencing the offline package file the tool generated earlier:
 ```shell
-# Replace <OFFLINE-PACKAGE-FILENAME> with the path to the generated offline package file
-sudo c8yedge install -s "<OFFLINE-PACKAGE-FILENAME>"
+sudo c8yedge install -s "<OFFLINE-PACKAGE-FILE>"
 ```

@@ -1,5 +1,7 @@
 ---
 title: "Release notes"
+description: "Release announcements, new features, improvements, deprecations, and security-relevant changes across Cumulocity cloud environments."
+outputs: ["HTML", "llmstxt"]
 icon: "dlt-c8y-icon-logs"
 type: change-log
 weight: 2

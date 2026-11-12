@@ -1,0 +1,13 @@
+{{- /*
+  Renders a callout as a Markdown blockquote for llms-full.txt, keeping its label:
+  > **Caution:**
+  > Inner text.
+  Call with (dict "title" "Caution" "inner" .Inner). Shortcode templates are HTML
+  templates even for text output formats, so the result is marked safeHTML to stop
+  it being entity-escaped.
+*/ -}}
+{{- $out := printf "\n> **%s:**\n" .title -}}
+{{- range split (strings.Trim .inner " \t\r\n") "\n" -}}
+  {{- if strings.Trim . " \t\r\n" }}{{ $out = printf "%s> %s\n" $out . }}{{ else }}{{ $out = printf "%s>\n" $out }}{{ end -}}
+{{- end -}}
+{{- printf "%s\n" $out | safeHTML -}}

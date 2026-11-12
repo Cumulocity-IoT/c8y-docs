@@ -1,10 +1,12 @@
 ---
 weight: 35
 title: Smart rules (NEW) plugin
+description: "Create and manage Analytics Builder model instances from device and group contexts in Device Management, Cockpit, and Digital Twin Manager."
 layout: bundle
 outputs:
   - html
   - json
+  - markdown
 sector:
   - data_analytics
 helpcontent:

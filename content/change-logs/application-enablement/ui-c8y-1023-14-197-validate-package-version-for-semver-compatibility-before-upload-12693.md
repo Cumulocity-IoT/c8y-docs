@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-09-01
 title: Package version validation for semantic versioning compatibility
 product_area: Application enablement & solutions
 change_type:

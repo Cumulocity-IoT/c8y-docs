@@ -28,25 +28,6 @@
           </div>
         </div>
       </article>
-      {{/*  Get the page resources from the right folder  */}}
-      {{ $bundle1 := "/change-logs/analytics" }}
-      {{ $headless1 := .Site.GetPage $bundle1 }}
-      {{ $bundle2 := "/change-logs/application-enablement" }}
-      {{ $headless2 := .Site.GetPage $bundle2 }}
-      {{ $bundle3 := "/change-logs/device-management" }}
-      {{ $headless3 := .Site.GetPage $bundle3 }}
-      {{ $bundle4 := "/change-logs/platform-services" }}
-      {{ $headless4 := .Site.GetPage $bundle4 }}
-      {{ $currentCollections := newScratch }}
-      {{ if site.Data.date_settings.yearly_release}}
-      {{ $bundle5 := "/change-logs/edge" }}
-      {{ $headless5 := .Site.GetPage $bundle5 }}
-        {{ $currentCollections.Set "list" ($headless1.Resources | union $headless2.Resources | union $headless3.Resources | union $headless4.Resources | union $headless5.Resources) }}
-        {{else}}
-        {{ $currentCollections.Set "list" ($headless1.Resources | union $headless2.Resources | union $headless3.Resources | union $headless4.Resources ) }}
-      {{end}}
-      
-      {{ $merged := $currentCollections.Get "list" }}
 
       <div id="emptystate" style="display: none">
         <div class="d-flex a-i-center gap-16 text-muted">
@@ -59,7 +40,7 @@
         </div>
       </div>
 
-      {{ $reusablePages := sort ($merged.ByType "page") ".Date" "desc"}}
+      {{ $reusablePages := partial "change-logs-entries.html" . }}
 
       {{/*  retrieve the starting date from the settings  */}}
       {{ $currentDate := newScratch }}

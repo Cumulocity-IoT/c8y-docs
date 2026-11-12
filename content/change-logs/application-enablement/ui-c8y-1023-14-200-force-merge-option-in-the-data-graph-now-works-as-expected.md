@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-09-01
 title: Updated Y-Axis internationalization and number formatting
 product_area: Application enablement & solutions
 change_type:

@@ -1,0 +1,1 @@
+{{- printf "\n**Start of preview feature documentation.** It describes upcoming changes that are not yet generally available.\n\n%s\n\n**End of preview feature documentation.**\n" (strings.Trim .Inner " \t\r\n") | safeHTML -}}

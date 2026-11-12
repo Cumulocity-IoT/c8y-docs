@@ -12,6 +12,9 @@ const templatesDir = path.resolve(__dirname, './templates');
 const sitemapPath = path.resolve(__dirname, '../public/sitemap.xml');
 const sectorToPdfs = new Map<string, Set<string>>();
 const zipOutputDir = path.resolve(__dirname, '../public/zips');
+// Set when a PDF failed to render or a sector ZIP could not be built completely. The workflow
+// reads this to decide whether it is safe to prune stale files on the server.
+let incompleteRun = false;
 
 (async () => {
   // Clean and recreate tmp directory
@@ -39,6 +42,7 @@ const zipOutputDir = path.resolve(__dirname, '../public/zips');
     }
   }
   await buildSectorZips();
+  reportRunCompleteness();
 })();
 
 function sleep(ms: number) {
@@ -146,18 +150,40 @@ function generateTemplateFiles(tmpFolder: string, replacements: Record<string, s
   fs.chmodSync(scriptPath, 0o755);
 }
 
+// wkhtmltopdf writes a cover/copyright/TOC-only PDF when it cannot load a single content page,
+// and does not reliably exit non-zero when that happens. Detect it, so an empty shell is not
+// mistaken for a working document and published over the real one.
+function allContentPagesFailed(output: string, links: string[]) {
+  if (links.length === 0) return false;
+  return links.every(link => {
+    const escaped = link.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`Failed (?:to load|loading page) ${escaped}(?![\\w/-])`).test(output);
+  });
+}
+
 // Run the shell script to generate the PDF, then copy it to output directory
-async function runPdfGenerationScript(tmpFolder: string, folderName: string, desiredFilename: string) {
+async function runPdfGenerationScript(tmpFolder: string, folderName: string, desiredFilename: string, links: string[]) {
   console.log(`Generating PDF for ${folderName}...`);
+    let output = '';
     try {
-      child_process.execSync(`bash command.sh`, {
+      // stderr is folded into stdout and echoed back, so the build log keeps the same content
+      // as before while the text stays available for the check below.
+      output = child_process.execSync(`bash command.sh 2>&1`, {
         cwd: tmpFolder,
-        stdio: 'inherit',
+        stdio: ['ignore', 'pipe', 'pipe'],
+        encoding: 'utf-8',
+        maxBuffer: 32 * 1024 * 1024,
       });
+      process.stdout.write(output);
+
       const generatedPdfs = fs.readdirSync(tmpFolder).filter(f => f.endsWith('.pdf'));
 
       if (generatedPdfs.length === 0) {
         throw new Error(`No PDF generated for ${folderName}`);
+      }
+
+      if (allContentPagesFailed(output, links)) {
+        throw new Error(`none of the ${links.length} pages could be loaded`);
       }
 
       const pdfFilename = generatedPdfs[0];
@@ -170,6 +196,11 @@ async function runPdfGenerationScript(tmpFolder: string, folderName: string, des
       fs.unlinkSync(tmpPdfPath);
       return fs.existsSync(outputPdfPath);
     } catch (err) {
+      const captured = output || [
+        (err as { stdout?: Buffer | string })?.stdout?.toString() ?? '',
+        (err as { stderr?: Buffer | string })?.stderr?.toString() ?? '',
+      ].join('');
+      if (captured) process.stdout.write(captured);
       console.error(`Failed to generate PDF for ${folderName}:`, err);
       return false;
     }
@@ -219,7 +250,8 @@ async function processFolder(folderName: string) {
   const current_Year = new Date().getFullYear().toString();
   const replacements = { title, urls: linksBlock, current_year: current_Year };
   generateTemplateFiles(tmpFolder, replacements);
-  await runPdfGenerationScript(tmpFolder, folderName, pdfFilename);
+  const generated = await runPdfGenerationScript(tmpFolder, folderName, pdfFilename, links);
+  if (!generated) incompleteRun = true;
   await sleep(5000);
 }
 
@@ -242,11 +274,7 @@ function createZip(zipPath: string, files: string[]) {
     archive.pipe(output);
 
     for (const filePath of files) {
-      if (fs.existsSync(filePath)) {
-        archive.file(filePath, { name: path.basename(filePath) });
-      } else {
-        console.warn(`Skipping missing PDF: ${filePath}`);
-      }
+      archive.file(filePath, { name: path.basename(filePath) });
     }
     archive.finalize();
   });
@@ -258,10 +286,35 @@ function createZip(zipPath: string, files: string[]) {
       const pdfs = Array.from(pdfSet);
       if (pdfs.length === 0) continue;
 
+      const present = pdfs.map(f => path.join(outputDir, f)).filter(f => fs.existsSync(f));
+      const missing = pdfs.length - present.length;
+      if (missing > 0) {
+        incompleteRun = true;
+        console.warn(`Sector "${sector}": ${missing} of ${pdfs.length} PDFs are missing`);
+      }
+
+      // An empty archive is worse than no archive: the upload step would publish it over the
+      // working one. Skipping leaves the previously published ZIP in place.
+      if (present.length === 0) {
+        console.error(`No PDFs available for sector "${sector}" - not writing a ZIP`);
+        continue;
+      }
+
       const zipName = `${sanitizeZipName(sector)}.zip`;
       const zipPath = path.join(zipOutputDir, zipName);
 
-      await createZip(zipPath, pdfs.map(f => path.join(outputDir, f)));
-      console.log(`Created ZIP for sector "${sector}": ${zipPath}`);
+      await createZip(zipPath, present);
+      console.log(`Created ZIP for sector "${sector}" (${present.length}/${pdfs.length} PDFs): ${zipPath}`);
     }
   }
+
+// Tell the workflow whether this run produced a complete set. Only then is it safe to prune the
+// remote directories with rsync --delete-after; after a partial run, deleting what this run
+// failed to produce would take live PDFs and sector ZIPs offline.
+function reportRunCompleteness() {
+  const complete = !incompleteRun;
+  console.log(`Run complete (safe to prune stale files): ${complete}`);
+  if (process.env.GITHUB_OUTPUT) {
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, `complete=${complete}\n`);
+  }
+}
