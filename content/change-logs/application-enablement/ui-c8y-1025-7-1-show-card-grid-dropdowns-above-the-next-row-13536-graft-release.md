@@ -1,6 +1,6 @@
 ---
 date: ""
-title: show card grid dropdowns above the next row (#13536) [GRAFT][release/cd] (#13545)
+title: Card grid dropdowns display above the next row
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
