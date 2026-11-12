@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-11-10'
   - label: jp.cumulocity.com
     date: '2026-11-10'
+  - label: us.cumulocity.com
+    date: '2026-11-11'
+  - label: cumulocity.com
+    date: '2026-11-11'
 ---
 In the Install plugin list, the search did not filter by source, so you had to scroll through the full list to find plugins from a specific source. Now, you can search for plugins by their source, and the list shows only the matching plugins. 

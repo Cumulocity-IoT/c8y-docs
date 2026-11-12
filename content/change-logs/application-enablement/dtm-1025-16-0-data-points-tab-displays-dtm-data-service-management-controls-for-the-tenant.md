@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Manage DTM Data Service status from the Data points tab"
-product_area: "Application enablement & solutions"
+date: '2026-11-11'
+title: Manage DTM Data Service status from the Data points tab
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3306"
-version: "1025.16.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3306
+version: 1025.16.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-11'
 ---
 The **Data points** tab now includes a **Manage DTM Data Service** button that provides direct access to view and control the DTM Data Service status for your tenant. The DTM Data Service controls the propagation of measurements from source devices to their linked assets.
 

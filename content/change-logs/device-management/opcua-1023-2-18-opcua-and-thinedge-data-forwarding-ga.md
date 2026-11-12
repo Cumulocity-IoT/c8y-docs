@@ -20,6 +20,8 @@ environment_availability:
     date: '2026-10-16'
   - label: jp.cumulocity.com
     date: '2026-10-19'
+  - label: apj.cumulocity.com
+    date: '2026-11-11'
 ---
 OPC UA device gateway data forwarding through thin-edge.io MQTT topics, introduced as a Preview in opcua-device-gateway 1021.9.0, is now generally available (GA). It is fully supported from CD version 1023.2.18 and will be included in the 2027 annual release. As announced in version 1023.1.0, the gateway connects to {{< product-c8y-iot >}} through the local thin-edge.io proxy.
 

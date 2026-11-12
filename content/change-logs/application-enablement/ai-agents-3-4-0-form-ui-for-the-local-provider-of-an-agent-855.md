@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-11-11'
 title: Form-based UI for the local provider of an agent
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: ai-agents
 ticket: MTM-68295
 version: 3.4.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-11'
+  - label: apj.cumulocity.com
+    date: '2026-11-11'
+  - label: jp.cumulocity.com
+    date: '2026-11-11'
+  - label: us.cumulocity.com
+    date: '2026-11-11'
+  - label: cumulocity.com
+    date: '2026-11-11'
 ---
 The agent's **Local provider** tab accepted only JSON input, which made it hard to see which settings the agent uses. The tab is now called **Model configuration** and provides a form with one row per setting, laid out like the model configuration in the control panel. 
 

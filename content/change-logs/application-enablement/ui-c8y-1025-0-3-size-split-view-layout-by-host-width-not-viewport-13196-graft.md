@@ -16,5 +16,9 @@ version: 1025.0.3
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-11-09'
+  - label: apj.cumulocity.com
+    date: '2026-11-11'
+  - label: jp.cumulocity.com
+    date: '2026-11-11'
 ---
 The split view now switches between two columns and a stacked layout based on its container width, not the browser window. For example, opening the AI assistant next to the alarms list in the Cockpit application now stacks the list and details instead of squeezing them into two columns.
