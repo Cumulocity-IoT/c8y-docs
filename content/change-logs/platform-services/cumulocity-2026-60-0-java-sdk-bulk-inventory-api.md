@@ -13,7 +13,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-68529
-version: 2026.60.0
+version: 2026.61.0
 environment_availability:
 
 ---
