@@ -28,11 +28,10 @@ For a model without template parameters (other than a sample model), the toolbar
 - A toggle button showing **Active** or **Inactive**. Use it to activate or deactivate the model without leaving the model editor. See [Activating a model from the model editor](/streaming-analytics/analytics-builder/#activating-a-model-from-the-model-editor).
 - The logs icon <i class="dlt-c8y-icon-logs icon-20"></i>, which shows or hides the log messages of the model below the canvas. See [Viewing the logs of a model](/streaming-analytics/analytics-builder/#viewing-the-logs-of-a-model).
 
-For a saved template model, the toolbar shows the following instead:
+For a saved template model, the toolbar shows the following instead.
 
 - The **N/M instances active** drop-down menu, for example **3/5 instances active**. Use it to activate or deactivate all instances of the model, or to go to the instance editor. It is only shown if you have ADMIN permission for "CEP management". See [Activating and deactivating all instances](/streaming-analytics/analytics-builder/#activating-and-deactivating-all-instances).
 - The text **Editing is disabled** when at least one instance is active. The model is read-only until you deactivate all instances.
-- The logs icon <i class="dlt-c8y-icon-logs icon-20"></i>, as described above.
 
 {{< c8y-admon-caution>}}
 Changes are only saved when you click the save icon <i class="dlt-c8y-icon-save icon-20"></i>.

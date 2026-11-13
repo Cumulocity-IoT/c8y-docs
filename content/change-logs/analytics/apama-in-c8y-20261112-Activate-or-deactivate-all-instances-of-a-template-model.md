@@ -21,8 +21,6 @@ In the toolbar of the model editor and the instance editor, a new **N/M instance
 
 - **Activate all** activates the inactive production instances that have a name and a value for each required template parameter. Other instances are skipped.
 - **Deactivate all** deactivates all active instances.
-- **Progress and cancellation**: A dialog box asks for confirmation, shows the progress, and lets you cancel after the current instance.
-- **Results**: When the operation ends, the dialog box shows a summary and lists the instances that could not be changed, grouped by the reason.
 
 The model editor of a template model now also shows **Editing is disabled** while at least one instance is active.
 

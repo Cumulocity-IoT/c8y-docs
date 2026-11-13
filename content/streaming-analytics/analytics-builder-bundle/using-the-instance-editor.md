@@ -107,8 +107,6 @@ The drop-down menu is shown in these places:
 
 To use the commands, you must have ADMIN permission for "CEP management". The drop-down menu is not shown for models without template parameters. For these models, use the toggle button in the model editor or the model manager.
 
-![Instance editor with the instances drop-down menu open](/images/streaming-analytics/analytics-builder/activate-all-menu.png)
-
 The drop-down menu contains these commands:
 
 - **Activate all**. Activates the instances that are eligible, as described below.
@@ -139,8 +137,6 @@ The commands change only the activation state of the instances. They do not chan
 
 3.  Click **Activate all** to start. To leave without changing anything, click **Cancel**.
 
-![Confirmation dialog box for activating all instances](/images/streaming-analytics/analytics-builder/activate-all-confirm.png)
-
 #### To deactivate all instances {#to-deactivate-all-instances}
 
 1.  In the model editor or the instance editor, click the **N/M instances active** drop-down menu and select **Deactivate all**.
@@ -150,27 +146,9 @@ The commands change only the activation state of the instances. They do not chan
 
 3.  Click **Deactivate all** to start. To leave without changing anything, click **Cancel**.
 
-#### Progress, cancellation, and results {#progress-cancellation-and-results}
+#### Progress and results {#progress-and-results}
 
-When you open the dialog box, it first shows **Loading instances.** while the current instances are read. If they cannot be read, the dialog box shows **The instances could not be loaded.** and a **Close** button. If no instance is eligible, the dialog box skips the confirmation and goes directly to the result, which shows **There are no instances to activate.** or **There are no active instances to deactivate.**
-
-After you confirm, the instances are changed one after the other. The dialog box shows the progress, for example **Activating 2 of 5** or **Deactivating 2 of 5**. You cannot close the dialog box by clicking outside of it or by pressing the Escape key.
-
-To stop the operation, click **Cancel**. The dialog box then shows **Cancelling after the current instance.** The instance that is currently being changed is completed and no further instances are changed. Instances that were already changed stay changed. The result then shows **The operation was cancelled.**
-
-![Finished dialog box after an activation that failed, with the details shown](/images/streaming-analytics/analytics-builder/activate-all-finished.png)
-
-When the operation ends, the dialog box is titled **Finished** and shows a summary table with these rows:
-
-- **Instances**. The total number of instances.
-- **Active**. The number of active instances after the operation.
-- **Non-production**. The number of instances that are not in production mode.
-
-After an activation, the table also shows **Skipped: no name** and **Skipped: missing required parameter** when there are instances without a name or with a missing required template parameter. These rows show the number of such instances.
-
-If one or more instances could not be changed, the dialog box shows a message such as **2 of 5 instances could not be activated.** or **2 of 5 instances could not be deactivated.** When a single instance was requested and failed, the message is **The instance could not be activated.** or **The instance could not be deactivated.** Click **Show details** to list the reasons. Instances that failed for the same reason are grouped under **Affected instances (N):**. A group shows up to 10 instance names, followed by **and N more** if there are more. If the server gave no reason, the dialog box shows **No reason was given.** Click **Hide details** to collapse the list.
-
-Click **Close** to close the dialog box. The counts in the drop-down menu are then updated. In the instance editor, the table is reloaded.
+The instances are changed one after the other, and the dialog box shows the progress. Click **Cancel** to stop after the instance that is currently being changed. When the operation ends, the dialog box shows a summary and lists any instances that could not be changed, with the reasons.
 
 #### Editing while instances are active {#editing-while-instances-are-active}
 
