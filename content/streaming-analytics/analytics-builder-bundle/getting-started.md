@@ -97,21 +97,21 @@ To pass the values from one block to another, you must connect the blocks with w
 1. Click the **Value** output port of the input block and drag the mouse to the **Value** input port of the **Average \(Mean\)** block.
 2. Click the **Average** output port of the **Average \(Mean\)** block and drag the mouse to the **Value** input port of the output block.
 
-#### Step 7: Save the model and go back to the model manager {#step-7-save-the-model-and-go-back-to-the-model-manager}
+#### Step 7: Save the model {#step-7-save-the-model-and-go-back-to-the-model-manager}
 
-1. In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save your newly created model.
-2. In the toolbar of the model editor, click the close icon <i class="dlt-c8y-icon-clear icon-20"></i> to leave the model editor and thus to return to the model manager.
+- In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i> to save your newly created model.
 
 {{< c8y-admon-info>}}
 Only saved models are listed on the **Models** tab of the model manager. When you add a new model and then leave the model editor without saving the model, it will not be listed in the model manager, and all the edits you made will be lost.
 {{< /c8y-admon-info>}}
 
-#### Step 8: Activate the model in production mode {#step-8-activate-the-model-in-production-mode}
+#### Step 8: Activate the model {#step-8-activate-the-model-in-production-mode}
 
-A card for the newly added model is shown on the **Models** tab of the model manager. A new model is automatically set to draft mode and inactive state. You will now activate your new model in production mode. This deploys the model so that the measurements from your device are processed.
+A new model is automatically set to production mode and inactive state. Now activate your new model. This deploys the model so that the measurements from your device are processed.
 
-1. Click the drop-down menu on the card which currently shows **Draft** and select **Production**.
-2. Click the toggle button on the card which currently shows **Inactive**. This changes the state to **Active**.
+- In the toolbar of the model editor, click the toggle button which currently shows **Inactive**. This changes the state to **Active**. While the model is active, you cannot edit it, and the toolbar shows **Editing is disabled**.
+
+Alternatively, click the close icon <i class="dlt-c8y-icon-clear icon-20"></i> to leave the model editor and return to the model manager. On the **Models** tab, click the toggle button on the card of the model, which currently shows **Inactive**. This changes the state to **Active**.
 
 #### Step 9: Go to the Device Management application and view the measurements {#step-9-go-to-the-device-management-and-view-the-measurements}
 
@@ -166,7 +166,7 @@ Keep in mind that only saved models are listed on the **Models** tab of the mode
 The sample model uses template parameters. So when you turn the sample into a model, you create a so-called template model. You cannot activate a template model directly in the model manager. Instead, you must create at least one instance of the model, and you can then activate that instance using the instance editor.
 
 1. On the **Models** tab of the model manager, locate the card for your newly created model.
-2. To invoke the instance editor, click **0 Instances** which is currently shown on the card.
+2. To invoke the instance editor, click **Edit instances** on the card.
 3. Click **New Instance** to create the first instance of your new model.
 
 #### Step 3: Fill in the template parameter values {#step-3-fill-in-the-template-parameter-values}
@@ -195,8 +195,7 @@ If you want to find out which fragments and series are available to your device,
 #### Step 4: Activate the instance {#step-4-activate-the-instance}
 
 You will now activate the instance in production mode. This deploys the instance so that the measurements from your device are processed.
-
-1. In the **Run Mode** column of the instance editor, click the drop-down menu for the instance and select **Production**.
+1. In the **Run Mode** column of the instance editor, ensure **Production** is selected.
 2. In the **Status** column of the instance editor, click the button which currently shows **Inactive** to change the status to **Active**.
 
 #### Step 5: Send in the data from your device {#step-5-send-in-the-data-from-your-device}

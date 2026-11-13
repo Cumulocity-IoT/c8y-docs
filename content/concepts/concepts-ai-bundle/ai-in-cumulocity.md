@@ -11,7 +11,7 @@ sector:
 
 {{< company-c8y >}} provides an AI Agent Manager enabling the management of agents written by the {{< company-c8y >}} team or by the Customer. For {{< company-c8y >}}-delivered agents, the inputs and outputs are monitored so the product can improve the agents to ensure the results are accurate. Agents written by the Customer can use a simple good/bad emoji that can be clicked by the user, in order to provide feedback on the accuracy of their agent.
 
-The platform connects to a LLM provider you choose and contract with directly. The tested options are Anthropic, OpenAI, and Google Gemini. The connection uses an API key supplied by the Customer, whether the prompts and responses are used to train that provider’s model is governed by the Customer agreement with that provider. All three tested providers commit, by default under their API or commercial terms, not to use API data to train models.
+The platform connects to a LLM provider you choose and contract with directly. The tested options are Anthropic, OpenAI, Google Gemini, and Azure OpenAI. The connection uses an API key supplied by the Customer, whether the prompts and responses are used to train that provider’s model is governed by the Customer agreement with that provider. All four tested providers commit, by default under their API or commercial terms, not to use API data to train models.
 
 If an LLM provider is not configured, no data leaves the platform for any external LLM. The AI Agent Manager remains inactive.
 
@@ -55,7 +55,7 @@ The API key provided by the Customer is held in the platform’s secure store. I
 
 #### What the LLM providers commit to {#ai-aspects-llm-providers}
 
-Your contract with the LLM provider governs how it handles your data.  At the time of writing {{< product-c8y-iot >}} is tested with three providers who provide differing levels of protection depending upon the license, links are to the pages that contain information on the options available.
+Your contract with the LLM provider governs how it handles your data.  At the time of writing {{< product-c8y-iot >}} is tested with four providers who provide differing levels of protection depending upon the license, links are to the pages that contain information on the options available.
 
 Anthropic [https://claude.com/pricing](https://claude.com/pricing)
 
@@ -63,11 +63,13 @@ OpenAI [https://chatgpt.com/pricing/](https://chatgpt.com/pricing/)
 
 Google Gemini Enterprise Agent Platform [https://cloud.google.com/products/gemini-enterprise-agent-platform](https://cloud.google.com/products/gemini-enterprise-agent-platform)
 
+Azure OpenAI [https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/data-privacy](https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/data-privacy)
+
 Commitments are made by the provider directly to you, not by {{< company-c8y >}}. We recommend reading the provider’s terms as part of the provider selection.
 
 #### If external LLM use is not acceptable {#ai-aspects-external-llm-use}
 
-The AI Agent Manager supports custom OpenAI-compatible endpoints. If your organization’s policy prevents the use of an external LLM, you can route the platform to a self-hosted or privately-hosted model that exposes the OpenAI API. In that case, no data leaves your infrastructure for an external LLM. The trade-off is that you operate the model.
+The AI Agent Manager supports custom OpenAI-compatible endpoints. If your organization’s policy prevents the use of an external LLM, you can route the platform to a self-hosted or privately-hosted model that exposes the OpenAI API. In that case, no data leaves your infrastructure for an external LLM. The trade-off is that you operate the model. Depending on your environment, the AI Agent Manager still exports prompts and responses to a collector operated by {{< company-c8y >}}. To prevent this, opt out of the [{{< company-c8y >}}-managed telemetry export](/ai/rest-api/#managed-telemetry-export).
 
 #### Practical implications for protecting your data {#ai-aspects-practical-implications}
 
@@ -85,15 +87,15 @@ A. No.
 
 **Q. Which LLM providers are officially tested and supported by the {{< company-c8y >}} team?**
 
-A. The {{< company-c8y >}} team has tested and validated integrations with Anthropic, OpenAI and Google Gemini. These providers can be configured directly through the LLM provider settings within the platform, and their integration is supported by {{< product-c8y-iot >}}.
+A. The {{< company-c8y >}} team has tested and validated integrations with Anthropic, OpenAI, Google Gemini, and Azure OpenAI. These providers can be configured directly through the LLM provider settings within the platform, and their integration is supported by {{< product-c8y-iot >}}.
 
-**Q. Can I use LLM providers other than Anthropic, OpenAI, and Google Gemini?**
+**Q. Can I use LLM providers other than Anthropic, OpenAI, Google Gemini, and Azure OpenAI?**
 
 A. Yes. {{< product-c8y-iot >}}'s AI integration is provider-agnostic which supports a broad range of LLM providers. While additional providers may work, they have not been tested by {{< product-c8y-iot >}} and are therefore supported without guarantee.
 
 **Q. Can I use open-source or self-hosted AI models?**
 
-A. Yes. Open-source and self-hosted models that expose an OpenAI-compatible API can be used through the local provider configuration. This typically requires configuring the appropriate base URL and adjusting the advanced settings, such as strict mode, to match the capabilities of the selected model.
+A. Yes. Open-source and self-hosted models that expose an OpenAI-compatible API can be used. In the [model configuration](/ai/control-panel/#model-configuration) of the AI Agent Manager, select **Custom/self-hosted** and enter the base URL of the endpoint. To use such a model only for specific agents, configure it as a [local provider](/ai/agents/#local-providers) with the `openai` provider and the `baseURL` of the endpoint.
 
 **Q. Is Customer data used to train LLMs?**  
 
@@ -109,7 +111,7 @@ A. While {{< company-c8y >}} supports the integration and connectivity to config
 
 **Q. Can a {{< company-c8y >}} employee read our prompts?**
 
-A. Prompts pass through the platform with access inside {{< product-c8y-iot >}} governed by the controls in your tenant and by the {{< product-c8y-iot >}} DPA.  Access inside the LLM provider’s systems is governed by that provider’s terms.  Certain out-of-the-box features (such as Data Preparation) utilize automated telemetry via Gainsight (which can be disabled) and pre-delivery testing to evaluate system health, token consumption, response quality, and overall product performance. This information is used for performance assessment and product improvement.
+A. Prompts pass through the platform with access inside {{< product-c8y-iot >}} governed by the controls in your tenant and by the {{< product-c8y-iot >}} DPA.  Access inside the LLM provider’s systems is governed by that provider’s terms.  Certain out-of-the-box features (such as Data Preparation) utilize automated telemetry via Gainsight (which can be disabled) and pre-delivery testing to evaluate system health, token consumption, response quality, and overall product performance. This information is used for performance assessment and product improvement. Depending on the environment, the AI Agent Manager also exports pseudonymized traces of agent runs, including prompts and responses but not user IDs, to an OpenTelemetry collector operated by {{< company-c8y >}}. {{< company-c8y >}} employees can read these traces and use them to monitor the performance of AI agents, identify errors and technical issues, understand how the AI Agent Manager is used, and improve it. {{< company-c8y >}} deletes the traces after 14 days. Tenant administrators can opt out of this export via the [REST API](/ai/rest-api/#managed-telemetry-export).
 
 **Q. Are subscribed agents (provided by installed applications) different?**
 
@@ -121,11 +123,13 @@ A. Yes. AI Agent Manager actions are gated by roles. The "talk to an agent" perm
 
 **Q. Where is the LLM call processed geographically?**
 
-A. It depends on the provider and the endpoint you configure. EU-resident processing is available with each of the three tested providers under their enterprise options. We can document the routing for your specific configuration on request.
+A. It depends on the provider and the endpoint you configure. EU-resident processing is available with each of the four tested providers under their enterprise options. We can document the routing for your specific configuration on request.
 
 **Q. What happens if we change our mind and want to switch off AI?**
 
-A. Customers can modify or remove AI provider configurations at any time. Providers can be configured globally or overridden for specific agents. If all provider configurations are removed, no external LLM is contacted and AI-powered capabilities become inactive.
+A. Administrators can turn off all AI agents of a tenant at once with the AI agent availability switch (kill switch) in the [control panel](/ai/control-panel/#ai-agent-availability) of the AI Agent Manager. While AI agents are turned off, no agent runs and no external LLM is contacted by the AI Agent Manager. All configurations are kept, so AI agents can be turned on again at any time.
+
+Customers can also modify or remove AI provider configurations at any time. Providers can be configured globally or overridden for specific agents. If all provider configurations are removed, no external LLM is contacted and AI-powered capabilities become inactive.
 
 **Q. How do you test the agents?**
 

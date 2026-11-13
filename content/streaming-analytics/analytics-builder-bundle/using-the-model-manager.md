@@ -18,17 +18,17 @@ To edit a model, you can simply click on the card that is shown for the model \(
 
 There are two types of models, and the cards for these models look different:
 
+![Card for a model without template parameters and card for a template model](/images/streaming-analytics/analytics-builder/model-card-types.png)
+
 -   When a card shows a mode \(such as **Draft** or **Production**\) and state \(**Active** or **Inactive**\), it pertains to a model that has no template parameters. Such a model can be activated immediately in the model manager. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model) for more information.
 
     If a runtime time error icon <img src="/images/streaming-analytics/analytics-builder/runtime_error.png" alt="Error icon" style="display:inline-block; margin:0"> is shown on the card of a deployed model, this model is no longer processing events. Click the runtime error icon to display information on what went wrong.
 
--   When a model has template parameters, it acts as a template. In this case, the number of defined and active instances is shown on the card. A template model is not activated directly in the model manager. Instead, you use the instance editor to create a number of instances, where each instance provides values for the template parameters. Each instance has a mode and can be activated and deactivated in the instance editor, as with models without any template parameters.
+-   When a model has template parameters, it acts as a template. In this case, the card shows the number of active instances out of the total number of defined instances (for example, **Active: 0/4**), or **No instances** if no instances have been defined yet. A template model is not activated directly in the model manager. Instead, you use the instance editor to create a number of instances, where each instance provides values for the template parameters. Each instance has a mode and can be activated and deactivated in the instance editor, as with models without any template parameters.
 
-    To edit the instances, you can simply click the total number of instances \(see also [Editing the instances of a model](/streaming-analytics/analytics-builder/#editing-the-instances-of-a-model)\). This invokes the instance editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
+    To edit the instances, click **Edit instances** on the card \(see also [Editing the instances of a model](/streaming-analytics/analytics-builder/#editing-the-instances-of-a-model)\). This invokes the instance editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for detailed information.
 
-    You can flip the card for a template model to show more details. Click **Show instances summary** to do this. You can then see the number of instances in the different modes.
-
-    If an error icon such as <img src="/images/streaming-analytics/analytics-builder/instance-error.png" alt="Error icon with 1 error" style="display:inline-block; margin:0"> is shown on the card of a template model, at least one of the instances is no longer processing events. Click the error icon to display information on what went wrong.
+    If an error indicator such as **2 errors** is shown on the card of a template model, at least one of the instances is no longer processing events. Click the error indicator to display information on what went wrong.
 
 As long as a model has no template parameters, there will be zero instances and the card shows the controls for selecting a mode and activating it.
 
@@ -116,7 +116,7 @@ Click **Model settings** and specify a model name. See also [Changing the name, 
 
 You can edit \(or view\) each model that is currently listed in the model manager.
 
-When a model is active, editing will set the model to read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything.
+When a model is active, the model editor opens the model in read-only mode. In this case, the model editor only allows you to view the contents of the model \(for example, you can view the block parameters\). You can navigate and zoom the model as usual, but you cannot change anything. For a model without template parameters, you can deactivate the model directly in the model editor to edit it. See [Activating a model from the model editor](/streaming-analytics/analytics-builder/#activating-a-model-from-the-model-editor).
 
 #### To edit a model {#to-edit-a-model}
 
@@ -124,7 +124,7 @@ On the **Models** tab of the model manager, simply click the card that is shown 
 
 Alternatively, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the card and then click **Edit**.
 
-When the model is active, a dialog appears informing you that you can only view the model. When you click **Continue**, the model editor appears and you can view the model, but you cannot change it. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for further information.
+When the model is active, the model editor appears and you can view the model, but you cannot edit it. The toolbar shows **Editing is disabled**. For a template model with active instances, a dialog first appears informing you that you can only view the model. Click **Continue** to open the model editor. See [Using the model editor](/streaming-analytics/analytics-builder/#using-the-model-editor) for further information.
 
 {{< c8y-admon-info>}}
 If you do not have sufficient permissions \(that is, you only have READ permission for "CEP management" instead of ADMIN permission\), the actions menu provides a **View** command instead of the **Edit** command.
@@ -137,20 +137,17 @@ When one or more blocks in a model use template parameters \(see also [Managing 
 Each instance can then use different values for the template parameters and can be activated independently from the other instances. The instances are defined and activated in the instance editor.
 
 {{< c8y-admon-info>}}
-The actions below are only available when template parameters have been defined for the model, that is, when the card for the model shows the number of defined instances.
+The actions below are only available when template parameters have been defined for the model, that is, when the card for the model shows the **Edit instances** button.
 {{< /c8y-admon-info>}}
 
 #### To edit the instances of a model {#to-edit-the-instances-of-a-model}
 
-On the **Models** tab of the model manager, click the total number of instances on the front of the card.
+On the **Models** tab of the model manager, click **Edit instances** on the card.
 
-Alternatively, you can also do one the following:
-
-- Click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the card and then click **Instances**.
-- Or click **Show instances summary** to flip the card and then click the **Edit Instances** button on the back of the card.
+Alternatively, click the actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> of the card and then click **Instances**.
 
 {{< c8y-admon-info>}}
-**Show instances summary** is only visible \(and thus you can only get to the back of the card\) if there are any instances \(regardless of state\).
+If you do not have sufficient permissions \(that is, you only have READ permission for "CEP management" instead of ADMIN permission\), the button is labeled **View instances** instead of **Edit instances**.
 {{< /c8y-admon-info>}}
 
 This invokes the instance editor. See [Using the instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor) for further information.
@@ -164,7 +161,7 @@ A model \(or instance\) can have one of two states. The current state is always 
 
 The inputs that a model receives and what happens to its outputs depends on the mode to which the model is set. Each model can be set to one of the following modes:
 
--   **Draft**. The model is still under development. \(New models are created in draft mode.\)
+-   **Draft**. The model is still under development.
 -   **Test**. This mode is only permitted for models using a single device. When active, the model is deployed to the Apama correlator so that the measurements and events from the device are processed. The output of the model is only stored \(and recorded as an `Operation` or `Measurement` object of a "virtual device"\) and not sent back to the device.
 
     {{< c8y-admon-info>}}
@@ -173,6 +170,8 @@ Test mode is not supported for a model which contains a custom block which consu
 
 -   **Simulation**. This mode is only permitted for models using a single device. When active, the model uses historical input data \(replayed in real time from previously received data\) and is deployed to the Apama correlator. The output of the model is only stored \(and recorded as an `Operation` or `Measurement` object of a "virtual device"\) and not sent back to the device. To start a simulation, you must define the time range from which the input data is to be used. When all data from the time range has been replayed, the model is automatically undeployed from Apama and the model state is changed to **Inactive**. The timestamps of the historical data entries remain unchanged for easier comparison of simulation runs. See also [Model simulation](/streaming-analytics/analytics-builder/#model-simulation).
 -   **Production**. When active, the model is deployed to the Apama correlator so that the measurements and events from the devices are processed. The output of the model is stored and sent back to the devices.
+
+New models and new template model instances are created in production mode and inactive state. They only start processing data when you activate them.
 
 A model in draft mode can only be in the inactive state. A model in test, simulation or production mode can be in either the active or inactive state.
 
@@ -187,6 +186,8 @@ When a model is imported by loading a JSON file, it is always imported as an ina
 1.  On the **Models** tab of the model manager, click the drop-down menu on the card for the model that you want to deploy and select one of **Production**, **Test** or **Simulation**.
 2.  If you have selected simulation mode, click the calendar icon <i class="dlt-c8y-icon-calendar text-muted icon-20"></i> which is now shown, specify the time span that is to be used, and click **Apply**. See also [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
 3.  When the toggle button currently shows **Inactive**, click this button to change the state to **Active**. For simulation mode, you can only set the state to **Active** when a valid time range has been defined.
+
+You can also activate and deactivate a model in the model editor. See [Activating a model from the model editor](/streaming-analytics/analytics-builder/#activating-a-model-from-the-model-editor).
 
 ### Undeploying a model {#undeploying-a-model}
 

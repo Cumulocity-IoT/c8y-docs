@@ -12,21 +12,25 @@ In accordance with GDPR and cookies policy regulations, we must inform users abo
 
 ### Configuration {#configuration}
 
-1. Add the Gainsight API key to the system options of the {{< management-tenant >}}:
+1. Add the Gainsight PX product key to the system options of the {{< management-tenant >}}:
 
    **PUT {{url}}/tenant/options/configuration/system.gainsight.api.key**
 
 ```json
 {
   "category": "configuration",
-  "value": "<API-key>",
+  "value": "<product-key>",
   "key": "system.gainsight.api.key"
 }
 ```
 
 {{< c8y-admon-info >}}
-To obtain an API key, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/).
+To obtain a product key, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 {{< /c8y-admon-info >}}
+
+{{< c8y-admon-important >}}
+Despite the option name `api.key`, this is the Gainsight PX product key (`AP-xxxxxxxxxx-2`), not the Gainsight PX REST API key. The product key is public by design: the UI sends it in the URL of the [Gainsight PX tag](https://support.gainsight.com/PX/API_for_Developers/01About/Work_with_Gainsight_PX_Web_SDK), so any authenticated user can read this option. Never store the [REST API key](https://px-apidocs.gainsight.com/) here, because it grants read and write access to the Gainsight PX data.
+{{< /c8y-admon-important >}}
 
 2. Configure the cookie banner for all tenants on the instance.
    The cookie banner configuration operates using the same mechanism as application branding. Upload the *public-options.zip*, which contains the cookie banner configuration, to the {{< management-tenant >}} (Administration > Own applications). The ZIP archive comprises a JSON file that defines the cookie banner title, text, link to the privacy policy page, and the cookie description. Anonymized tracking is activated by default for all tenants and users as a component of the required cookies. If users opt out of the functional cookies, only the anonymized tracking remains enabled.
