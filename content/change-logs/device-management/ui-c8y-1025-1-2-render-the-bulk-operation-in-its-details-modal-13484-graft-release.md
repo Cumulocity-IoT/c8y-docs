@@ -20,5 +20,9 @@ environment_availability:
     date: '2026-11-12'
   - label: jp.cumulocity.com
     date: '2026-11-12'
+  - label: us.cumulocity.com
+    date: '2026-11-13'
+  - label: cumulocity.com
+    date: '2026-11-13'
 ---
 In the Device Management application, operations that belong to a bulk operation have a **See details** link, for example, in the **Control** tab of a device and in the **Single operations** tab of **Device control**. Previously, clicking **See details** opened an empty **Bulk operation details** dialog. The dialog now shows the bulk operation with its progress and the list of its single operations.

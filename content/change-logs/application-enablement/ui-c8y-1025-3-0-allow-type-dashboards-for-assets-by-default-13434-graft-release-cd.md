@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-11-13'
 title: Dashboard templates available for typed assets and groups
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-66560
 version: 1025.3.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-13'
 ---
 You can now use a dashboard as a template for all assets or groups of the same type. In the dashboard settings of an asset or group that has a type, turn on the switch in the **Dashboard template** section. The dashboard then appears on every object of that type and shows each object's own data. Before, this was only possible for devices.
 
