@@ -114,3 +114,49 @@ kubectl apply -f c8yedge.yaml
 This command will complete immediately, and the installation will proceed in the background. See [Monitoring changes](/edge/manage-edge/#monitoring-changes) to track the progress of the installation.
 
 For more information about the structure and configuration options available in the Edge CR, see [Edge custom resource](/edge/edge-custom-resource-definition/).
+
+### Configuring the Edge operator with trusted TLS certificates and proxy {#configure-edge-operator-with-trusted-tls-certificates-and-proxy}
+
+You can configure the Edge operator to:
+  - Route outbound traffic through a proxy server when deployed behind a proxy.
+  - Trust additional TLS certificates for external endpoints.
+
+To configure proxy settings and trusted certificates, create or update a ConfigMap named `c8yedge-operator-config` in the `c8yedge` namespace (or the namespace where Edge is deployed) with the required configuration keys described below:
+  - `http_proxy` - HTTP proxy URL
+  - `https_proxy` - HTTPS proxy URL
+  - `socks_proxy` - SOCKS proxy URL
+  - `no_proxy` - Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that bypass the proxy. This must include:
+      - {{< management-tenant >}} and the Edge tenant domain names.
+      - Kubernetes Pod CIDR (Cluster pod IP address range).
+      - Kubernetes Service CIDR (Cluster service IP address range).
+      - Any additional domains, hosts or IP addresses that bypass the proxy.
+
+    Specify each Pod and Service CIDR in both formats: subnet/CIDR notation (for example, `10.42.0.0/16`) for Go-based components, and wildcard notation (for example, `10.42.*`) for JVM-based components.
+  - `ca.crt` - One or more trusted TLS certificates in PEM format that the Edge operator and Edge should trust, in addition to publicly known certificate authorities. You can provide multiple certificates by concatenating them into a single PEM bundle.
+
+#### Apply changes {#apply-changes}
+After creating or updating the ConfigMap, restart the Edge operator as described in [Restarting the Edge operator](/edge/manage-edge/#restart-operator).
+
+#### Sample ConfigMap {#sample-configmap}
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: c8yedge-operator-config
+  namespace: c8yedge
+data:
+  http_proxy: <HTTP Proxy URL>
+  https_proxy: <HTTPS Proxy URL>
+  socks_proxy: <SOCKS Proxy URL>
+
+  # Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that should bypass the proxy.
+  # Specify each Pod and Service CIDR in both formats: subnet/CIDR notation (for example, 10.42.0.0/16)
+  # for Go-based components, and wildcard notation (for example, 10.42.*) for JVM-based components.
+  # <EDGE_DOMAINS>, for example: management-myown.iot.com,myown.iot.com
+  # <KUBERNETES_CIDRS>, for example: 10.42.0.0/16,10.42.*,10.43.0.0/16,10.43.*
+  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<EDGE_DOMAINS>,<KUBERNETES_CIDRS>
+
+  # Trusted TLS certificates in PEM format
+  ca.crt: |
+    <CERTIFICATES_TO_TRUST>
+```
