@@ -28,20 +28,20 @@ On the {{< product-c8y-iot >}} public cloud instances, the support user function
 Support user access can either be:
 
 * Activated for all subtenants by default.
-* Deactivated for all subtenants, but explicitly be enabled by a user for their tenant.
+* Deactivated for all subtenants, but explicitly be enabled by an admin user for their tenant.
 
 This is configured globally in the {{< management-tenant >}}. Contact your Operations team on how to configure the settings according to your needs.
 
 If activated globally, the support user can log in to all allowed subtenants as any user without restriction.
 
-If deactivated globally, support user access can still be enabled by a subtenant user if required. This is done by clicking **Enable support** in the **User** menu, see [User options and settings](/get-familiar-with-the-ui/user-settings). The support access is not restricted to the user who activated it but applies to all users of the tenant. This is necessary for retracing of role/right issues.
+If deactivated globally, support user access can still be enabled by a subtenant user with the role `ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN` if required. This is done by clicking **Enable support** in the **User** menu, see [User options and settings](/get-familiar-with-the-ui/user-settings). The support access is not restricted to the user who activated it but applies to all users of the tenant. This is necessary for retracing of role/right issues.
 
 After a user has activated support access, the menu item changes to **Disable support**, so that the user can disable a pending support request which has been resolved actively before it expires.
 
 {{< c8y-admon-info >}}
 If you don't see either the **Enable support** or **Disable support** button in the **User** menu, support user access has been activated globally. Contact [product support](/additional-resources/contacting-support/) or your Operations team for more details.
 
-If a user with tenant management admin permission disables the support request, *all* support requests for the tenant will be disabled.
+Disabling support access disables *all* support requests for the tenant.
 {{< /c8y-admon-info >}}
 
 The duration of the active support request can be globally configured in the {{< management-tenant >}} (default is 24 hours). Contact your Operations team on how to configure this setting according to your needs.
