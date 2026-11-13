@@ -125,7 +125,7 @@ The commands change only the activation state of the instances. They do not chan
 - The instance has a name.
 - The instance has a value for each required template parameter.
 
-**Activate all** is available as long as the model has at least one production instance and not all instances are active. If none of the inactive instances is a production instance, the dialog box reports that there are no instances to activate. In the instance editor, the drop-down menu is disabled and shows the tooltip **There are no production instances to activate or deactivate.** when the model has no production instances.
+**Activate all** is available as long as the model has at least one production instance and not all instances are active. If none of the inactive instances is a production instance, the dialog box reports that there are no instances to activate. In the instance editor, the dropdown menu is disabled and shows the tooltip **There are no production instances to activate or deactivate.** when the model has no production instances.
 
 #### To activate all instances {#to-activate-all-instances}
 
