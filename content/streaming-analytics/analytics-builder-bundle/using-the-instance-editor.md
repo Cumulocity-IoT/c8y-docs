@@ -24,7 +24,7 @@ A horizontal scrollbar is available if not all template parameters \(columns\) c
 
 The right side of the table shows the mode and status of each instance. You activate \(deploy\) and deactivate \(undeploy\) the instances from here. See also [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance) and [Undeploying an instance](/streaming-analytics/analytics-builder/#undeploying-an-instance).
 
-If you have ADMIN permission for "CEP management", the toolbar also shows the **N/M instances active** drop-down menu, which lets you activate or deactivate all instances at once. See [Activating and deactivating all instances](/streaming-analytics/analytics-builder/#activating-and-deactivating-all-instances).
+If you have ADMIN permission for "CEP management", the toolbar also shows the **N/M instances active** dropdown menu, which lets you activate or deactivate all instances at once. See [Activating and deactivating all instances](/streaming-analytics/analytics-builder/#activating-and-deactivating-all-instances).
 
 Each row that is shown for an instance has an actions menu <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the very right which contains commands for managing the instance \(for example, to delete the instance\).
 
@@ -98,16 +98,16 @@ In the **Status** column of the instance editor, click the toggle button for the
 
 ### Activating and deactivating all instances {#activating-and-deactivating-all-instances}
 
-For a template model, you can activate or deactivate all instances in one step instead of changing each instance separately. The commands are available from the **N/M instances active** drop-down menu, for example **3/5 instances active**, where N is the number of active instances and M is the total number of instances of the model.
+For a template model, you can activate or deactivate all instances in one step instead of changing each instance separately. The commands are available from the **N/M instances active** dropdown menu, for example **3/5 instances active**, where N is the number of active instances and M is the total number of instances of the model.
 
-The drop-down menu is shown in these places:
+The dropdown menu is shown in these places:
 
 - In the toolbar of the model editor, for a saved template model.
 - In the toolbar of the instance editor, when the model has at least one instance.
 
-To use the commands, you must have ADMIN permission for "CEP management". The drop-down menu is not shown for models without template parameters. For these models, use the toggle button in the model editor or the model manager.
+To use the commands, you must have ADMIN permission for "CEP management". The dropdown menu is not shown for models without template parameters. For these models, use the toggle button in the model editor or the model manager.
 
-The drop-down menu contains these commands:
+The dropdown menu contains these commands:
 
 - **Activate all**. Activates the instances that are eligible, as described below.
 - **Deactivate all**. Deactivates all active instances.
