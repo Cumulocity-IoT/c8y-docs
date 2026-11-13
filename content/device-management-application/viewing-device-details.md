@@ -197,6 +197,8 @@ Click a marker on the map to see its position, altitude, and time. The popup of 
 
 By default, the tab does not show new location updates automatically. Click **Realtime** in the top menu bar to show new location updates as they arrive, or click **Reload** to update the tracking events and the path.
 
+To give the map or the details more space, drag the divider between them.
+
 Depending on the type of device and the integration into {{< product-c8y-iot >}}, you can configure device-side geo-fencing and motion detection.
 
 **Coordinate format**

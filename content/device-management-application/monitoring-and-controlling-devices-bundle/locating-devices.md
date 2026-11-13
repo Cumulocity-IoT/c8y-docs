@@ -12,6 +12,6 @@ helpcontent:
 
 Click **Map** in the **Devices** menu in the navigator to display a map showing all devices in real time.
 
-Devices are represented as "pins". Click a pin to see the name of the respective device. Click the device name to switch to its device details.
+Devices are represented as "pins". Click a pin to see the name of the respective device, its active alarms per severity, its connection status, and its position. Click the device name to switch to its device details, or click **Go to location** to open its **Location** tab.
 
 ![Device map](/images/users-guide/DeviceManagement/devmgmt-devices-map.png)
