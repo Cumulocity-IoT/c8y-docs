@@ -15,7 +15,7 @@ ticket: PAB-5367
 version: 27.306.0
 ---
 
-You can now activate or deactivate all instances of a template model in one step in Analytics Builder. Previously, you had to change the state of each instance separately in the instance editor.
+You can now activate or deactivate all instances of a template model in one step from Analytics Builder. This feature is available in the model editor, instance editor, and when opening a model that has active instances. Previously, to edit the model you first had to manually change the state of each instance separately in the instance editor.
 
 In the toolbar of the model editor and the instance editor, a new **N/M instances active** drop-down menu offers **Activate all** and **Deactivate all**. The menu is shown to users with ADMIN permission for "CEP management".
 
