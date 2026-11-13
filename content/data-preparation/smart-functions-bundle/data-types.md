@@ -108,3 +108,10 @@ Managed object updates are designed for updating existing managed objects, not a
 | `c8y_SupportedOperations` | `string[]` | No | List of operation types the device supports. |
 | `[fragment: string]` | `any` | No | Any custom fragment to add, update, or remove. Set to `null` to remove a fragment. |
 
+### Value conversion {#value-conversion}
+
+Data Preparation converts the values your smart function returns as follows before it sends them to {{< product-c8y-iot >}}:
+
+- Every Javascript number is sent as a floating-point number, whatever its value. For example, `5` is written as `5.0`. To send an integer, return a `BigInt`, for example, `BigInt(5)`. A `BigInt` outside the 64-bit integer range gives an error.
+- A `Date` becomes a number of milliseconds since the epoch. In the `time` field of a measurement, event, or alarm, this sets the `time` of the object in {{< product-c8y-iot >}}.
+- Arrays and typed arrays become JSON arrays. Plain objects, `Map`s, and `Set`s become JSON objects. A `Set` maps each item to itself.
