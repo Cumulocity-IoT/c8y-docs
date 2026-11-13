@@ -135,7 +135,7 @@ To configure proxy settings and trusted certificates, create or update a ConfigM
   - `ca.crt` - One or more trusted TLS certificates in PEM format that the Edge operator and Edge should trust, in addition to publicly known certificate authorities. You can provide multiple certificates by concatenating them into a single PEM bundle.
 
 #### Apply changes
-After creating or updating the ConfigMap, restart the Edge operator as described in [Restarting the Edge operator](/edge/manage-edge/#restart-operator)
+After creating or updating the ConfigMap, restart the Edge operator as described in [Restarting the Edge operator](/edge/manage-edge/#restart-operator).
 
 #### Sample ConfigMap {#sample-configmap}
 ```yaml
