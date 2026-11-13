@@ -169,11 +169,37 @@ The information is provided on the following cards:
 
 ### Location {#location}
 
-The **Location** tab by default shows the location of a device on a map and as coordinates, as reported by the device. For devices that do not report a location you may manually set the location. Simply place the "pin" in the correct place of the displayed map.
+The **Location** tab shows the current location of a device and the path along which the device moved, on the same map. The tab is shown if the device has the `c8y_Position` fragment or has sent location update events (`c8y_LocationUpdate`).
+
+{{< c8y-admon-info >}}
+The **Location** tab replaces the former **Tracking** tab. Links to the **Tracking** tab open the **Location** tab.
+{{< /c8y-admon-info >}}
 
 ![Location tab](/images/users-guide/DeviceManagement/devmgmt-devices-location.png)
 
-The **Location** tab also shows when a device contains `c8y_Position` property. When you send a new `c8y_Position` event, you can set the same `c8y_Position` fragment on the device and it will automatically mark its position on the map.
+**Current location**
+
+The **Current location** card shows the latest known position of the device, as reported by the device or set manually, with its altitude and the time of the last update. The color of the device marker shows the most severe alarm of the device. Click **Center map** to move the map to the device, and click **Copy coordinates** to copy the coordinates to the clipboard.
+
+To change the location, click **Edit location**. Enter the coordinates, drag the marker on the map, or search for an address, and optionally enter the altitude. You can paste coordinates in any of the supported coordinate formats. Click **Save** to save the new location. For a device, saving a new location also adds a location update event with the text "Location updated manually", so that the change becomes part of the path of the device.
+
+If a device has no location yet, click **More...** at the right of the top menu bar and select **Add location** to set it manually.
+
+**Tracking events**
+
+If the device has sent location update events, the **Tracking events** list next to the map shows the events of the selected time range, with the newest event first. The map shows the path of the device during this time range as a line.
+
+* To select another time range, use the dropdown list above the events, for example **Last day**. To specify a time range, select **Custom**. A custom time range cannot end in the future.
+* To show the position of an event on the map, click the event. To remove these markers again, click **Deselect all events**.
+* To hide or show the path, click the device marker on the map and turn **Show track** off or on.
+
+By default, the tab does not show new location updates automatically. Click **Realtime** in the top menu bar to show new location updates as they arrive, or click **Reload** to update the tracking events and the path.
+
+Depending on the type of device and the integration into {{< product-c8y-iot >}}, you can configure device-side geo-fencing and motion detection.
+
+**Coordinate format**
+
+To select how coordinates are displayed, use the coordinate format dropdown in the top menu bar. You can select **Decimal degrees**, **Degrees and decimal minutes**, **Degrees, minutes, seconds**, or **Signed decimal**. Your selection is saved for your user.
 
 ### Logs {#logs}
 
@@ -324,19 +350,3 @@ For your convenience, {{< product-c8y-iot >}} provides several frequently used c
 ### Software {#software}
 
 See [Managing software on a device](/device-management-application/managing-device-data/#managing-software) for more information on how to manage and update the software installed on a device.
-
-### Tracking {#tracking}
-
-Devices can record the history of their movements in {{< product-c8y-iot >}}. This movements may be viewed in the **Tracking** tab.
-
-{{< c8y-admon-info >}}
-The **Tracking** tab only shows up when a device contains `c8y_Position` property.
-{{< /c8y-admon-info >}}
-
-In the dropdown list at the top right you can select a time period (or specify one by selecting "Custom- from the list) and visualize the movements of the device during this period. Movements are shown as blue lines in the map.
-
-![Tracking tab](/images/users-guide/DeviceManagement/devmgmt-devices-tracking.png)
-
-Next to the map, the individual recordings with their time are listed ("location update events"). When you click a recording, a "pin" on the map will show the location at the time of the recording.
-
-Depending on the type of device and the integration into {{< product-c8y-iot >}}, you can configure device-side geo-fencing and motion detection.
