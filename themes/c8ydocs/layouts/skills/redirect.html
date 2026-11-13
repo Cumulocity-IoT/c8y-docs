@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{{- /* /skills/ (content/skills/_index.md, layout: redirect) goes to the Skills landing page. Hugo looks for skills/redirect.html before _default/redirect.html and would otherwise render skills/list.html, which is the topic page. Its index.md (skills/list.md) stays the catalog of all skills. */}}
+{{- $url := printf "%s%s" site.BaseURL .Params.target }}
+<html lang="en">
+  <head>
+    <title>{{ .Title }}</title>
+    <link rel="canonical" href="{{ $url }}"/>
+    <meta name="robots" content="noindex">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="refresh" content='0; URL={{ $url }}'/>
+  </head>
+  <body>
+    Redirecting to <a href="{{ $url }}">{{ $url }}</a>…
+  </body>
+</html>

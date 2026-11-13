@@ -2,6 +2,8 @@
 weight: 70
 title: Device availability
 layout: bundle
+skills:
+  - read-network-availability
 sector:
   - device_management
 ---

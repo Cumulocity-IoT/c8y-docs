@@ -2,6 +2,8 @@
 weight: 80
 title: Device information
 layout: bundle
+skills:
+  - read-device-info
 sector:
   - device_management
 ---

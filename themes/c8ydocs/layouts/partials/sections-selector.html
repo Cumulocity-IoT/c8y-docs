@@ -7,6 +7,7 @@
 {{ $sections := .Site.Taxonomies.sector }}
 {{ $sortedsections := sort $sections ".Page.Params.weight" }}
 {{ range $sortedsections }}
+{{ if .Page.Params.hideInNavigation }}{{ continue }}{{ end }}
 {{ $pages := where .Pages "Type" "!=" "page" }}
 {{ $page := index $pages 0 }}
 <li><a class='{{if or (eq $currentSection .Page.Data.Term) (eq $current_dataTerm .Page.Data.Term)  }} active {{ end}}'

@@ -111,6 +111,14 @@ The base page loads but the named anchor isn't found. Check whether:
 **Fix:** update the fragment in the source Markdown to match reality. Only
 exclude the link if the fragment truly cannot be resolved any other way.
 
+**Skills** (`content/skills/*.md`): an `#operation/<operationId>` link in
+a skill also has an entry in the skill's `api` front matter, which renders
+the API chips and the "API reference" box. The Link Checker does not see
+these entries. Fix the body link and the `api` entry together (`operation`,
+`method`, `path`, `title`), then run
+`python3 scripts/check_skill_api_refs.py <skill>` to confirm both against
+the OpenAPI specification. See the `doc-skills` skill.
+
 ### Case 3: Works in a browser, times out in Cypress, and it's the *link's own* request/page that's blocked
 
 Distinguish this from Case 4 (below) carefully - they look similar but the

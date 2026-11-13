@@ -2,6 +2,10 @@
 weight: 100
 title: REST APIs
 layout: redirect
+skills:
+  - manage-opcua-gateway-and-servers
+  - browse-opcua-address-space
+  - manage-opcua-device-types
 ---
 
 While the {{< product-c8y-iot >}} user interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management microservice gives you the possibility to do it via RESTful web service.

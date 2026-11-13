@@ -1,0 +1,14 @@
+{{- /*
+  One operation of a skill as a chip that links into its API reference. Operations outside
+  the Core API also show the API's short name, unless "showApi" is false (where a heading
+  already names the API). Call with (dict "entry" $entry "page" $skill "showApi" true).
+*/ -}}
+{{- $api := partial "skills/api.html" . -}}
+<a class="api-chip" href="{{ $api.url }}" title="{{ .entry.title }} ({{ $api.title }})">
+  <span class="api-chip__method api-chip__method--{{ lower .entry.method }}">{{ .entry.method }}</span>
+  {{- if and (ne $api.key "core") (ne .showApi false) }}
+  <span class="api-chip__api">{{ $api.label }}</span>
+  {{- end }}
+  {{- /* Long paths break after a slash, not inside a segment */}}
+  <code>{{ replace (.entry.path | htmlEscape) "/" "/<wbr>" | safeHTML }}</code>
+</a>

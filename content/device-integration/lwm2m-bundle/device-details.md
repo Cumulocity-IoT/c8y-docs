@@ -2,6 +2,8 @@
 weight: 50
 title: LWM2M device details
 layout: redirect
+skills:
+  - manage-lwm2m-configuration
 ---
 
 {{< c8y-admon-info >}}
