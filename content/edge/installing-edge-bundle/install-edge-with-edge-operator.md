@@ -137,7 +137,7 @@ To configure proxy settings and trusted certificates, create or update a ConfigM
 #### Apply changes
 After creating or updating the ConfigMap, restart the Edge operator as described in [Restarting the Edge operator](/edge/manage-edge/#restart-operator)
 
-#### Sample ConfigMap
+#### Sample ConfigMap {#sample-configmap}
 ```yaml
 apiVersion: v1
 kind: ConfigMap
