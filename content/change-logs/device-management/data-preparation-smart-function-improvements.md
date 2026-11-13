@@ -20,8 +20,4 @@ This feature is in Public Preview, that is, it is not enabled by default and may
 
 Smart functions now run faster when you deploy many rules. `Base64`, `TextDecoder`, and `OPCUACodec` also handle strings that contain NUL characters correctly.
 
-{{< c8y-admon-important >}}
-Data Preparation no longer supports imports with attributes, such as `with { type: 'json' }`.
-{{< /c8y-admon-important >}}
-
-For details, see [Standard libraries and imports](/data-preparation/smart-functions/#importable-libraries).
+For details, see [Standard libraries and imports](/data-preparation/smart-functions/#globals).
