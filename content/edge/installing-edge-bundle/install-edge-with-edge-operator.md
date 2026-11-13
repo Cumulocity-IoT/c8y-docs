@@ -132,7 +132,7 @@ To configure proxy settings and trusted certificates, create or update a ConfigM
       - Any additional domains, hosts or IP addresses that bypass the proxy.
 
     Specify each Pod and Service CIDR in both formats: subnet/CIDR notation (for example, `10.42.0.0/16`) for Go-based components, and wildcard notation (for example, `10.42.*`) for JVM-based components.
-  - `ca.crt` - One or more trusted TLS certificates in PEM format that the Edge operator and the Edge should trust in addition to publicly known certificate authorities. Multiple certificates can be provided by concatenating them into a single PEM bundle.
+  - `ca.crt` - One or more trusted TLS certificates in PEM format that the Edge operator and Edge should trust, in addition to publicly known certificate authorities. You can provide multiple certificates by concatenating them into a single PEM bundle.
 
 #### Apply changes
 After creating or updating the ConfigMap, restart the Edge operator as described in [Restarting the Edge operator](/edge/manage-edge/#restart-operator)
