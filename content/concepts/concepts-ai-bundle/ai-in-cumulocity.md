@@ -69,7 +69,7 @@ Commitments are made by the provider directly to you, not by {{< company-c8y >}}
 
 #### If external LLM use is not acceptable {#ai-aspects-external-llm-use}
 
-The AI Agent Manager supports custom OpenAI-compatible endpoints. If your organization’s policy prevents the use of an external LLM, you can route the platform to a self-hosted or privately-hosted model that exposes the OpenAI API. In that case, no data leaves your infrastructure for an external LLM. The trade-off is that you operate the model.
+The AI Agent Manager supports custom OpenAI-compatible endpoints. If your organization’s policy prevents the use of an external LLM, you can route the platform to a self-hosted or privately-hosted model that exposes the OpenAI API. In that case, no data leaves your infrastructure for an external LLM. The trade-off is that you operate the model. Depending on your environment, the AI Agent Manager still exports prompts and responses to a collector operated by {{< company-c8y >}}. To prevent this, opt out of the [{{< company-c8y >}}-managed telemetry export](/ai/rest-api/#managed-telemetry-export).
 
 #### Practical implications for protecting your data {#ai-aspects-practical-implications}
 
@@ -111,7 +111,7 @@ A. While {{< company-c8y >}} supports the integration and connectivity to config
 
 **Q. Can a {{< company-c8y >}} employee read our prompts?**
 
-A. Prompts pass through the platform with access inside {{< product-c8y-iot >}} governed by the controls in your tenant and by the {{< product-c8y-iot >}} DPA.  Access inside the LLM provider’s systems is governed by that provider’s terms.  Certain out-of-the-box features (such as Data Preparation) utilize automated telemetry via Gainsight (which can be disabled) and pre-delivery testing to evaluate system health, token consumption, response quality, and overall product performance. This information is used for performance assessment and product improvement.
+A. Prompts pass through the platform with access inside {{< product-c8y-iot >}} governed by the controls in your tenant and by the {{< product-c8y-iot >}} DPA.  Access inside the LLM provider’s systems is governed by that provider’s terms.  Certain out-of-the-box features (such as Data Preparation) utilize automated telemetry via Gainsight (which can be disabled) and pre-delivery testing to evaluate system health, token consumption, response quality, and overall product performance. This information is used for performance assessment and product improvement. Depending on the environment, the AI Agent Manager also exports pseudonymized traces of agent runs, including prompts and responses but not user IDs, to an OpenTelemetry collector operated by {{< company-c8y >}}. {{< company-c8y >}} employees can read these traces and use them to monitor the performance of AI agents, identify errors and technical issues, understand how the AI Agent Manager is used, and improve it. {{< company-c8y >}} deletes the traces after 14 days. Tenant administrators can opt out of this export via the [REST API](/ai/rest-api/#managed-telemetry-export).
 
 **Q. Are subscribed agents (provided by installed applications) different?**
 
