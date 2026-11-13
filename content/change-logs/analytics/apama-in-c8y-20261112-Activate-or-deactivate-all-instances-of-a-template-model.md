@@ -1,5 +1,5 @@
 ---
-date: '2026-11-12'
+date:
 title: Activate or deactivate all instances of a template model in Analytics Builder
 change_type:
   - value: change-QHu1GdukP
