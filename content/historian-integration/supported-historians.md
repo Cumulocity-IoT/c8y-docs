@@ -20,9 +20,7 @@ The following table lists commonly used historians and how you can integrate the
 | Yokogawa | Exaquantum | OPC UA device gateway | Provides an OPC UA server. |
 
 {{< c8y-admon-info >}}
-The OPC UA capabilities of a historian depend on its version and licensed modules. Check with your historian vendor which OPC UA features are available in your installation.
-{{< /c8y-admon-info >}}
+- The OPC UA capabilities of a historian depend on its version and licensed modules. Check with your historian vendor which OPC UA features are available in your installation.
 
-{{< c8y-admon-info >}}
-Historians that only provide the classic OPC Data Access (DA) or Historical Data Access (HDA) interfaces are not supported natively. You can integrate these historians with a third-party OPC DA/HDA to OPC UA wrapper, which exposes the classic interface as an OPC UA server for the OPC UA device gateway. This applies, for example, to Emerson DeltaV Continuous Historian, Honeywell Uniformance Suite (PHD), ICONICS Hyper Historian, Proficy Historian, and PTC Kepware Local Historian.
+- Historians that only provide the classic OPC Data Access (DA) or Historical Data Access (HDA) interfaces are not supported natively. You can integrate these historians with a third-party OPC DA/HDA to OPC UA wrapper, which exposes the classic interface as an OPC UA server for the OPC UA device gateway. This applies, for example, to Emerson DeltaV Continuous Historian, Honeywell Uniformance Suite (PHD), ICONICS Hyper Historian, Proficy Historian, and PTC Kepware Local Historian.
 {{< /c8y-admon-info >}}
