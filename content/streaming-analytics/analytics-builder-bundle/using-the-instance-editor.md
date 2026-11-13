@@ -135,7 +135,7 @@ The commands change only the activation state of the instances. They do not chan
 2.  In the **Activate all instances?** dialog box, check the number of instances. The dialog box shows, for example, **3 production instances will be activated. This might take some time.**
     Instances that are not eligible are not counted. They are listed in the result after the operation.
 
-3.  Click **Activate all** to start. To leave without changing anything, click **Cancel**.
+3.  Click **Activate all** to start. To cancel activation, click **Cancel**. Changes saved in step 1 remain saved.
 
 #### To deactivate all instances {#to-deactivate-all-instances}
 
@@ -144,7 +144,7 @@ The commands change only the activation state of the instances. They do not chan
 
 2.  In the **Deactivate all instances?** dialog box, check the number of instances. The dialog box shows, for example, **2 instances will be deactivated. This might take some time.**
 
-3.  Click **Deactivate all** to start. To leave without changing anything, click **Cancel**.
+3.  Click **Deactivate all** to start. To cancel deactivation, click **Cancel**. In the instance editor, changes saved in step 1 remain saved.
 
 #### Progress and results {#progress-and-results}
 
