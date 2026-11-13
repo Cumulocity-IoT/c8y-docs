@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-65302
 version: 2026.374.0
 ---
-The deprecation of the possibility to liveness and readiness probes of a microservice in the microservice was under [Public Preview](/change-logs/?change-type=.change-type-announcement#cumulocity-2025-400-0-restricting-host-in-probes), and is now Generally Available (GA) for CD versions 2026.374.0 and higher, and will be present in the 2027 annual release.
+The deprecated host field in liveness and readiness probes of a microservice has been removed. The change is included in CD versions 2026.374.0 and higher, and will be present in the 2027 annual release. Refer to the earlier [announcement](/change-logs/?change-type=.change-type-announcement#cumulocity-2025-400-0-restricting-host-in-probes) for details.
 
 Until now, the host of a liveness or readiness probe of a microservice could be set in the microservice manifest unless this functionality was explicitly disabled via a feature toggle.
 To avoid potential security implications, setting the host in manifest probes is now disabled by default. Uploading a microservice that uses the `host` parameter within the readiness or liveness probe is now rejected.
