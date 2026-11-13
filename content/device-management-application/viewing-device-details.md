@@ -190,7 +190,7 @@ If a device has no location yet, click **More...** at the right of the top menu 
 If the device has sent location update events, the **Tracking events** list next to the map shows the events of the selected time range, with the newest event first. Each event shows its date and time, its coordinates, and its altitude. The map shows the path of the device during this time range as a line.
 
 * To select another time range, use the dropdown list above the events, for example **Last day**. To specify a time range, select **Custom**. A custom time range cannot end in the future.
-* To show the position of an event on the map, click the event. To remove these markers again, click **Deselect all events**.
+* To show the position of an event on the map, click the event. Click the event again to remove its marker, or click **Deselect all events** to remove all of them.
 * To hide or show the path, click the device marker on the map and turn **Show track** off or on.
 
 Click a marker on the map to see its position, altitude, and time. The popup of the device marker also shows the alarms of the device per severity and its connection status.
