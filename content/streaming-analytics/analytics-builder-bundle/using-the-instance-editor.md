@@ -76,7 +76,7 @@ To activate all instances in one step, see [Activating and deactivating all inst
 
 #### To deploy an instance {#to-deploy-an-instance}
 
-1.  In the **Run Mode** column of the instance editor, click the drop-down menu for the instance that you want to deploy and select one of **Production**, **Test** or **Simulation**.
+1.  In the **Run Mode** column of the instance editor, click the dropdown menu for the instance that you want to deploy and select one of **Production**, **Test** or **Simulation**.
     You cannot activate instances that are in draft mode.
 
 2.  If you have selected simulation mode, click the calendar icon <i class="dlt-c8y-icon-calendar text-muted icon-20"></i> which is now shown, specify the time span that is to be used, and click **Apply**. See also [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
@@ -129,7 +129,7 @@ The commands change only the activation state of the instances. They do not chan
 
 #### To activate all instances {#to-activate-all-instances}
 
-1.  In the model editor or the instance editor, click the **N/M instances active** drop-down menu and select **Activate all**.
+1.  In the model editor or the instance editor, click the **N/M instances active** dropdown menu and select **Activate all**.
     Unsaved changes are saved first. In the model editor, the model is saved before the instances are activated. In the instance editor, the edited rows are saved before the instances are activated.
 
 2.  In the **Activate all instances?** dialog box, check the number of instances. The dialog box shows, for example, **3 production instances will be activated. This might take some time.**
@@ -139,7 +139,7 @@ The commands change only the activation state of the instances. They do not chan
 
 #### To deactivate all instances {#to-deactivate-all-instances}
 
-1.  In the model editor or the instance editor, click the **N/M instances active** drop-down menu and select **Deactivate all**.
+1.  In the model editor or the instance editor, click the **N/M instances active** dropdown menu and select **Deactivate all**.
     In the instance editor, unsaved changes are saved first. In the model editor, nothing is saved before the instances are deactivated.
 
 2.  In the **Deactivate all instances?** dialog box, check the number of instances. The dialog box shows, for example, **2 instances will be deactivated. This might take some time.**
@@ -154,7 +154,7 @@ The instances are changed one after the other, and the dialog box shows the prog
 
 If at least one instance of a template model is active, the model is read-only. The toolbar of the model editor then shows **Editing is disabled**. Use **Deactivate all** to make the model editable again.
 
-In the instance editor, the **N/M instances active** drop-down menu is also disabled while the instances are loading or being saved.
+In the instance editor, the **N/M instances active** dropdown menu is also disabled while the instances are loading or being saved.
 
 ### Filtering and sorting the instances {#filtering-and-sorting-the-instances}
 
