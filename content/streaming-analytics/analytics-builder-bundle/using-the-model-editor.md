@@ -28,6 +28,11 @@ For a model without template parameters (other than a sample model), the toolbar
 - A toggle button showing **Active** or **Inactive**. Use it to activate or deactivate the model without leaving the model editor. See [Activating a model from the model editor](/streaming-analytics/analytics-builder/#activating-a-model-from-the-model-editor).
 - The logs icon <i class="dlt-c8y-icon-logs icon-20"></i>, which shows or hides the log messages of the model below the canvas. See [Viewing the logs of a model](/streaming-analytics/analytics-builder/#viewing-the-logs-of-a-model).
 
+For a saved template model, the toolbar shows the following instead.
+
+- The **N/M instances active** dropdown menu, for example **3/5 instances active**. Use it to activate or deactivate all instances of the model, or to go to the instance editor. It is only shown if you have ADMIN permission for "CEP management". See [Activating and deactivating all instances](/streaming-analytics/analytics-builder/#activating-and-deactivating-all-instances).
+- The text **Editing is disabled** when at least one instance is active. The model is read-only until you deactivate all instances.
+
 {{< c8y-admon-caution>}}
 Changes are only saved when you click the save icon <i class="dlt-c8y-icon-save icon-20"></i>.
 See also [Saving a model](/streaming-analytics/analytics-builder/#saving-a-model). The editor warns you if you attempt to navigate away from the editor and there are unsaved changes. However, you should always ensure that your changes are saved before disconnecting the browser from the network or suspending a laptop.
@@ -94,7 +99,7 @@ The save icon <i class="dlt-c8y-icon-save icon-20"></i> is only enabled when cha
 
 You can activate (deploy) and deactivate a model without leaving the model editor. This lets you try out a change, check the result in the logs of the model, and go back to editing, all in one place.
 
-This is only possible for models without template parameters. To activate the instances of a template model, use the instance editor. See [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance).
+This is only possible for models without template parameters. To activate the instances of a template model, use the instance editor. See [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance). To activate or deactivate all instances of a template model at once, you can also use the **N/M instances active** dropdown menu. See [Activating and deactivating all instances](/streaming-analytics/analytics-builder/#activating-and-deactivating-all-instances).
 
 The model is activated in the mode that is set for it in the model manager. A model in draft mode cannot be activated, so the toggle button is disabled for such a model. The toggle button is also disabled until the model has a name. Before you activate a model in simulation mode, define its time range in the model manager. See [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
 
