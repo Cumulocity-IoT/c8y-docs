@@ -20,7 +20,7 @@ helpcontent:
     Click **Add dashboard** in the tab bar to add a new dashboard. Enable the edit mode by clicking **Edit widgets** in the top menu bar. Then click **Add widget** to add a new widget to the dashboard. Use the cogwheel icon to edit or remove widgets. Rearrange widgets by drag and drop. Resize widgets using the diagonal arrows icon located in the bottom right corner of the widget.
 
 
-    To copy a dashboard to another group or device, open the **More** dropdown menu and select **Copy dashboard**. To share a dashboard with all devices of the same type, click **Dashboard settings** and enable the **Dashboard template** option.
+    To copy a dashboard to another group or device, open the **More** dropdown menu and select **Copy dashboard**. To share a dashboard with devices or assets of the same type, click **Dashboard settings** and enable the **Dashboard template** option.
 
 
     Cumulocity includes preset widget types, for example alarm or data point lists, linear or radial gauges. Since each widget type displays different data, different parameters are required to configure it. See *Widgets collection* in the user documentation for details on each widget type and its configuration."
@@ -68,7 +68,7 @@ To create your individualized dashboard, execute the following steps:
 - This functionality is entirely based on client-side solutions. If users have an accurate link to the dashboard, they will still be able to access it.
     {{< /c8y-admon-info >}}
 
-5. Enable the option **Dashboard template** to share the dashboard with all devices of this type. This option is only available for devices dashboards. See [To share a dashboard](#dashboard-template)
+5. Enable the option **Dashboard template** to share the dashboard with devices or assets of this type. See [Dashboard template](#dashboard-template).
 
 6. In the **Appearance** tab, you can select a theme for the dashboard (one of "Match UI", "Light", "Dark" or "Branded"), a default header style for the widgets (one of "Regular", "Border", "Overlay", or "Hidden"), and the gap between the widgets. Moreover, you can select from two different layout modes:
  - **Grid**: The default one, which lets each widget snap into a fixed grid.
@@ -86,18 +86,18 @@ Refer to [Using widgets in dashboards and reports](/cockpit/using-widgets/) for 
 
 ### Dashboard template {#dashboard-template}
 
-You can create a dashboard for a specific device and share it with all devices of the same type. This is only possible though, if the type property is set for the device.
+You can create a dashboard for a specific device or asset and share it with all devices or assets of the same type. This is only possible if the type property is set for the device or asset.
 
 To do so, enable the **Dashboard template** option. A corresponding message will be displayed in the editor.
-After enabling the dashboard, you can see how many devices will share this dashboard. You also have the option to duplicate type dashboard as regular one (assigned to current device only).
+After enabling the dashboard, you can see how many devices or assets will share this dashboard. You also have the option to duplicate type dashboard as regular one (assigned to current device or asset only).
 
 <img src="/images/users-guide/cockpit/cockpit-dashboard-share.png" name="Shared dashboard"/>
 
-The dashboard with the dashboard template option enabled can be accessed and modified from all devices of this type.
-This means that changes made to this dashboard are automatically applied to all dashboard instances, no matter from which device they have been added.
+The dashboard with the dashboard template option enabled can be accessed and modified from all devices or assets of this type.
+This means that changes made to this dashboard are automatically applied to all dashboard instances, no matter from which device or asset they have been added.
 
 {{< c8y-admon-info >}}
-You can only add widgets and data to the dashboard for the device itself. It is not possible to add data from child devices because the structure of these devices might be different from device to device.
+You can only add widgets and data to the dashboard for the device or asset itself. It is not possible to add data from child devices or child assets because their structure might be different from device to device or from asset to asset.
 {{< /c8y-admon-info >}}
 
 ### Global time context {#global-time-context}
