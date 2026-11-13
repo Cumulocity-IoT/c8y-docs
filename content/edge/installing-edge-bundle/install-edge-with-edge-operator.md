@@ -152,7 +152,9 @@ data:
   # Comma-separated list of domain suffixes, IP addresses, or CIDR ranges that should bypass the proxy.
   # Specify each Pod and Service CIDR in both formats: subnet/CIDR notation (for example, 10.42.0.0/16)
   # for Go-based components, and wildcard notation (for example, 10.42.*) for JVM-based components.
-  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<edge domain names, e.g. management-myown.iot.com,myown.iot.com>,<kubernetes cluster IP ranges, e.g. 10.42.0.0/16,10.42.*,10.43.0.0/16,10.43.*>
+  # <EDGE_DOMAINS>, for example: management-myown.iot.com,myown.iot.com
+  # <KUBERNETES_CIDRS>, for example: 10.42.0.0/16,10.42.*,10.43.0.0/16,10.43.*
+  no_proxy: 127.0.0.1,::1,localhost,.svc,.cluster.local,cumulocity,<EDGE_DOMAINS>,<KUBERNETES_CIDRS>
 
   # Trusted TLS certificates in PEM format
   ca.crt: |
