@@ -268,7 +268,11 @@ The auth token of the export is not part of the settings. It is stored encrypted
 
 #### {{< company-c8y >}}-managed telemetry export {#managed-telemetry-export}
 
-Depending on your {{< product-c8y-iot >}} environment, the AI Agent Manager also exports a trace of every agent run to an OpenTelemetry collector operated by {{< company-c8y >}}. These traces include the prompts, responses, and tool call arguments and results of the agent runs, but never the ID of the user who ran the agent. This export is independent of your own `telemetryExport` and of its `recordContent` setting.
+Depending on your {{< product-c8y-iot >}} environment, the AI Agent Manager also exports a trace of every agent run to an OpenTelemetry collector operated by {{< company-c8y >}}. {{< company-c8y >}} uses these traces to monitor the performance of AI agents, identify errors and technical issues, understand how the AI Agent Manager is used, and improve it. {{< company-c8y >}} deletes the traces after 14 days.
+
+The traces include the prompts, responses, and tool call arguments and results of the agent runs. They are pseudonymized: the ID of the user who ran the agent is never exported, but each trace has the tenant ID and the trace ID, which is also stored in the [audit record of the run](/ai/observability/#where-the-records-are-stored) in your tenant. Prompts and tool results can still contain personal data, for example, if a user enters it in a prompt.
+
+This export is independent of your own `telemetryExport` and of its `recordContent` setting.
 
 To opt out of the {{< company-c8y >}}-managed telemetry export, set `telemetryOptOut` to `true`:
 

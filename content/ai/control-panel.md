@@ -99,7 +99,9 @@ Agents that do not define their own local provider cannot run until you configur
 
 The **OpenTelemetry export** section sends a trace of every agent run to your own [OpenTelemetry](https://opentelemetry.io/) collector, for example, to analyze agent runs in Grafana, Jaeger, or another tracing backend. The export uses the OTLP/HTTP protocol.
 
-The export is independent of the [**Observability**](/ai/observability/) page. The AI Agent Manager always records the metadata of every agent run there, whether the export is on or off.
+The export is independent of the [**Observability**](/ai/observability/) page:
+
+- The **Observability** page is always on. It only shows the metadata of agent runs, which is stored in your tenant as audit logs and never leaves the {{< product-c8y-iot >}} platform.
 
 ![The OpenTelemetry export section of the control panel](/images/agents/control_panel_telemetry_export.png)
 
