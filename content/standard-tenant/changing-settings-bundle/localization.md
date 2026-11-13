@@ -15,6 +15,10 @@ helpcontent:
 
 Using the **Localization** functionality you can add custom translations for existing static text in the UI.
 
+Use this feature to translate static text that is not available in your language. For example, the static text of the Digital Twin Manager application is available in English and German only.
+
+The contextual help that opens from the help icon is available in English only.
+
 {{< c8y-admon-req >}}
 
 - To view the **Localization** page: READ permission for permission type "Application management"

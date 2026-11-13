@@ -131,6 +131,10 @@ Each field represents the claim name that is used to retrieve the data from JWT.
 
 Mapping for alias is not available because it is not used in the context of SSO login.
 
+{{< c8y-admon-info >}}
+The UI displays the full name of a user as first name followed by last name, and you cannot change this order. If your identity provider stores names with the family name first, map the claim that holds the given name to the first name field and the claim that holds the family name to the last name field.
+{{< /c8y-admon-info >}}
+
 The username claim name can be configured in the **User ID** configuration window.
 The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#sso-troubleshooting)).
 

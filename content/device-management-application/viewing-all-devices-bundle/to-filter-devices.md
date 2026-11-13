@@ -28,5 +28,5 @@ Sorting is available on every column. Click the sort icon <i class="dlt-c8y-icon
 Click **Clear filters** in the table header if you want to clear all filters and view all devices.
 
 {{< c8y-admon-info >}}
-If you select to sort a text field, for example, device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa.
+If you select to sort a text field, for example, device name, in ascending or descending order, keep in mind that the resulting alphabetical sorting is based on ASCII/UTF: A < B < ... < Z < ... < a < b ... < z. Names starting with lower case letters will be sorted below all names with uppercase letters or vice versa. For details, see [Sorting](/get-familiar-with-the-ui/gui-features/#sorting).
 {{< /c8y-admon-info >}}

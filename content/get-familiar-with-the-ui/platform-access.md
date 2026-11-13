@@ -34,6 +34,11 @@ For example, loading graphs with large amounts of data points may make the mobil
 * The [Streaming Analytics application](/streaming-analytics/introduction-analytics/) does not support mobile or touch devices.
 {{< /c8y-admon-info >}}
 
+### Supported languages {#supported-languages}
+
+The UI is available in 11 languages. For the list of languages and how to select one, see [To change the language of the UI](/get-familiar-with-the-ui/user-settings/#to-change-the-language-of-the-ui).
+
+The UI does not support right-to-left (RTL) languages, such as Arabic and Hebrew. It does not provide a mirrored right-to-left layout, and it does not support bi-directional (BiDi) display or printing of text.
 
 ### URL {#url}
 
