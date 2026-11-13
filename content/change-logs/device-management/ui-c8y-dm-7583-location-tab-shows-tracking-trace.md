@@ -20,7 +20,7 @@ In the Device Management application, the device details showed the current posi
 
 The **Location** tab now shows both on the same map: the current location of the device and, next to the map, the tracking events of the selected time range together with the path of the device. The **Tracking** tab has been removed, and links to it open the **Location** tab. The **Location** tab is now also shown for devices that only send location update events (`c8y_LocationUpdate`).
 
-The **Location** tab also offers the following improvements:
+Further improvements:
 
 * Coordinates can be displayed as **Decimal degrees**, **Degrees and decimal minutes**, **Degrees, minutes, seconds**, or **Signed decimal**. The selected format is saved for your user.
 * When you edit the location, you can paste coordinates in any of these formats. Saving a new location of a device also adds a location update event, so that the change becomes part of the path of the device.
