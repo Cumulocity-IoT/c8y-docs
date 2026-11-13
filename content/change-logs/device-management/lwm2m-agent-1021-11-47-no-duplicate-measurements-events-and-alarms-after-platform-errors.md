@@ -1,5 +1,5 @@
 ---
-date: 
+date: 2026-11-10
 title: LWM2M agent prevents duplicate measurements, events, and alarms after platform errors
 product_area: Device management & connectivity
 change_type:
@@ -13,8 +13,6 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-8050
 version: 1021.11.47
-environment_availability:
-
 ---
 If the {{< product-c8y-iot >}} platform temporarily rejected requests from the LWM2M agent, for example under high load, the agent retried them. In rare cases, this led to duplicate measurements, events, or alarms for a device.
 
