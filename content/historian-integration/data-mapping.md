@@ -13,4 +13,4 @@ layout: bundle
 | Tag value | A measurement series, with the type, series, and unit defined in the device protocol. Alternatively an event, alarm, or custom action. | A measurement series. You can define an optional display name and unit per tag in the datapoints configuration. |
 | Collection mode | Subscription, cyclic read, or manual read, as defined in the data reporting of the device protocol. | Polling of the PI Web API at the configured poll interval. |
 | Timestamps | Source and server timestamps are kept in the `c8y_ua_DataValue` fragment of events. | The timestamp of the value in the PI Web API response is used as the measurement time. |
-| Quality | Values with a Bad or Uncertain status code raise a WARNING alarm on the server device. The alarm is cleared when the status returns to Good. | Not evaluated. Values are sent to {{< product-c8y-iot >}} regardless of their PI quality status. |
+| Quality | Values with a `Bad` or `Uncertain` status code raise a WARNING alarm on the server device. The alarm is cleared when the status returns to `Good`. | Not evaluated. Values are sent to {{< product-c8y-iot >}} regardless of their PI quality status. |

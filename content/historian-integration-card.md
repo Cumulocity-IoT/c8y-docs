@@ -12,4 +12,4 @@ audience:
 weight: 45
 ---
 
-Integrate process data from your existing historians, for example AVEVA PI System, via the OPC UA device gateway or the AVEVA PI connector.
+Integrate process data from your existing historians via the OPC UA device gateway or the AVEVA PI connector.
