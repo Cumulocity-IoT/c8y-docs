@@ -6,6 +6,10 @@ sector:
   - app_enablement
 ---
 
+{{< c8y-admon-important >}}
+Legacy smart rules are deprecated. Their removal is planned for 2027. Use [smart rules (NEW)](/streaming-analytics/smart-rules-plugin/#getting-started) for all new rules. For a comparison and the migration steps, see [Smart rules (NEW) and legacy smart rules](/streaming-analytics/smart-rules-plugin/#new-and-legacy-smart-rules). Existing legacy smart rules continue to work until their removal.
+{{< /c8y-admon-important >}}
+
 {{< product-c8y-iot >}} includes preset global smart rule types. Each global smart rule type provides different parameters to configure.
 
 {{< c8y-admon-info >}}

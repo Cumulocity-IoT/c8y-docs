@@ -52,3 +52,19 @@ Roles are managed via the [User API](https://cumulocity.com/api/core/#tag/User-A
 **Important**: The platform identifies each granular permission with a unique “permission” string, which is prefixed with ROLE_ (for example, ROLE_ALARM_READ, ROLE_INVENTORY_ADMIN).
 This permission strings are frequently referred to as "roles" throughout the API and in the configuration files although they actually refer to a permission.
 {{< /c8y-details >}}
+
+### Rule instance {#rule-instance}
+
+A rule instance is a smart rule (NEW) that is created from a [rule template](#rule-template) for a specific [device](#device), [group](#group), or [asset](#asset), with its own name and parameter values. A rule instance is either active or inactive. The name of a rule instance is mandatory and unique among the rule instances of the same rule template.
+
+See also [Smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin/#rule-templates-and-rule-instances) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+A rule instance is an Analytics Builder model instance in production mode. In the inventory, it is stored as a managed object of type `c8y_TemplateInstance`.
+{{< /c8y-details >}}
+
+### Rule template {#rule-template}
+
+A rule template defines the logic of a smart rule (NEW) and the parameters that you configure when you create a [rule instance](#rule-instance). An official rule template is provided by {{< product-c8y-iot >}} and is based on an [Analytics Builder](#analytics-builder) sample. A custom rule template is an Analytics Builder [model](#model) that is created in your tenant. Administrators can restrict the available official rule templates with the [sample allowlist](#sample-allowlist).
+
+See also [Smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin/#rule-templates-and-rule-instances) in the documentation.

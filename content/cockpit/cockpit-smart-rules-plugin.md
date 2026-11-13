@@ -14,12 +14,15 @@ sector:
 This feature is in Public Preview and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
-While traditional smart rules provide a fixed set of predefined templates for common scenarios, the new generation of smart rules removes these limitations by enabling you to create fully customized rules tailored to your specific requirements using the capabilities of Analytics Builder in Streaming Analytics. This allows you to create and manage rule instances directly from asset, group, and device contexts within applications such as Cockpit, Device Management, and Digital Twin Manager.
+With smart rules (NEW), you create and manage rules directly from the context of a device, group, or asset in applications such as Cockpit, Device Management, and Digital Twin Manager. You create a rule from an official rule template, which is ready to use, or from a custom rule template that is built with Analytics Builder. The rules run in Streaming Analytics.
 
-The **Smart rules (NEW)** tab allows to create and manage the Analytics Builder model instances directly from the context of a device or group.
+Smart rules (NEW) replace the [legacy smart rules](/cockpit/smart-rules/), which are deprecated. For guidance, see [Smart rules (NEW) and legacy smart rules](/streaming-analytics/smart-rules-plugin/#new-and-legacy-smart-rules).
+
+The **Smart rules (NEW)** tab shows the rules of the current device, group, or asset. On this tab, you create, edit, activate, deactivate, and delete rules.
 
 ![New smart rules tab](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
+**[TODO PAB-5296: retake this screenshot against the GA UI.]**
 
-To create your first rule, refer to [Create your first rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
+To create your first rule, refer to [Creating your first smart rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
 
-For more details about smart rules (NEW), refer to [Smart rules plugin](/streaming-analytics/smart-rules-plugin/#getting-started).
+For more details about smart rules (NEW), refer to [Smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin/#getting-started).
