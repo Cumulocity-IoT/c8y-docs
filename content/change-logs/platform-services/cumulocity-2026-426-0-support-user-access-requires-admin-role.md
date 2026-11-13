@@ -19,5 +19,3 @@ Only users with the `ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN` role c
 
 - **PUT /tenant/support-user/enable**
 - **PUT /tenant/support-user/disable**
-
-When a user with one of these roles disables support user access, all pending support requests of the tenant are cleared, also if the role is assigned through a user group.
