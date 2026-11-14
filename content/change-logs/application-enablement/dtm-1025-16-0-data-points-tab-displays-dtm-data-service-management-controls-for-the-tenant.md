@@ -22,6 +22,8 @@ environment_availability:
     date: '2026-11-13'
   - label: cumulocity.com
     date: '2026-11-13'
+  - label: us.cumulocity.com
+    date: '2026-11-14'
 ---
 The **Data points** tab now includes a **Manage DTM Data Service** button that provides direct access to view and control the DTM Data Service status for your tenant. The DTM Data Service controls the propagation of measurements from source devices to their linked assets.
 
