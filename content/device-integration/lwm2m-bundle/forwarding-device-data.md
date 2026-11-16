@@ -14,7 +14,7 @@ Forwarding device data to the Messaging Service is in Private Preview. It is not
 
 ### How data forwarding works {#how-data-forwarding-works}
 
-The platform operator enables data forwarding for individual tenants in the configuration of the LWM2M service.
+{{< company-c8y >}} enables data forwarding for individual tenants in the configuration of the LWM2M service.
 
 When data forwarding is enabled for a tenant, the LWM2M service publishes one message for every set of resource values that it receives from a device of that tenant.
 This includes the responses to read and observe requests, the notifications for observed resources, and the data that a device sends with the LWM2M Send operation.
