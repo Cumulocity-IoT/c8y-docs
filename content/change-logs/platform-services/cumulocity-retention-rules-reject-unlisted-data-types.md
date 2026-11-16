@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-68579
-version: 
+version: 2026.432.0
 ---
 
 Previously, the retention rule API accepted the data types `PROCESS`, `STATISTICS_FILES`, and `TIMESERIES_MEASUREMENT`, which the API specification does not list. A rule with `PROCESS` or `STATISTICS_FILES` never removed any data, and a rule with `TIMESERIES_MEASUREMENT` removed no measurements.
