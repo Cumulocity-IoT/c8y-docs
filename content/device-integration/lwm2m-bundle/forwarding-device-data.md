@@ -29,7 +29,7 @@ Forwarding has the following properties:
 
 - **Tenant isolation**: Each tenant has its own topic. A consumer only receives the data of the tenant that it authenticates against.
 - **Persistent storage**: The Messaging Service retains each message until every registered consumer acknowledges it, or until the message reaches its time-to-live limit. A consumer that reconnects after an interruption receives the messages that it missed.
-- **Independent processing**: Forwarding does not change how the LWM2M service processes device data. The configured [LWM2M device protocols](#lwm2m-device-protocols) still create measurements, events, and alarms.
+- **Independent processing**: Forwarding does not change how the LWM2M service processes device data. The configured [LWM2M device protocols](/device-integration/lwm2m/#device-protocols) still create measurements, events, and alarms.
 - **Retries**: If the LWM2M service cannot publish a message, for example because the Messaging Service is temporarily unavailable or the backlog quota of the topic is reached, it buffers the message and retries a limited number of times. The LWM2M service discards messages that still cannot be published after the last retry, and the device does not receive an error.
 
 ### Consuming the forwarded device data {#consuming-forwarded-device-data}
