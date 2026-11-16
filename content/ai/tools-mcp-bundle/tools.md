@@ -124,6 +124,8 @@ When you assign a tool to an agent, it gets an option based on its hints:
 
 The **Tools** tab shows the option under **User approval** on the tool's row.
 
+![The Tools tab of an agent shows the tags and the user approval option of each tool](/images/agents/tools_user_approval.png)
+
 To set user approval for a tool yourself:
 
 1. Navigate to **AI Agent Manager** > **Agents** and open the agent.
@@ -139,6 +141,8 @@ When you save an agent configured through the REST API with the deprecated `need
 #### User approval in the chat {#user-approval-in-the-chat}
 
 Below the message field of a chat, users select how approval requests are handled. With **Manual**, the user approves each call. With **Auto**, calls of tools set to **Ask** run without asking. Calls of tools set to **Always** still ask for approval every time, even with **Auto**.
+
+![A chat waits for the user to approve or deny a tool call](/images/agents/chat_tool_approval.png)
 
 #### Agents configured through the REST API {#user-approval-rest-api}
 
