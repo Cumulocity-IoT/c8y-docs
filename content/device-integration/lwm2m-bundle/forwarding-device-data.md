@@ -8,11 +8,13 @@ In addition to mapping device data to the {{< product-c8y-iot >}} domain model, 
 The Messaging Service is a deployment of [Apache Pulsar](https://pulsar.apache.org/) that stores messages on topics until a consumer processes them.
 You can consume the forwarded data with your own microservice or external application and process it as your use case requires.
 
+{{< c8y-admon-preview >}}
+Forwarding device data to the Messaging Service is in Private Preview. It is not enabled by default and may be subject to change in the future. To have it enabled for your tenant, contact [product support](/additional-resources/contacting-support/). For more information on previews, see [Previewing features](/service-terms/previews/).
+{{< /c8y-admon-preview >}}
+
 ### How data forwarding works {#how-data-forwarding-works}
 
-Data forwarding is disabled by default.
-The platform operator enables it for individual tenants in the configuration of the LWM2M service.
-To enable data forwarding for your tenant, contact [product support](/additional-resources/contacting-support/).
+The platform operator enables data forwarding for individual tenants in the configuration of the LWM2M service.
 
 When data forwarding is enabled for a tenant, the LWM2M service publishes one message for every set of resource values that it receives from a device of that tenant.
 This includes the responses to read and observe requests, the notifications for observed resources, and the data that a device sends with the LWM2M Send operation.
