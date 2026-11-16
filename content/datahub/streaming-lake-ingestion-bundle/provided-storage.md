@@ -15,5 +15,3 @@ After this period, {{< company-c8y >}} deletes your data and your catalog creden
 {{< c8y-admon-important >}}
 Create the catalog credentials for your Iceberg client before the subscription ends. After it ends, you cannot create or rotate credentials. The credentials you already have stay valid until {{< company-c8y >}} deletes your data. For details, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials).
 {{< /c8y-admon-important >}}
-
-If your tenant subscribes again before the period ends, your data stays and the data flow resumes.
