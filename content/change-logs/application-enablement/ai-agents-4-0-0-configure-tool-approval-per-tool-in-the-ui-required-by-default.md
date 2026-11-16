@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2026-11-16"
 title: Tool approval is configurable per tool in the UI and approval is required by default
 product_area: Application enablement & solutions
 change_type:
