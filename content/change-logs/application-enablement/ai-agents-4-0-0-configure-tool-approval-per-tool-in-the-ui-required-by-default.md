@@ -14,19 +14,10 @@ build_artifact:
 ticket: MTM-67779
 version: 4.0.0
 ---
-Tool approval (HITL) is now opt-out: a tool call waits for user approval
-unless the tool declares itself read-only and closed-world, or the agent
-configuration turns approval off.
+Tool approval for human-in-the-loop (HITL) workflows lets users review a tool call before an agent runs it. Previously, tool calls ran without approval unless you configured it. Now, a tool call waits for approval by default. A tool runs without approval only if its MCP tool annotations declare it read-only and closed-world, or if the agent configuration turns approval off for it (sets approval mode to Never).
 
-- Add `approval: 'NEVER' | 'ASK' | 'ALWAYS'` to MCP tool entries;
-  deprecate `needsApproval` in favor of `approval: 'ALWAYS'`.
-- Return MCP tool annotations from the tools API.
-- Plain-text responses return 409 with the pending approvals when a run
-  waits for approval.
-- Tools tab: per-tool approval switch (Never / Ask / Always) with an
-  Override checkbox; the default comes from the tool's annotations,
-  which are shown as tags.
+In the Tools tab, each selected tool has an approval mode: Never, Ask, or Always. The default mode comes from the tool's MCP annotations. Never applies to read-only, closed-world tools. Always applies to tools that may delete data or contact external systems. Ask applies to all other tools. With Ask, chat users approve tool calls unless they use Auto mode. With Always, chat users approve every call, even in Auto mode or after approving the tool earlier in the conversation. To set the mode yourself, select the Override checkbox. Tags show what each tool declares about itself: Read-only, Changes data, Destructive, External systems, or Not declared. A tool without annotations is treated as destructive and as contacting external systems.
 
-BREAKING CHANGE: Agents without an approval configuration now ask for
-approval for every tool that isn't declared read-only and closed-world.
-API callers must handle `tool-approval-request`.
+In MCP tool entries, the approval field accepts NEVER, ASK, or ALWAYS. The needsApproval field is deprecated. Use approval: 'ALWAYS' instead. The tools API now returns the MCP annotations of each tool.
+
+This update is a breaking change for agents without an approval configuration. These agents now ask for approval for every tool that is not declared read-only and closed-world, including every tool without annotations. To keep the previous behavior for a tool, set its approval to NEVER. If you maintain the MCP server, you can instead declare the tool with { readOnlyHint: true, openWorldHint: false }. API callers must handle tool-approval-request events. If a run waits for approval, a non-streaming plain-text request returns HTTP 409 with the pending approvals. To receive and answer approval requests, send the request with fullResponse=true.
