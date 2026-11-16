@@ -25,7 +25,7 @@ Because thin-edge.io manages the containers, you can operate both components rem
 • Monitor their [health status](https://thin-edge.github.io/thin-edge.io/operate/c8y/health-monitoring/) as services of the device.
 
 
-![Historian integration architecture: both integration methods reach Cumulocity through thin-edge.io](/images/historian-integration/historian-integration-architecture.png)
+![Historian integration architecture: both integration methods reach Cumulocity through thin-edge.io](/images/historian-integration/historian-integration-architecture.svg)
 
 {{< c8y-admon-info >}}
 Both integration methods run in your environment, next to the historian. Only outbound connections from your network to the {{< product-c8y-iot >}} platform are required.
