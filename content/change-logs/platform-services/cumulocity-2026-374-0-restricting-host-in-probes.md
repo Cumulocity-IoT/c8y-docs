@@ -21,6 +21,6 @@ To avoid potential security implications, setting the host in manifest probes is
 
 {{< c8y-admon-caution >}}
 Migration from Public Preview to General Availability - action required.
-If you are relying on readiness and liveness probes containing the 'host' parameter for your microservice, you need to change this behaviour respectively for cumulocity core CD versions higher than 2026.374.0 and 2027 annual release.
+If you rely on readiness and liveness probes that include the `host` parameter for your microservice, you need to change this behaviour for {{< product-c8y-iot >}} core CD versions higher than 2026.374.0 and the 2027 annual release.
 {{< /c8y-admon-caution >}}
 ~                                              
