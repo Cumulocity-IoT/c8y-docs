@@ -58,7 +58,7 @@ To test a tool:
 3. Optionally, click **Show details** to see the tool properties, such as its parameters, and the MCP server that provides the tool.
 4. Enter a message in the chat to test the tool. A test agent calls the tool and shows the results.
 
-Before you test, select under **User approval when testing this tool** whether the test agent asks for your approval before calling the tool: **No**, **Yes** or **Always**. It starts at the option the tool gets when you assign it to an agent. For the meaning of each option, see [Requiring user approval](#user-approval).
+Before you test, select under **User approval when testing this tool** whether the test agent asks for your approval before calling the tool: **Never**, **Ask**, or **Always**. It starts at the option the tool gets when you assign it to an agent. For the meaning of each option, see [Requiring user approval](#user-approval).
 
 ### Assigning tools to agents {#assigning-tools}
 
@@ -110,41 +110,43 @@ For each tool, an agent uses one of the following options:
 
 | Option | Behavior |
 |---|---|
-| **No** | The tool runs without asking for approval, even when it changes data. |
-| **Yes** | The chat user approves calls to the tool, also when the tool is **Read-only**. With **Auto** in the chat, calls run without asking. |
-| **Always** | The chat user approves every call to the tool, even with **Auto** in the chat. |
+| **Never** | The tool runs without asking for approval, even when it changes data. The chat's **Auto** and **Manual** modes have no effect. |
+| **Ask** | The chat user approves calls to the tool, also when the tool is **Read-only**. With **Auto** in the chat, calls run without asking. |
+| **Always** | The chat user approves every call to the tool, even with **Auto** in the chat or after approving the tool earlier in the conversation. |
 
 #### Setting user approval for a tool {#setting-user-approval}
 
 When you assign a tool to an agent, it gets an option based on its hints:
 
 - **Always** if the tool may be **Destructive** or contact **External systems**. This includes tools that declare nothing.
-- **Yes** if the tool changes data but isn't destructive and doesn't contact external systems.
-- **No** if the tool is **Read-only** and doesn't contact external systems.
+- **Ask** if the tool changes data but isn't destructive and doesn't contact external systems.
+- **Never** if the tool is **Read-only** and doesn't contact external systems.
 
-The **Tools** tab shows the option under **Approval required** on the tool's row.
+The **Tools** tab shows the option under **User approval** on the tool's row.
 
 To set user approval for a tool yourself:
 
 1. Navigate to **AI Agent Manager** > **Agents** and open the agent.
 2. Navigate to the **Tools** tab.
-3. On the tool's row, select **Override** next to **Approval required**.
-4. Select **No**, **Yes** or **Always**.
+3. On the tool's row, select **Override** next to **User approval**.
+4. Select **Never**, **Ask**, or **Always**.
 5. Click **Save**.
 
 To go back to the option the tool got when it was assigned, clear **Override**.
 
-Rows without **Override** of an agent configured through the REST API show the option the agent's configuration results in. For example, a destructive tool configured without approval settings shows **Yes**.
+When you save an agent configured through the REST API with the deprecated `needsApproval` or `approvalPolicy` settings, the **Tools** tab replaces them with an option per tool. Tools covered by `needsApproval` get **Always**.
 
 #### User approval in the chat {#user-approval-in-the-chat}
 
-Below the message field of a chat, users select how approval requests are handled. With **Manual**, the user approves each call. With **Auto**, calls of tools set to **Yes** run without asking. Calls of tools set to **Always** still ask for approval every time, even with **Auto**.
+Below the message field of a chat, users select how approval requests are handled. With **Manual**, the user approves each call. With **Auto**, calls of tools set to **Ask** run without asking. Calls of tools set to **Always** still ask for approval every time, even with **Auto**.
 
 #### Agents configured through the REST API {#user-approval-rest-api}
 
-An agent configured through the REST API without any approval settings requires approval for every tool call, unless the tool declares that it only reads data and doesn't contact external systems. In the chat, **Auto** answers these approval requests.
+In the agent configuration, each entry in the `tools` list of an MCP server is either a tool name or an object with the tool name and its `approval`: `NEVER`, `ASK`, or `ALWAYS`. For example, `{ "name": "cumulocity-delete-managed-object", "approval": "ALWAYS" }`. The `needsApproval` field is deprecated. Use `"approval": "ALWAYS"` instead.
 
-Applications that call an agent through the REST API must handle approval requests: the agent stops at the tool call and returns an approval request. To continue, the application sends the conversation again, including the user's decision.
+A tool without `approval` requires approval for every call, unless the tool declares that it only reads data and doesn't contact external systems. This also applies to agents configured without any approval settings, and to MCP servers whose entry lists no tools and so grants all of them. If you maintain the MCP server, declare a tool that only reads data and stays inside {{< product-c8y-iot >}} with `{ "readOnlyHint": true, "openWorldHint": false }`, so it runs without approval. The tools API returns the hints of each tool.
+
+Applications that call an agent through the REST API must handle approval requests: the agent stops at the tool call and returns a `tool-approval-request`. To continue, the application sends the conversation again, including the user's decision. To receive and answer approval requests, send the request with `fullResponse=true`. Without it, a text agent that waits for approval returns HTTP 409 with the pending approvals.
 
 ### Best practices {#best-practices}
 
@@ -152,4 +154,4 @@ Applications that call an agent through the REST API must handle approval reques
 
 - **Performance**: Tools that take a long time to execute slow down agent responses. Optimize tool performance or use caching where appropriate.
 
-- **User approval**: Keep **Always** for tools that change important data or contact external systems. Use **No** only for tools that can't do harm, such as read-only tools that stay inside {{< product-c8y-iot >}}.
+- **User approval**: Keep **Always** for tools that change important data or contact external systems. Use **Never** only for tools that can't do harm, such as read-only tools that stay inside {{< product-c8y-iot >}}.
