@@ -8,12 +8,6 @@ In addition to mapping device data to the {{< product-c8y-iot >}} domain model, 
 The Messaging Service is a deployment of [Apache Pulsar](https://pulsar.apache.org/) that stores messages on topics until a consumer processes them.
 You can consume the forwarded data with your own microservice or external application and process it as your use case requires.
 
-{{< c8y-admon-info >}}
-The LWM2M service does not use the MQTT protocol or the [MQTT Service](/device-integration/mqtt-service/) to forward device data.
-The LWM2M service publishes the data directly to a dedicated Pulsar topic.
-The data is not available on the `from-device` topic of the MQTT Service.
-{{< /c8y-admon-info >}}
-
 ### How data forwarding works {#how-data-forwarding-works}
 
 Data forwarding is disabled by default.
@@ -28,7 +22,7 @@ The LWM2M service publishes all messages of a tenant to a single Pulsar topic:
 | Component        | Value        | Description                                                                             |
 |------------------|--------------|-----------------------------------------------------------------------------------------|
 | Pulsar tenant    | `<tenantID>` | The Pulsar tenant matches the ID of your {{< product-c8y-iot >}} tenant.                |
-| Pulsar namespace | `lwm2m`      | The namespace is reserved for the LWM2M service and is separate from the `mqtt` namespace of the MQTT Service. |
+| Pulsar namespace | `lwm2m`      | The namespace is reserved for the LWM2M service.                                        |
 | Topic name       | `lwm2m/data` | The topic contains the data of all LWM2M devices in the tenant.                         |
 
 Forwarding has the following properties:
@@ -92,8 +86,6 @@ If your consumer does not acknowledge messages or stays disconnected for a long 
 Process and acknowledge messages promptly, and unsubscribe consumers that you no longer need.
 For details, see [Notification 2.0 Service Quotas](/notifications/notifications-overview/#notification-2-0-service-quotas).
 {{< /c8y-admon-caution >}}
-
-The [sample project](https://github.com/Cumulocity-IoT/lwm2m-devicedata-listener) shows a microservice that consumes the device data and logs it.
 
 ### Device data payload {#device-data-payload}
 
