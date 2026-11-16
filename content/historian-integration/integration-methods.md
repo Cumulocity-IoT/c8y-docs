@@ -1,5 +1,5 @@
 ---
-title: Integration methods
+title: Integration options
 weight: 20
 layout: bundle
 ---
