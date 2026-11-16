@@ -96,7 +96,7 @@ If the source tenant has been suspended all its data broker connectors will be s
 	 </tr>
 	 <tr>
 	 <td style="text-align:left">Fragments to filter</td>
-	 <td style="text-align:left">The fragments that must be present in a device to be forwarded.</td>
+	 <td style="text-align:left">The fragments that must be present in the message payload for it to be forwarded.</td>
 	 </tr>
 	 <tr>
 	 <td style="text-align:left">Fragments to copy</td>

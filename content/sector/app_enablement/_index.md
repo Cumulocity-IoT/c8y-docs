@@ -1,5 +1,7 @@
 ---
 title: "Application enablement & solutions"
+description: "Build and extend Cumulocity applications with the Cockpit, Digital Twin Manager, the web and microservice SDKs, and AI capabilities."
+outputs: ["HTML", "llmstxt"]
 icon: "c8y-icon c8y-icon-tools"
 weight: 40
 svg: '<svg width="1103" height="851" viewBox="0 0 1103 851" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -791,6 +793,7 @@ svg: '<svg width="1103" height="851" viewBox="0 0 1103 851" fill="none" xmlns="h
 </defs>
 </svg>
 '
+pdf: true
 ---
 
-Find out about managing and monitoring assets using the Cockpit, developing your own web applications, and explore customizable solutions like Digital Twin Manager.
+Find out about developing your own web applications or microservices, and explore customizable solutions like the Cockpit and the Digital Twin Manager.

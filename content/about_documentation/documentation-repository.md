@@ -12,17 +12,17 @@ This {{< product-c8y-iot >}} documentation website provides the documentation fo
 
 The user documentation for previous releases which are out of maintenance is available in a  GitHub repository called [c8y-docs]({{< link-c8y-github >}}/c8y-docs) which stores the documentation sources. The c8y-docs repository is public which means that no credentials are required to access it.
 
-The user documentation is available in the [Releases]({{< link-c8y-github >}}/c8y-docs/releases) section of the repository for all release versions that are no longer maintained. It is provided as a ZIP file called *c8y-guides-&lt;release-version&gt;.zip*, for example, *c8y-guides-10-18-0.zip*.
+The user documentation is available in the [Releases]({{< link-c8y-github >}}/c8y-docs/releases) section of the repository for all release versions that are no longer maintained. It is provided as a ZIP file called *c8y-guides-&lt;release-version&gt;.zip*, for example, *c8y-guides-10-18-0.zip*. For yearly releases, the file is called *c8y-docs-&lt;year&gt;.zip*, for example, *c8y-docs-2024.zip*.
 
 {{< c8y-admon-info >}}
 Documentation ZIP files are available in the **Releases** section for the following {{< product-c8y-iot >}} release versions:
 
-10.18.0, 10.17.0, 10.16.0, 10.15.0, 10.14.0, 10.13.0, 10.11.0, 10.10.0, 10.9.0, 10.7.0, 10.6.6, 10.6.0, 10.5.7, 10.5.0, 10.4.6
+2024, 10.18.0, 10.17.0, 10.16.0, 10.15.0, 10.14.0, 10.13.0, 10.11.0, 10.10.0, 10.9.0, 10.7.0, 10.6.6, 10.6.0, 10.5.7, 10.5.0, 10.4.6
 {{< /c8y-admon-info >}}
 
 #### Add the documentation as custom application to your tenant {#add-the-documentation-as-custom-application-to-your-tenant}
 
-1. In the [Releases]({{< link-c8y-github >}}/c8y-docs/releases) section of the c8y-docs repository, select the release version and download the ZIP file (*c8y-guides-&lt;release-version&gt;.zip*) from the Assets list.
+1. In the [Releases]({{< link-c8y-github >}}/c8y-docs/releases) section of the c8y-docs repository, select the release version and download the ZIP file from the Assets list.
 2. Log in to your {{< product-c8y-iot >}} tenant.
 3. In the Administration application, navigate to **Ecosystem** > **Applications**.
 4. Click **Add application** on the top right and select **Upload web application**.
@@ -32,7 +32,7 @@ Once uploaded, the application is created and available in the application list 
 
 #### Access the documentation in a web browser {#access-the-documentation-in-a-web-browser}
 
-1. In the [Releases]({{< link-c8y-github >}}/c8y-docs/releases) section of the c8y-docs repository, select the release version and download the ZIP file (*c8y-guides-&lt;release-version&gt;.zip*) from the Assets list.
+1. In the [Releases]({{< link-c8y-github >}}/c8y-docs/releases) section of the c8y-docs repository, select the release version and download the ZIP file from the Assets list.
 2. Open the ZIP file in a browser.
 3. Double-click the file named "index.html" in the root folder. It will open in your default browser.
 

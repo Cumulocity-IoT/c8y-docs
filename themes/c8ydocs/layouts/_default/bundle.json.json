@@ -4,10 +4,13 @@
   {{- $list:= newScratch -}}
   {{- $headless := .Site.GetPage $bundle -}}
   {{- if $headless -}}
-    {{- range $i, $help := .Params.helpcontent -}}
+    {{- $cont := .Params.helpcontent -}}
+    {{- range $i, $help := $cont -}}
+      {{- $maxb := len $cont -}}
       {{- $anchor := printf "%s#%s" $url $help.label -}} 
       {{- $content := $help.content | markdownify -}}
       "{{- $help.label -}}": {{- dict "helpcontent" $content "url" $url "title" $help.title | jsonify -}}
+      {{- if lt $i (sub $maxb 1) -}},{{- end -}}
     {{- end -}}
     {{- $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" -}}
     {{- range $index, $el:= $reusablePages -}}

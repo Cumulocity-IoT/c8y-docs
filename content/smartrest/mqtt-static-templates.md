@@ -17,143 +17,141 @@ You must subscribe to the topic <kbd>s/ds</kbd> to receive operations with the s
 Click the commands below to see more information on the respective template.
 If a parameter is in square brackets, it is optional.
 
-<table>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td>
-
 <strong><a href="#inventory-templates">Inventory templates</a></strong>
-+ <a href="#100">100,createdDeviceName,deviceType</a>
-+ <a href="#101">101,createdChildId,childName,childType</a>
-+ <a href="#102">102,serviceExternalId,serviceType,serviceName,serviceStatus</a>
-+ <a href="#104">104,serviceStatus</a>
-+ <a href="#105">105 (Get children, reply: 106,child1,child2,…)</a>
-+ <a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a>
-+ <a href="#110">110,serialNumber,hardwareModel,revision</a>
-+ <a href="#111">111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId</a>
-+ <a href="#112">112,latitude,longitude,altitude,accuracy</a>
-+ <a href="#113">113,&quot;configProp1=val1\nprop2=val2\n…&quot;</a>
-+ <a href="#114">114,supportedOperation1,operation2,…</a>
-+ <a href="#115">115,currentFirmwareName,version,url</a>
-+ <a href="#116">116,currentSoftwareName1,version1,url1,name2,…</a>
-+ <a href="#117">117,requiredInterval</a>
-+ <a href="#118">118,supportedLog1,log2,...</a>
-+ <a href="#119">119,supportedConfiguration1,config2,...</a>
-+ <a href="#120">120,configType,url,filename[,time]</a>
-+ <a href="#121">121,profileExecuted,profileID</a>
-+ <a href="#122">122,agentName,agentVersion,agentURL,agentMaintainer</a>
-+ <a href="#123">123 (Retrieve the internal ID, reply: "124,id")</a>
-+ <a href="#125">125 (send heartbeat)</a>
-+ <a href="#140">140,setAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
-+ <a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a>
-+ <a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a>
-+ <a href="#143">143,supportedSoftwareType1,supportedSoftwareType2,...</a>
-+ <a href="#150">150,cloudRemoteAccessProtocol1,cloudRemoteAccessProtocol2,... </a>
+<ul>
+<li><a href="#100">100,createdDeviceName,deviceType</a></li>
+<li><a href="#101">101,createdChildId,childName,childType</a></li>
+<li><a href="#102">102,serviceExternalId,serviceType,serviceName,serviceStatus</a></li>
+<li><a href="#104">104,serviceStatus</a></li>
+<li><a href="#105">105 (Get children, reply: 106,child1,child2,…)</a></li>
+<li><a href="#107">107,fragmenttoBeUninstalled1,fragment2,...</a></li>
+<li><a href="#110">110,serialNumber,hardwareModel,revision</a></li>
+<li><a href="#111">111,IMEI,ICCID,IMSI,MCC,MNC,LAC,cellId</a></li>
+<li><a href="#112">112,latitude,longitude,altitude,accuracy</a></li>
+<li><a href="#113">113,&quot;configProp1=val1\nprop2=val2\n…&quot;</a></li>
+<li><a href="#114">114,supportedOperation1,operation2,…</a></li>
+<li><a href="#115">115,currentFirmwareName,version,url</a></li>
+<li><a href="#116">116,currentSoftwareName1,version1,url1,name2,…</a></li>
+<li><a href="#117">117,requiredInterval</a></li>
+<li><a href="#118">118,supportedLog1,log2,...</a></li>
+<li><a href="#119">119,supportedConfiguration1,config2,...</a></li>
+<li><a href="#120">120,configType,url,filename[,time]</a></li>
+<li><a href="#121">121,profileExecuted,profileID</a></li>
+<li><a href="#122">122,agentName,agentVersion,agentURL,agentMaintainer</a></li>
+<li><a href="#123">123 (Retrieve the internal ID, reply: "124,id")</a></li>
+<li><a href="#125">125 (send heartbeat)</a></li>
+<li><a href="#140">140,setAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a></li>
+<li><a href="#141">141,appendAdvancedSWName1,AdvancedSWVersion1,AdvancedSWType1,AdvancedSWurl1,sw2,ver2,type2,url2,...</a></li>
+<li><a href="#142">142,deleteAdvancedSWname1,AdvancedSWVersion1,sw2,ver2,...</a></li>
+<li><a href="#143">143,supportedSoftwareType1,supportedSoftwareType2,...</a></li>
+<li><a href="#150">150,cloudRemoteAccessProtocol1,cloudRemoteAccessProtocol2,... </a></li>
+</ul>
 
 <strong><a href="#measurement-templates">Measurement templates</a></strong>
-+ <a href="#200">200,fragment,series,value[,unit,time]</a>
-+ <a href="#201">201,type,[time],fragment1,series1,value1,[unit1],...</a>
-+ <a href="#210">210,rssi,ber[,time]</a>
-+ <a href="#211">211,temperature[,time]</a>
-+ <a href="#212">212,battery[,time]</a>
+<ul>
+<li><a href="#200">200,fragment,series,value[,unit,time]</a></li>
+<li><a href="#201">201,type,[time],fragment1,series1,value1,[unit1],...</a></li>
+<li><a href="#210">210,rssi,ber[,time]</a></li>
+<li><a href="#211">211,temperature[,time]</a></li>
+<li><a href="#212">212,battery[,time]</a></li>
+</ul>
 
 <strong><a href="#alarm-templates">Alarm templates</a></strong>
-+ <a href="#301">301,criticalAlarmType[,text][,time]</a>
-+ <a href="#302">302,majorAlarmType[,text][,time]</a>
-+ <a href="#303">303,minorAlarmType[,text][,time]</a>
-+ <a href="#304">304,warningAlarmType[,text][,time]</a>
-+ <a href="#305">305,alarmType,newSeverity</a>
-+ <a href="#306">306,alarmTypeToBeCleared</a>
-+ <a href="#307">307,alarmType,fragmentToBeRemoved1,fragment2,...</a>
+<ul>
+<li><a href="#301">301,criticalAlarmType[,text][,time]</a></li>
+<li><a href="#302">302,majorAlarmType[,text][,time]</a></li>
+<li><a href="#303">303,minorAlarmType[,text][,time]</a></li>
+<li><a href="#304">304,warningAlarmType[,text][,time]</a></li>
+<li><a href="#305">305,alarmType,newSeverity</a></li>
+<li><a href="#306">306,alarmTypeToBeCleared</a></li>
+<li><a href="#307">307,alarmType,fragmentToBeRemoved1,fragment2,...</a></li>
+</ul>
 
-</td>
-<td>
-
-<strong><a href="#event-templates">Event templates</a></strong>
-+ <a href="#400">400,eventType,text[,time]</a>
-+ <a href="#401">401,latitude,longitude,altitude,accuracy[,time]</a>
-+ <a href="#402">402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)</a>
-+ <a href="#407">407,eventType,fragmentToBeRemoved1,fragment2,...</a>
+<strong><a href="#event-templates">Event templates</a></strong></li>
+<ul>
+<li><a href="#400">400,eventType,text[,time]</a></li>
+<li><a href="#401">401,latitude,longitude,altitude,accuracy[,time]</a></li>
+<li><a href="#402">402,latitude,longitude,altitude,accuracy[,time] (incl. inv. update)</a></li>
+<li><a href="#407">407,eventType,fragmentToBeRemoved1,fragment2,...</a></li>
+<li><a href="#408">408,[text],[time],[change detect],parameterPath1,parameterType1,parameterValue1[,path2,type2,value2,]...</a></li>
+</ul>
 
 <strong><a href="#operation-templates">Operation templates</a></strong>
-+ <a href="#500">500 (get pending)</a>
-+ <a href="#501">501,typeToSetToExecuting</a>
-+ <a href="#502">502,typeToSetToFailed,failureReason</a>
-+ <a href="#503">503,typeToSetToSuccessful,parameters</a>
-+ <a href="#504">504,operationId</a>
-+ <a href="#505">505,operationId,failureReason</a>
-+ <a href="#506">506,operationId,parameters</a>
-+ <a href="#507">507,typeToSetToExecuting,failureReason</a>
-+ <a href="#510">510,serial (restart)</a>
-+ <a href="#511">511,serial,commandToExecute</a>
-+ <a href="#513">513,serial,configurationText</a>
-+ <a href="#515">515,serial,firmwareToBeInstalled,version,url</a>
-+ <a href="#516">516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...</a>
-+ <a href="#517">517,serial,measurementToBeSent</a>
-+ <a href="#518">518,serial,relayStatusToBeSet [OPEN/CLOSED]</a>
-+ <a href="#519">519,serial,relay1Status,relay2Status,...</a>
-+ <a href="#520">520,serial (upload your current configuration)</a>
-+ <a href="#521">521,serial,url (download configuration)</a>
-+ <a href="#522">522,serial,logFileToBeSend,start,stop,searchText,maxLines</a>
-+ <a href="#523">523,serial,communicationMode (SMS/IP)</a>
-+ <a href="#524">524,serial,url,configType</a>
-+ <a href="#525">525,serial,currentFirmwareName,version,url,dependency</a>
-+ <a href="#526">526,serial,configType</a>
-+ <a href="#527">527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type</a>
-+ <a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a>
-+ <a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a>
-+ <a href="#530">530,serial,hostname,port,connectionKey</a>
+<ul>
+<li><a href="#500">500 (get pending)</a></li>
+<li><a href="#501">501,typeToSetToExecuting</a></li>
+<li><a href="#502">502,typeToSetToFailed,failureReason</a></li>
+<li><a href="#503">503,typeToSetToSuccessful,parameters</a></li>
+<li><a href="#504">504,operationId</a></li>
+<li><a href="#505">505,operationId,failureReason</a></li>
+<li><a href="#506">506,operationId,parameters</a></li>
+<li><a href="#507">507,typeToSetToExecuting,failureReason</a></li>
+<li><a href="#510">510,serial (restart)</a></li>
+<li><a href="#511">511,serial,commandToExecute</a></li>
+<li><a href="#513">513,serial,configurationText</a></li>
+<li><a href="#515">515,serial,firmwareToBeInstalled,version,url</a></li>
+<li><a href="#516">516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...</a></li>
+<li><a href="#517">517,serial,measurementToBeSent</a></li>
+<li><a href="#518">518,serial,relayStatusToBeSet [OPEN/CLOSED]</a></li>
+<li><a href="#519">519,serial,relay1Status,relay2Status,...</a></li>
+<li><a href="#520">520,serial (upload your current configuration)</a></li>
+<li><a href="#521">521,serial,url (download configuration)</a></li>
+<li><a href="#522">522,serial,logFileToBeSend,start,stop,searchText,maxLines</a></li>
+<li><a href="#523">523,serial,communicationMode (SMS/IP)</a></li>
+<li><a href="#524">524,serial,url,configType</a></li>
+<li><a href="#525">525,serial,currentFirmwareName,version,url,dependency</a></li>
+<li><a href="#526">526,serial,configType</a></li>
+<li><a href="#527">527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type</a></li>
+<li><a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a></li>
+<li><a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a></li>
+<li><a href="#530">530,serial,hostname,port,connectionKey</a></li>
+<li><a href="#531">531,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,type,url,action,configurationMarker,url,type</a></li>
+<li><a href="#532">532,serial,parameterPath1,parameterType1,parameterValue1[,path2,type2,value2,]...</a></li>
+</ul>
 
-</td>
-</tr>
-</tbody>
-</table>
+<strong><a href="#platform-capabilites-templates">Platform capabilities templates</a></strong>
+<ul> 
+<li><a href="#600">600 (Retrieve the platform version, reply: "601, platformVersion")</a></li>
+<li><a href="#602">602 (Retrieve a list of valid SmartREST template IDs, reply: "603,comma-separated-list-of-SmartREST-template-IDs")</a></li>
+</ul>
+
 
 The client can receive the following templates when subscribing to <kbd>s/ds</kbd>.
 
-<table>
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td>
+<strong><a href="#subscribe-inventory">Inventory templates</a></strong>
+<ul>
+<li><a href="#106">106,child1,child2,…</a></li>
+<li><a href="#124">124,id</a></li>
+</ul>
 
-**[Inventory templates](#subscribe-inventory)**
+<strong><a href="#subscribe-operations">Operation templates</a></strong>
+<ul>
+<li><a href="#510">510,serial (restart)</a></li>
+<li><a href="#511">511,serial,commandToExecute</a></li>
+<li><a href="#513">513,serial,configurationText</a></li>
+<li><a href="#515">515,serial,firmwareToBeInstalled,version,url</a></li>
+<li><a href="#516">516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...</a></li>
+<li><a href="#517">517,serial,measurementToBeSent</a></li>
+<li><a href="#518">518,serial,relayStatusToBeSet [OPEN/CLOSED]</a></li>
+<li><a href="#519">519,serial,relay1Status,relay2Status,...</a></li>
+<li><a href="#520">520,serial (upload your current configuration)</a></li>
+<li><a href="#521">521,serial,url (download configuration)</a></li>
+<li><a href="#523">523,serial,communicationMode (SMS/IP)</a></li>
+<li><a href="#524">524,serial,url,configType</a></li>
+<li><a href="#525">525,serial,currentFirmwareName,version,url,dependency</a></li>
+<li><a href="#526">526,serial,configType</a></li>
+<li><a href="#527">527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type</a></li>
+<li><a href="#528">528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...</a></li>
+<li><a href="#529">529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...</a></li>
+<li><a href="#530">530,serial,hostname,port,connectionKey</a></li>
+<li><a href="#532">532,serial,parameterKey1,type1,value1,...</a></li>
+</ul>
 
-+ [106,child1,child2,…](#106)
-+ [124,id](#124)
+<strong><a href="#subscribe-device-parameter">Device parameter templates</a></strong>
+<ul>
+<li><a href="#601">601, platformVersion</a></li>
+</ul>
 
-**[Operation templates](#subscribe-operations)**
-
-+ [510,serial (restart)](#510)
-+ [511,serial,commandToExecute](#511)
-+ [513,serial,configurationText](#513)
-+ [515,serial,firmwareToBeInstalled,version,url](#515)
-+ [516,serial,softwareToBeInstalled1,version1,url1,sw2,ver2,url2,...](#516)
-+ [517,serial,measurementToBeSent](#517)
-+ [518,serial,relayStatusToBeSet [OPEN/CLOSED]](#518)
-+ [519,serial,relay1Status,relay2Status,...](#519)
-+ [520,serial (upload your current configuration)](#520)
-+ [521,serial,url (download configuration)](#521)
-+ [522,serial,logFileToBeSend,start,stop,searchText,maxLines](#522)
-+ [523,serial,communicationMode (SMS/IP)](#523)
-+ [524,serial,url,configType](#524)
-+ [525,serial,currentFirmwareName,version,url,dependency](#525)
-+ [526,serial,configType](#526)
-+ [527,serial,firmwareMarker,name,version,url,isPatch,dependency,softwareMarker,name,version,url,action,configurationMarker,url,type](#527)
-+ [528,serial,softwareToBeUpdated1,version1,url1,action1,sw2,ver2,url2,action2,...](#528)
-+ [529,serial,softwareToBeUpdated1,version1,type1,url1,action1,sw2,ver2,type2,url2,action2,...](#529)
-+ [530,serial,hostname,port,connectionKey](#530)
-
-</td>
-</tr>
-</tbody>
-</table>
 
 ### Automatic device creation {#automatic-device-creation}
 
@@ -208,11 +206,12 @@ Create a new child device for the current device. The newly created object will 
 |1|unique child ID|YES|String| &nbsp; |
 |2|device name|NO|String|MQTT Device &lt;serialNumber&gt;|
 |3|device type|NO|String|c8y_MQTTChildDevice|
+|4|child device marker|NO|Boolean|true|
 
 **Example**
 
 ```text
-101,uniqueChildId,myChildDevice,myChildType
+101,uniqueChildId,myChildDevice,myChildType,true
 ```
 
 ##### Service creation (102) {#102}
@@ -340,6 +339,9 @@ Example
 ##### Set supported operations (114) {#114}
 
 Set the supported operations of the device.
+{{< c8y-admon-info >}}
+For details on all options and parameters used to specify the support of particular functionalities, refer to the [Fragment library](/device-integration/fragment-library/).
+{{< /c8y-admon-info >}}
 
 |Position|Parameter|Mandatory|Type|
 |:-------|:-------|:-------|:---|
@@ -564,7 +566,7 @@ Sets the supported software types of the device. Ignores empty elements. An empt
 143,yum,docker
 ```
 
-##### Set supported software types (150) {#150}
+##### Set supported remote access protocols (150) {#150}
 
 Sets the list of Cloud Remote Access protocols supported by the device. Possible values are `SSH`,`TELNET`,`VNC` and `PASSTHROUGH`. Empty elements are ignored. An empty list removes the `c8y_RemoteAccessSupportedProtocols` fragment entirely.
 
@@ -843,6 +845,31 @@ Remove one or more fragments from an event of a specific type.
 407,c8y_MyEvent,c8y_Position,c8y_Configuration
 ```
 
+##### Create device parameter update events (408) {#408}
+
+{{< c8y-admon-preview-feature >}}
+
+Create parameter update events for a device. This event always has the type `c8y_ParameterUpdate` and contains the fragments and properties specified in the payload. If `change detect` is enabled, events are only created if the given state in the event was not already known at the time. 
+
+|Position|Parameter|Mandatory|Type|Default value|
+|:-------|:-------|:-------|:-------|:---|
+|1|text|NO|String|Parameter 'c8y_RelayStatus' was updated|
+|2|time|NO|Date|Current server time|
+|3|change detect|NO|Boolean|false|
+|4|List of 3 values per path-value|YES|(n/a)| &nbsp;|
+|4.1|path|YES|String|&nbsp;|
+|4.2|type|YES|String|&nbsp;|
+|4.3|value|NO|String|null|
+
+**Example**
+
+```text
+408,,,,c8y_RelayStatus.left,BOOLEAN,true,c8y_RelayStatus.right,BOOLEAN,false
+```
+
+{{< /c8y-admon-preview-feature >}}
+
+
 #### Operation templates (5xx) {#operation-templates}
 
 ##### Get PENDING operations (500) {#500}
@@ -961,6 +988,28 @@ If the fragment parameter is empty, all EXECUTING operations are set to FAILED.
 
 ```text
 507,c8y_Restart,"Unexpected device restart"
+```
+
+
+
+#### Platform capabilities templates (6xx) {#platform-capabilities-templates}
+
+##### Get platform version (600) {#600}
+
+Retrieve the platform version. Used to evaluate if the platform supports API interfaces or what kind of behaviour to expect from requests to them. 
+
+**Example**
+
+```text
+600
+```
+
+##### List of valid SmartREST templates (602) {#602}
+Retrieve the list of valid SmartREST template IDs associated with a tenant.
+
+**Example**
+```text
+602
 ```
 
 ### Subscribe templates {#subscribe-templates}
@@ -1307,6 +1356,111 @@ Establish tunneling by Remote Access device agent.
 
 ```text
 530,DeviceSerial,10.0.0.67,22,eb5e9d13-1caa-486b-bdda-130ca0d87df8
+```
+
+##### Set device profiles with software type (531) {#531}
+
+Set the device profiles with software type
+
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|firmware marker|(n/a)|
+|1...| 5 values of firmware|(n/a)|
+|1.1|firmware name|String|
+|1.2|firmware version|String|
+|1.3|firmware URL|String|
+|1.4|firmware isPatch|String|
+|1.5|firmware dependency|String|
+|2|software marker|(n/a)|
+|2...|list of 5 values per software|(n/a)|
+|2.1|software name|String|
+|2.2|software version|String|
+|2.3|software type|String|
+|2.4|software URL|String|
+|2.5|software action|String|
+|3|configuration marker|(n/a)|
+|3...|list of 2 values per configuration|(n/a)|
+|3.1|configuration URL|String|
+|3.2|configuration type|String|
+
+**Example**
+
+```text
+531,DeviceSerial,$FW,firmwareName,1.0,http://www.my.url,true,dependency,$SW,softwareA,1.0,http://www.my.url1,type1,action1,softwareB,2.0,http://www.my.url2,type2,action2,$CONF,http://www.my.url1,type1,http://www.my.url2,type2
+```
+
+{{< c8y-admon-info >}}
+When a device profile operation contains a type in one of the software entries in the list, template ID 531 is triggered. The triggering of template ID 531 is independent of template ID 527. This means that whenever template ID 531 is triggered, template ID 527 will also be triggered at the same time.
+{{< /c8y-admon-info >}}
+
+##### Parameter update operation (532) {#532}
+
+{{< c8y-admon-preview-feature >}}
+
+Notifies the device that a **c8y_ParameterUpdate** operation has been created. 
+
+| Position | Parameter          | Type   | Description                                                         |
+|:---------|:-------------------|:-------|:--------------------------------------------------------------------|
+| 1..n     | list of parameters | n/a    |                                                                     |
+| 1.1      | parameter name     | string | i.e. MyParameter                                                    |
+| 1.2      | data type          | string | "s" - string, "n" - number, "b" - boolean, "" - (empty string) null |
+| 1...     | list of 3-sets per parameter | n/a    |                                                                     |
+| 1.1      | parameter name     | string | i.e. MyParameter                                                    |
+| 1.2      | data type          | string | "s" - string, "n" - number, "b" - boolean, "" - (empty string) null |
+| 1.3      | value              | string | value serialized to string or empty string for null values          |
+
+**Example**
+
+Operation with fragments:
+
+```json
+{
+  "c8y_ParameterUpdate": {},
+  "c8y_ParameterUpdate_MyParameter": {},
+  "c8y_ParameterUpdate_DeviceMaintainer": {},
+  "c8y_ParameterUpdate_Problems": {},
+  "MyParameter": true,
+  "DeviceMaintainer": {
+    "name": "John Smithsky",
+    "contact": "12312"
+  },
+  "Problems": null
+}
+```
+
+Will result in the message:
+```text
+532,someSerial,MyParameter,b,true,DeviceMaintainer.name,s,John Smithsky,DeviceMaintainer.contact,s,12312,Problems,,
+```
+
+The maximum number of parameters is **100**. Operations containing more parameters cannot be pushed through this template.
+
+{{< /c8y-admon-preview-feature >}}
+
+
+#### Platform capabilities templates (6xx) {#subscribe-platform-capabilities} 
+
+##### Return platform version (601) {#601}
+
+Returns the platform version after a request using 600.
+
+|Position|Parameter|Type|
+|:-------|:-------|:---|
+|1|version|String|
+
+**Example**
+
+```text
+601,2025.0.0
+```
+
+##### Return list of valid SmartREST templates (603) {#603}
+Returns the list of all available SmartREST template IDs and additional capabilities on a request using 602.
+
+**Example**
+
+```text
+603,100,101,102,...,603
 ```
 
 ### Updating operations {#updating-operations}

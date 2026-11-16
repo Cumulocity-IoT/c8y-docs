@@ -1,4 +1,4 @@
-.btn-link {
+.btn-link, .btn-clean {
   padding: 0;
   margin: 0;
   background: transparent;
@@ -10,6 +10,16 @@
   &:focus {
     text-decoration: none;
     outline: none;
+  }
+}
+
+.btn-clean{
+  &:hover{
+    color: $gray-text
+  }
+    &:focus{
+    outline: 2px solid $brand-primary;
+    border-radius: 2px;
   }
 }
 
@@ -35,6 +45,40 @@
   }
 }
 
+// "Copied!" above a copy button, while it has the copied class (main.js, clipboardCode)
+%copied-tooltip {
+  position: relative;
+  &:before {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-left: 0;
+    padding: 5px 3px 3px;
+    border-radius: 3px;
+    background: var(--c8y-brand-dark);
+    color: white;
+    content: "Copied!";
+    font-size: 12px;
+    // Not the label style of the button (uppercase btn-metadata)
+    font-weight: normal;
+    text-transform: none;
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-left: 0;
+    width: 0;
+    height: 0;
+    border-width: 5px 5px 5px 5px;
+    border-style: solid;
+    border-color: var(--c8y-brand-dark) transparent transparent;
+    content: "";
+  }
+}
+
 .btn-copy-code{
   background-image: none;
   background-color: transparent;
@@ -57,34 +101,8 @@
     outline-offset: -2px;
   }
   &.copied {
-    position: relative;
+    @extend %copied-tooltip;
     opacity: 1 !important;
-    &:before {
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translate(-50%, 0);
-      margin-left: 0;
-      padding: 5px 3px 3px;
-      border-radius: 3px;
-      background: var(--c8y-brand-dark);
-      color: white;
-      content: "Copied!";
-      font-size: 12px;
-    }
-    &:after {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
-      margin-left: 0;
-      width: 0;
-      height: 0;
-      border-width: 5px 5px 5px 5px;
-      border-style: solid;
-      border-color: var(--c8y-brand-dark) transparent transparent;
-      content: "";
-    }
   }
 }
 
@@ -124,7 +142,7 @@ body:has(.home-top){
   }
 }
 
-.to-the-top {
+.to-the-top, .btn-default {
   position: fixed;
   right: 3rem;
   bottom: 4rem;
@@ -156,6 +174,10 @@ body:has(.home-top){
   @media print {
     display: none;
   }
+}
+
+.btn-default {
+  position: static;
 }
 
 // copy link
@@ -216,9 +238,18 @@ body:has(.home-top){
   background: var(--c8y-root-component-background-default);
   text-align: left;
   transition: all .25s ease;
+
+  border: 1px solid var(--c8y-root-component-separator-color);
+  padding: .5rem;
+  border-radius: .25rem;
+  p, &{
+    font-size: 85%;
+    color: var(--c8y-palette-gray-30);
+  }
+
   &:hover{
     border-color: var(--c8y-brand-primary)!important;
-    p{
+    p, &{
       color: var(--c8y-brand-primary)!important;
     }
   }
@@ -229,40 +260,76 @@ body:has(.home-top){
 }
 
 .btn-tooltip{
+  &:not(.btn-metadata){
+    opacity: 1 !important;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+    border: 0;
+  }
   position: relative;
-  opacity: 1 !important;
-  background-image: none;
-  background-color: transparent;
-  box-shadow: none;
-  border: 0;
   overflow: visible;
+  &:focus{
+    outline-color: var(--c8y-brand-primary);
+  }
+  &::before, &::after{
+    transition: opacity .15s ease .5s;
+    opacity: 0;
+    position: absolute;
+    content: "";
+  }
   &:hover{
+    // Above the buttons next to it, so they don't cover the tooltip
+    z-index: 10;
     &:before {
-      position: absolute;
       bottom: 100%;
       left: 50%;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, -8px);
       margin-left: 0;
       padding: 5px 6px 3px;
       border-radius: 3px;
-      background: var(--c8y-brand-dark);
+      background: var(--c8y-palette-gray-30);
       color: white;
-      content: 'Ticket: ' attr(data-tooltip);
-      white-space: nowrap;
+      content: attr(data-tooltip);
+      // Long tooltips wrap instead of running over the elements around them
+      width: max-content;
+      max-width: 16rem;
+      white-space: normal;
+      text-wrap: pretty;
       font-size: 12px;
+      text-transform: none;
+      font-weight: normal;
+      opacity: 1;
     }
     &:after {
       position: absolute;
       top: 0;
       left: 50%;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, -8px);
       margin-left: 0;
       width: 0;
       height: 0;
       border-width: 5px 5px 5px 5px;
       border-style: solid;
-      border-color: var(--c8y-brand-dark) transparent transparent;
+      border-color: var(--c8y-palette-gray-30) transparent transparent;
       content: "";
+      opacity: 1;
+    }
+  }
+  &.btn-metadata{
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: currentColor;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    gap: 4px;
+    &:before {
+      // Keeps the line breaks written in data-tooltip, and wraps long lines
+      white-space: pre-line;
+      text-align: center;
+      line-height: 1.2;
     }
   }
 }

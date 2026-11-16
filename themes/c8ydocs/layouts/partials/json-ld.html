@@ -1,0 +1,168 @@
+{{- $data := newScratch -}}
+
+{{- if .IsHome -}}
+  {{- $hasPart := slice -}}
+  {{- $sortedsections := sort .Site.Taxonomies.sector ".Page.Params.weight" -}}
+  {{- range $element := $sortedsections -}}
+    {{- $hasPart = $hasPart | append (dict "@type" "WebPage" "name" .Page.Title "url" .Page.Permalink) -}}
+  {{- end -}}
+  {{- $siteDescription := partial "replace-placeholders.html" (dict "text" .Site.Params.description "siteParams" .Site.Params) -}}
+
+  {{- /* Get site-wide default image from params or a hardcoded path */ -}}
+  {{- $homeImage := "" -}}
+  {{- with .Site.Params.default_schema_image -}}
+    {{- $homeImage = . -}}
+  {{- else -}}
+    {{- $homeImage = "images/cumulocity-docs-web.jpg" -}}
+  {{- end -}}
+
+  {{- $data.Set "page" (dict
+      "@context" "https://schema.org"
+      "@type" "WebSite"
+      "url" .Site.BaseURL
+      "name" .Site.Title
+      "description" $siteDescription
+      "image" ($homeImage | absURL)
+      "inLanguage" .Site.LanguageCode
+      "publisher" (dict "@type" "Organization" "name" (.Site.Params.publisher_name | default "Cumulocity GmbH") "logo" (dict "@type" "ImageObject" "url" (.Site.Params.logo | absURL)))
+      "hasPart" $hasPart
+    )
+  -}}
+{{- else if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+  {{- $hasPart := slice -}}
+  {{- range .Pages -}}
+    {{- $hasPart = $hasPart | append (dict "@type" "TechArticle" "headline" .Title "url" .Permalink) -}}
+  {{- end -}}
+  {{- $breadcrumbItems := partial "breadcrumbs-ld.html" . -}}
+  {{- $breadcrumbList := slice -}}
+  {{- range $index, $item := $breadcrumbItems -}}
+    {{- $breadcrumbList = $breadcrumbList | append (dict "@type" "ListItem" "position" (add $index 1) "name" $item.name "item" $item.item) -}}
+  {{- end -}}
+
+  {{- $plainContent := .Content | plainify -}}
+  {{- $extractedDescription := "" -}}
+  {{- $paragraphs := split $plainContent "\n\n" -}}
+  {{- if gt (len $paragraphs) 0 -}}
+    {{- $firstParagraph := index $paragraphs 0 -}}
+    {{- if and (gt (len $firstParagraph) 0) (lt (len $firstParagraph) 100) (gt (len $paragraphs) 1) -}}
+      {{- $secondParagraph := index $paragraphs 1 -}}
+      {{- $extractedDescription = printf "%s\n\n%s" $firstParagraph $secondParagraph -}}
+    {{- else -}}
+      {{- $extractedDescription = $firstParagraph -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $pageImage := partial "get-page-image.html" (dict "page" . "defaultImage" .Site.Params.default_schema_image) -}}
+
+  {{- $pageMap := (dict
+      "@context" "https://schema.org"
+      "@type" "CollectionPage"
+      "name" .Title
+      "description" (truncate 320 $extractedDescription)
+      "url" .Permalink
+      "inLanguage" .Site.LanguageCode
+      "author" (dict "@type" "Organization" "name" (.Site.Params.author_name | default .Site.Title))
+      "publisher" (dict "@type" "Organization" "name" (.Site.Params.publisher_name | default "Cumulocity GmbH") "logo" (dict "@type" "ImageObject" "url" (.Site.Params.logo | absURL)))
+      "hasPart" $hasPart
+      "breadcrumb" (dict "@type" "BreadcrumbList" "itemListElement" $breadcrumbList)
+    )
+  -}}
+  {{- if $pageImage -}}
+    {{- $pageMap = merge $pageMap (dict "image" $pageImage) -}}
+  {{- end -}}
+  {{- $data.Set "page" $pageMap -}}
+
+{{- else if eq .Kind "page" -}}
+  {{- $breadcrumbItems := partial "breadcrumbs-ld.html" . -}}
+  {{- $breadcrumbList := slice -}}
+  {{- range $index, $item := $breadcrumbItems -}}
+    {{- $breadcrumbList = $breadcrumbList | append (dict "@type" "ListItem" "position" (add $index 1) "name" $item.name "item" $item.item) -}}
+  {{- end -}}
+  {{- $extractedDescription := "" -}}
+  {{- $plainContent := .Content | plainify -}}
+  {{- $paragraphs := split $plainContent "\n\n" -}}
+
+  {{- if eq .Layout "bundle" -}}
+    {{- if .File -}}  {{/* Check if .File exists before accessing it */}}
+      {{- $bundleName := printf "%s-%s" .File.BaseFileName "bundle" -}} {{/* Corrected variable name here */}}
+      {{- $headless := .Site.GetPage $bundleName -}}
+      {{- if $headless -}}
+        {{- $reusablePages := sort ($headless.Resources.ByType "page") ".Params.weight" -}}
+        {{- if gt (len $reusablePages) 0 -}}
+          {{- $firstReusablePage := index $reusablePages 0 -}}
+          {{- $plainContent = $firstReusablePage.Content | plainify -}}
+          {{- $paragraphs = split $plainContent "\n\n" -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if gt (len $paragraphs) 0 -}}
+    {{- $firstParagraph := index $paragraphs 0 -}}
+    {{- if and (gt (len $firstParagraph) 0) (lt (len $firstParagraph) 100) (gt (len $paragraphs) 1) -}}
+      {{- $secondParagraph := index $paragraphs 1 -}}
+      {{- $extractedDescription = printf "%s\n\n%s" $firstParagraph $secondParagraph -}}
+    {{- else -}}
+      {{- $extractedDescription = $firstParagraph -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* Call the new partial for image extraction */ -}}
+  {{- $pageImage := partial "get-page-image.html" (dict "page" . "defaultImage" .Site.Params.default_schema_image) -}}
+
+  {{- $datePublished := "" -}}
+  {{- if .Date -}}
+    {{- $datePublished = .Date.Format "2006-01-02T15:04:05Z07:00" -}}
+  {{- else if .PublishDate -}}
+    {{- $datePublished = .PublishDate.Format "2006-01-02T15:04:05Z07:00" -}}
+  {{- else if .Lastmod -}}
+    {{- $datePublished = .Lastmod.Format "2006-01-02T15:04:05Z07:00" -}}
+  {{- end -}}
+
+  {{- $dateModified := "" -}}
+  {{- if .Lastmod -}}
+    {{- $dateModified = .Lastmod.Format "2006-01-02T15:04:05Z07:00" -}}
+  {{- else if .Date -}}
+    {{- $dateModified = .Date.Format "2006-01-02T15:04:05Z07:00" -}}
+  {{- end -}}
+
+  {{- $pageMap := dict
+    "@context" "https://schema.org"
+    "@type" "TechArticle"
+    "headline" .Title
+    "description" (truncate 320 (.Description | default $extractedDescription))
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+    "author" (dict "@type" "Organization" "name" (.Site.Params.author_name | default .Site.Title))
+    "publisher" (dict "@type" "Organization" "name" (.Site.Params.publisher_name | default "Cumulocity GmbH") "logo" (dict "@type" "ImageObject" "url" (.Site.Params.logo | absURL)))
+    "breadcrumb" (dict "@type" "BreadcrumbList" "itemListElement" $breadcrumbList)
+  }}
+  {{- if $datePublished -}}
+    {{- $pageMap = merge $pageMap (dict "datePublished" $datePublished) -}}
+  {{- end -}}
+  {{- if $dateModified -}}
+    {{- $pageMap = merge $pageMap (dict "dateModified" $dateModified) -}}  {{/* This is the only change */}}
+  {{- end -}}
+
+  {{- if $pageImage -}}
+    {{- $pageMap = merge $pageMap (dict "image" $pageImage) -}}
+  {{- end -}}
+  {{- $data.Set "page" $pageMap -}}
+
+  {{- with .Params.sector -}}
+    {{- $sectorName := index . 0 -}}
+    {{- $sectorPage := $.Site.GetPage (printf "/sector/%s" $sectorName) -}}
+    {{- if $sectorPage -}}
+      {{- $data.SetInMap "page" "articleSection" $sectorPage.Title -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with .Parent -}}
+    {{- $isPartOf := dict "@type" "CollectionPage" "name" .Title "url" .Permalink -}}
+    {{- $data.SetInMap "page" "isPartOf" $isPartOf -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $data.Get "page" -}}
+<script type="application/ld+json">
+{{- $data.Get "page" | jsonify (dict "indent" "  ") | safeJS -}}
+</script>
+{{- end -}}

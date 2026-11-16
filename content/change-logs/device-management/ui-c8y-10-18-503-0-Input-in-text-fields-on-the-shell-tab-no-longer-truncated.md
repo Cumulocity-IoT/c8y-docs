@@ -1,5 +1,5 @@
 ---
-date: 2023-12-20
+date: '2023-12-20'
 title: Input in text fields on the Shell tab no longer truncated
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3100
 version: 10.18.503.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 When adding a new predefined command on the **Shell** tab in the device details, all text fields are now properly formatted making all information visible.

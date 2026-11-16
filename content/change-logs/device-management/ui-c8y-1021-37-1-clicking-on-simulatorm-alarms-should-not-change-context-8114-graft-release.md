@@ -15,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62195
 version: 1021.37.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the **Simulator** page, clicking on alarms previously redirected users to the **Alarms** page instead of showing the alarms in the **Alarms** tab of the **Simulator** page. This behavior has now been corrected. 

@@ -2,11 +2,19 @@
 weight: 100
 title: REST APIs
 layout: redirect
+skills:
+  - manage-opcua-gateway-and-servers
+  - browse-opcua-address-space
+  - manage-opcua-device-types
 ---
 
 While the {{< product-c8y-iot >}} user interface for OPC UA provides an easy and visual way to configure and build your OPC UA solution, the OPC UA management microservice gives you the possibility to do it via RESTful web service.
 
 The full API definitions can be found at */service/opcua-mgmt-service/swagger-ui.html*.
+
+{{< c8y-admon-info >}}
+To access the OPC UA management service APIs, users must be assigned the required OPC UA service roles. You can assign these roles in the Administration application under **Accounts > Users, Roles**.
+{{< /c8y-admon-info >}}
 
 ### OPC UA server resources {#opc-ua-server-resources}
 
@@ -15,6 +23,10 @@ The full API definitions can be found at */service/opcua-mgmt-service/swagger-ui
 **Endpoint**
 
  `POST /service/opcua-mgmt-service/gateways/{gatewayId}/servers`
+
+**Required role**
+
+OPC UA service - ADMIN
 
 **Description**
 
@@ -110,9 +122,9 @@ Data structure for ServerConnectionConfig:
 </tr>
 <tr>
 <td>autoScanAddressSpace</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
-<td>Boolean. Whether the gateway should scan the address space automatically the first time it connects. Default is true.</td>
+<td>boolean. Whether the gateway should scan the address space automatically the first time it connects. Default is true.</td>
 </tr>
 <tr>
 <td>rescanCron</td>
@@ -122,7 +134,7 @@ Data structure for ServerConnectionConfig:
 </tr>
 <tr>
 <td>autoReconnect</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>Boolean. Whether the gateway should try to reconnect to the OPC UA server once the connection drop is detected. Default is true.</td>
 </tr>
@@ -211,7 +223,7 @@ attributes provided in the subscription definition of the device type. It can be
 (for example <code>EnabledState.text == 'Enabled'</code>), or the qualified browse name with namespace index (for example <code>['0:EnabledState'].text == 'Enabled'</code>).
 If the variables are not provided in the subscribed attributes (uaEventMappings -> attributes), they are considered null.
 If the alarm status is explicitly provided in the alarm mapping (uaEventMappings -> alarmCreation) of the device type, these alarm status mappings have no effect.
-The Spring Expression Language(SpEL) has been used to parse these conditions, but only Boolean expressions are allowed.
+The Spring Expression Language(SpEL) has been used to parse these conditions, but only boolean expressions are allowed.
 
 See the **alarmStatusMappings example** below the table.
 
@@ -223,7 +235,7 @@ There are three alarm statuses in {{< product-c8y-iot >}}, namely ACTIVE, ACKNOW
 </tr>
 <tr>
 <td>subscribeModelChangeEvent</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>The subscription to model change event can be enabled/disabled using this property. Default value is "false" (disabled),
 which means any change in the address space nodes of the OPC UA server in runtime will not automatically be updated in the address space of {{< product-c8y-iot >}}.
@@ -231,7 +243,7 @@ This property must be explicitly set to "true" to detect and persist the address
 </tr>
 <tr>
 <td>validateDiscoveredEndpoints</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>
 The protocol stack of the OPC UA gateway validates whether the endpoint it is connecting to is present in the list of endpoints returned by the OPC UA server. By default, this validation is enabled (true). However, a setting in the server configuration can override the global gateway configuration setting, which can be configured using <code>gateway.connectivity.validateDiscoveredEndpoints</code>.
@@ -263,27 +275,15 @@ To catch these events and convert them into internal alarms, a UA event mapping 
 
 For better performance an in-memory map is used to store the alarm type and the internal representation. These values are also stored on the filesystem and survive a possible crash or restart of the gateway. When the alarm is cleared then its entry is removed from the in-memory map.
 
-The size of the map can be adjusted by several parameters in the configuration file.
-With `maxEntries` you can specify the expected number of alarms at the same time, and it is hard-connected with the `maxBloatFactor`.
-This factor lets you define a possible maximum of `maxEntries` to be extended. For example, a default `maxEntries` value of "100000" and 'maxBloatFactor' set to "5.0" results in a maximum of 500000 entries.
-The `avarageKeySize` defines the used key size resulting from the length of the type and the external ID.
-It's used to calculate the local file size bound to the entry size.
-  ```yaml
-  # To avoid many REST calls to the inventory an in-memory map with a crash backup functionality is included.
-  alarmStatusStore:
-    # Expected number of maximum alarms at the same time
-    maxEntries: 100000
-    # The average size of the keys on the map. Needed for calculation of the size of the database file.
-    averageKeySize: 30
-    # The number of maxEntries multiplied with this factor results in the real max size of the database file. Resize is done only if needed.
-    maxBloatFactor: 5.0
-  ```
-
 #### Get all servers of a gateway device {#get-all-servers-of-a-gateway-device}
 
 **Method**
 
 `GET /service/opcua-mgmt-service/gateways/{gatewayId}/servers`
+
+**Required role**
+
+OPC UA service - READ
 
 **Parameters**
 
@@ -352,6 +352,10 @@ It's used to calculate the local file size bound to the entry size.
 
 `DELETE /service/opcua-mgmt-service/servers/{serverId}`
 
+**Required role**
+
+OPC UA service - ADMIN
+
 **Description**
 
 Delete the OPC UA server managed object. Once the DELETE request is received by the OPC UA management service, the specified server along with all its address space nodes created in the {{< product-c8y-iot >}} platform will be deleted.
@@ -392,6 +396,10 @@ The service will retain all the child devices of the server, and their correspon
 **Endpoint**
 
 `GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/get`
+
+**Required role**
+
+OPC UA service - READ
 
 **Description**
 
@@ -483,6 +491,10 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/get?nodeId=
 **Endpoint**
 
 `GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/children`
+
+**Required role**
+
+OPC UA service - READ
 
 **Description**
 
@@ -579,6 +591,10 @@ Endpoint: `GET /service/opcua-mgmt-service/servers/10/address-spaces/children?no
 **Endpoint**
 
 `GET /service/opcua-mgmt-service/servers/{serverId}/address-spaces/browse`
+
+**Required role**
+
+OPC UA service - READ
 
 **Description**
 
@@ -684,6 +700,10 @@ These resources provide the APIs for manipulating device types.
 **Endpoint**
 
 `POST /service/opcua-mgmt-service/device-types`
+
+**Required role**
+
+OPC UA service - ADMIN
 
 **Sample payloads**
 
@@ -821,7 +841,7 @@ Full payload data structure explained:
 </tr>
 <tr>
 <td>enabled</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>Whether the device type is enabled and should be applied to the connected servers or not. Default is false.</td>
 </tr>
@@ -922,7 +942,7 @@ Full payload data structure explained:
 <td>alarmCreation</td>
 <td><em>AlarmCreation</em></td>
 <td>no</td>
-<td>Mappings for alarm. If the value of the mapped resource is "true" (in case of Boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
+<td>Mappings for alarm. If the value of the mapped resource is "true" (in case of boolean), or a positive number (in case of integer/double), then the alarms are created in ACTIVE state.
 The alarm de-duplication prevents the creation of multiple alarms with the same source and type, thereby only incrementing the count of the existing alarm. The alarms will be CLEARED as soon as the value
 is changed to "false", or a number that is less than or equals to 0.</td>
 </tr>
@@ -1300,11 +1320,11 @@ If <em>alarmStatusMappings</em> are defined, also the variables used in the expr
 <td>bodyTemplate</td>
 <td>string</td>
 <td>yes</td>
-<td>Template of the request body. This can be parameterized by the following placeholders:<br><code>${value}</code>: Data value of the OPC UA node.&nbsp;<br><code>${serverId}</code>: OPC UA server managed object ID.<br><code>${nodeId}</code>: ID of the node where the data is coming from.<br><code>${deviceId}</code>: Managed object ID of the source manage object.</td>
+<td>Template of the request body. This can be parameterized by the following placeholders:<br><code>${value}</code>: JSON-serialized data value of the OPC UA node.<br><code>${valueAsText}</code>: Plain text representation of the node value, useful for embedding values directly in strings without JSON formatting.<br><code>${serverId}</code>: OPC UA server managed object ID.<br><code>${nodeId}</code>: ID of the node where the data is coming from.<br><code>${deviceId}</code>: Managed object ID of the source managed object.<br><code>${receivedTimestampInMs}</code>: Timestamp when the node value is received by the OPC UA device gateway in milliseconds.</td>
 </tr>
 <tr>
 <td>retryEnabled</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>Whether a failed HTTP POST should be retried or not. This overrides the configuration in the gateway. If this is not provided, the configuration in the gateway will be taken.</td>
 </tr>
@@ -1447,7 +1467,7 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 </tr>
 <tr>
 <td>discardOldest</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>Default is true. When this is true and the reported data is exceeding the queue size, the oldest elements in the queue will be discarded. If this is false, the newer elements will be discarded.</td>
 </tr>
@@ -1562,6 +1582,10 @@ This has exactly the same fields as *EventCreation*, however the *text* and *typ
 
 `GET /service/opcua-mgmt-service/device-types`
 
+**Required role**
+
+OPC UA service - READ
+
 **Payload**
 
 The endpoint returns a JSON array of all OPC UA device types.
@@ -1571,6 +1595,10 @@ The endpoint returns a JSON array of all OPC UA device types.
 **Endpoint**
 
 `GET /service/opcua-mgmt-service/device-types/{deviceTypeId}`
+
+**Required role**
+
+OPC UA service - READ
 
 **Payload**
 
@@ -1588,6 +1616,10 @@ A JSON representation of the device type with the given ID if it exists. If not,
 
 `PUT /service/opcua-mgmt-service/device-types/{deviceTypeId}`
 
+**Required role**
+
+OPC UA service - ADMIN
+
 **Payload**
 
 The payload of updating a device type is exactly the same as the payload of creating it. Please note that partial update is not supported. All information must be provided in the update request and will completely override the existing device type.
@@ -1597,6 +1629,10 @@ The payload of updating a device type is exactly the same as the payload of crea
 **Endpoint**
 
 `DELETE /service/opcua-mgmt-service/device-types/{deviceTypeId}`
+
+**Required role**
+
+OPC UA service - ADMIN
 
 **Success response**
 

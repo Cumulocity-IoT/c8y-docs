@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:32:51.082Z
+date: '2023-12-06'
 title: Improved dialog window tiles
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-51106
 version: 10.18.32.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Improved the localization of the dialog window titles for adding and editing dashboards and reports.

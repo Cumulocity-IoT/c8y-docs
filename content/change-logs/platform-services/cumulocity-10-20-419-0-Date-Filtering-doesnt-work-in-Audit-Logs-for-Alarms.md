@@ -1,6 +1,8 @@
 ---
-date: 2024-06-27
-title: Audit logs for repeating alarms are created with the date of the last alarm update
+date: '2024-06-27'
+title: >-
+  Audit logs for repeating alarms are created with the date of the last alarm
+  update
 product_area: Platform services
 change_type:
   - value: change-VSkj2iV9m
@@ -13,6 +15,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-58098
 version: 10.20.419.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 
 Audit logs for repeating alarms used the alarm creation date which resulted in audit logs having past dates. This issue has been fixed and now audit logs for repeating alarms are created with the date of the last alarm update.

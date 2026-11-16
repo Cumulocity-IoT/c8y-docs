@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61568
 version: 1021.1.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To improve the documentation of UI components, a Codex example has been added for the CountdownInterval component. This example demonstrates how to use the CountdownInterval component in an application, showcasing its functionality and configuration options. Developers can now refer to this example to better understand how to integrate the CountdownInterval component into their projects, making it easier to implement countdown functionality in their applications.

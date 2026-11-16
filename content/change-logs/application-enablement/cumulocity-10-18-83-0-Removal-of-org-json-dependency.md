@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:24:08.122Z
+date: '2023-12-06'
 title: Removal of org.json dependency
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-53340
 version: 10.18.83.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The dependency on <code>org.json:json</code> has been removed from the Java SDK.

@@ -11,11 +11,11 @@ layout: redirect
 
 {{< management-tenant >}}s and {{< enterprise-tenant >}}s can control application access for their subtenants. In the **Applications** tab of a tenant, they can:
 
-- [View and manage existing application subscriptions](to-view-subscribed-applications)
+- [View and manage existing application subscriptions](#to-view-subscribed-applications)
 - [Subscribe applications to tenants](#to-subscribe-an-application)
 - [Monitor the microservice status](#to-monitor-the-microservice-status)
 
-For general information on applications as part of the {{< product-c8y-iot >}} ecosystem, refer to [Managing the ecosystem](standard-tenant/ecosystem/#managing-applications).
+For general information on applications as part of the {{< product-c8y-iot >}} ecosystem, refer to [Managing the ecosystem](/standard-tenant/ecosystem/#managing-applications).
 
 {{< c8y-admon-info >}}
 Tenants can also create and deploy their own [custom applications](/standard-tenant/ecosystem/#custom-applications), which can be made available to their subtenants.

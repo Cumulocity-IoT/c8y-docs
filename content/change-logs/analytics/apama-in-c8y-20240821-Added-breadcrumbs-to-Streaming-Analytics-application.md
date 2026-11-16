@@ -1,5 +1,5 @@
 ---
-date: 2024-09-05
+date: '2024-09-05'
 title: Added breadcrumbs to Streaming Analytics application
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,5 +13,12 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4573
 version: 25.232.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To improve the user experience and maintain consistency with the default {{< product-c8y-iot >}} applications such as Cockpit, breadcrumbs have been added to the Streaming Analytics application. You can use the breadcrumbs to easily navigate up the hierarchy.

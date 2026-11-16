@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-4323
 version: 1021.37.4
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In device control lists, operations with an updated status remained displayed even if they did no longer match the active status filter criteria. Now, operations that no longer match the selected criteria are correctly removed from the list in realtime.

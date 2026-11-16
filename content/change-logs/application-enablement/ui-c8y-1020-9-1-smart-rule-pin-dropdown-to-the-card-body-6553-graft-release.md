@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58122
 version: 1020.9.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To improve the user experience when configuring smart rules, the pin dropdown has been moved from the smart rule header to the card body. This change makes it easier for users to find and interact with the pin dropdown, as it is now located in a more prominent and intuitive position within the smart rule configuration. 

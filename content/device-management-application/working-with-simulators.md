@@ -2,9 +2,12 @@
 weight: 90
 title: Working with simulators
 layout: bundle
+skills:
+  - manage-simulators
 outputs:
   - html
   - json
+  - markdown
 sector:
   - device_management
 helpcontent:

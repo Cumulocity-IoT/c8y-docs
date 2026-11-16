@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58448
 version: 1020.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 As announced earlier, the report module has been extracted from the Cockpit application and added as a separate plugin.
 This is a first step towards removing the reports module entirely and replacing it with the dashboard manager.

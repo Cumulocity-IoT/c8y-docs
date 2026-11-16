@@ -2,6 +2,9 @@
 weight: 170
 title: Software
 layout: bundle
+skills:
+  - manage-advanced-software
+  - install-device-software
 sector:
   - device_management
 ---
@@ -190,6 +193,12 @@ The 528 static response template is available for dealing with software update o
    `116,software_a,3.0.0,http://example.com/software_a`
 5. Set operation status to SUCCESSFUL <br>
    `503,c8y_SoftwareUpdate`
+
+{{< c8y-admon-info >}}
+
+If the URL is set to an empty string, no file is uploaded or linked from the platform. In this case, the device is fully responsible for resolving the correct binary. Typically, this process works through package managers that retrieve the correct binary from the name, version, and other device-specific details. If the device cannot resolve the binary, it must mark the operation as FAILED.
+
+{{< /c8y-admon-info >}}
 
 ### Advanced Software Management {#advanced-software-management}
 

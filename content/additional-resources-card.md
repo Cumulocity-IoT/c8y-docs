@@ -1,4 +1,3 @@
-
 ---
 title: Additional resources
 icon: "dlt-c8y-icon-box-settings"

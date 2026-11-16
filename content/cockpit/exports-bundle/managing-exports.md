@@ -5,6 +5,7 @@ layout: bundle
 outputs:
   - html
   - json
+  - markdown
 sector:
   - app_enablement
 helpcontent:
@@ -133,6 +134,17 @@ JsonPath expressions added from data points will be stored in bracket notation i
 
 ![Measurement added from data point](/images/users-guide/cockpit/cockpit-export-adddatapoint-measurement.png)
 
+##### Predefined fields {#predefined-fields}
+
+**Predefined fields** are standard properties that always exist in a given type of document. The list of properties that you can select for export in the UI is wider and contains a lot of frequently used fragments with business meaning, but these fragments are treated as **custom properties** by the export engine logic.
+Here is the list of predefined fields for particular types of documents:
+
+- Alarms: count, creationTime, firstOccurrenceTime, id, lastUpdated, severity, source, status, text, time, type
+- Events: creationTime, id, lastUpdated, source, text, time, type
+- Measurements: id, source, time, type
+- Managed objects: additionParents, assetParents, childAdditions, childAssets, childDevices, creationTime, deviceParents,
+  id, latestMeasurements, lastUpdated, name, owner, previousMeasurements, supportedMeasurements, type
+
 ### To schedule an export {#to-schedule-an-export}
 
 To schedule an export to a CSV or XLSX file to any point in time, open the respective export and click **Add schedule** at the bottom.
@@ -159,8 +171,8 @@ Optionally, add the email address of the sender for reply.
 
 Specify the subject of the email. This field is pre-filled, but may be modified.
 
-Enter the actual email message. Available placeholders are {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/inventory/binaries/{binaryId}".
-Note that to create a clickable link in the email, you must add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/inventory/binaries/{binaryId}."
+Enter the actual email message. Available placeholders are {host}, {binaryId}. The default value is "File with exported data can be downloaded from {host}/apps/public/login/index.html#/?download={binaryId}".
+Note that to create a clickable link in the email, you must add "https://" to the link. For example: "A file with exported data can be downloaded from https://{tenant-domain}/apps/public/login/index.html#/?download={binaryId}."
 
 {{< c8y-admon-info >}}
 Note that the corresponding emails are sent with "text/html" as the `Content-Type` header.

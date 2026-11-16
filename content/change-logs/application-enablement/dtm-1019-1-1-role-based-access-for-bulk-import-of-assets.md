@@ -1,5 +1,5 @@
 ---
-date: 2023-12-14
+date: '2023-12-14'
 title: Role-based access for bulk import of assets
 product_area: Application enablement & solutions
 change_type:
@@ -11,7 +11,14 @@ component:
 build_artifact:
   - value: tc-wYIY0MBDO
     label: dtm
-ticket: CTM-649, CTM-729
+ticket: 'CTM-649, CTM-729'
 version: 1019.1.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Access to the bulk import feature can now be controlled using {{< product-c8y-iot >}} global and inventory roles.

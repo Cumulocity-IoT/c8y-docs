@@ -2,6 +2,8 @@
 weight: 30
 title: Bulk device registration
 layout: redirect
+skills:
+  - bulk-register-devices
 ---
 
 To connect larger amounts of devices, {{< product-c8y-iot >}} offers the option to bulk-register devices, that means, to register larger amounts of devices by uploading a CSV file.
@@ -50,8 +52,8 @@ In addition to these columns the file can also contain other columns like ICCID,
 
 ```
 ID;CREDENTIALS;TYPE;NAME;ICCID;IDTYPE;PATH;SHELL;AUTH_TYPE
-006064ce800a;LF2PWJoLG1Fz;c8y_Device;Sample_Device1;+491555555;c8y_Serial;bulk group/subgroup1;1;BASIC
-006064ce8077;OowoGKAbiNJs;c8y_Device;Sample_Device2;+491555555;c8y_Serial;bulk group/subgroup2;1;BASIC
+006064ce800a;5ecur3_p455w0rd;c8y_Device;Sample_Device1;+491555555;c8y_Serial;bulk group/subgroup1;1;BASIC
+006064ce8077;AbcD1234!1234AbcD;c8y_Device;Sample_Device2;+491555555;c8y_Serial;bulk group/subgroup2;1;BASIC
 ```
 
 To connect the devices, they are pre-registered with the relevant information. More specific, each device will be configured as follows:
@@ -64,9 +66,16 @@ After the data is imported, you will get feedback on the number of devices that 
 
 For your convenience, we provide CSV template files for both bulk registration types (simple/full) which you can download from the registration wizard to view or copy the structure.
 
-{{< c8y-admon-info >}}
-If the device with the given identifier already exists, it will be updated with the data from the CSV file.
-{{< /c8y-admon-info >}}
+{{< c8y-admon-important >}}
+If a device with the given identifier already exists, it is **not** updated with all the data from the CSV file. Only the following is applied:
+
+* The group assignment from the PATH column. The device is added to the group; existing group assignments are not removed.
+* Any new external identifiers.
+
+Other columns, such as TYPE, NAME, ICCID and SHELL, as well as any custom fragments, are ignored for existing devices.
+
+To update the data of existing devices, use the [Inventory API](https://{{< domain-c8y >}}/api/core/#tag/Inventory-API) in the {{< openapi >}}.
+{{< /c8y-admon-important >}}
 
 ### To import CSV data in Microsoft Excel {#to-import-csv-data-in-microsoft-excel}
 

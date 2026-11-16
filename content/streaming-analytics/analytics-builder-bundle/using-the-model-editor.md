@@ -22,6 +22,17 @@ The overview area at bottom right of the canvas shows the entire model. This is 
 
 The documentation pane on the right allows you to view reference information for the currently selected block. See also [Viewing the documentation for a block](/streaming-analytics/analytics-builder/#viewing-the-documentation-for-a-block).
 
+For a model without template parameters (other than a sample model), the toolbar also shows the following:
+
+- The mode of the model, for example, **Mode: Test**. The mode is not shown for models in production mode. You change the mode in the model manager. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model).
+- A toggle button showing **Active** or **Inactive**. Use it to activate or deactivate the model without leaving the model editor. See [Activating a model from the model editor](/streaming-analytics/analytics-builder/#activating-a-model-from-the-model-editor).
+- The logs icon <i class="dlt-c8y-icon-logs icon-20"></i>, which shows or hides the log messages of the model below the canvas. See [Viewing the logs of a model](/streaming-analytics/analytics-builder/#viewing-the-logs-of-a-model).
+
+For a saved template model, the toolbar shows the following instead.
+
+- The **N/M instances active** dropdown menu, for example **3/5 instances active**. Use it to activate or deactivate all instances of the model, or to go to the instance editor. It is only shown if you have ADMIN permission for "CEP management". See [Activating and deactivating all instances](/streaming-analytics/analytics-builder/#activating-and-deactivating-all-instances).
+- The text **Editing is disabled** when at least one instance is active. The model is read-only until you deactivate all instances.
+
 {{< c8y-admon-caution>}}
 Changes are only saved when you click the save icon <i class="dlt-c8y-icon-save icon-20"></i>.
 See also [Saving a model](/streaming-analytics/analytics-builder/#saving-a-model). The editor warns you if you attempt to navigate away from the editor and there are unsaved changes. However, you should always ensure that your changes are saved before disconnecting the browser from the network or suspending a laptop.
@@ -44,8 +55,8 @@ You add and design a model as follows:
     {{< c8y-admon-info>}}
 Only saved models are listed in the model manager. When you add a new model and then leave the model editor without saving the model, it will not be listed in the model manager, and all the edits you made will be lost.
     {{< /c8y-admon-info>}}
-7.  Leave the model editor. This takes you back to the model manager. See also [Leaving the model editor](/streaming-analytics/analytics-builder/#leaving-the-model-editor).
-8.  A newly added model is automatically set to draft mode in the model manager. If you want to test it, simulate it, or make it available in production, see [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model).
+7.  A newly added model is automatically set to production mode and inactive state. To activate it, click the toggle button in the toolbar of the model editor. See [Activating a model from the model editor](/streaming-analytics/analytics-builder/#activating-a-model-from-the-model-editor). If you want to test or simulate it instead, change its mode in the model manager first. See [Deploying a model](/streaming-analytics/analytics-builder/#deploying-a-model).
+8.  Leave the model editor. This takes you back to the model manager. See also [Leaving the model editor](/streaming-analytics/analytics-builder/#leaving-the-model-editor).
 
 For detailed background information, including restrictions, see [Wires and blocks](/streaming-analytics/analytics-builder/#wires-and-blocks).
 
@@ -60,7 +71,13 @@ You can also add or remove tags. Tags are helpful in the model manager, to show 
 1.  In the model editor, click **Model settings** which is shown at the left of the toolbar.
 2.  In the resulting **Edit model** dialog box, specify a new unique name for the model, change the description, and/or change the tags.
 
-    To add a tag, you simply type its name and press Enter or the Tab key. The tag is then shown in a colored rectangle. To remove a tag, click on the X that is shown in the rectangle. The dialog prevents you from entering duplicate tags for a model; if you enter such a tag name, the duplicate tag is not added and the original tag blinks one time.
+    To add a tag, you can either:
+     - Type its name and press Enter. The tag is then shown in a colored rectangle.
+     - Type its name and submit the dialog without pressing Enter. Any pending text in the **Tags** field will automatically be added as a tag before submission.
+
+    To remove a tag, click on the delete icon (X) that is shown in the rectangle.
+
+    The dialog prevents you from entering duplicate tags for a model. If you enter such a tag name, the duplicate tag is not added, and the original tag blinks once.
 
 3.  Click **OK**.
 
@@ -77,6 +94,38 @@ It may happen that you and another user are editing the same model at the same t
 In the toolbar of the model editor, click the save icon <i class="dlt-c8y-icon-save icon-20"></i>.
 
 The save icon <i class="dlt-c8y-icon-save icon-20"></i> is only enabled when changes have been applied to the model and the model has been given a name.
+
+#### Activating a model from the model editor {#activating-a-model-from-the-model-editor}
+
+You can activate (deploy) and deactivate a model without leaving the model editor. This lets you try out a change, check the result in the logs of the model, and go back to editing, all in one place.
+
+This is only possible for models without template parameters. To activate the instances of a template model, use the instance editor. See [Deploying an instance](/streaming-analytics/analytics-builder/#deploying-an-instance). To activate or deactivate all instances of a template model at once, you can also use the **N/M instances active** dropdown menu. See [Activating and deactivating all instances](/streaming-analytics/analytics-builder/#activating-and-deactivating-all-instances).
+
+The model is activated in the mode that is set for it in the model manager. A model in draft mode cannot be activated, so the toggle button is disabled for such a model. The toggle button is also disabled until the model has a name. Before you activate a model in simulation mode, define its time range in the model manager. See [Simulation parameters](/streaming-analytics/analytics-builder/#simulation-parameters).
+
+While the model is active, you cannot edit it. The toolbar shows **Editing is disabled**. You can still navigate the canvas, view the block parameters, and view the logs of the model.
+
+##### To activate or deactivate a model from the model editor {#to-activate-or-deactivate-a-model-from-the-model-editor}
+
+- In the toolbar of the model editor, click the toggle button.
+
+When the button shows **Inactive**, clicking it saves any unsaved changes and activates the model. The button then shows **Active**. When the button shows **Active**, clicking it deactivates the model. The button then shows **Inactive** and you can edit the model again.
+
+To activate or deactivate a model, you need ADMIN permission for "CEP management".
+
+#### Viewing the logs of a model {#viewing-the-logs-of-a-model}
+
+You can view the log messages of a model below the canvas while you edit it. This includes the output of the [Logger](/streaming-analytics/block-reference/#logger) and [Smart Function](/streaming-analytics/block-reference/#smart-function) blocks, errors raised while the model is running, and messages about the model starting, stopping, or failing. Messages are also shown for an inactive model, for example, to find out why it failed.
+
+This is only possible for saved models without template parameters. To view the logs of a template model instance, use the **Logs** page of the Streaming Analytics application. See [Viewing logs in the Streaming Analytics application](/streaming-analytics/troubleshooting/#logs-view).
+
+##### To view the logs of a model {#to-view-the-logs-of-a-model}
+
+1.  In the toolbar of the model editor, click the logs icon <i class="dlt-c8y-icon-logs icon-20"></i>. A pane titled **Model logs** opens below the canvas. It shows the recent messages of the model and checks for new messages every 5 seconds.
+2.  To see the messages of all models and smart rules of your tenant, click **View all Analytics Builder logs**. This opens the **Logs** page of the Streaming Analytics application in a new browser tab.
+3.  To close the pane, click **Close logs** or click the logs icon again. The pane only checks for new messages while it is open.
+
+To download the logs of the model, use the **Logs** page. See [Downloading the logs](/streaming-analytics/troubleshooting/#downloading-logs).
 
 #### Leaving the model editor {#leaving-the-model-editor}
 
@@ -132,10 +181,10 @@ For the input and output blocks, you can globally replace the input sources and 
     The block parameter editor appears, providing input fields for all parameters that can be specified for that block.
 2.  For the input and output blocks, you can select a different input source or output destination from a dialog box.
 
-    The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of device groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
+    The tree in the dialog box reflects the parent/child hierarchy in the {{< product-c8y-iot >}} inventory. For example, the list of devices includes any defined child devices, and the list of groups includes any defined sub-groups. These are available from expandable/collapsible nodes.
     By default, 10 items are shown within each node, sorted alphabetically. With a large inventory, you will have to click **Load more** to display any items that are not shown initially.
 
-    Using the checkboxes at the top of the dialog, you can filter the entries that are to be shown. By default, all defined devices, device groups, smart groups and assets are displayed in the dialog. If you also want to display any other managed objects in the dialog, select the "Other" checkbox.
+    Using the checkboxes at the top of the dialog, you can filter the entries that are to be shown. By default, all defined devices, groups and assets are displayed in the dialog. If you also want to display any other managed objects in the dialog, select the "Other" checkbox.
 
     The search box can be used to show any managed objects in the {{< product-c8y-iot >}} inventory which match your search and filter criteria. The search is case-sensitive. The characters that you type in may be contained at any position within the name. The tree is updated with each character that you type. With a large search result, you will have to click **Load more** to display any managed objects that are initially not shown.
 
@@ -384,10 +433,17 @@ Models with no template parameters can be directly activated in the model manage
         An input block specifies a device or a range of devices, while an output block specifies a device, a trigger device or an asset. For template parameters, the same template parameter and thus value can be used for both input and output blocks. If a template parameter is set to refer to a range of devices, then using it in an output block will be treated as the trigger device. Typically, a single template parameter would be used for all input and output blocks, and may be a single device or a range of devices, in which case the block output goes to the device within the range that triggered a model evaluation \(so a model calculating an average of a measurement and outputting to a measurement would generate a new measurement for each device independently\). Even if a different template parameter whose value refers to a different range was used, the model output would only be sent to the device that triggered a model's evaluation.
 
     -   **Source or Destination Type**.
-        You can select one of the following source or destination types: **Device**, **Groups**, **Assets**, or **Other**. You can then specify a default value that is based on your selection.
-
-    -   **Optional**. An optional value can remain blank or can be set later by the instance maintainer. When you select this checkbox, it is not possible to specify a default value.
-    -   **Default Value**. You can only specify a default value when the **Optional** checkbox is not selected.
+        You can select one or more of the following "Source or Destination" types from the **Restrict to** dropdown: "Device", "Groups", "Assets", or "Other". This selection restricts the template parameter to the selected types. This restriction is mandatory when "From Context" is selected from the **Value Selection** dropdown.
+        ![Template parameter with From Context](/images/streaming-analytics/analytics-builder/from-context-restrict-to.png)
+    -   **Value Selection** - Select one of the following options from the dropdown:
+        -   Required - Default. Instance deployment requires a value for this template parameter.
+        -   Optional - The template parameter can remain blank or can be set later by the instance maintainer. When you select this option, it is not possible to specify a default value.
+        -   From Context - Applicable only for "Source or Destination" type. The input will be automatically selected based on the context where the instance is created. Example: Device context or group context.
+{{< c8y-admon-info>}}
+Only one template parameter per model can have a "From Context" value selection.
+{{< /c8y-admon-info>}}
+    
+    -   **Default Value**. You can only specify a default value when the **Value Selection** option is set to "Required".
 
         **Exception**: Boolean types always have a value and cannot be optional. They are “false” by default \(that is, the checkbox for the default value is not selected\).
 

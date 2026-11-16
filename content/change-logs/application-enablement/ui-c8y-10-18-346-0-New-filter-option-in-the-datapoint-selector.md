@@ -1,6 +1,6 @@
 ---
-date: 2023-12-06T11:15:07.743Z
-title: New filter option in the datapoint selector
+date: '2023-12-06'
+title: New filter option in the data point selector
 change_type:
   - value: change-QHu1GdukP
     label: Feature
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-54463
 version: 10.18.346.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
-The asset selection in the datapoint selector is now filterable.
+The asset selection in the data point selector is now filterable.

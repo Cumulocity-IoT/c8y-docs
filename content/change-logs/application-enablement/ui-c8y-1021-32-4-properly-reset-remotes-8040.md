@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62327
 version: 1021.32.4
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In certain situations, the **Reset to default** button in the list of plugins installed to a certain application did not work properly which could lead to inconsistencies. This has been addressed so that the default application plugins will be loaded properly on resetting the plugins to default.

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: '2023-12-06'
 title: Fixed issue with unequal distribution of notifications
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-54859
 version: 10.18.340.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Users of Notifications 2.0 will no longer encounter unequal distribution of notifications from tenant-context subscriptions amongst a set of shared consumers.

@@ -2,6 +2,8 @@
 weight: 40
 title: Configuring fieldbus device protocols
 layout: redirect
+skills:
+  - manage-device-protocols
 ---
 
 New fieldbus device protocols can be created in the **Device protocols** page which is opened from the **Device types** menu in the navigator.
@@ -103,7 +105,7 @@ Click **Add variable** to configure a new variable.
 2. In the **Value selection** section, specify from where the value should be extracted:
 	* **Index** - Index of the variable in the OD of the device.
 	* **Sub-index** - Sub-index of the variable in the OD of the device.
-	* **Data type** - Type of the variable (for example Boolean, unsigned).
+	* **Data type** - Type of the variable (for example boolean, unsigned).
 	* **Access type** - Access type, for example, read-only, write-only.
 3. Depending on the selected access type, the following functionalities may be specified:
 	* **Show status** - To enable to show the current value in the UI, for example, in the "Fieldbus device" widget.

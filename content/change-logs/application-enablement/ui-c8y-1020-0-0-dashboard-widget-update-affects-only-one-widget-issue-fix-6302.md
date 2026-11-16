@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59201
 version: 1020.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, when more than one dashboard widget was edited, only the changes from the last edited widget were saved. Now every change is taken into account.

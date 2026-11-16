@@ -52,6 +52,21 @@ In the **Platform info** section, you find information on the infrastructure of 
 - The ID of your tenant, which might be required if you request support. Click the clipboard icon next to the tenant ID to copy it to the clipboard.
 - Version information for the deployed components. For information on the version numbers of the different components, click the **Download platform details** button and then open the downloaded JSON file.
 
+#### Preview features {#preview-features}
+
+{{< c8y-admon-req >}}
+ROLES & PERMISSIONS:
+
+To see the **Preview features** section, you must have ADMIN permission for the "Tenant management" permission type or be the first admin user created in the tenant.
+
+For easier user access management, the above permission(s) are/is included in the global role(s) created by default in every new tenant:
+- Tenant manager - manages tenant-wide configurations like applications, tenant options and retention rules.
+{{< /c8y-admon-req >}}
+
+The Preview Features functionality allows you to manage all features currently in Public Preview for a specific application. With a simple toggle interface, you can easily discover, enable, and experiment with upcoming features.
+
+When a new preview feature becomes available, the user icon at the top right corner flashes to draw your attention. 
+
 #### Bookmarks {#bookmarks}
 
 The **Bookmarks** section provides links to the most common pages and processes in the platform. Click **Add current page** to add a custom bookmark to the list.
@@ -98,6 +113,7 @@ Make sure to select a strong password. To support you in doing so, a password st
 By default, the password must meet the following conditions:
 
 * Consist of at least eight characters (this parameter can be configured by the {{< management-tenant >}}. Contact your Operations team on how to configure this setting according to your needs.
+* Must not have been used previously by the user.
 * Include each of the following character types:
   * uppercase letters: `[A-Z]`, for example `ABCDEF`.
   * lowercase letters: `[a-z]`, for example `abcdef`.

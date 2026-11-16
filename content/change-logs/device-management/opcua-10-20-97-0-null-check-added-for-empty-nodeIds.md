@@ -15,6 +15,13 @@ build_artifact:
     label: opcua
 ticket: DM-3216
 version: 10.20.97.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, the device type creation via the OPC UA management service API failed when `matchedNodeIds` list was not defined for `applyConstraints`. This issue 
 has now been resolved, and apply constraints can now be set without defining a 

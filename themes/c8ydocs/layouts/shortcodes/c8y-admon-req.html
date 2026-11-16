@@ -1,4 +1,14 @@
+{{- $inner := printf "%s" .Inner -}}
+{{- /* On a skill page, the skills it builds on (its `requires` front matter) come first. Each skill has one Requirements box; skills/single.html shows them in a box of their own when it has none. */ -}}
+{{- if eq .Page.Section "skills" -}}
+  {{- with partial "skills/requires.html" .Page -}}
+    {{- $items := slice -}}
+    {{- /* Permalink, not RelPermalink: with relativeURLs, Hugo rewrites "/docs/..." against the site root and the link gets /docs twice */ -}}
+    {{- range . }}{{ $items = $items | append (printf "* [%s](%s)" .Title .Permalink) }}{{ end -}}
+    {{- $inner = printf "SKILLS:\n\n%s\n\n%s" (delimit $items "\n") $inner -}}
+  {{- end -}}
+{{- end -}}
 <div class="admonition req">
     <div class="title">{{ .Get "title" | default "Requirements" }}</div>
-    <div class="content">{{ printf "%s" .Inner | markdownify }}</div>
+    <div class="content">{{ $inner | markdownify }}</div>
 </div>

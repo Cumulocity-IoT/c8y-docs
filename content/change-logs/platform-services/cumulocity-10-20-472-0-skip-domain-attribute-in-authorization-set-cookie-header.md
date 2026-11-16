@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-59297
 version: 10.20.472.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Security has been improved by ensuring the `domain` attribute in a cookie is made applicable strictly to the tenant accessed.

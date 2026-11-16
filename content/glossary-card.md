@@ -4,8 +4,12 @@ icon: "c8y-icon c8y-icon-book"
 type: root
 layout: redirect
 bundlefolder: glossary
+target: "glossary/"
 sector:
   - getting_started
+audience:
+  - Users
+  - Developers
 weight: 60
 ---
 

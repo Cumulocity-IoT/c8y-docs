@@ -6,6 +6,8 @@ sector:
   - device_management
 ---
 
-{{< product-c8y-iot >}} offers a public API which enables device integrators to support the Cloud Remote Access feature on their devices.
+{{< product-c8y-iot >}} provides a public API for the Cloud Remote Access feature. This API is designed for two different integration scenarios:
 
-For this functionality, the gateway needs to listen for an operation which establishes a new tunnel to a device endpoint. For this purpose, the gateway needs to create a WebSocket connection to the cloud and a TCP connection to the device. Using these connections, simple tunneling of protocol data is done on a binary level.
+1. Development of **device-side components** which enable access to services like VNC, SSH, Telnet, or arbitrary TCP-based protocols (passthrough) using the device as a gateway.
+2. Integration and development of **native TCP protocol clients or forwarding proxies**, for example as an alternative to the commonly used [C8Y Cli passthrough support](https://goc8ycli.netlify.app/docs/examples/remoteaccess/).
+

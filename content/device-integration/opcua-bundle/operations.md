@@ -2,6 +2,11 @@
 weight: 110
 title: Operations
 layout: redirect
+skills:
+  - read-write-opcua-values
+  - opcua-advanced-operations
+  - opcua-historic-data
+  - opcua-file-operations
 ---
 
 
@@ -27,18 +32,22 @@ The twinned address space information is persisted in the {{< product-c8y-iot >}
 
 Once the device gateway knows the address space, it uses it to handle different logics, for example applying device protocols to nodes. So if you already have the address space scanned once and stored in {{< product-c8y-iot >}}, you might want the device gateway to learn one more time about server's address space without synchronizing data into {{< product-c8y-iot >}}. To achieve that, provide `"skipSync": true`.
 
-When you would like to scan partial address space, you can provide the `nodeId` property which is used as a start node for the scan operation.
-The subaddress space starting from this node as well as the ancestor nodes will be persisted in the {{< product-c8y-iot >}} inventory (unless `"skipSync": true` is provided) as well as in the local address space file of the gateway.
-
+To do a partial address space scan, you can provide the `nodeIds` property which contains all node IDs to be scanned.
+The subaddress space starting from those nodes as well as the ancestor nodes are persisted both in the {{< product-c8y-iot >}} inventory, unless `skipSync` is set to `true`, and in the local address space file of the gateway.
 ```
 POST /devicecontrol/operations/
 
 {
-    "deviceId": "<server-device-Id>",
-    "c8y_ua_command_ScanAddressSpace": {
-            "nodeId":"ns=2;s=MyDevice"
-    },
-    "description": "Import address space from MyDevice node"
+  "deviceId": "<server-device-Id>",
+  "c8y_ua_command_ScanAddressSpace": {
+    "nodeIds": [
+      "ns=3;i=1005",
+      "ns=3;i=1001",
+      "ns=3;i=1004"
+    ],
+    "skipSync": false
+  },
+  "description": "Import address space from node(s) ns=3;i=1005,ns=3;i=1001,ns=3;i=1004. Triggered by custom operation"
 }
 ```
 
@@ -67,7 +76,7 @@ Available arguments for `c8y_ua_command_ScanAddressSpace`:
 </tr>
 <tr>
 <td>skipSync</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>If set to true, the address space nodes will not be synchronized to {{< product-c8y-iot >}} Inventory API. Default is false.</td>
 </tr>
@@ -521,7 +530,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 </tr>
 <tr>
 <td>processMappings</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>If set to false then the read values will not be processed based on the device protocol mapping. Default is true. Note that any data created from historic data using a device protocol will carry the same processing mode as specified in the mapping.</td>
 </tr>
@@ -619,7 +628,7 @@ Example values to define the range for a 1D array is "0:1", for a 2D array is "0
 </tr>
 <tr>
 <td>compress</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>If set the false the output chunks are compressed. Default is false.</td>
 </tr>
@@ -678,7 +687,7 @@ Available arguments for `c8y_ua_command_ReadFileOperation`:
 </tr>
 <tr>
 <td>skipResetPosition</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>If set to true then the position to read the file is reset before reading the file. Default is false.</td>
 </tr>
@@ -721,7 +730,7 @@ This returns a JSON response like this:
 
 Now download is possible with the self link provided inside the managedObjects section of the JSON response.
 
-For further information, refer to [binaries API](https://www.{{< domain-c8y >}}/api/#tag/Binaries) in the {{< openapi >}}.
+For further information, refer to [binaries API](https://{{< domain-c8y >}}/api/core/#tag/Binaries) in the {{< openapi >}}.
 
 
 ### Write value {#write-value}
@@ -1101,7 +1110,7 @@ Available arguments for type methodRequest (used in `c8y_ua_command_CallMethodOp
 </tr>
 <tr>
 <td>parseResponse</td>
-<td>Boolean</td>
+<td>boolean</td>
 <td>no</td>
 <td>If set to true, the value is converted to JSON and the actual value is stored in the rawValue fragment in response. Default is true</td>
 </tr>

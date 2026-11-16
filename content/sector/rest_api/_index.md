@@ -1,5 +1,6 @@
 ---
-title: "Rest API"
+title: "REST API"
+description: "The Cumulocity OpenAPI Specification, a language-agnostic reference for the platform REST API."
 icon: "dlt-c8y-icon-rest-api"
 type: external
 external: https://cumulocity.com/api/

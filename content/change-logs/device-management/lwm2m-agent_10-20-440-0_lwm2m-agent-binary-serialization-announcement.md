@@ -13,6 +13,13 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-4179
 version: 10.20.440.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 By default, the LWM2M service serializes binary data of a resource such as Opaque type to a byte array in {{< product-c8y-iot >}} representations. This functionality is now deprecated and will be changed in the future to the hexadecimal string format. For now the default serializer is still serialized to the byte array and the format can be switched only on the instance level. 
 This change affects the way the data is represented in {{< product-c8y-iot >}} objects (operations, values displayed in the **Objects** tab). It does not affect the communication with LWM2M devices. 

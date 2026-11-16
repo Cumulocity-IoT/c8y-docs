@@ -4,6 +4,7 @@ import { stringify as matterStringify, read as matterRead } from "gray-matter";
 import { format } from 'date-fns';
 import matter from "gray-matter";
 import { valid, gte, eq} from "semver";
+import { brotliCompressSync } from "zlib";
 
 const relativePathToChangeLogs = "../content/change-logs";
 const changeLogCategoryId = 22;
@@ -21,7 +22,7 @@ const categoryMap = {
   "device management": 25,
   "device connectivity": 25,
   "platform services": 26,
-  "edge": 27
+  //"edge": 27
 }
 
 if (process.argv.length < 4) {
@@ -86,6 +87,7 @@ async function getDiscourseChangeLogs():Promise<any> {
     },
   });
   requestsSent++;
+  if(requestDelay > 0) await delay(requestDelay);
   if (!res.ok) {
     throw new Error(res.statusText);
   }
@@ -102,12 +104,14 @@ async function getDiscourseChangeLogs():Promise<any> {
       },
     });
     requestsSent++;
+    if(requestDelay > 0) await delay(requestDelay);
     if (!moreTopics.ok) {
       throw new Error(moreTopics.statusText);
     }
     response = await moreTopics.json();
     topics.push(response.topic_list.topics);
   }
+  
 
   return topics.flat();
 }
@@ -202,6 +206,7 @@ async function getMatterForFiles(files: string[]) : Promise<matter.GrayMatterFil
 }
 
 
+
 async function processFiles() {
   try {
   const files = await readdir(relativePathToChangeLogs, {
@@ -238,7 +243,7 @@ async function processFiles() {
         }
       }
   }
-  var toBeCreatedSorted = new Map([...toBeCreated.entries()].sort());
+  var toBeCreatedSorted = new Map([...toBeCreated.entries()].sort((a, b) => Date.parse(a[0].split(" - ")[0]) - Date.parse(b[0].split(" - ")[0])));
   //Create new articles
   for (const title of toBeCreatedSorted.keys()) {
       if(maxRequests > 0 && requestsSent >= maxRequests) break;
@@ -280,16 +285,32 @@ async function processFiles() {
 
     if (posts.length > 0) {
       if(maxRequests > 0 && requestsSent >= maxRequests) break;
-      const articleContent = posts[0].raw;
+      const articleContent:string = posts[0].raw;
       const postId = posts[0].id;
       const fileContent = await getRawAndTagsFromFile(matterResult);
-      if(articleContent.trim() === fileContent.raw.trim()) {
+      let fileContentRaw = fileContent.raw;
+      if(articleContent.trim().replace(/\s/g, "") === fileContent.raw.trim().replace(/\s/g, "")) {
         //No update needed- ignore
         console.log("No update needed for article with title "+title+" and id: "+id);
       } else {
+        if(articleContent.includes("upload://") && fileContent.raw.includes("![")) {
+          let uploadLines = findLinesInString("upload://", articleContent);
+          let imageLines = findLinesInString("![", fileContent.raw);
+          if(uploadLines.length === imageLines.length) {
+            for(let i = 0; i < uploadLines.length; i++) {
+             fileContentRaw = fileContent.raw.replace(imageLines[i], uploadLines[i]);
+            }
+          }
+
+          if(fileContentRaw.trim().replace(/\s/g, "") === articleContent.trim().replace(/\s/g, "")) {
+            //No update needed- ignore
+            console.log("No update needed for article with title "+title+" and id: "+id);
+            continue;
+          }
+        }
         //Update article
         console.log("Updating article with title "+title+" and id: "+id);
-        updateDiscourseChangeLog(postId, fileContent.raw);
+        updateDiscourseChangeLog(postId, fileContentRaw);
         if(requestDelay > 0) await delay(requestDelay);
         updateTags(id, title, fileContent.tags );
         if(requestDelay > 0) await delay(requestDelay);
@@ -324,8 +345,14 @@ async function processFile(matterResult: matter.GrayMatterFile<string>) {
     return "";
   }
   if(date instanceof Date) {
-    date = format(date, "yyyy-MM-dd");
-  }
+    date = format(date, "MMMM d, yyyy");
+  } else (date instanceof String)
+    date = format(Date.parse(date), "MMMM d, yyyy");
+
+  //Ignoring edge
+  if(data.product_area && data.product_area === 'Edge')
+    return "";
+
   if(data.title.endsWith("."))
     data.title = data.title.slice(0, -1);
   const title = date + " - "+ data.title.trim();
@@ -344,8 +371,9 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
   let category = changeLogCategoryId;
   let date = data.date;
   if(date instanceof Date) {
-    date = format(date, "yyyy-MM-dd");
-  }
+    date = format(date, "MMMM d, yyyy");
+  } else (date instanceof String)
+    date = format(Date.parse(date), "MMMM d, yyyy");
 
   let version = data.version;
   if(version && version === "''") version = "";
@@ -370,7 +398,7 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
   if(component) tags.push(renameTag(component)); 
   let deployments: Map<string, string> = new Map();
   if(buildArtifact) {
-    tags.push(renameTag(buildArtifact)); 
+    //tags.push(renameTag(buildArtifact)); 
     deployments = await getDeploymentsForBuildArtifact(component, buildArtifact, version);
     //for(let deployment of deployments.keys()) {
     //  tags.push(deployment);
@@ -379,18 +407,28 @@ async function getRawAndTagsFromFile(matterResult: matter.GrayMatterFile<string>
  
 
   let raw: string = `
+  ## Context
+  ---
   **Change Type:** ${changeType}
-  **Date:** ${date}
   **Product area:** ${productArea}
   **Component:** ${component}
-  **Build artifact:** ${buildArtifact} ${version? "("+ version +")" : ""}
-  **Internal ID:** ${ticket? ticket : ""}
-  **Deployed at:** ${getDeploymentListString(deployments, false)}
-
+  `;
+  if(version)
+    raw += `**Deployed at:** `+ getDeploymentListString(deployments, false) + "\n";
+  if(buildArtifact || ticket) {
+    raw += `[details=Technical details]\n`;
+    if(buildArtifact)
+      raw += `**Build artifact:** ${buildArtifact} ${version? "("+ version +")\n" : "\n"}`;
+    if(ticket)
+      raw += `**Internal ID:** ${ticket}` + "\n";
+    raw += `[/details]\n`;
+  }
+  raw += `
+  ## Description
   ---
-
   ${formattedContent}
-  `
+  `;
+  
   return {raw: raw, category: category, tags: tags.flat()};
 }
 
@@ -405,9 +443,11 @@ function formatContent(content: string) {
   formattedContent = formattedContent.replaceAll("{{< enterprise-tenant >}}", "Enterprise tenant");
   formattedContent = formattedContent.replaceAll("{{< company-c8y >}}", "Cumulocity");
   formattedContent = formattedContent.replaceAll("{{<link-apama-webhelp>}}", "https://cumulocity.com/apama/docs/latest");
-  formattedContent = formattedContent.replaceAll("{{<link-apamadoc-api>}}", "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/index.html");
+  formattedContent = formattedContent.replaceAll("{{<link-apamadoc-api>}}", "https://cumulocity.com/apama/docs/latest/related/ApamaDoc/");
   formattedContent = formattedContent.replaceAll("{{< openapi >}}", "Cumulocity OpenAPI Specification");
   formattedContent = formattedContent.replaceAll("{{< link-c8y-github >}}", "https://github.com/Cumulocity-IoT");
+  formattedContent = formattedContent.replaceAll("(/", "(https://cumulocity.com/docs/");
+  formattedContent = formattedContent.replaceAll("{{< domain-c8y >}}", "cumulocity.com");
   return formattedContent.replaceAll("{{< product-c8y-iot >}}", "Cumulocity").replaceAll("{{< enterprise-tenant >}}", "Enterprise Tenant"); 
 }
 function getSubCategoryFromProductArea(productArea: string): number {
@@ -434,19 +474,24 @@ async function getDeploymentsForBuildArtifact(component: string, build_artifact:
         version=toSemverFormat(version);
       }
       if(version) {
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].version, version))
-          //Only retrieve updated date when version is equal
-          deploymentMap.set("eu-latest-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-1"].clusters["eu-latest-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].version, version))
-          deploymentMap.set("apj-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["apj-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].version, version))
-          deploymentMap.set("jp-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-2"].clusters["jp-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].version, version))
-          deploymentMap.set("c8y-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["c8y-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].version, version))
-          deploymentMap.set("us-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["us-cumulocity-com"].updated_at);
-        if(gte(deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].version, version))
-          deploymentMap.set("emea-cumulocity-com", deploymentObj[artifact].zones["c8y-ops-zone-3"].clusters["emea-cumulocity-com"].updated_at);
+        const environments = [
+          {zone: 'c8y-ops-zone-1', clusters: ['eu-latest-cumulocity-com']},
+          {zone: 'c8y-ops-zone-2', clusters: ['apj-cumulocity-com', 'jp-cumulocity-com']},
+          {zone: 'c8y-ops-zone-3', clusters: ['c8y-cumulocity-com', 'us-cumulocity-com', 'emea-cumulocity-com']}
+        ] as const;
+
+        for (const zoneDetails of environments) {
+          const zone = zoneDetails.zone;
+          const clusters = zoneDetails.clusters;
+          for (const cluster of clusters) {
+            const environmentDetails = getEnvironmentDetails(artifact, zone, cluster);
+            if (environmentDetails?.version && gte(environmentDetails.version, version)) {
+              // Only retrieve updated date when version is equal
+              deploymentMap.set(cluster, environmentDetails.updated_at);
+            }
+          }
+        }
+
         //Abort after first match
         break;
       }
@@ -468,9 +513,9 @@ function getDeploymentListString(deploymentMap: Map<string, string>, withDate: b
   } else {
     for (let deployment of deploymentMap.keys()) {
       if(!deploymentListstring)
-        deploymentListstring = deployment.replaceAll("-",".");
+        deploymentListstring = deployment.replaceAll("-",".").replaceAll("c8y.cumulocity.com","cumulocity.com");
       else {
-        deploymentListstring += ", "+deployment.replaceAll("-",".");
+        deploymentListstring += ", "+deployment.replaceAll("-",".").replaceAll("c8y.cumulocity.com","cumulocity.com");;
       }
     };
   }
@@ -483,3 +528,28 @@ function toSemverFormat(version: string){
   console.debug("Non-Semantic version format:",version,"converted to semantic format",semanticVersion,"for processing")
   return semanticVersion
 }
+
+function getEnvironmentDetails(artifact: string, zone: string, cluster: string) {
+  const clusters = deploymentObj[artifact].zones[zone].clusters;
+  // support for already migrated eks clusters
+  const eksDetails = clusters[`${cluster}-eks`];
+
+  if (eksDetails) {
+    return eksDetails;
+  }
+
+  return clusters[cluster];
+}
+
+function findLinesInString(line: string, content: string):string[] {
+  let lines = content.split('\n');
+  let lineFound :string[]= [];
+  lines.forEach(l => {
+    if (l.includes(line)) {
+      lineFound.push(l);
+    }
+  });
+  return lineFound;
+}
+  
+

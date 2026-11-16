@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2025-04-03'
 title: Improved the LWM2M decoder events processing engine
 product_area: Device management & connectivity
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: lwm2m-agent
 ticket: DM-4026
 version: 1021.5.8
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The LWM2M decoder events processing engine has been optimized:
 

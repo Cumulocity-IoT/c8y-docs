@@ -2,13 +2,16 @@
 weight: 20
 title: Managing software
 layout: redirect
+skills:
+  - install-device-software
+  - manage-software-repository
 helpcontent:
 - label: managing-software
   title: Software repository
   content: "In the software repository, you can collect reference software for devices. Multiple software packages can be installed on a device. At the top left, you can filter the repository entries by name, description, or device type.
 
 
-	See the user documentation for details on managing software and software versions and on how to install or update them on devices."
+  See the user documentation for details on managing software and software versions and on how to install or update them on devices."
 
 ---
 
@@ -49,7 +52,10 @@ The versions are ordered by their creation time (descending).
 	* to add a new version, select the software for which you want to add a new version from the dropdown list in the **Software** field and enter a version.
 3. Optionally, you can define the device type filter when adding a new software.
 4. Define the software type. It will make the software installable only on devices that have declared to support the particular software type.
-5. Either upload a binary from the file system or specify a URL from where the software can be downloaded.
+5. Select one of the following options to define the binary:
+   - **Upload a binary** from your file system.
+   - **Provide a file path (URL)** to download the binary from.
+   - **Provided** – Select this option if the device is expected to resolve the binary itself. No file or URL will be defined, and an empty string is stored as the value of the `url` attribute.
 6. Click **Add software**.
 
 ![Add software](/images/users-guide/DeviceManagement/devmgmt-software-add.png)

@@ -2,6 +2,8 @@
 weight: 10
 title: Single device registration
 layout: redirect
+skills:
+  - register-device
 ---
 
 {{< product-c8y-iot >}} offers single device registration to connect devices manually one by one.
@@ -40,6 +42,14 @@ Click **Accept** to confirm the connection. The status of the device will change
 {{< c8y-admon-info >}}
 In case of any issues, consult the documentation applicable for your device type in the [{{< product-c8y-iot >}} {{< device-portal >}}]({{< link-device-portal >}}) or look up the manual of your device.
 {{< /c8y-admon-info >}}
+
+This dialog can also be prefilled via query parameters.
+The field for the **Device ID** can be prefilled using the `externalId` query parameter, while the optional field **One-time password** can be prefilled via the `one-time-password` query parameter.
+
+A sample path could look like this:
+`/apps/devicemanagement/index.html#/deviceregistration?externalId=tedge-12345678&one-time-password=myRandomOTP`
+
+Any special characters may need to be URL-encoded.
 
 ### Security token policy {#security-token-policy}
 

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: '2023-12-06'
 title: Fixed issues with redirection to the SSO server
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-53723
 version: 10.18.211.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Issues with the redirection from the login page to the SSO server have been fixed.

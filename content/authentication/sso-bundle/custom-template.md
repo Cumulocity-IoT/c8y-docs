@@ -37,7 +37,28 @@ The **Basic** section of the **Single sign-on** page consists of the following c
 | Button name                                |Name displayed on the button on the **Login** page
 | Provider name                              |Name of the provider
 | Audience                                   |Expected aud parameter of JWT
+| Enable mTLS authentication                 |Enables mutual TLS (mTLS) authentication for requests sent to the authorization server. When enabled, the **Certificate (PEM)** and **Private key (PEM)** fields become visible. Disabled by default.
+| Certificate (PEM)                          |PEM-encoded X.509 client certificate used for mTLS authentication. The certificate must start with `-----BEGIN CERTIFICATE-----` and end with `-----END CERTIFICATE-----`. Visible only when **Enable mTLS authentication** is turned on.
+| Private key (PEM)                          |PEM-encoded PKCS#8 private key corresponding to the client certificate. After the first upload, the key is encrypted on the server side and can no longer be retrieved or displayed. Visible only when **Enable mTLS authentication** is turned on.
 | Visible on Login screen                    |Indicates whether the login option is enabled or not
+
+### Mutual TLS (mTLS) authentication {#mutual-tls-mtls-authentication}
+
+Mutual TLS (mTLS) is an extension of the standard TLS protocol in which both the client and the server authenticate each other using certificates. Enabling mTLS allows {{< product-c8y-iot >}} to present a client certificate to the authorization server during token requests. Use this option only when the authorization server is configured to enforce certificate-based client authentication.
+
+#### To configure mTLS authentication {#to-configure-mtls-authentication}
+
+1. In the **Basic** section of the **Single sign-on** page, turn on the **Enable mTLS authentication** toggle.
+
+   The **Certificate (PEM)** and **Private key (PEM)** fields appear.
+
+2. Upload a PEM-encoded X.509 certificate in the **Certificate (PEM)** field and a PEM-encoded PKCS#8 private key in the **Private key (PEM)** field.
+
+3. Click **Save** to apply the configuration.
+
+{{< c8y-admon-important >}}
+After the first save, the private key is encrypted and cannot be retrieved from {{< product-c8y-iot >}}. Store it securely before uploading. To replace it, use the **Drop a new private key to replace** control.
+{{< /c8y-admon-important >}}
 
 Each time you log in, the content of the access token and ID token is verified and serves as the basis for your access to the {{< product-c8y-iot >}} platform. The following section provides the mapping between JWT claims and access to the platform.
 
@@ -53,7 +74,7 @@ Under **Dynamic access mapping principle** you can select one of the following o
 
 * **Roles selected in the rules above will be reassigned to a user on each log in and other ones will be cleared**: This is the default. Dynamic access mapping assigns user roles, based on the token, on every user login. It is not possible to change the user roles inside {{< product-c8y-iot >}} as they would be overwritten on the next user login. To change this behavior, select one of the remaining options.
 
-If you select either of the first two options mentioned above, this will also allow administrators to edit the roles of SSO users in the user management. For details, refer to [Managing permissions](/standard-tenant/managing-permissions/#assign-global-roles).
+If you select either of the first two options mentioned above, this will also allow administrators to edit the roles of SSO users in the user management. For details, refer to [Managing permissions and roles](/standard-tenant/managing-permissions/#to-assign-global-roles).
 
 The dynamic access mapping configuration allows you to define the rules for assigning roles to users based on JWT claims. The rule that matches the token's value is used to assign the appropriate set of roles to the user.
 
@@ -111,7 +132,7 @@ Each field represents the claim name that is used to retrieve the data from JWT.
 Mapping for alias is not available because it is not used in the context of SSO login.
 
 The username claim name can be configured in the **User ID** configuration window.
-The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#troubleshooting)).
+The user ID can be set to any top-level field of the authorization token payload sent from the authorization server to the platform during the login process. We recommend you inspect the authorization token in the audit logs to make sure the correct field is used (see [Troubleshooting](#sso-troubleshooting)).
 
 If you check the **Use constant value** checkbox, a constant user ID is used for all users who log in to the {{< product-c8y-iot >}} platform via SSO. This means that all users who log in via SSO share the same user account in the {{< product-c8y-iot >}} platform. We do not recommend you to use this option.
 
@@ -142,12 +163,14 @@ Each token is signed by a signing certificate. The following options are availab
 ### Placeholders {#placeholders}
 Inside some fields you can use placeholders that are resolved by {{< product-c8y-iot >}} at runtime. Available placeholders are:
 
-|Placeholder|Description|
-|:---|:---|
-|clientId|Value of the **Client ID** field
-|redirectUri| Value of the **Redirect URI** field
-|code|Code returned by the authorization server in response to authorization request
-|refreshToken| Refresh token returned by the authorization server after token request
+| Placeholder  | Description                                                                    |
+|:-------------|:-------------------------------------------------------------------------------|
+| clientId     | Value of the **Client ID** field                                               
+| redirectUri  | Value of the **Redirect URI** field                                            
+| code         | Code returned by the authorization server in response to authorization request
+| refreshToken | Refresh token returned by the authorization server after token request         
+| id_token     | A JWT token issued by the authorization server that contains claims about the authenticated user; can be used for logout from the authorization server
+| idp_hint     | Value of the `idp_hint` parameter passed by the UI application, to select which IdP should be preselected during the authentication flow                   
 
 These placeholders can be used in authorization requests, token requests, refresh requests and logout request in the fields:
 
@@ -165,3 +188,33 @@ Placeholders can also be used as a part of text:
 {{< c8y-admon-info >}}
 Placeholders are not validated for correctness. Any not recognized or misspelled placeholder will be left in text unprocessed.
 {{< /c8y-admon-info >}}
+
+### Client suggested identity provider {#client-suggested-identity-provider}
+When the default login mode is **Single sign-on redirect**, and the authentication server supports multiple identity providers, instead of requesting the user to select an identity provider, the `idp_hint` parameter can be collected by {{< product-c8y-iot >}} and forwarded to the authentication server as part of the initial authorization request. This ensures that the user is redirected directly to the specified IdP.
+
+The `idp_hint` is a custom parameter supported by the application to improve the login experience in multi-identity provider (IdP) scenarios.
+It allows a client application (for example, a custom welcome page) to suggest which IdP should be preselected during the authentication flow.
+
+1. A client custom application appends the `idp_hint` parameter to the login URL:
+
+```
+https://{{< domain-c8y >}}/apps/public/login/index.html?idp_hint=google
+```
+
+2. The {{< product-c8y-iot >}} application extracts the value of `idp_hint` (for example, "google").
+3. During the OAuth2/OIDC authorization request, this value is mapped and passed to the underlying authentication server.
+
+#### Example with Keycloak {#example-with-keycloak}
+Keycloak supports [an identity provider hinting feature](https://www.keycloak.org/docs/latest/server_admin/index.html#_client_suggested_idp) using the `kc_idp_hint` parameter.  
+If the `idp_hint` value is "google", and the authorization request headers are configured with key `kc_idp_hint`, value `${idp_hint}`, {{< product-c8y-iot >}} will translate it into a Keycloak compatible parameter and forward it:
+
+```
+https://keycloak.com/realms/myrealm/protocol/openid-connect/auth
+  ?kc_idp_hint=google
+  &...
+```
+
+In this example:
+- A custom "welcome page" provides `idp_hint=google`.
+- {{< product-c8y-iot >}} translates this hint into Keycloak’s `kc_idp_hint=google`.
+- The user is immediately redirected to the Google IdP without having to manually select it from the Keycloak login screen.

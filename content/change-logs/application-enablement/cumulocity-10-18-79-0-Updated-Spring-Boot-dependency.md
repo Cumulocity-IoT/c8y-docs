@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T11:40:47.036Z
+date: '2023-12-06'
 title: Updated Spring Boot dependency
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-53342
 version: 10.18.79.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The Spring Boot dependency has been updated to version 2.7.11.

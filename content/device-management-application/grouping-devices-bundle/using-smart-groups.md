@@ -2,9 +2,12 @@
 weight: 40
 title: Using smart groups
 layout: redirect
+skills:
+  - manage-device-groups
 outputs:
   - html
   - json
+  - markdown
 helpcontent:
   - label: using-smart-groups
     title: Using smart groups

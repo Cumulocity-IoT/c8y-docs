@@ -586,10 +586,10 @@ In order to follow this tutorial, check the following prerequisites:
 
 ##### To generate a valid certificate {#to-generate-a-valid-certificate}
 
-If you don't have a valid certificate, you can generate one for testing purposes, following the instructions below.
+If you don't have a valid certificate, you can generate one for testing purposes following the instructions in [Device certificates](/device-certificate-authentication/device-certificates/).
 
 1.  Download the scripts from the [cumulocity-examples]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/mqtt-client/scripts) repository.
-2.  Create a root self-signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [the Device Management application in the UI](/device-management-application/managing-device-data/#managing-trusted-certificates) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API).
+2.  Create a root self-signed certificate (execute the script *00createRootSelfSignedCertificate.sh*) and upload it to your tenant. You can do it via [the Device Management application in the UI](/device-certificate-authentication/managing-trusted-certificates/) or via [REST](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API).
 3.  Create and sign the certificate (execute the script *01createSignedCertificate.sh*).
 4.  Move the certificates to keystore (execute the script *02moveCertificatesToKeystore.sh*). Additionally, if only the device leaf certificate is needed in the keystore, use the --leafonly option.
 5.  Finally, import the trusted certificate into keystore running the following command:
@@ -664,7 +664,14 @@ private MqttClient connect() throws MqttException {
 }
 ```  
 
-The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-integration/mqtt/#device-certificates) process.
+Use the following values for a successful certificate-based connection:
+
+* Set `BROKER_URL` to `ssl://<your tenant domain>:8883`.
+* Set `CLIENT_ID` to the common name of the device certificate.
+* The certificate common name must not contain `:`. For details, refer to [MQTT ClientId](/device-integration/mqtt/#mqtt-clientid).
+* Keep the `"d:"` prefix in `new MqttClient(BROKER_URL, "d:" + CLIENT_ID, new MemoryPersistence())`, because it identifies device connections in {{< product-c8y-iot >}}.
+
+The device can now publish and subscribe as a standard device. Note that before the first connect no other actions are required, for example, creating a user. The user is created during the [auto registration](/device-certificate-authentication/device-certificates/) process.
 
 {{< c8y-admon-info >}}
 You do not need to set a password, user or tenant for the MQTT client connecting using certificates. {{< product-c8y-iot >}} will recognize the tenant and the user by the provided certificate.
@@ -824,7 +831,7 @@ Additionally, if there will be a new operation created for this device (for exam
 
 #### Improving the agent {#improving-the-agent}
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
 
 ### Hello MQTT Node.js
 
@@ -957,7 +964,7 @@ Additionally, if there will be a new operation created for this device (for exam
 
 #### Improving the agent {#improving-the-agent}
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
 
 ### Hello MQTT Python
 
@@ -982,7 +989,7 @@ Python can be downloaded from [www.python.org](https://www.python.org/).
 $ pip install paho-mqtt
 ```
 {{< c8y-admon-info >}}
-The above command installs Paho on your system. You may want to use [virtualenv](https://virtualenv.pypa.io/en/latest/user_guide.html) to install it only for this example.
+The above command installs Paho on your system. You may want to use [virtualenv](https://virtualenv.pypa.io/en/latest/how-to/install.html) to install it only for this example.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
@@ -1016,8 +1023,7 @@ tenant      = "<<tenant_ID>>"
 username    = "<<username>>"
 password    = "<<password>>"
 
-# task queue to overcome issue with paho when using multiple threads:
-#   https://github.com/eclipse/paho.mqtt.python/issues/354
+# task queue to overcome a deadlock issue in the Python Paho library when using multiple threads
 task_queue = mp.Queue()
 
 # display all incoming messages
@@ -1097,7 +1103,7 @@ Replace `serverUrl`, `clientId` and `device_name` as needed. Do not forget to sp
 
 {{< product-c8y-iot >}} MQTT protocol supports both unsecured TCP and secured SSL connections, so when configuring  a port remember to use the correct one. No matter which connection type you select, your `serverUrl` should stay the same (like `mqtt.{{< domain-c8y >}}`).
 
-The above example uses a TCP connection. If you would like to use an SSL connection, remember to use the proper configuration from the Paho MQTT client. Further information can be found at [www.eclipse.org](http://www.eclipse.org/paho/clients/python/docs/#option-functions).
+The above example uses a TCP connection. If you would like to use an SSL connection, remember to use the proper configuration from the Paho MQTT client. Further information can be found at [www.eclipse.org](https://eclipse.dev/paho/files/paho.mqtt.python/html/).
 
 What does the script do?
 
@@ -1109,7 +1115,7 @@ What does the script do?
 -   Update the device hardware information by putting a `"S123456789"` serial, a `"MQTT test model"` model and a `"Rev0.1"` revision.
 -   Subscribe to the static operation templates for the device – this will result in an ``on_message`` method call every time a new operation is created.
 -   Start the ``device_loop_thread`` which sends a temperature measurement every 7 seconds.
--   Prepare a ``task_queue``, used mainly to overcome deadlock [issue](https://github.com/eclipse/paho.mqtt.python/issues/354) in Python Paho library. Task queue will run all tasks one by one.
+-   Prepare a ``task_queue``, used mainly to overcome a deadlock issue in the Python Paho library when using multiple threads. The task queue will run all tasks one by one.
 
 What does the ``publish`` message do?
 
@@ -1132,4 +1138,4 @@ Additionally, if there will be a new operation created for this device (for exam
 
 #### Improving the agent {#improving-the-agent}
 
-Now that you have done your first step, check out the section [Hello MQTT](/device-integration/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
+Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

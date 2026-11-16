@@ -1,0 +1,26 @@
+---
+date: '2025-04-10'
+title: Improved the selection of data points in smart rules
+product_area: Application enablement & solutions
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-YdSEScrEC
+    label: Cockpit
+build_artifact:
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+ticket: MTM-62818
+version: 1021.54.11
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
+---
+The data point selection functionality in the smart rules "On measurement threshold create alarm" and "On measurement explicit threshold create alarm" has been improved.
+Both smart rules now use a more intuitive data point selector and the informational text in both rule modals has been modified to better explain the behavior and implications of each selection type.
+Additionally, the smart rule "On measurement explicit threshold create alarm" now allows to select both data points and data point library entries (instead of only data point library entries).

@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: DM-1214
 version: 1019.24.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The layout of the empty state message displayed in data grids across all standard applications has been adjusted and unified. Moreover, grids that did not differentiate between no data available and no filter matches or search results do now display a more precise corresponding empty state message.
 

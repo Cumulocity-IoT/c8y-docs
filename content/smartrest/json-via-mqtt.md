@@ -67,7 +67,7 @@ The following actions are available:
 
 ### Supported endpoint {#supported-endpoint}
 
-The current JSON MQTT implementation does not cover all SmartREST 2.0 operations, so for example the whole [device bootstrap process](/device-integration/mqtt/#device-integration) must be done using SmartREST 2.0.
+The current JSON MQTT implementation does not cover all SmartREST 2.0 operations, so for example the whole [device bootstrap process](/device-integration/mqtt/) must be done using SmartREST 2.0.
 
 The following endpoints and actions are supported:
 

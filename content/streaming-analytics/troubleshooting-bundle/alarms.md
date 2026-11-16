@@ -11,7 +11,7 @@ You can view alarms in the following ways:
 1. In the Cockpit application. See [Cockpit](/cockpit/) for detailed information.
 2. In the Administration application, under **Ecosystem** > **Microservices**. Click the Apama-ctrl microservice and then click **Status**.
    See [Monitoring microservices](/standard-tenant/ecosystem/#monitoring-microservices) for detailed information.
-3. From the Streaming Analytics application. Click the **User** button to display the right drawer and then click one of the links in the **Diagnostics** section to download a ZIP file that contains alarms information under */alarm/alarms_apama-ctrl-object.json*. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information.
+3. From the Streaming Analytics application. Click the **User** button to display the right drawer and then click **Download diagnostics** in the **Diagnostics** section to download a ZIP file that contains alarms information under */alarm/alarms_apama-ctrl-object.json*. For a multi-tenant microservice, these are the alarms of your own tenant. See [Downloading diagnostics and logs](#diagnostics-download) for detailed information.
 
 ### Alarm severities {#alarm-severities}
 
@@ -36,6 +36,7 @@ The following is a list of the alarms. The information further down below explai
 - [An EPL file throws an uncaught exception](#apama_ctrl_error)
 - [An EPL app is running in an infinite or long-running loop](#apama_ctrl_warn)
 - [EPL app restore timeout on restart of Apama-ctrl](#eplapp_restore_timeout)
+- [EPL app restore taking longer than usual on restart of Apama-ctrl](#eplapps_restore_slow)
 - [Multiple extensions with the same name](#extension_error)
 - [Smart rule configuration failed](#smart-rule-configuration-failed)
 - [Smart rule restore failed](#smart-rule-restore-failed)
@@ -85,7 +86,7 @@ To diagnose the cause of an unexpected restart, you can try the following:
     As mentioned in the above point, re-activate the EPL apps and analytic models that were active before and then check the logs.
 
 - Check the audit logs. The audit logs are accessible via the Administration application and the audit API.
-See [Audit logs](/standard-tenant/audit-logs) and
+See [Audit logs](/standard-tenant/monitoring/#audit-logs) and
 [Audit API](https://{{< domain-c8y >}}/api/core/#tag/Audit-API) in the {{< openapi >}} for details of accessing the audit logs.
 
 In safe mode, all previously active analytic models and EPL apps are deactivated and must be manually re-activated.
@@ -138,7 +139,7 @@ To diagnose high-memory-consuming models and EPL apps, you can try the following
 
 - Download the automatically generated basic diagnostics ZIP file (refer to the alarm text for its location) and look at *correlator/inspect.json* and *correlator/status.json* for the number of listeners. This number may be large in the case of a listener leak. Note that this ZIP file includes the EPL memory profiler snapshots.
 
-- Download the diagnostics information from the Streaming Analytics application. Click the **User** button to display the right drawer and then click one of the links in the **Diagnostics** section (as described in [Downloading diagnostics and logs](#diagnostics-download)). The EPL memory profiler from the **Basic diagnostics (ZIP)** link in */diagnostics/eplMemoryProfiler.csv* gives the memory consumed by each monitor along with details such as the number of listeners or the number of monitor instances running something like shown in the snippet below. This can help you to understand which monitor is consuming more memory and try to reduce it.
+- Download the diagnostics information from the Streaming Analytics application. Click the **User** button to display the right drawer and then click **Download diagnostics** in the **Diagnostics** section (as described in [Downloading diagnostics and logs](#diagnostics-download)). For a per-tenant microservice, the EPL memory profiler from the **Basic diagnostics (ZIP)** option in */diagnostics/eplMemoryProfiler.csv* gives the memory consumed by each monitor along with details such as the number of listeners or the number of monitor instances running something like shown in the snippet below. This can help you to understand which monitor is consuming more memory and try to reduce it.
 
     | Monitor | Monitor instances | EPL objects | Listeners | Bytes   | Overhead bytes |
     | ------- | ----------------- | ----------- | --------- | ------- | -------------- |
@@ -146,13 +147,13 @@ To diagnose high-memory-consuming models and EPL apps, you can try the following
     | mon2    | 1                 | 2           | 2         | 696     | 2280           |
     | mon3    | 1                 | 4           | 1         | 840     | 752            |
 
-- When using the **Enhanced diagnostics (ZIP)** link in the Streaming Analytics application, the diagnostics information includes, in addition to the information that you get with the **Basic diagnostics (ZIP)** link, requests that are more resource-intensive and may significantly slow down the correlator. This includes the contents of the queues. So when diagnosing the cause for the first time, it is recommended to use the ZIP file from the **Basic diagnostics (ZIP)** link, unless additional information is required.
+- When selecting the **Enhanced diagnostics (ZIP)** option after clicking **Download diagnostics** in the Streaming Analytics application, the diagnostics information includes, in addition to the information that you get with the **Basic diagnostics (ZIP)** option, requests that are more resource-intensive and may significantly slow down the correlator. This includes the contents of the queues. So when diagnosing the cause for the first time, it is recommended to use the **Basic diagnostics (ZIP)** option, unless additional information is required.
 
-- Also check for memory usage on all the input and output queues available from the **Enhanced diagnostics (ZIP)** link in */diagnostics/toStringQueues.txt*.
+- Also check for memory usage on all the input and output queues available from the **Enhanced diagnostics (ZIP)** option in */diagnostics/toStringQueues.txt*.
 
 If the memory continues to grow, then when it reaches the limit, the correlator will run out of memory and Apama-ctrl will shut down. To prevent the microservice from going down, you must fix this as a priority.
 
-See also [Diagnostic tools for Apama in {{< product-c8y-iot >}}](https://techcommunity.cumulocity.com/t/apama-in-cumulocity-iot/1077) in the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}).
+See also [Diagnostic tools for Apama in {{< product-c8y-iot >}}](https://community.cumulocity.com/t/apama-in-cumulocity-iot/1077) in the [{{< c8y-tech-community >}}]({{< c8y-tech-community-link >}}).
 
 
 #### Warning or higher level logging from an EPL file {#apama_ctrl_fatalcritwarn}
@@ -272,6 +273,51 @@ The following information is only included in the alarm text if the Apama-ctrl m
 If no such apps are detected, this information is omitted from the alarm text.
 
 
+#### EPL app restore taking longer than usual on restart of Apama-ctrl {#eplapps_restore_slow}
+
+When the Apama-ctrl microservice restarts, it becomes available for requests before it has finished restoring your EPL apps.
+This keeps the microservice responsive, but it means that for a period after a restart the microservice is running while your
+EPL apps are not yet processing events. Restoring normally completes quickly. If it is still in progress after the time limit
+specified by the `recovery.slowRestoreAlarmSecs` tenant option (in the `streaminganalytics` category) or a default of 600 seconds,
+the Apama-ctrl microservice raises an alarm so that you know why your EPL apps are not yet running.
+
+- Alarm type: `eplapps_restore_slow`
+- Alarm text: Restoring EPL apps is still in progress after &lt;number&gt; seconds. The microservice is available but customer EPL apps are not yet running. This is not treated as a failure and no restart will be triggered; restoring will continue.
+- Alarm severity: MAJOR
+
+This alarm reports slowness only. Unlike [EPL app restore timeout on restart of Apama-ctrl](#eplapp_restore_timeout), which applies
+to a single EPL app and restarts the microservice, this alarm covers the restore as a whole, does not restart the microservice, and
+does not disable any EPL apps. Restoring continues in the background, and the alarm is cleared automatically once it has finished,
+so you do not need to clear this alarm yourself.
+
+To check whether restoring is still in progress, make a REST request to */service/cep/diagnostics/apamaCtrlStatus* and look at the
+`epl_restore_state` field of the response:
+
+| `epl_restore_state` | Description                                                                       |
+| ------------------- | --------------------------------------------------------------------------------- |
+| `restoring`         | Restoring is still in progress and your EPL apps are not yet running.             |
+| `complete`          | Restoring has finished and your EPL apps are running.                             |
+| `failed`            | Restoring failed. The microservice is shutting down and will restart.             |
+
+While restoring is in progress, requests to */service/cep/eplfiles* do not wait for it to finish. They return an
+HTTP `503 SERVICE UNAVAILABLE` code together with a `Retry-After` header, so that you can retry the request shortly afterwards
+rather than treating it as a failure.
+
+If you see this alarm repeatedly, the most likely cause is an EPL app that performs an expensive operation when it starts up.
+Restoring an EPL app injects it into the correlator and runs its `onload()` action, so work started there competes with the rest
+of the restore. Typical examples are looking up all objects in the inventory, or making an unbounded query for measurements or
+events. Restrict such queries to the data that the app actually needs, for example by applying a filter or a bounded time range.
+Less commonly, restoring can be slow simply because there are a large number of EPL apps to restore, or because the
+{{< product-c8y-iot >}} tenant is responding slowly while the apps are read from the inventory.
+
+To diagnose it, check the log files of the Apama-ctrl microservice, which record the progress of restoring each EPL app.
+See [Log files of the Apama-ctrl microservice](#logfiles). An EPL app that occupies the correlator for a long time also raises
+an alarm of its own, which names the app concerned. See
+[An EPL app is running in an infinite or long-running loop](#apama_ctrl_warn).
+If restoring legitimately takes longer than the limit for your deployment, you can raise the value of the
+`recovery.slowRestoreAlarmSecs` tenant option.
+
+
 #### Multiple extensions with the same name {#extension_error}
 
 This alarm is raised when the Apama-ctrl microservice tries to activate the deployed extensions during its startup process and there are multiple extensions with the same name.
@@ -362,7 +408,7 @@ This alarm is raised for both the input and output queues:
   Slowest context queue size: &lt;size&gt;.
 - Alarm severity: MAJOR
 
-See also [List of correlator status statistics]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/overview-of-deploying-apama-applications/#list-of-correlator-status-statistics) in the Apama documentation.
+See also [List of correlator status statistics]({{< link-apama-webhelp >}}/command-line-tools/engine_watch/#list-of-correlator-status-statistics) in the Apama documentation.
 
 Check the text from the above alarms to get an indication of which queue is blocking.
 A problem is likely to trigger these alarms, followed by this alarm:
@@ -373,7 +419,7 @@ A problem is likely to trigger these alarms, followed by this alarm:
 This alarm is raised whenever the CEP queue for the respective tenant is full.
 It is coming from {{< product-c8y-iot >}} Core, but concerns Apama-ctrl.
 
-Karaf nodes that send events to the CEP engine maintain per-tenant queues for the incoming events. This data gets processed by the CEP engine for the hosted CEP rules. For various reasons, these queues can become full and cannot accommodate newly arriving data. In such cases, an alarm is sent to the platform so that the end users are notified about the situation.
+Core java application nodes that send events to the CEP engine maintain per-tenant queues for the incoming events. This data gets processed by the CEP engine for the hosted CEP rules. For various reasons, these queues can become full and cannot accommodate newly arriving data. In such cases, an alarm is sent to the platform so that the end users are notified about the situation.
 
 If the CEP queue is full, older events are removed to handle new incoming events. To avoid this, you must diagnose the cause of the queue being full and resolve it as soon as possible.
 
@@ -382,7 +428,7 @@ The CEP queue size is based on the number of CEP events, not raw bytes.
 To diagnose the cause, you can try the following. It may be that the Apama-ctrl microservice is running slow because of time-consuming smart rules, analytic models or EPL apps, or the microservice is deprived of resources, or code is not optimized, and so on. Check the correlator input and output queues from the above alarms (or from the microservice logs or from the basic diagnostics ZIP file under */correlator/status.json*).
 
 - If both input and output queues are full, this suggests a slow receiver, possibly EPL sending too many requests (or too expensive a request) to {{< product-c8y-iot >}}.
-- Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the basic diagnostics ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler]({{< link-apama-webhelp >}}/deploying-and-managing-apama-applications/overview-of-deploying-apama-applications/#using-the-cpu-profiler) in the Apama documentation.
+- Else, if only the input queue is full, EPL is probably running in a tight loop. Try analyzing the *cpuProfile.csv* output in the basic diagnostics ZIP file, especially the monitor name and CPU time. The data collected in the profiler may also help in identifying other possible bottlenecks. For details, refer to [Using the CPU profiler]({{< link-apama-webhelp >}}/command-line-tools/cpu-profiler/) in the Apama documentation.
 - Else, the cause may be some issue with connectivity or in {{< product-c8y-iot >}} Core.
 
 

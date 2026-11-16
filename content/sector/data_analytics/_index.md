@@ -1,7 +1,10 @@
 ---
 title: "Analytics"
+description: "Analyze and act on IoT data with Streaming Analytics, DataHub, and machine learning."
+outputs: ["HTML", "llmstxt"]
 icon: "c8y-icon c8y-icon-data-explorer"
 weight: 50
+pdf: true
 svg: '<svg width="1103" height="851" viewBox="0 0 1103 851" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_925_42907)">
 <rect width="1103" height="851" fill="#F9FAFB"/>

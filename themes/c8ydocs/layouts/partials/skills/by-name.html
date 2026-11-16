@@ -1,0 +1,14 @@
+{{- /*
+  Returns a map from the name of every skill (its file name, the key used in `skills:` and
+  `requires:`) to the skill page. Skills live in topic folders (content/skills/<topic>/), so
+  their names must be unique across topics; a duplicate fails the build. Call with
+  partialCached and any context.
+*/ -}}
+{{- $byName := dict -}}
+{{- range where site.RegularPages "Section" "skills" -}}
+  {{- $page := . -}}
+  {{- $name := .File.ContentBaseName -}}
+  {{- with index $byName $name }}{{ errorf "skill name %q is used twice: %s and %s" $name .File.Path $page.File.Path }}{{ end -}}
+  {{- $byName = merge $byName (dict $name $page) -}}
+{{- end -}}
+{{- return $byName -}}

@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3951
 version: 1020.28.8
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the Device Management application, child devices could not be deleted from the **Child devices** tab. Instead, users had to to navigate to the device details for deletion. With this change, child devices can now be directly deleted from the **Child devices** tab.

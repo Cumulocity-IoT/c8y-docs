@@ -15,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59834
 version: 1020.13.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously users were able to copy a device dashboard and paste it into a group (or copy a group dashboard and paste it into a device), which resulted in an error. To prevent this, pasting between device and group dashboards is now restricted and users will see an info message when attempting that.

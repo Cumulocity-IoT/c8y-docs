@@ -1,7 +1,10 @@
 ---
 title: "Getting started"
+description: "Start here to install Cumulocity, connect your first device, explore the user interface, and learn the core platform concepts."
+outputs: ["HTML", "llmstxt"]
 icon: "c8y-icon c8y-icon-cumulocity-iot"
 weight: 10
+pdf: true
 svg: '<svg width="1103" height="851" viewBox="0 0 1103 851" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="1103" height="851" fill="#F9FAFB"/>
 <g opacity="0.05" filter="url(#filter0_f_923_29364)">

@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62551
 version: 1021.37.6
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Recently, {{< product-c8y-iot >}} DataHub was updated to send events to the {{< product-c8y-iot >}} platform in case an offloading or compaction job finishes. Therefore, new messages for the {{< product-c8y-iot >}} platform were introduced to translate these events.

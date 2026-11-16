@@ -5,6 +5,7 @@ layout: bundle
 outputs:
   - html
   - json
+  - markdown
 sector:
   - platform_administration
 helpcontent:
@@ -82,7 +83,7 @@ Initially, the **User** page only shows the top-level users. To see all users in
 
 1. Click **Add user** at the right of the top menu bar.  
   {{< c8y-admon-info >}}
-If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on. Create new users in **My Cloud** instead, accessible through the application switcher in the upper right corner, to enable them using the single sign-on feature.
+If single sign-on is enabled for your tenant, a message will show up which reminds you that you are about to create a local user which will not be able to login via single sign-on.
   {{< /c8y-admon-info >}}
 
 2. At the left of the **New user** window, provide the following information to identify the user:
@@ -162,7 +163,7 @@ If single sign-on is enabled for your tenant, a message will show up which remin
 While entering the password, the strength of the password is checked. See [To change your password](/get-familiar-with-the-ui/user-settings/#to-change-your-password) for further information on password reset and strength.
     {{< /c8y-admon-info >}}
 
-5. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions](/standard-tenant/managing-permissions).
+5. On the right of the page, select the global roles for the user. Details on global roles are described in [Managing permissions and roles](/standard-tenant/managing-permissions).
 6. Click **Save** to save your settings.
 
 The new user will be added to the user list.

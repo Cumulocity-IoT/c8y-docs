@@ -1,0 +1,30 @@
+---
+date: '2026-03-19'
+title: Improvements in endpoint authorization and permissions
+product_area: Device management & connectivity
+change_type:
+  - value: change-QHu1GdukP
+    label: Feature
+component:
+  - value: component-TCiiCOknp5
+    label: LPWAN
+build_artifact:
+  - value: tc-ycWx1InI9
+    label: loriot-agent
+ticket: DM-5340
+version: 5.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-03-19'
+  - label: apj.cumulocity.com
+    date: '2026-03-25'
+  - label: jp.cumulocity.com
+    date: '2026-03-25'
+  - label: emea.cumulocity.com
+    date: '2026-03-30'
+  - label: us.cumulocity.com
+    date: '2026-03-30'
+  - label: cumulocity.com
+    date: '2026-03-31'
+---
+The required user permissions to read, create, or update Loriot connections under Administration > Connectivity have been updated. To read Loriot connections, users must have at least the Loriot READ permission, and to create/update/delete connections, users require the Loriot ADMIN permission. In the Device Management application, this affects the **LPWAN configuration** tab in the Loriot device details, as the **Current connection** field requires READ permission. You can assign the necessary permissions to users in Administration > Accounts > Users/Roles.

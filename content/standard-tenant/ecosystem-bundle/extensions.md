@@ -27,7 +27,12 @@ Packages can be located on the **Extensions** page.
 
 Packages can be filtered by name, creator type, availability and type of content.
 
-To add a new extension package click **Add extension package** at the top right.
+To add a new extension package, click **Add extension package** at the top right. Like for applications, the availability of extension packages can either be `subscribed` or `custom`. While `subscribed` extensions are mostly shared from the management tenant, `custom` ones are private to the current tenant. On upload, the availability of the extension can be selected:
+ - PRIVATE: This extension package is only available on the current tenant.
+ - MARKET: Allows to create a subscription model for the extension. Only the current tenant and tenants to which the extension is subscribed can use the extension.
+ - SHARED: Every subtenant and the current tenant can install the extension.
+
+In general, you provide an extension as SHARED to make it available across the tenant hierarchy. However, it is important to "scope" such applications, that is, prefix the application name, context path, and key with a company shortcode. For example, {{< company-c8y >}} packages are always prefixed with `c8y-` as {{< company-c8y >}} might automatically deploy an extension, which will fail if you upload your own package to the management tenant.
 
 By clicking on a package, you can see the package details such as **Extension package overview** which includes a description and images as well as some meta information which is taken from the *package.json*.
 

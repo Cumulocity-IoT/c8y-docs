@@ -2,6 +2,8 @@
 weight: 20
 title: To replace a device
 layout: redirect
+skills:
+  - replace-device
 ---
 
 The device list supports the replacement of a physical device with another by preserving the original device representation in the platform including all its generated data. A wizard guides you through this process. Access the wizard by hovering over the device you want to replace in the device list and click the **Replace device** button.
@@ -34,4 +36,4 @@ If the execution of a given step has failed, you can see the error details by ex
 
 The **Close** button brings you back the the updated device list. The replacement device will have been removed from {{< product-c8y-iot >}} while all data sent by the new physical device will be linked to the platform representation of the original device. This ensures that the physical replacement remains transparent to users.
 
-In order to keep track of the replacements done for a given device an [event](/device-management-application/viewing-device-details/#events) and an [audit log](/standard-tenant/audit-logs/) are created for every replacement.
+In order to keep track of the replacements done for a given device an [event](/device-management-application/viewing-device-details/#events) and an [audit log](/standard-tenant/monitoring/#audit-logs) are created for every replacement.

@@ -14,7 +14,7 @@ The **Remote access** tab is available if the following criteria are met:
 * The user has the correct permissions granted (Remote access admin rights)
 * `c8y_RemoteAccessConnect` is added to the device's ```c8y_SupportedOperations```
 
-For more information, see [Using Cloud Remote Access](/cloud-remote-access/using-cloud-remote-access).
+For more information, see [Using Cloud Remote Access](/cloud-remote-access/cra-introduction/).
 
 ### Remote access connect {#remote-access-connect}
 

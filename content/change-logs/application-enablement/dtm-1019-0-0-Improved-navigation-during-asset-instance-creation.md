@@ -1,6 +1,6 @@
 ---
-date: 2023-12-14
-title: Improved navigation during asset instance creation  
+date: '2023-12-14'
+title: Improved navigation during asset instance creation
 product_area: Application enablement & solutions
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-675
 version: 1019.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 When there are multiple asset instances, users are now navigated back to the step showing a blank value in the name field instead of navigating to the confirmation page.

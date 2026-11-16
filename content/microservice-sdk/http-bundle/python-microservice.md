@@ -52,6 +52,7 @@ def environment():
     environment_data = {
         'platformUrl': os.getenv('C8Y_BASEURL'),
         'mqttPlatformUrl': os.getenv('C8Y_BASEURL_MQTT'),
+        'pulsarPlatformUrl': os.getenv('C8Y_BASEURL_PULSAR'),
         'tenant': os.getenv('C8Y_BOOTSTRAP_TENANT'),
         'user': os.getenv('C8Y_BOOTSTRAP_USER'),
         'password': os.getenv('C8Y_BOOTSTRAP_PASSWORD'),
@@ -166,6 +167,7 @@ $ curl -u '<tenantID>/<username>:<password>' https://<URL>/service/hello/environ
     "mqttPlatformUrl": "tcp://cumulocity:1881",
     "password": "...",
     "platformUrl": "https://cumulocity:8111",
+    "pulsarPlatformUrl": "pulsar://pulsar-proxy",
     "tenant": "mytenant",
     "user": "servicebootstrap_hello-microservice"
 }

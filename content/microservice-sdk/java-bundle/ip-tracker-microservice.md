@@ -57,7 +57,7 @@ Finally, add the following dependency:
 
 In your _cumulocity.json_ file:
 
-1. Add the required roles to be able to create events and alarms.
+1. Add the required permissions (using the `requiredRoles` field) to be able to create events and alarms.
 2. Add the readiness and liveness probes.
 3. Add two keys for the microservice settings: `"ipstack.key"` and `"tracker.id"`.
 4. Set the isolation level to `"PER_TENANT"`. This means that there will be a separate instance for each tenant. For more details see the Settings section in [Microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest).
@@ -113,7 +113,7 @@ An alarm must be associated with a source and it requires an ID.
 Hence, you must [create a managed object](https://{{< domain-c8y >}}/api/core/#operation/postManagedObjectCollectionResource) to be your source and use its ID in your microservice application.
 The same managed object will track the locations when the microservice gets accessed on a particular endpoint.
 
-First, get your current location (latitude, longitude) using a free service, for example, [My Current Location](https://mycurrentlocation.net).
+First, get your current location (latitude, longitude) using any free service.
 
 Create a managed object as a device named "Microservice tracker" via POST request as follows:
 
@@ -146,7 +146,7 @@ On the {{< product-c8y-iot >}} platform, navigate to **Devices** > **All devices
 ### Getting the client's location {#getting-the-clients-location}
 
 The microservice will get the approximate location based on the client's IP.
-To achieve this, it uses the free service [ipstack](https://ipstack.com) and you must [get a free API key](https://ipstack.com/product).
+To achieve this, it uses the free service [ipstack](https://ipstack.com) and you must get a free API key.
 Once you have it, assign it to the `"ipstack.key"` key in your _cumulocity.json_ file.
 
 A GET request to the ipstack API using your key will return a location object. Therefore, you must create a new file named _Location.java_ in the same directory of your _App.java_ with the following content:
@@ -439,7 +439,7 @@ You can use the `max` parameter to specify a higher number.
 In the Device Management application, navigate to **Devices** > **All devices** and locate your microservice tracker.
 Under **Tracking** you will see a map with the tracked locations.
 You can also develop your own web application and customize a "Map" widget.
-For details, refer to the [Web SDK](/web/introduction) documentation.
+For details, refer to the [Web developer codex](https://cumulocity.com/codex/).
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-map.png)
 

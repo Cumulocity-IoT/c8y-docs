@@ -1,5 +1,5 @@
 ---
-date: 2024-06-03
+date: '2024-06-03'
 title: Removal of deprecated JWT login mode
 product_area: Platform services
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-53448
 version: 10.20.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 JWT authentication with {{< product-c8y-iot >}} has been deprecated since release 10.6 and will be removed in Q3 2024 for the SaaS instances and in 2025 for the yearly releases.
 This authentication method is not to be confused with SSO (single sign-on) or OAI-Secure authentication, which are both recommended and still supported.

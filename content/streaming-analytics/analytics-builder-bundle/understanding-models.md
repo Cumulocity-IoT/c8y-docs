@@ -51,7 +51,7 @@ Blocks are the basic processing units of the model. Each block has some predefin
 
 The palette of the model editor offers for selection the following types of blocks:
 
--   **Input blocks**, which receive data from external sources. An input block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory, a device group, a smart group, an asset, or all input sources. See also [Input blocks](/streaming-analytics/analytics-builder/#input-blocks).
+-   **Input blocks**, which receive data from external sources. An input block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory, a group, an asset, or all input sources. See also [Input blocks](/streaming-analytics/analytics-builder/#input-blocks).
 -   **Output blocks**, which send data to external sources. An output block normally represents a device that has been registered in the {{< product-c8y-iot >}} inventory. But there are also blocks for sending an email or SMS to specified receivers. See also [Output blocks](/streaming-analytics/analytics-builder/#output-blocks).
 -   **Processing blocks**, which receive data from the input blocks and send the resulting data to the output blocks. See also [Processing blocks](/streaming-analytics/analytics-builder/#processing-blocks).
 
@@ -144,8 +144,46 @@ To upload an extension, the user specified in the `--username` argument must hav
 The Apama-ctrl microservice is restarted after running the above command. The user must have the ADMIN permission for "CEP management" to request a restart.
 
 {{< c8y-admon-info>}}
-When using the multi-tenant Apama-ctrl-mt-4c-16g microservice, only extensions uploaded to the tenant that owns the microservice will be used.
+When using the multi-tenant Apama-ctrl-mt microservice, only extensions uploaded to the tenant that owns the microservice will be used.
 {{< /c8y-admon-info>}}
+
+#### Log messages from custom blocks {#log-messages-from-custom-blocks}
+
+Log messages from the blocks provided with Analytics Builder are shown on the **Logs** page of the Streaming Analytics application and in the logs pane of the model editor. See [Viewing logs in the Streaming Analytics application](/streaming-analytics/troubleshooting/#logs-view) and [Viewing the logs of a model](/streaming-analytics/analytics-builder/#viewing-the-logs-of-a-model). Log messages from a custom block are only shown there if the block follows the conventions described below. The framework does not add a prefix to, or check, the messages that custom blocks log themselves. Custom blocks are expected to follow these conventions, but nothing forces them to.
+
+The simplest way to follow the conventions is to start each log message with the prefix returned by the `getLogPrefix()` action of the block's `$base` member:
+
+```java
+action $process(Activation $activation, float $input_value) {
+    log $base.getLogPrefix() + "Received value " + $input_value.toString() at INFO;
+}
+```
+
+The prefix identifies the tenant and the model (or template model instance) that the block belongs to. A message must meet the following requirements to be shown:
+
+- It is written with an EPL `log` statement. Output written with `print` is not shown.
+- It starts with the prefix. Nothing can come before it, not even a space.
+- It is a single line. Do not include line breaks in the message. If a message contains line breaks, only its first line is shown, because the following lines do not start with the prefix.
+
+If you cannot use `getLogPrefix()`, build the prefix yourself. It has the following structure, followed by a single space and then the message text:
+
+```text
+[<tenantId>|model=<modelId>]
+```
+
+where:
+
+- `<tenantId>` is the ID of the tenant that the model runs in, for example, `t12345`.
+- `<modelId>` is the ID of the model. For a template model instance, it is the ID of the instance.
+- A backslash (`\`), closing square bracket (`]`), or vertical bar (`|`) in the model ID is escaped with a preceding backslash.
+
+For example, `[t12345|model=87104] Received value 42` is shown in the logs of model `87104` of tenant `t12345`. A message with only the tenant ID, such as `[t12345] Connection restored`, is shown on the **Logs** page when no model is selected, but not in the logs of any model.
+
+Messages that do not start with a valid prefix are not shown on the **Logs** page or in the model editor. They are still written to the log file of the Apama-ctrl microservice. See [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles).
+
+{{< c8y-admon-important >}}
+The framework does not check the prefix of messages written by custom blocks. A custom block that writes an incorrect prefix causes its messages to be shown for a different model, or not at all. Do not add other fields to the prefix. Any field other than those shown here makes the prefix invalid, and the message is not shown.
+{{< /c8y-admon-important >}}
 
 ### Wires {#wires}
 

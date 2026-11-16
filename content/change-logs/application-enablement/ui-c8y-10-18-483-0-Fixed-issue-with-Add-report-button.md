@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T09:24:02.026Z
+date: '2023-12-06'
 title: Fixed issue with Add report button
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-53334
 version: 10.18.483.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The <b>Add report</b> button is now disabled when the user does not have the respective permissions.

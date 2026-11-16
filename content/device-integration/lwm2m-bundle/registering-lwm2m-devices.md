@@ -2,6 +2,8 @@
 weight: 20
 title: Registering LWM2M devices
 layout: redirect
+skills:
+  - register-lwm2m-device
 ---
 
 The data provided during registration must enable LWM2M communication and holds information for factory bootstrap and client-initiated bootstrap.
@@ -103,6 +105,40 @@ Currently {{< product-c8y-iot >}} supports 3 security modes:
       * Server certificate to use (more on this below).
       * Certificate usage (as defined in LWM2M specification)
 
+##### Supported DTLS cipher suites {#supported-dtls-cipher-suites}
+
+In the PSK and X509 security modes, the device and the LWM2M agent agree on a DTLS cipher suite when the device connects. The device must support at least one of the cipher suites below for its security mode. The same cipher suites apply to bootstrap and server connections. The server certificate of the LWM2M agent uses an elliptic curve (EC) key, so the X509 security mode supports only ECDHE_ECDSA cipher suites.
+
+**X509 security mode**
+
+| Cipher suite                            | Code   |
+|-----------------------------------------|--------|
+| TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 | 0xC02B |
+| TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 | 0xC02C |
+| TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8      | 0xC0AE |
+| TLS_ECDHE_ECDSA_WITH_AES_256_CCM_8      | 0xC0AF |
+| TLS_ECDHE_ECDSA_WITH_AES_128_CCM        | 0xC0AC |
+| TLS_ECDHE_ECDSA_WITH_AES_256_CCM        | 0xC0AD |
+
+**PSK security mode (PSK and PSK_GENERATED)**
+
+| Cipher suite                            | Code   |
+|-----------------------------------------|--------|
+| TLS_ECDHE_PSK_WITH_AES_128_GCM_SHA256   | 0xD001 |
+| TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384   | 0xD002 |
+| TLS_ECDHE_PSK_WITH_AES_128_CCM_8_SHA256 | 0xD003 |
+| TLS_ECDHE_PSK_WITH_AES_128_CCM_SHA256   | 0xD005 |
+| TLS_PSK_WITH_AES_128_GCM_SHA256         | 0x00A8 |
+| TLS_PSK_WITH_AES_256_GCM_SHA384         | 0x00A9 |
+| TLS_PSK_WITH_AES_128_CCM_8              | 0xC0A8 |
+| TLS_PSK_WITH_AES_256_CCM_8              | 0xC0A9 |
+| TLS_PSK_WITH_AES_128_CCM                | 0xC0A4 |
+| TLS_PSK_WITH_AES_256_CCM                | 0xC0A5 |
+
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} may extend this list in the future.
+{{< /c8y-admon-info >}}
+
 ##### More details on X.509 security {#more-details-on-x509-security}
 
 Client X.509 certificate must meet the requirements specified in [LWM2M specification](https://www.openmobilealliance.org/release/LightweightM2M/V1_1-20180612-C/OMA-TS-LightweightM2M_Transport-V1_1-20180612-C.html#5-2-8-3-0-5283-X509-Certificates).
@@ -126,7 +162,7 @@ openssl pkcs8 -topk8 -inform PEM -outform DER -in myDevice.key -out myDevice.der
 
 ##### Trusting CA in {{< product-c8y-iot >}} {#trusting-ca-in-the-platform}
 
-Before devices are able to connect to the platform, CA that issued device certificates must be added to trusted certificates. See [Managing trusted certificates](/device-management-application/managing-device-data/#managing-trusted-certificates) on how to add and trust CA certificate.
+Before devices are able to connect to the platform, CA that issued device certificates must be added to trusted certificates. See [Managing trusted certificates](/device-certificate-authentication/managing-trusted-certificates/) on how to add and trust CA certificate.
 
 ##### All security field details {#all-security-field-details}
 
@@ -376,7 +412,8 @@ If the value is not set, the awake time is determined by the LWM2M client's regi
 <td style="text-align: left">Integer</td>
 <td style="text-align: left">The timeout used for shell operation requests such as read, write, execute done by the LWM2M microservice to the LWM2M device.
 The value is in milliseconds and can be given to override the default value that is provided in the LWM2M microservice property file with the "C8Y.lwm2mRequestTimeout" property.
-The value must not exceed the maximum request timeout limit given in the LWM2M microservice property file with the "C8Y.lwm2mMaxRequestTimeout" property.
+The value must stay within the bounds of the minimum and maximum values defined in the LWM2M microservice properties: `C8Y.lwm2mMinRequestTimeout` and `C8Y.lwm2mMaxRequestTimeout`. 
+If the provided value is lower than the minimum, the LWM2M agent will ignore it and set the allowed minimal value. Analogically, the LWM2M agent will correct a value higher than the allowed maximum. 
 <td style="text-align: left">Optional</td>
 </tr>
 <tr>
@@ -439,8 +476,7 @@ The value must not exceed the maximum request timeout limit given in the LWM2M m
 <td style="text-align: left">String</td>
 <td style="text-align: left">{{< product-c8y-iot >}} can output detailed logs to the event stream. This field configures a log level. Allowed values are:
 <b>NONE</b> (nothing will be logged as events), <b>LIFECYCLE</b> (only registration, de-registration and registration update events),
-<b>TRAFFIC</b> (LIFECYCLE + sent/received data), <b>FIRMWARE</b> (LIFECYCLE + detailed firmware update information),
-<b>VERBOSE</b> (all of the above will be logged).
+<b>VERBOSE</b> (LIFECYCLE + sent/received data + detailed firmware update information).
 Default is LIFECYCLE.</td>
 <td style="text-align: left">Optional</td>
 </tr>
@@ -593,7 +629,7 @@ For bulk device registrations, the information about duplicate LWM2M devices wil
 
 ### Device deletion {#device-deletion}
 
-To remove a LWM2M device, delete it through the [All devices](/device-management-application/viewing-all-devices/#to-delete-devices) list in the Device Management application.
+To remove a LWM2M device, delete it through the [All devices](/device-management-application/viewing-all-devices/#to-delete-devices) list in the Device Management application or via the **Device status** card on the [**Info** tab](/device-management-application/viewing-device-details/#info) in the device details.
 
 Alternatively, you can delete a LWM2M device using a REST call. With the managed object ID (device ID) of the device to be deleted, this can be accomplished using the following DELETE request.
 

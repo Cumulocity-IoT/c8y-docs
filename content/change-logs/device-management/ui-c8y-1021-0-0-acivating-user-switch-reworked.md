@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3875
 version: 1021.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the **Device credentials** page, user activation did not work properly. This issue has been fixed an activating or deactivating users now works reliably.

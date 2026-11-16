@@ -15,5 +15,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-62196
 version: 1021.37.5
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the **Simulator** page, the **Alarms** tab previously displayed alarms that were not directly related to the selected asset. This caused confusion for users who expected to only see relevant alarms for the specific asset they were viewing. With this change, the **Alarms** tab now correctly filters out unrelated alarms, ensuring that users only see alarms that are pertinent to the selected asset.

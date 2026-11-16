@@ -5,130 +5,234 @@ layout: redirect
 
 ---
 
-See below for the different microservice SDK features, including annotations, services, configuration files, logging and the Maven build plugin.
+The {{< product-c8y-iot >}} Microservice SDK is an open source toolkit for building microservices using the popular [Spring Boot](https://spring.io/projects/spring-boot) framework and the {{< product-c8y-iot >}} [platform APIs](https://{{< domain-c8y >}}/api/core). It accelerates development by offering preconfigured annotations, built-in services, and a Maven plugin for creating Docker containers and {{< product-c8y-iot >}} applications. The SDK source code is available on GitHub in the
+[cumulocity-clients-java](https://github.com/Cumulocity-IoT/cumulocity-clients-java) repository.
 
-There are two possible deployment types on the platform:
+In this section, you will learn how to:
+* Use SDK annotations to simplify the setup.
+* Access platform APIs via dependency injection.
+* Authenticate towards the platform APIs.
+* Secure access to your microservice APIs.
+* Handle subscriptions and multi-tenant access.
+* Configure your microservice.
+* Upload and run your microservice.
+* Manage and monitor your microservice.
+* Set up external or legacy deployments.
 
-* Hosted deployment - The default for microservices and the suggested one for typical use cases.
-* External/legacy deployment - Requires custom installation of the platform and agent.
+### Using annotations {#annotations}
 
-For development and testing purposes, one can deploy a microservice on a local Docker container.
+As shown in the ["Hello world" tutorial](/microservice-sdk/java/#create-a-java-application), the easiest way to enable default microservice behavior is to annotate your main class with `@MicroserviceApplication`. This composite annotation includes:
 
-### Annotations {#annotations}
+| Annotation                             | Description                                                                                      |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| @SpringBootApplication                 | Enables Spring Boot’s auto-configuration                                                         |
+| @EnableContextSupport                  | Allows use of @UserScope and @TenantScope for method-level context switching                     |
+| @EnableHealthIndicator                 | Exposes a standard health endpoint for platform monitoring                                       |
+| @EnableMicroserviceSecurity            | Enables security by verifying users and roles against the platform                               |
+| @EnableMicroserviceSubscription        | Manages subscriptions, metadata updates, and listens to tenant subscription changes              |
+| @EnableMicroservicePlatformInternalApi | Injects platform API services into the Spring context                                            |
+| @EnableTenantOptionSettings            | Allows configuration through tenant options and supports overriding default properties via files |
 
-The simplest way to add required behavior to your application is to annotate a main class with `@MicroserviceApplication`. This is a collective annotation consisting of:
+### Accessing platform APIs {#acessing-platform-api}
 
-Annotation | Description
------------|------------
-@SpringBootApplication | Comes from Spring Boot auto configure package
-@EnableContextSupport | Required to use `@UserScope` or `@TenantScope` scopes for method invocations
-@EnableHealthIndicator | Provides a standard health endpoint used by the platform to monitor the microservice availability
-@EnableMicroserviceSecurity | Provides a standard security mechanism, verifying user and roles against the platform
-@EnableMicroserviceSubscription | Responsible for subscribing microservices to the platform, updating metadata and listening to tenant subscription change events
-@EnableMicroservicePlatformInternalApi | Injects the platform API services into Spring context for a microservice to use
-@EnableTenantOptionSettings | Provides microservice configuration within tenant options and allows overriding default properties from files
+The {{< product-c8y-iot >}} Microservice SDK includes a set of Java APIs that are automatically injected into the Spring context and allow you to operate the REST APIs from Java in a simple manner. The REST APIs correspond to Java APIs as follows:
 
-### Context support {#context-support}
+* Alarm - AlarmApi
+* AuditRecord - AuditRecordApi
+* Operation - DeviceControlApi
+* Event - EventApi
+* EventBinary - EventBinaryApi
+* ExternalID - IdentityApi
+* Binary - BinariesApi
+* ManagedObject - InventoryApi
+* Measurement - MeasurementApi
+* DeviceCredentials - DeviceCredentialsApi
+* User - UserApi
+* TenantOption - TenantOptionApi
+* SystemOption - SystemOptionApi
+* Token - TokenApi
+* Notification - NotificationSubscriptionApi
 
-The context support is covered by the annotation `@EnableContextSupport`. It allows to choose between `@TenantScope` and `@UserScope` which is related to the user management of microservices, as described in [General aspects](/microservice-sdk/general-aspects) in {{< product-c8y-iot >}}.
+Each API supports standard "CRUD" operations (create, read, update, delete). For example, the `AlarmApi` interface provides:
 
-Each microservice has a service user which can be used for the interaction with the platform. The roles associated with this user are specified in the manifest.
-Within the tenant scope, the credentials of this service user are used for the communication with the platform, while within the user scope the credentials of the authenticated user sending the request to the microservice are used.
+```java
+// Create
+AlarmRepresentation create(AlarmRepresentation alarm) throws SDKException;
+Future createAsync(AlarmRepresentation alarm) throws SDKException;
+// Read
+AlarmRepresentation getAlarm(GId gid) throws SDKException;
+AlarmCollection getAlarms() throws SDKException;
+AlarmCollection getAlarmsByFilter(AlarmFilter filter) throws SDKException;
+// Update
+AlarmRepresentation updateAlarm(AlarmRepresentation alarm) throws SDKException;
+// Delete
+void deleteAlarmsByFilter(AlarmFilter filter) throws IllegalArgumentException, SDKException;
+```
 
-#### Setting the context
-You can explicitly set the context along with the credentials to be used through `ContextService`. To use the credentials of the user sending the request, use `ContextService<UserCredentials>`. Accordingly, `ContextService<MicroserviceCredentials>` can be used for service user credentials.
-Examples on how to use `ContextService` are given below.
+This is an example of retrieving all devices registered in all subscribed tenants:
 
 ```java
 @Autowired
-private ContextService<UserCredentials> contextService;
-@Autowired
-private EventApi eventApi;
+MicroserviceSubscriptionsService subscriptionsService;
 
-public PagedEventCollectionRepresentation get10Events () {
-  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+@Autowired
+InventoryApi inventoryApi;
+
+public List<ManagedObjectRepresentation> getAllDevicesTenants() {
+  List<ManagedObjectRepresentation> managedObjectsList = new ArrayList<>();
+  InventoryFilter filter = new InventoryFilter().byFragmentType(IsDevice.class);
+  subscriptionsService.runForEachTenant( () -> {
+    inventoryApi.getManagedObjectsByFilter(filter).get().allPages().forEach(mor -> {
+      managedObjectsList.add(mor);
+    });
+  });
+  return managedObjectsList;
 }
 ```
-In this first example, the events are obtained using the credentials of the authenticated user.
 
+More details on using the APIs are available in the [Client library](/microservice-sdk/java/#client-library) section.
 
-In the second example, the credentials of the service user will be utilized to retrieve the events.
+### Authenticating and authorizing towards the platform {#authenticating-and-authorizing-towards-the-platform}
+
+API requests in {{< product-c8y-iot >}} microservices can run in two authentication scopes:
+ * Tenant scope – uses the service user's credentials.
+ * User scope – uses the credentials of the authenticated user who triggered the request.
+
+Each microservice has a service user whose roles are defined in the `cumulocity.json` manifest. 
+
+**API requests must be executed in one of these contexts: tenant scope or user scope**.
+
+To execute API requests in the tenant scope in any thread of the application, the `MicroserviceSubscriptionsService` can be used to wrap the request like in the next example:
+
 ```java
 @Autowired
-private ContextService<MicroserviceCredentials> contextService;
+MicroserviceSubscriptionsService subscriptionsService;
+
 @Autowired
 private EventApi eventApi;
 
-public PagedEventCollectionRepresentation get10Events () {
-  return contextService.runWithinContext(contextService.getContext(), () -> eventApi.getEvents().get(10));
+public List<EventRepresentation> getAllEvents() {
+  List<EventRepresentation> eventsList = new ArrayList<>();
+  subscriptionsService.runForEachTenant( () -> {
+    eventApi.getEvents().get().getEvents().forEach(event -> {
+      eventsList.add(event);
+    });
+  });
+  return eventsList;
 }
 ```
 
-#### Tenant scope  
-The tenant scope is associated with the usage of the service user credentials and is annotated with `@TenantScope`.
-To create a bean, named `tenantEventApi` in the tenant scope, use the annotation `@TenantScope`, as in the following code example.
+Tenant scope is the default context in:
+* Classes annotated with `@RestController`
+* Methods annotated with `@EventListener`
+
+In these cases, the `MicroserviceSubscriptionsService` is not needed.
+The API service beans like `eventApi` or `inventoryApi` are executed in the tenant scope by default:
+
+#### @EventListener annotation and scope
+
+Example for `@EventListener` annotation and tenant scope:
 
 ```java
 @Autowired
-private Platform platform;
+InventoryApi tenantInventoryApi;
 
-@TenantScope
-@Bean(name = "tenantEventApi")
-public EventApi eventApi (Platform platform) throws SDKException {
-  return platform.getEventApi();
-}  
+@EventListener
+public void initialize(MicroserviceSubscriptionAddedEvent event) {
+   String tenant = event.getCredentials().getTenant();
+   log.info("Tenant {} - Microservice subscribed", tenant);
+   tenantInventoryApi.getManagedObjects().get().allPages();
+}
 ```
 
-By default, the Platform API related beans provided by the Microservice SDK are created in the tenant scope and use the service user to communicate with the platform.  
+#### @RestController annotation and scope
 
-There are predefined beans both in the `@TenantScope` and `@UserScope`.
-The name of a bean in the tenant scope consists of the prefix `"tenant"` and the name of the respective API. Thus, to use the Event API in the tenant scope, you can specify @Qualifier("tenantEventApi"), as shown in the example below. As the tenant scope is the default context for the created beans, the annotation can also be omitted. Therefore, the following two excerpts are equivalent and both suggest that the service user credentials will be used for the communication with the platform.
+The next examples show the execution of API calls in tenant scope and user scope for @RestController classes.
+
+Example of an API request in the tenant scope:
 
 ```java
-@Autowired
-@Qualifier("tenantEventApi")
-private EventApi eventApi;
+@RestController
+@RequestMapping("/devices")
+public class DeviceController {
+    
+    @Autowired
+    InventoryApi inventoryApi;
+
+    @GetMapping(path = "/devicesTenantScope", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<ManagedObjectRepresentation>> getAllDevicesTenantScope() {
+        List<ManagedObjectRepresentation> managedObjectsList = new ArrayList<>();
+        InventoryFilter filter = new InventoryFilter().byFragmentType(IsDevice.class);
+        inventoryApi.getManagedObjectsByFilter(filter).get().allPages().forEach(mor -> {
+            managedObjectsList.add(mor);
+        });
+        return new ResponseEntity<>(managedObjectsList, HttpStatus.OK);
+    }
+  
+}
 ```
+
+To execute an API request in the user scope, the API service bean must be injected with a qualifier annotation like `@Qualifier("userInventoryApi")`:
 
 ```java
-@Autowired
-private EventApi eventApi;
-```
-In both cases, beans within the tenant scope will be auto-wired.
+@RestController
+@RequestMapping("/devices")
+public class DeviceController {
 
-#### User scope
-In certain situations the microservice should not use the service user credentials but the credentials of the user sending the request.
+    @Autowired
+    @Qualifier("userInventoryApi")
+    InventoryApi userInventoryApi;
 
-To create a bean in the user scope, specify `@UserScope`:
-
-```java
-@Autowired
-private Platform platform;
-
-@UserScope
-@Bean(name = "userEventApi")
-public EventApi eventApi (Platform platform) throws SDKException {
-  return platform.getEventApi();
-}  
-```
-
-Analogously to the tenant scope case, there are predefined beans in the user scope. The name of such beans consists of the prefix "user" and the name of the API. An example of auto-wiring a bean of the `@UserScope` is given below.
-
-```java
-@Autowired
-@Qualifier("userEventApi")
-private EventApi eventApi;
+    @GetMapping(path = "/devicesUserScope", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<ManagedObjectRepresentation>> getAllDevicesUserScope() {
+      List<ManagedObjectRepresentation> managedObjectsList = new ArrayList<>();
+      InventoryFilter filter = new InventoryFilter().byFragmentType(IsDevice.class);
+      userInventoryApi.getManagedObjectsByFilter(filter).get().allPages().forEach(mor -> {
+        managedObjectsList.add(mor);
+      });
+      return new ResponseEntity<>(managedObjectsList, HttpStatus.OK);
+    }
+  
+}
 ```
 
-Within the user scope, the created beans use the credentials of the authenticated user sending the request instead of the default service user for the communication with the platform.
+#### API service beans
 
-### Microservice security {#microservice-security}
+The Microservice SDK provides both tenant-scope and user-scope beans with the following names:
 
-The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices. It requires basic authorization for all endpoints (except for health check endpoint configured using `@EnableHealthIndicator`). A developer can secure its endpoints using standard Spring security annotations, for example, `@PreAuthorize("hasRole('ROLE_A')")` and user's permissions will be validated against user's roles stored on the platform.
+| Bean names in tenant scope                                     | Qualifier for user scope        |
+| -------------------------------------------------------------- | ------------------------------- |
+| inventoryApi, tenantInventoryApi                               | userInventoryApi                |
+| identityApi, tenantIdentityApi                                 | userIdentityApi                 |
+| measurementApi, tenantMeasurementApi                           | userMeasurementApi              |
+| deviceControlApi, tenantDeviceControlApi                       | userDeviceControlApi            |
+| alarmApi, tenantAlarmApi                                       | userAlarmApi                    |
+| eventApi, tenantEventApi                                       | userEventApi                    |
+| eventBinaryApi, tenantEventBinaryApi                           | userEventBinaryApi              |
+| auditRecordApi, tenantAuditRecordApi                           | userAuditRecordApi              |
+| deviceCredentialsApi, tenantDeviceCredentialsApi               | userDeviceCredentialsApi        |
+| binariesApi, tenantBinariesApi                                 | userBinariesApi                 |
+| userApi, tenantUserApi                                         | userUserApi                     |
+| tenantOptionApi, tenantTenantOptionApi                         | userTenantOptionApi             |
+| systemOptionApi, tenantSystemOptionApi                         | userSystemOptionApi             |
+| tokenApi, tenantTokenApi                                       | userTokenApi                    |
+| notificationSubscriptionApi, tenantNotificationSubscriptionApi | userNotificationSubscriptionApi |
+
+Various examples demonstrating use cases of the platform API can be found in the GitHub repositories
+[Cumulocity microservice templates](https://github.com/Cumulocity-IoT/cumulocity-microservice-templates) and
+[Cumulocity examples](https://github.com/Cumulocity-IoT/cumulocity-examples).
+
+### Securing your microservice {#microservice-security}
+
+The `@EnableMicroserviceSecurity` annotation sets up the standard security configuration for microservices.
+It enforces basic authentication or other standard authentication mechanisms (refer to [Authentication and authorization](/microservice-sdk/general-aspects/#authentication-and-authorization))
+for all endpoints -- except for the health check endpoint configured via `@EnableHealthIndicator`.
+
+You can configure security for your endpoints using standard Spring Security annotations. For example, you can restrict access based on platform roles using `@PreAuthorize("hasRole('ROLE_A')")`.
 
 ### Microservice subscription {#microservice-subscription}
 
-The microservice subscription module is responsible for two main features:
+The microservice subscription module handles two core functions:
 
 * Registration
 * Tenant subscription event listening
@@ -145,7 +249,7 @@ C8Y.bootstrap.user=<username>
 C8Y.bootstrap.password=<password>
 ```
 
-To create an application and acquire credentials, refer to [Creating applications](/microservice-sdk/rest#creating-application) and [Acquiring microservice credentials](/microservice-sdk/rest#acquiring-microservice-credentials) in the **Using the REST interface** section.
+To create an application and acquire credentials, refer to [Creating applications](/microservice-sdk/rest/#creating-applications) and [Acquiring microservice credentials](/microservice-sdk/rest#acquiring-microservice-credentials) in the **Using the REST interface** section.
 
 The subscription package provides means to monitor and it acts upon changes in tenant subscriptions to a microservice. To add a custom behavior, a developer can add an event listener for `MicroserviceSubscriptionAddedEvent` and `MicroserviceSubscriptionRemovedEvent` as the following example:
 
@@ -157,57 +261,6 @@ public void onAdded (MicroserviceSubscriptionAddedEvent event {
 ```
 
 On application startup, the `MicroserviceSubscriptionAddedEvent` is triggered for all subscribed tenants.
-
-### Heap and perm/metadata {#heap-and-permmetadata}
-
-To calculate heap and perm/metadata, it takes the limit defined on the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
-10% is reserved for "system", but not less than 50 MB. <br>
-10% is taken for Metaspace, but not less than 64 MB and not more than 1024MB. <br>
-The rest is allocated for heap size.
-
-### Platform API {#platform-api}
-
-The package consists of a number of services that are built and injected into Spring context. A developer can use them to perform basic operations against the platform. The beans are built based on the properties read from a file. For hosted deployment, most of the properties are provided by the platform.
-
-The API provides the following services:
-
-* Alarm - AlarmApi
-* AuditRecord - AuditRecordApi
-* Operation - DeviceControlApi
-* Event - EventApi
-* ExternalID - IdentityApi
-* Binary - BinariesApi
-* ManagedObject - InventoryApi
-* Measurement - MeasurementApi
-
-The API provides basic CRUD methods. The following is an alarm interface example:
-
-```java
-// Methods
-AlarmRepresentation create(final AlarmRepresentation alarm)
-Future createAsync(final AlarmRepresentation alarm)
-
-AlarmRepresentation getAlarm(final GId gid)
-AlarmCollection getAlarms()
-AlarmCollection getAlarmsByFilter(final AlarmFilter filter)
-
-AlarmRepresentation update(final AlarmRepresentation alarm)
-```
-
-Sample usage:
-
-```java
-@Autowired
-private AlarmApi alarms;
-
-public AlarmRepresentation addHelloAlarm (){
-    AlarmRepresentation alarm = new AlarmRepresentation();
-    alarm.setSeverity("CRITICAL");
-    alarm.setStatus("Hello");
-
-    return alarms.create(alarm);
-}
-```
 
 ### Configuration files {#configuration-files}
 
@@ -253,6 +306,7 @@ The microservice settings module provides two features:
 
 By default the microservice loads the tenant options for the category specified by the microservice context path.
 The custom settings category can be specified by the manifest parameter: `settingsCategory`.
+Note that the defined tenant option category must be unique within the tenant.
 When neither settings category nor context path is provided in the microservice manifest, the application name is used.
 
 {{< c8y-admon-info >}}
@@ -268,13 +322,13 @@ When the access attempt occurs to fetch settings without the tenant context bein
 For security reasons, the functionality is not available when running the microservice in legacy mode, that is, local development or RPM installation.
 {{< /c8y-admon-info >}}
 
-Tenant option settings can be accessed in two ways:  
+Tenant option settings can be accessed in two ways:
 
 Using Environment:
 
 ```java
 @Autowired
-private Environment environment;  
+private Environment environment;
 
 public int getAccessTimeout() {
     return environment.getProperty("access.timeout", Integer.class, 30);
@@ -339,83 +393,306 @@ For more details on how to use your own log configuration file refer to [Logging
 The package module provides a Maven plugin to prepare a ZIP file required by the microservice deployment. The build requires an executable JAR file. To create one, a developer can use `spring-boot-maven-plugin`. An example with minimum configuration is presented below:
 
 ```xml
+<project>
+  ...
+  <build>
+    ...
+    <plugins>
+    ...
+      <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <executions>
+              <execution>
+                  <goals>
+                      <goal>repackage</goal>
+                  </goals>
+              </execution>
+          </executions>
+          <configuration>
+              <mainClass>${main.class}</mainClass>
+          </configuration>
+      </plugin>
+      <plugin>
+          <groupId>com.nsn.cumulocity.clients-java</groupId>
+          <artifactId>microservice-package-maven-plugin</artifactId>
+          <version>${c8y.version}</version>
+          <executions>
+              <execution>
+                  <id>package</id>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>package</goal>
+                  </goals>
+                  <configuration>
+                    <name>hello-world</name>
+                    <encoding>UTF-8</encoding>
+                    <rpmSkip>true</rpmSkip>
+                    <containerSkip>false</containerSkip>
+                  </configuration>
+              </execution>
+              <execution>
+                  <id>microservice-package</id>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>package</goal>
+                  </goals>
+                  <configuration>
+                    <name>hello-world</name>
+                    <image>hello-world</image>
+                    <encoding>UTF-8</encoding>
+                    <skip>false</skip>
+                  </configuration>
+              </execution>
+          </executions>
+      </plugin>
+      ...
+    </plugins>
+    ...
+  </build>
+  ...
+</project>
+```
+
+#### Package goal {#package-goal}
+
+The package plugin is responsible for the creation of a Docker container, RPM file and for creating a ZIP file that can be deployed on the platform.
+It can be configured with the following parameters:  
+(If a single xml tag is specified as parameter in the following list, use embracing xml tags like \<tag>...\</tag> to set those parameters. "..." must be replaced by the respective value of the corresponding data type.)
+
+| Parameter<br>short form<br>for pom.xml entries<br> in \<configuration> section |                                      Data type                                       |                                               Parmameter<br>command<br>line name                                                |                                             Default value                                              | Description                                                                                                                                                                                                                                    |
+|:------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                                  \<arguments>                                  |                                    List\<String>                                     |                                            &#8209;Dagent-package.arguments=[...,]...                                            |                                                   ""                                                   | General command line arguments for jar startup.<br>Specify with "," separated arguments.                                                                                                                                                       |
+|                                \<containerSkip>                                |                                       Boolean                                        |                                            &#8209;Dskip.agent.package.container=...                                             |                                                 false                                                  | Skip the container packaging                                                                                                                                                                                                                   |
+|                                 \<description>                                 |                                        String                                        |                                                 &#8209;Dpackage.description=...                                                 |                                         ${project.description}                                         | Microservice description                                                                                                                                                                                                                       |
+|                             \<dockerBuildTimeout>                              |                                         Int                                          |                                       &#8209;Dmicroservice.package.dockerBuildTimeout=...                                       |                                                  360                                                   | Timeout value in seconds for the generation of a docker build                                                                                                                                                                                  |
+|                                  \<encoding>                                   |                                        String                                        |                                            &#8209;Dproject.build.sourceEncoding=...                                             |                                                 UTF-8                                                  | Define String encoding                                                                                                                                                                                                                         |
+|           \<heap><br>\<min>...\</min><br>\<max>...\<max><br>\</heap>           | min, max : \<Int>m<br>(m:megabytes; for available units refer to Java documentation) | &#8209;&#8209;<br>[(Setting complex<br>command line parameter)](/microservice-sdk/java/#package-goal-command-line-complex-data) |                                        min = 128m<br>max = 384m                                        | \<heap> parameter results to &#8209;Xms\<min> &#8209;Xmx\<max> Java runtime arguments for the microservice startup.                                                                                                                                        |
+|                                   \<jvmArgs>                                   |                                    List\<String>                                     |                                             &#8209;Dagent-package.jvmArgs=[...,]...                                             | "&#8209;XX:+UseG1GC<br>&#8209;XX:+UseStringDeduplication<br>&#8209;XX:MinHeapFreeRatio=25<br>&#8209;XX:MaxHeapFreeRatio=75" | Java runtime arguments for the microservice startup. Specify with "," separated arguments. Default values will be overwritten if other options are provided.                                                                                   |
+|                                \<manifestFile>                                 |                                        String                                        |                                                    &#8209;DmanifestFile=...                                                     |                        "$\{basedir}/src/main/<br>configuration/cumulocity.json"                        | Path to the microservice manifest file location                                                                                                                                                                                                |
+|      \<metaspace><br>\<min>...\</min><br>\<max>...\<max><br>\</metaspace>      |       min, max : \<Int>m<br>(m:megabytes; for available units refer to Java documentation)        |  &#8209;&#8209;<br>[(Setting complex<br>command line parameter)](/microservice-sdk/java/#package-goal-command-line-complex-data)   |                                        min = 64m<br>max = 128m                                         | \<metaspace> parameter is combined<br>with \<perm> parameter values if available which results in &#8209;XX:MetaspaceSize=\<min> &#8209;XX:MaxMetaspaceSize=\<max> Java runtime arguments for the microservice startup.                        |
+|                                    \<name>                                     |                                        String                                        |                                                    &#8209;Dpackage.name=...                                                     |                                         ${project.artifactId}                                          | Microservice name                                                                                                                                                                                                                              |
+|           \<perm><br>\<min>...\</min><br>\<max>...\<max><br>\</perm>           |       min, max : \<Int>m<br>(m:megabytes; for available units refer to Java documentation)        |  &#8209;&#8209;<br>[(Setting complex<br>command line parameter)](/microservice-sdk/java/#package-goal-command-line-complex-data)   |                                        min = 64m<br>max = 128m                                         | \<perm> parameter is combined with \<metaspace> parameter values for compatibility reasons if available which results in &#8209;XX:MetaspaceSize=\<min> &#8209;XX:MaxMetaspaceSize=\<max> Java runtime arguments for the microservice startup. |
+|                                   \<rpmSkip>                                   |                                       Boolean                                        |                                               &#8209;Dskip.agent.package.rpm=...                                                |                                                  true                                                  | Skip the rpm packaging                                                                                                                                                                                                                         |
+|                                    \<skip>                                     |                                       Boolean                                        |                                                 &#8209;Dskip.agent.package=...                                                  |                                                 false                                                  | Skip the whole packaging                                                                                                                                                                                                                       |
+
+
+Example configuration in pom.xml:
+
+```xml
+...
 <plugin>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-maven-plugin</artifactId>
-    <executions>
-        <execution>
-            <goals>
-                <goal>repackage</goal>
-            </goals>
-        </execution>
-    </executions>
-    <configuration>
-        <mainClass>${main.class}</mainClass>
-    </configuration>
+  <groupId>com.nsn.cumulocity.clients-java</groupId>
+  <artifactId>microservice-package-maven-plugin</artifactId>
+  <version>${c8y.version}</version>
+  <executions>
+    <execution>
+      <configuration>
+        <name>hello-world</name>
+        <encoding>UTF-8</encoding>
+        <rpmSkip>true</rpmSkip>
+        <containerSkip>false</containerSkip>
+        <manifestFile>${basedir}/src/main/microservice/cumulocity.json</manifestFile>
+        <heap>
+          <min>200m</min>
+          <max>600m</max>
+        </heap>
+        <metaspace>
+          <min>200m</min>
+          <max>300m</max>
+        </metaspace>
+      </configuration>
+    </execution>
+  </executions>
 </plugin>
-<plugin>
-    <groupId>com.nsn.cumulocity.clients-java</groupId>
-    <artifactId>microservice-package-maven-plugin</artifactId>
-    <version>${c8y.version}</version>
-    <executions>
-        <execution>
+...
+```
+{{< c8y-admon-info >}}
+Settings for heap and metaspace must be aligned with your settings of `resources/memory` in the microservice manifest
+file `cumulocity.json`. You have to be sure about the effect those parameters might have. Those parameters are directly
+used for the microservice start without further verification. For example be sure that the heap values meet the
+condition: Xms < Xmx.
+{{< /c8y-admon-info >}}
+
+##### Setting parameters on command line {#package-goal-command-line}
+
+For information about how and whether it is possible to set parameters on command line refer to column
+"Parameter command line name" of table in chapter [Package goal](/microservice-sdk/java/#package-goal).
+
+###### Primitive configuration values {#package-goal-command-line-primitive-data}
+
+Primitive configuration values or lists can be set on the Maven command line directly as usual for Maven command line
+properties. Items of lists are specified with `,` as separation character.<br>
+<br>
+Example:
+```sh
+-Dskip.agent.package.rpm=true
+-Dagent-package.arguments=XX:+PrintCommandLineFlags,-XX:+UseCompressedClassPointers,-XX:+UseCompressedOops
+```
+
+###### Complex data types as for heap and metaspace parameter {#package-goal-command-line-complex-data}
+
+Properties must be used if you want to specify data of complex data types on the command line. This is the case for
+memory data like heap and metaspace. In this case you have to specify each primitive value separately as pom property
+which is then used inside the configuration of the microservice-package-maven-plugin.
+
+Example for the definition of primitive default parameters in pom.xml:
+```xml
+<project ... >
+  ...
+  <properties>
+    ...
+    <custom-property.metaspace.min>200m</custom-property.metaspace.min>
+    <custom-property.metaspace.max>300m</custom-property.metaspace.max>
+    ...
+  </properties>
+  ...
+</project>
+```
+These properties can be used inside the configuration section of the microservice-package-maven-plugin 
+defined in the pom.xml file of your microservice project:
+
+```xml
+<project ... >
+  ...
+  <build>
+    ...
+    <plugins>
+      ...
+      <plugin>
+        <groupId>com.nsn.cumulocity.clients-java</groupId>
+        <artifactId>microservice-package-maven-plugin</artifactId>
+        <version>…</version>
+        <executions>
+          <execution>
             <id>package</id>
             <phase>package</phase>
             <goals>
               <goal>package</goal>
             </goals>
             <configuration>
-              <name>hello-world</name>
+              <name>${microservice.name}</name>
+              <image>${microservice.name}</image>
               <encoding>UTF-8</encoding>
-              <rpmSkip>true</rpmSkip>
-              <containerSkip>false</containerSkip>
+              ...
+              <metaspace>
+                <min>${custom-property.metaspace.min}</min>
+                <max>${custom-property.metaspace.max}</max>
+              </metaspace>
+              ...
             </configuration>
-        </execution>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+If you have defined the custom properties in your pom.xml file you can specify those parameters on command line:
+```
+mvn clean install -Dcustom-property.metaspace.min=400m -Dcustom-property.metaspace.max=500m
+```
+
+#### Validate REST security goal {#validate-rest-security-goal}
+
+Available since version 2026.29.0, the validate REST security goal scans compiled classes to ensure all REST controller endpoints have proper security annotations. This provides build-time verification that your microservice endpoints are adequately secured.
+
+The goal verifies that all REST endpoints are either secured with one of the recognized security annotations or explicitly marked as unsecured.
+
+##### Configuring the goal {#configuring-the-goal}
+
+Add the following to your microservice *pom.xml* file:
+
+```xml
+<plugin>
+    <groupId>com.nsn.cumulocity.clients-java</groupId>
+    <artifactId>microservice-package-maven-plugin</artifactId>
+    <version>${c8y.version}</version>
+    <executions>
         <execution>
-            <id>microservice-package</id>
-            <phase>package</phase>
+            <id>validate-rest-security</id>
             <goals>
-              <goal>microservice-package</goal>
+                <goal>validate-rest-security</goal>
             </goals>
+            <phase>prepare-package</phase>
             <configuration>
-              <name>hello-world</name>
-              <image>hello-world</image>
-              <encoding>UTF-8</encoding>
-              <skip>false</skip>
+                <enabled>true</enabled>
+                <failOnError>true</failOnError>
             </configuration>
         </execution>
     </executions>
 </plugin>
 ```
 
-#### Package goal {#package-goal}
+##### Configuration parameters {#configuration-parameters}
 
-The package plugin is responsible for the creation of a Docker container, rpm file and for creating a ZIP file that can be deployed on the platform.
-It can be configured with the following parameters:
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| enabled | false | Enable the validation. Must be set to `true` to activate. |
+| failOnError | true | Fail the build if unsecured endpoints are found. Set to `false` to log warnings only. |
 
-* name (alias package.name) - defaults to project.artifactId
-* description (alias package.description) - defaults to project.description
-* jvmArgs (alias agent-package.jvmArgs) - jvm-gc arguments. The default value is `-XX:+UseG1GC -XX:+UseStringDeduplication -XX:MinHeapFreeRatio=25 -XX:MaxHeapFreeRatio=75`. It will be overwritten if other options are provided
-* arguments (alias agent-package.arguments) - arguments passed during application startup
-* encoding (alias project.build.sourceEncoding) - defaults to UTF-8
-* heap (alias agent-package.heap) - defaults to min = 128MB max = 384MB
-* perm (alias agent-package.perm) - defaults to min = 64MB max = 128MB
-* skip (alias skip.agent.package) - to skip the whole packaging part
-* rpmSkip (alias skip.agent.package.rpm) - to skip rpm file creation. False by default
-* containerSkip (alias skip.agent.package.container) - to skip Docker image creation. True by default
-* manifestFile - points to a manifest file location. Default value: $<basedir>/src/main/configuration/cumulocity.json
-* dockerBuildTimeout - specifies the timeout in seconds for the docker image build. Defaults to 360s
+##### Securing your endpoints {#securing-your-endpoints}
 
-Example configuration:
+All endpoints in your @RestController classes must be either secured or explicitly marked as unsecured.
 
-```xml
-<configuration>
-    <name>hello-world</name>
-    <encoding>UTF-8</encoding>
-    <rpmSkip>true</rpmSkip>
-    <containerSkip>false</containerSkip>
-    <manifestFile>${basedir}/src/main/microservice/cumulocity.json</manifestFile>
-</configuration>
+**Securing an endpoint with role-based access:**
+
+```java
+@RestController
+@RequestMapping("/api")
+public class UserController {
+    
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return userService.findAll();
+    }
+}
+```
+
+**Marking an endpoint as explicitly unsecured:**
+
+```java
+@RestController
+@RequestMapping("/api")
+public class HealthController {
+    
+    @UnauthorizedEndpoint("Public health check endpoint")
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("OK");
+    }
+}
+```
+
+The validator recognizes the following security annotations:
+
+* `@org.springframework.security.access.prepost.PreAuthorize`
+* `@org.springframework.security.access.annotation.Secured`
+* `@jakarta.annotation.security.RolesAllowed`
+* `@javax.annotation.security.RolesAllowed`
+
+Use the `@UnauthorizedEndpoint` annotation from the `com.cumulocity.microservice.security.annotation` package to mark endpoints that intentionally do not require authentication. The annotation accepts an optional parameter to document why the endpoint is unsecured.
+
+##### Example build output {#example-build-output}
+
+When validation succeeds, you see a message similar to:
+
+```
+[INFO] Starting REST endpoint security validation...
+[INFO] Found 5 REST controller classes
+[INFO] ✓ All REST endpoints are properly secured!
+```
+
+When validation fails with unsecured endpoints, the build stops with error messages:
+
+```
+[ERROR] Found 2 unsecured REST endpoints:
+[ERROR]   - REST endpoint not secured: com.example.UserController.deleteAll.
+[ERROR]     Must be annotated with @PreAuthorize, @Secured, @RolesAllowed, or @UnauthorizedEndpoint.
+[ERROR]   - REST endpoint not secured: com.example.ConfigController.reset.
+[ERROR]     Must be annotated with @PreAuthorize, @Secured, @RolesAllowed, or @UnauthorizedEndpoint.
 ```
 
 #### Push goal {#push-goal}
@@ -453,6 +730,7 @@ To upload a microservice to the server you must configure the following properti
 * password - Mandatory password used for authorization. Empty by default.
 * name - Optional name of the uploaded application. By default it is the same as `package.name` property or `artifactId` if `package.name` is not provided.
 * skipMicroserviceUpload (alias `skip.microservice.upload`) - Controls if the microservice upload should be skipped. True by default so for the goal to work it must be set to `false`)
+
 
 #### settings.xml {#settingsxml}
 
@@ -502,6 +780,29 @@ To pass the configuration only to the particular build, execute the following co
 $ mvn microservice:upload -Dupload.application.name=helloworld -Dupload.url=https://demos.cumulocity.com -Dupload.username=demos/username -Dupload.password=****** -Dskip.microservice.upload=false
 ```
 
+
+#### Using Maven in debug mode {#using-maven-in-debug-mode}
+
+Running Maven CLI commands in debug mode (for example, `mvn clean install --debug ...`) may
+generate a very large volume of HTTP-related log output, such as logs from resource downloads. 
+Analyzing this data might quickly become tedious.
+
+To reduce such logging information, HTTP logging can be suppressed with these command line options:
+```
+-Dorg.slf4j.simpleLogger.log.org.apache.http=off
+-Dorg.slf4j.simpleLogger.log.org.apache.http.wire=off
+```
+Besides `off`, `error` or `warn` might also be appropriate values. The parameters can also be added to the Maven configuration file `${MAVEN_HOME}/conf/logging/simplelogger.properties` 
+or to the `MAVEN_OPTS` environment variable. Related documentation can be found in [Maven logging](https://maven.apache.org/maven-logging.html).
+
+
+### Heap and perm/metadata {#heap-and-permmetadata}
+
+To calculate heap and perm/metadata, it takes the limit defined in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest) (`resources/memory`) and it is converted into Megabytes (MB). For Java applications developed using the Java Microservice SDK the minimal value is 178MB. <br>
+10% is reserved for "system", but not less than 50 MB. <br>
+10% is taken for metaspace, but not less than 64 MB and not more than 1024MB. <br>
+The rest is allocated for heap size.<br>
+Refer to [Package goal](/microservice-sdk/java/#package-goal) for information on how to change the heap and metaspace settings.
 
 ### Deployment {#deployment}
 
@@ -612,7 +913,7 @@ To deploy the application on a local Docker container, one must inject the envir
 An example execution could be:
 
 ```shell
-$ docker run -e "C8Y_BASEURL=<C8Y_BASEURL>" -e "C8Y_BASEURL_MQTT=<C8Y_BASEURL_MQTT>" <IMAGE_NAME>
+$ docker run -e "C8Y_BASEURL=<C8Y_BASEURL>" -e "C8Y_BASEURL_MQTT=<C8Y_BASEURL_MQTT>" -e "C8Y_BASEURL_PULSAR=<C8Y_BASEURL_PULSAR>" <IMAGE_NAME>
 ```
 
 ### Monitoring {#monitoring}
@@ -662,8 +963,8 @@ For external/legacy deployment, the following paths will be searched in order to
 
 * To customize the logging configuration for your microservice instead of using the default configuration, create a log
 configuration file in the _configuration_ folder of your microservice project.
-* The file must adhere to the naming convention *\<application-name\>-logging.xml*. 
-This ensures that your custom log configuration replaces the default configuration file 
+* The file must adhere to the naming convention *\<application-name\>-logging.xml*.
+This ensures that your custom log configuration replaces the default configuration file
 with the same name in the resulting Docker image.
 * Once deployed, the customized log configuration file will be located in the */etc/\<artifactId\>*
 directory within the microservice pod.
@@ -685,7 +986,7 @@ The following locations are searched for the logback configuration file:
 
 A Spring Boot library was upgraded to 2.5.8, hence upgrading Microservice SDK to 10.13+ may require some additional development.
 
-* The `content(matcher)` method of RestAssured has been replaced with `body(matcher)`, see [RequestSpecification#content()](https://javadoc.io/doc/io.rest-assured/rest-assured/3.0.0/io/restassured/specification/RequestSpecification.html#content-byte:A-)
+* The `content(matcher)` method of RestAssured has been replaced with `body(matcher)`, see [RequestSpecification#content()](https://javadoc.io/static/io.rest-assured/rest-assured/3.3.0/io/restassured/specification/RequestSpecification.html#content-byte:A-)
 * Spring Boot BOM does not define a version for joda-time, you may need to explicitly define version.
 
   Maven example:
@@ -723,6 +1024,7 @@ A Spring Boot library was upgraded to 2.5.8, hence upgrading Microservice SDK to
    server.error.include-message=ALWAYS
    server.error.include-binding-errors=ALWAYS
    ```
+
 ### Upgrade to Microservice SDK 10.17+ {#upgrade-to-microservice-sdk-1017}
 
 A Spring Boot library was upgraded to 2.7.6, hence upgrading Microservice SDK to 10.17+ may require some additional development.
@@ -732,4 +1034,5 @@ the deprecation of `WebSecurityConfigurerAdapter` by Spring Security. The Micros
 declaration of the `SecurityFilterChain` bean in its internal configuration instead. At the same time, Spring Security
 only allows one of these configuration approaches in a single application. This means that if the old,
 adapter-based method has been used in your code before, you will have to migrate to the new, direct filters
-declaration for applications to start. Refer to the [Spring Security documentation](https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html#_stop_using_websecurityconfigureradapter) for more details.
+declaration for applications to start. Refer to the [Spring Security release notes](https://github.com/spring-projects/spring-security/releases/tag/5.8.0) for more details.
+

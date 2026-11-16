@@ -1,0 +1,9 @@
+{{- /*
+  Whether a page belongs in an llms.txt spoke: a rendered content page. Sections, taxonomy
+  terms (a sector landing page can carry its own sector), unrendered pages (build.render
+  false has no permalink) and home-page cards are left out. Redirect and external-link pages
+  qualify; the spoke links their target. Call with the page.
+*/ -}}
+{{- $ok := and (eq .Kind "page") (ne .RelPermalink "") -}}
+{{- with .File }}{{ if strings.HasSuffix .BaseFileName "-card" }}{{ $ok = false }}{{ end }}{{ end -}}
+{{- return $ok -}}

@@ -1,5 +1,5 @@
 ---
-date: 2024-02-06
+date: '2024-02-06'
 title: Prevented clearing of mandatory fragments
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: DM-2854
 version: 10.18.587.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Clearing of mandatory fragments like type, time, creationTime, owner and source for events, alarms and managed objects is no longer allowed on invocation of SmartREST 2.0 static templates that clear fragments like 107, 307 and 407.

@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60220
 version: 1021.26.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 A new entry for the export component has been added to the {{< product-c8y-iot >}} Codex. This change introduces a dedicated page that provides information about the export component, its purpose, and how it can be used within the {{< product-c8y-iot >}} platform.

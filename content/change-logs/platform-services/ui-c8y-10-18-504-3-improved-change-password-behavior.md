@@ -1,5 +1,5 @@
 ---
-date: 2023-12-20
+date: '2023-12-20'
 title: Improved change password behavior
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-55265
 version: 10.18.504.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The password can now only be changed by the currently logged-in user. Administrators can no longer change the password and email for other users.

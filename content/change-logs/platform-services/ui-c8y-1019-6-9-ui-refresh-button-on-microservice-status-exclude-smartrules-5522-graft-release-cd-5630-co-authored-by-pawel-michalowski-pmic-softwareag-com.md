@@ -1,5 +1,5 @@
 ---
-date: 2024-03-14
+date: '2024-03-14'
 title: Refresh button on microservice status tab includes smart rules list
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-55911
 version: 1019.6.9
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The **Refresh** button on the **Status** tab of the microservice details now includes the smart rules list.

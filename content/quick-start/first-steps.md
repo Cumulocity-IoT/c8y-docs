@@ -11,7 +11,7 @@ The following section highlights the basic steps to take if you are new to the {
 If you are technically interested in our IoT platform, you might want to learn about the architecture, technical concepts and domain models behind {{< product-c8y-iot >}} described in [Technical concepts](/concepts/concepts-introduction/).
 
 
-### Step 1: Logging into {{< product-c8y-iot >}} for the first time
+### Step 1: Logging into {{< product-c8y-iot >}} for the first time {#step-1-logging-in-for-the-first-time}
 
 To log in to the {{< product-c8y-iot >}} platform and access your tenant, use the following URL:
 
@@ -29,7 +29,7 @@ Click **Login** to enter the {{< product-c8y-iot >}} platform. Initially, you wi
 
 Go to [Accessing and logging into the platform](/get-familiar-with-the-ui/platform-access/) for more details on supported URLs, password reset, and more.
 
-### Step 2: Learn about {{< product-c8y-iot >}}'s basic UI functionalities and features
+### Step 2: Learn about {{< product-c8y-iot >}}'s basic UI functionalities and features {#step-2-basic-ui-functionalities-and-features}
 
 #### Main screen elements
 
@@ -58,14 +58,18 @@ See [User options and settings](/get-familiar-with-the-ui/user-settings/) for de
 
 To connect a device to {{< product-c8y-iot >}}, you must register it in the platform. This is done in the **Device Management application**. Under [Registering devices](/device-management-application/registering-devices/) you find a detailed description of the general registration process.
 
+{{< c8y-admon-info >}}
+If you use [Data Preparation](/data-preparation/) with the MQTT Service, devices are [created automatically](/data-preparation/device-onboarding/) and do not require manual registration.
+{{< /c8y-admon-info >}}
+
 Moreover, we offer two step-by-step descriptions to easily register a first device to your {{< product-c8y-iot >}} account:
 
 * Connect a smartphone to {{< product-c8y-iot >}} using the [{{< sensor-app >}}](/sensor-app/sensorapp-introduction/). The {{< sensor-app >}} is a free smartphone application available for iOS and Android smartphones.
-* Connect a [Raspberry Pi as demo device using thin.edge.io](/device-integration/device-integration-thin-edge/#thin-edgeio-on-a-device). The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
+* Connect a [Raspberry Pi as demo device using thin.edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/). The Raspberry Pi is a relatively simple and cheap yet powerful device. This makes it ideal for testing and trying out as well as some production use cases.
 
 For the purpose of this tutorial, we will register a device via the {{< sensor-app >}}.
 
-#### Connecting a smartphone with the {{< sensor-app >}}
+#### Connecting a smartphone with the {{< sensor-app >}} {#connecting-a-smartphone-with-the-sensor-app}
 
 The {{< sensor-app >}} is designed to collect measurements from your smartphone, nearby Bluetooth device sensors, and vehicle On-board Debug (OBD) sensors, and send them to the {{< product-c8y-iot >}} platform. The {{< sensor-app >}} can also send commands to the smartphone directly from the phone dashboard.
 

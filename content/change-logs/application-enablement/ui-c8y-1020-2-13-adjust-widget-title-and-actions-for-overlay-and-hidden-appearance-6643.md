@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59816
 version: 1020.2.13
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The display of widget titles and action buttons has been optimized to align with the overlay and hidden widget appearance settings. Previously, these elements were always visible, which could be confusing when the edit widgets mode was disabled. With this update, the action button is now only displayed when either the overlay or hidden appearance is selected in the widget settings and the edit widgets mode is enabled. 

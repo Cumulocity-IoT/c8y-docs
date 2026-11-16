@@ -10,9 +10,16 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 
 ### Service description
 
-{{< product-c8y-iot >}} is a comprehensive Internet of Things (IoT) platform designed to enable seamless connectivity, management, analysis and control of IoT devices. This agreement defines the service level of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}. {{< product-c8y-iot >}} Edge is outside the scope of this agreement.
+{{< product-c8y-iot >}} is a comprehensive Internet of Things (IoT) platform designed to enable seamless connectivity, management, analysis and control of IoT devices. This agreement defines the service level of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}, including its APIs and standard web applications.
 
-The agreement applies solely to the base platform excluding optional features or features not in general availability. Optional features outside the base platform may require a separate service-level agreement. For custom applications developed using the Microservice Hosting functionality, refer to the [Microservices hosting service-level agreement](/service-terms/service-level/#microservices-sla/).
+The agreement applies solely to the base platform excluding optional features or features not in general availability. Optional features outside the base platform may require a separate service-level agreement. For custom applications developed using the Microservice Hosting functionality, refer to the [Microservices hosting service-level agreement](/service-terms/service-level/#microservices-sla).
+
+In particular, the following components are outside the scope of this agreement:
+
+* {{< product-c8y-iot >}} Edge.
+* Device-side software or firmware developed by Customer or third parties.
+* Open-source software projects such as thin-edge.io.
+* Software development kits (SDKs), code samples, and reference implementations, except as explicitly stated in the Support service-level agreement for Premium support.
 
 ### Service features
 
@@ -53,7 +60,7 @@ As a Customer of the {{< product-c8y-iot >}} platform, we request your acknowled
 * **Device security:** While the {{< product-c8y-iot >}} platform provides robust security measures, Customer is responsible for the security of devices and device credentials. {{< company-c8y >}} cannot be held liable for any leaked credentials from devices. Customer acknowledges that communication protocols and ciphers may require periodic updates to address evolving security threats. This may necessitate updates to the devices themselves.
 * **End user access security:** To protect the integrity of the cloud platform, Customer is encouraged to educate users on secure usage practices, such as implementing multi-factor authentication. Customer is responsible for managing user credentials, and {{< company-c8y >}} cannot be held responsible for any compromised credentials.
 * **Certificate management:** Customer is responsible for monitoring the expiration of their certificates. Expired certificates can result in service unavailability for the associated clients, and Customer expressly acknowledges this responsibility.
-* **Library updates:** Customers utilizing {{< company-c8y >}}-provided libraries to build their own applications are responsible for ensuring these libraries are kept up to date with respect to security. In the event of a security vulnerability or other critical update, it is Customer's responsibility to implement the necessary updates in their applications to maintain the integrity and security of their systems. {{< company-c8y >}} cannot be held liable for any security issues arising from outdated libraries in Customer applications.
+* **Library and SDK updates:** Customers utilizing {{< company-c8y >}}-provided libraries, SDKs, or client code samples to build their own applications are responsible for keeping these components up to date, including applying security updates in a timely manner. {{< company-c8y >}} cannot be held liable for any security issues arising from outdated SDKs, libraries, or code samples in Customer applications.
 
 ##### **Capacity management**
 
@@ -67,6 +74,9 @@ For details on non-permitted uses of {{< product-c8y-iot >}}, refer to the {{< p
 
 In the interest of transparency and to ensure a mutual understanding of the service capabilities, we kindly ask Customer to acknowledge the following limitations and constraints of the {{< product-c8y-iot >}} platform:
 
+* **SDKs, code samples, and device-side software:**
+    * {{< company-c8y >}}-provided SDKs, client libraries, code samples, and reference implementations are provided "as-is" under their respective license terms. They are intended as examples and integration aids and may require adaptation by Customer.
+    * Device-side software, including thin-edge.io agents, device firmware, operating systems, and connectivity stacks, is developed, deployed, and operated under Customer's sole responsibility.
 * **Hard quotas:** Customer acknowledges the existence of hard quotas as detailed in [Service quotas](/service-terms/quotas/). These quotas define maximum thresholds that the platform can support and are essential for maintaining overall system stability.
 * **Shared environment considerations:** Customers not utilizing {{< product-c8y-iot >}} Dedicated plans should be aware that their tenant is hosted within a shared environment. As a result, response times may occasionally vary due to shared resource usage, and Customer acknowledges such variations. Furthermore, infrastructure-level information such as HTTP or MQTT access logs cannot be shared with Customer.
 * **Data retention and storage costs:** Customer acknowledges that reducing data retention periods does not immediately lead to the reclamation of storage space or a reduction in storage costs due to technical processing requirements.
@@ -75,13 +85,16 @@ In the interest of transparency and to ensure a mutual understanding of the serv
     * **Third-party connectivity services:** Connectivity may involve third-party services such as LPWAN or mobile network operators. Customer acknowledges that while {{< product-c8y-iot >}} facilitates the transfer of data through these services, it does not operate, monitor, or troubleshoot these third-party networks. Connectivity between Customer's devices and {{< product-c8y-iot >}} service is in the sole responsibility of Customer.
 * **Data recovery**: While {{< company-c8y >}} maintains backups of data for its own business continuity management, disaster recovery on behalf of Customer (for example, after accidental data deletion by Customer) is a separate service. Customer expressly acknowledges the backup retention period and RPO outline above.
 * **Email notification**:  {{< company-c8y >}} provides a basic notification service via standard SMTP (unencrypted, port 25) for Customer to use via the {{< company-c8y >}} infrastructure components (SMTP relay). This infrastructure has been setup to transfer emails using the {{< company-c8y >}} domain, including, for example, correct SPF records for this domain. Customers using an {{< enterprise-tenant>}} can configure their own email domain and relay and use, for example, encrypted SMTP (STARTTLS) or SMTPS with their own SMTP relay. If Customer uses their own email domain, it is in the responsibility of Customer to configure, for example, the correct SPF records for that domain.
+* **{{< management-tenant>}}**: For {{< product-c8y-iot >}} Start or Business, {{< company-c8y >}} is operating the {{< management-tenant>}}; customers do not have access to it. For Enterprise (dedicated), {{< company-c8y >}} and the customer share the {{< management-tenant>}}. For the {{< management-tenant>}}, single sign on (SSO) is not available as customer service.   
 
 ### Service availability
 
 {{< company-c8y >}} is committed to providing reliable service. The specific service availability targets are as follows:
 
-* **Production environments:** 99.90% availability
-* **Non-production environments:** 95.00% availability
+| Deployment type | Production environments | Non-production environments |
+| --------------- | ----------------------- | --------------------------- |
+| Shared Cloud    | 99.00%                  | 95.00%                      |
+| Dedicated Cloud | 99.90%                  | 95.00%                      |
 
 Service availability for {{< product-c8y-iot >}} is calculated as follows:
 
@@ -102,13 +115,24 @@ For non-production instances, the following are also excluded from the availabil
 
 (c) **Events of force majeure**.
 
-The status pages showing the service availability results are at
+### Service announcements
 
-* [status.cumulocity.com](http://status.cumulocity.com) for US and EMEA instances.
-* [cumulocity-apj.statuspage.io](http://cumulocity-apj.statuspage.io) for APJ instances.
+{{< company-c8y >}} communicates service availability and events impacting the service through the following status pages:
+
+* [status.cumulocity.com](http://status.cumulocity.com) for all {{< company-c8y >}} public instances.
 * a dedicated location for {{< product-c8y-iot >}} Dedicated instances.
 
-Planned and unplanned downtimes for the services are communicated via the {{< product-c8y-iot >}} status page, which will also provide an expected time for the system’s return to availability. Please note that the availability of the status page itself is not included in the services availability calculations.
+Planned and unplanned downtimes are communicated via the appropriate {{< product-c8y-iot >}} status page. The communication includes the expected time of service restoration.
+
+{{< c8y-admon-info >}}
+The availability of the status page itself is not included in the calculation of service availability.
+{{< /c8y-admon-info >}}  
+
+Service-impacting changes and planned downtimes are announced on the {{< product-c8y-iot >}} status page at least **14 days prior to the event**. Additional updates with more detailed information may be provided as the event approaches. 
+
+{{< c8y-admon-info >}}
+Emergency maintenance may be announced on short notice or without prior warning. 
+{{< /c8y-admon-info >}}  
 
 ### Service credit commitment
 
@@ -116,17 +140,24 @@ Planned and unplanned downtimes for the services are communicated via the {{< pr
 
 If the service is available for less than the availability outlined above during any full calendar month during the cloud services term, Customer will be eligible for a service credit for the particular service in accordance with the formula below (a “Service Credit”).
 
-For services with 99.90% availability target:
+For services with 99.90% availability target (Dedicated Cloud):
 
-| Monthly availability | Percentage of the pro-rata monthly service fee for the covered service |
+| Monthly availability | Credit (% of monthly fee) |
 | -------------------- | ---------------------------------------------------------------------- |
 | 99.50% to < 99.90%   | 10%                                                                    |
-| 99.50% to < 99.00%   | 15%                                                                    |
+| 99.00% to < 99.50%   | 15%                                                                    |
 | < 99.00%             | 25%                                                                    |
 
-For services with 95.00% availability target:
+For services with 99.00% availability target (Shared Cloud):
 
-| Monthly availability | Percentage of the pro-rata monthly service Fee for the covered service |
+| Monthly availability | Credit (% of monthly fee) |
+| -------------------- | ---------------------------------------------------------------------- |
+| 98.00% to < 99.00%   | 10%                                                                    |
+| < 98.00%             | 25%                                                                    |
+
+For services with 95.00% availability target (non-production):
+
+| Monthly availability | Credit (% of monthly fee) |
 | -------------------- | ---------------------------------------------------------------------- |
 | < 95.00%             | 10%                                                                    |
 
@@ -167,7 +198,6 @@ service availability requirements are set forth in this service credit commitmen
 #### **Support**
 
 * **Customer support:** Support is provided in accordance with Customer’s selected support plan, as detailed in the [support agreement](/service-terms/service-level/#support-sla).
-* **Non-production environments:** For non-production environments, Starter-level support is generally provided, with support tickets handled at standard priority.
 
 #### **Maintenance**
 

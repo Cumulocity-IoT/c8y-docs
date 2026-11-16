@@ -8,6 +8,8 @@ on:
       - synchronize
       - reopened
       - closed
+      - labeled
+      - unlabeled
 
 permissions:
   contents: read
@@ -60,6 +62,24 @@ jobs:
         hugo \
           --baseURL "${{ env.BASEURL }}/"
 
+    - name: Validate agent skills
+      if: ${{ github.event.pull_request.state != 'closed' }}
+      run: |
+        # Each skill's index.md is its SKILL.md. skills-ref (the validator of the Agent Skills
+        # specification) checks a folder named like the skill, so copy each file into one.
+        # Release 0.1.1 installs its command as agentskills.
+        python3 -m venv "${{ runner.temp }}/skills-ref"
+        "${{ runner.temp }}/skills-ref/bin/pip" install --quiet skills-ref==0.1.1
+        dir="${{ runner.temp }}/skills"
+        status=0
+        for file in public/skills/*/*/index.md; do
+          name=$(sed -n 's/^name: //p' "$file" | head -n 1)
+          mkdir -p "$dir/$name"
+          cp "$file" "$dir/$name/SKILL.md"
+          "${{ runner.temp }}/skills-ref/bin/agentskills" validate "$dir/$name" || status=1
+        done
+        exit $status
+
     - uses: actions/setup-node@v4
       with:
         node-version: 20
@@ -91,3 +111,19 @@ jobs:
             repo: context.repo.repo,
             body: 'Preview available **[here](${{ env.BASEURL }})**'
           })
+
+    - name: Check for broken links
+      # On by default, but allow bypassing because this is (currently) a new part of the workflow that hasn't been battle-tested
+      if: ${{ !contains(github.event.pull_request.labels.*.name, 'bypass-link-check') && github.event.pull_request.state != 'closed' }}
+      run: |
+        # Do a full build and serve _locally_ because it's faster to spider than the Surge site
+        BASEURL=http://127.0.0.1:8000
+        hugo --baseURL $BASEURL
+        cd public
+        python3 -m http.server 2>/dev/null &
+        # Recursively download everything from the generated doc, broken links cause errors
+        # Exclude
+        # - Links to other releases because we do not build other releases in PRs
+        # - Links to PDFs, we don't upload those to the surge site so they will always be absent
+        set -o pipefail
+        wget --retry-connrefused --no-directories --delete-after --no-verbose -e robots=off -r $BASEURL --reject-regex ".*\/202.\/.*" -R "*.pdf,*.zip" 2>&1 | (grep -B 1 ERROR || true)

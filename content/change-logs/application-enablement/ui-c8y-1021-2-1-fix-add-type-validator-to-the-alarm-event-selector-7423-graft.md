@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61126
 version: 1021.2.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The alarm and event selector in the {{< product-c8y-iot >}} UI previously allowed to enter invalid input. With this fix, input validation has been added to the alarm and event selector to ensure that only valid input is accepted. This change improves the user experience and prevents potential errors or unexpected behavior when using the alarm and event selector.

@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-60797
 version: 1021.23.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The "Alarm list" widget previously displayed all alarms without the ability to filter them by date. With this change, users can now filter the displayed alarms in the widget by specifying a date range. This allows users to narrow down the shown alarms to a specific time period they are interested in. Users can select the date range either specifically for the widget or bind the widget to the dashboard time context.

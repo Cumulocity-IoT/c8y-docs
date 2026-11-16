@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: '2023-12-06'
 title: Resolved OAI-Secure access token issue
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-52217
 version: 10.18.193.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The issue of an inaccessible endpoint for obtaining an OAI-Secure access token through cross-origin requests has been resolved.

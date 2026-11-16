@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3877
 version: 1020.35.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The typeahead component allows users to quickly find and select an item from a list as they type. Previously, when a user selected an item from the typeahead list, the associated field would not update with the selected value. Now, when a user selects an item from the list, the associated field will immediately be updated with the selected value.

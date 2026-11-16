@@ -1,5 +1,5 @@
 ---
-date: 2024-03-28
+date: '2024-03-28'
 title: Angular 17 upgrade
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58246
 version: 1020.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In a future version, we will update Angular to version 17. This update brings improvements and new features but may also introduce breaking changes that could impact your existing implementations.
 

@@ -1,0 +1,19 @@
+---
+date: ""
+title: "Breadcrumbs added to Subassets plugin for improved navigation"
+product_area: "Application enablement & solutions"
+change_type:
+    - value: "change-2c7RdTdXo4"
+      label: "Improvement"
+component:
+    - value: "component-Tl88RYb4A"
+      label: "Digital Twin Manager"
+build_artifact:
+    - value: "tc-wYIY0MBDO"
+      label: "dtm"
+ticket: "CTM-2837"
+version: "1025.2.0"
+---
+The Subassets plugin now includes breadcrumbs to help you navigate more easily between assets in your hierarchy. Previously, you had to rely on left navigation to move between parent and child assets, which made it harder to understand your current location within the asset structure.
+
+With breadcrumbs now integrated into the Subassets plugin, you can quickly jump to parent assets or track your navigation path through the asset hierarchy. This improves your ability to explore and manage related assets without losing context. All existing Subassets plugin installations automatically include this enhancement.

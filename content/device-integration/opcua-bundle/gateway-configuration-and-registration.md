@@ -25,7 +25,8 @@ gateway:
     identifier: Gateway_Device
     name: Gateway_Device
     db:
-# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
+        # The gateway uses the local database to store platform credentials and local cache.
+        # This parameter shows the location in which the local data should be stored.
         baseDir: C:/Users/<<userName>>/.opcua/data
 ```
 
@@ -33,9 +34,50 @@ gateway:
 Windows OS is used for the example.
 {{< /c8y-admon-info >}}
 
-### Thin Edge {#thin-edge}
+### thin-edge.io {#thin-edge}
 
 The OPC UA gateway can also be registered and operated via [thin-edge.io](https://thin-edge.io/). In contrast to the standalone mode, `thinEdge` configurations must be added to the YAML file:
+
+
+#### Recommended configuration using the thin-edge.io {{< product-c8y-iot >}} proxy {#thinedge-recommended-config}
+
+{{< c8y-admon-info >}}
+This requires to be run with the thin-edge.io version 1.7.1 or higher.
+{{< /c8y-admon-info >}}
+
+The recommended mode of integration uses
+the [thin-edge.io proxy](https://thin-edge.github.io/thin-edge.io/references/cumulocity-proxy/). The local
+proxy of thin-edge.io exposes the {{< product-c8y-iot >}} API. By default, the proxy is available at
+`http://localhost:8001/c8y`.
+
+##### Example configuration for the thin-edge.io proxy {#example-localproxy-thin-edge-config}
+
+```yaml
+C8Y:
+    baseUrl: http://localhost:8001/c8y # Points to the thin-edge.io proxy
+gateway:
+    bootstrap:
+        tenantId: <<yourTenantId>>
+    identifier: Gateway_Device
+    name: Gateway_Device
+    db:
+        # The gateway uses the local database to store platform credentials and local cache.
+        # This parameter shows the location in which the local data should be stored.
+        baseDir: C:/Users/<<userName>>/.opcua/data
+    thinEdge:
+        enabled: true
+        useHttpProxy: true
+        deviceId: Thin-Edge_Device
+```
+
+With the configuration `gateway.thinEdge.enabled: true` you switch to the thin-edge.io mode. This means that the authentication and registration to the platform will be done via thin-edge.io. The OPC UA gateway is automatically registered and created as a subdevice under the thin-edge.io device defined with `gateway.thinEdge.deviceId`.
+
+`gateway.thinEdge.useHttpProxy` is a switch that makes the opcua-device-gateway fully use the thin-edge.io proxy, including authentication to the platform. It requires `C8Y.baseUrl` to be set to the thin-edge.io proxy URL.
+
+
+##### Example legacy thin-edge.io configuration (deprecated) {#example-legacy-config}
+
+The legacy thin-edge.io mode recreates the authentication credentials for the thin-edge.io connection. This mode is now deprecated.
 
 ```yaml
 C8Y:
@@ -46,15 +88,61 @@ gateway:
     identifier: Gateway_Device
     name: Gateway_Device
     db:
-# The gateway uses the local database to store platform credentials and local cache. This parameter shows the location in which the local data should be stored.
+        # The gateway uses the local database to store platform credentials and local cache.
+        # This parameter shows the location in which the local data should be stored.
         baseDir: C:/Users/<<userName>>/.opcua/data
     thinEdge:
         enabled: true
+        # URL for the MQTT client to connect to the local thin-edge.io MQTT broker.
         mqttServerURL: tcp://<<thinEdge MQTT broker>>
         deviceId: Thin-Edge_Device
 ```
 
-With the configuration `gateway.thinEdge.enabled: true` you switch to the thinEdge mode. This means that the authentication and registration to the platform will be done via Thin Edge. The OPC UA gateway is automatically registered and created as a sub-device under the Thin Edge device. `gateway.thinEdge.mqttServerURL` and `gateway.thinEdge.deviceId` are the connection information for the MQTT client to connect to the local Thin Edge MQTT broker.
+### MQTT Forwarding mode {#mqtt-forwarding-mode}
+
+The OPC UA gateway supports an MQTT Forwarding mode that can be used together with the thin-edge.io mode. In addition to the OPC UA gateway being registered as a child device of the thin-edge.io device and the OPC UA gateway using credentials provided by thin-edge.io, in MQTT Forwarding mode the OPC UA gateway also uses thin-edge.io to send the data it receives from OPC UA servers to {{< product-c8y-iot >}}. When using cyclic reads, the data received in a single cyclic read that is mapped to measurements, events, or custom actions can be batched into a single message.
+
+The MQTT Forwarding mode uses the existing `thinEdge` configuration and introduces a number of additional configuration options to the YAML file:
+
+```yaml
+C8Y:
+    baseUrl: http://localhost:8001/c8y
+gateway:
+    bootstrap:
+        tenantId: <<yourTenantId>>
+    identifier: Gateway_Device
+    name: Gateway_Device
+    db:
+        # The gateway uses the local database to store platform credentials and local cache.
+        # This parameter shows the location in which the local data should be stored.
+        baseDir: C:/Users/<<userName>>/.opcua/data
+    mappings:
+        mergeCyclicRead: false
+        mergedEventType: c8y_OpcuaEvent
+        mergedMeasurementType: c8y_OpcuaMeasurement
+    thinEdge:
+        enabled: true
+        useHttpProxy: true
+        mqttServerURL: tcp://<<thinEdge MQTT broker>>
+        deviceId: Thin-Edge_Device
+        useForDataForwarding: true
+        mqttAutomaticReconnect: true
+        mqttCleanSession: true
+        mqttConnectionTimeout: 30
+        mqttKeepAliveInterval:  60
+        mqttMaxInFlight: 1000
+```
+
+The configuration `gateway.thinEdge.useForDataForwarding` controls if MQTT Forwarding mode is enabled. The following configurations are optional and control the behavior of the MQTT client:
+
+* `gateway.thinEdge.mqttServerURL` (default: tcp://127.0.0.1:1883) - URL for the MQTT client to connect to the local thin-edge.io MQTT broker.
+* `gateway.thinEdge.mqttAutomaticReconnect` (default:true) - controls if the MQTT client will reconnect in case it looses connection to the MQTT server.
+* `gateway.thinEdge.mqttCleanSession` (default:true) - controls if the MQTT client should remember state across sessions or start with a clean session.
+* `gateway.thinEdge.mqttConnectionTimeout` (default: 30) - connection timeout in seconds.
+* `gateway.thinEdge.mqttKeepAliveInterval` (default: 60) - keep alive  interval in seconds.
+* `gateway.thinEdge.mqttMaxInFlight` (default: 1000) - maximum number of unacknowledged messages in the MQTT client. If this limit is reached, additional messages will fail.
+
+For cyclic reads the configuration `gateway.mappings.mergeCyclicRead` can be enabled. The default is false. If this configuration is enabled cyclic reads mapped to measurements, events, or custom actions in a device protocol that use the same data reporting are merged into single messages. For measurements and events, the type can be controlled by the `gateway.mappings.mergedMeasurementType` and `gateway.mappings.mergedEventType` configuration. This is optional, and if not configured `c8y_OpcuaEvent` and `c8y_OpcuaMeasurement` respectively are used.
 
 ### Configuration profile location on the filesystem {#configuration-profile-location-on-the-filesystem}
 
@@ -75,7 +163,7 @@ Mac OS
 The number of profiles you may have is not limited. To use a specific profile on runtime, the "--spring.profiles.active" JVM argument must be passed when running the gateway JAR file. For example, let's use the previously created profile. Start a terminal and use the following command:
 
 ```shell
-java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
+java -jar opcua-device-gateway.jar --spring.profiles.active=default,myTenant
 ```
 
 The command above will start a gateway with the default profile and it will override the default properties with the properties defined in the "myTenant" profile. The list of profiles must be provided as an ordered, comma-separated list. The default profile must always be the first profile in the list.
@@ -83,7 +171,7 @@ The command above will start a gateway with the default profile and it will over
 **Optional**: To specify your own configuration, Spring arguments can be used in your terminal to run the gateway JAR file. Multiple locations must be comma-separated. The configuration locations should be either YAML files or directories. In case of directories, they must end with "/". For example:
 
 ```shell
-java -jar opcua-device-gateway-<<version>>.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
+java -jar opcua-device-gateway.jar --spring.config.location=file:<<location>>/.opcua/conf/application-myTenant.yaml,file:<<location>>/.opcua/conf/
 ```
 
 If both arguments "--spring.config.location" and "--spring.profiles.active" are provided, the configuration locations should be directories instead of files. Otherwise, the profile-specific variants will not be considered.
@@ -92,12 +180,6 @@ If both arguments "--spring.config.location" and "--spring.profiles.active" are 
 
 {{< c8y-admon-info >}}
 If no additional customizations are required, you can skip this section.
-{{< /c8y-admon-info >}}
-
-{{< c8y-admon-info >}}
-Starting from version 10.11.0, the opcua-device-gateway process creates the address space local db files with a new filename (cumulocity-opcua-server-&lt;serverId&gt;-address-space-pv4.bin) due to a dependency change to avoid conflicts.
-The legacy address space local db files are cleaned up at the start of the opcua-device-gateway process automatically by default.
-Deletion of the legacy files can be turned off by setting the "gateway.db.addressSpace.legacyCleanup" to false as described below.
 {{< /c8y-admon-info >}}
 
 The following properties can be manually configured in the YAML file:
@@ -116,6 +198,18 @@ C8Y:
   # reachable only with an IP address.
   forceInitialHost: true
 
+  # HTTP proxy host for platform communication
+  # proxyHost: your.proxy.host
+
+  # HTTP proxy port for platform communication
+  # proxyPort: 8080
+
+  # Username for HTTP proxy authentication
+  # proxyUser: yourProxyUser
+
+  # Password for HTTP proxy authentication
+  # proxyPassword: yourProxyPassword
+
 #
 # Gateway-specific settings
 #
@@ -129,24 +223,17 @@ gateway:
   # where local data is stored.
   db:
     baseDir: ${user.home}/.opcua/data
-    addressSpace:
-      # Starting from version 10.11, the opcua-device-gateway process creates the address space local db files are with a new filename
-      # (cumulocity-opcua-server-<serverId>-address-space-pv4.bin) due to a dependency change to avoid conflicts.
-      # The legacy address space local db files can be cleaned up at the start of the opcua-device-gateway process
-      # automatically when the legacyCleanup is set to true, which is the default setting.
-      # If the legacy files wanted to be kept or if the mechanism for clearing is not needed, set legacyCleanup to false.
-      legacyCleanup: true
-  # These settings configure and enable/disable Thin Edge mode (registration and operating OPC UA gateway via Thin Edge).
+  # These settings configure and enable/disable thin-edge.io mode (registration and operating OPC UA gateway via thin-edge.io).
   thinEdge:
-    # Enable Thin Edge if the OPC UA gateway is running next to Thin Edge and should use it to connect to {{< product-c8y-iot >}}.
-    # Set enabled to false if the OPC UA gateway is running without Thin Edge.
+    # Enable thin-edge.io if the OPC UA gateway is running next to thin-edge.io and should use it to connect to {{< product-c8y-iot >}}.
+    # Set enabled to false if the OPC UA gateway is running without thin-edge.io.
     enabled: false
-    # MQTT Server URL of Thin Edge (localhost).
+    # MQTT Server URL of thin-edge.io (localhost).
     mqttServerURL: tcp://127.0.0.1:1883
     # Enable this if the MQTT client uses a single steady connection. Note that MQTT is only used to retrieve the JWT, which is dependent on how long the JWT is valid. See https://{{< domain-c8y >}}/guides/device-integration/mqtt/#jwt-token-retrieval.
     # We recommend you to use a steady connection only if the JWT is valid for a short time. If the JWT is valid for a longer time, the standard is one hour. It is generally not recommended to have a steady MQTT connection.
     mqttSteadyConnection: false
-    # The Thin Edge deviceId must be changed, depending on the configured deviceId of the Thin Edge certificate.
+    # The thin-edge.io deviceId must be changed, depending on the configured deviceId of the thin-edge.io certificate.
     deviceId: my-thin-edge-device
   # These settings control the device bootstrap process of the gateway.
   # In general, the default settings are sufficient, and should not be changed.
@@ -219,15 +306,6 @@ gateway:
     # received from the OPC UA server.
     threadpool:
       size: 200
-
-    # To avoid many REST calls to the inventory an in-memory map with a crash backup functionality is included.
-    alarmStatusStore:
-      # Expected number of maximum alarms at the same time
-      maxEntries: 100000
-      # The average size of the keys on the map. Needed for calculation of the size of the database file.
-      averageKeySize: 30
-      # The number of maxEntries multiplied with this factor results in the real max size of the database file. Resize is done only if needed.
-      maxBloatFactor: 5.0
 
   # Mapping-specific settings
   mappings:
@@ -448,24 +526,3 @@ completely remove all the associated managed objects. Thereafter, the gateway ca
 
 If the gateway is directly deleted from the list of devices before deleting gateway's servers and devices of those servers, by selecting the checkbox **Also delete child devices of this device**,
 then the server managed object will be deleted, but the corresponding address space objects will not be deleted as they are not children of the gateway.
-
-### Downgrade to an earlier version {#downgrade-to-an-earlier-version}
-
-Due to security improvements, downgrades from 10.12.0 to previous versions are not directly supported.
-However, if required, a downgrade is possible by following the instructions below:
-
-1. Shut down the current version of the gateway and remember the gateway managed object ID from the devices list.
-2. Send an HTTP PUT command to your tenant to reset the identity:
-
-PUT {url_to_your_tenant}/inventory/managedObjects/{device_id}
-```json
-   {
-   "c8y_ua_IdentityConfig":null
-   }
-```
-3. The response code should be 200 OK.
-4. Start the old version of the gateway.
-
-After completing these steps a new identity will be created in the old structure.
-
-It is possible to upgrade to version 10.12.0 or above at a later stage. The necessary conversion will be done automatically.

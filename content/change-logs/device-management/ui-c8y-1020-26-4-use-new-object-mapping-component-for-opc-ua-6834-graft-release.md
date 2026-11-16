@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3561
 version: 1020.26.4
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The text fields in the "Send measurement", "Create alarm", and "Send event" functionalities used to be limited to 100 characters. This limitation has been removed, allowing you to enter longer text without restrictions.

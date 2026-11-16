@@ -1,5 +1,5 @@
 ---
-date: 2024-03-27
+date: '2024-03-27'
 title: Users can reset their password properly
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58234
 version: 1019.13.5
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In some cases, users were unable to set a new password using the password reset form. This issue has been resolved and users can now successfully reset their password as expected.

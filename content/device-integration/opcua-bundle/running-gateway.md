@@ -9,25 +9,25 @@ The gateway can run with either default or custom settings. To run the gateway r
 * Default settings and default logging configuration:
 
   ```shell
-    java -jar opcua-device-gateway-<<version>>.jar
+    java -jar opcua-device-gateway.jar
   ```
 
 * Custom settings and default logging configuration:
 
   ```shell
-    java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,PROFILE_NAME
+    java -jar opcua-device-gateway.jar --spring.profiles.active=default,PROFILE_NAME
   ```
 
 * Custom settings and custom logging configuration:
 
   ```shell
-    java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,PROFILE_NAME --logging.config=file:PATH_TO_LOGBACK_XML
+    java -jar opcua-device-gateway.jar --spring.profiles.active=default,PROFILE_NAME --logging.config=file:PATH_TO_LOGBACK_XML
   ```
 
 For example, using the profile from the previous section we are going to register the gateway. First, open the terminal and navigate to the location of the gateway.jar file. Next, enter the following command:
 
 ```shell
-java -jar opcua-device-gateway-<<version>>.jar --spring.profiles.active=default,myTenant
+java -jar opcua-device-gateway.jar --spring.profiles.active=default,myTenant
 ```
 
 ### Adjusting gateway memory settings {#adjusting-gateway-memory-settings}
@@ -39,7 +39,7 @@ You can adjust the memory settings of the gateway like with any other Java progr
 * Example: Run the gateway with a minimum heap size of 2 GB and a maximum heap size of 8 GB.
 
   ```shell
-  java -Xms2g -Xmx8g -jar opcua-device-gateway-<<version>>.jar
+  java -Xms2g -Xmx8g -jar opcua-device-gateway.jar
   ```
 
 {{< c8y-admon-important >}}

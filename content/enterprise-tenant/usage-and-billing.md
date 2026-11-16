@@ -5,6 +5,7 @@ layout: bundle
 outputs:
   - html
   - json
+  - markdown
 sector:
   - platform_administration
 helpcontent:
@@ -162,7 +163,11 @@ The following information is provided for each subtenant (not completely visible
 
 Moreover custom properties are displayed, if configured.
 
-Custom properties may be defined in the [properties library](/standard-tenant/changing-settings/#properties-library) and then set their values in the [Custom properties](/enterprise-tenant/managing-tenants/#custom-properties) tab of the tenant.
+You can set custom property values in the [Custom properties](/enterprise-tenant/managing-tenants/#custom-properties) tab of the tenant.
+
+{{< c8y-admon-info >}}
+The usage statistics only display custom properties that existed before the introduction of the **Tenant properties** page. The usage statistics currently do not display custom properties that you create on the [**Tenant properties**](/enterprise-tenant/managing-tenants/#tenant-properties) page.
+{{< /c8y-admon-info >}}
 
 You can filter the usage statistics list for a time period by adding the start and end date in the top menu bar and click **Apply**. The **Usage statistics** page will show the numbers for all subtenants for this time period.
 
@@ -391,7 +396,7 @@ Any extension deployed to the platform as a microservice is billed as "used" and
   * Not ready - the microservice container is not ready yet to handle incoming traffic but the application is already running.
   * Ready - the microservice container is ready to handle incoming traffic. "Ready" is resolved based on liveness and readiness probes defined in the [microservice manifest](/microservice-sdk/general-aspects/#microservice-manifest). If probes are not defined then the microservice is immediately ready.
 
-A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/standard-tenant/audit-logs/). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
+A tenant that is billed for resources can view the point in time when the microservices billing has been changed in [the audit logs](/standard-tenant/monitoring/#audit-logs). The audit log entries, for example "Scaling application '...' from X to Y instances" contain the information about the changes of instances and resources consumed by the microservice.
 
 Tenants should also be able to see the full application lifecyle in the application details. In the **Status** tab, you can see an **Events** section that is showing very low level stages of the application startup. Some of the most important are:
 
@@ -404,7 +409,7 @@ Tenants should also be able to see the full application lifecyle in the applicat
 There is no event in the **Events** section when the microservice has reached the state "Ready" as this happens according to the readiness probe.
 {{< /c8y-admon-info >}}
 
-  <img src="/images/users-guide/enterprise-tenant/et-ms-billing-events.png" name="Microservice details - Events"/>
+  <img src="/images/users-guide/Administration/admin-microservice-status.png" name="Microservice details - Events"/>
 
 Audit logs and events are stored at tenant space according to the isolation level. For multi-tenant isolated microservices this is the tenant that is the owner of the microservice and in case of per-tenant isolation level it is the subscribed tenant.
 

@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3471
 version: 1020.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The Advanced Software Management functionality was previously an integral part of the default Device Management application. With this change, the Advanced Software Management service has been restructured to function as a separate plugin. It remains included by default but now offers the flexibility to be added or removed as needed. 

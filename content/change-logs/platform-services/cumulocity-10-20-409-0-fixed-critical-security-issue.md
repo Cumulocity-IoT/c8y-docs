@@ -1,5 +1,5 @@
 ---
-date: 2024-06-17
+date: '2024-06-17'
 title: Fixed critical security issue
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-59422
 version: 10.20.409.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 This fix addresses a critical security issue that whilst has the ability to impact the integrity of {{< product-c8y-iot >}}, is random in nature and is therefore not targetable.

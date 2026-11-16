@@ -27,13 +27,13 @@ For example, if your tenant ID is `t47110815` and you have defined an offloading
 ```
 SELECT * FROM t47110815DataLake.Dremio.t47110815.JohnsAlarms;
 ```
-You can easily look up the paths to the tables in Dremio's UI. Click on your data lake under "Sources" at the left, then navigate to the table in the right canvas. When you hover over the table name, a small "copy" icon with the tool tip "Copy Path" will appear right of the table name. Clicking on it will copy the table name into your clipboard.
+You can look up the paths to the tables in Dremio's UI. Click on your data lake under "Sources" at the left, then navigate to the table in the right canvas. When you hover over the table name, a small "copy" icon with the tool tip "Copy Path" will appear right of the table name. Clicking on it will copy the table name into your clipboard.
 
 {{< c8y-admon-info >}}
 The offloading pipeline must be executed at least once with corresponding data being offloaded before you can run a query.
 {{< /c8y-admon-info >}}
 
-### Getting schema information
+### Getting data lake schema information {#getting-data-lake-schema-information}
 
 Each table in the data lake is associated with an offloading pipeline. The schema of the table depends on the configuration of the offloading pipeline. It comprises the schema of the base collection for which the pipeline is configured as well as optionally configured additional result columns. In [Offloading {{< product-c8y-iot >}} base collections](/datahub/working-with-datahub/#offloading-base-collections) you will find the default schema per base collection. In order to get the overall schema of the table you have different options:
 
@@ -68,6 +68,6 @@ The {{< product-c8y-iot >}} DataHub server also can handle REST requests for Dre
 
 ### Connecting other clients {#connecting-other-clients}
 
-Dremio offers support for connecting a variety of clients, including reporting tools like PowerBI and common analytics languages like Python. The [Dremio documentation](https://docs.dremio.com/current/sonar/client-applications/clients/) discusses how to connect these clients to Dremio and leverage its query capabilities.
+Dremio offers support for connecting a variety of clients, including reporting tools like PowerBI and common analytics languages like Python. The [Dremio documentation](https://docs.dremio.com/current/client-applications/) discusses how to connect these clients to Dremio and leverage its query capabilities.
 
 See also [Integrating {{< product-c8y-iot >}} DataHub with other products](/datahub/integrating-datahub-with-other-products) to learn how other products can connect to {{< product-c8y-iot >}} DataHub and leverage its query capabilities.

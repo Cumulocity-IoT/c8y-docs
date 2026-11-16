@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: '2023-12-06'
 title: Fixed issues with refreshing session tokens
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-53559
 version: 10.18.101.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Issues on refreshing the session tokens when the OAI-Secure login mode is configured with two-factor authentication have been fixed.

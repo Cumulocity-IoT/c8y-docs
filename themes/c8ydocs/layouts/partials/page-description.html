@@ -1,0 +1,18 @@
+{{- /*
+  Returns a plain-text description of a page: its front matter `description`, or else the
+  start of its own body with callouts, headings and collapsed details removed, so the
+  result does not open with "Related topics" or "Requirements".
+  Call with (dict "page" $page "length" 200); omit "length" to skip truncation.
+*/ -}}
+{{- $p := .page -}}
+{{- $d := $p.Params.description -}}
+{{- if not $d -}}
+  {{- $d = $p.Content
+    | replaceRE `(?s)<div class="admonition[^"]*">.*?</div>\s*</div>` ""
+    | replaceRE `(?s)<details>.*?</details>` ""
+    | replaceRE `(?s)<h[1-6][^>]*>.*?</h[1-6]>` "" -}}
+{{- end -}}
+{{- $d = $d | plainify | htmlUnescape | replaceRE `\s+` " " -}}
+{{- $d = strings.Trim $d " " -}}
+{{- with .length }}{{ $d = truncate . $d | htmlUnescape }}{{ end -}}
+{{- return $d -}}

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-20
+date: '2023-12-20'
 title: Fixed issues with German translation
 product_area: Device management & connectivity
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-54257
 version: 10.18.504.14
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Fixed an issue with the German translation of the **Get snapshot from device** operation description and several other similar cases.

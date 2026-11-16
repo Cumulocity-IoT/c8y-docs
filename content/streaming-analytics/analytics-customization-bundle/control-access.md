@@ -14,7 +14,7 @@ Which pages are available also depends on the variant of the Apama-ctrl microser
 and only a card with information about smart rules is shown on the home screen.
 - If the Apama-ctrl-starter microservice is running, the **EPL Apps** page is not shown (and cannot be enabled)
 as the EPL apps functionality is not available in Apama-ctrl-starter.
-- If the Apama-ctrl-mt-4c-16g microservice is running, the **Analytics Builder** page is shown for all subscribed tenants. The **EPL Apps** page is shown 
+- If the Apama-ctrl-mt microservice is running, the **Analytics Builder** page is shown for all subscribed tenants. The **EPL Apps** page is shown 
 on the tenant that owns the microservice, but not shown (and cannot be enabled) on the subtenants.
 - If the Apama-ctrl-smartrules or Apama-ctrl-smartrulesmt microservice is running, neither the **Analytics Builder** nor the **EPL Apps** page is shown (and cannot be enabled).
 In this case, only the card with information about smart rules is shown on the home screen.
@@ -67,7 +67,7 @@ curl --user username -X POST -H 'Content-Type: application/json' -d '{"name":"fe
 
 By default, all users can see the same set of pages (according to the limitations above).
 You can also restrict the visibility of the pages to only users who have the permission ROLE_ANALYTICSBUILDER_READ or ROLE_EPLAPPS_READ,
-which can be assigned directly to users or via groups, see also [Managing permissions](/standard-tenant/managing-permissions/).
+see also [Managing permissions and roles](/standard-tenant/managing-permissions/).
 To enable this, set the category of the tenant option to `streaminganalytics` and the `applicationAccess` key to the value "role", see the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) in the {{< openapi >}}, or use a curl command as given in the example below:
 
 ```

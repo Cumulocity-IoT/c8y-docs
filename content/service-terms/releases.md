@@ -3,7 +3,7 @@ title: Release policy
 layout: bundle
 sector:
   - terms_conditions
-weight: 95
+weight: 30
 ---
 
 ### Introduction
@@ -29,11 +29,9 @@ Cloud instances are separated into *non-production* and *production* cloud insta
 
 The upgrade process for instances follows a staged approach.
  * After an upgrade has passed {{< product-c8y-iot >}}’s internal quality assurance, it is first deployed to non-production instances.
- * Following this initial deployment and based on the scope and complexity of the upgrade, production instances are then upgraded, typically two to three weeks after non-production deployment.
+ * Following initial deployment, production instances are upgraded on a schedule tailored to the update's scope. Low-risk enhancements, such as user interface improvements, are typically promoted to production within hours. More complex upgrades are rolled out over a period of two to three weeks, providing an intentional window for customer testing and feedback. Additionally, critical security patches and hotfixes are deployed immediately across all instances to ensure continuous protection and platform stability.
 
 In rare circumstances, upgrades may be rolled back if significant issues are detected post-deployment.
-
-Additionally, critical fixes, referred to as “hotfixes”, may be applied as necessary to address, for example, security vulnerabilities. Hotfixes can be applied to any {{< product-c8y-iot >}} instance at any time, ensuring that high-priority concerns are addressed rapidly.
 
 ### Device integration and application enablement
 
@@ -49,7 +47,7 @@ To help ensure that applications built on {{< product-c8y-iot >}}  continue to f
 For customers in particularly sensitive industries, {{< company-c8y >}} offers an annual deployment model, designed to provide a predictable, stable upgrade cycle. Each year, {{< company-c8y >}} designates one release as the annual release, which is deployed to customers following a carefully coordinated schedule, as outlined in the example below.
 
 In the annual deployment model:
-* A release candidate is made available on the last day of January for selected customers on non-production instances for a two-month period.
+* A release candidate is made available in the first half of February for selected customers on non-production instances for a two-month period.
 * The official release is published on the last day of March.
 * Maintenance for each annual release ends three months after the next annual release becomes generally available (End of Maintenance, or EOM).
 * After EOM, support will continue for up to three additional months (End of Sustained Support, or EOSS); however, no further fixes will be issued during this period. Customers are expected to complete upgrades within this timeframe and will receive dedicated support to facilitate this process.

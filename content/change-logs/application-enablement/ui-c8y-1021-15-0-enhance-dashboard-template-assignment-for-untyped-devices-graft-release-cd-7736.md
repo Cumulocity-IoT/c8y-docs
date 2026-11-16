@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61669
 version: 1021.15.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, when a device had no type property assigned, the dashboard template section in the dashboard settings was hidden. Now, in this case, the section is visible but information is provided that the dashboard template is only enabled when a type is added to the device. Moreover a button is provided which navigates the user to the device view in the Device Management application.

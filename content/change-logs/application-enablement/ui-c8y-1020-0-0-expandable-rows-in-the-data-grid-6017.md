@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58599
 version: 1020.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To provide a better user experience when displaying hierarchical data in a data grid, expandable rows have been introduced. With this change, users can now expand or collapse rows in the data grid to show or hide nested information. This allows for a more compact and organized presentation of data, especially when dealing with complex hierarchies or large amounts of related information. The expandable rows feature seamlessly integrates with the existing data grid component, providing a consistent and intuitive way for users to interact with and navigate through the displayed data.

@@ -1,7 +1,10 @@
 ---
 title: "Platform administration"
+description: "Administer tenants, users, roles, permissions, authentication, and platform-wide settings across Cumulocity."
+outputs: ["HTML", "llmstxt"]
 icon: "c8y-icon c8y-icon-administration"
 weight: 20
+pdf: true
 svg: '<svg width="1103" height="851" viewBox="0 0 1103 851" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="1103" height="851" fill="#F9FAFB"/>
 <g opacity="0.05" filter="url(#filter0_f_923_38125)">

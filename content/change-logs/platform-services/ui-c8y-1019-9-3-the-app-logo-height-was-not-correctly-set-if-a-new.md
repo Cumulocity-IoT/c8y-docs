@@ -1,5 +1,5 @@
 ---
-date: 2024-03-21
+date: '2024-03-21'
 title: App logo height set properly when creating new branding
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-52036
 version: 10.19.9.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Fixed an issue where the app logo height was not set correctly when creating a new branding. The app logo height will now be set properly when generating a new branding.

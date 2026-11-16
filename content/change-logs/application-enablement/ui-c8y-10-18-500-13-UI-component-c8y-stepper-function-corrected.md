@@ -1,5 +1,5 @@
 ---
-date: 2023-12-20
+date: '2023-12-20'
 title: UI component c8y-stepper function corrected
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-56028
 version: 10.18.500.13
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The onStepChange function in the c8y-stepper UI component is intended to emit the selected step value whenever it changes through user interaction. However, this output event was not being triggered properly. This issue has now been corrected - onStepChange will once again reliably publish the current step value after any update.

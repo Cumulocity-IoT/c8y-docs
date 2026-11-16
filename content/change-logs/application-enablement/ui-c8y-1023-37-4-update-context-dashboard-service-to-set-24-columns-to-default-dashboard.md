@@ -1,0 +1,30 @@
+---
+date: '2026-02-12'
+title: Default dashboard reset now displays with 24 columns
+product_area: Application enablement & solutions
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-YbYJ3gLU_
+    label: Web SDK
+build_artifact:
+  - value: tc-pjJiURv9Y
+    label: ui-c8y
+ticket: MTM-65903
+version: 1023.37.4
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-02-12'
+  - label: apj.cumulocity.com
+    date: '2026-02-13'
+  - label: jp.cumulocity.com
+    date: '2026-02-13'
+  - label: emea.cumulocity.com
+    date: '2026-02-16'
+  - label: us.cumulocity.com
+    date: '2026-02-16'
+  - label: cumulocity.com
+    date: '2026-02-16'
+---
+The default dashboard configuration reset previously used a 12-column layout. It's now updated to use a 24-column grid layout, matching the existing dashboards.

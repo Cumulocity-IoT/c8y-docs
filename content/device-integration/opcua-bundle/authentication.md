@@ -2,6 +2,8 @@
 weight: 70
 title: Authentication
 layout: redirect
+skills:
+  - browse-opcua-address-space
 ---
 
 The authentication setting is used to authenticate and authorize the server user. It tells the gateway how to create a user identity and how to send it to the OPC UA server when establishing a connection.
@@ -56,6 +58,8 @@ The address space is automatically scanned when a connection between the gateway
 
 In case a node cannot be read, the scan process skips this node and continues.
 An error entry is written to the opcua-device-gateway log file to provide information (more information available in debug level).
+
+To manually scan the address space click **Rescan**. You can monitor the progress by checking the rescan operation in the **Control** tab.
 
 ![Gateway events tab](/images/device-protocols/opcua/opcua-address.png)
 

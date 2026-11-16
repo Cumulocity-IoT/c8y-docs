@@ -30,8 +30,6 @@ On the **Offloading** page you do the offloading management and monitoring tasks
 * Scheduling or manually triggering offloading executions
 * Viewing the history of offloading executions
 
-<img src="/images/datahub-guide/datahub-configure-offloading-tasks.png" alt="Configuration of offloading tasks"  style="max-width: 100%">
-
 ### Offloading overview {#offloading-overview}
 
 In the main panel of the **Offloading** page, you will find all pipelines as well as their current status.

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T16:09:33.066Z
+date: '2023-12-06'
 title: Fixed default global rules issue
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-45858
 version: 10.18.323.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Fixed an issue with cloning some of the default global roles (for example, "devices").

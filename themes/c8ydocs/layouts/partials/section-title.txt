@@ -1,0 +1,7 @@
+{{- /* Humanize a section slug and restore Cumulocity acronym casing. Input: section slug string. */ -}}
+{{- $s := . | humanize -}}
+{{- $map := dict "ui" "UI" "api" "API" "sdk" "SDK" "ai" "AI" "dtm" "DTM" "iot" "IoT" "mqtt" "MQTT" "opc" "OPC" "smartrest" "SmartREST" "lwm2m" "LWM2M" "lpwan" "LPWAN" "opcua" "OPC UA" "rest" "REST" "cra" "cloud remote access" -}}
+{{- range $k, $v := $map -}}
+  {{- $s = $s | replaceRE (printf "(?i)\\b%s\\b" $k) $v -}}
+{{- end -}}
+{{- return $s -}}

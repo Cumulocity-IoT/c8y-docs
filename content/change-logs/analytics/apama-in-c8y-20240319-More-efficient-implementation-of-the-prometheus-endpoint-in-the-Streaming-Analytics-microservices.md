@@ -1,6 +1,8 @@
 ---
-date: 2024-03-19
-title: More efficient implementation of the /prometheus endpoint in the Streaming Analytics microservices
+date: '2024-03-19'
+title: >-
+  More efficient implementation of the /prometheus endpoint in the Streaming
+  Analytics microservices
 change_type:
   - value: change-VSkj2iV9m
     label: Fix
@@ -13,5 +15,12 @@ build_artifact:
     label: apama-in-c8y
 ticket: PAB-4411
 version: 25.85.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The implementation of the `/prometheus` endpoint has been optimized by removing redundant calls to other internal endpoints.

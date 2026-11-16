@@ -2,6 +2,15 @@
 weight: 31
 title: Viewing device details
 layout: bundle
+skills:
+  - manage-identity
+  - read-device-info
+  - read-measurements
+  - read-network-availability
+  - request-device-logs
+  - request-diagnostics
+  - run-shell-command
+  - track-location
 sector:
   - device_management
 ---
@@ -28,7 +37,7 @@ Several individual tabs, which you do not find listed here, may be described in 
 
 Below the name, a list of breadcrumbs is displayed. If the device is part of an asset hierarchy (such as a group), you can use the breadcrumbs to easily navigate up that hierarchy. Since devices can be part of multiple hierarchies, several rows of breadcrumbs may be shown.
 
-Depending of the type and usage of a device, further actions are provided in an action menu when clicking **More...** at the right of the top menu bar.
+Depending of the type and usage of a device, further actions are provided in an context menu when clicking **More...** at the right of the top menu bar.
 
 ![More menu](/images/users-guide/DeviceManagement/devmgmt-devices-more.png)
 
@@ -38,7 +47,26 @@ Details on these additional menu items are provided where required.
 
 The **Alarms** tab provides information on the alarms of a device. See [Working with alarms](/device-management-application/monitoring-and-controlling-devices/#working-with-alarms) for detailed information on alarms.
 
+### Smart rules (NEW) {#smart-rules}
+
+{{< c8y-admon-preview >}}
+This feature is in Public Preview and may be subject to change in the future.
+{{< /c8y-admon-preview >}}
+
+The **Smart rules (NEW)** tab allows to create and manage the Analytics Builder model instances directly from the context of a device or group.
+
+![Smart rules new tab](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
+
+To create your first rule, refer to [Create your first rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
+
+For more details about smart rules (NEW), refer to [Smart rules plugin](/streaming-analytics/smart-rules-plugin/#getting-started).
+
+
 ### Availability {#availability}
+
+{{< c8y-admon-info >}}
+The **Availability** tab is deprecated and planned for removal before the y2028 release. See the [deprecation announcement](/change-logs/#ui-c8y-dm-7021-deprecate-availability-donut-charts) for details.
+{{< /c8y-admon-info >}}
 
 The Availability tab offers availability monitoring for machines, see [Availability](/device-management-application/monitoring-and-controlling-devices/#availability) for more information.
 
@@ -58,19 +86,18 @@ For more details on managing binary-based configuration snapshots, see [Managing
 
 #### To request the current text-based configuration snapshot {#to-request-the-current-text-based-configuration-snapshot}
 
-1. Navigate to the **Configuration** tab.
-2. Select one of the device-supported configurations in the list.
-3. Click **Get snapshot from device**.
+1. Navigate to the **Configuration** tab and open the **Custom** subtab.
+2. Click **Get configuration from device**.
 
 #### To add or edit a text-based configuration snapshot {#to-add-or-edit-a-text-based-configuration-snapshot}
 
-1. In the **Configuration** tab, you can manually add or edit the device configuration in the text field.
+1. In the **Custom** subtab, you can manually add or edit the device configuration in the code editor. Use the **Language** selector to set the syntax highlighting.
 2. Click **Send configuration to device** to save your edits.
 
 ![Text-based configuration](/images/users-guide/DeviceManagement/devmgmt-devices-textconfig.png)
 
 {{< c8y-admon-info >}}
-If a device supports both text-based and binary-based configuration the **Configuration** tab shows a subtab for each configuration type.
+If a device supports both text-based and binary-based configuration the **Configuration** tab shows a subtab for each: **From repository** for binary-based configuration snapshots, and **Custom** for text-based configuration.
 {{< /c8y-admon-info >}}
 
 ### Control {#control}
@@ -125,7 +152,7 @@ The information is provided on the following cards:
 </tr>
 <tr>
 <td style="text-align:left">Device and communication</td>
-<td style="text-align:left">Shows a data point graph displaying real-time data on particular measurements. Drag the x-axis to move the data point time measurement. To zoom in select a time period, double click to zoom out of the graph. For details on data point graphs, refer to <a href="/cockpit/data-explorer/#working-with-data-explorer" class="no-ajaxy">Working with data explorer</a>.<br> The following measurements may be shown here: <br>
+<td style="text-align:left">Shows a data graph displaying real-time data on particular measurements. Drag the x-axis to move the data point time measurement. To zoom in select a time period, double click to zoom out of the graph. For details on data graphs, refer to <a href="/cockpit/data-explorer/#working-with-data-explorer" class="no-ajaxy">Working with data explorer</a>.<br> The following measurements may be shown here: <br>
 <strong>Data points</strong>: c8y_Battery.level, c8y_SignalStrength.rssi, c8y_MemoryMeasurement.Used, c8y_CPUMeasurement.Workload, c8y_NetworkStatistics.Upload, c8y_SignalStrength.RCSP, c8y_SignalStrength.ber, c8y_SignalStrength.ECN0, c8y_NetworkStatistics.Download, c8y_MemoryMeasurement.Total <br>
 <strong>Alarms</strong>: c8y_UnavailabilityAlarm<br>
 <strong>Events</strong>: c8y_LocationUpdate</td>
@@ -276,8 +303,9 @@ If the LAN configuration is disabled, the DHCP configuration is automatically di
 
 ### Services {#services}
 
-The **Services tab** provides a list of all services running on a device with their status, name, type and date of the last update.
+The **Services** tab provides a list of all services running on a device with their status, name, type and date of the last update.
 Every column allows services to be filtered and/or sorted by the respective value displayed.
+Click a service to open its details view. See [Managing device services](/device-management-application/managing-device-services/) for the tabs available for a service.
 
 ![Services overview](/images/users-guide/DeviceManagement/devmgmt-services-overview.png)
 

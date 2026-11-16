@@ -1,5 +1,5 @@
 ---
-date: 2024-05-30
+date: '2024-05-30'
 title: Improved dropdown for child asset models and asset properties
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: dtm
 ticket: CTM-1217
 version: 1020.1.8
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 When adding child asset models or asset properties to an asset model, those already added will no longer appear in the dropdown list.

@@ -19,6 +19,10 @@ In the **Default subscriptions** page, you can configure two separate lists of a
 These default lists can be overridden for particular subtenants by setting additional tenant options, for example via tenant policy. For details, see [Overriding default subscriptions](#to-override-default-subscriptions) or the [Tenant API](https://{{< domain-c8y >}}/api/core/#tag/Tenant-API) in the {{< openapi >}}.
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-info >}}
+Listing an application or microservice here only takes effect for a tenant if it is owned or shared as a MARKET application by that tenant's parent, or by the {{< management-tenant >}} if the tenant has no parent. The tenant's own ownership of, or a subscription it once had to, an application is not taken into account for this - only its parent's is.
+{{< /c8y-admon-info >}}
+
 On the left, the list of subscribable applications (both web applications and microservices) is displayed, which consists of:
 
 - All own applications.
@@ -36,7 +40,7 @@ Initially, the lists show the default subscriptions inherited from the tenant hi
 
 ### To configure default subscriptions {#to-configure-default-subscriptions}
 
-You can override both lists by switching the corresponding toggle. This will reveal all available applications (initially, unselected ones are hidden) but the selection will remain the same.
+You can override both lists by switching the corresponding toggle. This will reveal all subscribable applications (initially, unselected ones are hidden) but the selection will remain the same.
 
 Next, adjust the lists to your needs by selecting additional applications to be subscribed by default or deselect applications you do not want to be subscribed.
 

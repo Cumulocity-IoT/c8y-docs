@@ -39,7 +39,7 @@ When using the proxy REST API, all queries are processed using the same Dremio A
 Your follow-up application might require more than one Dremio user for accessing the data lake. You can define additional Dremio users for that purpose, using the instructions in [Adding a Dremio user](/datahub/setting-up-datahub/#adding-a-dremio-user).
 
 #### Data Lake {#data-lake}
-Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you must specify corresponding settings to define the data lake to be used.
+Depending on the configuration of the environment, the data lake provider is either fixed or you can choose among different providers. For each data lake provider, you must specify corresponding settings to define the data lake to be used. See also [Managing the data lake](/datahub/operating-datahub/#managing-datalake) for details on managing a data lake.
 
 {{< c8y-admon-req >}}
 The setting **Partition Column Inference** must not be enabled as this lets Dremio assume a specific folder structure, which conflicts with the folder structure used by {{< product-c8y-iot >}} DataHub.
@@ -79,7 +79,7 @@ Note that the account type must be **StorageV2**, and the **Hierarchical namespa
 While the other settings are fixed once the initial configuration was saved, the **AWS access key** and the **Access secret** can be changed afterwards. Click **Edit**, set new values, and either click **Save credentials** to save the update or **Cancel** to keep the old values.
 
 {{< c8y-admon-req >}}
-An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/current/sonar/data-sources/object/s3](https://docs.dremio.com/current/sonar/data-sources/object/s3) are satisfied.
+An S3 bucket with default settings works. If specific security policies are applied, make sure that the minimum policy requirements listed in [https://docs.dremio.com/current/data-sources/object/s3/](https://docs.dremio.com/current/data-sources/object/s3/) are satisfied.
 {{< /c8y-admon-req >}}
 
 **Server-side encryption** is supported while client-side encryption is not. S3 offers three key management mechanisms:
@@ -98,30 +98,7 @@ Value: Your key name, for example, `arn:aws:kms:eu-west-2:123456789012:key/071a8
 **SSE-C**: The client specifies an base64-encoded AES-256 key to be used to encrypt and decrypt the data. **{{< product-c8y-iot >}} DataHub does not support this option.**
 
 ##### NAS {#nas}
-**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for {{< product-c8y-iot >}} Edge installations. The following settings must be defined for this data lake:
-
-|Settings|Description|
-|:---|:---|
-|Mount path|The mount path refers to a path in the local Linux file system on both the coordinator and executor containers. By default, the file system of {{< product-c8y-iot >}} Edge is mounted into /datalake inside the containers. To use some other folder, you must map the folder into both containers, for example, to /datalake inside the containers.|
-
-##### HDFS {#hdfs}
-**HDFS** is the Hadoop Distributed File System, which is a distributed, scalable file system designed for running on commodity hardware. The following settings must be defined for this data lake:
-
-|Settings|Description|
-|:---|:---|
-|Namenode host|The host name of the HDFS NameNode|
-|Namenode port|The port of the HDFS NameNode|
-|Root path|The root path within the HDFS filesystem for storing offloaded data; default root path is /; setting a subfolder allows you to hide other data in the filesystem from {{< product-c8y-iot >}} DataHub|
-|Short-circuit local reads|If enabled, Dremio can directly open the HDFS block files; default is disabled|
-|Enable impersonation|If disabled, all requests against HDFS will be made using the user *dremio*; if enabled, the tenant name will be used to access HDFS; prerequisite is that the user has rwx-permissions for the given root path. Note that the user *dremio* is used for some operations even when impersonation is enabled. Thus, it must have appropriate permissions in any case.|
-|Allow VDS-based access delegation|If enabled, data used in virtual datasets (VDS) will be requested from HDFS using the username of the owner of the VDS; if disabled, the name of the user logged into Dremio is used|
-|Impersonation user delegation|Defines whether an impersonated username is either *As is*, *Lowercase*, or *Uppercase*|
-
-{{< c8y-admon-info >}}
-Impersonation is supported and may be used. However, when impersonation is enabled, Dremio uses the tenant ID as username for querying HDFS, not the actual username. For example, if "t12345/user" is the logged in user, Dremio will use "t12345" for HDFS requests. Thus, granting file system permissions is only possible on a per-tenant basis and not on a per-user basis. Also note that the user *dremio* is used for some operations even when impersonation is enabled. Thus, it must have appropriate permissions in any case.
-{{< /c8y-admon-info >}}
-
-For **Azure Storage**, **Amazon S3**, and **HDFS** data lakes, you can also define additional connection properties. Click **Add property** and define an additional property consisting of a key/value pair.
+**NAS** is a storage system mounted (NFS, SMB) directly into the Dremio cluster. It is only available for {{< product-c8y-iot >}} Edge installations.
 
 #### Saving settings {#saving-settings}
 Once all settings are defined, click **Save** in the action bar to the right. During the save process, the following steps are automatically conducted:

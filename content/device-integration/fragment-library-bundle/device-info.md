@@ -2,6 +2,8 @@
 weight: 80
 title: Device information
 layout: bundle
+skills:
+  - read-device-info
 sector:
   - device_management
 ---
@@ -20,6 +22,10 @@ PUT /inventory/managedObjects/<deviceId>
    "c8y_IsDevice": {}
 }
 ```
+
+The devices with this fragment can be queried and filtered for. Along with the **All devices** list, they will also be shown in groups as well as during the creation of bulk operations. 
+
+All devices including child devices should contain this fragment. 
 
 {{< c8y-admon-info >}}
 Devices created through SmartREST 2.0 will automatically contain this fragment.

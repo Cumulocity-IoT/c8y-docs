@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: '2023-12-06'
 title: EPL enhancements in Apama 10.15.4
 change_type:
   - value: change-QHu1GdukP
@@ -12,6 +12,13 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 version: 24.18.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 ##### String concatenation operator + supports non-string operands
 
@@ -50,7 +57,7 @@ The following table lists all new methods:
 | `any.isEmpty()`, `optional.isEmpty()`, `listener.isEmpty()`, `Channel.isEmpty()`, `chunk.isEmpty()` | Aliases for the existing `empty()` methods on these types. It is recommended to use the new `isEmpty()` methods, but the use of `empty()` is not deprecated. |
 | `sequence.getOr()` | Gets the value at the specified index, or a specified fallback value if the index is not valid. |
 
-For more information, see the [API Reference for EPL (ApamaDoc)]({{<link-apama-webhelp>}}/related/ApamaDoc/index.html).
+For more information, see the [API Reference for EPL (ApamaDoc)]({{<link-apamadoc-api>}}).
 
 ##### Support for negative indexes for sequence[...] access
 
@@ -71,7 +78,7 @@ can now be written more simply as
 [12345, "a string"]
 ```
 
-This simplifies the functional example given in [EPL enhancements in 10.15.3]({{<link-apama-webhelp>}}/change-logs/#10.15/functional-10153-release) in the Apama documentation: the `<any>` is no longer needed in the `setFields` call.
+This simplifies the functional example given in [EPL enhancements in 10.15.3](https://cumulocity.com/apama/docs/10.15/change-logs/#10.15/functional-10153-release) in the Apama documentation: the `<any>` is no longer needed in the `setFields` call.
 
 ##### Discarding of unused return values
 

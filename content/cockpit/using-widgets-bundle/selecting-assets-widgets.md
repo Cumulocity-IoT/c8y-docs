@@ -33,19 +33,19 @@ You cannot select the **Unassigned devices** folder itself. However, each device
 
 There are two methods which can be used to quickly find assets:
 
-1. Full text search, and
-2. filtering.
+1. Name search
+2. Filtering
 
-#### Full text search {#full-text-search}
+#### Name search {#name-search}
 
-On the **Configuration** tab of the widget editor you can use the full text search field under **Asset selection**.
+On the **Configuration** tab of the widget editor you can use the search field under **Asset selection**.
 
-Through the full text search you can find assets in the whole hierarchy, but it requires exact matches, for example, the whole name of the asset.
+With the search, you can find assets anywhere within the hierarchy if the asset’s name contains the search term.
 
 After selecting the asset, you see all children of this asset. To return to the level above, click the "X" in the search field.
 
 {{< c8y-admon-info >}}
-The full text search is only available in the Home dashboard and the Report dashboards.
+The name search is only available in the Home dashboard and the Report dashboards.
 {{< /c8y-admon-info >}}
 
 For details on the search functionality, see [Search and filter functionality](/get-familiar-with-the-ui/gui-features/#search-and-filter-functionality).

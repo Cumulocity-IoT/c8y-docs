@@ -35,5 +35,6 @@ Be aware of the following limitations of the data broker:
 * Cloud Remote Access cannot be used on the destination tenant.
 * The {{< management-tenant >}} cannot be used as data broker source tenant.
 * Currently, the Fieldbus widget does not work on tenants that receive the fieldbus devices through data broker, as the corresponding data models are not synchronized.
+* Event attachments are not forwarded to destination tenants.
 * Data broker does not guarantee the same order of messages on destination tenants as it was on the source tenant.
 * While we provide backwards compatibility, we cannot ensure that data broker can send data to {{< product-c8y-iot >}} tenants which run on earlier {{< product-c8y-iot >}} versions than the source.

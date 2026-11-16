@@ -93,7 +93,7 @@ You will find the _pom.xml_ file inside the *hello-microservice-java* folder. Ed
 
 #### Add the microservice library {#add-the-microservice-library}
 
-You must specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This can be found on the platform; at the top-right corner, click the tenant user and find the backend version on the pop-up menu.
+You must specify the version of the {{< product-c8y-iot >}}'s microservice library to be used. This version is based on the platform version ("cumulocity"). To find the platform version, click the user icon at the top right and in the right drawer, under **Platform info**, download the platform details.  
 
 Alternatively, you can retrieve the backend version with a GET request to <kbd><URL>/tenant/system/options/system/version</kbd>.
 
@@ -102,17 +102,21 @@ The response looks like this:
 ```json
 {
     "category": "system",
-    "value": "1016.0.117",
+    "value": "2025.0.17",
     "key": "version"
 }
 ```
 
-See also [Tenants](https://{{< domain-c8y >}}/api/core/#tag/Tenants) in the {{< openapi >}}.
+See also [Tenants](https://{{< domain-c8y >}}/api/core/{{< c8y-current-version >}}/#tag/Tenants) in the {{< openapi >}}.
+
+For yearly releases, you should use the release with matching major and minor versions and the latest maintenance version from the [{{< product-c8y-iot >}} maven repository](https://download.cumulocity.com/maven/repository/com/nsn/cumulocity/clients-java/microservice-dependencies/).
+
+For the continous deployment version you should use the latest version from the [{{< product-c8y-iot >}} maven repository](https://download.cumulocity.com/maven/repository/com/nsn/cumulocity/clients-java/microservice-dependencies/).
 
 In the `<properties>` element specified above, add a child element `<c8y.version>` with the backend version of your tenant. Also add a `<microservice.name>` child element to name your microservice application.
 
 ```xml
-    <c8y.version>1016.0.117</c8y.version>
+    <c8y.version>2025.0.5</c8y.version>
     <microservice.name>hello-microservice-java</microservice.name>
 ```
 

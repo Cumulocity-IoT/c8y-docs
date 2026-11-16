@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06T15:45:34.442Z
+date: '2023-12-06'
 title: Increased timestamp width in "Event list" widget
 change_type:
   - value: change-VSkj2iV9m
@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-55803
 version: 10.18.487.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The width for the timestamp in the "Event list" widget has been slightly increased.

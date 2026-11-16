@@ -19,7 +19,7 @@ Permissions define explicitly what functionality can be executed by a user.
 
 {{< product-c8y-iot >}} distinguishes read permissions and administration permissions. Read permissions enable users to read data. Administration permissions enable users to create, update and delete data. Read and administration permissions are separately available for the different types of data in {{< product-c8y-iot >}}. For example, there are read permissions for inventory data, measurements, operations and so forth.
 
-To manage permissions more easily, they are grouped into so-called "roles". Every user can be associated with a number of roles, adding up permissions of the user.
+To manage permissions more easily, they are grouped into roles. When you assign one or more roles to a user, they gain the combined permissions of all these roles.
 
 The following types of roles can be associated with users:
 
@@ -51,10 +51,14 @@ This concept helps to assign minimal permissions to devices.
 
 Global roles and inventory roles are created and managed in the **Roles** page of the Administration application in the UI.
 
-A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Managing permissions](/standard-tenant/managing-permissions).
+A detailed description on available default roles and on creating and assigning global and inventory roles can be found in [Managing permissions and roles](/standard-tenant/managing-permissions).
 
 For details on permission management using the API refer to [the User API](https://{{< domain-c8y >}}/api/core/#tag/User-API) in the {{< openapi >}}.
 
+{{< c8y-admon-important >}}
+In the Cumulocity API, each granular permission is identifed by a unique “permission” string, which is prefixed with `ROLE_` (for example, `ROLE_ALARM_READ`, `ROLE_INVENTORY_ADMIN`). Therefore, permissions are frequently referred to as "roles" throughout the API as well as in the configuration files. For example, the microservice manifest includes a `requiredRoles` field which actually expects a permission string. See also the glossary for the usage of the terms "[permission](/glossary/#permission)" and "[role](/glossary/#role)" in the Cumulocity context.  
+{{< /c8y-admon-important >}}
+
 ### Globally accessible objects {#globally-accessible-objects}
 
-It is possible to make any object accessible by any user without specific rights. To grant those rights just add a new fragment called `c8y_Global` to the object.
+To make a managed object, such as an inventory object, accessible to all users regardless of their individual permissions, add the c8y_Global fragment to the object. This applies only to inventory objects, not to alarms, events, etc., and the visibility does not extend to the object's children.

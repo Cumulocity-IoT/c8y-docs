@@ -1,8 +1,8 @@
 
 .input-group{
   position: relative;
-  max-width: 620px;
   margin: 0 auto;
+  max-width: 840px;
   
   .input-group-addon{
     position: absolute;
@@ -11,12 +11,25 @@
     transform: translate(16px, -50%);
     color: $brand-primary;
     opacity: .6;
-
+    > .btn-clean{
+      min-width: 36px;
+    }
     + .input-lg{
       padding-left: 48px;
     }
+    &:last-child{
+      right: 12px;
+      transform: translate(0, -50%);
+    }
   }
-  
+  &.input-group-search{
+    .form-control{
+      padding-right: 48px;
+    }
+    .btn-clean{
+      border-radius: 50%;
+    }
+  }
 }
 
 .form-control{

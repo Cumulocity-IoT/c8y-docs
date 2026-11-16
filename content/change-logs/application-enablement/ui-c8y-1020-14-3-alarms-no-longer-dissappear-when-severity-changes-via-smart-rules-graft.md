@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59695
 version: 1020.14.3
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In some cases, alarms were no longer displayed when their severity was changed via a smart rule. This has been fixed so that alarms now remain visible in the UI when their severity changes. This ensures that users can always see all active or cleared alarms, regardless of any alarm updates triggered by smart rules.

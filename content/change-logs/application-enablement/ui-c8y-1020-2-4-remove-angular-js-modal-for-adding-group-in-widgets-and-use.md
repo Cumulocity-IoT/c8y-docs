@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58710
 version: 1020.2.4
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The AngularJS-based dialog for creating a new group from a widget has been replaced. Instead of this dialog, when users want to add a new group from a widget, they will now be redirected to the **Groups** page where the **Add group** dialog is shown.

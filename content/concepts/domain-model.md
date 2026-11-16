@@ -51,9 +51,8 @@ Using this approach, the modeling devices can make a difference between modeling
 
 The approach also enables developing generic application components. For example, as soon as a managed object has a position fragment (`c8y_Position`), it can be placed on a map. As soon as it has a relay (`c8y_Relay`), it can be switched on and off using the respective device control command as described below.
 
-For more information on fragments and how managed objects are structured, see [Fragment library](/device-integration/fragment-library/).
+For more information about various Device Management functionalities and their associated fragments, see also [Fragment library](/device-integration/fragment-library/).
 
-<a name="document-limits"></a>{{< c8y-admon-info >}}
 While designing the data models, consider the following:
 1. There is no size or length constraint for a single fragment, but there is a limitation for the overall JSON document size, which may not exceed 16MiB for a single managed object entry within the inventory collection. We recommend you to keep it below 1 MiB.
 2. When designing asset hierarchies, use small groups with less than 1000 subassets. Each subitem in the asset hierarchy creates a reference record in the parent item. Therefore keep in mind the first recommendation regarding the JSON document size.
@@ -89,13 +88,12 @@ While designing the data models, consider the following:
     }
 }
 ```
-{{< /c8y-admon-info >}}
 
 #### Naming conventions of fragments {#naming-conventions-of-fragments}
 
 Fragments use a naming convention to avoid conflicts between different parties supplying fragment information, similar to Java or other programming languages.
 
-In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position". Together they form a set of standard fragments. Fragment definitions can be found in the [fragment library](/device-integration/fragment-library/).
+In the example above, `c8y_Position` is a combination of "c8y" (a shorthand for "Cumulocity"), an underscore and "Position".
 
 {{< c8y-admon-important >}}
 Names used for fragments must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $ / '`.

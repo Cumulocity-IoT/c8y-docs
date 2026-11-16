@@ -1,5 +1,5 @@
 ---
-date: 2023-12-06
+date: '2023-12-06'
 title: Removed data field from realtime API handshake responses
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-55522
 version: 10.18.371.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The <code>data</code> field has been removed from realtime API handshake responses where it was not required and always had a "null" value.

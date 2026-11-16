@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-58690
 version: 1020.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 In the past, restoring a dashboard did not properly update the node property of the navigator, leading to inconsistencies. This has now been fixed. The navigator node property is correctly changed after a dashboard restore, ensuring the restored dashboard matches the expected state.

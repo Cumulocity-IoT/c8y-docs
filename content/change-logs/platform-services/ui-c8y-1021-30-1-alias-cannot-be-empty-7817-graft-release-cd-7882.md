@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-61921
 version: 1021.30.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 The login alias can no longer be an empty string, that is, a string consisting only of whitespace, null, or undefined. If no login alias is provided for the user, this field must not be included in the user object.

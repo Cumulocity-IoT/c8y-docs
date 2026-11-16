@@ -1,0 +1,29 @@
+{{- /*
+  Returns one page as Markdown for llms-full.txt and for the page's own index.md:
+  title, metadata lines, then the body. The body is the page's own text plus, for bundle
+  pages, the blocks of its headless <name>-bundle folder in weight order (as
+  _default/bundle.html does) or, for the glossary, its letter pages (as glossary/list.html
+  does). Links are made absolute.
+*/ -}}
+{{- $release := site.Data.date_settings.version | default "Latest" -}}
+{{- $title := .Title -}}
+{{- if and (eq (lower $title) "introduction") .Section }}{{ $title = printf "%s — %s" (partial "section-title.txt" .Section) $title }}{{ end -}}
+{{- $sectors := slice -}}
+{{- range .Params.sector }}{{ with site.GetPage (printf "/sector/%s" .) }}{{ $sectors = $sectors | append .Title }}{{ end }}{{ end -}}
+{{- $parts := slice -}}
+{{- with $sectors }}{{ $parts = $parts | append (printf "Sector: %s" (delimit . ", ")) }}{{ end -}}
+{{- with .Params.audience }}{{ $parts = $parts | append (printf "Audience: %s" (delimit . ", ")) }}{{ end -}}
+{{- $parts = $parts | append (printf "Release: %s" $release) -}}
+{{- with .Params.description }}{{ $parts = $parts | append (printf "Description: %s" .) }}{{ end -}}
+{{- $children := slice -}}
+{{- if eq .Layout "bundle" -}}
+  {{- with .File }}{{ with site.GetPage (printf "%s-bundle" .BaseFileName) }}{{ $children = sort (.Resources.ByType "page") ".Params.weight" }}{{ end }}{{ end -}}
+{{- else if and (eq .Kind "section") (eq .Section "glossary") -}}
+  {{- $children = .Pages.ByWeight -}}
+{{- end -}}
+{{- $body := string .RenderShortcodes -}}
+{{- range $children -}}
+  {{- $body = printf "%s\n\n## %s\n\n%s" $body .Title (strings.Trim .RenderShortcodes " \t\r\n") -}}
+{{- end -}}
+{{- $body = partial "llms-absolute-links.txt" (dict "text" $body "permalink" .Permalink) -}}
+{{- return printf "# %s\n\nSource: %s\n%s\n\n%s\n" $title .Permalink (delimit $parts "\n") (strings.Trim $body " \t\r\n") -}}

@@ -1,5 +1,5 @@
 ---
-date: "2024-02-06"
+date: '2024-02-06'
 title: Updated 3rd-party library Avro
 product_area: Platform services
 change_type:
@@ -13,5 +13,12 @@ build_artifact:
     label: cumulocity
 ticket: MTM-56779
 version: 10.20.23.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 To address the CVE-2023-39410 vulnerability, the 3rd-party library Avro has been updated to version 1.11.3.

@@ -13,5 +13,12 @@ build_artifact:
     label: opcua
 ticket: DM-2442
 version: 10.20.88.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, when creating an OPC UA device type with special characters in any of the fields, the gateway was not reading it correctly which caused an error while creating mappings. This issue is now fixed, the gateway encodes and decodes special characters as expected.  

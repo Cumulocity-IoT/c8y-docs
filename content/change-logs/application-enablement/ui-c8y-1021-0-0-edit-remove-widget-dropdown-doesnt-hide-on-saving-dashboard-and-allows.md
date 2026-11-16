@@ -13,5 +13,12 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-59669
 version: 1021.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 Previously, when opening the edit/remove dropdown to make changes to a widget in a dashboard and then saving the dashboard, the widget's edit/remove dropdown remained open. This could lead to unintended modifications if the user accidentally interacted with the open dropdown. With this change, the widget's action dropdown now automatically closes after saving the dashboard. 

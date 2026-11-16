@@ -1,10 +1,10 @@
 ---
 weight: 20
-title: Integration life cycle
+title: Integration lifecycle
 layout: redirect
 ---
 
-The basic life cycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/concepts/interfacing-devices). In this section, we will show how this life cycle is implemented on REST level. The life cycle consists of two phases, a startup phase and a cycle phase.
+The basic lifecycle for integrating devices into {{< product-c8y-iot >}} is discussed in [Interfacing devices](/device-integration/interfacing-devices/). In this section, we will show how this lifecycle is implemented on REST level. The lifecycle consists of two phases, a startup phase and a cycle phase.
 
 The startup phase connects the device to {{< product-c8y-iot >}} and updates the device data in the inventory. It also performs cleanup tasks required for operations. It consists of the following steps:
 
@@ -514,7 +514,7 @@ In contrast to events, alarms can be updated. If an issue is resolved (for examp
 
     HTTP/1.1 200 OK
 
-If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [Real-time rule](/concepts/realtime) if they want to convert the event into an alarm.
+If you are uncertain on whether to send an event or raise an alarm, you can simply just raise an event and let the user decide with a [Real-time rule](/concepts/concepts-introduction/#analytics) if they want to convert the event into an alarm.
 
 ### Replacing a physical device {#replacing-a-physical-device}
 

@@ -64,7 +64,7 @@ Retention rules do not apply to files stored in the files repository.
 
 1. Click **Add rule** in the top menu bar.
 2. In the resulting dialog box, select the type of data to be cleaned up (alarms, measurements, events, operations, audit logs or all).
-3. Enter a fragment type if you want to be more specific about the data to be cleaned up. To clean up all connection loss alarms with this rule, select "Alarm" and enter "c8y_UnavailabilityAlarm" as property into the **Type** field.
+3. Optionally, enter a type or a fragment type to further restrict the data to be cleaned up.  The type refers to the value of the object's top-level `type` field and identifies the specific kind of object within the selected data type. The fragment type refers to the name of a JSON property contained in the object. An object has one type but can contain multiple fragments.
 4. If you want to remove data only from a specific device, enter the device ID into the **Source** field.
 5. Enter the **Maximum age** in days (max. allowed value is 10 years in days).
 6. Click **Save** to save your settings.
@@ -88,9 +88,13 @@ For details on the fields, see [To add a retention rule](#to-add-a-retention-rul
 
 Hover over the row with the rule you want to delete and click the remove icon <i class="dlt-c8y-icon-minus-circle text-danger icon-20"></i> that appears on the right.
 
-All retention rules are executed sequentially and independent of each other. So if we have two retention rules, a more specific one with a greater maximum age that defines a subset of the documents that are defined by a more common rule with a lower maximum age, then effectively it will work as if we had a single, more common rule.
+### Execution examples {#examples}
 
-For example given the two following rules:
+All retention rules are executed sequentially and independent of each other.
+
+If we have two retention rules, a more specific one with a greater maximum age that defines a subset of the documents that are defined by a more common rule with a lower maximum age, then effectively it will work as if we had a single, more common rule.
+
+For example, given the two following rules:
 
 | **Data type** | **Fragment type** | **Type**        | **Source** | **Maximum age** |
 |---------------|-------------------|-----------------|------------|-----------------|
@@ -99,7 +103,7 @@ For example given the two following rules:
 
 All measurements with the type `c8y_Temperature` which are older than 30 days will be removed, including those where the source equals `12345`.
 
-On the other hand when we have the following retention rules defined:
+On the other hand, when we have the following retention rules defined:
 
 | **Data type** | **Fragment type** | **Type**        | **Source** | **Maximum age** |
 |---------------|-------------------|-----------------|------------|-----------------|

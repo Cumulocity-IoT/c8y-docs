@@ -13,6 +13,13 @@ build_artifact:
     label: ui-c8y
 ticket: DM-3089
 version: 1021.28.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+  - label: apj.cumulocity.com
+  - label: jp.cumulocity.com
+  - label: emea.cumulocity.com
+  - label: us.cumulocity.com
+  - label: cumulocity.com
 ---
 As part of ongoing improvements to the Device Management application, the device map component (Devices > Map) has been migrated to a new implementation. Besides improving the functionality, the goal of this migration is to keep the component up-to-date and maintainable. The following changes have been made:
 

@@ -228,3 +228,13 @@ a:not([class]):not([data-ps2id-api]):not(:has(>button)){
   }
 
 }
+
+
+// GLOSSARY STYLES
+.letter-header{
+  margin-top: 4rem!important;
+  margin-bottom: 1rem;
+  background-color: var(--c8y-palette-gray-90);
+  border-radius: 0.25rem;
+  padding: 0.5rem!important;
+}
