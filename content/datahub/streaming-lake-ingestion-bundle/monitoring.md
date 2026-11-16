@@ -38,7 +38,7 @@ The event lists all new tables and columns added during that period. This helps 
 
 ### Offloading failure alarms {#offloading-failure-alarms}
 
-When the service repeatedly fails to start offloading your data, for example because it cannot access your data lake or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
+When the service repeatedly fails to offload your data, for example because it cannot access your data lake or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
 
 Each part of the service raises its own alarm type:
 
@@ -46,4 +46,4 @@ Each part of the service raises its own alarm type:
 * `c8y_StreamingLakeIngestion_LatestWriterInitializationFailed`: The service cannot write the `latest_inventory` tables.
 * `c8y_StreamingLakeIngestion_AppenderInitializationFailed`: The service cannot make new data files visible in the tables.
 
-The alarm text starts with "Offloading into the data lake has stopped" and ends with the cause of the failure, such as a missing permission on your storage. Fix the cause. The service retries automatically and clears the alarm when that part of the service starts successfully again.
+The alarm text starts with "Offloading into the data lake has stopped" and ends with the cause of the failure, such as a missing permission on your storage. Fix the cause. The service retries automatically and clears the alarm when that part of the service offloads successfully again.
