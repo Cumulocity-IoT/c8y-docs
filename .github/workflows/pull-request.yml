@@ -72,6 +72,8 @@ jobs:
         "${{ runner.temp }}/skills-ref/bin/pip" install --quiet skills-ref==0.1.1
         dir="${{ runner.temp }}/skills"
         status=0
+        # Release branches have no skills. Skip the loop instead of failing on the unmatched glob.
+        shopt -s nullglob
         for file in public/skills/*/*/index.md; do
           name=$(sed -n 's/^name: //p' "$file" | head -n 1)
           mkdir -p "$dir/$name"
