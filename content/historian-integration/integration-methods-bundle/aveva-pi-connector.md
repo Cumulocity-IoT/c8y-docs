@@ -18,5 +18,7 @@ The AVEVA PI connector requires:
 You define the PI tags to collect and the polling interval in configuration files, which you upload to the device in the **Configuration** tab. The connector applies changes without a restart. For the full setup, see the [AVEVA PI connector repository](https://github.com/Cumulocity-IoT/thin-edge-aveva-pi-connector).
 
 {{< c8y-admon-info >}}
-If your AVEVA PI System has the PI Connector for OPC UA or another OPC UA interface available, you can integrate it via the [OPC UA device gateway](#opcua-device-gateway) instead.
+- If your AVEVA PI System has the PI Connector for OPC UA or another OPC UA interface available, you can integrate it via the [OPC UA device gateway](#opcua-device-gateway) instead.
+- The AVEVA PI connector is an open-source component, published under the MIT license. Its source code is available in the [AVEVA PI connector repository](https://github.com/Cumulocity-IoT/thin-edge-aveva-pi-connector) on GitHub, so you can review it and adapt it to your requirements.
+
 {{< /c8y-admon-info >}}
