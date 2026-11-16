@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{- partial "root-nav.html" . -}}
+
+{{/* A topic page (content/skills/<topic>/_index.md). The root page /skills/ redirects to the Skills landing page. */}}
+<main class="main-content bundle-layout skill-layout">
+  <div class="breadcrumbs-container">
+    {{- partial "breadcrumbs.html" . -}}
+  </div>
+  <div class="article-list">
+    <article id="skills-topic" class="page-section single-section">
+      <div class="article-content">
+        <header class="section-header">
+          <h1 class="text-light">{{ .Title }}</h1>
+        </header>
+        {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+        {{ partial "headline-hash.html" .Content }}
+        <div class="skill-grid">
+          {{ range .RegularPages.ByWeight }}{{ partial "skills/card.html" (dict "skill" .) }}{{ end }}
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+{{- partial "footer.html" . -}}
+{{ end }}

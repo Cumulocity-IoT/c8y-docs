@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-10-23'
   - label: jp.cumulocity.com
     date: '2026-10-23'
+  - label: us.cumulocity.com
+    date: '2026-10-26'
+  - label: cumulocity.com
+    date: '2026-10-26'
 ---
 The AI Agents microservice now uses version 7 of the Vercel AI SDK. You can now define an agent's system prompt as a single system message or as a list of system messages. This lets you set provider-specific options on the system prompt, for example, to enable Anthropic prompt caching and reduce cost and latency for repeated requests.
 

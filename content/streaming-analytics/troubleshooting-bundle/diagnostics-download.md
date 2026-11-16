@@ -61,15 +61,17 @@ Enhanced diagnostics information is provided in a ZIP file named *diagnostic-enh
 
 #### Diagnostics for multi-tenant microservices {#diagnostics-multi-tenant}
 
-A multi-tenant microservice is shared by several tenants. The diagnostics ZIP files that you download from such a microservice only contain data that belongs to your own tenant, and that you can otherwise view yourself:
+A multi-tenant microservice is shared by several tenants. The diagnostics ZIP files that you download from such a microservice only contain data that belongs to your own tenant:
 
 - A copy of all analytic models and template model instances.
 - A copy of all smart rules.
 - A copy of the alarms of your tenant from the last 24 hours, up to 2000 alarms.
-- The log messages of your tenant from the last hour. As on the **Logs** page, only messages that can be attributed to your tenant are included, not the complete microservice log file. See [Viewing logs in the Streaming Analytics application](#logs-view).
+- The log messages of your tenant from the last hour. Only messages that can be attributed to your tenant are included (Streaming Analytics and Data Preparation), not the complete microservice log file. See [Viewing logs in the Streaming Analytics application](#logs-view).
 - Your tenant details and tenant options.
 - Version information for the components.
 
 The ZIP files never contain data of other tenants. They also do not contain information about the shared microservice as a whole, such as Apama-internal diagnostics, metrics, queue contents, or environment details. They do not include CPU or memory profiling either, as these would slow down the microservice for all of its tenants.
 
 The same applies when you download diagnostics from the tenant that owns the microservice. In that case, the ZIP files additionally contain the EPL apps and the names of the extensions, which belong to that tenant. Only the owning tenant can download the enhanced ZIP file, which also contains the extensions themselves.
+
+Only one diagnostics download can be prepared for a tenant at a time, and a multi-tenant microservice prepares at most 10 at once. If the download fails because of this, try again after a short wait.

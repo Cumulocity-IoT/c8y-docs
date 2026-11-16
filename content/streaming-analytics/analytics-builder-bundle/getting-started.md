@@ -166,7 +166,7 @@ Keep in mind that only saved models are listed on the **Models** tab of the mode
 The sample model uses template parameters. So when you turn the sample into a model, you create a so-called template model. You cannot activate a template model directly in the model manager. Instead, you must create at least one instance of the model, and you can then activate that instance using the instance editor.
 
 1. On the **Models** tab of the model manager, locate the card for your newly created model.
-2. To invoke the instance editor, click **0 Instances** which is currently shown on the card.
+2. To invoke the instance editor, click **Edit instances** on the card.
 3. Click **New Instance** to create the first instance of your new model.
 
 #### Step 3: Fill in the template parameter values {#step-3-fill-in-the-template-parameter-values}

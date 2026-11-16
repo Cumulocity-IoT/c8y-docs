@@ -21,7 +21,7 @@ Errors that a smart function throws while processing a message are also raised a
 
 To open the **Logs** page, click **Logs** in the Data Preparation application navigator.
 
-The **Log** page shows only the log messages of your own tenant. A log message that cannot be attributed to a single tenant is not shown to anyone.
+The **Logs** page shows only the log messages of your own tenant. A log message that cannot be attributed to a single tenant is not shown to anyone.
 
 The **Logs** page shows only messages that belong to the Data Preparation application:
 
@@ -32,13 +32,13 @@ The **Logs** page shows only messages that belong to the Data Preparation applic
 
 Messages from Analytics Builder models, smart rules, and other parts of the Streaming Analytics application are not shown. These are shown on the **Logs** page of the Streaming Analytics application. See [Viewing logs in the Streaming Analytics application](/streaming-analytics/troubleshooting/#logs-view).
 
-Each log entry is shown on one line with the following structure:
+Each log entry starts on a new line with the following structure. `console` output that contains line breaks continues on the following lines.
 
 ```
 <timestamp> <level> [<origin>] <message>
 ```
 
-- `<timestamp>` is the date and time at which the message was written.
+- `<timestamp>` is the date and time at which the message was written. Timestamps are shown in the time zone of the microservice, with its UTC offset.
 - `<level>` is the log level of the message. `console.log` and `console.info` output is shown as `INFO`, `console.warn` as `WARN`, `console.error` as `ERROR`, and `console.debug` as `DEBUG`.
 - `<origin>` shows where the message comes from:
   - `rule=<name>` for a message from a rule, where `<name>` is the name of the rule.
@@ -59,7 +59,7 @@ To view the logs, you need READ permission for "Data Preparation rules". See [Pe
 
 #### How far back the logs go {#log-history}
 
-The logs are read from the log of the microservice, which only keeps the most recent part of its output (about 30 MB). If the microservice writes a lot of output, for example, because it serves many tenants, older messages can already be removed. The **Logs** page is a tool for diagnosing current problems, not a long-term log archive.
+The logs are read from the log of the microservice, which only keeps the most recent part of its output (about 30 MB). The log starts again when the microservice that runs the rules restarts. If the microservice writes a lot of output, for example, because it serves many tenants, older messages can already be removed. The **Logs** page is a tool for diagnosing current problems, not a long-term log archive.
 
 ### Filtering the logs by rule {#filter-by-rule}
 
@@ -91,7 +91,7 @@ Console capture stops when any of the following happens:
 - You clear the selection or select a different rule.
 - You pause the automatic refresh. See [Automatic refresh](#auto-refresh).
 - You leave the **Logs** page.
-- You close the browser tab, or the browser loses its network connection.
+- You close the browser tab, or the browser loses its network connection. Console capture then stops after about one minute, and its place in the [limit on console capture](#console-capture-limit) is freed.
 
 Output that a smart function writes before console capture starts, or after it stops, is not kept. To capture output over a longer period without keeping the page open, see [Capturing in the background](#background-capture).
 
@@ -103,7 +103,7 @@ By default, each tenant can have console capture active for up to 3 rules at the
 
 If several users view the logs of the same rule, they share one console capture.
 
-To change the limit, set the tenant option `consoleCapture.maxActive` in the category `dataprep` to a value between 1 and 10. This requires ADMIN permission for "Option management". For example:
+To change the limit, set the tenant option `consoleCapture.maxActive` in the category `dataprep` to a value between 1 and 10. A change takes effect within one minute. This requires ADMIN permission for "Option management". For example:
 
 ```bash
 curl --user username -X POST -H 'Content-Type: application/json' -d '{"category": "dataprep", "key": "consoleCapture.maxActive", "value": "5"}' https://<tenant-domain>/tenant/options
@@ -119,15 +119,15 @@ Some problems only show up occasionally, for example, when a device sends an unu
 2. Click **Capture in background** and select how long to capture for: **15 minutes**, **30 minutes**, or **1 hour**.
 3. You can now close the browser tab. The capture continues until the selected time.
 
-Redeploying or deleting the rule ends the background capture. Background captures are also lost when the microservice restarts.
+Redeploying, disabling, or deleting the rule ends the background capture. If the microservice that runs the rules restarts, a running background capture ends.
 
-To stop the capture early, select the rule on the **Logs** page again and click **Stop background capture**. If you start a background capture for a rule that already has one, the new duration replaces the old one.
+To stop the capture early, select the rule on the **Logs** page again and click **Stop background capture**. To change the duration, stop the background capture and start a new one.
 
 To view the captured output later, open the **Logs** page and select the rule. The page only shows the messages from the last 10 minutes when you open it, so to see older messages, download the logs with a start date that is before the capture started. See [Downloading the logs](#download-logs).
 
 A background capture counts toward the [limit on console capture](#console-capture-limit) for its whole duration.
 
-To allow only shorter background captures, set the tenant option `consoleCapture.maxBackgroundDurationSecs` in the category `dataprep` to the maximum duration in seconds, in the same way as for the [limit on console capture](#console-capture-limit). The maximum value is capped at 3600 seconds (one hour).
+To allow only shorter background captures, set the tenant option `consoleCapture.maxBackgroundDurationSecs` in the category `dataprep` to the maximum duration in seconds, in the same way as for the [limit on console capture](#console-capture-limit). The value must be between 10 and 3600 seconds (one hour). A change takes effect within one minute.
 
 
 {{< c8y-admon-important >}}
@@ -147,7 +147,7 @@ You can download the messages that are shown on the **Logs** page as a text file
 #### To download the logs {#to-download-logs}
 
 1. Click **Download** in the toolbar.
-2. Optionally select a **Start** and **End** date and time. If no dates are selected, the last 10 minutes of logs are downloaded.
+2. Optionally select a **Start** date and time, and an **End** date and time. If you select only a start, the logs up to now are downloaded. An end requires a start. The **Start** and **End** are in your browser's time zone. If no dates are selected, the last 10 minutes of logs are downloaded.
 3. Click **Download**.
 
 ### Downloading diagnostics {#download-diagnostics}
@@ -165,6 +165,8 @@ The ZIP file is named *dataprep-diagnostics_&lt;timestamp&gt;.zip* and contains 
 
 - *data-preparation/rules.json*: the draft and deployed versions of all rules of your tenant, including their smart functions. Conversations with the AI assistant are not included.
 - *data-preparation/configuration.json*: the Data Preparation tenant options of your tenant without credentials, the versions of the Data Preparation components, and details of your tenant and the application.
-- *apama-ctrl/diagnostic-overview.zip*: the basic diagnostics information of the microservice that runs the rules. This is only included if you have READ permission for "CEP management". See [Downloading diagnostics and logs](/streaming-analytics/troubleshooting/#diagnostics-download).
+- *streaming-analytics/diagnostic-overview.zip*: the basic diagnostics information of the microservice that runs the rules. This is only included if you have READ permission for "CEP management". Otherwise the archive contains *streaming-analytics/diagnostic-overview.zip.err*, which says why it was left out. See [Downloading diagnostics and logs](/streaming-analytics/troubleshooting/#diagnostics-download).
 
 The archive only contains data that belongs to your own tenant.
+
+Only one diagnostics download can be prepared for a tenant at a time, and the microservice prepares at most 10 at once. If the download fails because of this, try again after a short wait.

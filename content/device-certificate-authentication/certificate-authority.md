@@ -2,6 +2,8 @@
 weight: 40
 title: Certificate Authority
 layout: bundle
+skills:
+  - certificate-authority
 sector:
   - device_management
 ---
