@@ -1,6 +1,6 @@
 ---
 date: ""
-title: load the AI Assistant plugin by default [GRAFT][release/cd] (#13593)
+title: Chat based AI assistant in Cockpit
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
