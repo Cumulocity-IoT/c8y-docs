@@ -1,6 +1,6 @@
 ---
 date: ""
-title: configure tool approval per tool in the UI, required by default (#793)
+title: Configure tool approval per tool in the UI and require approval by default
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
