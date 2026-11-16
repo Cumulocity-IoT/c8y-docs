@@ -1,5 +1,5 @@
 ---
-date:
+date: '2026-11-13'
 title: Changing probes setting in microservice manifests
 product_area: Platform services
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: cumulocity
 ticket: MTM-65302
 version: 2026.374.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-13'
+  - label: apj.cumulocity.com
+    date: '2026-11-16'
+  - label: jp.cumulocity.com
+    date: '2026-11-16'
+  - label: us.cumulocity.com
+    date: '2026-11-10'
+  - label: cumulocity.com
+    date: '2026-11-10'
 ---
 The deprecated host field in liveness and readiness probes of a microservice has been removed. The change is included in CD versions 2026.374.0 and higher, and will be present in the 2027 annual release. Refer to the earlier [announcement](/change-logs/?change-type=.change-type-announcement#cumulocity-2025-400-0-restricting-host-in-probes) for details.
 

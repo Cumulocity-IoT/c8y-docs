@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-11-16'
 title: Card grid dropdowns display above the next row
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,8 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-68702
 version: 1025.7.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-16'
 ---
 In card grid views, an open dropdown, such as the **Children** selector on smart rule cards, now shows above the card in the next row. Before this fix, the lower card covered the bottom of the menu, so you couldn't select **Apply**.

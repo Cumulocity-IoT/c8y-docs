@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-11-16'
 title: Tabs are now keyboard accessible
 product_area: Application enablement & solutions
 change_type:
@@ -13,5 +13,8 @@ build_artifact:
     label: ui-c8y
 ticket: MTM-67186
 version: 1025.3.1
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-16'
 ---
 Tabs in applications now follow the ARIA tabs pattern, so screen readers announce the tab list and the selected tab. Use the arrow keys, Home, or End to move between tabs, and Enter or Space to open one.
