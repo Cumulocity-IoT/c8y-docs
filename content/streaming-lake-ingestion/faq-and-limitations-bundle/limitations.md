@@ -1,10 +1,10 @@
 ---
 weight: 50
-title: Current preview limitations
+title: Current limitations
 layout: redirect
 ---
 
-The current preview version includes a number of functional limitations as outlined in this section.
+Streaming Lake Ingestion has the following functional limitations:
 
 * `latest` data is only recorded for the inventory.
 * Delete events are only recorded for the inventory change data capture, not for the latest inventory.
