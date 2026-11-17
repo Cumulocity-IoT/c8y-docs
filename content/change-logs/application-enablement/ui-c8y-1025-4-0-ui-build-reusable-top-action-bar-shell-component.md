@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Reusable top action bar shell component for UI builds
+title: Status bar hook can now be used
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
