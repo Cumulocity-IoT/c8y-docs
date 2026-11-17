@@ -15,8 +15,10 @@ ticket: PAB-5518
 version:
 ---
 
-Analytics Builder models that use the **Cron Timer** block often need the time at which the timer fired, for example, to set the time of an alarm or to show the time in a message. Previously, no block could read this time from the **Timer Tick** output.
+Analytics Builder models that use the **Cron Timer** block often need the time at which the timer fired, for example, to set the time of an alarm or to show the time in a message. Previously, models had no way to get this time.
 
-The **Cron Timer** block now has a **Last Trigger Time** output. This output provides the model time at which the timer last fired, in seconds since the epoch, and keeps this value until the timer fires again. You can connect it to any float input, such as the **Time** input of the **Create Alarm** block. To show the time as a date in the **Text Substitution** block, use the **Set Properties** block to give the value a property name that contains "time". The **Timer Tick** output is unchanged, so existing models continue to work without changes.
+The **Cron Timer** block now has a **Last Trigger Time** output. This output provides the model time at which the timer last fired, in seconds since the epoch, and keeps this value until the timer fires again. The **Timer Tick** output is unchanged, so existing models continue to work without changes.
+
+You can connect the **Last Trigger Time** output to any float input, such as the **Time** input of the **Create Alarm** block. To show the time as a date in the **Text Substitution** block, use the **Set Properties** block to give the value a property name that contains "time", such as `time`, and then use `#{time}` in the text.
 
 For details, see [Cron Timer](/streaming-analytics/block-reference/#cron-timer).
