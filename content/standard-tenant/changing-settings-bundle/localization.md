@@ -13,11 +13,7 @@ helpcontent:
    To add a new translation, click **Add translation** on the top menu bar. In the resulting dialog box, add the name of the key, followed by the translations in the respective fields."
 ---
 
-Using the **Localization** functionality you can add custom translations for existing static text in the UI.
-
-Use this feature to translate static text that is not available in your language. For example, the static text of the Digital Twin Manager application is available in English and German only.
-
-The contextual help that opens from the help icon is available in English only.
+Using the **Localization** functionality you can add custom translations for existing static text in the UI. Use this feature to translate static text that is not available in your language. 
 
 {{< c8y-admon-req >}}
 
