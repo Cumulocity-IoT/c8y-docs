@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-11-16'
   - label: jp.cumulocity.com
     date: '2026-11-16'
+  - label: us.cumulocity.com
+    date: '2026-11-17'
+  - label: cumulocity.com
+    date: '2026-11-17'
 ---
 
 The enhanced "SCADA" widget, previously available as a preview feature, is now generally available (GA).

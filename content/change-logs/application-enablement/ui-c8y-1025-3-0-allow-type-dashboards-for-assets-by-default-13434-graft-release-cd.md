@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-11-16'
   - label: jp.cumulocity.com
     date: '2026-11-16'
+  - label: us.cumulocity.com
+    date: '2026-11-17'
+  - label: cumulocity.com
+    date: '2026-11-17'
 ---
 You can now use a dashboard as a template for all assets or groups of the same type. In the dashboard settings of an asset or group that has a type, turn on the switch in the **Dashboard template** section. The dashboard then appears on every object of that type and shows each object's own data. Before, this was only possible for devices.
 
