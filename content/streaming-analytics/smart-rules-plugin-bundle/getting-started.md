@@ -32,18 +32,20 @@ The **Smart rule instances** permission under [global roles](/standard-tenant/ma
 |**READ**|Grants read-only access to rule templates and rule instances. Users with this permission can view rules, but cannot create, update, activate, deactivate, or delete them.|
 |**ADMIN**|Grants permission to create, read, update, activate, deactivate, and delete rule instances.|
 
+In the REST API, the permissions are `ROLE_SMART_RULE_INSTANCES_READ` and `ROLE_SMART_RULE_INSTANCES_ADMIN`.
+
 The following default global roles include the **Smart rule instances** permission:
 
 |Global role|Smart rule instances permission|
 |:---|:---|
 |Global Manager|READ and ADMIN|
-|Business User|READ and ADMIN|
+|business|READ and ADMIN|
 |Global Reader|READ|
-|Reader User|READ|
+|readers|READ|
 
-**[TODO PAB-5296: confirm the display names of the four default global roles in the GA release with the core platform team. The Managing permissions page lists "Global Manager" and "Global Reader", and the legacy roles "business" and "readers".]**
+The permission is also added to these roles in existing tenants. Users who have one of these roles receive access automatically. You do not need to assign the permission manually.
 
-Existing members of these roles receive access automatically. You do not need to assign the permission manually.
+Other global roles, including the global roles that you created yourself, do not include the **Smart rule instances** permission. To grant access to smart rules (NEW) with such a role, add the permission to the role. For details, see [To add a global role](/standard-tenant/managing-permissions/#to-add-a-global-role).
 
 The **CEP management** permissions also grant access to smart rules (NEW). The **Smart rule instances** permission grants read-only access to the underlying Analytics Builder model. To create, edit, or delete Analytics Builder models, you need the **CEP management** permissions. For details, see [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 

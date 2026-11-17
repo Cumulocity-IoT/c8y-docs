@@ -27,7 +27,7 @@ The general availability release includes the following changes:
 - **Deployment target selection**: For a group or an asset, you select whether the rule applies to the devices or to the assets beneath it.
 - **Activating or deactivating all rules of a rule template**: You can activate or deactivate all rules of a rule template in one step.
 - **Sizing guidance**: The documentation describes which factors drive the resource usage of smart rules (NEW), and when to move to a larger or dedicated microservice.
-- **Roles**: The **Smart rule instances** READ and ADMIN permissions are assigned to the default global roles. Existing users of these roles receive access automatically. Global Manager and Business User receive READ and ADMIN. Global Reader and Reader User receive READ.
+- **Roles**: The **Smart rule instances** READ and ADMIN permissions are assigned to the default global roles. Existing users of these roles receive access automatically. The Global Manager and business roles receive READ and ADMIN. The Global Reader and readers roles receive READ.
 
 Legacy smart rules, which you create with the smart rules builder in the Cockpit application, are now deprecated. Their removal is planned for 2027. Existing legacy smart rules continue to work until their removal, and there is no change to the user interface. We recommend that you use smart rules (NEW) for all new rules and migrate your existing legacy smart rules. The documentation describes how to migrate each legacy rule template.
 
