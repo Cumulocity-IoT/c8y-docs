@@ -91,28 +91,32 @@ For the complete description of the Smart Rules API, see **[TODO PAB-5296: link 
 
 ### Activating or deactivating all rules of a rule template {#activating-or-deactivating-all-rules-of-a-rule-template}
 
-You can activate or deactivate all rules of a custom rule template in one step. You do this in Analytics Builder, in the model editor or the instance editor of the rule template.
+You can activate or deactivate all rules of a custom rule template in one step. You do this in Analytics Builder, in the model editor or the instance editor of the rule template. You need the **CEP management** permission with the ADMIN level. The **Smart rule instances** permission is not sufficient.
 
-**[TODO PAB-5296: confirm the permission that the UI requires for the bulk operation, and how to activate or deactivate all rules of an official rule template (Smart Rules API bulk state change, T058).]**
+Official rule templates are not shown in Analytics Builder. To activate or deactivate the rules of an official rule template, switch each rule to **Active** or **Inactive** in the smart rules (NEW) plugin.
+
+**[TODO PAB-5296: describe the bulk state change operation of the Smart Rules API (`PUT /service/cep/smartrules/v1/templates/{templateId}/instances/state`) once it is implemented (T057, T058). It also covers official rule templates. On develop (2026-11-17) the endpoint exists but returns "not implemented".]**
 
 #### To activate or deactivate all rules of a rule template {#to-activate-or-deactivate-all-rules-of-a-rule-template}
 
-1. In Analytics Builder, open the model or the instance editor of the custom rule template.
+1. In Analytics Builder, open the model editor or the instance editor of the custom rule template.
 2. In the top bar, click the instance summary, for example, "3/5 instances active".
 3. Select **Activate all** or **Deactivate all**.
-4. In the confirmation dialog, check the summary and confirm.
+   **Activate all** is only shown if the rule template has inactive rules in **Production** mode. **Deactivate all** is only shown if the rule template has active rules.
+4. Check the summary in the confirmation dialog and confirm.
 
-The dialog shows the progress of the operation. You can cancel the operation. In this case, the operation stops after the current rule.
+The rules are changed one at a time, and the dialog shows the progress. You can cancel the operation. In this case, the operation stops after the current rule.
 
-The following rules are not changed:
+**Deactivate all** deactivates all active rules of the rule template. **Activate all** activates the inactive rules in **Production** mode, except for the following rules, which the summary lists as skipped:
 
-- Rules that are not in **Production** mode.
 - Rules without a name.
-- Rules with a missing required parameter.
+- Rules with a required parameter that has no value.
 
-If a rule cannot be activated or deactivated, the dialog shows the number of failed rules. Click **Show details** to see the affected rules and the reason. Rules that are not affected keep their new state.
+Rules in other modes are not activated.
 
-**[TODO PAB-5296: add a screenshot of the instance summary menu and the bulk operation dialog, taken against the GA UI. Describe the bulk state change operation of the Smart Rules API once it is available (T057, T058).]**
+If a rule cannot be activated or deactivated, the dialog shows the number of failed rules. Click **Show details** to see the affected rules and the reason. The rules that were changed successfully keep their new state. The operation does not undo them.
+
+**[TODO PAB-5296: add a screenshot of the instance summary menu and the bulk operation dialog, taken against the GA UI.]**
 
 ### Integration with Analytics Builder instance editor {#integration-with-analytics-builder-instance-editor}
 

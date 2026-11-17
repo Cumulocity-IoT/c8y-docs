@@ -25,7 +25,7 @@ The general availability release includes the following changes:
 - **Smart Rules API**: A public, versioned REST API lets you list rule templates with their parameters, and create, read, list, update, and delete rule instances. You configure rule instances with the names of the parameters. **[TODO PAB-5296: link to the published Smart Rules API specification (T053).]**
 - **Restricting the official rule templates**: Administrators can restrict the available official rule templates with the `smartrules.samples.allowlist` tenant option.
 - **Deployment target selection**: For a group or an asset, you select whether the rule applies to the devices or to the assets beneath it.
-- **Activating or deactivating all rules of a rule template**: You can activate or deactivate all rules of a rule template in one step.
+- **Activating or deactivating all rules of a rule template**: In Analytics Builder, you can activate or deactivate all rules of a custom rule template in one step.
 - **Sizing guidance**: The documentation describes which factors drive the resource usage of smart rules (NEW), and when to move to a larger or dedicated microservice.
 - **Roles**: The **Smart rule instances** READ and ADMIN permissions are assigned to the default global roles. Existing users of these roles receive access automatically. The Global Manager and business roles receive READ and ADMIN. The Global Reader and readers roles receive READ.
 

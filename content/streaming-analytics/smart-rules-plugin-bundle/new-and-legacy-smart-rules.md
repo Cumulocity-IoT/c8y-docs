@@ -19,7 +19,7 @@ Legacy smart rules are deprecated. Their removal is planned for 2027. Use smart 
 |Rule templates|Official rule templates, and custom rule templates that you create in Analytics Builder.|A fixed set of rule templates.|
 |Where you create rules|The **Smart rules (NEW)** tab of a device, group, or asset in Device Management, Cockpit, Digital Twin Manager, and other applications with the plugin.|The **Smart rules** tab of a device or group in Cockpit, or the global smart rules in Cockpit.|
 |Deployment target|A device, a group, or an asset. For a group or an asset, you select the deployment target.|A device, a group, or all devices (global smart rules).|
-|Activating or deactivating many rules|All rules of a rule template in one step.|One rule at a time.|
+|Activating or deactivating many rules|All rules of a custom rule template in one step, in Analytics Builder.|One rule at a time.|
 |Programmatic access|The Smart Rules API.|The legacy smart rules REST API.|
 |Restricting the available rule templates|With the `smartrules.samples.allowlist` tenant option.|Not available.|
 
