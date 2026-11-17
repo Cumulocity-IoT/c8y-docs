@@ -14,20 +14,6 @@ build_artifact:
 ticket: MTM-67840
 version: 1025.4.0
 ---
-# Backport
+The status bar hook adds a bar between the header and the page tabs that keeps the state of what the user is working on visible on every tab, along with the actions that control it. It stays in place while the action bar below the tabs changes from tab to tab. 
 
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Web SDK): [MTM-67840] UI build reusable top action bar shell
-component
-(#13165)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13165)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-67840]:
-https://cumulocity.atlassian.net/browse/MTM-67840?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Enio Sultan <92023325+eniosultan@users.noreply.github.com>
+The first page to use it is the custom microservice detail page, which shows whether the microservice is healthy, unhealthy, down, or unknown, together with the counts of its running instances and tenant subscriptions, updated in realtime.
