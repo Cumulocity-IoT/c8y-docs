@@ -2,6 +2,9 @@
 weight: 50
 title: Working with operations
 layout: redirect
+skills:
+  - send-operation
+  - run-bulk-operation
 helpcontent:
 - label: to-view-single-operations
   title: Single operations

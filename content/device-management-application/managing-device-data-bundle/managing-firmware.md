@@ -2,6 +2,9 @@
 weight: 10
 title: Managing firmware
 layout: redirect
+skills:
+  - manage-firmware-repository
+  - update-device-firmware
 helpcontent:
 - label: managing-firmware
   title: Firmware repository

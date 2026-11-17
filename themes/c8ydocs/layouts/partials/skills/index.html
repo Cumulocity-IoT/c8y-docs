@@ -1,0 +1,14 @@
+{{- /*
+  Returns, for every skill, the documentation that links to it: a map from the skill's file
+  name to a slice of dicts "page" (the bundle page), "from" and "anchor" (see
+  skills/for-page.html). Only bundle pages render the skills tab, so only they count.
+  The map covers the whole site: call it with partialCached and any context.
+*/ -}}
+{{- $index := newScratch -}}
+{{- range where site.RegularPages "Layout" "bundle" -}}
+  {{- $page := . -}}
+  {{- range partial "skills/for-page.html" . -}}
+    {{- $index.Add .skill.File.ContentBaseName (slice (dict "page" $page "from" .from "anchor" .anchor)) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $index.Values -}}

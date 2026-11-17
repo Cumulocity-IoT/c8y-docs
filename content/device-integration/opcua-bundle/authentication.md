@@ -2,6 +2,8 @@
 weight: 70
 title: Authentication
 layout: redirect
+skills:
+  - browse-opcua-address-space
 ---
 
 The authentication setting is used to authenticate and authorize the server user. It tells the gateway how to create a user identity and how to send it to the OPC UA server when establishing a connection.

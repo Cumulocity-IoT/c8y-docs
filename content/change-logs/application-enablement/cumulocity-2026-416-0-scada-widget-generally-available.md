@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-11-12'
 title: New SCADA widget moved to General Availability
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,13 @@ build_artifact:
     label: cumulocity
 ticket: MTM-68150
 version: 2026.416.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-12'
+  - label: apj.cumulocity.com
+    date: '2026-11-16'
+  - label: jp.cumulocity.com
+    date: '2026-11-16'
 ---
 
 The enhanced "SCADA" widget, previously available as a preview feature, is now generally available (GA).
