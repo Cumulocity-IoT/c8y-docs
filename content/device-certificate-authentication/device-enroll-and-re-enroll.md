@@ -2,6 +2,8 @@
 weight: 50
 title: Simple device enrollment
 layout: bundle
+skills:
+  - certificate-authority
 sector:
   - device_management
 ---

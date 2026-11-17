@@ -2,6 +2,8 @@
 weight: 40
 title: Working with alarms
 layout: redirect
+skills:
+  - handle-alarms
 helpcontent:
 - label: working-with-alarms
   title: Alarms

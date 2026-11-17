@@ -55,6 +55,18 @@ Example:
 - End with result description (not as list item)
 - Break procedures over 7 steps into sections
 
+### Skills
+These rules apply only to skills, the files in content/skills/. The skill design (front matter, linking) is described in the "Skills" section of README.md.
+- Title: the task in sentence case, without "To" ("Send an operation to a device")
+- `description` front matter: one sentence that starts with a verb and names what the reader does
+- Structure the body as "To [accomplish task]" procedures with heading IDs
+- Show each REST request in an `http` code block: method and path, then headers, then the JSON body
+- Introduce each request with a link to its operation in the {{< openapi >}}, with the operation summary as link text: "Send a [Create an operation](https://{{< domain-c8y >}}/api/core/#operation/postOperationCollectionResource) request". For a request to a microservice without a published API reference, link the documentation of the microservice instead, if there is one
+- Describe the expected result after each request: the HTTP status and the relevant properties of the response
+- Write placeholders in angle brackets with underscores, inside code: `<device_id>`
+- Show REST requests only, no CLI commands
+- List the required roles in a {{< c8y-admon-req >}} admonition
+
 ### Sentence structure
 - **Keep sentences short and simple** - avoid complex punctuation
 - **End all sentences with periods**, even two-word sentences
