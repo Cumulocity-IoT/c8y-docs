@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Chat based AI assistant in Cockpit
+title: Assistant plugin provides chat-based AI assistant and is enabled by default in the Cockpit application
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
