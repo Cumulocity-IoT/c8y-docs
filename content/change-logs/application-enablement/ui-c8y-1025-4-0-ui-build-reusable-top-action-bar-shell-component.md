@@ -1,6 +1,6 @@
 ---
 date: ""
-title: UI build reusable top action bar shell component
+title: Reusable top action bar shell component for UI builds
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
