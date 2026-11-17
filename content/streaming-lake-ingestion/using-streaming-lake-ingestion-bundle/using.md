@@ -4,15 +4,15 @@ title: Using Streaming Lake Ingestion
 layout: redirect
 ---
 
-Streaming Lake Ingestion is an optional service in {{< product-c8y-iot >}}. To subscribe to the service, contact the [{{< company-c8y >}} support](/additional-resources/contacting-support/). After subscription and the one-time setup of your object storage:
+After your tenant subscribes to Streaming Lake Ingestion, the data flow starts:
 
 * Your current device and asset inventory is downloaded from the operational store into the lake.
 * All new incoming data is stored in the lake.
 
-For the setup, see [Enabling Streaming Lake Ingestion on AWS](#enabling-aws) or [Enabling Streaming Lake Ingestion on Microsoft Azure](#enabling-azure).
+If your environment uses your own storage, the data flow starts after the one-time setup. For details, see [Subscribing to Streaming Lake Ingestion](/streaming-lake-ingestion/datahub-2-overview/#subscribing).
 
 {{< c8y-admon-info >}}
-The download may take a while to complete. For more information, see [Monitoring the data flow](#monitoring).
+The download may take a while to complete. For more information, see [Monitoring Streaming Lake Ingestion](/streaming-lake-ingestion/monitoring-streaming-lake-ingestion/).
 
 The `latest_inventory` tables are pre-populated with your full current inventory at subscription time. Alarms, events, measurements, and operations are only recorded for changes that occur after subscription.
 

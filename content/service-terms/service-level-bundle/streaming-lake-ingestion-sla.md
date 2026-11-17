@@ -44,7 +44,7 @@ The Service limits the schema that can be ingested into the lake. Data violating
 
 You are responsible for:
 
-* Monitoring for {{< product-c8y-iot >}} alarms related to data rejection. For details, see [Monitoring the data flow](/datahub/streaming-lake-ingestion/#monitoring).
+* Monitoring for {{< product-c8y-iot >}} alarms related to data rejection. For details, see [Monitoring the data flow](/streaming-lake-ingestion/monitoring-streaming-lake-ingestion/).
 * Implementing pre-processing logic to ensure inbound data conforms to required schemas, using tools such as {{< product-c8y-iot >}} [Dynamic Mapper](https://community.cumulocity.com/t/dynamic-mapper-map-mqtt-device-data-in-a-zero-code-approach/3043).
 
 #### Schema evolution
@@ -55,7 +55,7 @@ Ensure that your data queries are robust against schema changes. Specifically, u
 
 #### Type conflict resolution
 
-The Service [automatically resolves](/datahub/streaming-lake-ingestion/#understanding-lake-structure) type conflicts in inbound data to maintain storage reliability. In multi-tenant environments, the order in which data with conflicting types is received can lead to schema variations between tenants.
+The Service [automatically resolves](/streaming-lake-ingestion/using-streaming-lake-ingestion/#understanding-lake-structure) type conflicts in inbound data to maintain storage reliability. In multi-tenant environments, the order in which data with conflicting types is received can lead to schema variations between tenants.
 
 Manage data consistency where required, either by enforcing a specific ingestion order or by using inbound data preparation to resolve conflicts before they reach the Service.
 
