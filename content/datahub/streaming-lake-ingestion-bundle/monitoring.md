@@ -42,8 +42,8 @@ When the service repeatedly fails to offload your data, for example because it c
 
 Each part of the service raises its own alarm type:
 
-* `c8y_StreamingLakeIngestion_CdcWriterInitializationFailed`: The service cannot write the change data capture tables.
-* `c8y_StreamingLakeIngestion_LatestWriterInitializationFailed`: The service cannot write the `latest_inventory` tables.
-* `c8y_StreamingLakeIngestion_AppenderInitializationFailed`: The service cannot make new data files visible in the tables.
+* `c8y_StreamingLakeIngestion_CdcWriterInitializationFailed`: The service cannot write the data files of the change data capture tables to your data lake.
+* `c8y_StreamingLakeIngestion_LatestWriterInitializationFailed`: The service cannot write the data files of the `latest_inventory` tables to your data lake.
+* `c8y_StreamingLakeIngestion_AppenderInitializationFailed`: The service cannot commit new data files to the tables, so new data does not appear in queries.
 
 The alarm text starts with "Offloading into the data lake has stopped" and ends with the cause of the failure, such as a missing permission on your storage. Fix the cause. The service retries automatically and clears the alarm when that part of the service works again.
