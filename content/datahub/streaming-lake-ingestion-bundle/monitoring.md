@@ -46,4 +46,4 @@ Each part of the service raises its own alarm type:
 * `c8y_StreamingLakeIngestion_LatestWriterInitializationFailed`: The service cannot write the `latest_inventory` tables.
 * `c8y_StreamingLakeIngestion_AppenderInitializationFailed`: The service cannot make new data files visible in the tables.
 
-The alarm text starts with "Offloading into the data lake has stopped" and ends with the cause of the failure, such as a missing permission on your storage. Fix the cause. The service retries automatically and clears the alarm when that part of the service offloads successfully again.
+The alarm text starts with "Offloading into the data lake has stopped" and ends with the cause of the failure, such as a missing permission on your storage. Fix the cause. The service retries automatically and clears the alarm when that part of the service works again.
