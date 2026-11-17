@@ -1,5 +1,5 @@
 ---
-date: '2026-12-01'
+date:
 title: Smart rules (NEW) is generally available and legacy smart rules are deprecated
 change_type:
   - value: change-QHu1GdukP
@@ -14,16 +14,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-5296
-environment_availability:
-  - label: eu-latest.cumulocity.com
-  - label: apj.cumulocity.com
-  - label: jp.cumulocity.com
-  - label: emea.cumulocity.com
-  - label: us.cumulocity.com
-  - label: cumulocity.com
 ---
-
-**[TODO PAB-5296: set the release date in the file name and in `date`, add `version`, and publish together with the GA cutover (T056, T101, T113).]**
 
 Smart rules (NEW) is now generally available. Smart rules (NEW) lets you create and manage rules directly from the context of a device, group, or asset in applications such as Device Management, Cockpit, and Digital Twin Manager. The rules run in Streaming Analytics.
 
