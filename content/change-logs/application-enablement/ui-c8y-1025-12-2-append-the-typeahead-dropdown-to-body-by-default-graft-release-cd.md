@@ -1,6 +1,6 @@
 ---
 date: ""
-title: append the typeahead dropdown to body by default [GRAFT][release/cd] (#13653)
+title: Typeahead dropdowns in the Web SDK appear above other content by default
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
