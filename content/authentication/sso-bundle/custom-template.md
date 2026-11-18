@@ -132,7 +132,7 @@ Each field represents the claim name that is used to retrieve the data from JWT.
 Mapping for alias is not available because it is not used in the context of SSO login.
 
 {{< c8y-admon-info >}}
-The UI displays the full name of a user as first name followed by last name, and you cannot change this order. If your identity provider stores names with the family name first, map the claim that holds the given name to the first name field and the claim that holds the family name to the last name field.
+The UI displays the full name of a user as first name followed by last name, and you cannot change this order. The user data mapping only sets which claim fills each field. It does not change how the UI orders the name.
 {{< /c8y-admon-info >}}
 
 The username claim name can be configured in the **User ID** configuration window.
