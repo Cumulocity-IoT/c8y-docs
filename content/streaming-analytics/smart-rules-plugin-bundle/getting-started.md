@@ -60,11 +60,11 @@ At least one device must be registered in {{< product-c8y-iot >}}. Preferably, t
 1. In the Device Management application, navigate to **Devices** > **All devices** and select a device.
 2. Click the **Smart rules (NEW)** tab.
    ![Smart rules tab](/images/streaming-analytics/smart-rules-plugin/empty-smart-rule.png)
-   **[TODO PAB-5296: retake this screenshot against the GA UI, after PAB-5451 and the v1 UI migration (T029).]**
 3. Click **Add rule**.
-   The **Add rule** dialog lists the rule templates that apply to the current context. Each rule template shows an **Official** or **Custom** label.
-   **[TODO PAB-5296: add a screenshot of the Add rule dialog with the Official and Custom labels, taken against the GA UI.]**
+   The **Add rule** dialog lists the rule templates that apply to the current context. Each rule template shows an **Official** or **Custom** label. To find a rule template, enter a part of its name, description, or tag in the search field.
+   ![Add rule dialog with official and custom rule templates](/images/streaming-analytics/smart-rules-plugin/add-rule-dialog.png)
 4. Select the rule template "On measurement explicit threshold create alarm" and click **OK**.
+   The plugin creates the rule as an inactive rule and opens it.
 5. Configure the rule:
    - In the name field, enter a name for the rule. A name is mandatory. It must be unique among the rules of the same rule template.
    - Optionally, add a note.
@@ -77,7 +77,6 @@ At least one device must be registered in {{< product-c8y-iot >}}. Preferably, t
 The rule is shown in the list of rules with its status (**Active** or **Inactive**). While the rule is active, it creates an alarm each time a measurement value is outside the threshold range.
 
 ![Smart rules list](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
-**[TODO PAB-5296: retake this screenshot against the GA UI. It must show the combined list of rules with the Official and Custom labels.]**
 
 You can create rules from groups and assets in the same way. For a group or an asset, you also select the deployment target, see [Selecting the deployment target](/streaming-analytics/smart-rules-plugin/#selecting-the-deployment-target).
 

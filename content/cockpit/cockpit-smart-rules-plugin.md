@@ -21,7 +21,6 @@ Smart rules (NEW) replace the [legacy smart rules](/cockpit/smart-rules/), which
 The **Smart rules (NEW)** tab shows the rules of the current device, group, or asset. On this tab, you create, edit, activate, deactivate, and delete rules.
 
 ![New smart rules tab](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
-**[TODO PAB-5296: retake this screenshot against the GA UI.]**
 
 To create your first rule, refer to [Creating your first smart rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
 

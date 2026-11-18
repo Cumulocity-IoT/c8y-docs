@@ -56,7 +56,6 @@ This feature is in Public Preview and may be subject to change in the future.
 The **Smart rules (NEW)** tab shows the rules of the device. On this tab, you create, edit, activate, deactivate, and delete rules. You create a rule from an official rule template, which is ready to use, or from a custom rule template that is built with Analytics Builder.
 
 ![Smart rules new tab](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
-**[TODO PAB-5296: retake this screenshot against the GA UI.]**
 
 To create your first rule, refer to [Creating your first smart rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
 

@@ -54,7 +54,7 @@ A rule has the following fields and properties:
 | **Parameters**       | The parameters of the rule template.<br>The input source parameter takes its value from the current device, group, or asset context. You cannot change the context. For a group or an asset, you select the deployment target, see [Selecting the deployment target](#selecting-the-deployment-target).<br>You can edit all other parameters. |
 | **Active/Inactive**  | Switch the rule to **Active** to deploy it.<br>While the rule is active, all fields and properties are read-only. To edit the rule, switch it to **Inactive**. |
 
-**[TODO PAB-5296: retake the screenshots of the rule details and the rule editor against the GA UI, after PAB-5451 and the v1 UI migration (T029).]**
+![Rule from a custom rule template in the smart rules (NEW) plugin](/images/streaming-analytics/smart-rules-plugin/rule-editor.png)
 
 ### Selecting the deployment target {#selecting-the-deployment-target}
 
@@ -75,7 +75,11 @@ The **Assets of group** option is only shown if it is enabled for your tenant. I
 
 To change the deployment target of an existing rule, switch the rule to **Inactive** first. While a rule is active, its deployment target is read-only.
 
-**[TODO PAB-5296: add a screenshot of the deployment target selector for a group and for an asset, taken against the GA UI.]**
+The following images show the deployment target for a group, with the **Assets of group** option enabled, and for an asset:
+
+![Deployment target for a group](/images/streaming-analytics/smart-rules-plugin/deployment-target-group.png)
+
+![Deployment target for an asset](/images/streaming-analytics/smart-rules-plugin/deployment-target-asset.png)
 
 #### Deployment target in the Smart Rules API {#deployment-target-in-the-smart-rules-api}
 
@@ -150,4 +154,3 @@ This validation applies only to models with template parameters with the value s
 - When you enter a duplicate instance name, the error message **Instance name already exists** is shown below the instance name field. You cannot proceed.
 
 ![Production mode validation](/images/streaming-analytics/smart-rules-plugin/production-mode-validation.png)
-**[TODO PAB-5296: retake this screenshot against the GA UI.]**
