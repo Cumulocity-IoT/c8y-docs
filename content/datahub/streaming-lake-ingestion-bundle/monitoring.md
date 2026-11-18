@@ -51,3 +51,14 @@ To see alarms, your user needs the READ permission for **Identity** (ROLE_IDENTI
 The table lists the events of the service in a timeline: schema changes and the status of the initial inventory load. The service raises a schema change event (`c8y_StreamingLakeIngestion_SchemaEvolved`) when it creates new tables or adds new columns to existing tables. If several changes happen at once, the service combines them into a single event that lists all new tables and columns. Expand a schema change to see its new tables and columns. Select a range of 1, 7, 30, or 60 days, and filter by type, table, or column. Retention rules can delete events before they are 60 days old. The page loads the newest 2,000 events.
 
 To see events, your user needs the READ permission for **Identity** (ROLE_IDENTITY_READ) and **Events** (ROLE_EVENT_READ).
+### Offloading failure alarms {#offloading-failure-alarms}
+
+When the service repeatedly fails to offload your data, for example because it cannot access your data lake or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
+
+Each part of the service raises its own alarm type:
+
+* `c8y_StreamingLakeIngestion_CdcWriterInitializationFailed`: The service cannot write the data files of the change data capture tables to your data lake.
+* `c8y_StreamingLakeIngestion_LatestWriterInitializationFailed`: The service cannot write the data files of the `latest_inventory` tables to your data lake.
+* `c8y_StreamingLakeIngestion_AppenderInitializationFailed`: The service cannot commit new data files to the tables, so new data does not appear in queries.
+
+The alarm text starts with "Offloading into the data lake has stopped" and ends with the cause of the failure, such as a missing permission on your storage. Fix the cause. The service retries automatically and clears the alarm when that part of the service works again.
