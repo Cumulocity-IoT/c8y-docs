@@ -8,7 +8,7 @@ helpcontent:
     content: "This page shows how Streaming Lake Ingestion runs for your tenant.
 
 
-    The tiles at the top summarize the **Health** of the setup and the lake access, the **Data quality** of your data, the **Schema changes** of the last 7 days, and the **Ingestion** backlog. Below, **Active alarms** lists the alarms of the service, for example rejected records by cause. Click **Copy query** to get a query that retrieves the rejected records from the `cdc_rejected.trash` table. Click **Clear** after you have fixed the cause. If the problem occurs again, the service raises a new alarm. **Events** lists schema changes, such as new tables and columns, and the initial inventory load."
+    The tiles at the top summarize the **Health** of the setup and the lake access, the **Data quality** of your data, the **Schema changes** of the last 7 days, and the **Ingestion** backlog. Below, **Active alarms** lists the alarms of the service, for example rejected records by cause. **Events** lists schema changes, such as new tables and columns."
 ---
 
 ### Monitoring page {#monitoring-page}
@@ -40,7 +40,7 @@ The table lists the active alarms of the service with severity, cause, the date 
   * **Conflicting data types** (`UnresolvableTypeConflict`)
   * **Multi-dimensional array not supported** (`MultiDimensionalArrayDetected`)
 
-* The service writes the rejected records to the `cdc_rejected.trash` table. For a schema violation alarm, click **Copy query** to copy an SQL query that finds the rejected records of this cause. The number of occurrences is the number of processing batches that contained the problem, not the number of rejected records.
+* The service writes the rejected records to the `cdc_rejected.trash` table. The number of occurrences is the number of processing batches that contained the problem, not the number of rejected records.
 * Click **Clear** after you fixed the cause. If the problem occurs again, the service raises a new alarm. Clearing needs the ADMIN permission for **Alarms** (ROLE_ALARM_ADMIN).
 * The **Lake access lost** alarm clears itself when the next lake access check passes.
 
@@ -48,7 +48,7 @@ To see alarms, your user needs the READ permission for **Identity** (ROLE_IDENTI
 
 #### Events {#events}
 
-The table lists the events of the service in a timeline: schema changes and the status of the initial inventory load. The service raises a schema change event (`c8y_StreamingLakeIngestion_SchemaEvolved`) when it creates new tables or adds new columns to existing tables. If several changes happen at once, the service combines them into a single event that lists all new tables and columns. Expand a schema change to see its new tables and columns. Select a range of 1, 7, 30, or 60 days, and filter by type, table, or column. Retention rules can delete events before they are 60 days old. The page loads the newest 2,000 events.
+The table lists the schema change events of the service in a timeline. The service raises a schema change event (`c8y_StreamingLakeIngestion_SchemaEvolved`) when it creates new tables or adds new columns to existing tables. If several changes happen at once, the service combines them into a single event that lists all new tables and columns. Expand a schema change to see its new tables and columns. Select a range of 1, 7, 30, or 60 days, and filter by type, table, or column. Retention rules can delete events before they are 60 days old. The page loads the newest 2,000 events.
 
 To see events, your user needs the READ permission for **Identity** (ROLE_IDENTITY_READ) and **Events** (ROLE_EVENT_READ).
 ### Offloading failure alarms {#offloading-failure-alarms}
