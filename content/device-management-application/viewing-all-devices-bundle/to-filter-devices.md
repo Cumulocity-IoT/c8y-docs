@@ -13,7 +13,7 @@ Specify your filter options in the dropdown list.
 Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click **+ Add next** to add another textbox if you want to filter for more than one term.
 
 {{< c8y-admon-info >}}
-Exception: In the **Name** column, entered text is case-sensitive and without the * wildcard is an exact match.
+Exception: In the **Name** column, entered text is case-sensitive, and without the * wildcard, it is an exact match.
 {{< /c8y-admon-info >}}
 
 Apart from filtering for text there are several other options:
