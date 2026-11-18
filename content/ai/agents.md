@@ -276,7 +276,7 @@ The test uses the current configuration of the agent, including unsaved changes.
 Depending on the agent configuration, tool calls can require your approval before they run. Below the message field, select how such tool calls are handled:
 
 - **Manual**: You are asked to approve the tool call before the tool runs.
-- **Auto**: Tools run without asking.
+- **Auto**: Tools run without asking, except tools set to require approval **Always**. For details, see [Requiring user approval](/ai/tools-mcp/#user-approval).
 
 Your selection is saved as a user preference.
 
