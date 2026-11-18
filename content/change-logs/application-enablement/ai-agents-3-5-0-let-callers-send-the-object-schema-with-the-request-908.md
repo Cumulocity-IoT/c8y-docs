@@ -1,6 +1,6 @@
 ---
 date: ""
-title: let callers send the object schema with the request (#908)
+title: Send the object schema with each request to object agents
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
