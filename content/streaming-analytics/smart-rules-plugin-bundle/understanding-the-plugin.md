@@ -58,18 +58,24 @@ A rule has the following fields and properties:
 
 ### Selecting the deployment target {#selecting-the-deployment-target}
 
-When you create a rule in the context of a group or an asset, you select which objects the rule applies to. The plugin shows this choice as radio buttons below the input source parameter.
+The deployment target defines which objects a rule applies to. The plugin shows it in the **Input source** section of the rule, below the name of the input source parameter.
+
+When you create a rule in the context of a group or an asset, you select the deployment target with radio buttons. For a device or a smart group, there is no choice, and the plugin shows the deployment target as text.
 
 |Context|Deployment target|Description|
 |:---|:---|:---|
 |Device|Device &lt;name&gt;|The rule applies to the device. There is no choice.|
-|Group|All devices of group &lt;name&gt;|The rule applies to all devices in the group and in its subgroups. This is the default.|
-|Group|Assets of group &lt;name&gt;|The rule applies to the assets in the group and in its subgroups, but not to the devices. This option is only shown if it is enabled for your tenant. **[TODO PAB-5296: confirm with PM whether to name the `streaming-analytics.analyticsbuilder.assets-group` feature toggle here, or whether it is on by default at GA.]**|
+|Group|All devices of group &lt;name&gt;|The rule applies to all devices beneath the group, including the devices in its subgroups. This is the default.|
+|Group|Assets of group &lt;name&gt;|The rule applies to the assets beneath the group, including the assets in its subgroups, but not to the devices. This option is not available by default, see below.|
 |Smart group|All devices of smart group &lt;name&gt;|The rule applies to all devices in the smart group. There is no choice.|
-|Asset|All devices of asset &lt;name&gt;|The rule applies to all devices that are children of the asset. This is the default.|
-|Asset|Asset &lt;name&gt;|The rule applies to the asset itself.|
+|Asset|All devices of asset &lt;name&gt;|The rule applies to all devices beneath the asset, including the devices of its child assets. This is the default.|
+|Asset|Asset &lt;name&gt;|The rule applies only to the asset itself, not to the devices beneath it.|
 
-**[TODO PAB-5296: add a screenshot of the deployment target selector, taken against the GA UI.]**
+The **Assets of group** option is only shown if it is enabled for your tenant. If it is not enabled, the plugin shows **All devices of group** as text, and you cannot select a different deployment target for a group. To enable the option, contact [product support](/additional-resources/contacting-support/). An existing rule that already applies to the assets of a group keeps this deployment target and shows the option, also if it is not enabled for your tenant.
+
+To change the deployment target of an existing rule, switch the rule to **Inactive** first. While a rule is active, its deployment target is read-only.
+
+**[TODO PAB-5296: add a screenshot of the deployment target selector for a group and for an asset, taken against the GA UI.]**
 
 #### Deployment target in the Smart Rules API {#deployment-target-in-the-smart-rules-api}
 
@@ -81,11 +87,19 @@ In the Smart Rules API, the deployment target of a rule instance is defined by i
 |`recurseGroups`|Includes the subgroups of a group, recursively.|`true`|
 |`recurseAssets`|Includes the child assets of an asset, recursively.|`true`|
 |`subAssets`|Includes the child assets of the context.|`false`|
-|`selectRoot`|Includes the context object itself.|`false`|
+|`selectRoot`|Includes the context object itself. A device is always included, regardless of this option.|`false`|
 
 A `context` object with only an `id` behaves like the default deployment target in the plugin: for a device, the rule applies to the device. For a group or an asset, the rule applies to all devices beneath it. The API stores the resolved values of all five lookup options with the rule instance.
 
-**[TODO PAB-5296: confirm the five default values and their descriptions against the T099 test and the published Smart Rules API specification before publication. Add the link to the published Smart Rules API specification (T053, User Story 10).]**
+The deployment targets of the plugin correspond to the following lookup options:
+
+|Deployment target|`subDevices`|`recurseGroups`|`recurseAssets`|`subAssets`|`selectRoot`|
+|:---|:---|:---|:---|:---|:---|
+|Device &lt;name&gt;, All devices of group &lt;name&gt;, All devices of smart group &lt;name&gt;, All devices of asset &lt;name&gt; (the defaults)|`true`|`true`|`true`|`false`|`false`|
+|Assets of group &lt;name&gt;|`false`|`true`|`false`|`true`|`false`|
+|Asset &lt;name&gt;|`false`|`false`|`false`|`false`|`true`|
+
+**[TODO PAB-5296: before publication, confirm the defaults and the mapping table against the T099 test and the implemented Smart Rules API. On apama-in-c8y develop (2026-11-18), the v1 endpoints return "not implemented" (T018, T020) and T099 is open. The defaults above are taken from the v1 contract (`smartrules-v1.openapi.yaml`) and research decision D7a, and the mapping from the plugin code (`deployment-target.ts`). Add the link to the published Smart Rules API specification (T053).]**
 
 For the complete description of the Smart Rules API, see **[TODO PAB-5296: link to the Smart Rules API in the {{< openapi >}}]**.
 
