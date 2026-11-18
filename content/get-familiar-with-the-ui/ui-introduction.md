@@ -25,7 +25,7 @@ The UI is available in the following languages:
 |Language|Language code|
 |:---|:---|
 |English (default)|en|
-|English|US|
+|English|en_US|
 |Brazilian Portuguese|pt_BR|
 |Chinese|zh_CN|
 |Chinese, traditional|zh_TW|
