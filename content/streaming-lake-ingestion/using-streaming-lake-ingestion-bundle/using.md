@@ -207,7 +207,7 @@ spark-sql (default)> select * from c8y.cdc_inventory.inventory;
 
 #### Using the Iceberg catalog from other applications {#using-iceberg-catalog-from-apps}
 
-Access the catalog from other applications using the `curl` example below. To obtain the `<CLIENT_ID>` and `<CLIENT_SECRET>` referenced in this section, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials). First, get an access token to the catalog.
+For connection examples of common Iceberg clients, refer to the [Iceberg client compatibility](https://github.com/Cumulocity-IoT/iceberg-client-compatibility) repository. To obtain the `<CLIENT_ID>` and `<CLIENT_SECRET>` referenced in this section, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials). First, get an access token to the catalog.
 
 ```shell
 $  curl -X POST https://iceberg.<INSTANCE>/api/catalog/v1/oauth/tokens \
@@ -991,7 +991,7 @@ ORDER BY "time" DESC
 
 ### Reading the lake with an Iceberg client {#reading-with-an-iceberg-client}
 
-You can read your tables directly from your own application with any Apache Iceberg client, instead of querying them through DataHub.
+You can read your tables directly from your own application with any of the [compatible Apache Iceberg clients](https://github.com/Cumulocity-IoT/iceberg-client-compatibility), instead of querying them through DataHub.
 
 The **Data Lake** page shows everything your client needs, with the values for your tenant and environment filled in. Navigate to **Administration** > **Settings** > **Data Lake** and click **Show configuration for Iceberg client**. The dialog shows:
 
