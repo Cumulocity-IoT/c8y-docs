@@ -1,6 +1,8 @@
 ---
-date: ""
-title: Tool approval is configurable per tool in the UI and approval is required by default
+date: '2026-11-17'
+title: >-
+  Tool approval is configurable per tool in the UI and approval is required by
+  default
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
@@ -13,6 +15,13 @@ build_artifact:
     label: ai-agents
 ticket: MTM-67779
 version: 4.0.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-17'
+  - label: apj.cumulocity.com
+    date: '2026-11-18'
+  - label: jp.cumulocity.com
+    date: '2026-11-18'
 ---
 Tool calls of AI agents now wait for user approval by default. A tool runs without approval only if its MCP tool annotations declare it read-only and closed-world, or if you set its approval mode to **Never**.
 
