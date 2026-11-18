@@ -117,7 +117,9 @@ Official rule templates are not shown in Analytics Builder. To activate or deact
 2. In the top bar, click the instance summary, for example, "3/5 instances active".
 3. Select **Activate all** or **Deactivate all**.
    **Activate all** is only shown if the rule template has inactive rules in **Production** mode. **Deactivate all** is only shown if the rule template has active rules.
+   ![Instance summary menu with Activate all and Deactivate all](/images/streaming-analytics/smart-rules-plugin/bulk-instances-menu.png)
 4. Check the summary in the confirmation dialog and confirm.
+   ![Confirmation dialog for activating all rules](/images/streaming-analytics/smart-rules-plugin/bulk-activate-dialog.png)
 
 The rules are changed one at a time, and the dialog shows the progress. You can cancel the operation. In this case, the operation stops after the current rule.
 
@@ -129,8 +131,6 @@ The rules are changed one at a time, and the dialog shows the progress. You can 
 Rules in other modes are not activated.
 
 If a rule cannot be activated or deactivated, the dialog shows the number of failed rules. Click **Show details** to see the affected rules and the reason. The rules that were changed successfully keep their new state. The operation does not undo them.
-
-**[TODO PAB-5296: add a screenshot of the instance summary menu and the bulk operation dialog, taken against the GA UI.]**
 
 ### Integration with Analytics Builder instance editor {#integration-with-analytics-builder-instance-editor}
 
