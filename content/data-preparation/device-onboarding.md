@@ -31,7 +31,7 @@ Devices created automatically have fixed properties. To customize them, define `
 
 The `onDeviceCreate` function is an optional second smart function, in the same Javascript file as `onMessage`. When an output of `onMessage` names an external ID that does not exist, the platform invokes `onDeviceCreate` with the input message and the missing external ID. The platform then acts on the return value:
 
-- **A list of objects**: The platform creates the devices, assets, and groups in the list, with the names, types, fragments, external IDs, and parents that you choose. It sends the output to the object that carries the missing external ID.
+- **A list of objects**: The platform creates the devices and assets in the list, and finds or creates the groups, with the names, types, fragments, IDs, and parents that you choose. It sends the output to the object that carries the missing external ID.
 - **An empty list, `[]`**: The platform creates nothing and drops the output.
 
 Rules without `onDeviceCreate` work as before.
@@ -47,15 +47,15 @@ export function onDeviceCreate(inputMsg, externalId, context) {
   const siteId = inputMsg.topic.split("/")[1];
   const data = JSON.parse(new TextDecoder().decode(inputMsg.payload));
 
-  const site = { type: "acme_SiteId", externalId: siteId };
+  const site = {
+    cumulocityType: "asset",
+    externalAssetId: siteId,
+    payload: { type: "acme_site", name: "Site " + siteId }
+  };
   const gateway = { type: "c8y_Serial", externalId: inputMsg.clientID };
 
   return [
-    {
-      cumulocityType: "asset",
-      externalSource: [site],
-      payload: { type: "acme_site", name: "Site " + siteId }
-    },
+    site,
     {
       cumulocityType: "device",
       externalSource: [gateway],
@@ -88,7 +88,7 @@ If several rules produce outputs for the same missing external ID, a rule with `
 
 #### How the objects are created {#how-the-objects-are-created}
 
-The platform creates the objects from all calls for one message together, with their external IDs. Then it links the objects to their parents. Messages from other devices on the same transport wait until the creation is complete, so the more objects a call returns, the longer they wait.
+The platform creates the devices and assets from all calls for one message together, with their external IDs. Then it finds or creates the groups, so a group can start in an asset that the same call creates. Then it links the objects to their parents. Messages from other devices on the same transport wait until the creation is complete, so the more objects a call returns, the longer they wait.
 
 If an object that `onDeviceCreate` returns has an external ID that already exists, the platform uses the existing object and does not create it again. It registers any other external IDs of the object for the existing object. If two calls for one message return the same object with an external ID, the platform creates it once. The object must have the same kind and the same external IDs in both calls, otherwise the platform rejects the later result.
 
@@ -102,7 +102,7 @@ If a parent is listed after its child in the same returned list, the platform re
 
 If a parent does not exist and no call for the message returns it, the platform creates the object without the link to that parent. It raises an alarm that names the missing parent, and never creates a parent in its place. Create the link yourself, for example, in the Device Management application.
 
-An object does not need an external ID. However, an object with no external IDs cannot be named as a parent, and the platform can create it a second time when it retries a failed attempt.
+If the `parentAsset` of a group does not exist, or finding or creating the group fails, the platform does not create the group or link any object to it. It raises an alarm that names the group and the reason.
 
 #### When creation fails {#when-creation-fails}
 
@@ -112,7 +112,7 @@ The platform drops the output and raises an alarm of type `c8y_DataPrep_DeviceCr
 - `onDeviceCreate` returns an invalid result.
 - Creating or linking the objects fails.
 
-The platform does not remember a failure, so the next message that names the external ID tries again. If the failed attempt created some of the objects, the platform finds and uses them, and does not create them again.
+The platform does not remember a failure. If the failed attempt did not create the object with the missing external ID, the next message that names the external ID invokes `onDeviceCreate` again. The platform then uses any objects that the failed attempt created, and does not create them again. If the failed attempt did create the object, for example, when only linking failed, later messages use that object. The platform does not invoke `onDeviceCreate` again, and does not make the missing links. Create them yourself, for example, in the Device Management application.
 
 #### Managed object updates from onMessage {#managed-object-updates-from-onmessage}
 
@@ -130,6 +130,20 @@ If both set the same fragment, the platform keeps the value from `onMessage`, be
 A gateway message often contains readings for many sensors, so `onMessage` returns outputs for many missing external IDs. If `onDeviceCreate` returns the gateway and all of its sensors on the first call, the result already covers the external IDs of the other sensors. The platform then does not invoke `onDeviceCreate` again for the message. For an example, see [Create a gateway and its sensors](#gateway-and-sensors).
 
 If the function returns only one device for each call, the platform invokes it once for each sensor. In this case, each sensor names a gateway that does not exist yet, so the platform creates each sensor without the link to the gateway. To avoid this, return the gateway and all of its sensors in one call.
+
+#### Groups {#groups}
+
+A group has no external IDs. You name it by its `path`, the names of the groups from the top level to the group, for example, `["Plant", "Line 1"]`. If the path starts in an asset rather than at the top level, set `parentAsset` to that asset. Groups that you create in the Device Management application have no external IDs either, so `onDeviceCreate` can use them in the same way.
+
+The platform finds each group in the path as the Device Management application does:
+
+- It finds the first group by its name among the groups at the top level, or among the groups in the `parentAsset`.
+- It finds each later group by its name among the groups in the group before it.
+- Names are case-sensitive. If several groups have the same name, the platform uses the oldest one.
+
+If a group in the path does not exist, the platform creates it in the group or asset before it. Only the last group of the path gets the payload that you return. The platform creates the groups before it with only their names. If the group already exists, the platform uses it and ignores the payload.
+
+Users with inventory roles for a group can access the devices in the group. If the platform adds a device to a group, those users get access to the device.
 
 ### Ways to use onDeviceCreate {#ways-to-use-ondevicecreate}
 
@@ -217,7 +231,7 @@ export function onDeviceCreate(inputMsg, externalId, context) {
 
 #### Place a device under an existing gateway and asset {#under-an-existing-gateway-and-asset}
 
-Name existing parents by their external IDs. If a parent does not exist, the platform creates the device without the link to that parent, and raises an alarm that names the missing parent.
+Name an existing gateway by its external ID, and an existing asset by its `externalAssetId`. If a parent does not exist, the platform creates the device without the link to that parent, and raises an alarm that names the missing parent.
 
 ```javascript
 export function onDeviceCreate(inputMsg, externalId, context) {
@@ -226,7 +240,7 @@ export function onDeviceCreate(inputMsg, externalId, context) {
     cumulocityType: "device",
     externalSource: [externalId],
     payload: { name: "Pump " + externalId.externalId, type: "acme_pump" },
-    parentAssets: [{ type: "acme_SiteId", externalId: siteId }]
+    parentAssets: [siteId]
   };
   // The gateway's own data names the gateway, which can't be its own parent
   if (externalId.externalId !== inputMsg.clientID) {
@@ -267,13 +281,13 @@ If the asset already exists, the platform uses it rather than creating it again.
 ```javascript
 export function onDeviceCreate(inputMsg, externalId, context) {
   const siteId = inputMsg.topic.split("/")[1];
-  const site = { type: "acme_SiteId", externalId: siteId };
+  const site = {
+    cumulocityType: "asset",
+    externalAssetId: siteId,
+    payload: { type: "acme_site", name: "Site " + siteId }
+  };
   return [
-    {
-      cumulocityType: "asset",
-      externalSource: [site],
-      payload: { type: "acme_site", name: "Site " + siteId }
-    },
+    site,
     {
       cumulocityType: "device",
       externalSource: [externalId],
@@ -286,22 +300,43 @@ export function onDeviceCreate(inputMsg, externalId, context) {
 
 #### Add a device to a group {#device-in-a-group}
 
-The platform gives a group the fragment `c8y_IsDeviceGroup` and the type `c8y_DeviceGroup`, or `c8y_DeviceSubgroup` if the group has a parent.
+The platform finds the group by its path, or creates it if it does not exist. For details, see [Groups](#groups).
 
 ```javascript
 export function onDeviceCreate(inputMsg, externalId, context) {
-  const fleet = { type: "acme_Fleet", externalId: "fleet-north" };
+  const fleet = { cumulocityType: "group", path: ["Fleets", "North fleet"], payload: {} };
   return [
-    {
-      cumulocityType: "group",
-      externalSource: [fleet],
-      payload: { name: "North fleet" }
-    },
+    fleet,
     {
       cumulocityType: "device",
       externalSource: [externalId],
       payload: { name: "Truck " + externalId.externalId, type: "acme_truck" },
       parentAssets: [fleet]
+    }
+  ];
+}
+```
+
+#### Add a device to a group in an asset {#device-in-a-group-in-an-asset}
+
+The path of the group starts in the asset. The same path in two assets names two different groups.
+
+```javascript
+export function onDeviceCreate(inputMsg, externalId, context) {
+  const site = {
+    cumulocityType: "asset",
+    externalAssetId: "site-berlin",
+    payload: { name: "Berlin plant" }
+  };
+  const sensors = { cumulocityType: "group", parentAsset: site, path: ["Sensors"], payload: {} };
+  return [
+    site,
+    sensors,
+    {
+      cumulocityType: "device",
+      externalSource: [externalId],
+      payload: { name: "Sensor " + externalId.externalId },
+      parentAssets: [sensors]
     }
   ];
 }
