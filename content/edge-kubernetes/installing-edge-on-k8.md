@@ -19,7 +19,7 @@ Edge can be installed using one of two supported methods. The method you choose 
 
   - **[Installing on a self-managed Kubernetes cluster](#install-edge-with-edge-operator)**
     <br/>
-    This method is suitable for users who already have a Kubernetes cluster and want to install Edge using existing Kubernetes tools. Even a single-node Kubernetes cluster will suffice, but is not required.
+    This method is suitable for users who already have a Kubernetes cluster and want to install Edge using existing Kubernetes tools. Edge is tested and supported on a **single-node** Kubernetes cluster running Kubernetes 1.32.x; see the constraints listed in that section.
     <br/>
     In this case, you are expected to:
     - Set up and manage the Kubernetes cluster yourself (using K3s or any compatible Kubernetes distribution).
