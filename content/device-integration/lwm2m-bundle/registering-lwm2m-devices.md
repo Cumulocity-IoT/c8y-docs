@@ -2,6 +2,8 @@
 weight: 20
 title: Registering LWM2M devices
 layout: redirect
+skills:
+  - register-lwm2m-device
 ---
 
 The data provided during registration must enable LWM2M communication and holds information for factory bootstrap and client-initiated bootstrap.
@@ -102,6 +104,40 @@ Currently {{< product-c8y-iot >}} supports 3 security modes:
       * X.509 Certificate and Private Key in PEM format. Private key will be stored as encrypted data on the platform.
       * Server certificate to use (more on this below).
       * Certificate usage (as defined in LWM2M specification)
+
+##### Supported DTLS cipher suites {#supported-dtls-cipher-suites}
+
+In the PSK and X509 security modes, the device and the LWM2M agent agree on a DTLS cipher suite when the device connects. The device must support at least one of the cipher suites below for its security mode. The same cipher suites apply to bootstrap and server connections. The server certificate of the LWM2M agent uses an elliptic curve (EC) key, so the X509 security mode supports only ECDHE_ECDSA cipher suites.
+
+**X509 security mode**
+
+| Cipher suite                            | Code   |
+|-----------------------------------------|--------|
+| TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 | 0xC02B |
+| TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 | 0xC02C |
+| TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8      | 0xC0AE |
+| TLS_ECDHE_ECDSA_WITH_AES_256_CCM_8      | 0xC0AF |
+| TLS_ECDHE_ECDSA_WITH_AES_128_CCM        | 0xC0AC |
+| TLS_ECDHE_ECDSA_WITH_AES_256_CCM        | 0xC0AD |
+
+**PSK security mode (PSK and PSK_GENERATED)**
+
+| Cipher suite                            | Code   |
+|-----------------------------------------|--------|
+| TLS_ECDHE_PSK_WITH_AES_128_GCM_SHA256   | 0xD001 |
+| TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384   | 0xD002 |
+| TLS_ECDHE_PSK_WITH_AES_128_CCM_8_SHA256 | 0xD003 |
+| TLS_ECDHE_PSK_WITH_AES_128_CCM_SHA256   | 0xD005 |
+| TLS_PSK_WITH_AES_128_GCM_SHA256         | 0x00A8 |
+| TLS_PSK_WITH_AES_256_GCM_SHA384         | 0x00A9 |
+| TLS_PSK_WITH_AES_128_CCM_8              | 0xC0A8 |
+| TLS_PSK_WITH_AES_256_CCM_8              | 0xC0A9 |
+| TLS_PSK_WITH_AES_128_CCM                | 0xC0A4 |
+| TLS_PSK_WITH_AES_256_CCM                | 0xC0A5 |
+
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} may extend this list in the future.
+{{< /c8y-admon-info >}}
 
 ##### More details on X.509 security {#more-details-on-x509-security}
 

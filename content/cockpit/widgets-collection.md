@@ -187,6 +187,40 @@ The "Event list" widget lets you monitor events for a selected device.
 
 Additionally, a specific date range can be set and the events can be monitored in realtime.
 
+### Event image view {#event-image-view}
+
+The "Event image view" widget shows the images attached to the events of a selected device or group, for example, camera snapshots. Below the image, the widget shows the source, the type, and the time of the event.
+
+![Event image view widget showing an AI-generated camera image of a seedling tray](/images/users-guide/cockpit/cockpit-widget-event-image-view.png)
+
+If the widget loads more than one image, use the slider to move between the images. The newest image is at the right end of the slider. The counter shows the position of the current image and the number of loaded images.
+
+**Live mode** shows the newest image. When auto-refresh is enabled, the widget moves to each new image. If you move the slider to an older image, the widget keeps showing that image. The widget checks the latest 50 events with an attached file, regardless of the file type. For a file that is not an image, the widget shows a message instead of the image.
+
+**History mode** shows the images from the selected time range. The widget loads 50 events at a time. If the time range contains more events, the counter shows a plus sign, for example, "50 / 50+". To load older images, move the slider to the oldest image and click **Load older images**.
+
+To show the loaded images as a slideshow, click **Play slideshow**.
+
+In history mode with more than one loaded image, the widget header provides the following actions:
+
+- **Download loaded images**: Downloads the loaded images as a ZIP file.
+- **Export loaded images to GIF**: Creates an animated GIF file from the loaded JPG, PNG, and BMP images.
+
+In live mode, or in history mode with only one loaded image, click **Download** in the widget header to download the current image.
+
+**Parameters to configure**
+
+![Event image view widget configuration with an AI-generated camera image in the preview](/images/users-guide/cockpit/cockpit-widget-event-image-view-config.png)
+
+| Field           | Description                                                                                                                                                                                                          |
+| :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Widget title    | Widget title. By default, the widget type is the title.                                                                                                                                                              |
+| Asset selection | The device or group with the events.                                                                                                                                                                                 |
+| Time context    | Select **Dashboard** to use the time range of the dashboard or **Widget** to set a time range for the widget. Select **Hide in widget** to hide the time controls in the widget. For details, see [Global time context](/cockpit/global-time-context/). |
+| Type            | Only show the images of events of the specified type. Leave the field empty to show the images of all event types.                                                                                                  |
+| Child devices   | Select **Show events** to also show the images of child devices.                                                                                                                                                     |
+| Slideshow       | Select **Play in loop** to restart the slideshow after the newest image. Available in history mode only.                                                                                                            |
+
 ### Fieldbus device {#fieldbus-device}
 
 The "Fieldbus device" widget lets you see the status of a modbus device and operate it.
@@ -661,11 +695,6 @@ In the "Rotation" widget you can rotate the object by dragging and moving it aro
 
 ### SCADA {#scada}
 
-{{< c8y-admon-preview-toggle >}}
-Toggle on the preview feature documentation to see upcoming changes to the existing functionality.
-{{< /c8y-admon-preview-toggle >}}
-
-{{< c8y-admon-preview-feature >}}
 The "SCADA" widget displays a dynamic SVG image representing an asset or device status. It is ideal for building custom dashboards simulating SCADA panels, showing live states, measurement values, and alarms.
 
 #### Setting up the "SCADA" widget {#setting-up-the-scada-widget}
@@ -793,85 +822,6 @@ Lit:
   ${this.c8yScadaValues?.batteryValue ?? '-'}
 </tspan>
 <rect @click=${() => this.c8yScadaFunctions?.goToDeviceDetails(this.c8yScadaValues?.deviceId)} />
-```
-
-{{< /c8y-admon-preview-feature >}}
-
-#### Legacy "SCADA" widget {#legacy-scada-widget}
-
-The "SCADA" widget provides a graphic representation of the status of a device.
-
-To use the "SCADA" widget, follow these steps:
-
-1. Select a dashboard and click **Add widget** in the top menu bar.
-2. Select the "SCADA" widget and edit the title of the widget.
-3. Select the device that should be shown in the widget in the **Asset selection** section.
-4. Upload an SVG file with the graphic representation of the device. SVG files are vector graphics that must be specifically prepared with placeholders for the status information. See [Preparing SVG files for the legacy "SCADA" widget](#preparing-svg-files-for-the-legacy-scada-widget) below.
-5. Assign placeholders to devices. Note that multiple devices can be taken as source.
-6. You now must assign each placeholder to a property of the device. Hover over each placeholder and select **Assign device property** or **Assign fieldbus property**. In the upcoming dialog box, basic device properties or fieldbus properties (that is, status coils and registers) can be selected. Select the desired property and click **Select**.
-7. After assigning all placeholders, a preview of the widget with the current values of the properties is shown. Click **Save** to place the widget on the dashboard.
-
-The following code sanitization options can be selected:
-
-- **strict** - Does not allow any JS or AngularJS directives.
-- **lax** (default) - Allows partly JS (events) and all AngularJS directives.
-- **none** - Allows everything.
-
-!["SCADA" widget](/images/users-guide/cockpit/cockpit-widget-scada.png)
-
-#### Preparing SVG files for the legacy "SCADA" widget {#preparing-svg-files-for-the-legacy-scada-widget}
-
-The "SCADA" widget accepts SVG files that use AngularJS directives, for example, `ng-if`, `ng-show`, `ng-style`, `ng-repeat`, `ng-click`, for dynamic data presentation.
-
-Moreover, JavaScript event attributes (like onclick, onmouseover) can be used in SVG files uploaded to "SCADA" widgets.
-
-Data from devices (like latest measurements and other properties) are provided via placeholders. There are also predefined helper functions which can be used.
-
-For creating SVG files, it is recommended to use [https://boxy-svg.com/](https://boxy-svg.com/). It is an easy-to-use, quality Chrome extension.
-
-##### Placeholders {#legacy-placeholders}
-
-For a placeholder to be recognized by the "SCADA" widget, it must occur at least once in double curly braces with no other expression, for example `{{placeholderName}}` (in a comment, attribute's value, or element's content - see example). Once annotated, the placeholder can be used within other expressions, for example `{{placeholderName * 3.1415}}`, `ng-class="{ active: placeholderName > 100 }"` or `ng-if="placeholderName === 'VALUE'"`.
-
-##### Predefined functions {#legacy-predefined-functions}
-
-The following predefined functions are available for use in expressions:
-
-- `goToGroupDetails(groupId)` – takes the group ID and redirects the user to the group details view, for example, `<... ng-click="goToGroupDetails(groupId)">`,
-- `goToDeviceDetails(deviceId)` – takes the device ID and redirects the user to the device details view, for example, `<... ng-click="goToDeviceDetails(deviceId)">`,
-- `getActiveAlarmsStatusClass(alarmsStatus)` – takes the alarm status object and returns a CSS class that can be used for styling: `none`, `warning`, `minor`, `major`, `critical`, for example, `<... ng-class="getActiveAlarmsStatusClass(alarmsStatus)">`.
-
-##### Example {#legacy-example}
-
-```svg
-<?xml version="1.0" encoding="utf-8"?>
-<svg width="600px" height="600px" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-  <!-- Annotate placeholders in comments: -->
-  <!-- {{batteryValue}} -->
-  <!-- {{alarmsStatus}} -->
-
-  <style>
-    .critical {
-      fill: red;
-    }
-  </style>
-
-  <!-- or in an attribute: -->
-  <text data-placeholder="{{batteryValue}}"
-    class="text"
-    x="50"
-    y="200"
-    width="200">
-    <!-- pass placeholder's value to a predefined function to get alarms status CSS class: -->
-    <tspan ng-class="getActiveAlarmsStatusClass(alarmsStatus)" style="font-size: 45pt;">
-      <!-- or in an element's content: -->
-      {{batteryValue}}
-
-      <!-- a placeholder can be also a part of expression, for example,: -->
-      {{batteryValue * 100}} %
-    </tspan>
-  </text>
-</svg>
 ```
 
 ### Silo {#silo}

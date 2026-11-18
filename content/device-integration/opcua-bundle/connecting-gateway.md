@@ -2,6 +2,8 @@
 weight: 60
 title: Connecting the gateway to the server
 layout: redirect
+skills:
+  - manage-opcua-gateway-and-servers
 ---
 
 Next, establish a connection between the gateway and the OPC UA server.

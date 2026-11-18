@@ -74,12 +74,12 @@ The following limitations and constraints apply to the Service:
 
 #### Service-level objectives
 
-The following objectives measure the quality of the Service:
+Service-level objectives are calculated in accordance to the [Platform service-level agreement](/service-terms/service-level/#service-availability). The following objectives measure the quality of the Service:
 
 | Service level indicator    | Monthly target                               |
 | -------------------------- | -------------------------------------------- |
-| Catalog availability       | ≥ 99.9%                                      |
-| Data freshness             | 95 percentile of sustained load ≤ 10 minutes |
+| Catalog availability       | ≥ 99.9% (production), ≥ 95.0% (non-production) |
+| Data freshness             | 95 percentile of sustained load ≤ 5 minutes (production), ≤ 10 minutes (non-production) |
 | Pipeline buffer durability | Designed for ≥ 99.99999% (in-transit)        |
 
 #### Service-level indicator definitions

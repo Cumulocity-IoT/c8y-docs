@@ -36,3 +36,14 @@ The event lists all new tables and columns added during that period. This helps 
 
   ![Schema violation alarm in alarm UI](/images/datahub-guide/schema-evolution-alarm-ui.png)
 
+### Offloading failure alarms {#offloading-failure-alarms}
+
+When the service repeatedly fails to offload your data, for example because it cannot access your data lake or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
+
+Each part of the service raises its own alarm type:
+
+* `c8y_StreamingLakeIngestion_CdcWriterInitializationFailed`: The service cannot write the data files of the change data capture tables to your data lake.
+* `c8y_StreamingLakeIngestion_LatestWriterInitializationFailed`: The service cannot write the data files of the `latest_inventory` tables to your data lake.
+* `c8y_StreamingLakeIngestion_AppenderInitializationFailed`: The service cannot commit new data files to the tables, so new data does not appear in queries.
+
+The alarm text starts with "Offloading into the data lake has stopped" and ends with the cause of the failure, such as a missing permission on your storage. Fix the cause. The service retries automatically and clears the alarm when that part of the service works again.

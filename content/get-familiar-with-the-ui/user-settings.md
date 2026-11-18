@@ -135,18 +135,4 @@ The user interface language is selected along the following criteria, in the ord
 
 Change the language in the **UI settings** section by selecting a language from the dropdown list. Reload the page to apply the new language setting.
 
-The UI is available in the following languages:
-
-|Language|Language code|
-|:---|:---|
-|English (default)|en|
-|Brazilian Portuguese|pt_BR|
-|Chinese|zh_CN|
-|Chinese, traditional|zh_TW|
-|Dutch|nl|
-|French|fr|
-|German|de|
-|Japanese|ja_JP|
-|Korean|ko|
-|Polish|pl|
-|Spanish|es|
+For the list of languages, see [Supported languages](/get-familiar-with-the-ui/ui-introduction/#supported-languages).
