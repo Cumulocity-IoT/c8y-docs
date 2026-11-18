@@ -6,7 +6,7 @@ layout: redirect
 
 By default, {{< company-c8y >}} provides the object storage of your data lake, and your tenant needs no setup. For details, see [Subscribing to Streaming Lake Ingestion](/streaming-lake-ingestion/datahub-2-overview/#subscribing).
 
-Your own storage is a special case for dedicated environments. On a dedicated environment, Streaming Lake Ingestion can write your data into object storage in your own cloud account. An environment uses the same kind of storage for all its tenants. You cannot select it per tenant. To find out which kind of storage your environment uses, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
+Bringing your own storage is a special case only for dedicated environments. On a dedicated environment, Streaming Lake Ingestion can write your data into object storage in your own cloud account. An environment uses the same kind of storage for all its tenants. To find out which kind of storage your environment uses, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
 With your own storage:
 

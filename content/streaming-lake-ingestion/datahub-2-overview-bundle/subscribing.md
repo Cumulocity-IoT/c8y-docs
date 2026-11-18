@@ -14,7 +14,7 @@ On dedicated environments, Streaming Lake Ingestion can write to object storage 
 
 ### Ending the subscription {#ending-the-subscription}
 
-When the subscription of your tenant ends, the data flow stops and DataHub Query no longer shows your lake. Your data and your catalog credentials stay available for at least 30 days. During this period, you can copy your data out of the lake with an Iceberg client. For details, see [Reading the lake with an Iceberg client](/streaming-lake-ingestion/using-streaming-lake-ingestion/#reading-with-an-iceberg-client).
+When the subscription of your tenant ends, the data flow stops and DataHub Query no longer shows your lake. Your data and your catalog credentials stay available for the next 30 days. During this period, you can copy your data out of the lake with an Iceberg client. For details, see [Reading the lake with an Iceberg client](/streaming-lake-ingestion/using-streaming-lake-ingestion/#reading-with-an-iceberg-client).
 
 After this period, {{< company-c8y >}} deletes your data and your catalog credentials.
 

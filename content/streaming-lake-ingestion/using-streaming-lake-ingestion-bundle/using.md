@@ -12,7 +12,7 @@ After your tenant subscribes to Streaming Lake Ingestion, the data flow starts:
 If your environment uses your own storage, the data flow starts after the one-time setup. For details, see [Subscribing to Streaming Lake Ingestion](/streaming-lake-ingestion/datahub-2-overview/#subscribing).
 
 {{< c8y-admon-info >}}
-The download may take a while to complete. For more information, see [Monitoring Streaming Lake Ingestion](/streaming-lake-ingestion/monitoring-streaming-lake-ingestion/).
+Copying your current inventory into the lake may take a while to complete. For more information, see [Monitoring Streaming Lake Ingestion](/streaming-lake-ingestion/monitoring-streaming-lake-ingestion/).
 
 The `latest_inventory` tables are pre-populated with your full current inventory at subscription time. Alarms, events, measurements, and operations are only recorded for changes that occur after subscription.
 
