@@ -1,5 +1,5 @@
 ---
-title: Streaming Lake Ingestion service-level agreement
+title: DataHub 2.0 service-level agreement
 layout: bundle
 weight: 22
 ---
