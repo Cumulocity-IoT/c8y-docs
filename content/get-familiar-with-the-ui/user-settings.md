@@ -136,7 +136,3 @@ The user interface language is selected along the following criteria, in the ord
 Change the language in the **UI settings** section by selecting a language from the dropdown list. Reload the page to apply the new language setting.
 
 For the list of languages, see [Supported languages](/get-familiar-with-the-ui/ui-introduction/#supported-languages).
-
-{{< c8y-admon-info >}}
-* The contextual help that opens from the help icon is available in English only.
-{{< /c8y-admon-info >}}
