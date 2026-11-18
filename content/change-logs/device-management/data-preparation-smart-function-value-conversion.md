@@ -29,6 +29,7 @@ Data Preparation now drops the message with an error if your function returns an
 - A value larger than 256 MB once converted.
 - A string containing a NUL character, for example, text decoded from a payload padded with zero bytes.
 - Two keys that would become the same key.
+- A value with no equivalent, such as a function, an `Error`, or a `Symbol`.
 
 Properties with symbol keys are now skipped, and unpaired surrogates in strings are replaced with U+FFFD.
 
