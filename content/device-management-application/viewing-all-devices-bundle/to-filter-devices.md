@@ -10,11 +10,12 @@ Filtering is available on every column. Click the filter icon <i class="dlt-c8y-
 
 Specify your filter options in the dropdown list.
 
-Most columns represent text fields. You can filter these columns by simply entering an arbitrary text into the textbox as in the search field. Click **+ Add next** to add another textbox if you want to filter for more than one term.
+Most columns represent text fields. You can find devices by text in two ways:
 
-{{< c8y-admon-info >}}
-Exception: In the **Name** column, entered text is case-sensitive, and without the * wildcard, it is an exact match.
-{{< /c8y-admon-info >}}
+- **Search field**: Enter part of a device name or serial number, or a complete device ID, in the search field above the list. The search ignores upper and lower case and matches part of a name or serial number.
+- **Column filter**: Click the filter icon in a column header and enter text in the textbox. Without a wildcard, the filter returns only devices whose value exactly matches the text, including upper and lower case. To match part of a value, use the * wildcard, for example, `*sensor*` or `sensor*`. A filter with a wildcard ignores case.
+
+Click **+ Add next** to add another textbox if you want to filter for more than one term.
 
 Apart from filtering for text there are several other options:
 
