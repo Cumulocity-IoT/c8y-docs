@@ -139,7 +139,7 @@ The UI sorts text by character code. It does not apply language-specific or regi
 * Letters with accents or umlauts, such as é, ä, or ö, come after the letters A–Z and a–z. For example, *Ölpumpe* comes after *Zylinder*.
 * Text in non-Latin scripts, such as Chinese, Japanese, or Cyrillic, follows the code of each character and not the dictionary order of the language.
 
-[PLACEHOLDER: Confirm how text filters handle case, accents, and umlauts, for example, whether a filter for "a" matches "ä". Add one sentence here.]
+Search fields and text filters ignore upper and lower case but treat letters with accents or umlauts as different letters. For example, a search for *a* does not return entries that contain *ä*.
 
 ### Real-time behavior of the navigator {#real-time-behavior-of-the-navigator}
 

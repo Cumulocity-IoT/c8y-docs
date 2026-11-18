@@ -25,6 +25,7 @@ The UI is available in the following languages:
 |Language|Language code|
 |:---|:---|
 |English (default)|en|
+|English|US|
 |Brazilian Portuguese|pt_BR|
 |Chinese|zh_CN|
 |Chinese, traditional|zh_TW|
@@ -36,4 +37,9 @@ The UI is available in the following languages:
 |Polish|pl|
 |Spanish|es|
 
-The UI does not support right-to-left (RTL) languages, such as Arabic and Hebrew. It does not provide a mirrored right-to-left layout, and it does not support bi-directional (BiDi) display or printing of text.
+{{< c8y-admon-info >}}
+* The UI does not support right-to-left (RTL) languages, such as Arabic and Hebrew. It does not provide a mirrored right-to-left layout, and it does not support bi-directional (BiDi) display or printing of text.
+* The contextual help that opens from the help icon is available in English only.
+{{< /c8y-admon-info >}}
+
+To add or change translations of static text in the UI, use the [Localization](/standard-tenant/changing-settings/#localization) feature.
