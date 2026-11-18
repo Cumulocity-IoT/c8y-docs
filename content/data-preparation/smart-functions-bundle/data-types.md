@@ -136,7 +136,7 @@ A device to create.
 | `cumulocityType` | `"device"` | Yes | Identifies the object as a device. Must be `"device"`. |
 | `externalSource` | [`ExternalId[]`](#external-id) | No | The external IDs to register for the device. A device with no external IDs cannot be named as a parent. |
 | `payload` | `object` | Yes | The fields of the new device. See below. |
-| `parentDevice` | [`ExternalId`](#external-id) or [`CreateDevice`](#create-device) | No | The parent device: the external ID of an existing device, or a device listed earlier in the returned array. The platform adds the new device to the child devices of the parent. |
+| `parentDevice` | [`ExternalId`](#external-id) or [`CreateDevice`](#create-device) | No | The parent device: the external ID of an existing device, a device listed earlier in the returned array, or a device returned by another call for the same message. The platform adds the new device to the child devices of the parent. |
 | `parentAssets` | (`string` or [`CreateAsset`](#create-asset) or [`CreateGroup`](#create-group))`[]` | No | The parent assets and groups. Name an asset by its `externalAssetId`, or an asset or group object from earlier in the returned array. The platform adds the new device to the child assets of each parent. |
 
 | Payload field | Type | Required | Description |

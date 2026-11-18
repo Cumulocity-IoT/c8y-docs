@@ -59,6 +59,7 @@ Invalid results include:
 - Two objects in the result have the same external ID, or two groups have the same `path` and `parentAsset`.
 - An object names a parent that comes later in the result. List parents before their children.
 - An object names as a parent an object that is not in the result, or an object without an ID.
+- A device's `parentDevice` is an asset. An external ID of type `c8y_Asset` always names an asset.
 - The `owner` of an object is not a user in the tenant.
 - An object sets the marker fragments of another kind of object, for example, an asset with `c8y_IsDevice`.
 

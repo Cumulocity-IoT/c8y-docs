@@ -183,7 +183,7 @@ A group also has the following fields:
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `path` | array | Yes | The path of the group, as names. |
-| `parentAsset` | object | No | The asset that the path starts in, with the `type` `c8y_Asset` and the `externalAssetId` of the asset as its `externalId`. |
+| `parentAsset` | string | No | The `externalAssetId` of the asset that the path starts in. |
 
 The test matches devices and assets by their external IDs, and groups by their path and `parentAsset`, in any order. It matches objects without an ID by their order relative to each other.
 
@@ -191,7 +191,7 @@ Each item in `links` has the following fields:
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `parent` | object | Yes | The parent. Give a device with the `type` and `externalId` of one of its external IDs. Give an asset with `type` `c8y_Asset`, and its `externalAssetId` as the `externalId`. Give a group as its `path`, and its `parentAsset` if it has one. |
+| `parent` | object | Yes | The parent. Give a device with the `type` and `externalId` of one of its external IDs. Give an asset as an object with its `externalAssetId`, for example, `{ externalAssetId: east }`. Give a group as its `path`, and its `parentAsset` if it has one, where `parentAsset` is the `externalAssetId`. |
 | `child` | number or object | Yes | The child: the zero-based index of an item in `objects`, or, for a device or an asset that an earlier input created, an object given as for `parent`. |
 | `relation` | string | Yes | One of `childDevices` or `childAssets`. |
 
@@ -207,9 +207,7 @@ expectedDeviceCreation:
         type: acme_Site
     - cumulocityType: group
       path: [Sensors]
-      parentAsset:
-        type: c8y_Asset
-        externalId: north
+      parentAsset: north
       managedObject: {}
     - cumulocityType: device
       externalSource:
@@ -219,15 +217,12 @@ expectedDeviceCreation:
         name: Sensor sensor01
   links:
     - parent:
-        type: c8y_Asset
-        externalId: east
+        externalAssetId: east
       child: 0
       relation: childAssets
     - parent:
         path: [Sensors]
-        parentAsset:
-          type: c8y_Asset
-          externalId: north
+        parentAsset: north
       child: 2
       relation: childAssets
 ```
