@@ -154,7 +154,7 @@ To export a rule, you need READ or ADMIN permission for "Data Preparation rules"
 
 Alternatively, in the rule editor, click **More…** in the action bar and select **Export rule**.
 
-The package contains the rule's latest saved draft. If the rule has no draft, it contains the deployed rule. The package contains the source configuration, description, tags, smart function code, test data, and AI chat history of the rule. It does not contain the deployment status. The export does not include unsaved changes in the rule editor. If you have unsaved changes, a warning reminds you to save the rule and export it again.
+The package contains the rule's latest saved draft. If the rule has no draft, it contains the deployed rule. The package contains the source configuration, description, smart function code, test data, and AI chat history of the rule. It does not contain the deployment status. The export does not include unsaved changes in the rule editor. If you have unsaved changes, a warning reminds you to save the rule and export it again.
 
 The export fails if the package would exceed the import limits of your tenant, so that you can import it into the same tenant. Each tenant can change its limits, so importing the package into another tenant with lower limits can still fail. For the limits, see [Rule package format](/data-preparation/external-development/#rule-package-format).
 
