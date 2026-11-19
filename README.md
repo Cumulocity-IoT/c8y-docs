@@ -9,6 +9,7 @@
 
 - Clone the repository.
 - Install Hugo by using snap `snap install hugo --channel=extended`.
+- If your Hugo build is not the extended edition (for example, recent Homebrew builds), install Dart Sass as well: `brew install dart-sass`.
 - Open a terminal window in the project directory and type `hugo server`. Specify the subdirectory that contains your content, for example http://localhost:1313/guides/users-guide/. Specifying only http://localhost:1313/guides results in a 404 error.
 
 Details are described in the "How to contribute to the Cumulocity documentation" process document. Contact the Cumulocity documentation team for access.
@@ -218,7 +219,7 @@ To add a topic, add a folder with an `_index.md` (copy one, then change `title`,
 
 ### Verify a skill
 
-1. Build the site. The build fails if a `skills:` entry names no skill, or if an `api` entry names an API that `data/apis.json` does not list. If your Hugo version rejects the HTML content files of this repository (`"text/html" is not whitelisted`), run `HUGO_SECURITY_ALLOWCONTENT='.*' hugo server`.
+1. Build the site. The build fails if a `skills:` entry names no skill, or if an `api` entry names an API that `data/apis.json` does not list.
 2. Check the API references. The build does not compare them with the API: each operation must exist in the OpenAPI specification of its API (the `spec` URL in `data/apis.json`) with the same method and path, and the `title` must match its summary. The check script does this for the `api` front matter and for the operation links in the text:
 
    ```bash
