@@ -76,7 +76,7 @@ The database query execution timeout applies to every individual database query 
 | [Client identifier length](/device-integration/mqtt-service/#client-id)                                                | Hard |          128 bytes |        128 bytes |
 | [Topic name length](/device-integration/mqtt-service/#mqtt-topics)                                                     | Hard |          256 bytes |        256 bytes |
 | [Topics](/device-integration/mqtt-service/#mqtt-topics)                                                                |      |          Unlimited |        Unlimited |
-| [Concurrent client connections](/device-integration/mqtt-service/#mqtt-device-quotas-limits) (per tenant)[^1]          | Hard |   1000 connections | 1000 connections |
+| [Concurrent client connections](/device-integration/mqtt-service/#mqtt-device-quotas-limits) (per tenant)[^1]          | Hard |   500 connections | 1000 connections |
 | [Client connection rate](/device-integration/mqtt-service/#mqtt-device-quotas-limits) (per tenant)[^2]                 | Hard |     100 per second |   100 per second |
 | [Inbound message publishing rate](/device-integration/mqtt-service/#mqtt-device-quotas-limits) (per tenant)[^2]        | Hard |     100 per second |  1000 per second |
 | [Inbound message publishing rate](/device-integration/mqtt-service/#mqtt-device-quotas-limits) (per client)            | Soft |      50 per second |   100 per second |
