@@ -119,11 +119,11 @@ If single sign-on is enabled for your tenant, a message will show up which remin
           </tr>
           <tr>
              <td align="left">First name</td>
-             <td align="left">First name of the user.</td>
+             <td align="left">First name (given name) of the user.</td>
           </tr>
           <tr>
              <td align="left">Last name</td>
-             <td align="left">Last name of the user.</td>
+             <td align="left">Last name (family name) of the user. The UI displays the full name of a user as first name followed by last name. You cannot change this order, for example, to display the family name first.</td>
           </tr>
           <tr>
              <td align="left">Telephone</td>

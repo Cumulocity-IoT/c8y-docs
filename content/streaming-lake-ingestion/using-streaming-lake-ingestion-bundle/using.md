@@ -83,13 +83,15 @@ $ curl -u "admin:$PASS" \
 
 #### Obtaining Iceberg catalog credentials {#obtaining-iceberg-catalog-credentials}
 
-To connect to the {{< product-c8y-iot >}} Iceberg catalog directly — for example, from Apache Spark, Databricks, or a custom application — you need OAuth2 client credentials. You can create and manage named catalog principals using the Manager API.
+To connect to the {{< product-c8y-iot >}} Iceberg catalog directly, for example from Apache Spark, Databricks, or a custom application, you need a client credential: a client ID and a client secret.
+
+The quickest way to get one is the **Connect to DataHub** dialog, see [Reading the lake with an Iceberg client](#reading-with-an-iceberg-client). It creates and replaces one credential, named `datahub`. To use one credential per application, create more named credentials, called principals, with the API below. Do not name one of your own principals `datahub`: replacing the credential in the dialog would end its secret.
 
 **Prerequisites**
 
 * Your tenant must be subscribed to Streaming Lake Ingestion.
-* Your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN permission. The OFFLOADING_ADMINISTRATOR global role carries ROLE_OFFLOADING_ADMIN: assign it to a user in the Administration application under **Accounts** > **Roles**.
-* Principal names must be strictly alphanumeric — letters and digits only, no dashes or underscores (for example, `spark1` or `dremioqa`).
+* Your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN or ROLE_TENANT_ADMIN permission. The OFFLOADING_ADMINISTRATOR global role carries ROLE_OFFLOADING_ADMIN: assign it to a user in the Administration application under **Accounts** > **Roles**.
+* Principal names must contain letters and digits only, no dashes or underscores (for example, `spark1` or `dremioqa`).
 
 **Creating a principal**
 
@@ -104,13 +106,13 @@ curl -s -X POST \
 ```json
 {
   "name":         "<NAME>",
-  "clientId":     "<TENANTID>-<NAME>",
+  "clientId":     "<CLIENT_ID>",
   "clientSecret": "<SECRET>"
 }
 ```
 
 {{< c8y-admon-important >}}
-The `clientSecret` is returned only once and is never stored by the service. Store it securely immediately after creation. If the secret is lost, rotate the principal to issue new credentials using a `PUT` request — rotating immediately invalidates the previous secret.
+The `clientSecret` is returned only once and is never stored by the service. Store it securely immediately after creation. If the secret is lost, rotate the principal with a `PUT` request to issue a new client ID and secret. Rotating invalidates the previous secret immediately.
 {{< /c8y-admon-important >}}
 
 **Listing principals**
@@ -125,7 +127,7 @@ curl -s \
 
 **Rotating credentials**
 
-To replace a lost or compromised secret. The previous secret is immediately invalidated.
+To replace a lost or compromised secret. The response contains a new client ID and secret, and the previous secret is invalidated immediately.
 
 ```shell
 curl -s -X PUT \
@@ -993,14 +995,15 @@ ORDER BY "time" DESC
 
 You can read your tables directly from your own application with any of the [compatible Apache Iceberg clients](https://github.com/Cumulocity-IoT/iceberg-client-compatibility), instead of querying them through DataHub.
 
-The **Data Lake** page shows everything your client needs, with the values for your tenant and environment filled in. Navigate to **Administration** > **Settings** > **Data Lake** and click **Show configuration for Iceberg client**. The dialog shows:
+The **Connect to DataHub** dialog shows everything your client needs, with the values for your tenant and environment filled in. In the Administration application, navigate to **Monitoring** > **DataHub** and click **Connect to DataHub**. The dialog shows:
 
 * The catalog settings, each ready to copy.
-* The commands to create, rotate, and delete client credentials.
-* How your client receives temporary storage credentials, and the minimum client versions.
-* Java and PyIceberg examples that also verify the access.
+* The `credential` setting, with a button to create the credential or replace it. The secret is masked until you show it, and it is shown only once: copy it before you close the dialog. Replacing the credential ends the current one, so the applications that use it lose access until you update them.
+* The `header.X-Iceberg-Access-Delegation` setting, marked as required. With it, the catalog gives your client a short-lived, read-only storage credential for each table. Without it, tables load but reading data fails.
 
-If your environment does not provide temporary storage credentials, the page does not offer the button.
+For compatible clients and examples, see [Iceberg client compatibility](https://github.com/Cumulocity-IoT/iceberg-client-compatibility). To create more credentials, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials).
+
+If your environment does not provide temporary storage credentials, the page does not offer the dialog.
 
 ### Ensuring good query performance {#ensuring-good-query-performance}
 

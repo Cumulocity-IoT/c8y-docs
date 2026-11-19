@@ -151,7 +151,7 @@ In the Device Management application, you can see one event in the event list bu
 402,51.227741,6.773456
 ```
 
-Now you should see both the **Location** and the **Tracking** tab in the device with the **Location** tab having the same latitude and longitude as the last location event.
+Now the **Location** tab of the device shows the same latitude and longitude as the last location event, and the location events as the path of the device.
 
 
 #### Receiving data {#receiving-data}
