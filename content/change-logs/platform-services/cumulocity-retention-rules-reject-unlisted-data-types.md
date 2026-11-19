@@ -1,5 +1,5 @@
 ---
-date: 
+date: '2026-11-19'
 title: Retention rules reject data types that the API specification does not list
 change_type:
   - value: change-2c7RdTdXo4
@@ -13,6 +13,9 @@ build_artifact:
     label: cumulocity
 ticket: MTM-68579
 version: 2026.432.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-19'
 ---
 
 Previously, the retention rule API accepted the data types `PROCESS`, `STATISTICS_FILES`, and `TIMESERIES_MEASUREMENT`, which the API specification does not list. A rule with `PROCESS` or `STATISTICS_FILES` never removed any data, and a rule with `TIMESERIES_MEASUREMENT` removed no measurements.

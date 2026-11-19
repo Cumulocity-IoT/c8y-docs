@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Inherit DTM settings from Management tenant to subtenants"
-product_area: "Application enablement & solutions"
+date: '2026-11-19'
+title: Inherit DTM settings from Management tenant to subtenants
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3287"
-version: "1025.17.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3287
+version: 1025.17.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-19'
 ---
 Previously, subtenants required a Digital Twin Manager (DTM) setting to be configured in the tenant itself or in the parent {{< enterprise-tenant >}}, which caused unnecessary duplication and made it difficult to apply consistent settings across the tenant hierarchy in your {{< product-c8y-iot >}} instance. Now, subtenants inherit DTM settings from the {{< management-tenant >}} when the settings are not configured in the subtenant itself or in the {{< enterprise-tenant >}}.
 

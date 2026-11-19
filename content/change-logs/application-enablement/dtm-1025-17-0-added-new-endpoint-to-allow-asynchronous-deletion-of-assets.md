@@ -1,18 +1,21 @@
 ---
-date: ""
-title: "Added new endpoint to allow asynchronous deletion of assets"
-product_area: "Application enablement & solutions"
+date: '2026-11-19'
+title: Added new endpoint to allow asynchronous deletion of assets
+product_area: Application enablement & solutions
 change_type:
-    - value: "change-QHu1GdukP"
-      label: "Feature"
+  - value: change-QHu1GdukP
+    label: Feature
 component:
-    - value: "component-Tl88RYb4A"
-      label: "Digital Twin Manager"
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
 build_artifact:
-    - value: "tc-wYIY0MBDO"
-      label: "dtm"
-ticket: "CTM-3231"
-version: "1025.17.0"
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3231
+version: 1025.17.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-19'
 ---
 Deleting assets with large hierarchies or extensive associated data previously failed with timeout errors. The Asset API now supports asynchronous deletion by using the `X-Async-Mode` header with the DELETE `/assets/{assetId}` endpoint, allowing these operations to complete in the background without timing out.
 
