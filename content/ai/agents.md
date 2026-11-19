@@ -6,7 +6,7 @@ outputs:
   - json
   - markdown
 sector:
-  - app_enablement
+  - ai
 weight: 20
 ---
 
@@ -75,14 +75,14 @@ You align a custom agent to your needs using the following tabs:
 - **Settings**: Set options like the maximum output tokens, the temperature, or the maximum number of steps.
 - **Test variables**: Set variable values for your test.
 - **System prompt**: The system prompt of the agent. You align it and then test the changes. The system prompt persists only when you save it.
-- **Tools**: Assign tools to your agent. Only available for text agents.
+- **Tools**: Assign tools to your agent and set which tool calls require the approval of the user. Only available for text agents.
 - **Schema**: Define the JSON schema of the response. Only available for object agents.
-- **Local provider**: Set a different LLM provider or model for this agent (see [Local providers](/ai/agents/#local-providers)).
+- **Model configuration**: Use a different provider, model, or API key for this agent than the one set in the control panel (see [Local providers](/ai/agents/#local-providers)).
 - **Advanced**: Edit advanced settings in JSON format.
 
 Subscribed agents are read-only and only show the **Test**, **Settings**, **Test variables**, and **System prompt** tabs.
 
-Changes are only persisted when you save them. Click **Save** to save and stay on the page. To save and return to the list instead, use the arrow next to the button to switch it to **Save and close**. The **System prompt**, **Schema**, **Local provider**, and **Advanced** tabs provide a **Revert** button to undo unsaved changes of that tab. If you leave the page with unsaved changes, for example with **Cancel**, the navigator, or the breadcrumb, you are asked to confirm that the changes are discarded.
+Changes are only persisted when you save them. Click **Save** to save and stay on the page. To save and return to the list instead, use the arrow next to the button to switch it to **Save and close**. The **System prompt**, **Schema**, **Model configuration**, and **Advanced** tabs provide a **Revert** button to undo unsaved changes of that tab. If you leave the page with unsaved changes, for example with **Cancel**, the navigator, or the breadcrumb, you are asked to confirm that the changes are discarded.
 
 ### System prompts {#ai-agent-system-prompt}
 
@@ -241,13 +241,13 @@ Test different settings to find the optimal configuration for your use case.
 
 ### Tools {#ai-agent-tools}
 
-Tools extend your agent's capabilities by allowing it to access data and perform actions beyond generating text. In the **Tools** tab, you assign tools from configured MCP servers to your agent.
+Tools extend your agent's capabilities by allowing it to access data and perform actions beyond generating text. In the **Tools** tab, you assign tools from configured MCP servers to your agent and set which tool calls require the approval of the user.
 
 To assign tools to an agent:
 
 1. Navigate to the **Tools** tab in the agent details.
-2. Browse or search the list of available tools from configured MCP servers. A tag shows the MCP server of each tool.
-3. Select the tools your agent needs to answer user questions.
+2. Browse or search the list of available tools from configured MCP servers. A tag shows the MCP server of each tool. To list only the tools that the agent uses, activate **Show enabled tools only**.
+3. Activate the switch of each tool that your agent needs to answer user questions.
 4. Click **Save** to update the agent configuration.
 
 If a tool assigned to the agent is no longer available, for example because it was removed or renamed on the MCP server or the server is unavailable, the tool is marked as unavailable and a warning is shown. Remove such tools from the agent or ask your administrator to verify the tool availability.
@@ -259,6 +259,10 @@ For detailed information about tools, configuring MCP servers, and how agents us
 {{< c8y-admon-info >}}
 Object agents cannot use custom tools. They use tools internally to structure responses according to their defined schema.
 {{< /c8y-admon-info >}}
+
+#### Tool approval {#tool-approval}
+
+In the **Tools** tab, you also set for each tool whether a user approves its calls before the tool runs. Tool approval also applies when applications call the agent through the REST API. For details, see [Requiring user approval](/ai/tools-mcp/#user-approval) and [Tool approval](/ai/rest-api/#tool-approval) in the REST API documentation.
 
 ### Test {#ai-agent-test}
 
@@ -273,10 +277,10 @@ To test an agent:
 
 The test uses the current configuration of the agent, including unsaved changes. The test interface maintains conversation context, allowing you to have multi-turn conversations and verify the agent remembers previous messages. Each response shows the tools the agent called and the tokens used. Click **Clear messages** to start a new conversation.
 
-Depending on the agent configuration, tool calls can require your approval before they run. Below the message field, select how such tool calls are handled:
+Depending on the [tool approval](/ai/tools-mcp/#user-approval) of the agent, tool calls can require your approval before they run. Below the message field, select how such tool calls are handled:
 
-- **Manual**: You are asked to approve the tool call before the tool runs.
-- **Auto**: Tools run without asking, except tools set to require approval **Always**. For details, see [Requiring user approval](/ai/tools-mcp/#user-approval).
+- **Manual**: You approve each call of a tool with the option **Ask** or **Always** before the tool runs.
+- **Auto**: Calls of tools with the option **Ask** run without asking. You still approve each call of a tool with the option **Always**. For details, see [Requiring user approval](/ai/tools-mcp/#user-approval).
 
 Your selection is saved as a user preference.
 

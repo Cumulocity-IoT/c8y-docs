@@ -6,7 +6,7 @@ outputs:
   - json
   - markdown
 sector:
-  - app_enablement
+  - ai
 weight: 60
 ---
 
@@ -80,7 +80,7 @@ The agent uses the conversation history to provide contextual responses.
 
 The request body is validated, and requests that don't follow these rules are rejected with the HTTP status 400 (Bad Request):
 
-- Only the fields `prompt`, `messages`, and `variables` are accepted. Unknown fields are rejected. Settings such as the temperature or the maximum output tokens cannot be passed per request. Define them in the [agent settings](/ai/agents/#ai-agent-settings) instead.
+- The API accepts only the fields `prompt`, `messages`, and `variables`. For object agents without a schema of their own, it also accepts the `schema` field. For details, see **Object agents** below. Unknown fields are rejected. Settings such as the temperature or the maximum output tokens cannot be passed per request. Define them in the [agent settings](/ai/agents/#ai-agent-settings) instead.
 - Use either `prompt` or `messages`, but not both.
 - `messages` must not contain an entry with the role `system`. The system prompt is defined in the `system` field of the agent definition.
 
@@ -116,6 +116,26 @@ POST /service/ai/agent/object/{agent-name}
 ```
 
 The output of an object agent is validated against the JSON schema of the agent, including string formats such as `date-time` or `email`. If the generated object doesn't match the schema, the request fails with the HTTP status 400 instead of returning the object.
+
+If the object agent has no schema, send the schema with each request in the `schema` field. Every object in the schema must declare `"additionalProperties": false`:
+
+```
+POST /service/ai/agent/object/{agent-name}
+{
+  "prompt": "John Doe lives at 123 Main Street",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "street": { "type": "string" }
+    },
+    "required": ["name", "street"],
+    "additionalProperties": false
+  }
+}
+```
+
+If the agent defines its own schema, the API rejects requests that contain a `schema` field.
 
 ### Resolving agents of an application {#resolving-agents-of-an-application}
 
@@ -179,6 +199,89 @@ data: {"type":"finish","finishReason":"stop","rawFinishReason":"stop","totalUsag
 ```
 
 The `usage` objects are shortened in this example. The `start-step` events don't include the request body sent to the LLM provider. The model that answered is available as `response.modelId` in the `finish-step` events.
+
+### Tool approval {#tool-approval}
+
+If an agent calls a tool that requires approval, the run stops before the tool runs. The tool runs only after your application approves the call. Which tools require approval depends on the agent definition. For details, see [Requiring user approval](/ai/tools-mcp/#user-approval). Agents without approval settings ask for approval for every tool, except tools that declare that they only read data and do not contact external systems. If your application does not answer approval requests, set the approval to `NEVER` only for tools that are safe to run without a review.
+
+#### Setting the approval in the agent definition {#setting-the-approval-in-the-agent-definition}
+
+In the `mcp` array of the agent definition, list a tool as an object with `name` and `approval` to set its approval option. The value is `NEVER`, `ASK`, or `ALWAYS`. A tool that is listed only by its name gets an option from what it declares about itself. In the following example, `cumulocity-list-alarms` declares that it only reads data, so it runs without approval, and `cumulocity-update-alarm-status` asks for approval:
+
+```json
+"mcp": [
+  {
+    "serverName": "cumulocity-default",
+    "tools": [
+      "cumulocity-list-alarms",
+      { "name": "cumulocity-update-alarm-status", "approval": "ASK" }
+    ]
+  }
+]
+```
+
+The REST API asks for approval for both `ASK` and `ALWAYS`. The difference matters only for chats that offer an **Auto** mode.
+
+#### Receiving an approval request {#receiving-an-approval-request}
+
+How your application receives the approval request depends on the request:
+
+- With `?fullResponse=true`, the last step of the response has the `finishReason` `tool-calls`, and its `content` contains a part with the type `tool-approval-request`:
+
+  ```json
+  {
+    "type": "tool-approval-request",
+    "approvalId": "aitxt-abc123",
+    "toolCall": {
+      "type": "tool-call",
+      "toolCallId": "toolu_123",
+      "toolName": "cumulocity-update-alarm-status",
+      "input": { "id": "1752", "status": "ACKNOWLEDGED" }
+    }
+  }
+  ```
+
+  When streaming with `?fullResponse=true`, the stream contains an event with the same part.
+- When streaming without `?fullResponse=true`, the stream contains an event with the name of the tool and the approval ID:
+
+  ```
+  data: {"type":"tool-approval-request","toolName":"cumulocity-update-alarm-status","approvalId":"aitxt-abc123"}
+  ```
+
+- Without streaming and without `?fullResponse=true`, the request fails with the HTTP status 409 (Conflict). The response body lists the pending approvals with `toolName` and `approvalId`. To answer them, send the request again with `?fullResponse=true`.
+
+#### Answering an approval request {#answering-an-approval-request}
+
+To answer, send the conversation again in the `messages` field and add:
+
+- The messages of the response, which contain the tool call and the approval request. With `?fullResponse=true`, each step of the response contains them in `response.messages`.
+- A message with the role `tool` that contains a part with the type `tool-approval-response` for each approval request. Set `approved` to `true` to run the tool, or to `false` to deny the call. Optionally, add a `reason`.
+
+```
+POST /service/ai/agent/text/{agent-name}?fullResponse=true
+{
+  "messages": [
+    { "role": "user", "content": "Acknowledge the alarm 1752." },
+    {
+      "role": "assistant",
+      "content": [
+        { "type": "tool-call", "toolCallId": "toolu_123", "toolName": "cumulocity-update-alarm-status", "input": { "id": "1752", "status": "ACKNOWLEDGED" } },
+        { "type": "tool-approval-request", "approvalId": "aitxt-abc123", "toolCallId": "toolu_123" }
+      ]
+    },
+    {
+      "role": "tool",
+      "content": [
+        { "type": "tool-approval-response", "approvalId": "aitxt-abc123", "approved": true }
+      ]
+    }
+  ]
+}
+```
+
+If you approve the call, the tool runs and the agent continues. If you deny the call, the tool does not run. The agent receives the denial and your reason as the result of the tool call and continues the conversation without the tool. The [**Observability**](/ai/observability/) page shows a denied call as **Denied**.
+
+The agent can call further tools that require approval in the same run. Repeat these steps until the response contains no more approval requests.
 
 ### Testing agent definitions {#testing-agent-definitions}
 

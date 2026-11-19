@@ -33,6 +33,17 @@ Access to the {{< management-tenant >}}'s full administrative API is typically r
 {{< /c8y-details >}}  
 
 
+### MCP (Model Context Protocol) {#mcp}
+
+The Model Context Protocol (MCP) is an open standard for connecting [AI agents](#ai-agent) to tools and data sources. An MCP server provides tools that agents call, for example, to query data or to trigger actions. In the [AI Agent Manager](#ai-agent-manager), you add MCP servers to make their tools available to your agents.
+
+See also [Tools and MCP](/ai/tools-mcp/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+The AI Agent Manager connects to MCP servers through a Streamable HTTP endpoint or an SSE endpoint. MCP servers can run as microservices in your tenant. For details, see [Creating custom MCP servers](/ai/tools-mcp/#creating-custom-mcp-servers).
+{{< /c8y-details >}}
+
+
 ### Measurement {#measurement}
 
 A measurement is a time-stamped reading or statistic collected from a sensor or [device](#device) and linked to a source [managed object](#managed-object). Measurements are organized into one or more [fragments](#fragment) (for example, `c8y_TemperatureMeasurement`), each containing one or more series (for example, `T`) that hold a numeric value and a unit for specific observed properties.  
