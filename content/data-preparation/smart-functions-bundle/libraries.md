@@ -79,7 +79,7 @@ Encodes and decodes OPC UA binary data. Instantiate with a zero-argument constru
 
 ### Importable libraries {#importable-libraries}
 
-The following libraries are available as explicit imports.
+The following libraries are available as explicit imports. Data Preparation does not support imports with attributes, such as `with { type: 'json' }`.
 
 #### protobufjs {#protobufjs}
 
