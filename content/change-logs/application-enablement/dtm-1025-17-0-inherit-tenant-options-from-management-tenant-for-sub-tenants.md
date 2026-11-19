@@ -18,7 +18,7 @@ Previously, subtenants required a Digital Twin Manager (DTM) setting to be confi
 
 This simplifies tenant configuration by allowing you to set default DTM settings at the management level and override them only when needed for specific {{< enterprise-tenant >}} or subtenants. Subtenants can still maintain their own custom settings to override inherited values. To define a DTM setting, set the appropriate tenant option in the `DTM` category.
 
-From a sub-tenant, the DTM settings are searched in the following order: sub-tenant -> enterprise tenant -> management -> built-in defaults. From an enterprise tenant, the DTM settings are searched in the following order: enterprise tenant -> management -> built-in defaults.
+From a subtenant, the DTM settings are searched in the following order: subtenant -> {{< enterprise-tenant >}} -> {{< management-tenant >}} -> built-in defaults. From an {{< enterprise-tenant >}}, the DTM settings are searched in the following order: {{< enterprise-tenant >}} -> {{< management-tenant >}} -> built-in defaults.
 
 In the response, the field `source` indicates where the DTM setting is defined: `TENANT_OPTION`, `ENTERPRISE_TENANT_OPTION`, `MANAGEMENT_TENANT_OPTION`.
 
