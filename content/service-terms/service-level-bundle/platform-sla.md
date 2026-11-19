@@ -105,7 +105,7 @@ In the interest of transparency and to ensure a mutual understanding of the serv
 
 {{< company-c8y >}} is committed to providing reliable service. The specific service availability targets are as follows:
 
-| Deployment type                                 | Production environments |
+| Deployment type                                 | Availability            |
 | ----------------------------------------------- | ----------------------- |
 | Starter (Shared Cloud)                          | 95.00%                  |
 | Shared Cloud                                    | 99.00%                  |
