@@ -121,13 +121,11 @@ Managed object updates are designed for updating existing managed objects, not a
 
 When you return objects from `onDeviceCreate`, each object has one of three types: `CreateDevice`, `CreateAsset`, or `CreateGroup`. One array can contain objects of all three types. The `cumulocityType` field identifies the type. The platform adds the marker fragments of each type, so you do not set them yourself. For details on the function, see [Device creation](#function-device-create).
 
-| Type | `cumulocityType` | Fragments the platform adds automatically |
+| Type | `cumulocityType` | What the platform sets automatically |
 |-------|------|-------------|
-| `CreateDevice` | `"device"` | `c8y_IsDevice` and `com_cumulocity_model_Agent`. |
-| `CreateAsset` | `"asset"` | `c8y_IsAsset` and `c8y_IsDeviceGroup`. |
-| `CreateGroup` | `"group"` | `c8y_IsDeviceGroup`, and the type `c8y_DeviceGroup`, or `c8y_DeviceSubgroup` if the group has a parent. |
-
-You name a parent by its [`ExternalId`](#external-id).
+| [`CreateDevice`](#create-device) | `"device"` | `c8y_IsDevice` and `com_cumulocity_model_Agent`. |
+| [`CreateAsset`](#create-asset) | `"asset"` | `c8y_IsAsset` and `c8y_IsDeviceGroup`. |
+| [`CreateGroup`](#create-group) | `"group"` | `c8y_IsDeviceGroup`, and the type `c8y_DeviceGroup`, or `c8y_DeviceSubgroup` if the group has a parent. |
 
 #### CreateDevice {#create-device}
 
@@ -138,8 +136,8 @@ A device to create.
 | `cumulocityType` | `"device"` | Yes | Identifies the object as a device. Must be `"device"`. |
 | `externalSource` | [`ExternalId[]`](#external-id) | No | The external IDs to register for the device. A device with no external IDs cannot be named as a parent. |
 | `payload` | `object` | Yes | The fields of the new device. See below. |
-| `parentDevice` | [`ExternalId`](#external-id) | No | The parent device: an existing device, or a device listed earlier in the returned array. The platform adds the new device to the child devices of the parent. |
-| `parentAssets` | [`ExternalId[]`](#external-id) | No | The parent assets or groups: existing ones, or ones listed earlier in the returned array. The platform adds the new device to the child assets of each parent. |
+| `parentDevice` | [`ExternalId`](#external-id) or [`CreateDevice`](#create-device) | No | The parent device: the external ID of an existing device, a device listed earlier in the returned array, or a device returned by another call for the same message. The platform adds the new device to the child devices of the parent. |
+| `parentAssets` | (`string` or [`CreateAsset`](#create-asset) or [`CreateGroup`](#create-group))`[]` | No | The parent assets and groups. Name an asset by its `externalAssetId`, or an asset or group object from earlier in the returned array. The platform adds the new device to the child assets of each parent. |
 
 | Payload field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -156,31 +154,30 @@ An asset to create, for example, a site or a building.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `cumulocityType` | `"asset"` | Yes | Identifies the object as an asset. Must be `"asset"`. |
-| `externalSource` | [`ExternalId[]`](#external-id) | No | The external IDs to register for the asset. An asset with no external IDs cannot be named as a parent. |
+| `externalAssetId` | `string` | No | The ID of the asset. The platform registers it as an external ID of type `c8y_Asset`, and also sets it as the fragment `c8y_ExternalId`. An asset with no `externalAssetId` cannot be named as a parent. |
 | `payload` | `object` | Yes | The fields of the new asset. See below. |
-| `parentAssets` | [`ExternalId[]`](#external-id) | No | The parent assets or groups: existing ones, or ones listed earlier in the returned array. The platform adds the new asset to the child assets of each parent. |
+| `parentAssets` | (`string` or [`CreateAsset`](#create-asset))`[]` | No | The parent assets. Name an asset by its `externalAssetId`, or an asset object from earlier in the returned array. The platform adds the new asset to the child assets of each parent. |
 
 | Payload field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `type` | `string` | Yes | The asset type. |
+| `type` | `string` | No | The asset type, for example, the type of an asset definition in Digital Twin Manager. |
 | `name` | `string` | No | The display name of the asset. |
 | `owner` | `string` | No | The owner of the asset. The owner must be a user in the tenant. If not set, the owner is the service user of the Data Preparation microservice that creates the asset. |
 | `[fragment: string]` | `any` | No | Any custom fragment. |
 
 #### CreateGroup {#create-group}
 
-A group to create.
+A group, which the platform finds by its path, or creates if it does not exist. For details on how the platform finds a group, see [Groups](/data-preparation/device-onboarding/#groups).
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `cumulocityType` | `"group"` | Yes | Identifies the object as a group. Must be `"group"`. |
-| `externalSource` | [`ExternalId[]`](#external-id) | No | The external IDs to register for the group. A group with no external IDs cannot be named as a parent. |
+| `parentAsset` | `string` or [`CreateAsset`](#create-asset) | No | If `path` starts in an asset rather than at the top level, that asset. Name the asset by its `externalAssetId`, or give an asset object from earlier in the returned array. If the asset does not exist, the platform does not create the group, and raises a `c8y_DataPrep_DeviceCreateFailure` alarm. |
+| `path` | `string[]` | Yes | The names of the groups from the top level, or from `parentAsset`, down to this group, ending with its own name, for example, `["Plant", "Line 1"]`. The platform finds each group in the path and creates any that do not exist. |
 | `payload` | `object` | Yes | The fields of the new group. See below. |
-| `parentAssets` | [`ExternalId[]`](#external-id) | No | The parent assets or groups: existing ones, or ones listed earlier in the returned array. The platform adds the new group to the child assets of each parent. |
 
 | Payload field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `name` | `string` | No | The display name of the group. |
 | `owner` | `string` | No | The owner of the group. The owner must be a user in the tenant. If not set, the owner is the service user of the Data Preparation microservice that creates the group. |
-| `[fragment: string]` | `any` | No | Any custom fragment. |
+| `[fragment: string]` | `any` | No | Any custom fragment. Do not set `name` or `type`, because the platform sets them from the path. |
 

@@ -33,7 +33,7 @@ The platform invokes the function when an object that `onMessage` returns has an
 
 - The platform invokes the function once for each missing external ID, in the order in which they appear in `onMessage`'s outputs.
 - The platform does not invoke the function for a missing external ID already returned by an earlier call for the same input message.
-- After the platform creates and links the objects, it knows the external ID, so later messages do not invoke the function for it.
+- After the platform creates the objects, it knows the external ID, so later messages do not invoke the function for it.
 - If the function returns `[]`, the platform does not remember the result. The next message that names the same external ID invokes the function again.
 
 ### Inputs {#device-create-inputs}
@@ -48,7 +48,7 @@ The function receives three arguments:
 
 The function returns an array of objects to create: `CreateDevice`, `CreateAsset`, or `CreateGroup`.
 
-- If one of the objects has the missing external ID, the platform creates any new objects and links them to their parents. It sends the output to the object with that external ID.
+- If one of the objects has the missing external ID, the platform creates any new devices and assets, finds or creates the groups, and links the objects to their parents. It sends the output to the object with that external ID.
 - If none of the objects carries the missing external ID, or the result is invalid, the platform rejects the result. It creates nothing, drops the output, and raises an alarm.
 - Returning an empty array (`[]`) drops the output --- the platform creates nothing and raises no alarm.
 
@@ -56,10 +56,11 @@ For the full list of fields of these objects, see [Objects to create](#objects-t
 
 Invalid results include:
 
-- Two objects in the result have the same external ID.
+- Two objects in the result have the same external ID, or two groups have the same `path` and `parentAsset`.
 - An object names a parent that comes later in the result. List parents before their children.
+- An object names as a parent an object that is not in the result, or an object without an ID.
+- A device's `parentDevice` is an asset. An external ID of type `c8y_Asset` always names an asset.
 - The `owner` of an object is not a user in the tenant.
-- A group sets a `type` in its payload.
 - An object sets the marker fragments of another kind of object, for example, an asset with `c8y_IsDevice`.
 
 ### Behavior notes {#device-create-behavior-notes}
