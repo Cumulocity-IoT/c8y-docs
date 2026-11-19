@@ -99,8 +99,8 @@ The database query execution timeout applies to every individual database query 
 | ------------------------------------------------------------------------------------------------------- | ---- | --------: | --------: |
 | [File size for LWM2M bulk registration](/device-integration/lwm2m/#bulk-device-registration)            | Hard |         - |     10 MB |
 | [Concurrent pending LWM2M operations per device](/device-integration/lwm2m/#device-operations-handling) | Hard |         - |        10 |
-| Maximum number of Loriot devices that can be registered per deployment                                  | Soft |         - |      4000 |
-| Maximum number of Loriot devices that can be registered per tenant                                      | Soft |         - |      2000 |
+| Maximum number of Loriot devices that can be registered per deployment                                  | Soft |         - |     40000 |
+| Maximum number of Loriot devices that can be registered per tenant                                      | Soft |         - |     20000 |
 
 ### Cloud Remote Access {#cloud-remote-access}
 
@@ -118,7 +118,8 @@ See also the [Cloud Remote Access service-level agreement](/service-terms/servic
 | Quota                                                                                            | Type | SDE value | ADE value |
 | ------------------------------------------------------------------------------------------------ | ---- | --------: | --------: |
 | Number of tenants                                                                                | Soft |         - |       250 |
-| Number of active offloaders per tenant                                                           | Soft |         - |        40 |
+| Number of Dremio users per tenant                                                                | Soft |         - |        40 |
+| Number of active offloaders per tenant                                                           | Soft |         - |       100 |
 | Number of offloadings per tenant per hour                                                        | Soft |         - |        20 |
 | [Offloading frequency](/datahub/working-with-datahub/#configure-additional-settings)             | Hard |         - |    hourly |
 | Offloaded leaf properties[^3]                                                                    | Soft |         - |      6400 |
