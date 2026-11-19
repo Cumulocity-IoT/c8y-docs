@@ -1,12 +1,14 @@
 ---
-title: DataHub service-level agreement
+title: DataHub 1.0 service-level agreement
+anchor_aliases:
+  - datahub-sla
 layout: bundle
 weight: 21
 aliases:
   - /datahub-sla/
 ---
 
-This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} DataHub ("Service") for offloading and analyzing Internet of Things ("IoT") data using Provider's cloud instances ("software-as-a-service", "SaaS").
+This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who uses {{< product-c8y-iot >}} DataHub 1.0 ("Service") for offloading and analyzing Internet of Things ("IoT") data using Provider's cloud instances ("software-as-a-service", "SaaS").
 
 ### Service description
 
