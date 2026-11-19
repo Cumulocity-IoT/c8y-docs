@@ -14,18 +14,8 @@ build_artifact:
 ticket: "CTM-3231"
 version: "1025.17.0"
 ---
-Deleting assets with large hierarchies or extensive associated data
-previously failed with timeout errors. The Asset API now supports
-asynchronous deletion by using the `X-Async-Mode header` with the DELETE
-`/assets/{assetId}` endpoint, allowing these operations to complete in
-the background without timing out.
+Deleting assets with large hierarchies or extensive associated data previously failed with timeout errors. The Asset API now supports asynchronous deletion by using the `X-Async-Mode` header with the DELETE `/assets/{assetId}` endpoint, allowing these operations to complete in the background without timing out.
 
-When you use asynchronous deletion, the system processes the deletion in
-the background and does not report errors to the client. To verify that
-the asset has been deleted, retrieve it repeatedly until the response
-returns a 404 status code. This behavior matches the existing
-asynchronous deletion functionality in the Inventory API, providing a
-consistent experience.
+When you use asynchronous deletion, the system processes the deletion in the background and does not report errors to the client. To verify that the asset has been deleted, retrieve it repeatedly until the response returns a 404 status code. This behavior matches the existing asynchronous deletion functionality in the Inventory API, providing a consistent experience.
 
-Existing applications continue to work without changes, as synchronous
-deletion remains the default behavior.
+Existing applications continue to work without changes, as synchronous deletion remains the default behavior.
