@@ -5,14 +5,14 @@ weight: 22
 ---
 
 {{< c8y-admon-info >}}
-Streaming Lake Ingestion is currently in Preview. Preview features are not subject to a service-level agreement. The following text is for information purposes only.
+DataHub 2.0 (preview name Streaming Lake Ingestion) is currently in Preview. Preview features are not subject to a service-level agreement. The following text is for information purposes only.
 {{< /c8y-admon-info >}}
 
-This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who uses {{< product-c8y-iot >}} Streaming Lake Ingestion ("Service") for offloading and analyzing Internet of Things ("IoT") data using Provider's cloud instances ("software-as-a-service", "SaaS").
+This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who uses {{< product-c8y-iot >}} DataHub 2.0 ("Service") for offloading and analyzing Internet of Things ("IoT") data using Provider's cloud instances ("software-as-a-service", "SaaS").
 
 ### Service description
 
-The Service provides automated data ingestion and structuring for real-time IoT data, making it available for querying through analytics tools such as {{< product-c8y-iot >}} DataHub. The Service performs the following core functions:
+The Service provides automated data ingestion and structuring for real-time IoT data, making it available for querying through analytics tools such as {{< product-c8y-iot >}} DataHub 1.0. The Service performs the following core functions:
 
 * Automatically discovers and maps the schema of incoming IoT data to Apache Iceberg tables, including support for schema evolution without manual configuration.
 * Publishes the discovered and evolved schemas to a queryable Iceberg catalog.
@@ -27,11 +27,11 @@ To ensure the successful operation of the Service, you must fulfill the followin
 To achieve the service-level objective, you must provision an object store in the same hyperscaler and region where your tenant is hosted. Ensure that
 
 * The object store is reachable from your {{< product-c8y-iot >}} instance.
-* The object store permissions are correctly configured to permit Streaming Lake Ingestion to list, write, delete files, and delegate access to the object store through the embedded catalog (Iceberg "credential vending").
+* The object store permissions are correctly configured to permit DataHub 2.0 to list, write, delete files, and delegate access to the object store through the embedded catalog (Iceberg "credential vending").
 * Backup is enabled ([Bucket versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html) on AWS, [Soft delete](https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-enable?tabs=azure-portal) on Azure).
-* Only Streaming Lake Ingestion has write access to the object store.
+* Only DataHub 2.0 has write access to the object store.
 
-Streaming Lake Ingestion optimizes the storage allocation and may periodically delete unused files to reclaim storage space. {{< company-c8y >}} is not responsible for files written outside of Streaming Lake Ingestion into the storage space.
+DataHub 2.0 optimizes the storage allocation and may periodically delete unused files to reclaim storage space. {{< company-c8y >}} is not responsible for files written outside of DataHub 2.0 into the storage space.
 
 {{< product-c8y-iot >}} ensures in-transit durability for messages successfully acknowledged by the ingestion pipeline until they are delivered to your target object store. Once data is written to your object store, data durability at rest is governed by your cloud provider and bucket configuration.
 
