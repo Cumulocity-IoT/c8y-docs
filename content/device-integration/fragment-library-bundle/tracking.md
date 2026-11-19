@@ -2,11 +2,13 @@
 weight: 180
 title: Tracking
 layout: bundle
+skills:
+  - track-location
 sector:
   - device_management
 ---
 
-The **Tracking** tab allows the device's path to be visualized. To achieve this the device must periodically send tracking events and update its position.
+The **Location** tab of a device shows the path of the device. To achieve this the device must periodically send tracking events and update its position.
 
 ### Tracking position history {#tracking-position-history}
 

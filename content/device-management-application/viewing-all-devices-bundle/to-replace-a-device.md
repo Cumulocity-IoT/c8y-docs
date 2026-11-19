@@ -2,6 +2,8 @@
 weight: 20
 title: To replace a device
 layout: redirect
+skills:
+  - replace-device
 ---
 
 The device list supports the replacement of a physical device with another by preserving the original device representation in the platform including all its generated data. A wizard guides you through this process. Access the wizard by hovering over the device you want to replace in the device list and click the **Replace device** button.

@@ -2,6 +2,8 @@
 weight: 45
 title: Managing device services
 layout: bundle
+skills:
+  - manage-device-services
 sector:
   - device_management
 ---
@@ -62,14 +64,13 @@ The following tabs are described in detail in separate sections below:
 
 ### Tabs shared with devices {#tabs-shared-with-devices}
 
-The service details view also shows the tabs of the [device details view](/device-management-application/viewing-device-details/) that apply to a service. Each tab appears under the same conditions as on a device. That means, the service must declare the same fragments that a device requires for the tab. For example, the **Location** and **Tracking** tabs require the `c8y_Position` fragment, and the **Shell** tab requires `c8y_Command` in the supported operations of the service.
+The service details view also shows the tabs of the [device details view](/device-management-application/viewing-device-details/) that apply to a service. Each tab appears under the same conditions as on a device. That means, the service must declare the same fragments that a device requires for the tab. For example, the **Location** tab requires the `c8y_Position` fragment or location update events, and the **Shell** tab requires `c8y_Command` in the supported operations of the service.
 
 The following tabs work the same way as on the device details view:
 
 * [Info](/device-management-application/viewing-device-details/#info)
 * [Logs](/device-management-application/viewing-device-details/#logs)
 * [Shell](/device-management-application/viewing-device-details/#shell)
-* [Tracking](/device-management-application/viewing-device-details/#tracking)
 * [Location](/device-management-application/viewing-device-details/#location)
 * [Network](/device-management-application/viewing-device-details/#network)
 * [Software](/device-management-application/viewing-device-details/#software)

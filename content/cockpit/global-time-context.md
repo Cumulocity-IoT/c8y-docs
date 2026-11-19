@@ -35,8 +35,8 @@ The toolbar contains the following controls:
 | :----------- | :----------------------------------- |
 | Mode toggle  | Switch between live and history mode |
 | Time range   | Select the time period to display    |
-| Auto-refresh | Toggle automatic data refresh        |
-| Aggregation  | Choose how data points are grouped   |
+| Auto-refresh | Turn automatic data refresh on or off (live mode only) |
+| Aggregation  | Choose how data points are grouped. Available in history mode, and in live mode while auto-refresh is off |
 
 The toolbar only appears if at least one widget on the dashboard is connected to the global time context. If all widgets are unlinked, a red icon appears in the toolbar indicating that no widgets are synchronized.
 
@@ -57,6 +57,10 @@ The global time context operates in two modes:
 **Live mode** shows a rolling time window that moves forward automatically. For example, "Last hour" at 3:00 PM shows 2:00 PM - 3:00 PM. At 3:05 PM, it automatically shows 2:05 PM - 3:05 PM. This mode is suitable for monitoring current status.
 
 ![Live mode indicator](/images/users-guide/cockpit/cockpit-global-time-context-live-mode.png)
+
+While auto-refresh is on, live mode always shows raw data. When you turn auto-refresh off, the **Live** tab offers the same aggregation options as history mode. When you turn auto-refresh on again, the aggregation is removed.
+
+![Live mode with auto-refresh off and aggregation](/images/users-guide/cockpit/cockpit-global-time-context-live-mode-paused.png)
 
 **History mode** shows a fixed time period. When you select specific dates, the widgets always show that exact period regardless of when you view them. This mode is suitable for analyzing past events.
 
@@ -85,6 +89,8 @@ Auto-refresh periodically reloads data in all widgets. When enabled, most widget
 
 Click the **Auto-refresh** toggle in the toolbar to enable or disable automatic data refresh.
 
+Turning auto-refresh off in live mode also makes the aggregation options available, see [To change data aggregation](#to-change-data-aggregation).
+
 {{< c8y-admon-info >}}
 In some widgets (such as the "Alarm list" widget), scrolling down unlinks the widget from the global time context. To relink it, scroll back up or click the link button in the widget header.
 {{< /c8y-admon-info >}}
@@ -93,7 +99,7 @@ In some widgets (such as the "Alarm list" widget), scrolling down unlinks the wi
 
 Aggregation groups multiple data points into summarized values. This improves performance and readability for large time ranges.
 
-In the **Aggregation** section of the toolbar, select one of the available options:
+Click the toolbar to open the time settings. The **Aggregation** section is on the **History** tab, and on the **Live** tab while auto-refresh is turned off. Select one of the available options:
 
 | Type     | Description                                                              |
 | :------- | :----------------------------------------------------------------------- |
@@ -107,14 +113,18 @@ In the **Aggregation** section of the toolbar, select one of the available optio
 Some aggregation options may be disabled if they don't apply to your selected time range. For example, **Daily** aggregation is disabled for ranges less than 1 day.
 {{< /c8y-admon-info >}}
 
+{{< c8y-admon-info >}}
+In live mode, aggregation is available only while auto-refresh is off. While an aggregation is active, the collapsed toolbar shows **Aggregation** and the selected value.
+{{< /c8y-admon-info >}}
+
 #### Automatic aggregation {#automatic-aggregation}
 
 With **Auto**, the aggregation interval is calculated automatically from the selected time range and the number of aggregated values you want to see per chart. This keeps charts readable and fast for any time range, without selecting an interval manually.
 
 When **Auto** is selected, the following options appear:
 
-- **Data points per chart** - The number of aggregated values to display per chart (2 - 2000, default 300). The aggregation interval is derived from this value: the larger the time range, the coarser the interval.
-- **Keep loading data when zooming in** - When enabled (default), zooming into the chart loads data at a finer interval to keep the set number of data points. When disabled, zooming in reuses the already loaded data without further requests. Zooming out always loads new data.
+- **Points per chart** - The number of aggregated values to display per chart (2 - 2000, default 300). The aggregation interval is derived from this value: the larger the time range, the coarser the interval.
+- **Keep point count on zoom** - When enabled (default), zooming into the chart loads data at a finer interval to keep the set number of data points. When disabled, zooming in reuses the already loaded data without further requests. Zooming out always loads new data.
 
 {{< c8y-admon-info >}}
 **Auto** is currently supported by the "Data graph" widget only and appears disabled for other widgets. It requires the tenant to use [Enhanced time series support](/standard-tenant/enhanced-time-series-support/).
@@ -146,9 +156,13 @@ In the widget configuration, expand the **Time context** section. Select one of 
 **Dashboard** - The widget uses the global time context.
 
 **Widget** - The widget uses its own time settings.
-When **Widget** is selected, additional options appear allowing you to configure the widget's own time range, mode, and auto-refresh settings.
+When **Widget** is selected, additional options appear allowing you to configure the widget's own time range, mode, auto-refresh, and aggregation settings.
 
 ![Time context configuration - Widget](/images/users-guide/cockpit/cockpit-global-time-context-widget-config-widget.png)
+
+On the **Live** tab, turn off **Auto refresh enabled** to show the **Aggregation** section. The **Live** and **History** tabs keep separate aggregation settings.
+
+![Time context configuration - Widget, live mode with auto-refresh off](/images/users-guide/cockpit/cockpit-global-time-context-widget-config-live-paused.png)
 
 {{< c8y-admon-info >}}
 Not all widgets support global time context. Some widgets are configured to operate independently and have their own time picker within the widget. These widgets do not show a link icon.
@@ -156,4 +170,4 @@ Not all widgets support global time context. Some widgets are configured to oper
 
 ### URL persistence {#url-persistence}
 
-Your global time context settings are automatically saved in the URL. This allows you to bookmark dashboards with specific time configurations or share links that preserve your selected time range, mode, and aggregation settings.
+Your global time context settings are automatically saved in the URL. This allows you to bookmark dashboards with specific time configurations or share links that preserve your selected time range, mode, and aggregation settings. This includes the aggregation of a live mode dashboard while auto-refresh is off.
