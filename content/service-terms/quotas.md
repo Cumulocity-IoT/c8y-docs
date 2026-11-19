@@ -115,18 +115,19 @@ See also the [Cloud Remote Access service-level agreement](/service-terms/servic
 
 ### DataHub 1.0
 
-| Quota                                                                                            | Type | SDE value | ADE value |
-| ------------------------------------------------------------------------------------------------ | ---- | --------: | --------: |
-| Number of tenants                                                                                | Soft |         - |       250 |
-| Number of active offloaders per tenant                                                           | Soft |         - |        40 |
-| Number of offloadings per tenant per hour                                                        | Soft |         - |        20 |
-| [Offloading frequency](/datahub/working-with-datahub/#configure-additional-settings)             | Hard |         - |    hourly |
-| Offloaded leaf properties[^3]                                                                    | Soft |         - |      6400 |
-| Query time out                                                                                   | Soft |         - | 4 minutes |
-| Query job retention                                                                              | Hard |         - |     1 day |
-| [Rows in a query job](https://cumulocity.com/api/datahub/#operation/getJobResultsApiResource)    | Hard |         - |   1000000 |
-| [Rows in a high performance query](https://cumulocity.com/api/datahub/#tag/High-performance-API) | Soft |         - |   1000000 |
-| Parallel high performance queries per tenant                                                     | Hard |         - |        18 |
+| Quota                                                                                            | Type |   Value |
+| ------------------------------------------------------------------------------------------------ | ---- | ------: |
+| Number of tenants                                                                                | Soft |     250 |
+| Number of Dremio users per tenant                                                                | Soft |      40 |
+| Number of active offloaders per tenant                                                           | Soft |     100 |
+| Number of offloadings per tenant per hour                                                        | Soft |      20 |
+| [Offloading frequency](/datahub/working-with-datahub/#configure-additional-settings)             | Hard |  hourly |
+| Offloaded leaf properties[^2]                                                                    | Soft |    6400 |
+| Query time out                                                                                   | Soft |   4 min |
+| Query job retention                                                                              | Hard |   1 day |
+| [Rows in a query job](https://cumulocity.com/api/datahub/#operation/getJobResultsApiResource)    | Hard | 1000000 |
+| [Rows in a high performance query](https://cumulocity.com/api/datahub/#tag/High-performance-API) | Soft | 1000000 |
+| Parallel high performance queries per tenant                                                     | Hard |      18 |
 
 Additional [quotas from the Dremio engine](https://docs.dremio.com/current/help-support/limits/) may apply for DataHub customers.
 
