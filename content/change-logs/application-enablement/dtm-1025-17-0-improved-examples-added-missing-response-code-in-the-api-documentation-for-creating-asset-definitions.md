@@ -14,14 +14,6 @@ build_artifact:
 ticket: "CTM-3210"
 version: "1025.17.0"
 ---
-The example in the Asset Definition API documentation referenced
-definitions that do not exist on new tenants, causing HTTP 409 errors
-when users tried to follow the example. The example now creates the
-Asset Definition for `c8y_Windturbine` first and uses only library
-Property Definitions, ensuring the example succeeds on any tenant.
+Previously, the example in the Asset Definition API documentation referenced definitions (e.g. `c8y_Windturbine`) that do not exist on new tenants, causing HTTP 409 errors when users tried to follow the example. Now, the example creates the Asset Definition for `c8y_Windturbine` first and uses only existing library Property Definitions, ensuring the example succeeds on any tenant.
 
-The documentation now also includes the HTTP 409 response code and
-additional request examples for the POST
-`/service/dtm/definitions/assets` endpoint. These improvements help you
-understand the full range of responses and successfully create Asset
-Definitions without encountering unexpected errors.
+The Asset API documentation now also includes the HTTP 409 response code and additional request examples for the POST `/service/dtm/definitions/assets` endpoint. These improvements help you understand the full range of responses and successfully create Asset Definitions without encountering unexpected errors.
