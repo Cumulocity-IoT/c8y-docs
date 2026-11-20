@@ -9,6 +9,16 @@ build:
 
 ---
 
+### Sample allowlist {#sample-allowlist}
+
+The sample allowlist is a tenant option that restricts the official [rule templates](#rule-template) that are available for [smart rules](#smart-rules) (NEW). It contains the English names of the [Analytics Builder](#analytics-builder) samples. If the tenant option does not exist, all official rule templates are available.
+
+See also [Restricting the available official rule templates](/streaming-analytics/smart-rules-plugin/#restricting-the-available-official-rule-templates) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+The tenant option has the category `streaminganalytics` and the key `smartrules.samples.allowlist`. Its value is a JSON array of sample names, as a string.
+{{< /c8y-details >}}
+
 ### Service user {#service-user}
 
 A service user is a non-human user account that is created automatically when a [tenant](#tenant) subscribes to a [microservice](#microservice). It allows the microservice to interact with the tenant's data via the [REST API](#rest-api) for background tasks, independent of any end-user's session.  
@@ -47,10 +57,10 @@ Devices communicate dedicated MQTT topics with {{< product-c8y-iot >}}. Each row
 With smart rules, you can analyze real-time data and perform actions based on predefined conditions without writing any code. For example, you can create a rule to send an email or generate an [alarm](#alarm) when a [measurement](#measurement) exceeds a specific threshold.
 
 The platform provides two versions of this feature:
-- Smart rules collection: Provides a fixed set of rule templates, configured using a simple wizard in the [Cockpit application](#cockpit-application).
-- Smart rules (NEW) plugin: Provides extendable and fully customizable rule templates. These are built using [Analytics Builder](#analytics-builder) and then made available as simple forms in any application (such as [Cockpit](#cockpit-application) and [Device Management](#device-management-application)).
+- Smart rules (NEW) plugin: Provides official [rule templates](#rule-template) that are ready to use, and custom rule templates that you build with [Analytics Builder](#analytics-builder). You create [rule instances](#rule-instance) from them as simple forms in any application with the plugin (such as [Cockpit](#cockpit-application) and [Device Management](#device-management-application)).
+- Smart rules collection (legacy): Provides a fixed set of rule templates, configured using a simple wizard in the [Cockpit application](#cockpit-application). Legacy smart rules are deprecated, and their removal is planned for 2027.
 
-See also [Smart rules collection](/cockpit/smart-rules-collection/) or [Smart rules (NEW) plugin](/cockpit/cockpit-smart-rules-plugin/) in the documentation.
+See also [Smart rules (NEW) plugin](/cockpit/cockpit-smart-rules-plugin/), [Smart rules (NEW) and legacy smart rules](/streaming-analytics/smart-rules-plugin/#new-and-legacy-smart-rules), or [Smart rules collection](/cockpit/smart-rules-collection/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
 Rules are configured by applications that have the smart rules (NEW) plugin installed such as Cockpit or Device Management. Smart rules are powered by the Apama engine for Smart rules (NEW) and the “smartrule” microservice for the previous generation of smart rules.

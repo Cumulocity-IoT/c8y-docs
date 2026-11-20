@@ -17,6 +17,10 @@ helpcontent:
   Cumulocity includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See *Smart rules collection* in the user documentation for details on each smart rule template and its configuration."
 ---
 
+{{< c8y-admon-important >}}
+Legacy smart rules are deprecated. Their removal is planned for 2027. Use [smart rules (NEW)](/streaming-analytics/smart-rules-plugin/#getting-started) for all new rules. For a comparison and the migration steps, see [Smart rules (NEW) and legacy smart rules](/streaming-analytics/smart-rules-plugin/#new-and-legacy-smart-rules). Existing legacy smart rules continue to work until their removal.
+{{< /c8y-admon-important >}}
+
 {{< product-c8y-iot >}} includes the Streaming Analytics application which can analyze data in realtime and perform actions based on data.
 
 To easily create rules, the Cockpit application includes a smart rules builder which allows you to create rules from templates (so-called smart rule templates).

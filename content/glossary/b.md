@@ -31,3 +31,9 @@ Branding settings are managed in a file called *options.json* in the branding ap
 ### Bulk device registration {#bulk-device-registration}
 
 Bulk device registration is a method for registering larger quantities of [devices](#device) into the {{< product-c8y-iot >}} platform by uploading a CSV file containing device details, rather than registering each device individually.  
+
+### Bulk state change {#bulk-state-change}
+
+A bulk state change activates or deactivates all [rule instances](#rule-instance) of a [rule template](#rule-template) in one operation, instead of one rule instance at a time. If some rule instances cannot be changed, the result identifies these rule instances so that you can retry them.
+
+See also [Activating or deactivating all rules of a rule template](/streaming-analytics/smart-rules-plugin/#activating-or-deactivating-all-rules-of-a-rule-template) in the documentation.

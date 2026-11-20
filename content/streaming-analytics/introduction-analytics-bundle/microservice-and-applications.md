@@ -11,6 +11,7 @@ Analytic models, EPL apps and smart rules are executed in an Apama-ctrl microser
 | Build analytic models       | Apama-ctrl microservice variant (for example, Apama-ctrl-starter) and Streaming Analytics application |
 | Develop EPL apps            | Apama-ctrl microservice variant (for example, Apama-ctrl-250mc-1g) and Streaming Analytics application |
 | Use smart rules             | Any Apama-ctrl microservice variant and Smartrule microservice (included in {{< product-c8y-iot >}}'s {{< standard-tenant >}}) |
+| Use smart rules (NEW)       | Apama-ctrl microservice variant that supports Analytics Builder (that is, not Apama-ctrl-smartrules or Apama-ctrl-smartrulesmt). See [Smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin/#getting-started). |
 
 See also the following sections:
 * [Subscribed applications](/standard-tenant/ecosystem/#subscribed-applications)
