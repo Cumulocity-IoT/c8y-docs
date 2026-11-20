@@ -19,10 +19,10 @@ Two integration methods are available:
 
 Both integration methods connect to {{< product-c8y-iot >}} through thin-edge.io. The OPC UA device gateway and the AVEVA PI connector run as containers managed by thin-edge.io, which sends their data to {{< product-c8y-iot >}} as devices, measurements, events, and alarms.
 Because thin-edge.io manages the containers, you can operate both components remotely from the Device Management application:
-• Deploy and upgrade them via [Software Management](https://thin-edge.github.io/thin-edge.io/operate/c8y/software-management/).
-• Change their [configuration](https://thin-edge.github.io/thin-edge.io/operate/c8y/configuration-management/).
-• Retrieve their [log files](https://thin-edge.github.io/thin-edge.io/operate/c8y/log-management/).
-• Monitor their [health status](https://thin-edge.github.io/thin-edge.io/operate/c8y/health-monitoring/) as services of the device.
+* Deploy and upgrade them via [Software Management](https://thin-edge.github.io/thin-edge.io/operate/c8y/software-management/).
+* Change their [configuration](https://thin-edge.github.io/thin-edge.io/operate/c8y/configuration-management/).
+* Retrieve their [log files](https://thin-edge.github.io/thin-edge.io/operate/c8y/log-management/).
+* Monitor their [health status](https://thin-edge.github.io/thin-edge.io/operate/c8y/health-monitoring/) as services of the device.
 
 
 ![Historian integration architecture: both integration methods reach Cumulocity through thin-edge.io](/images/historian-integration/historian-integration-architecture.svg)
