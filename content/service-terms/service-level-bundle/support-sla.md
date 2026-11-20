@@ -13,9 +13,11 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 This document outlines the maintenance and support services provided for different levels of support.
 The services are provided as follows for the different pricing packs, as detailed on Provider's pricing page: https://www.cumulocity.com/pricing/.
 
-* **Starter** and **free trial** include community-based support via {{< company-c8y >}}'s Tech Community, https://community.cumulocity.com/, where the team responds on a best-effort basis.
-* **Business** includes **Standard** support by default. Upgrading to **Premium** is possible for a fee.
-* **Enterprise** includes **Premium** support by default.
+* **Starter** and **free trial** include community-based support via {{< company-c8y >}}'s Tech Community, https://community.cumulocity.com/, where the team responds in good faith to provide support.
+* **Standard Dedicated Environment** includes **Standard** support by default. Upgrading to **Premium** is possible for a fee.
+* **Advanced Dedicated Environment** includes **Premium** support by default.
+
+Standard support and Premium support were previously named Silver support and Gold support, respectively. Any reference to Silver support or Gold support in an order form, agreement, or other document between Provider and Customer shall be deemed a reference to Standard support or Premium support, respectively.
 
 ### Definitions
 
