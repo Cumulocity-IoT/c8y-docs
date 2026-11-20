@@ -118,6 +118,7 @@ When you export a rule, the Data Preparation application writes `%`, control cha
 |-------|------|----------|-------------|
 | `inputs` | array | Yes | One or more device messages to send as input (see below). |
 | `expectedOutput` | array | No | Expected [{{< product-c8y-iot >}} object](/data-preparation/smart-functions/#cumulocity-objects) outputs used for comparison against actual outputs when running tests. |
+| `expectedDeviceCreation` | object | No | The objects and links that `onDeviceCreate` is expected to create for all the inputs of the test (see below). |
 
 Each item in `inputs` has the following fields:
 
@@ -154,6 +155,85 @@ expectedOutput:
         T:
           value: 25.5
           unit: "°C"
+```
+
+Use `expectedDeviceCreation` to test the `onDeviceCreate` function of a rule. A test run does not create anything in the tenant. It calls `onDeviceCreate` for each external ID in the outputs of the test, as though no object has this external ID yet. Then it compares the objects and links that the platform would create with `expectedDeviceCreation`.
+
+Within each test, the later inputs treat an object that an earlier input creates as existing. The test does not call `onDeviceCreate` for those external IDs again. Each test starts as though no object exists. The test assumes that every parent named by an ID exists, and that no group exists. It does not check the `owner` of an object.
+
+`expectedDeviceCreation` has the following fields:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `objects` | array | Yes | The managed objects that the platform is expected to create (see below). |
+| `links` | array | No | The parent links that the platform is expected to create (see below). Omit this field if you expect no links. |
+
+Every item in `objects`, whether a device, an asset, or a group, has the following fields. Each kind can also have the fields listed for it below.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `cumulocityType` | string | Yes | One of `device`, `asset`, or `group`. |
+| `managedObject` | object | Yes | The managed object that the platform creates. The comparison ignores the fields that the platform sets, so you can omit the marker fragments `c8y_IsDevice`, `com_cumulocity_model_Agent`, `c8y_IsAsset`, and `c8y_IsDeviceGroup`, the `c8y_ExternalId` of an asset, and the name and type of a group. |
+
+A device can also have the following field:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `externalSource` | array | No | The external IDs of the device. Each item has a `type` and an `externalId`. |
+
+An asset can also have the following field:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `externalAssetId` | string | No | The ID of the asset: its external ID of type `c8y_Asset`. |
+
+A group also has the following fields:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `path` | array | Yes | The path of the group, as names. |
+| `parentAsset` | string | No | The `externalAssetId` of the asset that the path starts in. |
+
+The test matches devices and assets by their external IDs, and groups by their path and `parentAsset`, in any order. It matches objects without an ID by their order relative to each other.
+
+Each item in `links` has the following fields:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `parent` | object | Yes | The parent. Give a device with the `type` and `externalId` of one of its external IDs. Give an asset as an object with its `externalAssetId`, for example, `{ externalAssetId: east }`. Give a group as its `path`, and its `parentAsset` if it has one, where `parentAsset` is the `externalAssetId`. |
+| `child` | number or object | Yes | The child: the zero-based index of an item in `objects`, or, for a device or an asset that an earlier input created, an object given as for `parent`. |
+| `relation` | string | Yes | One of `childDevices` or `childAssets`. |
+
+In the following example, `onDeviceCreate` creates the site `north` as an asset in the existing region asset `east`, the group `Sensors` in the site, and the device `sensor01` in the group:
+
+```yaml
+expectedDeviceCreation:
+  objects:
+    - cumulocityType: asset
+      externalAssetId: north
+      managedObject:
+        name: Site north
+        type: acme_Site
+    - cumulocityType: group
+      path: [Sensors]
+      parentAsset: north
+      managedObject: {}
+    - cumulocityType: device
+      externalSource:
+        - type: c8y_Serial
+          externalId: sensor01
+      managedObject:
+        name: Sensor sensor01
+  links:
+    - parent:
+        externalAssetId: east
+      child: 0
+      relation: childAssets
+    - parent:
+        path: [Sensors]
+        parentAsset: north
+      child: 2
+      relation: childAssets
 ```
 
 #### Deploy endpoint {#deploy-endpoint}
