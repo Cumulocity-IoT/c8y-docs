@@ -19,6 +19,28 @@ The Administration application utilizes various REST APIs for its functionality,
 {{< /c8y-details >}}
 
 
+### AI agent {#ai-agent}
+
+An AI agent is a configured assistant that answers requests in natural language with the help of a large language model (LLM). Each agent has a system prompt that defines its role, a set of tools to read or change data, and a model of an LLM provider. You create and manage agents in the [AI Agent Manager](#ai-agent-manager). Agents that come with {{< product-c8y-iot >}} applications and plugins are [expert agents](#expert-agent).
+
+See also [Agents](/ai/agents/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+Applications talk to an agent through the REST API of the AI Agent Manager, for example, with `POST /service/ai/agent/text/{agent-name}` for a text agent or `POST /service/ai/agent/object/{agent-name}` for an object agent. For details, see [REST API](/ai/rest-api/).
+{{< /c8y-details >}}
+
+
+### AI Agent Manager {#ai-agent-manager}
+
+The AI Agent Manager is the part of the [Administration application](#administration-application) in which administrators create, configure, test, and monitor [AI agents](#ai-agent). It also contains the model configuration of the tenant, the tools and [MCP](#mcp) servers that agents use, and the switch that turns off all AI agents of the tenant.
+
+See also [AI Agent Manager](/ai/aim-introduction/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+The microservice `ai` provides the AI Agent Manager. Its REST API is available under `/service/ai/`. Its OpenAPI specification is available in each tenant at `/service/ai/api-json`.
+{{< /c8y-details >}}
+
+
 ### Alarm {#alarm}
 
 An alarm indicates a condition that requires action from a user or system. Alarms have a lifecycle status (ACTIVE, ACKNOWLEDGED, CLEARED) and a severity (CRITICAL, MAJOR, MINOR, WARNING), and are explicitly tracked within the platform until they are resolved.
@@ -113,6 +135,17 @@ Assets are represented as managed objects in the [Inventory API](https://cumuloc
 ### Property definition {#asset-property}
 
 Property definitions are configurable attributes within an [asset definition](#asset-model) that define, describe, and enrich an [asset´s](#asset) characteristics (for example, *tower height* in a wind turbine model). They can be of various data types, such as text, number, date, file, boolean, complex object, or custom. Property definitions may be simple (single values), complex (nested structures), or custom (additional metadata), and they act as reusable building blocks to ensure consistent data structures, metadata enrichment, and governed information across assets.  
+
+
+### Assistant {#assistant}
+
+The Assistant is a context-aware AI chat in the header of {{< product-c8y-iot >}} applications. It uses the screen that the user is on as context, answers questions with data from the tenant and with the {{< product-c8y-iot >}} documentation, and changes data on request with the permissions of the user. The Assistant is an [expert agent](#expert-agent) of the [AI Agent Manager](#ai-agent-manager).
+
+See also [Assistant](/assistant/assistant-introduction/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+The Assistant is a plugin of the **AI Plugins** extension package and answers with the agent `c8y-assistant-agent`. To change its system prompt, tools, or model, create a custom agent with the same name in the AI Agent Manager.
+{{< /c8y-details >}}
 
 
 ### Audit log {#audit-log}

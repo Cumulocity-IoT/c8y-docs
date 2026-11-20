@@ -15,6 +15,8 @@ The platform connects to a LLM provider you choose and contract with directly. T
 
 If an LLM provider is not configured, no data leaves the platform for any external LLM. The AI Agent Manager remains inactive.
 
+For an overview of all AI capabilities, including the AI Agent Manager and the Assistant, see [AI capabilities overview](/ai-intro/ai-overview/).
+
 ### Components {#ai-aspects-components}
 
 The AI Agent Manager has three components, cleanly separated so it is obvious to the Customer what they are using:

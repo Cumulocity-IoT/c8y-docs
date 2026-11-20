@@ -46,7 +46,8 @@ To extend the AI Agent Manager with custom tools, develop an MCP server that:
 1. Exposes a Streamable HTTP endpoint (recommended) or an SSE endpoint.
 2. Implements the MCP protocol.
 3. Defines tool schemas with clear descriptions.
-4. Executes tool logic and returns structured results.
+4. Declares the behavior of each tool with the MCP tool annotations `readOnlyHint`, `destructiveHint`, and `openWorldHint`. The AI Agent Manager uses them to decide whether a tool call requires the approval of the user. For details, see [What tools declare about themselves](/ai/tools-mcp/#tool-declarations). A tool without annotations requires approval for every call.
+5. Executes tool logic and returns structured results.
 
 For MCP server implementation details, refer to the Model Context Protocol specification. You can also find an article on how to build MCP servers with NestJS and publish them on the {{< product-c8y-iot >}} platform as a microservice in the [Cumulocity TechCommunity](https://community.cumulocity.com/t/ai-agent-manager-using-a-mcp-server-to-generate-widgets/14172).
 

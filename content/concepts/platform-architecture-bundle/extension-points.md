@@ -22,4 +22,4 @@ Both architectures share a consistent set of extension points, so you can adapt 
 
 **[Web applications](https://cumulocity.com/codex/) and [HTML widgets](/cockpit/widgets-collection/#html)** customize the user-facing layer, from an individual dashboard widget to a complete application.
 
-**[AI agents](/ai/agents/)** bring generative and agentic AI into applications, grounded in your platform data.
+**[AI agents](/ai/agents/)** bring generative and agentic AI into applications, grounded in your platform data. For all AI capabilities, see [AI capabilities overview](/ai-intro/ai-overview/).
