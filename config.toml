@@ -34,6 +34,10 @@ enableGitInfo          = true
   notAlternative = true
   suffixes     = ["txt"]
 
+# Newer Hugo versions reject HTML content files by default; many pages here are _index.html or index.html.
+[security]
+  allowContent = ['! ^text/org$']
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
