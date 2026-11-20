@@ -76,7 +76,7 @@ The **Bookmarks** section provides links to the most common pages and processes 
 To allow a support user from {{< company-c8y >}} help with an issue, click **Activate support access**. This allows support users to access your account.
 
 {{< c8y-admon-info >}}
-Note that this option is only available if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/enterprise-tenant/support-user-access/" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support access</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours by default) you can actively disable an active support user request here.
+Note that this option is only available to users with the role `ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN`, and only if support user access is not set globally for subtenant users in the {{< management-tenant >}}, for details see <a href="/enterprise-tenant/support-user-access/" class="no-ajaxy">Support user access</a>. After the support user access has been activated, the menu item switches to <strong>Deactivate support access</strong>. If your support request has been resolved but the duration for the support user access is not expired (24 hours by default) you can actively disable an active support user request here.
 {{< /c8y-admon-info >}}
 
 Clicking **Request support** redirects you to the {{< c8y-support-portal >}} {{< c8y-support-link >}}.
