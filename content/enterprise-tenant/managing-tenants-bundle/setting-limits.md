@@ -41,3 +41,5 @@ In the parent tenant, check the checkbox **Enable Gainsight product experience t
 At the tenant level, you can disable the product experience tracking by Gainsight by turning off the cookie banner on the **Branding** page. For more information, see [Branding](/enterprise-tenant/customization/#branding).
 
 If you activate tracking for the tenant, its users are automatically tracked. However, the nature of this tracking depends on their consent. By accepting tracking, they permit the use of Personally Identifiable Information (PII) for tracking purposes. If they decline, their data is anonymized to ensure privacy, though tracking will still capture usage data without personal identifiers. For more details, see [Accessing and logging into the platform](/get-familiar-with-the-ui/platform-access).
+
+Temporary test link, do not merge: [dead](https://cumulocity.com/docs/recheck-test-page-that-does-not-exist/)
