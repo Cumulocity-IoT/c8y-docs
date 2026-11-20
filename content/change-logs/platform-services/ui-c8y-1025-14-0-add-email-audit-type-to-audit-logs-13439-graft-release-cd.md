@@ -1,6 +1,6 @@
 ---
 date: ""
-title: add Email audit type to audit logs (#13439) [GRAFT][release/cd] (#13667)
+title: Added a new audit log type "Email"
 product_area: Platform services
 change_type:
   - value: change-QHu1GdukP
@@ -14,19 +14,4 @@ build_artifact:
 ticket: MTM-68455
 version: 1025.14.0
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [feat(Administration): [MTM-68455] add Email audit type to audit logs
-(#13439)](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13439)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[MTM-68455]:
-https://cumulocity.atlassian.net/browse/MTM-68455?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Paweł Rynarzewski <92171763+pawel-rynarzewski-c8y@users.noreply.github.com>
+To enhance the audit log capabilities, a new audit log type called "Email" has been added. With this change, users can now view and filter audit logs related to sent emails directly from the audit logs browser in the Administration application. An entry is created each time an email is sent through the email API, which provides better visibility into who sent which email in a tenant. You can find the list of logged event types in the [user documentation](/standard-tenant/monitoring/#audit-log-types).

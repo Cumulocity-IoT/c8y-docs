@@ -159,6 +159,13 @@ This type of audit logs may be created for both hosted applications and microser
 </tr>
 
 <tr>
+<td align="left">Email</td>
+<td align="left"><ul>
+<li>Email sent</li>
+</ul></td>
+</tr>
+
+<tr>
 <td align="left">Global role</td>
 <td align="left"><ul>
 <li>Global role updated</li>
