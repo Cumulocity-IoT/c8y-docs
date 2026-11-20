@@ -4,7 +4,7 @@ title: Introduction
 layout: redirect
 ---
 
-The Streaming Lake Ingestion feature of DataHub 2.0 bridges the gap between real-time IoT data and large-scale business analytics and artificial intelligence needs. It takes the continuous stream of IoT data flowing into {{< product-c8y-iot >}} and automatically transforms it into a queryable and AI-ready format in your data lake, making it available for analysis within minutes. By default, it requires no setup: when your tenant subscribes, {{< company-c8y >}} provides the storage of your data lake, and the data flow starts. For details, see [Subscribing to Streaming Lake Ingestion](#subscribing).
+The Streaming Lake Ingestion feature of DataHub 2.0 bridges the gap between real-time IoT data and large-scale business analytics and artificial intelligence needs. It takes the continuous stream of IoT data flowing into {{< product-c8y-iot >}} and automatically transforms it into a queryable and AI-ready format in your data lake, making it available for analysis within minutes. It requires no setup: when your tenant subscribes, {{< company-c8y >}} provides the storage of your data lake, and the data flow starts. For details, see [Subscribing to Streaming Lake Ingestion](#subscribing).
 
 {{< c8y-admon-info >}}
 DataHub 2.0 streams your data into the lake continuously, and DataHub 1.0 offloads it with scheduled offloading jobs. For DataHub 1.0, see [DataHub 1.0](/datahub/). To move your queries and reports from DataHub 1.0, see [Migrating from DataHub 1.0](/streaming-lake-ingestion/migrating-from-datahub-1/).

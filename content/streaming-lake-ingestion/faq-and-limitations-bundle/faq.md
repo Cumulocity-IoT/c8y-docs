@@ -6,7 +6,7 @@ layout: redirect
 
 ### How can I configure Streaming Lake Ingestion? {#configure-streaming-lake-ingestion}
 
-Streaming Lake Ingestion stores all incoming real-time data into your lake. It has no configuration options. On dedicated environments with your own storage, you complete a one-time setup that points it to a folder in your object storage. For details, see [Bringing your own storage](/streaming-lake-ingestion/bringing-your-own-storage/).
+Streaming Lake Ingestion stores all incoming real-time data into your lake. It has no configuration options.
 
 Depending on your use case, you can use a combination of options outside of Streaming Lake Ingestion to influence how data appears in your lake:
 

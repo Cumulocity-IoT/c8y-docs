@@ -9,8 +9,6 @@ After your tenant subscribes to Streaming Lake Ingestion, the data flow starts:
 * Your current device and asset inventory is downloaded from the operational store into the lake.
 * All new incoming data is stored in the lake.
 
-If your environment uses your own storage, the data flow starts after the one-time setup. For details, see [Subscribing to Streaming Lake Ingestion](/streaming-lake-ingestion/datahub-2-overview/#subscribing).
-
 {{< c8y-admon-info >}}
 Copying your current inventory into the lake may take a while to complete. For more information, see [Monitoring Streaming Lake Ingestion](/streaming-lake-ingestion/monitoring-streaming-lake-ingestion/).
 
@@ -171,12 +169,11 @@ For example, if your tenant is `mytenant.cumulocity.com`, the URL is
 The Iceberg catalog uses the standard HTTPS port 443. Port 19120 is deprecated. The General Availability release of Streaming Lake Ingestion removes it. If your client configuration contains port 19120, remove the port from the catalog URL and from the OpenID Connect server URL.
 {{< /c8y-admon-important >}}
 
-Run Spark SQL queries with the {{< product-c8y-iot >}} Iceberg catalog on an AWS S3 object store using the example below. In the example, replace
+Run Spark SQL queries with the {{< product-c8y-iot >}} Iceberg catalog using the example below. In the example, replace
 
 * The version number of the Iceberg Spark Runtime to match the Spark version that you use (here Spark 4.0.x).
 * The `<CLIENTID>` and `<CLIENT_SECRET>` with the credentials obtained from support.
 * `<INSTANCE>` and `<TENANT_ID>` with your instance URL and tenant ID.
-* `<REGION>`, `<AWS_ACCESS_KEY>` and `<AWS_SECRET_ACCESS_KEY>` with credentials to access your AWS S3 store.
 
 ```shell
 bin/spark-sql \
@@ -190,11 +187,7 @@ bin/spark-sql \
   --conf spark.sql.catalog.c8y.type=rest \
   --conf spark.sql.catalog.c8y.uri=https://iceberg.<INSTANCE>/api/catalog \
   --conf spark.sql.catalog.c8y.warehouse=<TENANT_ID> \
-  --conf spark.sql.catalog.c8y.io-impl=org.apache.iceberg.aws.s3.S3FileIO \
-  --conf spark.sql.catalog.c8y.s3.endpoint=https://s3.amazonaws.com \
-  --conf spark.sql.catalog.c8y.s3.region=<REGION> \
-  --conf spark.sql.catalog.c8y.s3.access-key-id=<AWS_ACCESS_KEY_ID> \
-  --conf "spark.sql.catalog.c8y.s3.secret-access-key=<AWS_SECRET_ACCESS_KEY>"
+  --conf spark.sql.catalog.c8y.header.X-Iceberg-Access-Delegation=vended-credentials
 
 spark-sql (default)> show namespaces in c8y;
 cdc_alarm
@@ -1002,8 +995,6 @@ The **Connect to DataHub** dialog shows everything your client needs, with the v
 * The `header.X-Iceberg-Access-Delegation` setting, marked as required. With it, the catalog gives your client a short-lived, read-only storage credential for each table. Without it, tables load but reading data fails.
 
 For compatible clients and examples, see [Iceberg client compatibility](https://github.com/Cumulocity-IoT/iceberg-client-compatibility). To create more credentials, see [Obtaining Iceberg catalog credentials](#obtaining-iceberg-catalog-credentials).
-
-If your environment does not provide temporary storage credentials, the page does not offer the dialog.
 
 ### Ensuring good query performance {#ensuring-good-query-performance}
 
