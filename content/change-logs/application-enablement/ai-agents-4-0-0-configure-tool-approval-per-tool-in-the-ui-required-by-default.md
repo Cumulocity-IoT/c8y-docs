@@ -24,6 +24,8 @@ environment_availability:
     date: '2026-11-18'
   - label: us.cumulocity.com
     date: '2026-11-19'
+  - label: cumulocity.com
+    date: '2026-11-19'
 ---
 Tool calls of AI agents now wait for user approval by default. A tool runs without approval only if its MCP tool annotations declare it read-only and closed-world, or if you set its approval mode to **Never**.
 

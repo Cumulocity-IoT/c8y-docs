@@ -16,6 +16,10 @@ version: 2026.432.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-11-19'
+  - label: apj.cumulocity.com
+    date: '2026-11-20'
+  - label: jp.cumulocity.com
+    date: '2026-11-20'
 ---
 
 Previously, the retention rule API accepted the data types `PROCESS`, `STATISTICS_FILES`, and `TIMESERIES_MEASUREMENT`, which the API specification does not list. A rule with `PROCESS` or `STATISTICS_FILES` never removed any data, and a rule with `TIMESERIES_MEASUREMENT` removed no measurements.

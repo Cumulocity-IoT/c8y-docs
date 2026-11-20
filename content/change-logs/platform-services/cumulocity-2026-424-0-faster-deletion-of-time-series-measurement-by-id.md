@@ -16,6 +16,10 @@ version: 2026.421.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-11-19'
+  - label: apj.cumulocity.com
+    date: '2026-11-20'
+  - label: jp.cumulocity.com
+    date: '2026-11-20'
 ---
 The request to remove a single measurement by ID, `DELETE /measurement/measurements/{id}`, now accepts the optional query parameters `source` and `time`. On tenants that read measurements from time series, {{< product-c8y-iot >}} uses them to find the measurement through its indexes instead of searching by ID alone, which makes the removal faster.
 

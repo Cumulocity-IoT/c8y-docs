@@ -16,6 +16,10 @@ version: 1025.17.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-11-19'
+  - label: apj.cumulocity.com
+    date: '2026-11-20'
+  - label: jp.cumulocity.com
+    date: '2026-11-20'
 ---
 Previously, custom fields added to linked series could not be removed once created, limiting flexibility when managing data structures. The Asset API now allows you to delete custom fields from linked series by using the value `null`, giving you full control over your data model. This change enables you to clean up unused fields and adapt your linked series configuration as your requirements evolve, without needing to recreate the entire series structure.
 

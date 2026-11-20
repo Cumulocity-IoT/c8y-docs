@@ -16,6 +16,10 @@ version: 1025.17.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-11-19'
+  - label: apj.cumulocity.com
+    date: '2026-11-20'
+  - label: jp.cumulocity.com
+    date: '2026-11-20'
 ---
 Deleting assets with large hierarchies or extensive associated data previously failed with timeout errors. The Asset API now supports asynchronous deletion by using the `X-Async-Mode` header with the DELETE `/assets/{assetId}` endpoint, allowing these operations to complete in the background without timing out.
 

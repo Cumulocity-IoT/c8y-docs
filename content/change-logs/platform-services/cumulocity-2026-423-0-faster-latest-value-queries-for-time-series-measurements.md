@@ -16,6 +16,10 @@ version: 2026.423.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-11-19'
+  - label: apj.cumulocity.com
+    date: '2026-11-20'
+  - label: jp.cumulocity.com
+    date: '2026-11-20'
 ---
 A query for the latest value of a measurement series on a time series collection can scan the full range of the series. This happens when the query has no `dateFrom` or a very old one, and it is slow for large collections or for devices that have not reported recently.
 

@@ -18,6 +18,10 @@ version: 1025.17.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-11-19'
+  - label: apj.cumulocity.com
+    date: '2026-11-20'
+  - label: jp.cumulocity.com
+    date: '2026-11-20'
 ---
 Previously, the example in the Asset API documentation referenced definitions (for example,
 `c8y_Windturbine`) that do not exist on new tenants, causing HTTP 409 errors when users tried to follow the example. Now, the example creates the asset definition for `c8y_Windturbine` first and uses only existing library property definitions, ensuring the example succeeds on any tenant.
