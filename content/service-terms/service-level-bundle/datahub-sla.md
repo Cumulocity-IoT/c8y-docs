@@ -1,5 +1,5 @@
 ---
-title: DataHub 1.0 service-level agreement
+title: DataHub service-level agreement
 layout: bundle
 weight: 21
 aliases:
