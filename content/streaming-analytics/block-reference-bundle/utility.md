@@ -189,6 +189,7 @@ This category contains the following blocks:
 <p>To send a signal every 5 seconds:</p><ul> <li>Seconds: * / 5</li> </ul>
 <p>To send a signal on Europe/Berlin time zone:</p><ul> <li>Time Zone: Europe/Berlin</li> </ul>
 <p>The Days of Month and Days of Week parameters operate together such that if both are specified, then any match in either parameter triggers an output. For example, if Days of Month is set to 15 and Days of Week is set to 1, then there is an output on every Monday of the month and the 15th regardless of which day that is.</p>
+<p>The Last Trigger Time output is the model time at which the timer last fired, in seconds since the epoch. Connect it to any float input, for example the Time input of the Create Alarm block. To show it as a date in the Text Substitution block, use the Set Properties block to give it a property name that contains <tt>time</tt>, for example <tt>time</tt>, and then use <tt>#{time}</tt>.</p>
 <p>This block is not supported in simulation mode.</p>
 
 
@@ -290,6 +291,13 @@ This category contains the following blocks:
 <td><span>Sent at each trigger time based on the cron parameters.</span>
 </td>
 <td><span>pulse</span>
+</td>
+</tr>
+<tr>
+<th scope="row">Last Trigger Time</th>
+<td><span>The model time at which the timer last fired, in seconds since the epoch. It is updated each time the Timer Tick output is sent, and keeps that value until the timer next fires.</span>
+</td>
+<td><span>float</span>
 </td>
 </tr>
 </tbody>
