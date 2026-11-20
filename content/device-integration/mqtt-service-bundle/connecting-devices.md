@@ -55,6 +55,26 @@ In all cases it is important to ensure that the MQTT username is set correctly s
     The device **should** specify the tenant ID in the username field of the MQTT `CONNECT` packet.
     See the [Using TLS certificates](#using-tls-certificates) section below for more details on creating and managing trust anchors and device certificates.
 
+#### Disabling basic authentication {#disabling-basic-authentication}
+
+A tenant administrator can require certificate authentication for every device connecting to the MQTT Service by disabling basic authentication for the tenant.
+Once disabled, the MQTT Service refuses every basic authentication connection attempt, and certificate authentication becomes the only accepted mechanism.
+
+Basic authentication has no automatic binding between the authenticated user and the connecting client, so any client holding valid user credentials can connect under any client ID.
+Certificate authentication does not have this weakness, because the certificate binds the connection to a specific client identity.
+
+To disable basic authentication, navigate to **Settings > Feature toggles** in the Administration application and set the `mqtt-service.basic-authentication` toggle key status to "Disabled".
+To re-enable basic authentication, set the status back to "Enabled".
+Basic authentication is enabled by default, so existing tenants are unaffected until an admin makes this change.
+
+{{< c8y-admon-caution >}}
+Disabling basic authentication has the following limits:
+
+* The change is not instantaneous. It takes effect within minutes.
+* Devices already connected using basic authentication continue until they reconnect.
+* Microservices and external applications connecting to the Messaging Service through Pulsar are not affected. They continue to use basic authentication, as described in [Pulsar authentication](#pulsar-authentication).
+{{< /c8y-admon-caution >}}
+
 ### Using TLS certificates {#using-tls-certificates}
 
 This section contains a simplified overview of the TLS certificate support in the MQTT Service.
