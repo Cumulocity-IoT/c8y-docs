@@ -28,8 +28,8 @@ To ensure the successful operation of the Service, you must fulfill the followin
 
 The Service limits the schema that can be ingested into the lake. Data violating the limits is:
 
-* **Binned**: Stored in a secondary location that is not optimized for high-performance queries.
-* **Rejected**: Not stored if it violates system-wide schema constraints.
+* **Rejected**: Stored in a secondary location that is not optimized for high-performance queries.
+* **Dropped**: Not stored if it violates system-wide schema constraints. For details, see [Service quotas](/service-terms/quotas/).
 
 You are responsible for:
 
@@ -44,7 +44,7 @@ Ensure that your data queries are robust against schema changes. Specifically, u
 
 #### Type conflict resolution
 
-The Service [automatically resolves](/streaming-lake-ingestion/using-streaming-lake-ingestion/#understanding-lake-structure) type conflicts in inbound data to maintain storage reliability. In multi-tenant environments, the order in which data with conflicting types is received can lead to schema variations between tenants.
+The Service [automatically resolves](/streaming-lake-ingestion/understanding-the-data-lake/#handling-of-schema-conflicts) type conflicts in inbound data to maintain storage reliability. In multi-tenant environments, the order in which data with conflicting types is received can lead to schema variations between tenants.
 
 Manage data consistency where required, either by enforcing a specific ingestion order or by using inbound data preparation to resolve conflicts before they reach the Service.
 

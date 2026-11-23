@@ -126,12 +126,12 @@ See also the [Cloud Remote Access service-level agreement](/service-terms/servic
 | Array length | Hard | 128 |
 | Fragment nesting depth | Hard | 16 |
 
-Any part of the processed data exceeding a limit is moved to the `trash` table in the lakehouse. Further constraints:
+The service rejects any part of the processed data that exceeds a limit and moves it to the `cdc_rejected.trash` table in the lakehouse. For details, see [Rejected data](/streaming-lake-ingestion/understanding-the-data-lake/#rejected-data). Further constraints:
 
 * Leaf properties include base properties of the data type such as type, source and time, as well as any properties additionally generated during schema conflict resolution.
 * Members of an array must have a single consistent type.
 * Arrays cannot be directly nested into other arrays.
-* Limits apply at schema level of the lakehouse, not at individual message level. For example, if you send 1001 messages each containing a single measurement fragment different from the previous ones, the last message will be trashed.
+* Limits apply at schema level of the lakehouse, not at individual message level. For example, if you send 1001 messages each containing a single measurement fragment different from the previous ones, the service rejects the last message.
 
 ### DataHub 1.0
 

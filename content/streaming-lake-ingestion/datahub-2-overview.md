@@ -25,7 +25,7 @@ At a high level, the service consists of three parts:
 
 * **Data ingestion**: The service subscribes to the real-time data feed from the {{< product-c8y-iot >}} Messaging Service (powered by [Apache Pulsar](http://pulsar.apache.org/)).
 * **Processing and optimization**: It intelligently batches, structures, and writes this data into [Apache Iceberg](https://iceberg.apache.org/) tables within your data lake.
-* **Data access**: The structured data is almost immediately available for high-performance querying from multiple endpoints, such as the built-in capabilities of {{< product-c8y-iot >}} Cockpit, Jupyter notebooks, AI/ML platforms like TensorFlow or PyTorch, or Business Intelligence tools.
+* **Data access**: The structured data is almost immediately available for high-performance querying from multiple endpoints, such as Jupyter notebooks, AI/ML platforms like TensorFlow or PyTorch, or Business Intelligence tools.
 
 ### A foundation for advanced analytics and AI {#analytics-ai-foundation}
 
@@ -46,3 +46,12 @@ Besides being a widely adopted industry standard, it provides the following othe
 * **High performance analytics**: The Iceberg catalog embedded into {{< product-c8y-iot >}} tracks detailed information about your data, allowing query engines and analytics tools to be much smarter. They can only read the files necessary to answer a query, returning results faster. This is further improved by running regular optimization on the data lake files to ensure that data is highly clustered for the many querying uses.
 
 In summary, by building on Apache Iceberg and its standard REST catalog APIs, {{< product-c8y-iot >}} delivers IoT data as an open, vendor-neutral asset. Rather than forcing you into a proprietary ecosystem, your IoT data can be accessed and queried through the same tools and infrastructure you already use for your corporate data lake. This makes IoT data a true first-class citizen in your enterprise data initiatives. Your data science and analytics teams can seamlessly integrate IoT data with other business data sources without architectural compromises, breaking down the traditional barrier between operational IoT data and enterprise analytics to uncover insights that span your entire organization.
+
+### Getting started {#getting-started}
+
+After your tenant subscribes, Streaming Lake Ingestion starts the data flow:
+
+* It copies your current device and asset inventory from the operational store into the lake. For a large inventory, this takes a while. To follow the progress, see [Monitoring Streaming Lake Ingestion](/streaming-lake-ingestion/monitoring-streaming-lake-ingestion/).
+* It stores all new incoming data in the lake.
+
+To read the lake with your own tools, see [Connecting to the data lake](/streaming-lake-ingestion/connecting-to-the-data-lake/).

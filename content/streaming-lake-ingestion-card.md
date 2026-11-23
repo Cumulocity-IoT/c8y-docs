@@ -12,4 +12,4 @@ audience:
 weight: 20
 ---
 
-Stream your IoT data continuously into an Apache Iceberg data lake with Streaming Lake Ingestion, and query it with DataHub Query or your own tools.
+Stream your IoT data continuously into an Apache Iceberg data lake with Streaming Lake Ingestion, and query it with your own tools.
