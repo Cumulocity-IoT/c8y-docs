@@ -177,8 +177,9 @@ Failed links don't fail this job, and nothing is reported yet.
    (`npm test -- --recheck=<first-pass link-check-result.json>`) and uploads
    that log as the `recheck-log-<branch>` artifact
 3. writes a report (`summarize-failures.cjs`) to the job summary: links that
-   failed both passes are **broken**; links that failed only the first pass
-   are listed as **recovered on re-check** (flaky) but not reported as broken
+   failed both passes are **broken** and listed with cause and source files;
+   links that failed only the first pass (flaky) are only counted, not listed
+   or reported as broken
 4. for the default scheduled/full-matrix runs only, if any links are broken:
    creates a branch-specific label if needed, and a GitHub issue with the
    report

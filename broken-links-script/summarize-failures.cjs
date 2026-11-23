@@ -5,9 +5,8 @@
 // Usage: node summarize-failures.cjs --first-pass=<json> [--recheck=<json>] --run-url=<url>
 //
 // A link counts as broken only if it also failed the re-check. Links that
-// failed the first pass but passed the re-check are listed separately as
-// flaky, so a link that keeps recovering stays visible instead of silently
-// disappearing. When GITHUB_OUTPUT is set, also writes `failed=true|false`
+// failed the first pass but passed the re-check are only counted, not listed;
+// the Cypress log of the first pass names them. When GITHUB_OUTPUT is set, also writes `failed=true|false`
 // there - true for broken links, or for a pass that never finished.
 const fs = require('fs');
 
@@ -33,11 +32,22 @@ const isIncomplete = (result) => !result || !result.completed;
 
 const lines = ['<!-- link-checker-report -->', '## Link checker report', ''];
 
+// One bullet per link; error and source files go on their own lines below it.
 const listLinks = (items) => {
   items.forEach(({ link, files = [], error }) => {
     lines.push(`- ${link}`);
-    if (error) lines.push(`  - ${error}`);
-    files.forEach((file) => lines.push(`  - in \`${file}\``));
+    if (error) lines.push(`  **Error:** ${error}  `);
+    if (files.length > 3) {
+      lines.push(
+        `  <details><summary><b>Location:</b> ${files.length} files</summary>`,
+        '',
+        ...files.map((file) => `  - \`${file}\``),
+        '',
+        '  </details>'
+      );
+    } else if (files.length > 0) {
+      lines.push(`  **Location:** ${files.map((file) => `\`${file}\``).join(', ')}`);
+    }
   });
 };
 
@@ -55,23 +65,15 @@ if (isIncomplete(firstPass) || (recheckPath && isIncomplete(recheck))) {
 
   // Excluded links are reported by Cypress as pending - not checked at all.
   const checked = firstPass.totalTests - firstPass.totalPending;
-  const skipped = firstPass.totalPending ? ` (${firstPass.totalPending} excluded links skipped)` : '';
-  if (broken.length === 0) {
-    lines.push(`All ${checked} checked links passed${skipped}.`);
-  } else {
-    const confirmed = recheck ? ', and again when re-checked on a fresh runner' : '';
-    lines.push(`${broken.length} of ${checked} checked links failed${confirmed}${skipped}:`, '');
+  const excluded = firstPass.totalPending ? ` (${firstPass.totalPending} excluded)` : '';
+  const history = recheck
+    ? ` (${firstPass.failed.length} failed on the first run, ${recovered.length} passed on re-check)`
+    : '';
+  // Two trailing spaces end a line without starting a new paragraph.
+  lines.push(`**Checked:** ${checked} links${excluded}  `, `**Broken:** ${broken.length}${history}`);
+  if (broken.length > 0) {
+    lines.push('');
     listLinks(broken);
-  }
-
-  if (recovered.length > 0) {
-    lines.push(
-      '',
-      `${recovered.length} link(s) failed at first but passed when re-checked on a fresh runner - ` +
-        'most likely runner-specific blocking or a short outage, so not reported as broken:',
-      ''
-    );
-    listLinks(recovered);
   }
 }
 
