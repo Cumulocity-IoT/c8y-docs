@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-11-17'
 title: Per-agent API and tool selection in AI Workbench
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: ai-agents
 ticket: MTM-67777
 version: 3.3.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-17'
+  - label: apj.cumulocity.com
+    date: '2026-11-18'
+  - label: jp.cumulocity.com
+    date: '2026-11-18'
+  - label: us.cumulocity.com
+    date: '2026-11-19'
+  - label: cumulocity.com
+    date: '2026-11-19'
 ---
 AI Workbench can now give each agent only the APIs and tools it needs, instead of everything available in the tenant. You choose which {{< product-c8y-iot >}} APIs, microservice APIs, and MCP tools an agent can use, and you can rename them. The agent then searches and reads only the documentation it can use.
 
