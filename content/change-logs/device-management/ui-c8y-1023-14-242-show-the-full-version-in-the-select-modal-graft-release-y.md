@@ -1,6 +1,6 @@
 ---
 date: ""
-title:  Software and firmware versions show in full in selection dialogs
+title:  Software and firmware versions are shown in full in selection dialogs
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
