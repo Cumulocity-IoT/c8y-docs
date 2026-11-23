@@ -24,8 +24,8 @@ To address these considerations, this document outlines the various upgrade mode
 {{< company-c8y >}}’s continuous deployment model enables cloud software upgrades to occur automatically, at any time, ensuring that customers receive the latest features, enhancements, and security improvements promptly. All cloud instances are under full support of {{< company-c8y >}}’s support services at any time according to the support service-level purchased by the customer.
 
 Cloud instances are separated into *non-production* and *production* cloud instances to streamline upgrades and testing.
- * Non-production instances include customer development and test instances, and the public instance at eu-latest.cumulocity.com.
- * Production instances cover both customer production environments and other public cloud production instances.
+ * Non-production instances include customer development and test instances, and the shared instance at eu-latest.cumulocity.com.
+ * Production instances cover both customer production environments and other shared cloud production instances.
 
 The upgrade process for instances follows a staged approach.
  * After an upgrade has passed {{< product-c8y-iot >}}’s internal quality assurance, it is first deployed to non-production instances.
@@ -52,9 +52,6 @@ In the annual deployment model:
 * Maintenance for each annual release ends three months after the next annual release becomes generally available (End of Maintenance, or EOM).
 * After EOM, support will continue for up to three additional months (End of Sustained Support, or EOSS); however, no further fixes will be issued during this period. Customers are expected to complete upgrades within this timeframe and will receive dedicated support to facilitate this process.
 
-Additional considerations:
-* Bug fixes for annual releases under maintenance are deployed manually, not automatically, allowing for more controlled updates.
-* Due to the accumulated changes in each annual release, these upgrades may take longer to complete and present a potentially higher risk compared to the continuous deployment model.
 <!---
 image source: https://docs.google.com/spreadsheets/d/1S3sCPPBnLpQq9TJZG6Es5X1YKIzp4dAQw6wRB_sws1k/edit?usp=sharing
 -->

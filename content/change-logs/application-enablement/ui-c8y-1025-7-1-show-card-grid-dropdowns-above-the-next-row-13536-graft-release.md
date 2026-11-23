@@ -16,5 +16,13 @@ version: 1025.7.1
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-11-16'
+  - label: apj.cumulocity.com
+    date: '2026-11-17'
+  - label: jp.cumulocity.com
+    date: '2026-11-17'
+  - label: us.cumulocity.com
+    date: '2026-11-18'
+  - label: cumulocity.com
+    date: '2026-11-18'
 ---
 In card grid views, an open dropdown, such as the **Children** selector on smart rule cards, now shows above the card in the next row. Before this fix, the lower card covered the bottom of the menu, so you couldn't select **Apply**.

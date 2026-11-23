@@ -34,7 +34,6 @@ For example, loading graphs with large amounts of data points may make the mobil
 * The [Streaming Analytics application](/streaming-analytics/introduction-analytics/) does not support mobile or touch devices.
 {{< /c8y-admon-info >}}
 
-
 ### URL {#url}
 
 To access the applications for your {{< product-c8y-iot >}} tenant, use the following URL:
