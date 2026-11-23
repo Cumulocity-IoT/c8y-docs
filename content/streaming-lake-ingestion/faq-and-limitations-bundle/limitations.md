@@ -15,5 +15,3 @@ Streaming Lake Ingestion has the following functional limitations:
 * You may see an `internal` folder with tables for internal service information. Do not modify these tables.
 * The service does not offload any {{< product-c8y-iot >}}-internal inventory entries, events, measurements, and alarms.
 * Users automatically get read permissions to the Dremio data source assigned. These read permissions cannot be manually revoked.
-
-For the limitations of your own storage on dedicated environments, see [Limitations of your own storage](/streaming-lake-ingestion/bringing-your-own-storage/#limitations-of-your-own-storage).
