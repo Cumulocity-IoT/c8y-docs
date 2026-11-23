@@ -61,9 +61,9 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
       cy.log(`Available fragments (including frames):\n${allFragments.join('\n')}`);
     }
 
-    // Kept on a single line: the Cypress.on('fail') handler below reports
-    // only error.message.split('\n')[0], so a hint on a second line would
-    // be dropped from the run summary.
+    // Kept on a single line: the failure is reported as one line (see
+    // summarizeError below), and the summary in link-check-result.json uses
+    // only its first line.
     const caseHint = caseMatch
       ? ` - but "${caseMatch}" exists, which differs only by case, so the link's fragment casing is wrong`
       : '';
@@ -195,9 +195,25 @@ describe('Link and Routing Validation - Individual URL Checks', () => {
     cy.contains(decodedText).should('exist');
   };
 
+  // Cypress errors for failed requests and page loads have many lines. The
+  // first one is only a heading such as "`cy.visit()` failed trying to load:",
+  // the URL and the cause (for example "Error: connect ECONNREFUSED") follow
+  // after blank lines. This joins those lines into one line and stops at the
+  // separator or at the explanatory text that Cypress adds at the end ("The
+  // request we sent was", "Common situations why this would fail"), which is
+  // the same for every failure. One-line messages stay as they are.
+  const summarizeError = (message) => {
+    const lines = [];
+    for (const line of message.split('\n').map(l => l.trim()).filter(Boolean)) {
+      if (/^-{5,}$|^The request we sent was|^Common situations/.test(line)) break;
+      lines.push(line);
+    }
+    return lines.join(' ');
+  };
+
   Cypress.on('fail', (error) => {
     const sourceFiles = Cypress.env('sourceFiles');
-    const shortMessage = error.message.split('\n')[0];
+    const shortMessage = summarizeError(error.message);
 
     const message = [
       shortMessage,
