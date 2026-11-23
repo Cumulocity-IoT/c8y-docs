@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Show the full version in the select modal [GRAFT][release/y2026]
+title:  Software and firmware versions show in full in selection dialogs
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
