@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5654
 version: 1023.14.241
 ---
-Context: When you filter software by type, the software type selection field offers a typeahead that suggests matching types as you type. Previously, this typeahead did not work correctly in the filter, so you could not reliably find and select the software type you wanted. Change: The typeahead for the software type selection now shows the matching software types as you type in the filter, and you can select a suggestion directly. Impact: You can find and select software types faster when you filter by type. Existing filters, software entries, and saved views are not affected, and you do not need to take any action.
+On a device's Software tab, the "Filter by software type" input field now shows the type you selected. Before, the field stayed empty, and you could see your selection only by opening the dropdown list again.
