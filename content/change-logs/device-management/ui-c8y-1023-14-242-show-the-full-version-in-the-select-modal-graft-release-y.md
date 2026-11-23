@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6807
 version: 1023.14.242
 ---
-The Device management application shows a select modal when you choose a version, for example, a software version for a device. Previously, long version names were cut off in this modal, so you could not see the complete version before you selected it. Now, the modal shows the full version name, so you can identify and select the correct version. This change affects only how versions appear in the select modal. Existing devices, versions, and settings remain unchanged, and you do not need to take any action.
+On a device's **Software** and **Firmware** tabs, the selection dialogs now show long versions in full and wrap them at the edge of the row. Before, versions broke at hyphens or spaces, for example `1.0.0-333.333`, or were cut off. Configuration names in device profiles had the same problem, and this change fixes them too.
