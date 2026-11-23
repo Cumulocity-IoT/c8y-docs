@@ -73,5 +73,5 @@ When the subscription of your tenant ends, the data flow stops. Your data and yo
 After this period, {{< company-c8y >}} deletes your data and your catalog credentials.
 
 {{< c8y-admon-important >}}
-Create the catalog credentials for your Iceberg client before the subscription ends. After it ends, you cannot create or rotate credentials. The credentials you already have stay valid until {{< company-c8y >}} deletes your data.
+Create the catalog credentials for your Iceberg client before the subscription ends. After it ends, you cannot create or rotate credentials. The credentials you already have stay valid until {{< company-c8y >}} deletes your data. For details, see [To connect a client](/streaming-lake-ingestion/connecting-to-the-data-lake/#to-connect-a-client).
 {{< /c8y-admon-important >}}
