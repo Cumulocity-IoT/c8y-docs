@@ -64,6 +64,14 @@ module.exports = {
     // 2026-07-20 weekly runs. Not CI-specific flakiness - genuine anti-bot
     // blocking of non-browser clients.
     /oreilly\.com/,
+
+    // This Gainsight support article answers 403 to Cypress on all attempts
+    // within milliseconds. Diagnostics runs on 2026-11-23 failed identically
+    // on three different runner IPs (45192591636, 45207524089, 45207538556),
+    // so it is not one blocked runner. Other support.gainsight.com pages pass
+    // in the same runs, and a browser or curl from a normal network gets 200.
+    // The link is valid, automation from GitHub Actions is blocked for it.
+    "https://support.gainsight.com/PX/API_for_Developers/01About/Work_with_Gainsight_PX_Web_SDK",
   ],
 
   // Registry of third-party resources known to cause link-checker flakiness

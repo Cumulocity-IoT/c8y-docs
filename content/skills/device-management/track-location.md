@@ -39,7 +39,7 @@ The `c8y_Position` fragment has the following properties:
 * `lng`: The longitude in degrees. Mandatory.
 * `alt`: The altitude in meters. Optional.
 
-In the Device Management application, the **Location** tab shows the current position, and the **Tracking** tab shows the movement, see [Location](/device-management-application/viewing-device-details/#location) and [Tracking](/device-management-application/viewing-device-details/#tracking). For the device side, see [Tracking](/device-integration/fragment-library/#tracking) in the fragment library.
+In the Device Management application, the **Location** tab shows the current position and the movement, see [Location](/device-management-application/viewing-device-details/#location). For the device side, see [Tracking](/device-integration/fragment-library/#tracking) in the fragment library.
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
