@@ -14,20 +14,4 @@ build_artifact:
 ticket: DM-6807
 version: 1025.14.2
 ---
-# Backport
-
-This will backport the following commits from `develop` to `release/cd`:
-- [fix(Device management app): [DM-6807] Show the full version in the
-select
-modal](https://github.com/Cumulocity-IoT/cumulocity-ui/pull/13610)
-
-<!--- Backport version: unknown -->
-
-### Questions ?
-Please refer to the [Backport tool
-documentation](https://github.com/sorenlouv/backport)
-
-[DM-6807]:
-https://cumulocity.atlassian.net/browse/DM-6807?atlOrigin=eyJpIjoiNWRkNTljNzYxNjVmNDY3MDlhMDU5Y2ZhYzA5YTRkZjUiLCJwIjoiZ2l0aHViLWNvbS1KU1cifQ
-
-Co-authored-by: Dafina Karamanoleva <92030501+dafkk@users.noreply.github.com>
+In the device management application, the select modal lists versions that can have long names. Previously, long version names were cut off in this modal, so you could not see the complete name or tell similar versions apart. Now, the select modal shows the full version name, so you can identify the exact version before you select it. This change only affects how versions appear in the select modal. Your existing tenants, users, applications, and devices are not affected, and you do not need to take any action.
