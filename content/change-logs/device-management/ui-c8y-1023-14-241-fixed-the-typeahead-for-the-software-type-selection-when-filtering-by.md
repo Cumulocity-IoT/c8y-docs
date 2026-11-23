@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed the typeahead for the software type selection when filtering by type. [GRAFT][release/y2026]
+title: Fixed typeahead for software type selection when filtering by type
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
