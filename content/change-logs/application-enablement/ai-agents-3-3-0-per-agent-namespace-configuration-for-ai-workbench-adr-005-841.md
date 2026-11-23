@@ -14,7 +14,7 @@ build_artifact:
 ticket: MTM-67777
 version: 3.3.0
 ---
-AI Workbench can now give each agent only the APIs and tools it needs, instead of everything available in the tenant. You choose which {{< product-c8y-iot >}} APIs, microservice APIs, and MCP tools an agent can use, and you can rename them. The agent then searches and reads documentation only for what it can use.
+AI Workbench can now give each agent only the APIs and tools it needs, instead of everything available in the tenant. You choose which {{< product-c8y-iot >}} APIs, microservice APIs, and MCP tools an agent can use, and you can rename them. The agent then searches and reads only the documentation it can use.
 
 An MCP client sends this configuration as JSON in the `ai-workbench-config` request header. Agents without a configuration work as before and see everything. A configuration can also add up to 20 external MCP servers. AI Workbench sends them only the headers you set for them, never tenant credentials, and blocks internal network addresses.
 
