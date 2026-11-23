@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-6807
 version: 1023.14.242
 ---
-On a device's **Software** and **Firmware** tabs, the selection dialogs now show long versions in full and wrap them at the edge of the row. Before, versions broke at hyphens or spaces, for example `1.0.0-333.333`, or were cut off. Configuration names in device profiles had the same problem, and this change fixes them too.
+On the **Software** and **Firmware** tabs of a device, the selection dialogs now show long version names in full and wrap them at the end of the row. Before, versions broke at hyphens or spaces, for example, `1.0.0-333.333`, or were cut off. Configuration names in device profiles had the same issue, and this change fixes them too.
