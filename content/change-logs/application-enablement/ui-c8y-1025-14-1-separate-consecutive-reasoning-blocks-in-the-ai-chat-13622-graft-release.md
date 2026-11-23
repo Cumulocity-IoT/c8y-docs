@@ -14,4 +14,4 @@ build_artifact:
 ticket: MTM-68188
 version: 1025.14.1
 ---
-OpenAI reasoning summaries in the AI chat no longer run together. Each summary part now starts its own paragraph, so its bold heading renders as a heading.
+OpenAI reasoning models return their reasoning summary in several parts, and each part starts with a bold heading. Previously, these parts ran together in the AI chat, which made the reasoning hard to read. Now, each summary part starts its own paragraph, and its bold heading renders as a heading. This change applies automatically to all users of the AI chat with OpenAI reasoning models, and you do not need to take any action.
