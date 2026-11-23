@@ -91,15 +91,24 @@ To apply a filter, click the **Apply** button next to the respective filter fiel
 
 ### Audit log types {#audit-log-types}
 
+Each audit log has a type. The **Type value** column shows the value that the platform stores in the `type` field of the audit log. Use this value, not the name in the **Audit type** column, in the following places:
+
+- The **Type** field of a retention rule for audit logs. For details, see [Retention rules](/standard-tenant/managing-data/#retention-rules).
+- The `type` query parameter when you retrieve audit logs. For details, see [Audits](https://{{< domain-c8y >}}/api/core/#tag/Audits) in the {{< openapi >}}.
+
+The value must match exactly, including uppercase and lowercase letters. For example, a retention rule with the type "Smart rule" removes no audit logs. Use `SmartRule` instead.
+
 <table>
 <colgroup>
+<col style="width: 20%;">
 <col style="width: 25%;">
-<col style="width: 75%;">
+<col style="width: 55%;">
 </colgroup>
 
 <thead>
 <tr>
 <th align="left">Audit type</th>
+<th align="left">Type value</th>
 <th align="left">Actions</th>
 </tr>
 </thead>
@@ -108,6 +117,7 @@ To apply a filter, click the **Apply** button next to the respective filter fiel
 
 <tr>
 <td align="left">Alarm</td>
+<td align="left"><code>Alarm</code></td>
 <td align="left"><ul>
 <li>Alarm created</li>
 <li>Alarm updated</li>
@@ -116,6 +126,7 @@ To apply a filter, click the **Apply** button next to the respective filter fiel
 
 <tr>
 <td align="left">Application</td>
+<td align="left"><code>Application</code></td>
 <td align="left"><ul>
 <li>Application activated</li>
 <li>Application subscribed</li>
@@ -132,6 +143,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Bulk operation</td>
+<td align="left"><code>BulkOperation</code></td>
 <td align="left"><ul>
 <li>Bulk operation created</li>
 <li>Bulk operation updated</li>
@@ -141,6 +153,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Data broker connector</td>
+<td align="left"><code>Connector</code></td>
 <td align="left"><ul>
 <li>Connector created</li>
 <li>Connector updated</li>
@@ -150,6 +163,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Devices availability monitoring</td>
+<td align="left"><code>DevicesAvailabilityMonitoring</code></td>
 <td align="left"><ul>
 <li>Device availability enabled</li>
 <li>Device availability disabled</li>
@@ -160,6 +174,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Email</td>
+<td align="left"><code>Email</code></td>
 <td align="left"><ul>
 <li>Email sent</li>
 </ul></td>
@@ -167,6 +182,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Global role</td>
+<td align="left"><code>Group</code></td>
 <td align="left"><ul>
 <li>Global role updated</li>
 <li>Global role authorities updated</li>
@@ -176,6 +192,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Inventory</td>
+<td align="left"><code>Inventory</code></td>
 <td align="left"><ul>
 <li>Managed object deleted</li>
 <li>Device registration failed due to missing token</li>
@@ -186,6 +203,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Inventory role</td>
+<td align="left"><code>InventoryRole</code></td>
 <td align="left"><ul>
 <li>Inventory role created</li>
 <li>Inventory role updated</li>
@@ -194,7 +212,20 @@ This type of audit logs may be created for both hosted applications and microser
 </tr>
 
 <tr>
+<td align="left">MQTT Service</td>
+<td align="left"><code>MqttService</code></td>
+<td align="left"><ul>
+<li>Basic authentication attempt</li>
+<li>Certificate authentication attempt</li>
+<li>Device ownership check failed</li>
+</ul>
+The MQTT Service logs authentication attempts only if the platform operator turns on connection auditing for the tenant.
+</td>
+</tr>
+
+<tr>
 <td align="left">Operation</td>
+<td align="left"><code>Operation</code></td>
 <td align="left"><ul>
 <li>Operation created</li>
 <li>Operation updated</li>
@@ -203,6 +234,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Option</td>
+<td align="left"><code>Option</code></td>
 <td align="left"><ul>
 <li>Option created</li>
 <li>Option updated</li>
@@ -212,6 +244,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Reliable notification</td>
+<td align="left"><code>Notification2</code></td>
 <td align="left"><ul>
 <li>Reliable notification token created</li>
 <li>Reliable notification subscription created</li>
@@ -221,6 +254,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Report</td>
+<td align="left"><code>Report</code></td>
 <td align="left"><ul>
 <li>Test tenant statistics accessed</li>
 <li>Real tenant statistics accessed</li>
@@ -229,6 +263,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Single sign-on</td>
+<td align="left"><code>SingleSignOn</code></td>
 <td align="left"><ul>
 <li>SSO login</li>
 <li>SSO logout</li>
@@ -238,6 +273,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Smart rule</td>
+<td align="left"><code>SmartRule</code></td>
 <td align="left"><ul>
 <li>Smart rule created</li>
 <li>Smart rule updated</li>
@@ -248,7 +284,18 @@ This type of audit logs may be created for both hosted applications and microser
 </tr>
 
 <tr>
+<td align="left">System</td>
+<td align="left"><code>SYSTEM</code></td>
+<td align="left"><ul>
+<li>Availability monitoring record</li>
+</ul>
+The platform creates these audit logs when the severity of an alarm changes. It uses them for the availability statistics of devices.
+</td>
+</tr>
+
+<tr>
 <td align="left">Tenant</td>
+<td align="left"><code>Tenant</code></td>
 <td align="left"><ul>
 <li>Tenant created</li>
 <li>Tenant updated</li>
@@ -260,6 +307,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Tenant auth configuration</td>
+<td align="left"><code>TenantAuthConfig</code></td>
 <td align="left"><ul>
 <li>Authentication configuration added</li>
 <li>Authentication configuration updated</li>
@@ -269,6 +317,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Trusted certificate</td>
+<td align="left"><code>TrustedCertificates</code></td>
 <td align="left"><ul>
 <li>Trusted certificate uploaded</li>
 <li>Trusted certificate updated</li>
@@ -278,6 +327,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">Tenant Certificate Authority</td>
+<td align="left"><code>TenantCertificateAuthority</code></td>
 <td align="left"><ul>
 <li>Tenant certificate authority(CA) created</li>
 <li>Tenant certificate authority(CA) renewed</li>
@@ -289,6 +339,7 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">User</td>
+<td align="left"><code>User</code></td>
 <td align="left"><ul>
 <li>User created</li>
 <li>User updated</li>
@@ -308,11 +359,14 @@ This type of audit logs may be created for both hosted applications and microser
 
 <tr>
 <td align="left">User login</td>
+<td align="left"><code>UserAuthentication</code></td>
 <td align="left"><ul>
 <li>User login</li>
 <li>User logout</li>
+<li>Certificate token generation</li>
 </ul>
 Note that entries of this type are not created when using Basic authentication.
+Failed logins and single sign-on logins also create "User login" audit logs of this type.
 </td>
 </tr>
 
@@ -320,5 +374,5 @@ Note that entries of this type are not created when using Basic authentication.
 </table>
 
 {{< c8y-admon-info >}}
-See also [Audit logs for Streaming Analytics](/streaming-analytics/troubleshooting/#analytics-audit-logs) and [Audit logs for {{< product-c8y-iot >}} DataHub](/datahub/operating-datahub/#system-log).
+Microservices and other clients can create audit logs with their own types through the REST API. The table above does not list these types. See also [Audit logs for Streaming Analytics](/streaming-analytics/troubleshooting/#analytics-audit-logs) and [Audit logs for {{< product-c8y-iot >}} DataHub](/datahub/operating-datahub/#system-log).
 {{< /c8y-admon-info >}}
