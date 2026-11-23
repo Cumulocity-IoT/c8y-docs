@@ -37,7 +37,7 @@ For any Linux-based device, we recommend integrating it via [thin-edge.io](https
 
 See the tutorial [Getting started with thin-edge.io](https://thin-edge.github.io/thin-edge.io/start/getting-started/) for an easy-to-follow and hands-on example.
 
-### Highly-constrained devices {#highly-constrained devices}
+### Highly-constrained devices {#highly-constrained-devices}
 
 For highly constrained devices like microcontrollers that cannot run thin-edge.io, you can integrate directly via  [MQTT](/device-integration/mqtt) Service and [REST](/device-integration/device-integration-rest/) APIs along with [SmartREST](/smartrest/smartrest-two/) for efficient communication. [Data Preparation](https://cumulocity.com/docs/data-preparation/data-preparation-introduction/) or user-provided microservices can be used to map between custom device payloads and the {{< product-c8y-iot >}} data model. [Data Preparation](https://cumulocity.com/docs/data-preparation/data-preparation-introduction/) also creates devices automatically for unknown external IDs. For standard-compliant device management, the [LWM2M](/device-integration/lwm2m/) protocol is also supported. 
 Alternatively, data can also be sent via a gateway. [Thin-edge.io](https://thin-edge.io/) simplifies this architecture by providing automatic child device modelling and routing.
