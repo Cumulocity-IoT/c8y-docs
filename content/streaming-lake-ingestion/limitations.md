@@ -1,7 +1,14 @@
 ---
-weight: 50
 title: Current limitations
-layout: redirect
+description: "Learn the current functional limitations of Streaming Lake Ingestion."
+weight: 60
+layout: bundle
+outputs:
+  - html
+  - json
+  - markdown
+sector:
+  - data_analytics
 ---
 
 Streaming Lake Ingestion has the following functional limitations:

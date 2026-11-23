@@ -1,7 +1,14 @@
 ---
-weight: 60
 title: Frequently asked questions
-layout: redirect
+description: "Find answers to frequently asked questions about Streaming Lake Ingestion."
+weight: 70
+layout: bundle
+outputs:
+  - html
+  - json
+  - markdown
+sector:
+  - data_analytics
 ---
 
 ### How can I configure Streaming Lake Ingestion? {#configure-streaming-lake-ingestion}
@@ -39,7 +46,7 @@ Yes. The `latest_inventory` tables are pre-populated with all managed objects th
 
 The change data capture of the device inventory (`cdc_inventory`) records all changes to devices together with the kind of change that was applied. Inspect the `eventType` property and the `lastUpdated` to understand what change was applied when.
 
-### How can I end my subscription and obtain my data?
+### How can I end my subscription and obtain my data? {#ending-the-subscription}
 
 When the subscription of your tenant ends, the data flow stops and DataHub Query no longer shows your lake. Your data and your catalog credentials stay available for the next 30 days. During this period, you can copy your data out of the lake with an Iceberg client. For details, see [Reading the lake with an Iceberg client](/streaming-lake-ingestion/using-streaming-lake-ingestion/#reading-with-an-iceberg-client).
 
