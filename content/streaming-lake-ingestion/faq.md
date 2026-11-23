@@ -27,6 +27,10 @@ Depending on your use case, you can use a combination of options outside of Stre
 
 DataHub Query is optional if you want to post-process or query data using your own tools. Note that views are currently only generated for engines compatible with Dremio and Spark SQL. While we designed the service to be as compliant as possible with common tool restrictions, we cannot guarantee compliance with all Iceberg tools.
 
+### How can I migrate from DataHub 1.0? {#migrating-from-datahub-1}
+
+You can run the scheduled offloading jobs of [DataHub 1.0](/datahub/) and Streaming Lake Ingestion in parallel. To migrate your postprocessing or reporting to Streaming Lake Ingestion incrementally, subscribe to Streaming Lake Ingestion and port your queries or scripts as needed. [Contact {{< company-c8y >}} support](https://cumulocity.atlassian.net/servicedesk/customer/portals) for questions on optimizing your data lake pipelines.
+
 ### I see a device, alarm, measurement, event or operation in the operational store but not in the lake. {#data-not-in-lake}
 
 Only changes after subscription to Streaming Lake Ingestion are visible in the lake. If you have recently subscribed and the data was not changed since then, it will not be transferred to the lake.

@@ -20,8 +20,6 @@ After your tenant subscribes to Streaming Lake Ingestion, the data flow starts:
 Copying your current inventory into the lake may take a while to complete. For more information, see [Monitoring Streaming Lake Ingestion](/streaming-lake-ingestion/monitoring-streaming-lake-ingestion/).
 
 The `latest_inventory` tables are pre-populated with your full current inventory at subscription time. Alarms, events, measurements, and operations are only recorded for changes that occur after subscription.
-
-For users of DataHub Query (Dremio), the option `CDH_ASSET_WHITELIST` is automatically set on your tenant. This allows granting the tenant's default Dremio user access to the Iceberg source, which is required to read data via the DataHub REST API. Do not change this option.
 {{< /c8y-admon-info >}}
 
 ### Analyzing lake data {#analyzing-lake-data-using-sql}

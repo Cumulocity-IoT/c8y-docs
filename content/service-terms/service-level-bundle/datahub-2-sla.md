@@ -33,7 +33,7 @@ The Service limits the schema that can be ingested into the lake. Data violating
 
 You are responsible for:
 
-* Monitoring for {{< product-c8y-iot >}} alarms related to data rejection. For details, see [Monitoring the data flow](/streaming-lake-ingestion/monitoring-streaming-lake-ingestion/).
+* Monitoring for {{< product-c8y-iot >}} alarms related to data rejection. For details, see [Monitoring Streaming Lake Ingestion](/streaming-lake-ingestion/monitoring-streaming-lake-ingestion/).
 * Implementing pre-processing logic to ensure inbound data conforms to required schemas, using tools such as {{< product-c8y-iot >}} [Data Preparation](/data-preparation).
 
 #### Schema evolution
@@ -50,7 +50,7 @@ Manage data consistency where required, either by enforcing a specific ingestion
 
 #### Data export after the subscription ends
 
-To export your data after the subscription ends, create the catalog credentials for your Iceberg client before the subscription ends. After the subscription ends, you cannot create or rotate credentials. The credentials you already have stay valid until Provider deletes the data. For details, see [Ending the subscription](/streaming-lake-ingestion/datahub-2-overview/#ending-the-subscription).
+To export your data after the subscription ends, create the catalog credentials for your Iceberg client before the subscription ends. After the subscription ends, you cannot create or rotate credentials. The credentials you already have stay valid until Provider deletes the data. For details, see [How can I end my subscription and obtain my data?](/streaming-lake-ingestion/faq/#ending-the-subscription).
 
 ### Limitations and constraints
 
