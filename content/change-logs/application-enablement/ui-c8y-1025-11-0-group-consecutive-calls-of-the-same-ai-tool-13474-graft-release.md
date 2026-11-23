@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Group consecutive calls of the same AI tool
+title: Grouped consecutive calls of the same AI tool
 product_area: Application enablement & solutions
 change_type:
   - value: change-QHu1GdukP
