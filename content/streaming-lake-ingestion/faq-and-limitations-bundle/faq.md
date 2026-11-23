@@ -38,3 +38,13 @@ Yes. The `latest_inventory` tables are pre-populated with all managed objects th
 ### My device, alarm … appears several times in the inventory in the lake. {#duplicate-records-in-lake}
 
 The change data capture of the device inventory (`cdc_inventory`) records all changes to devices together with the kind of change that was applied. Inspect the `eventType` property and the `lastUpdated` to understand what change was applied when.
+
+### How can I end my subscription and obtain my data?
+
+When the subscription of your tenant ends, the data flow stops and DataHub Query no longer shows your lake. Your data and your catalog credentials stay available for the next 30 days. During this period, you can copy your data out of the lake with an Iceberg client. For details, see [Reading the lake with an Iceberg client](/streaming-lake-ingestion/using-streaming-lake-ingestion/#reading-with-an-iceberg-client).
+
+After this period, {{< company-c8y >}} deletes your data and your catalog credentials.
+
+{{< c8y-admon-important >}}
+Create the catalog credentials for your Iceberg client before the subscription ends. After it ends, you cannot create or rotate credentials. The credentials you already have stay valid until {{< company-c8y >}} deletes your data. For details, see [Obtaining Iceberg catalog credentials](/streaming-lake-ingestion/using-streaming-lake-ingestion/#obtaining-iceberg-catalog-credentials).
+{{< /c8y-admon-important >}}

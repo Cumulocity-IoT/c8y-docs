@@ -332,7 +332,7 @@ Additional columns may be visible depending on your use of {{< product-c8y-iot >
 
 {{< c8y-admon-info >}}
 Use top-level properties with care. For example, if you have custom properties that you want to store for all devices, such properties may be a good choice.
-However, the total number of top-level properties is limited through a [table width limit](#limits-of-streaming-lake-ingestion). If you exceed the table width limit,
+However, the total number of top-level properties is limited through a [table width limit](/service-terms/quotas/#limits-of-streaming-lake-ingestion). If you exceed the table width limit,
 additional properties will not be written to the inventory table but "[binned](#binning)".
 Note also that very wide tables with many properties will lead to more inefficient storage and querying.
 We advise you to prefer fragments for custom data when modeling your device data model.
@@ -577,7 +577,7 @@ The columns represent the [properties of a {{< product-c8y-iot >}} operation](ht
 Empty JSON objects (`{}`) and empty arrays (`[]`) carry no data to store. They are omitted from the input and treated the same as an absent or "null" property, rather than being converted to a value of the column's data type.
 
 {{< c8y-admon-info >}}
-For more information related to Iceberg data types, refer to the [Iceberg specification](https://iceberg.apache.org/spec/#semi-structured-types). Note that there are various [structural limits](#limits-of-streaming-lake-ingestion) that the service implements to ensure that common upstream query engines can interact with the data produced by the service.
+For more information related to Iceberg data types, refer to the [Iceberg specification](https://iceberg.apache.org/spec/#semi-structured-types). Note that there are various [structural limits](/service-terms/quotas/#limits-of-streaming-lake-ingestion) that the service implements to ensure that common upstream query engines can interact with the data produced by the service.
 {{< /c8y-admon-info >}}
 
 #### Schema evolution {#schema-evolution}
@@ -661,7 +661,7 @@ The Iceberg data lake supports names consisting of characters, numbers, undersco
 For example, if you use the property name "switch:status" in the data sent to {{< product-c8y-iot >}}, the corresponding Iceberg column name is "switch_x003Astatus".
 
 {{< c8y-admon-info >}}
-The first-character restriction is checked before escaping is applied. If the first character of a name is not already a letter, the whole field or fragment is rejected as an [illegal field name](#limits-of-streaming-lake-ingestion) rather than being escaped. For example, replacing a leading special character with an underscore (a common client-side sanitization approach) does not make the name valid, since an underscore is not a letter.
+The first-character restriction is checked before escaping is applied. If the first character of a name is not already a letter, the whole field or fragment is rejected as an [illegal field name](/service-terms/quotas/#limits-of-streaming-lake-ingestion) rather than being escaped. For example, replacing a leading special character with an underscore (a common client-side sanitization approach) does not make the name valid, since an underscore is not a letter.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
@@ -763,26 +763,6 @@ The following schema is used:
 - `reason`: Description of the violation, providing context for the rejection
 - `tableName`: Fragment name where the violation occurred
 - `id`: Unique identifier for the record
-
-##### Limits of Streaming Lake Ingestion {#limits-of-streaming-lake-ingestion}
-
-The following limits apply to data processed by Streaming Lake Ingestion. If any part of the processed data exceeds a limit, that part is moved to the `trash` table.
-
-**Schema limits**
-
-* Multidimensional arrays. (Note that arrays holding nested `struct` types are permitted.)
-* Arrays with inconsistent types in the array fields.
-* Numbers requiring larger precision than the maximum Iceberg `decimal` precision of (38, 9).
-* More than 1,000 fragments per data type (inventory, alarms, …; corresponding to tables in a namespace).
-* More than 1,000 total leaf properties per fragment (corresponding to leaf columns in an Iceberg table; across all data for the same fragment including columns generated as part of conflict resolution and base columns like type, source, and time).
-
-**Structure limits**
-
-* Strings larger than 32,768 characters.
-* Arrays larger than 128 entries
-* Objects nested deeper than 16 levels.
-* Fragment or property names with more than 255 characters.
-
 
 ##### Examples {#binning-examples}
 
