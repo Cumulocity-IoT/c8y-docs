@@ -1,6 +1,6 @@
 ---
 date: ""
-title: separate consecutive reasoning blocks in the AI chat (#13622) [GRAFT][release/cd] (#13676)
+title: Separate consecutive reasoning blocks in the AI chat
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
