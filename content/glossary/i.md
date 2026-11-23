@@ -9,6 +9,24 @@ build:
 
 ---
 
+### Iceberg {#iceberg}
+
+Apache Iceberg is an open source table format for large analytic datasets, governed by the Apache Software Foundation. An Iceberg table consists of data files and of metadata files that record the schema of the table and every change to it. Many query engines and data platforms read Iceberg tables. [Streaming Lake Ingestion](#streaming-lake-ingestion) stores the data of the [lakehouse](#lakehouse) in Iceberg tables.
+
+See [Apache Iceberg](https://iceberg.apache.org/).
+
+
+### Iceberg catalog {#iceberg-catalog}
+
+An Iceberg catalog lists the [Iceberg](#iceberg) tables and views of a [lakehouse](#lakehouse) and records the current version of each table. Clients connect to the catalog to find and read the tables. {{< product-c8y-iot >}} provides an Iceberg REST catalog with one warehouse for each tenant. Clients sign in to the catalog with the client ID and secret of a [principal](#principal).
+
+See [Connecting to the lakehouse](/streaming-lake-ingestion/connecting-to-the-lakehouse/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+The catalog implements the [Iceberg REST catalog specification](https://iceberg.apache.org/rest-catalog-spec/) at `https://iceberg.<INSTANCE>/api/catalog`. Clients sign in with the OAuth 2.0 client credentials grant.
+{{< /c8y-details >}}
+
+
 ### Inventory {#inventory}
 
 The inventory stores all master data for [devices](#device) and [assets](#asset), including their configurations and relationships, and serves as the [digital twin](#digital-twin) of physical or logical entities within {{< product-c8y-iot >}}.

@@ -24,15 +24,15 @@ To monitor Streaming Lake Ingestion, open the Administration application and cli
 
 #### Summary tiles {#summary-tiles}
 
-* **Health**: Whether Streaming Lake Ingestion is set up for your tenant and can write to your data lake, for example, "Provisioned", "Setting up", "Setup incomplete", "Setup failed", or "Lake access refused". If a setup step is missing, the tile names what does not work and what to do. The tile also shows:
-  * **Lake access**: The result of the regular check whether the service can write to your data lake.
-  * **Initial inventory load**: The status of the load that copies the current inventory data into your data lake when setup completes.
-  * **Connect to DataHub**: The values your Iceberg services, tools, and libraries need to read your tables, and a credential to sign in with. Shown when setup is complete. For details, see [Connecting to the data lake](/streaming-lake-ingestion/connecting-to-the-data-lake/).
+* **Health**: Whether Streaming Lake Ingestion is set up for your tenant and can write to your lakehouse, for example, "Provisioned", "Setting up", "Setup incomplete", "Setup failed", or "Lake access refused". If a setup step is missing, the tile names what does not work and what to do. The tile also shows:
+  * **Lake access**: The result of the regular check whether the service can write to your lakehouse.
+  * **Initial inventory load**: The status of the load that copies the current inventory data into your lakehouse when setup completes.
+  * **Connect to DataHub**: The values your Iceberg services, tools, and libraries need to read your tables, and a credential to sign in with. Shown when setup is complete. For details, see [Connecting to the lakehouse](/streaming-lake-ingestion/connecting-to-the-lakehouse/).
 * **Data quality**: The number of active alarms of the service, split into recurring and quiet alarms. A schema alarm is quiet when it had no new occurrence for 7 days. The tile shows the most recent alarm and the alarm that has been quiet the longest. It shows a warning while schema alarms recur, and an error while any other alarm is active.
 * **Schema changes**: The number of new tables and new columns in the last 7 days, and the date of the last change.
 * **Ingestion**: The share of the message backlog in use and the time the service last finished a batch, read from the Messaging service. From 50 % the tile shows a warning. If the last batch is more than 15 minutes old and messages are waiting, processing has stopped. If the last batch is more than 15 minutes old and nothing is waiting, no new data arrives. The tile appears only if you can open the Messaging service pages.
 
-The service automatically updates the data lake schema when the structure of the incoming data changes. It reports schema changes as {{< product-c8y-iot >}} events and schema violations as alarms. Until setup completes, no alarms or events are shown.
+The service automatically updates the lakehouse schema when the structure of the incoming data changes. It reports schema changes as {{< product-c8y-iot >}} events and schema violations as alarms. Until setup completes, no alarms or events are shown.
 
 #### Active alarms {#active-alarms}
 
@@ -63,12 +63,12 @@ To see events, your user needs the READ permission for **Identity** (ROLE_IDENTI
 
 ### Offloading failure alarms {#offloading-failure-alarms}
 
-When the service repeatedly fails to offload your data, for example because it cannot access your data lake or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm under **Active alarms** on the [Monitoring page](#monitoring-page) and in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
+When the service repeatedly fails to offload your data, for example because it cannot access the storage of your lakehouse or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm under **Active alarms** on the [Monitoring page](#monitoring-page) and in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
 
 Each part of the service raises its own alarm type:
 
-* **Offloading stopped: change data** (`c8y_StreamingLakeIngestion_CdcWriterInitializationFailed`): The service cannot write the data files of the change data capture tables to your data lake.
-* **Offloading stopped: latest inventory** (`c8y_StreamingLakeIngestion_LatestWriterInitializationFailed`): The service cannot write the data files of the `latest_inventory` tables to your data lake.
+* **Offloading stopped: change data** (`c8y_StreamingLakeIngestion_CdcWriterInitializationFailed`): The service cannot write the data files of the change data capture tables to your lakehouse.
+* **Offloading stopped: latest inventory** (`c8y_StreamingLakeIngestion_LatestWriterInitializationFailed`): The service cannot write the data files of the `latest_inventory` tables to your lakehouse.
 * **Offloading stopped: new data not committed** (`c8y_StreamingLakeIngestion_AppenderInitializationFailed`): The service cannot commit new data files to the tables, so new data does not appear in queries.
 
 The alarm text starts with "Offloading into the data lake has stopped" and ends with the cause of the failure. The Monitoring page shows the text below the alarm name. The service retries automatically and clears the alarm when that part of the service works again. If the alarm stays active, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).

@@ -126,7 +126,7 @@ See also the [Cloud Remote Access service-level agreement](/service-terms/servic
 | Array length | Hard | 128 |
 | Fragment nesting depth | Hard | 16 |
 
-The service rejects any part of the processed data that exceeds a limit and moves it to the `cdc_rejected.trash` table in the lakehouse. For details, see [Rejected data](/streaming-lake-ingestion/understanding-the-data-lake/#rejected-data). Further constraints:
+The service rejects any part of the processed data that exceeds a limit and moves it to the `cdc_rejected.trash` table in the lakehouse. For details, see [Rejected data](/streaming-lake-ingestion/understanding-the-lakehouse/#rejected-data). Further constraints:
 
 * Leaf properties include base properties of the data type such as type, source and time, as well as any properties additionally generated during schema conflict resolution.
 * Members of an array must have a single consistent type.

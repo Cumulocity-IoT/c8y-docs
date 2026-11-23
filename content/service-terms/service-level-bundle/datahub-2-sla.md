@@ -6,7 +6,7 @@ layout: bundle
 weight: 22
 ---
 
-This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who uses {{< product-c8y-iot >}} DataHub 2.0 ("Service") for streaming Internet of Things ("IoT") data into a data lake for analysis, using Provider's cloud instances ("software-as-a-service", "SaaS"). The Service stores the data in object storage that Provider operates. This agreement does not cover self-hosted storage.
+This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who uses {{< product-c8y-iot >}} DataHub 2.0 ("Service") for streaming Internet of Things ("IoT") data into a lakehouse for analysis, using Provider's cloud instances ("software-as-a-service", "SaaS"). The Service stores the data in object storage that Provider operates. This agreement does not cover self-hosted storage.
 
 ### Service description
 
@@ -26,7 +26,7 @@ To ensure the successful operation of the Service, you must fulfill the followin
 
 #### Schema limits
 
-The Service limits the schema that can be ingested into the lake. Data violating the limits is:
+The Service limits the schema that can be ingested into the lakehouse. Data violating the limits is:
 
 * **Rejected**: Stored in a secondary location that is not optimized for high-performance queries.
 * **Dropped**: Not stored if it violates system-wide schema constraints. For details, see [Service quotas](/service-terms/quotas/).
@@ -44,7 +44,7 @@ Ensure that your data queries are robust against schema changes. Specifically, u
 
 #### Type conflict resolution
 
-The Service [automatically resolves](/streaming-lake-ingestion/understanding-the-data-lake/#handling-of-schema-conflicts) type conflicts in inbound data to maintain storage reliability. In multi-tenant environments, the order in which data with conflicting types is received can lead to schema variations between tenants.
+The Service [automatically resolves](/streaming-lake-ingestion/understanding-the-lakehouse/#handling-of-schema-conflicts) type conflicts in inbound data to maintain storage reliability. In multi-tenant environments, the order in which data with conflicting types is received can lead to schema variations between tenants.
 
 Manage data consistency where required, either by enforcing a specific ingestion order or by using inbound data preparation to resolve conflicts before they reach the Service.
 
@@ -104,9 +104,9 @@ Service-level objectives are calculated in accordance with the [Platform service
 The service quality indicators are defined as follows:
 
 * **Catalog availability**: The uptime of the Iceberg catalog service, as defined by the [{{< company-c8y >}} service availability terms](/service-terms/service-level/#service-availability).
-* **Data freshness**: The time between message arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for querying in the data lake. The target applies to the 95th percentile of sustained load, measured over a calendar month. The Service has separate targets for the following tables:
+* **Data freshness**: The time between message arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for querying in the lakehouse. The target applies to the 95th percentile of sustained load, measured over a calendar month. The Service has separate targets for the following tables:
   * **Change data capture**: The change data capture tables and their views, for example, `cdc_alarm.alarm` and `view_alarm.alarm`.
   * **Latest inventory**: The `latest_inventory` tables. The Service calculates these tables from the change data capture tables. The target includes the time to write the change data capture tables.
 * **95th percentile**: 95 percent of the messages arrive within the service-level objective.
 * **Sustained load**: The regular and predictable steady-state traffic on the cloud service APIs. Sustained load is the 95th percentile of the previous 30-day requests per second.
-* **Data durability**: The design objective for the share of messages that the Service writes to the data lake after the platform has acknowledged them to the client with Quality of Service 1 (QoS 1). The objective covers the processing by the Service: the streaming buffer of the platform, the write to the object storage, and the maintenance of the Iceberg tables (for example, snapshot expiry and file compaction). The object storage itself, for example, Amazon S3 or Azure Data Lake Storage, keeps the stored data with the durability that its cloud provider specifies. Messages that the Service rejects because of schema limits do not count. Provider does not measure this objective per calendar month.
+* **Data durability**: The design objective for the share of messages that the Service writes to the lakehouse after the platform has acknowledged them to the client with Quality of Service 1 (QoS 1). The objective covers the processing by the Service: the streaming buffer of the platform, the write to the object storage, and the maintenance of the Iceberg tables (for example, snapshot expiry and file compaction). The object storage itself, for example, Amazon S3 or Azure Data Lake Storage, keeps the stored data with the durability that its cloud provider specifies. Messages that the Service rejects because of schema limits do not count. Provider does not measure this objective per calendar month.

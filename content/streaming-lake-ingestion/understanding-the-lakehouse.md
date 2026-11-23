@@ -1,5 +1,5 @@
 ---
-title: Understanding the data lake
+title: Understanding the lakehouse
 description: "Learn how Streaming Lake Ingestion stores your data in tables and views, how it handles schema changes, and which data it rejects."
 weight: 30
 layout: bundle
@@ -40,7 +40,7 @@ For change data capture tables and views, the following column is present:
 
 #### Creating inventory data {#creating-inventory-data}
 
-To understand how the service captures inventory data in the data lake, assume that the device user "device_123" creates a new tracking device "Tracking #1" with the following data:
+To understand how the service captures inventory data in the lakehouse, assume that the device user "device_123" creates a new tracking device "Tracking #1" with the following data:
 
 ```
 {
@@ -56,7 +56,7 @@ To understand how the service captures inventory data in the data lake, assume t
 }
 ```
 
-This results in the following data in the data lake:
+This results in the following data in the lakehouse:
 
 **Table: cdc_inventory.inventory**
 
@@ -215,7 +215,7 @@ Assume that our sample tracking device has low battery and sends an alarm:
 }
 ```
 
-This results in the following data in the data lake:
+This results in the following data in the lakehouse:
 
 **Table: cdc_alarm.alarm**
 
@@ -243,7 +243,7 @@ Now assume that the tracker moves and sends a location update event.
 }
 ```
 
-This results in the following data in the data lake, consistent with the method described previously.
+This results in the following data in the lakehouse, consistent with the method described previously.
 
 **Table: cdc_event.event**
 
@@ -275,7 +275,7 @@ To illustrate the storage of measurements, assume that the tracking device sends
 }
 ```
 
-This results in the following data in the data lake:
+This results in the following data in the lakehouse:
 
 **Table: cdc_measurement.c8y_Battery**
 
@@ -288,7 +288,7 @@ There is one important difference for measurements compared to other data types:
 
 Every measurement table contains the column `creationTime` in addition to `time`. The device sets `time`, which records when the value was measured. {{< product-c8y-iot >}} sets `creationTime` when it stores the measurement.
 
-This example also demonstrates how the service handles nested properties: Like the {{< product-c8y-iot >}} APIs and its operational store, Apache Iceberg supports nested data. Just like with the above JSON example, the property `voltage` is a nested structure containing two properties `value` and `unit`. You can query the contained properties from SQL using path expressions such as `"voltage"."value"`. For more information on querying the data from SQL, see [Querying the data lake](/streaming-lake-ingestion/querying-the-data-lake/).
+This example also demonstrates how the service handles nested properties: Like the {{< product-c8y-iot >}} APIs and its operational store, Apache Iceberg supports nested data. Just like with the above JSON example, the property `voltage` is a nested structure containing two properties `value` and `unit`. You can query the contained properties from SQL using path expressions such as `"voltage"."value"`. For more information on querying the data from SQL, see [Querying the lakehouse](/streaming-lake-ingestion/querying-the-lakehouse/).
 
 ### Operations {#operations}
 
@@ -301,7 +301,7 @@ Finally, we would like to restart the tracker with a reset operation:
 }
 ```
 
-This results in the following data in the data lake:
+This results in the following data in the lakehouse:
 
 **Table: cdc_operation.operation**
 
@@ -331,7 +331,7 @@ For more information related to Iceberg data types, refer to the [Iceberg specif
 
 ### Schema evolution {#schema-evolution}
 
-The data lake storage service automatically discovers the structure of the incoming data and applies it to the data lake.
+The service automatically discovers the structure of the incoming data and applies it to the lakehouse.
 * When the service discovers a new fragment, it creates a table to store the data in the fragment.
 * When the service discovers a new property, it creates a column to store the data in the associated table.
 
@@ -405,7 +405,7 @@ Note that the order in which messages are sent to {{< product-c8y-iot >}} and th
 
 ### Naming {#naming}
 
-The Iceberg data lake supports names consisting of characters, numbers, underscores, and dashes — except as the first character, which must always be a letter (a-z, A-Z). Digits, underscores, dashes, and any other character are not permitted in the first position, even though they are permitted elsewhere in the name. Other characters are represented by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names, at any nesting level.
+The Iceberg lakehouse supports names consisting of characters, numbers, underscores, and dashes — except as the first character, which must always be a letter (a-z, A-Z). Digits, underscores, dashes, and any other character are not permitted in the first position, even though they are permitted elsewhere in the name. Other characters are represented by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names, at any nesting level.
 
 For example, if you use the property name "switch:status" in the data sent to {{< product-c8y-iot >}}, the corresponding Iceberg column name is "switch_x003Astatus".
 
@@ -438,7 +438,7 @@ The service also appends this suffix when a top-level property has the same name
 
 ### Flat views {#flat-views}
 
-Streaming Lake Ingestion offers [Apache Iceberg views](https://iceberg.apache.org/view-spec/) on top of the data ingested into the data lake tables.
+Streaming Lake Ingestion offers [Apache Iceberg views](https://iceberg.apache.org/view-spec/) on top of the data ingested into the lakehouse tables.
 
 #### Integration with BI tools  {#integration-with-bi-tools}
 

@@ -1,6 +1,6 @@
 ---
-title: Connecting to the data lake
-description: "Create a credential for your Apache Iceberg client in the Connect to DataHub dialog or with the API, and connect the client to the data lake of Streaming Lake Ingestion."
+title: Connecting to the lakehouse
+description: "Create a credential for your Apache Iceberg client in the Connect to DataHub dialog or with the API, and connect the client to the lakehouse of Streaming Lake Ingestion."
 weight: 20
 layout: bundle
 outputs:
@@ -15,9 +15,9 @@ sector:
 To create credentials, in the **Connect to DataHub** dialog or with the API, your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN or ROLE_TENANT_ADMIN permission.
 {{< /c8y-admon-req >}}
 
-You read the data lake with your own Apache Iceberg client, for example a query engine, a notebook, or a business intelligence tool. The client connects to the Iceberg REST catalog of {{< product-c8y-iot >}} and signs in with a client ID and a client secret.
+You read the lakehouse with your own Apache Iceberg client, for example a query engine, a notebook, or a business intelligence tool. The client connects to the Iceberg REST catalog of {{< product-c8y-iot >}} and signs in with a client ID and a client secret.
 
-The [Iceberg client compatibility](https://github.com/Cumulocity-IoT/iceberg-client-compatibility) repository lists the clients that are tested against the data lake. For each client, it provides a connection example and shows which features of the data lake the client handles.
+The [Iceberg client compatibility](https://github.com/Cumulocity-IoT/iceberg-client-compatibility) repository lists the clients that are tested against the lakehouse. For each client, it provides a connection example and shows which features of the lakehouse the client handles.
 
 {{< c8y-admon-info >}}
 While Iceberg is widely supported, the degree of support currently still varies and we cannot guarantee the catalog to be interoperable with all setups and applications.
@@ -33,7 +33,7 @@ The **Connect to DataHub** dialog shows everything your client needs, with the v
 4. Next to the `credential` setting, click **Create** to create the credential, or **Replace** to replace it. The dialog masks the secret until you show it, and shows it only once: copy it before you close the dialog.
 5. Copy the settings into the configuration of your client. For details, see [Catalog settings](#catalog-settings).
 
-Your client can now read the tables of your data lake.
+Your client can now read the tables of your lakehouse.
 
 The dialog manages one credential, named `datahub`. Replacing the credential ends the current one, so the applications that use it lose access until you update them. To use one credential per application, see [Managing credentials with the API](#managing-credentials-with-the-api).
 

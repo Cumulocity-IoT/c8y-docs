@@ -68,6 +68,24 @@ The Standard tenant uses core REST APIs but lacks access to multi-tenant adminis
 {{< /c8y-details >}}
 
 
+### Schema evolution {#schema-evolution}
+
+Schema evolution is the automatic change of the table structure of the [lakehouse](#lakehouse) when the structure of incoming data changes. When [Streaming Lake Ingestion](#streaming-lake-ingestion) finds a new [fragment](#fragment), it creates a table. When it finds a new property, it adds a column. It never changes the type of an existing column, so that existing queries keep working.
+
+See [Schema evolution](/streaming-lake-ingestion/understanding-the-lakehouse/#schema-evolution) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+The service reports each schema change as an [event](#event) of type `c8y_StreamingLakeIngestion_SchemaEvolved`.
+{{< /c8y-details >}}
+
+
+### Streaming Lake Ingestion {#streaming-lake-ingestion}
+
+Streaming Lake Ingestion is the feature of [{{< product-c8y-iot >}} DataHub](#datahub) 2.0 that streams the IoT data of a tenant continuously from the [Messaging Service](#messaging-service) into a [lakehouse](#lakehouse). The data is available for analysis within minutes. Streaming Lake Ingestion writes the data to [Apache Iceberg](#iceberg) tables, adapts the tables when the structure of the data changes ([schema evolution](#schema-evolution)), and requires no setup.
+
+See [DataHub 2.0 overview](/streaming-lake-ingestion/datahub-2-overview/) in the documentation.
+
+
 ### Subscription
 
 In {{< product-c8y-iot >}}, a subscription denotes the process by which a [tenant](#tenant) is granted access to an [web application](#web-application) from the [Administration application](#administration-application). A superior tenant (like an [{{< enterprise-tenant >}}](#enterprise-tenant) or the [{{< management-tenant >}}](#management-tenant))) subscribes [applications](#application) and [microservices](#microservice) to its subtenants.

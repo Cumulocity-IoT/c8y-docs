@@ -8,10 +8,10 @@ The application architecture shows how applications and business logic build on 
 
 ![Application architecture](/images/concepts-guide/application-architecture.png)
 
-The **core and its stores** — described in [Data flow](#data-flow) — are the shared foundation. Everything above them works against the same live [domain model](/concepts/domain-model/) in the operational store, and the archive in the data lake.
+The **core and its stores** — described in [Data flow](#data-flow) — are the shared foundation. Everything above them works against the same live [domain model](/concepts/domain-model/) in the operational store, and the archive in the lakehouse.
 
 **Business logic** runs as server-side [microservices](/microservice-sdk/microservice-sdk-introduction/) alongside the platform's own services. Use it to add custom server-side behavior, or to integrate {{< product-c8y-iot >}} with external and enterprise systems such as ERP or CRM.
 
-**Data lake query** gives applications and analytics tools access to the archived data in the data lake. The data lake uses open [Apache Iceberg](https://iceberg.apache.org/) tables, so notebooks, AI/ML platforms, and business intelligence tools can query it through [Streaming Lake Ingestion](/streaming-lake-ingestion/datahub-2-overview/) and [DataHub](/datahub/datahub-overview/). This is where large-volume, historical, and cross-system analysis happens.
+**Lakehouse query** gives applications and analytics tools access to the archived data in the lakehouse. The lakehouse uses open [Apache Iceberg](https://iceberg.apache.org/) tables, so notebooks, AI/ML platforms, and business intelligence tools can query it through the Iceberg catalog of [DataHub 2.0](/streaming-lake-ingestion/datahub-2-overview/). This is where large-volume, historical, and cross-system analysis happens.
 
 **IoT applications** are the user-facing layer. Web applications and dashboards present the state of the system and let users act on it, and the Messaging Service delivers real-time updates so those displays stay live. You extend this layer with **[web applications](https://cumulocity.com/codex/)**, **[HTML widgets](/cockpit/widgets-collection/#html)**, and **[AI agents](/ai/agents/)** that bring generative and agentic AI directly to the user.

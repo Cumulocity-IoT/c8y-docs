@@ -25,6 +25,13 @@ Global roles are managed via the [User API](https://cumulocity.com/api/core/#tag
 {{< /c8y-details >}}
 
 
+### Gold layer {#gold-layer}
+
+A gold layer is a set of tables with pre-aggregated and materialized results, built from the raw data of a [lakehouse](#lakehouse) for a specific reporting or analytics use case. You build and maintain a gold layer with your own tools. Queries on a gold layer are faster than complex queries on the raw data. The term comes from the medallion architecture, a data layout that refines raw data through bronze, silver, and gold stages.
+
+See [Ensuring good query performance](/streaming-lake-ingestion/querying-the-lakehouse/#ensuring-good-query-performance) in the documentation.
+
+
 ### Group {#group}
 
 A group is  a special type of [asset](#asset) used to organize [devices](#device) and other assets for structural and [permission](#permission)-management purposes. Groups support flexible organization and, when paired with [inventory roles](#inventory-role), can grant or restrict [user](#user) access to the contained devices and assets.

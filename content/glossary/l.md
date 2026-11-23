@@ -9,6 +9,13 @@ build:
 
 ---
 
+### Lakehouse {#lakehouse}
+
+A lakehouse stores data in files, like a [data lake](#data-lake), and adds the structure of a database: a catalog of tables, a schema for each table, and transactions for every change. [Streaming Lake Ingestion](#streaming-lake-ingestion) builds the lakehouse of a tenant from [Apache Iceberg](#iceberg) tables and an [Iceberg catalog](#iceberg-catalog), and {{< company-c8y >}} provides its storage.
+
+See [DataHub 2.0 overview](/streaming-lake-ingestion/datahub-2-overview/) in the documentation.
+
+
 ### Location {#location}
 
 The location represents the geographical position of a [managed object](#managed-object). The location is represented by the standard `c8y\_Position` [fragment](#fragment), which contains altitude, longitude, and latitude coordinates. Managed objects with this fragment can be displayed on Map widgets.  
