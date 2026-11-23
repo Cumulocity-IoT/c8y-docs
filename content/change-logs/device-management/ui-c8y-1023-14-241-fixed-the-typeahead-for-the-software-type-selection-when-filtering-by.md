@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Fixed typeahead input value for software type selection when filtering by type
+title: Typeahead input value for software type selection when filtering by type shows the selected type
 product_area: Device management & connectivity
 change_type:
   - value: change-VSkj2iV9m
