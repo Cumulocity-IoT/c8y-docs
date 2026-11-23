@@ -68,18 +68,45 @@ The following limitations and constraints apply to the Service:
 
 Service-level objectives are calculated in accordance with the [Platform service-level agreement](/service-terms/service-level/#service-availability). The following objectives measure the quality of the Service:
 
-| Service-level indicator    | Monthly target                               |
-| -------------------------- | -------------------------------------------- |
-| Catalog availability       | ≥ 99.9% (production), ≥ 95.0% (non-production) |
-| Data freshness             | 95th percentile of sustained load ≤ 5 minutes (production), ≤ 10 minutes (non-production) |
-| Data durability            | Designed for ≥ 99.999% of acknowledged messages |
+<table>
+<thead>
+  <tr>
+    <th>Service-level indicator</th>
+    <th>Production</th>
+    <th>Non-production</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Catalog availability</td>
+    <td>≥ 99.9%</td>
+    <td>≥ 95.0%</td>
+  </tr>
+  <tr>
+    <td>Data freshness: change data capture</td>
+    <td>≤ 5 minutes</td>
+    <td>≤ 10 minutes</td>
+  </tr>
+  <tr>
+    <td>Data freshness: latest inventory</td>
+    <td>≤ 10 minutes</td>
+    <td>≤ 20 minutes</td>
+  </tr>
+  <tr>
+    <td>Data durability</td>
+    <td colspan="2">Designed for ≥ 99.999% of acknowledged messages</td>
+  </tr>
+</tbody>
+</table>
 
 #### Service-level indicator definitions
 
 The service quality indicators are defined as follows:
 
 * **Catalog availability**: The uptime of the Iceberg catalog service, as defined by the [{{< company-c8y >}} service availability terms](/service-terms/service-level/#service-availability).
-* **Data freshness**: The time between message arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for querying in the data lake, measured over a calendar month.
+* **Data freshness**: The time between message arrival in the {{< product-c8y-iot >}} platform (post-preparation) and its availability for querying in the data lake. The target applies to the 95th percentile of sustained load, measured over a calendar month. The Service has separate targets for the following tables:
+  * **Change data capture**: The change data capture tables and their views, for example, `cdc_alarm.alarm` and `view_alarm.alarm`.
+  * **Latest inventory**: The `latest_inventory` tables. The Service calculates these tables from the change data capture tables. The target includes the time to write the change data capture tables.
 * **95th percentile**: 95 percent of the messages arrive within the service-level objective.
 * **Sustained load**: The regular and predictable steady-state traffic on the cloud service APIs. Sustained load is the 95th percentile of the previous 30-day requests per second.
 * **Data durability**: The design objective for the share of messages that the Service writes to the data lake after the platform has acknowledged them to the client with Quality of Service 1 (QoS 1). The objective covers the processing by the Service: the streaming buffer of the platform, the write to the object storage, and the maintenance of the Iceberg tables (for example, snapshot expiry and file compaction). The object storage itself, for example, Amazon S3 or Azure Data Lake Storage, keeps the stored data with the durability that its cloud provider specifies. Messages that the Service rejects because of schema limits do not count. Provider does not measure this objective per calendar month.
