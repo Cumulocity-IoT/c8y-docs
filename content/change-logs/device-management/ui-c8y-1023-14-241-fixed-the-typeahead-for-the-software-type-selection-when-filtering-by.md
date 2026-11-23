@@ -14,4 +14,4 @@ build_artifact:
 ticket: DM-5654
 version: 1023.14.241
 ---
-On a device's Software tab, the "Filter by software type" input field now shows the type you selected. Before, the field stayed empty, and you could see your selection only by opening the dropdown list again.
+On a device's **Software** tab, the **Filter by software type** input field now shows the type you selected. Before, the field stayed empty, and you could see your selection only by reopening the dropdown list.
