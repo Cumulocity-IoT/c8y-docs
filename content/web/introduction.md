@@ -107,5 +107,13 @@ If you want to use an older version then `1019.x.x` you must to use our old tool
 {{< /c8y-admon-info >}}
 
 
+### Checking your application's dependencies for vulnerabilities
+
+Security scanners such as `npm audit` or `pnpm audit` report on everything in your project, including build tools that are never part of the built application. To assess what your application ships:
+
+- Audit the production dependencies only, for example with `npm audit --omit=dev` or `pnpm audit --prod`. Findings in `@c8y/devkit`, the Angular CLI and other build tools do not reach the browser.
+- The exact versions of transitive dependencies are fixed by your project's lockfile, not by the Web SDK. If a finding is in a package that the Web SDK only requires with a version range, update it in your lockfile first, for example with `npm update <package>` or `pnpm update <package> --recursive --depth Infinity`, and run the audit again.
+- To see the dependency versions we build and test a release with, look at the [Cockpit application](https://github.com/Cumulocity-IoT/cockpit) at the tag of your Web SDK version (for example `v1023.14.239`). Its `package.json` and lockfile show, for example, which `monaco-editor` version to use. A peer dependency range can allow versions that this release was not tested with.
+
 ### Next steps
 If you just want to get started, we recommend to read the [next chapter](/web/gettingstarted/) which explains how you can setup your first Web SDK based Angular application. If you already have setup an application and want to understand more details of the concept, we recommend to jump to our [Developer Codex](https://cumulocity.com/codex/) documentation which explains the concepts, list all the components and defines guidlines for the styling.
