@@ -25,7 +25,7 @@ To monitor Streaming Lake Ingestion, open the Administration application and cli
 * **Schema changes**: The number of new tables and new columns in the last 7 days, and the date of the last change.
 * **Ingestion**: The share of the message backlog in use and the time the service last finished a batch, read from the Messaging service. From 50 % the tile shows a warning. If the last batch is more than 15 minutes old and messages are waiting, processing has stopped. If the last batch is more than 15 minutes old and nothing is waiting, no new data arrives. The tile appears only if you can open the Messaging service pages.
 
-The service automatically updates the data lake schema when the structure of the incoming data changes. It reports schema changes as {{< product-c8y-iot >}} events and schema violations as alarms. Until setup completes, no alarms or events are shown.
+The service automatically updates the data lake schema when the structure of the incoming data changes. It reports schema changes as {{< product-c8y-iot >}} events and schema violations as alarms. Until setup completes, the page shows no events, and the only alarm is the [setup failure alarm](#setup-failure-alarm).
 
 #### Active alarms {#active-alarms}
 
@@ -44,7 +44,7 @@ The table lists the active and acknowledged alarms of the service with severity,
 * Click **Acknowledge** to show that you are working on an alarm. The alarm stays in the list, marked **Acknowledged**.
 * Click **Clear** after you fixed the cause. If the problem occurs again, the service raises a new alarm.
 * Acknowledging and clearing need the ADMIN permission for **Alarms** (ROLE_ALARM_ADMIN).
-* The **Lake access lost** alarm and the [offloading failure alarms](#offloading-failure-alarms) clear themselves when the service works again. They offer **Acknowledge** but not **Clear**.
+* The **Lake access lost** alarm, the [setup failure alarm](#setup-failure-alarm), and the [offloading failure alarms](#offloading-failure-alarms) clear themselves when the cause is gone. They offer **Acknowledge** but not **Clear**.
 
 To see alarms, your user needs the READ permission for **Identity** (ROLE_IDENTITY_READ) and **Alarms** (ROLE_ALARM_READ). For details, see [Global roles](/standard-tenant/managing-permissions/#global-roles).
 
@@ -53,6 +53,14 @@ To see alarms, your user needs the READ permission for **Identity** (ROLE_IDENTI
 The table lists the schema change events of the service in a timeline. The service raises a schema change event (`c8y_StreamingLakeIngestion_SchemaEvolved`) when it creates new tables or adds new columns to existing tables. If several changes happen at once, the service combines them into a single event that lists all new tables and columns. Expand a schema change to see its new tables and columns. Select a range of 1, 7, 30, or 60 days, and filter by type, table, or column. Retention rules can delete events before they are 60 days old. The page loads the newest 2,000 events.
 
 To see events, your user needs the READ permission for **Identity** (ROLE_IDENTITY_READ) and **Events** (ROLE_EVENT_READ).
+
+### Setup failure alarm {#setup-failure-alarm}
+
+When the setup of your tenant fails, the service raises the alarm **Data lake setup failed** (`c8y_StreamingLakeIngestion_ProvisioningFailed`) with the severity MAJOR. You see the alarm under **Active alarms** on the [Monitoring page](#monitoring-page) and in the alarm viewer.
+
+The alarm text starts with "Setting up the data lake failed" and names the setup step that failed and the reason, such as a missing permission on your storage. If a later attempt fails for a different reason, the service clears the alarm and raises a new one with the new text.
+
+Fix the cause and run the setup again, for example, click **Save** on the **Data Lake configuration** page. The service clears the alarm when the setup succeeds. If the page rejects your entries, for example, an invalid role ARN, it shows the error and the service raises no alarm.
 
 ### Offloading failure alarms {#offloading-failure-alarms}
 
