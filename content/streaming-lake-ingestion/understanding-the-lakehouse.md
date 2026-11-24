@@ -1,6 +1,6 @@
 ---
 title: Understanding the lakehouse
-description: "Learn how Streaming Lake Ingestion stores your data in tables and views, how it handles schema changes, and which data it rejects."
+description: "Learn how Streaming Lake Ingestion stores your data in tables, how it handles schema changes, and which data it rejects."
 weight: 30
 layout: bundle
 outputs:
@@ -11,11 +11,10 @@ sector:
   - data_analytics
 ---
 
-Streaming Lake Ingestion provides three types of data:
+Streaming Lake Ingestion provides two types of data:
 
 * Change data capture (`cdc`): Includes the complete history of incoming IoT data. For example, the `cdc_alarm.alarm` table contains a complete, historical log of all alarm changes, while the `cdc_inventory.inventory` table captures all modifications made to your device master data over time.
 * Latest data (`latest`): Provides the current representation of incoming inventory data. For example, the `latest_inventory.inventory` table contains a consolidated view on the latest state of your inventory without you needing to reconstruct the state from the historical logs.
-* Views (`view`): Provides views for the change data capture tables. For example, the `view_alarm.alarm` view shows the same content as `cdc_alarm.alarm` with nested properties converted to top-level columns. This makes the data more easily browsable in tools like PowerBI.
 
 For each type of data, folders ("namespaces") are created to mirror the familiar [{{< product-c8y-iot >}} domain model](/concepts/domain-model/). You will find folders with names ending in `inventory`, `alarm`, `event`, `measurement` and `operation`. Inside the folders, tables for standard data, device-specific data, and customer-specific data are created. Device- or customer-specific data in the form of [fragments](/concepts/domain-model/#fragments) resides in separate, dedicated tables within the corresponding folders. For instance, if you send a measurement with a fragment type `c8y_EngineMetric`, it will be stored in a table named `cdc_measurement.c8y_EngineMetric`.
 
@@ -32,7 +31,7 @@ The following columns are present in some tables, depending on the type of data:
 * `creationTime`: The timestamp when {{< product-c8y-iot >}} created the record. This column is present for inventory, measurements, and operations.
 * `type`: The type property of the device, measurement and so on.
 
-For change data capture tables and views, the following column is present:
+For change data capture tables, the following column is present:
 * `eventType`: The type of change indicated by the record. For example, `MANAGED_OBJECT_UPDATE` indicates an update of a managed object.
 
 
@@ -436,55 +435,6 @@ This is a reliability measure. The Iceberg specification considers tables and co
 
 The service also appends this suffix when a top-level property has the same name as the `eventType` column, which records the type of change. For example, the service stores a string property `eventType` in the column `eventType__8`, in both change data capture and latest tables. A value of another type goes to the matching overflow column, for example `eventType__d` for a number.
 
-### Flat views {#flat-views}
-
-Streaming Lake Ingestion offers [Apache Iceberg views](https://iceberg.apache.org/view-spec/) on top of the data ingested into the lakehouse tables.
-
-#### Integration with BI tools  {#integration-with-bi-tools}
-
-As upstream reporting tools and query engines develop, there are still tools that do not support browsing structured data in database tables. The service solves this problem by flattening  structured fields into "flat", top-level columns. This makes it possible to browse, for example, the `value` and `unit` fields of measurements in such tools.
-
-Take the following example of a measurement:
-
-```json
-{
-  "time": "2026-02-19T13:09:39.678Z",
-  "source": { "id": "47635" },
-  "type": "c8y_BatteryMeasurement",
-  "c8y_Battery": {
-    "voltage": { "value": 12.8, "unit": "V" },
-    "stateOfCharge": { "value": 85.5, "unit": "%" },
-    "temperature": { "value": 22.5, "unit": "C" }
-  }
-}
-```
-
-This results in a table like the following:
-
-**Table: cdc_measurement.c8y_Battery**
-
-| <span style="display: inline-block; width: 50px;">id</span> | <span style="display: inline-block; width: 50px;">source</span> | <span style="display: inline-block; width: 200px;">eventType</span> | <span style="display: inline-block; width: 210px;">time</span> | <span style="display: inline-block; width: 200px;">type</span> | <span style="display: inline-block; width: 210px;">creationTime</span> | <span style="display: inline-block; width: 90px;">voltage</span> | <span style="display: inline-block; width: 110px;">stateOfCharge</span> | <span style="display: inline-block; width: 100px;">temperature</span> |
-| ----------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
-|                                                             |                                                                 |                                                                     |                                                                |                                                                |                                                                        | value \| unit                                                    | value \| unit                                                           | value \| unit                                                         |
-| 12345                                                       | 47635                                                           | MEASUREMENT_CREATE                                                  | 2026-02-19T13:09:39.678Z                                       | c8y_BatteryMeasurement                                         | 2026-02-19T13:09:40.012Z                                               | 12.8 \| V                                                        | 85.5 \| %                                                               | 22.5 \| C                                                             |
-
-
-Note that there are three columns which are of structured type: `voltage`, `stateOfCharge` and `temperature`.
-
-Corresponding to the table, a view is created automatically as shown below. Note that the `value` property of `voltage` was converted to `voltage\value`, that is, all property names on the path up to the bottom-most property are concatenated with backslash as separator character.
-
-**View: view_measurement.c8y_Battery**
-
-| <span style="display: inline-block; width: 50px;">id</span> | <span style="display: inline-block; width: 60px;">source</span> | <span style="display: inline-block; width: 200px;">eventType</span> | <span style="display: inline-block; width: 210px;">time</span> | <span style="display: inline-block; width: 200px;">type</span> | <span style="display: inline-block; width: 210px;">creationTime</span> | <span style="display: inline-block; width: 130px;">voltage\\value</span> | <span style="display: inline-block; width: 110px;">voltage\\unit</span> | <span style="display: inline-block; width: 30px;">...</span> | <span style="display: inline-block; width: 160px;">temperature\\value</span> | <span style="display: inline-block; width: 160px;">temperature\\unit</span> |
-| ----------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| 12345                                                       | 47635                                                           | MEASUREMENT_CREATE                                                  | 2026-02-19T13:09:39.678Z                                       | c8y_BatteryMeasurement                                         | 2026-02-19T13:09:40.012Z                                               | 12.8                                                                     | V                                                                       | ...                                                          | 22.5                                                                         | C                                                                           |
-
-This makes it possible to operate directly on nested fields and, for example, do analytics for measurement values in BI tools.
-
-#### View representations {#view-representations}
-
-In Apache Iceberg, views can have multiple representations for different SQL dialects. To find out which query engines can run the views, see the **Views** column in the [Iceberg client compatibility](https://github.com/Cumulocity-IoT/iceberg-client-compatibility) repository.
-
 ### Rejected data {#rejected-data}
 
 In addition to the platform-wide limits of {{< product-c8y-iot >}}, the service enforces more specific limits so that it can store the data reliably and query engines can read it. The service rejects data that exceeds these limits: it stores the data in a separate Iceberg table in a different schema, where you can inspect problematic cases and reprocess the data if needed. The following table shows examples of rejected data:
@@ -622,7 +572,5 @@ Streaming Lake Ingestion has the following functional limitations:
 * Delete events are only processed for the inventory.
 * The service drops custom top-level properties in measurements.
 * There is no automated cleanup of tables and columns that are not in use anymore.
-* The automated views only expose change data capture tables.
-* Arrays appear as-is in the views.
 * You may see an `internal` folder with tables for internal service information. Do not modify these tables.
 * The service does not offload any {{< product-c8y-iot >}}-internal inventory entries, events, measurements, and alarms.
