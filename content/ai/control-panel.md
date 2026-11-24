@@ -31,7 +31,7 @@ The **AI agent availability** switch lets you stop all AI activity in your tenan
 When you turn the switch off:
 
 - The AI Agent Manager blocks every agent run in the tenant. This includes calls to text and object agents, streaming calls, and tests in the AI Agent Manager. Such calls fail with the HTTP status 403 (Forbidden) and the message "AI agents are disabled for this tenant".
-- Applications and features that rely on AI agents, such as the AI Agent Chat widget or the [expert agents](/ai-intro/expert-agents/) of other applications, no longer get a response from their agents. The **Assistant** button disappears from the header of all applications.
+- Applications and features that rely on AI agents, such as the "AI Agent Chat" widget or the [expert agents](/ai-intro/expert-agents/) of other applications, no longer get a response from their agents. The **Assistant** button disappears from the header of all applications.
 - The **Agents** and **Tools** pages are hidden in the navigator. The **Control panel** and the [**Observability**](/ai/observability/) page remain available, so you can still review past agent runs.
 - All agent definitions, MCP server configurations, and the model configuration are kept. You can still edit the model configuration in the **Control panel**.
 
