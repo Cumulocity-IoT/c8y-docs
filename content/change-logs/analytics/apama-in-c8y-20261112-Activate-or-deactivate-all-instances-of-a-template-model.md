@@ -16,6 +16,14 @@ version: 27.306.0
 environment_availability:
   - label: eu-latest.cumulocity.com
     date: '2026-11-19'
+  - label: apj.cumulocity.com
+    date: '2026-11-24'
+  - label: jp.cumulocity.com
+    date: '2026-11-24'
+  - label: us.cumulocity.com
+    date: '2026-11-24'
+  - label: cumulocity.com
+    date: '2026-11-24'
 ---
 
 You can now activate or deactivate all instances of a template model in one step from Analytics Builder. This feature is available in the model editor, instance editor, and when opening a model that has active instances. Previously, to edit the model you first had to manually change the state of each instance separately in the instance editor.

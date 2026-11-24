@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-11-23'
   - label: jp.cumulocity.com
     date: '2026-11-23'
+  - label: us.cumulocity.com
+    date: '2026-11-24'
+  - label: cumulocity.com
+    date: '2026-11-24'
 ---
 When the AI assistant called the same AI tool several times in a row, each call appeared as a separate entry in the conversation, which made longer responses hard to follow. Now, consecutive calls to the same AI tool are grouped into one entry, so you see a shorter and clearer sequence of tool activity. Tool calls that use different AI tools still appear as separate entries. 
 
