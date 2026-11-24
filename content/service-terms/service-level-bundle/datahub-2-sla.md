@@ -50,7 +50,7 @@ Manage data consistency where required, either by enforcing a specific ingestion
 
 #### Data export after the subscription ends
 
-To export your data after the subscription ends, create the catalog credentials for your Iceberg client before the subscription ends. After the subscription ends, you cannot create or rotate credentials. The credentials you already have stay valid until Provider deletes the data. For details, see [How can I end my subscription and obtain my data?](/streaming-lake-ingestion/faq/#ending-the-subscription).
+To export your data, create the catalog credentials for your Iceberg client before ending the subscription. After the subscription ends, you cannot create or rotate credentials. The credentials you already have stay valid until Provider deletes the data. For details, see [How can I end my subscription and obtain my data?](/streaming-lake-ingestion/faq/#ending-the-subscription).
 
 ### Limitations and constraints
 
