@@ -23,6 +23,6 @@ The block is available in the Analytics Builder palette by default and no longer
 - The block rejects a period that is not a finite and positive number.
 - The outputs of the block now have the same type as its input. A model that connects an output of the block to an input of a different type, for example a pulse to a float input, can no longer be activated. To fix such a model, add a block that converts the value between the two blocks.
 
-The block has a new optional **Event Count** parameter, which sets the maximum number of messages that pass in each period for each device. The default is 1, which is the behavior of the block during the Public Preview.
+The block has a new **Event Count** parameter, which sets the maximum number of messages that pass in each period for each device. The default is 1, which is the behavior of the block during the Public Preview.
 
 The new **On alarm send email, rate limited** sample shows how to use the block to limit the number of emails that are sent for an alarm.

@@ -981,12 +981,11 @@ This category contains the following blocks:
 <tr>
 <th scope="row">Event Count</th>
 <td><span>The maximum number of messages that are sent to the rate limited output in any one period, for each device.</span>
-<p>This must be a whole number from 1 to 1000. If it is not set, 1 is used.</p>
+<p>This must be a whole number from 1 to 1000.</p>
 </td>
 <td><span>integer</span>
 </td>
-<td><span>Default: 1</span><span>Optional</span>
-</td>
+<td><span>Default: 1</span></td>
 </tr>
 </tbody>
 </table>
