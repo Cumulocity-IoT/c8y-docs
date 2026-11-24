@@ -1,6 +1,6 @@
 ---
 date: ""
-title: tools of same name but different MCP overrides (#789)
+title: Tools with the same name on different MCP servers no longer replace each other
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
@@ -14,20 +14,10 @@ build_artifact:
 ticket: MTM-67607
 version: 4.1.0
 ---
-fix: [MTM-67607] keep same-named tools from different MCP servers apart (#789)
+If two MCP servers provided a tool with the same name, one tool replaced the other and agents could use only one of them. Tools from MCP servers other than `cumulocity-default` now carry the server name as a prefix, in the form `{server}__{tool}`, so both tools stay available. Tools from the `cumulocity-default` server keep their names. If two tool names still collide after the prefix is added, the request fails with HTTP status 400.
 
-Tools from all MCP servers went into one map keyed by name, so when two
-servers exposed the same tool name, one replaced the other and only one
-could run.
+The model, the chat stream events, and the **Used tool** label in the chat show the prefixed names. The agent configuration keeps the original tool names, so existing agents work without changes. Applications that read tool names from chat stream events must expect the prefixed names for tools from other servers.
 
-- Expose tools from non-default servers as `{server}__{tool}`;
-  `cumulocity-default` tools keep their bare names. Fail with 400 if
-  names still collide after namespacing.
-- Reject creating or renaming an MCP server to a name already in use
-  (400 instead of 500).
-- Tools tab: match orphaned tools on server and tool name, not just the
-  tool name.
+In the **Tools** tab of an agent, a tool that its MCP server no longer provides is now detected by server and tool name. Before, it stayed hidden if another server provided a tool with the same name.
 
-The model, the chat stream, and the chat's "Used tool" label now show
-namespaced names for third-party tools. Stored agent config keeps the
-original names, so existing agents need no migration.
+Creating or renaming an MCP server with a name that another server already uses now fails with HTTP status 400 instead of 500.
