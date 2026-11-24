@@ -1,6 +1,6 @@
 ---
 date: ""
-title: Measurements tab and data explorer are usable on phones
+title: Improved usability of Measurements tab and data explorer on phones
 product_area: Application enablement & solutions
 change_type:
   - value: change-VSkj2iV9m
