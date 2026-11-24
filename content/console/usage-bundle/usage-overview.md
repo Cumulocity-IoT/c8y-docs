@@ -39,7 +39,7 @@ At the top of the page, you will find the following two filters:
 
 <img src="/images/console/usage/usage-overview/environments-filter.png" alt="Environments Filter">
 
-* **Date filter** - Allows you to select the time range you want to view in the graphs below. The default range is "This quarter" with "Monthly" aggregation, but it can be adjusted to whatever months or aggregation desired. The available aggregation options depend on your selected date range: for date ranges exceeding 84 days, only monthly aggregation is available; for date ranges of 84 days or less, both daily and monthly aggregation options are available. When using daily aggregation, data is shown until the previous completed day based on the data availability. When using monthly aggregation, only completed months are displayed.
+* **Date filter** - Allows you to select the time range you want to view in the graphs below. The default range is "This quarter" with "Monthly" aggregation, but you can adjust it to any months or aggregation you want. Available aggregation options depend on your selected date range: for ranges over 84 days, only monthly aggregation is available; for ranges of 84 days or less, both daily and monthly aggregation are available. When using daily aggregation, data is shown up to the previous completed day based on data availability. When using monthly aggregation, only completed months are displayed.
 
 <img src="/images/console/usage/usage-overview/date-filter.png" alt="Date Filter">
 
