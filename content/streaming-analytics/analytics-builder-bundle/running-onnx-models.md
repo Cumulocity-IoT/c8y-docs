@@ -32,10 +32,18 @@ The input pulse must have one property for each input of the ONNX model. The nam
 - A tensor is a list. A tensor with several dimensions is a list of lists.
 - A tensor with exactly one element is a single value instead of a list, in both the input and the output.
 
-All inputs must be present in the same pulse. If you build the inputs from several sources, for example, from two measurement series with the Set Properties block, the first value that arrives starts a run with the other input missing. This run fails, and so does the analytic model. To avoid this, do one of the following:
+The block runs the ONNX model only when the input pulse has a property for every input of the ONNX model. Until then, the block sends no output and reports nothing. This means the following:
 
-- Send the values together, for example, as two series of the same measurement.
-- Add a Smart Function block or a Gate block before the ONNX block that only passes a pulse on when all inputs are present.
+- If you build the inputs from several sources, for example, from two measurement series with the Set Properties block, the block starts to send results when a value from each source has arrived. You do not need to hold back incomplete pulses yourself.
+- If the name of a property does not exactly match the name of an input of the ONNX model, the block never sends an output, and the analytic model does not fail. Property names are case-sensitive.
+
+#### To find out why the block sends no output {#onnx-to-find-out-why-the-block-sends-no-output}
+
+1. Add a Logger block and connect it to the same wire as the **Model Inputs** port of the ONNX block.
+2. Activate the analytic model and send the inputs.
+3. On the **Logs** page, compare the property names that the Logger block shows with the input names of the ONNX model.
+
+Each input of the ONNX model must appear as a property with exactly the same name.
 
 Use a Smart Function block after the ONNX block to read several outputs, or the Extract Property block to read a single output.
 
@@ -85,6 +93,8 @@ See [Other keys](/streaming-analytics/analytics-builder/#other-keys) for the ten
 
 ### When a run fails {#onnx-when-a-run-fails}
 
-A run of the ONNX model fails if an input is missing, an input has the wrong data type or shape, or the run does not finish within the time limit. The analytic model then fails for all devices and shows the reason in the model manager. Correct the cause and activate the analytic model again.
+A run of the ONNX model fails if an input has the wrong data type or shape, a value is outside the range of its data type, or the run does not finish within the time limit. The analytic model then fails for all devices and shows the reason in the model manager. Correct the cause and activate the analytic model again.
+
+A pulse that does not have all inputs is not a failed run. See [Passing inputs and reading outputs](#onnx-inputs-and-outputs).
 
 To keep an analytic model running when a single device sends unsuitable values, check the values with a Smart Function block or a Gate block before the ONNX block.

@@ -23,6 +23,7 @@ The block now behaves differently in the following ways:
 
 - The block downloads and checks the ONNX model when you activate the analytic model. If the file is missing, corrupt, or larger than the size limit, the analytic model does not activate and shows the reason. The default size limit is 100 MB.
 - A run of the ONNX model that fails, or that does not finish within the time limit, makes the analytic model fail and shows the reason. The output no longer has an `error` property. Remove any check of this property from your models. The default time limit is 1 second.
+- If the input does not have a property for every input of the ONNX model, the block does not run the ONNX model and sends no output. Previously, the output had an `error` property in this case.
 - If several files in the files repository have the same name, the block uses the most recently updated file.
 
-Models that already use the ONNX block continue to work if every run of the ONNX model succeeds. A model that sends the ONNX inputs in separate steps, so that a run starts before all inputs are present, now fails. See [Running ONNX models](/streaming-analytics/analytics-builder/#running-onnx-models) for the limits, the supported data types, and how to prepare the inputs.
+Models that already use the ONNX block continue to work if every run of the ONNX model succeeds. See [Running ONNX models](/streaming-analytics/analytics-builder/#running-onnx-models) for the limits, the supported data types, and how the block handles its inputs.
