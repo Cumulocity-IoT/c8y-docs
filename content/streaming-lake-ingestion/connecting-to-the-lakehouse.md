@@ -12,7 +12,7 @@ sector:
 ---
 
 {{< c8y-admon-req >}}
-To create credentials, in the **Connect to DataHub** dialog or with the API, your {{< product-c8y-iot >}} user must have the ROLE_OFFLOADING_ADMIN or ROLE_TENANT_ADMIN permission.
+To create credentials, in the **Connect to DataHub** dialog or with the API, your {{< product-c8y-iot >}} user must have the ADMIN permission for "Offloading" (ROLE_OFFLOADING_ADMIN) or must be the initial tenant administrator.
 {{< /c8y-admon-req >}}
 
 You read the lakehouse with your own Apache Iceberg client, for example, a query engine, a notebook, or a business intelligence tool. The client connects to the Iceberg REST catalog of {{< product-c8y-iot >}} and signs in with a client ID and a client secret.
