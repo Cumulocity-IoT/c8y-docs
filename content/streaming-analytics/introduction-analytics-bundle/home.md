@@ -14,8 +14,10 @@ You can access these pages using the corresponding **Open** button on the home s
 
 If you need more space for a page, you can hide the navigator. Click the small arrow at the very left of the top bar to toggle the display of the navigator.
 
-The home screen also provides information on smart rules. You create and maintain them with the Cockpit application.
-See [Smart rules](/cockpit/smart-rules/) for detailed information.
+The home screen also provides information on smart rules (NEW). With the smart rules (NEW) plugin, you create and manage rules directly from the context of a device, group, or asset in applications such as Device Management and Cockpit. You create a rule from an official rule template or from a custom rule template that you build with Analytics Builder.
+See [Smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin/#getting-started) for detailed information.
+
+Smart rules (NEW) replace the [legacy smart rules](/cockpit/smart-rules/) of the Cockpit application, which are deprecated. To learn what this means for your existing rules, see [Smart rules (NEW) and legacy smart rules](/streaming-analytics/smart-rules-plugin/#new-and-legacy-smart-rules).
 
 The home screen and navigator only show entries for the items that you are allowed to use,
 depending on the version of the Apama-ctrl microservice to which your tenant is subscribed.

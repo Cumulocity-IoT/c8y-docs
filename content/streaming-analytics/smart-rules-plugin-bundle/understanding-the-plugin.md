@@ -41,6 +41,12 @@ Your administrator can restrict which official rule templates are available, see
 
 ### Understanding the smart rules interface {#understanding-the-smart-rules-interface}
 
+The **Smart rules (NEW)** tab shows the list of rules on the left and the details of the selected rule on the right.
+
+To find a rule, enter a part of its name in the **Search rule** field above the list. The search is not case-sensitive. While a search is active, the list shows the number of matching rules.
+
+Below the list, a counter shows which rules are shown, for example, "1 - 25 of 60". The list shows 25 rules per page. If there are more rules, use the page buttons to move between the pages. If there are more than 25 rules, you can show 50 or 100 rules per page with **Items per page**.
+
 A rule has the following fields and properties:
 
 |   Field              | Description           |
