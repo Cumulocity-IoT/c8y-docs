@@ -20,12 +20,12 @@ The calculation is performed offline for billing based on resource requests in t
 
 ### Change data capture (CDC) {#change-data-capture}
 
-Change data capture (CDC) records every change to IoT data as a separate record, together with the kind of change, for example the creation or the update of a [managed object](#managed-object). [Streaming Lake Ingestion](#streaming-lake-ingestion) writes these records to the `cdc_` tables of the [lakehouse](#lakehouse), which hold the complete history of your IoT data. The `latest_inventory` tables, by contrast, hold only the current state of the [inventory](#inventory).
+Change data capture (CDC) records every change to IoT data as a separate record, together with the kind of change, for example, the creation or the update of a [managed object](#managed-object). [Streaming Lake Ingestion](#streaming-lake-ingestion) writes these records to the `cdc_` tables of the [lakehouse](#lakehouse), which hold the complete history of your IoT data. The `latest_inventory` tables, by contrast, hold only the current state of the [inventory](#inventory).
 
 See [Understanding the lakehouse](/streaming-lake-ingestion/understanding-the-lakehouse/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-Each record in a change data capture table has an `eventType` column with the kind of change, for example `MANAGED_OBJECT_UPDATE`.
+Each record in a change data capture table has an `eventType` column with the kind of change, for example, `MANAGED_OBJECT_UPDATE`.
 {{< /c8y-details >}}
 
 

@@ -11,7 +11,7 @@ sector:
   - data_analytics
 ---
 
-The following queries demonstrate how to extract common metrics and insights from the lakehouse. They use the Dremio SQL dialect as an example. Other query engines may need small changes, such as quoting reserved words or unnesting arrays. To keep the queries concise, they refer to tables by namespace and table name only, such as `cdc_event.event`. Depending on your query engine, add the name of the catalog as a prefix, or set the catalog as the default.
+The following queries demonstrate how to extract common metrics and insights from the lakehouse. They use the Dremio SQL dialect as an example. Other query engines sometimes need small changes, such as quoting reserved words or unnesting arrays. To keep the queries concise, they refer to tables by namespace and table name only, such as `cdc_event.event`. Depending on your query engine, add the name of the catalog as a prefix, or set the catalog as the default.
 
 ### Basic inventory queries {#basic-inventory-queries}
 
@@ -34,7 +34,7 @@ WHERE lat BETWEEN 50.0 AND 52.0
 
 ### Basic time series queries {#basic-time-series-queries}
 
-To retrieve all events recorded for a specific device within a given timespan, query the `cdc_event.event` table. Note that `time` is a reserved word in Dremio SQL, so it must be quoted.
+To retrieve all events recorded for a specific device within a given timespan, query the `cdc_event.event` table. In Dremio SQL, `time` is a reserved word, so put it in double quotes.
 
 ```sql
 SELECT "time", type, text
@@ -68,7 +68,7 @@ WHERE id IN (
 
 ### Measurement queries {#measurement-queries}
 
-To view a specific measurement series for a device over time, query the corresponding measurement fragment table. The following example fetches voltage measurements.
+To view a specific measurement series for a device over time, query the corresponding measurement fragment table. The following example fetches the voltage and temperature values of the `c8y_Battery` fragment.
 
 ```sql
 SELECT "time", b.voltage."value" AS voltage, b.temperature."value" AS temperature
@@ -78,7 +78,7 @@ WHERE source = '47635' AND
 ORDER BY "time" DESC
 ```
 
-Note that Dremio SQL requires you to add a table name or table reference when accessing structured properties. In the example, it is not enough to only refer to `voltage."value"`, `b.voltage."value"` has to be used. You can build on the previous query by adding a condition to filter for values that cross a certain threshold limit.
+Dremio SQL requires a table name or table alias in front of structured properties. In the example, `voltage."value"` alone does not work. Use `b.voltage."value"` instead. To filter for values that cross a threshold, add a condition to the previous query:
 
 ```sql
 SELECT "time", b.voltage."value" AS voltage, b.temperature."value" AS temperature
@@ -105,8 +105,8 @@ ORDER BY "time" DESC
 
 While the lakehouse offers the flexibility of arbitrary SQL querying, performance can vary depending on the complexity of your query. To ensure fast responses for common IoT use cases, performance is highly optimized for queries that select a specific set of devices, a particular time range, and, for measurements, a limited set of data points.
 
-Conversely, other types of queries may exhibit slower responses. These include queries that process a very large base set of data with complex aggregations or execute multi-level joins with selections on non-indexed properties. To improve query performance for your specific applications, you have several options:
+Other types of queries can be slower. These include queries that process a very large base set of data with complex aggregations or execute multi-level joins with selections on non-indexed properties. To improve query performance for your specific applications, you have several options:
 
 * Pre-process the data before it enters {{< product-c8y-iot >}} using Edge functionality or Data Preparation functions.
 * Process the data within {{< product-c8y-iot >}} using Streaming Analytics or a custom microservice to create refined data streams.
-* Post-process the data in the lakehouse by creating your own "gold layer" tables with pre-aggregated and materialized results, using external lakehouse tools.
+* Post-process the data in the lakehouse by creating your own [gold layer](/glossary/#gold-layer) tables with pre-aggregated and materialized results, using external lakehouse tools.

@@ -13,7 +13,7 @@ aliases:
   - /datahub/streaming-lake-ingestion/
 ---
 
-The Streaming Lake Ingestion feature of DataHub 2.0 bridges the gap between real-time IoT data and large-scale business analytics and artificial intelligence needs. It takes the continuous stream of IoT data flowing into {{< product-c8y-iot >}} and automatically transforms it into a queryable and AI-ready format in your lakehouse, making it available for analysis within minutes. It requires no setup: when your tenant subscribes, {{< company-c8y >}} provides the storage of your lakehouse, and the data flow starts. To subscribe your tenant, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
+The Streaming Lake Ingestion feature of DataHub 2.0 connects real-time IoT data with large-scale business analytics and artificial intelligence (AI). It takes the continuous stream of IoT data flowing into {{< product-c8y-iot >}} and automatically transforms it into a queryable and AI-ready format in your lakehouse, making it available for analysis within minutes. It requires no setup: when your tenant subscribes, {{< company-c8y >}} provides the storage of your lakehouse, and the data flow starts. To subscribe your tenant, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
 {{< c8y-admon-info >}}
 DataHub 2.0 streams your data into the lakehouse continuously, replacing [DataHub 1.0](/datahub/). See also [How can I migrate from DataHub 1.0?](/streaming-lake-ingestion/faq/#migrating-from-datahub-1).
@@ -37,15 +37,15 @@ While powerful for business intelligence and ad-hoc queries, the true long-term 
 
 ### Reliability, performance, and an open standard for your data {#reliability-performance-open-standard}
 
-Apache Iceberg is the strategic choice of {{< product-c8y-iot >}} to provide you with a reliable and future-proof foundation for your lakehouse. It is an open source table format governed by the Apache Software Foundation that has rapidly become an industry standard supported by major data platforms such as AWS, Google, Dremio, and Snowflake. It ensures that all your data assets remain portable and valuable for years to come.
+Apache Iceberg is the strategic choice of {{< product-c8y-iot >}} to provide you with a reliable, long-term foundation for your lakehouse. It is an open source table format governed by the Apache Software Foundation that has rapidly become an industry standard supported by major data platforms such as AWS, Google, Dremio, and Snowflake. It ensures that all your data assets remain portable and valuable for years to come.
 
 Besides being a widely adopted industry standard, it provides the following other key advantages:
 
 * **Transactional reliability**: Using Apache Pulsar and Apache Iceberg, {{< product-c8y-iot >}} manages your data with database-like guarantees for reliability, ensuring that your data is complete and consistent.
 * **Automatic schema evolution**: When your IoT data changes its structure, {{< product-c8y-iot >}} adapts your Iceberg tables automatically. Using Iceberg, new types of measurements or additional device properties are added without compromising previously stored data, and without breaking your queries and BI dashboards. This makes your data pipeline resilient to change.
-* **High performance analytics**: The Iceberg catalog embedded into {{< product-c8y-iot >}} tracks detailed information about your data, allowing query engines and analytics tools to be much smarter. They can only read the files necessary to answer a query, returning results faster. This is further improved by running regular optimization on the lakehouse files to ensure that data is highly clustered for the many querying uses.
+* **High performance analytics**: The Iceberg catalog embedded into {{< product-c8y-iot >}} tracks detailed information about your data, allowing query engines and analytics tools to be much smarter. They read only the files necessary to answer a query and return results faster. This is further improved by running regular optimization on the lakehouse files to ensure that data is highly clustered for the many querying uses.
 
-In summary, by building on Apache Iceberg and its standard REST catalog APIs, {{< product-c8y-iot >}} delivers IoT data as an open, vendor-neutral asset. Rather than forcing you into a proprietary ecosystem, your IoT data can be accessed and queried through the same tools and infrastructure you already use for your corporate data lake. This makes IoT data a true first-class citizen in your enterprise data initiatives. Your data science and analytics teams can seamlessly integrate IoT data with other business data sources without architectural compromises, breaking down the traditional barrier between operational IoT data and enterprise analytics to uncover insights that span your entire organization.
+In summary, by building on Apache Iceberg and its standard REST catalog APIs, {{< product-c8y-iot >}} delivers IoT data as an open, vendor-neutral asset. Instead of a proprietary ecosystem, you access and query your IoT data with the same tools and infrastructure that you already use for your corporate data lake. IoT data becomes an equal part of your enterprise data initiatives. Your data science and analytics teams can combine IoT data with other business data sources without architectural compromises, and find insights that span operational IoT data and enterprise analytics across your entire organization.
 
 ### Getting started {#getting-started}
 

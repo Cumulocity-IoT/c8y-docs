@@ -16,20 +16,20 @@ Streaming Lake Ingestion provides two types of data:
 * Change data capture (`cdc`): Includes the complete history of incoming IoT data. For example, the `cdc_alarm.alarm` table contains a complete, historical log of all alarm changes, while the `cdc_inventory.inventory` table captures all modifications made to your device master data over time.
 * Latest data (`latest`): Provides the current representation of incoming inventory data. For example, the `latest_inventory.inventory` table contains a consolidated view on the latest state of your inventory without you needing to reconstruct the state from the historical logs.
 
-For each type of data, folders ("namespaces") are created to mirror the familiar [{{< product-c8y-iot >}} domain model](/concepts/domain-model/). You will find folders with names ending in `inventory`, `alarm`, `event`, `measurement` and `operation`. Inside the folders, tables for standard data, device-specific data, and customer-specific data are created. Device- or customer-specific data in the form of [fragments](/concepts/domain-model/#fragments) resides in separate, dedicated tables within the corresponding folders. For instance, if you send a measurement with a fragment type `c8y_EngineMetric`, it will be stored in a table named `cdc_measurement.c8y_EngineMetric`.
+For each type of data, the service creates folders ("namespaces") that mirror the [{{< product-c8y-iot >}} domain model](/concepts/domain-model/). The names of the folders end in `inventory`, `alarm`, `event`, `measurement`, and `operation`. Inside the folders, the service creates tables for standard data, device-specific data, and customer-specific data. Device-specific or customer-specific data in the form of [fragments](/concepts/domain-model/#fragments) resides in separate, dedicated tables within the corresponding folders. For example, if you send a measurement with a fragment type `c8y_EngineMetric`, the service stores it in a table named `cdc_measurement.c8y_EngineMetric`.
 
 ### General table structure {#general-table-structure}
 
 All tables contain the following column:
-* `id`: The record ID of the device, asset, alarm, event, measurement or operation associated with the change.
+* `id`: The record ID of the device, asset, alarm, event, measurement, or operation associated with the change.
   In the inventory tables, this is the [managed object ID](/concepts/domain-model/#object-identification).
 
 The following columns are present in some tables, depending on the type of data:
-* `source`: For alarms, events, or measurement, this column contains the [managed object ID](/concepts/domain-model/#object-identification) of the device or asset associated with the change.
+* `source`: For alarms, events, or measurements, this column contains the [managed object ID](/concepts/domain-model/#object-identification) of the device or asset associated with the change.
 * `deviceId`: For operations, this column contains the [managed object ID](/concepts/domain-model/#object-identification) of the device targeted for the operation.
 * `time`: The timestamp of the change as sent by the device. This column is present for alarms, events, and measurements.
 * `creationTime`: The timestamp when {{< product-c8y-iot >}} created the record. This column is present for inventory, measurements, and operations.
-* `type`: The type property of the device, measurement and so on.
+* `type`: The type property of the device, measurement, and so on.
 
 For change data capture tables, the following column is present:
 * `eventType`: The type of change indicated by the record. For example, `MANAGED_OBJECT_UPDATE` indicates an update of a managed object.
@@ -39,7 +39,7 @@ For change data capture tables, the following column is present:
 
 #### Creating inventory data {#creating-inventory-data}
 
-To understand how the service captures inventory data in the lakehouse, assume that the device user "device_123" creates a new tracking device "Tracking #1" with the following data:
+To understand how the service captures inventory data in the lakehouse, assume that the device user "device_123" creates a new tracking device "Tracker #1" with the following data:
 
 ```
 {
@@ -79,11 +79,7 @@ The columns of the `inventory` table are:
 Additional columns may be visible depending on your use of {{< product-c8y-iot >}}. For example, once the device has emitted measurements, you will see a column `supportedMeasurements` with a list of the measurement fragments sent by the device.
 
 {{< c8y-admon-info >}}
-Use top-level properties with care. For example, if you have custom properties that you want to store for all devices, such properties may be a good choice.
-However, the total number of top-level properties is limited through a [table width limit](/service-terms/quotas/#limits-of-streaming-lake-ingestion). If you exceed the table width limit,
-additional properties will not be written to the inventory table but [rejected](#rejected-data).
-Note also that very wide tables with many properties will lead to more inefficient storage and querying.
-We advise you to prefer fragments for custom data when modeling your device data model.
+Use top-level properties with care. They are a good choice, for example, for custom properties that you want to store for all devices. However, a [table width limit](/service-terms/quotas/#datahub-2) applies to the number of top-level properties. If you exceed the limit, the service does not write the additional properties to the inventory table but [rejects](#rejected-data) them. Very wide tables with many properties also make storage and queries less efficient. {{< company-c8y >}} recommends fragments for custom data in your device data model.
 {{< /c8y-admon-info >}}
 
 **Table: cdc_inventory.c8y_Position**
@@ -170,8 +166,7 @@ The "latest data" versions of the tables reflect this update:
 
 #### Deleting inventory data {#deleting-inventory-data}
 
-Currently, delete operations of inventory entries are only written for CDC tables. When a managed object is deleted, an
-update is written to `cdc_inventory.inventory` like the following:
+The service writes delete operations of inventory entries only to the change data capture tables. When you delete a managed object, the service writes a record like the following to `cdc_inventory.inventory`:
 
 | id    | lastUpdated              | eventType             | name | fragments | …   | creationTime | someProperty |
 | ----- | ------------------------ | --------------------- | ---- | --------- | --- | ------------ | ------------ |
@@ -201,7 +196,7 @@ Finally, assume that you delete the device. This results in a record with `event
 
 ### Alarms {#alarms}
 
-Assume that our sample tracking device has low battery and sends an alarm:
+Assume that the sample tracking device has a low battery and sends an alarm:
 
 ```
 {
@@ -291,7 +286,7 @@ This example also demonstrates how the service handles nested properties: Like t
 
 ### Operations {#operations}
 
-Finally, we would like to restart the tracker with a reset operation:
+Finally, assume that you restart the tracker with a `c8y_Restart` operation:
 
 ```
 {
@@ -325,18 +320,19 @@ The columns represent the [properties of a {{< product-c8y-iot >}} operation](ht
 Empty JSON objects (`{}`) and empty arrays (`[]`) carry no data to store. They are omitted from the input and treated the same as an absent or "null" property, rather than being converted to a value of the column's data type.
 
 {{< c8y-admon-info >}}
-For more information related to Iceberg data types, refer to the [Iceberg specification](https://iceberg.apache.org/spec/#semi-structured-types). Note that there are various [structural limits](/service-terms/quotas/#limits-of-streaming-lake-ingestion) that the service implements to ensure that common upstream query engines can interact with the data produced by the service.
+For more information related to Iceberg data types, refer to the [Iceberg specification](https://iceberg.apache.org/spec/#semi-structured-types). The service also applies [structural limits](/service-terms/quotas/#datahub-2) so that common query engines can read the data that it produces.
 {{< /c8y-admon-info >}}
 
 ### Schema evolution {#schema-evolution}
 
-The service automatically discovers the structure of the incoming data and applies it to the lakehouse.
+The service automatically discovers the structure of the incoming data and applies it to the lakehouse:
+
 * When the service discovers a new fragment, it creates a table to store the data in the fragment.
 * When the service discovers a new property, it creates a column to store the data in the associated table.
 
 ### Handling of schema conflicts {#handling-of-schema-conflicts}
 
-Contrary to Apache Iceberg and SQL, {{< product-c8y-iot >}} does not mandate a consistent schema across all incoming data. Consistency issues are automatically discovered and resolved by the service. Revisiting our previous example, assume that "Tracker #1" sends data as follows:
+Unlike Apache Iceberg and SQL, {{< product-c8y-iot >}} does not require a consistent schema across all incoming data. The service discovers and resolves consistency issues automatically. For example, assume that "Tracker #1" from the previous example sends data as follows:
 
 ```
 {
@@ -404,12 +400,12 @@ Note that the order in which messages are sent to {{< product-c8y-iot >}} and th
 
 ### Naming {#naming}
 
-The Iceberg lakehouse supports names consisting of characters, numbers, underscores, and dashes — except as the first character, which must always be a letter (a-z, A-Z). Digits, underscores, dashes, and any other character are not permitted in the first position, even though they are permitted elsewhere in the name. Other characters are represented by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names, at any nesting level.
+Names in the lakehouse can contain letters, digits, underscores, and dashes. The first character must be a letter (a-z, A-Z). The service represents any other character by the character string "\_x" followed by the hexadecimal Unicode value of the character. This applies to table and property names, at any nesting level.
 
 For example, if you use the property name "switch:status" in the data sent to {{< product-c8y-iot >}}, the corresponding Iceberg column name is "switch_x003Astatus".
 
 {{< c8y-admon-info >}}
-The first-character restriction is checked before escaping is applied. If the first character of a name is not already a letter, the whole field or fragment is rejected as an [illegal field name](/service-terms/quotas/#limits-of-streaming-lake-ingestion) rather than being escaped. For example, replacing a leading special character with an underscore (a common client-side sanitization approach) does not make the name valid, since an underscore is not a letter.
+The service checks the first character before it escapes any characters. If the first character of a name is not a letter, the service rejects the whole field or fragment as an [illegal field name](/service-terms/quotas/#datahub-2) and does not escape it. For example, replacing a leading special character with an underscore, a common client-side sanitization approach, does not make the name valid, because an underscore is not a letter.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-info >}}
@@ -433,7 +429,7 @@ Characters are case-sensitive, but identifiers of tables and columns must be uni
 This is a reliability measure. The Iceberg specification considers tables and column names as case sensitive. However, upstream query engines do not generally support case sensitivity and may not be able to query such tables.
 {{< /c8y-admon-info >}}
 
-The service also appends this suffix when a top-level property has the same name as the `eventType` column, which records the type of change. For example, the service stores a string property `eventType` in the column `eventType__8`, in both change data capture and latest tables. A value of another type goes to the matching overflow column, for example `eventType__d` for a number.
+The service also appends this suffix when a top-level property has the same name as the `eventType` column, which records the type of change. For example, the service stores a string property `eventType` in the column `eventType__8`, in both change data capture and latest tables. A value of another type goes to the matching overflow column, for example, `eventType__d` for a number.
 
 ### Rejected data {#rejected-data}
 
@@ -462,7 +458,7 @@ The following schema is used:
 
 #### Examples {#rejected-data-examples}
 
-**Illegal field name**: The first character of a property or fragment name must be a letter (a-z, A-Z). Digits, underscores, dashes, or any other character in the first position cause the field to be rejected rather than escaped. See [Naming](#naming) for details.
+**Illegal field name**: The first character of a property or fragment name must be a letter (a-z, A-Z). Digits, underscores, dashes, or any other character in the first position cause the field to be rejected rather than escaped. For details, see [Naming](#naming).
 
 ```json
 {
@@ -568,9 +564,9 @@ The same rule applies to fragment (table) names and to a number in the first pos
 
 Streaming Lake Ingestion has the following functional limitations:
 
-* `latest` data is only recorded for the inventory.
-* Delete events are only processed for the inventory.
+* The service records `latest` data only for the inventory.
+* The service processes delete events only for the inventory.
 * The service drops custom top-level properties in measurements.
-* There is no automated cleanup of tables and columns that are not in use anymore.
-* You may see an `internal` folder with tables for internal service information. Do not modify these tables.
-* The service does not offload any {{< product-c8y-iot >}}-internal inventory entries, events, measurements, and alarms.
+* The service does not remove tables and columns that are no longer in use.
+* The lakehouse can contain an `internal` folder with tables for internal service information. Do not modify these tables.
+* The service does not offload {{< product-c8y-iot >}}-internal inventory entries, events, measurements, or alarms.

@@ -20,7 +20,7 @@ helpcontent:
 
 ### Monitoring page {#monitoring-page}
 
-To monitor Streaming Lake Ingestion, open the Administration application and click **Monitoring** > **DataHub**. The **Monitoring** page does not refresh; click **Reload** to update it.
+To monitor Streaming Lake Ingestion, open the Administration application and click **Monitoring** > **DataHub**. The **Monitoring** page does not refresh automatically. To update it, click **Reload**.
 
 #### Summary tiles {#summary-tiles}
 
@@ -30,7 +30,7 @@ To monitor Streaming Lake Ingestion, open the Administration application and cli
   * **Connect to DataHub**: The values your Iceberg services, tools, and libraries need to read your tables, and a credential to sign in with. Shown when setup is complete. For details, see [Connecting to the lakehouse](/streaming-lake-ingestion/connecting-to-the-lakehouse/).
 * **Data quality**: The number of active alarms of the service, split into recurring and quiet alarms. A schema alarm is quiet when it had no new occurrence for 7 days. The tile shows the most recent alarm and the alarm that has been quiet the longest. It shows a warning while schema alarms recur, and an error while any other alarm is active.
 * **Schema changes**: The number of new tables and new columns in the last 7 days, and the date of the last change.
-* **Ingestion**: The share of the message backlog in use and the time the service last finished a batch, read from the Messaging service. From 50 % the tile shows a warning. If the last batch is more than 15 minutes old and messages are waiting, processing has stopped. If the last batch is more than 15 minutes old and nothing is waiting, no new data arrives. The tile appears only if you can open the Messaging service pages.
+* **Ingestion**: The share of the message backlog in use and the time the service last finished a batch, read from the Messaging Service. From 50%, the tile shows a warning. If the last batch is more than 15 minutes old and messages are waiting, processing has stopped. If the last batch is more than 15 minutes old and nothing is waiting, no new data arrives. The tile appears only if you can open the Messaging Service pages.
 
 The service automatically updates the lakehouse schema when the structure of the incoming data changes. It reports schema changes as {{< product-c8y-iot >}} events and schema violations as alarms. Until setup completes, no alarms or events are shown.
 
@@ -63,7 +63,7 @@ To see events, your user needs the READ permission for **Identity** (ROLE_IDENTI
 
 ### Offloading failure alarms {#offloading-failure-alarms}
 
-When the service repeatedly fails to offload your data, for example because it cannot access the storage of your lakehouse or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm under **Active alarms** on the [Monitoring page](#monitoring-page) and in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
+When the service repeatedly fails to offload your data, for example, because it cannot access the storage of your lakehouse or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm under **Active alarms** on the [Monitoring page](#monitoring-page) and in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
 
 Each part of the service raises its own alarm type:
 
