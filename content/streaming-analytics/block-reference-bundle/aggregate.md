@@ -55,7 +55,7 @@ This category contains the following blocks:
 </tr>
 <tr>
 <td><a href="#rate-limiter">Rate Limiter</a></td>
-<td><span>Suppresses all but the first message received per specified time period.</span>
+<td><span>Limits how often messages pass, for each device. Sends a limited number of messages in each time period to the rate limited output and the other messages to the suppressed output.</span>
 </td>
 </tr>
 <tr>
@@ -944,8 +944,11 @@ This category contains the following blocks:
 
 `apama.analyticsbuilder.blocks.RateLimiter`
 
-<p>Suppresses all but the first message received per specified time period.</p>
-<p><b>This block is currently in public preview and may be subject to change.</b></p>
+<p>Limits how often messages pass, for each device. Sends a limited number of messages in each time period to the rate limited output and the other messages to the suppressed output.</p>
+<p>The block limits each device separately. A burst of messages from one device does not suppress messages from another device.</p>
+<p>A message is sent to the rate limited output if fewer than <b>Event Count</b> messages were sent to that output in the preceding <b>Period</b>. Otherwise, it is sent to the suppressed output. So with the default event count of 1, a message passes if at least one period has gone by since the last message that passed. The first message for a device always passes, and the block does not delay messages.</p>
+<p>The block measures time using the time of each message as seen by the model. For input blocks that do not ignore timestamps, that is the timestamp of the measurement, event or alarm and not the time at which it is received.</p>
+<p>For example, with a period of 60 seconds and an event count of 1, messages for a device at 0, 20, 59, 60 and 130 seconds give this result: the messages at 0, 60 and 130 seconds are sent to the rate limited output, and the messages at 20 and 59 seconds are sent to the suppressed output. With an event count of 2, the messages at 0, 20, 60 and 130 seconds pass and only the message at 59 seconds is suppressed.</p>
 
 
 #### Parameters {#rate-limiter-parameters}
@@ -968,11 +971,22 @@ This category contains the following blocks:
 <tbody>
 <tr>
 <th scope="row">Period</th>
-<td><span>Time period in seconds.</span>
+<td><span>The length of the time period, in seconds.</span>
+<p>This must be a finite and positive number.</p>
 </td>
 <td><span>float</span>
 </td>
 <td></td>
+</tr>
+<tr>
+<th scope="row">Event Count</th>
+<td><span>The maximum number of messages that are sent to the rate limited output in any one period, for each device.</span>
+<p>This must be a whole number from 1 to 1000. If it is not set, 1 is used.</p>
+</td>
+<td><span>integer</span>
+</td>
+<td><span>Default: 1</span><span>Optional</span>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1021,21 +1035,21 @@ This category contains the following blocks:
 <tbody>
 <tr>
 <th scope="row">Rate limited output</th>
-<td><span>The first input activation in the specified time period is sent to this output; subsequent activations within that period are sent to the suppressed output. When the time period has elapsed, the next input activation starts a new period and is again sent to this output.</span>
+<td><span>The input is sent to this output if fewer messages than the event count were sent to this output in the preceding period. Otherwise, it is sent to the suppressed output. The value and its properties are the same as the input's.</span>
 </td>
-<td><span>any</span>
+<td><span>input(input)</span>
 </td>
 </tr>
 <tr>
 <th scope="row">Suppressed message output</th>
-<td><span>Input activations that occur more than once within the specified time period are sent to this output.</span>
+<td><span>The input is sent to this output if it is not sent to the rate limited output, because the event count was already reached in the preceding period. The value and its properties are the same as the input's.</span>
 </td>
-<td><span>any</span>
+<td><span>input(input)</span>
 </td>
 </tr>
 <tr>
 <th scope="row">Number of suppressed messages within the current period</th>
-<td><span>Incremented every time a message is suppressed. Resets to zero when a message is not suppressed.</span>
+<td><span>The number of messages suppressed since the last message that was sent to the rate limited output. Incremented every time a message is suppressed. Resets to zero when a message is not suppressed.</span>
 </td>
 <td><span>float</span>
 </td>
