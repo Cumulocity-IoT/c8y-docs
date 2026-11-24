@@ -18,7 +18,7 @@ In the standard Analytics Builder workflow, you switch from your primary workflo
 
 This process requires switching between applications. It takes time when you manage rules for many devices or groups.
 
-For details about the instance editor workflow, refer to [Instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor).
+For details about the instance editor workflow, see [Instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor).
 
 #### With smart rules plugin {#with-smart-rules-plugin}
 

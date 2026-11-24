@@ -13,7 +13,7 @@ Each rule is a **rule instance** of a **rule template**. A rule template defines
 - **Official** rule templates are provided by {{< product-c8y-iot >}}. They are ready to use. You do not need to create or open an Analytics Builder model.
 - **Custom** rule templates are Analytics Builder models that are created in your tenant and that have template parameters with the value selection set to "From Context".
 
-The rules run in Streaming Analytics. For details about Analytics Builder, refer to [Analytics Builder](/streaming-analytics/analytics-builder/#getting-started).
+The rules run in Streaming Analytics. For details about Analytics Builder, see [Analytics Builder](/streaming-analytics/analytics-builder/#getting-started).
 
 ### Prerequisites {#prerequisites}
 
@@ -21,7 +21,9 @@ Before you use the smart rules (NEW) plugin, make sure that the following requir
 
 - The tenant is subscribed to a Streaming Analytics microservice that supports the Analytics Builder capability.
 - The smart rules (NEW) plugin is installed in the application that you want to use, and the **Smart rules (NEW) plugin** is enabled in **Preview feature**.
-- You have the required permissions to view or manage smart rules (NEW). Refer to [Managing permissions to smart rules (NEW) instances](#managing-permissions-to-smart-rules-instances).
+- You have the required permissions to view or manage smart rules (NEW). See [Managing permissions to smart rules (NEW) instances](#managing-permissions-to-smart-rules-instances).
+
+**[TODO PAB-5296: at the preview-to-GA cutover (PAB-5459), remove the "Preview feature" condition from the second prerequisite: "The smart rules (NEW) plugin is installed in the application that you want to use."]**
 
 #### Managing permissions to smart rules (NEW) instances {#managing-permissions-to-smart-rules-instances}
 
@@ -59,6 +61,7 @@ At least one device must be registered in {{< product-c8y-iot >}}. Preferably, t
 
 1. In the Device Management application, navigate to **Devices** > **All devices** and select a device.
 2. Click the **Smart rules (NEW)** tab.
+   **[TODO PAB-5296: the screenshot shows the tab as "Smart rules" with a "New" badge, not "Smart rules (NEW)". Confirm the GA tab label, then align this step and the other pages that name the tab (cockpit-smart-rules-plugin.md, viewing-device-details.md, new-and-legacy-smart-rules.md, understanding-the-plugin.md).]**
    ![Smart rules tab](/images/streaming-analytics/smart-rules-plugin/empty-smart-rule.png)
 3. Click **Add rule**.
    The **Add rule** dialog lists the rule templates that apply to the current context. Each rule template shows an **Official** or **Custom** label. To find a rule template, enter a part of its name, description, or tag in the search field.
@@ -73,6 +76,8 @@ At least one device must be registered in {{< product-c8y-iot >}}. Preferably, t
    - In **Threshold lower range** and **Threshold upper range**, enter the range of valid values.
    - Optionally, change **Alarm type** and **Alarm text**.
 6. Click **Save** to save the rule. To save and activate the rule at the same time, switch the rule to **Active**.
+
+**[TODO PAB-5296: confirm with Dev (1) that switching the rule to "Active" also saves it, and (2) whether clicking "OK" in step 4 keeps the rule when you then click "Cancel". If that behavior ships at GA, add to step 4: "To discard the rule, delete it."]**
 
 The rule is shown in the list of rules with its status (**Active** or **Inactive**). While the rule is active, it creates an alarm each time a measurement value is outside the threshold range.
 

@@ -47,7 +47,7 @@ The official rule templates have the following English names:
 
 **[TODO PAB-5296: re-check the list of sample names against src/analytics-builder-samples/ at the GA release.]**
 
-#### When a change of the tenant option takes effect {#when-a-change-of-the-allowlist-takes-effect}
+#### When a change of the tenant option takes effect {#when-a-change-of-the-tenant-option-takes-effect}
 
 The microservice reads the tenant option when it starts:
 
