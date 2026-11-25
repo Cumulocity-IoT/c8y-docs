@@ -422,6 +422,8 @@ Based on the contract, there are two pricing models for billing:
 * Tenant usage pricing model - based on tenant usage statistics
 * Device pricing model - based mostly on device statistics and microservice resource usage
 
+Device statistics count, per month, each device for which at least one measurement, event or alarm was created or updated in that month. A device that sends no data during a month, for example because its credentials are disabled, is normally not included, unless other sources such as smart rules, microservices or availability monitoring create data for it.
+
 The table below presents which values are used in each model for billing purposes:
 
 <table>
