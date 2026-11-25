@@ -126,6 +126,12 @@ You can rearrange the columns by clicking the icon <i class="dlt-c8y-icon-menu t
 
 To remove a property or an action, hover over the respective row and click **Delete** at the right.
 
+To sort the table, use the sort button in the header of a column.
+
+{{< c8y-admon-info >}}
+Columns that show computed properties, such as **Last measurement** or **Alarm count today**, are sorted in the browser. The sorting applies only to the rows that are loaded on the current page. All other columns are sorted across all pages.
+{{< /c8y-admon-info >}}
+
 ### Data graph {#data-point-graph}
 
 The "Data graph" widget shows a data point (measurement) in a graph. The visualization is the same as in the [data explorer](/cockpit/data-explorer/).
