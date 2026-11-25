@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-11-24'
   - label: jp.cumulocity.com
     date: '2026-11-24'
+  - label: us.cumulocity.com
+    date: '2026-11-25'
+  - label: cumulocity.com
+    date: '2026-11-25'
 ---
 Previously, the Asset API accepted read-only properties like `id`, `creationTime`, and `lastUpdated` in request bodies, even though these properties were documented as read-only in the API specification. This caused unnecessary processing overhead and created inconsistency between the documented API contract and actual runtime behavior. The Asset API now ignores these properties when received in requests while continuing to include them in responses, aligning the implementation with the specification.
 
