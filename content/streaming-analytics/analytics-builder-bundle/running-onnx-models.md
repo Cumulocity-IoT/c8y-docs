@@ -17,7 +17,7 @@ The block runs ONNX models with ONNX Runtime 1.24.1 on the CPU. The block is ava
 1. Export your machine learning model to the ONNX format with the export function of your machine learning framework.
 2. Check that all inputs and outputs of the ONNX model are tensors with a supported data type. See [Supported data types](#onnx-supported-data-types).
 3. If the ONNX model consists of a single file, give the file a name that ends with `.onnx`, for example, `MyModel.onnx`.
-4. If the ONNX model needs additional files, create a zip archive that contains all files. The `.onnx` file must be at the top level of the archive and must have the same base name as the archive. For example, `MyModel.zip` contains `MyModel.onnx`.
+4. If the ONNX model needs additional files, create a ZIP archive that contains all files. The `.onnx` file must be at the top level of the archive and must have the same base name as the archive. For example, `MyModel.zip` contains `MyModel.onnx`.
 5. Upload the file to the files repository. In the Administration application, click **Management** > **Files repository**.
 6. In the model editor, add the ONNX block from the **AI/ML** section of the palette and enter the file name, including the extension, as the **ONNX model name** parameter.
 
