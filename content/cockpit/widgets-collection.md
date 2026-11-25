@@ -100,7 +100,7 @@ The resulting table is visualized as follows:
 On the dashboard, you can sort the table by using the sort button in the header of a column.
 
 {{< c8y-admon-info >}}
-Columns that show computed properties, such as **Last measurement** or **Alarm count today**, are sorted in the browser. The sorting applies only to the rows that are loaded on the current page. All other columns are sorted across all pages.
+Columns that show computed properties, such as **Last measurement** or **Alarm count today**, are sorted in the browser. The sorting applies only to the rows that are loaded on the current page. All other columns are sorted across all pages. When a value changes in real time, the row keeps its position until you sort the column again.
 {{< /c8y-admon-info >}}
 
 #### To add properties {#to-add-properties}
