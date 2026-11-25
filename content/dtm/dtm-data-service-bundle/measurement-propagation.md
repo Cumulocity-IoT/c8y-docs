@@ -4,7 +4,7 @@ title: Measurement propagation
 layout: redirect
 ---
 
-### Measurement propagation {#measurement-propagation}
+### How measurements are propagated
 
 *Measurement propagation* means that each new measurement of a source device is copied to every asset with a data point linked to it. The copy is a new measurement with the asset as source. The device measurement itself is not changed.
 
