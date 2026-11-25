@@ -56,7 +56,7 @@ To see events, your user needs the READ permission for **Identity** (ROLE_IDENTI
 
 ### Setup failure alarm {#setup-failure-alarm}
 
-When an attempt to set up your tenant does not complete, for example, because a check of your storage fails or your storage cannot be reached, the service raises the alarm **Data lake setup failed** (`c8y_StreamingLakeIngestion_ProvisioningFailed`) with the severity MAJOR. The service also raises the alarm when the setup completes but data loss protection of your storage is off, such as bucket versioning on AWS or soft delete on Azure. Your data arrives in this case. You see the alarm under **Active alarms** on the [Monitoring page](#monitoring-page) and in the alarm viewer.
+When an attempt to set up your tenant does not complete, for example, because a check of your storage fails or your storage cannot be reached, the service raises the alarm **Data lake setup failed** (`c8y_StreamingLakeIngestion_ProvisioningFailed`) with the severity MAJOR. The service also raises the alarm when the setup completes, but data loss protection of your storage is off, such as bucket versioning on AWS or soft delete on Azure. Your data arrives in this case. You see the alarm under **Active alarms** on the [**Monitoring** page](#monitoring-page) and in the alarm viewer.
 
 The alarm text starts with "Setting up the data lake failed" and names the setup step that failed and the reason, such as a missing permission on your storage. If a later attempt fails for a different reason, the service clears the alarm and raises a new one with the new text.
 
@@ -66,7 +66,7 @@ If the **Data Lake configuration** page refuses your entries, for example, a rej
 
 ### Offloading failure alarms {#offloading-failure-alarms}
 
-When the service repeatedly fails to offload your data, for example because it cannot access your data lake or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm under **Active alarms** on the [Monitoring page](#monitoring-page) and in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
+When the service repeatedly fails to offload your data, for example because it cannot access your data lake or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm under **Active alarms** on the [**Monitoring** page](#monitoring-page) and in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
 
 Each part of the service raises its own alarm type:
 
