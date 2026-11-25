@@ -84,7 +84,7 @@ The response contains the client ID and the client secret that your client needs
 ```
 
 {{< c8y-admon-important >}}
-The service returns the `clientSecret` only once and does not store it. Store the secret securely right after you create the principal. If you lose the secret, rotate the principal to get a new client ID and secret. For details, see [To rotate a principal](#to-rotate-a-principal).
+The service returns the `clientSecret` only once and does not store it. Store the secret securely right after you create the principal. If you lose the secret, rotate the principal to get a new secret. The client ID does not change. For details, see [To rotate a principal](#to-rotate-a-principal).
 {{< /c8y-admon-important >}}
 
 #### To list principals {#to-list-principals}
@@ -111,7 +111,7 @@ Rotate a principal to replace a lost or compromised secret. Rotating invalidates
     -u "<USER>:<PASS>"
   ```
 
-The response contains a new client ID and a new client secret.
+The response contains the unchanged client ID and a new client secret.
 
 #### To delete a principal {#to-delete-a-principal}
 

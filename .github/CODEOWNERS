@@ -47,3 +47,6 @@
 /content/data-preparation/ @skom-c8y @ben-c8y @BeateRixen
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
 /content/streaming-analytics/block-reference-bundle/ @skom-c8y @ben-c8y
+# CICD-10976
+/content/service-terms/ @JanePorter @neuerburg @vaillant @cloudguy11 @juergenkraemer
+/content/legal-notices/ @JanePorter @neuerburg @vaillant @cloudguy11 @juergenkraemer

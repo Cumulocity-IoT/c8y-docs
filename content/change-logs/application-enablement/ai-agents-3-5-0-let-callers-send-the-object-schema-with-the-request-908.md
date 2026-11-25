@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-11-17'
 title: Object agents can now take the schema from the request
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,17 @@ build_artifact:
     label: ai-agents
 ticket: MTM-68133
 version: 3.5.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-17'
+  - label: apj.cumulocity.com
+    date: '2026-11-18'
+  - label: jp.cumulocity.com
+    date: '2026-11-18'
+  - label: us.cumulocity.com
+    date: '2026-11-19'
+  - label: cumulocity.com
+    date: '2026-11-19'
 ---
 An object agent, which returns structured data, no longer needs its own schema. If the agent has none, the caller sends the schema in the `schema` field of each `POST /service/ai/agent/object/{name}` request, so one agent can extract data in different shapes instead of needing one agent per schema.
 
