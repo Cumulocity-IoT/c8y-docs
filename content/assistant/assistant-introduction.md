@@ -41,20 +41,19 @@ The Assistant is an agent of the [AI Agent Manager](/ai/aim-introduction/) with 
 
 Administrators adjust the behavior of the Assistant in the AI Agent Manager. For details, see [To change the Assistant](/assistant/administering-the-assistant/#changing-the-assistant).
 
-### Assistant, "AI Agent Chat" widget, and the AI assistant in Data Preparation {#assistant-and-other-ai-chats}
+### Assistant in the header and in Data Preparation {#assistant-and-other-ai-chats}
 
-{{< product-c8y-iot >}} offers several AI chats for different purposes:
+The Assistant is available in two places, with different agents and purposes:
 
 | Feature | Where | Agent | Purpose |
 |---------|-------|-------|---------|
 | Assistant | Header of the application | `c8y-assistant-agent` | Questions and changes about the current screen and the whole tenant |
-| "AI Agent Chat" widget | Widget on a dashboard | An agent that the dashboard author selects | A chat with one specific agent, for example, one of your custom agents |
-| AI assistant in Data Preparation | Rule editor of Data Preparation | The Data Preparation agent | Creating smart functions that transform device messages |
+| Assistant in Data Preparation | Rule editor of Data Preparation | The Data Preparation agent | Creating smart functions that transform device messages |
 
-For details on the other AI chats, see [Expert agents](/ai-intro/expert-agents/).
+For details on the Assistant in Data Preparation, see [Expert agents](/ai-intro/expert-agents/#data-preparation-ai-assistant).
 
 {{< c8y-admon-related >}}
 - [Using the Assistant](/assistant/using-the-assistant/) for opening the Assistant, working with context, and approving tool calls.
 - [Administering the Assistant](/assistant/administering-the-assistant/) for the requirements, the installation in other applications, and the agents of the Assistant.
-- [AI capabilities overview](/ai-intro/ai-overview/) for how the Assistant fits into the AI capabilities.
+- [Agentic AI capabilities overview](/ai-intro/ai-overview/) for how the Assistant fits into the agentic AI capabilities.
 {{< /c8y-admon-related >}}

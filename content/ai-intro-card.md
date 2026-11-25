@@ -13,4 +13,4 @@ audience:
 weight: 10
 ---
 
-Get an overview of the AI capabilities of the {{< product-c8y-iot >}} platform and how they work together.
+Get an overview of the agentic AI capabilities of the {{< product-c8y-iot >}} platform and how they work together.

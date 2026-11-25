@@ -31,7 +31,7 @@ To get started, open **AI Agent Manager** > **Control panel** in the Administrat
 The feature is currently in Public Preview and might change or is not feature complete. While we try to keep changes as low as possible, breaking changes and feature removals happen. To enable the feature, open the right drawer (by clicking on your username initials) in the Administration application and select **Manage preview features**. Then activate the toggle next to **AI Agent Manager**.
 {{< /c8y-admon-preview >}}
 
-The AI Agent Manager is the part of the [AI capabilities](/ai-intro/ai-overview/) of {{< product-c8y-iot >}} in which you build, govern, and monitor AI agents.
+The AI Agent Manager is the part of the [agentic AI capabilities](/ai-intro/ai-overview/) of {{< product-c8y-iot >}} in which you build, govern, and monitor AI agents.
 
 The AI Agent Manager enables you to create and manage AI agents—intelligent assistants that help users interact with your IoT data and systems through natural language conversations. Instead of building custom AI integrations from scratch, you configure pre-built agents that understand your specific use cases and have access to the tools required to be helpful.
 

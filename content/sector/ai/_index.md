@@ -1,5 +1,5 @@
 ---
-title: "AI capabilities"
+title: "Agentic AI capabilities"
 description: "Use and build AI agents on Cumulocity: the Assistant, expert agents, the AI Agent Manager, MCP tools, and the controls that govern them."
 outputs: ["HTML", "llmstxt"]
 icon: "dlt-c8y-icon-ai-sparkles"

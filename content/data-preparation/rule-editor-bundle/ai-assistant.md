@@ -18,8 +18,6 @@ AI-generated code is produced on a best-effort basis. Always review the generate
 
 The AI assistant is powered by the [AI Agent Manager](/ai/aim-introduction/). To use the assistant, your tenant must have a [global AI provider configured](/ai/aim-introduction/#getting-started-by-configuring-a-global-provider). If you need to use a specific AI model or provider for Data Preparation, you can configure a [local provider](/ai/agents/#local-providers) for the Data Preparation agent.
 
-The AI assistant in Data Preparation works only in the rule editor, where it creates and refines smart functions and their test cases. It is different from the [Assistant](/assistant/assistant-introduction/), the AI chat in the header of the {{< product-c8y-iot >}} applications. For all AI capabilities, see [AI capabilities overview](/ai-intro/ai-overview/).
-
 ### Overview {#overview}
 
 The AI assistant panel is on the left side of the rule editor. You interact with it by typing messages in the text box or by selecting one of the suggested actions. The AI responds with explanations in the chat and updates the smart function code and test cases directly in their respective panels.

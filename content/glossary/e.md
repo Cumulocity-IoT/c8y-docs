@@ -53,7 +53,7 @@ Events are managed via the [Event API](https://cumulocity.com/api/core/#tag/Even
 
 ### Expert agent {#expert-agent}
 
-An expert agent is an [AI agent](#ai-agent) for a specific task that comes with a {{< product-c8y-iot >}} application or plugin, for example, the [Assistant](#assistant) or the AI assistant in Data Preparation. Expert agents appear as subscribed agents in the [AI Agent Manager](#ai-agent-manager) and use the model configuration of the tenant.
+An expert agent is an [AI agent](#ai-agent) for a specific task that comes with a {{< product-c8y-iot >}} application or plugin, for example, the [Assistant](#assistant) or the Assistant in Data Preparation. Expert agents appear as subscribed agents in the [AI Agent Manager](#ai-agent-manager) and use the model configuration of the tenant.
 
 See also [Expert agents](/ai-intro/expert-agents/) in the documentation.
 

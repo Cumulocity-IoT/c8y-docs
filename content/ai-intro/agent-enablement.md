@@ -14,7 +14,7 @@ weight: 30
 
 - Build your own agents in the AI Agent Manager, with tools and MCP servers.
 - Customize agents that {{< product-c8y-iot >}} applications provide, for example, with your own instructions and tools.
-- Give your agents access to the complete API of your tenant with AI Workbench and code mode, and connect external agents to it.
+- Give your agents access to the complete API of your tenant with AI Workbench and code mode, and connect external agents to it. For details, see [Data and context](/ai-intro/data-and-context/#code-mode).
 
 ### AI Agent Manager {#ai-agent-manager}
 
@@ -48,18 +48,6 @@ Use MCP servers to give agents access to systems such as an ERP or a maintenance
 
 **Status**: Public Preview. For details, see [Tools and MCP](/ai/tools-mcp/).
 
-### AI Workbench (code mode) {#code-mode}
-
-AI Workbench provides code mode: an agent writes a short JavaScript function that finds and calls the APIs it needs, instead of calling a separate tool for each API operation. AI Workbench runs the function in an isolated sandbox and returns only the result to the agent. The sandbox provides the {{< product-c8y-iot >}} core REST API and the APIs of the services in your tenant that provide an OpenAPI specification or an MCP server.
-
-Agents of the AI Agent Manager use code mode through the `codemode` tool. When you assign the tool to an agent, the agent can work with the complete API of your tenant. For details, see [Using code mode in agents](/ai/ai-workbench/#using-code-mode-in-agents).
-
-The code runs with the permissions of the user. Each run has a limit of 120 seconds of runtime, 50 seconds of CPU time, and 200 calls of APIs and discovery functions.
-
-Use code mode for tasks with many steps or large amounts of data, for example, to find all devices with a critical alarm that run an outdated firmware version. External agents, such as AI coding assistants, can also connect to AI Workbench and use code mode. For the connection details, see [Connecting MCP clients](/ai/ai-workbench/#connecting-mcp-clients).
-
-**Status**: Public Preview. For details, see [AI Workbench and code mode](/ai/ai-workbench/).
-
 ### AI Agent Prompt block {#ai-agent-prompt-block}
 
 The AI Agent Prompt block calls an agent of the AI Agent Manager from an Analytics Builder model. The block fills a prompt template with up to five input values and outputs the text response of the agent. Connect the output to other blocks, for example, to create an alarm with the explanation of the agent.
@@ -83,7 +71,7 @@ The built-in tools and code mode run with the permissions of the user who runs t
 {{< /c8y-admon-important >}}
 
 {{< c8y-admon-related >}}
-- [AI capabilities overview](/ai-intro/ai-overview/) for how the parts of the AI capabilities fit together.
+- [Agentic AI capabilities overview](/ai-intro/ai-overview/) for how the parts of the agentic AI capabilities fit together.
 - [Expert agents](/ai-intro/expert-agents/) for the agents that the {{< product-c8y-iot >}} applications provide.
 - [Governance and safety](/ai-intro/ai-governance/) for controlling which tools need approval and for monitoring agent runs.
 {{< /c8y-admon-related >}}

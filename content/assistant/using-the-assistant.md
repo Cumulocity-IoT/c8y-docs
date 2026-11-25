@@ -10,10 +10,6 @@ sector:
 weight: 20
 ---
 
-{{< c8y-admon-preview >}}
-The Assistant is currently in Public Preview and might change or is not feature complete. While we try to keep changes as low as possible, breaking changes and feature removals happen.
-{{< /c8y-admon-preview >}}
-
 Open the Assistant from the header of the application, ask your question in the chat, and review the actions that the Assistant takes for you.
 
 {{< c8y-admon-req >}}

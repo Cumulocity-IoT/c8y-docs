@@ -17,7 +17,7 @@ Administrators control which LLM provider the agents use, what the agents are al
 The more an agent can change, the more control it needs. Agents that {{< product-c8y-iot >}} provides prioritize safety and require human approval for all actions that might cause undesired side effects. Based on your use case, you can adjust the approval settings and give agents additional tools to increase their autonomy. The following three levels go from no changes to changes in your tenant and in other systems:
 
 1. **AI investigates and recommends, without changing anything.** Agents read data and answer questions, for example, when the Assistant explains an alarm or summarizes the measurements of a device. An agent with read-only tools, or an agent that runs for a user with read-only permissions, cannot change data. The [permissions](#permissions) of the user limit which data the agent reads.
-2. **AI creates something that you review first.** For example, the AI assistant in Data Preparation creates the smart function of a rule from a sample payload. You review and test the result before you use it. A deployed rule processes incoming data without AI, so AI runs once, at design time. The behavior is predictable, and processing data does not cause AI costs.
+2. **The Assistant creates something that you review first.** For example, it creates the smart function of a Data Preparation rule from a sample payload. You review and test the result before you use it. A deployed rule processes incoming data without AI, so AI runs once, at design time. The behavior is predictable, and processing data does not cause AI costs.
 3. **Agents act within clear boundaries.** An agent can change data or call other systems, for example, to change a parameter of an asset. [Tool approval](#tool-approval), [permissions](#permissions), the [kill switch](#kill-switch), and the [audit trail](#observability) set the boundaries, and the platform enforces them. Analyze the risks thoroughly to make sure that an agent cannot cause harm. Where possible, start with AI that creates a deterministic rule.
 
 ### Model configuration {#model-configuration}
@@ -66,7 +66,7 @@ For testing agents with tool approval, see [Test](/ai/agents/#ai-agent-test).
 
 The **AI agent availability** switch in the control panel turns off all AI agents of the tenant at once, for example, to stop an agent that behaves unexpectedly or to stop the costs of an LLM provider immediately. While AI agents are turned off:
 
-- The AI Agent Manager refuses every agent run, including the expert agents, the "AI Agent Chat" widget, and calls through the REST API.
+- The AI Agent Manager refuses every agent run, including the expert agents and calls through the REST API.
 - All agent definitions, MCP server configurations, and the model configuration remain.
 - The **Observability** page remains available.
 

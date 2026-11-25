@@ -10,10 +10,6 @@ sector:
 weight: 40
 ---
 
-{{< c8y-admon-preview >}}
-The Assistant is currently in Public Preview and might change or is not feature complete. While we try to keep changes as low as possible, breaking changes and feature removals happen.
-{{< /c8y-admon-preview >}}
-
 Make the Assistant available to your users, add it to more applications, and adjust its behavior in the AI Agent Manager.
 
 {{< c8y-admon-req >}}
