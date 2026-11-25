@@ -36,7 +36,7 @@ For details, see [Measurement propagation](#measurement-propagation).
 The DTM Data Service is enabled for your tenant when you link the first data point to a source device. For details and for disabling the service, see [To manage the DTM Data Service](#enable-measurement-propagation).
 
 {{< c8y-admon-req >}}
-* Your tenant must be subscribed to the DTM Data Service, in addition to the Digital Twin Manager application, the Dtm-plugins extension, and the Dtm microservice.
+* The DTM Data Service is subscribed to your tenant by default. If it is not, ask your platform operator.
 * The Data Points extension package must be installed to manage linked data points in the DTM application, see [Data points](/dtm/asset-hierarchy/#datapoints).
 {{< /c8y-admon-req >}}
 
