@@ -78,7 +78,7 @@ Note that external agents use their own LLM and connect to the AI Workbench dire
 | Agent enablement | AI Agent Manager | Creates, tests, and manages agents, and customizes the agents that applications provide | Public Preview | [AI Agent Manager](/ai/aim-introduction/) |
 | Agent enablement | Tools and MCP servers | Give agents access to {{< product-c8y-iot >}} data and to other systems | Public Preview | [Tools and MCP](/ai/tools-mcp/) |
 | Agent enablement | AI Agent Prompt block | Calls an agent from an Analytics Builder model | Public Preview | [AI Agent Prompt](/streaming-analytics/block-reference/#ai-agent-prompt) |
-| Agent enablement | REST API | Calls agents from your own applications and manages agents programmatically | Public Preview | [REST API](/ai/rest-api/) |
+| Agent enablement | REST API | Calls agents from your own applications and manages agents programmatically | Public Preview | OpenAPI specification in your tenant at `/service/ai/api-json` |
 | Data and context | AI Workbench | Lets agents use code mode to write and run code against the APIs of your tenant. External agents can connect to it as well | Public Preview | [AI Workbench and code mode](/ai/ai-workbench/) |
 | Governance and safety | Model configuration | Sets the LLM provider and model for all agents or for single agents | Public Preview | [Model configuration](/ai/control-panel/#model-configuration) |
 | Governance and safety | Tool approval | Asks a user to approve a tool call before it runs | Public Preview | [Governance and safety](/ai-intro/ai-governance/#tool-approval) |

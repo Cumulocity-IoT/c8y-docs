@@ -46,7 +46,7 @@ The change takes effect immediately and there is no confirmation dialog. The tag
 While AI agents are disabled, **Test configuration** in the model configuration fails as well, because it runs a short test agent.
 {{< /c8y-admon-info >}}
 
-You can also read and change the availability programmatically, see [Tenant settings](/ai/rest-api/#tenant-settings).
+You can also read and change the availability programmatically with `GET /service/ai/settings` and `PUT /service/ai/settings` and the field `killSwitch`.
 
 ### Model configuration {#model-configuration}
 
@@ -129,7 +129,7 @@ The auth token is stored encrypted inside the platform and is never shown again 
 - To replace the token, enter the new token.
 - To remove the token, clear the field and click **Save export settings**.
 
-The protocol (`http/protobuf` or `http/json`), the service name, and the sample ratio of the export can only be changed via the REST API, see [Tenant settings](/ai/rest-api/#tenant-settings).
+The protocol (`http/protobuf` or `http/json`), the service name, and the sample ratio of the export can only be changed via the REST API, with the fields `protocol`, `serviceName`, and `sampleRatio` of the `telemetryExport` object in `PUT /service/ai/settings`. For all fields, see the OpenAPI specification in your tenant at `/service/ai/api-json`.
 
 #### Content of the traces {#content-of-the-traces}
 
@@ -146,5 +146,24 @@ Each agent run creates one trace. Its root span is named `agent:<agent name>`, a
 The resource attribute `service.name` is `c8y-ai-agents`, unless you set a different service name via the REST API.
 
 {{< c8y-admon-info >}}
-Depending on your {{< product-c8y-iot >}} environment, the AI Agent Manager can also export traces to a collector operated by {{< company-c8y >}}. This export is independent of the export that you configure here. Turning off the content of your export does not change it. To opt out of it, see [{{< company-c8y >}}-managed telemetry export](/ai/rest-api/#managed-telemetry-export).
+Depending on your {{< product-c8y-iot >}} environment, the AI Agent Manager can also export traces to a collector operated by {{< company-c8y >}}. This export is independent of the export that you configure here. Turning off the content of your export does not change it. To opt out of it, see [{{< company-c8y >}}-managed telemetry export](#managed-telemetry-export).
 {{< /c8y-admon-info >}}
+
+### {{< company-c8y >}}-managed telemetry export {#managed-telemetry-export}
+
+Depending on your {{< product-c8y-iot >}} environment, the AI Agent Manager also exports a trace of every agent run to an OpenTelemetry collector operated by {{< company-c8y >}}. {{< company-c8y >}} uses these traces to monitor the performance of AI agents, identify errors and technical issues, understand how the AI Agent Manager is used, and improve it. {{< company-c8y >}} deletes the traces after 14 days.
+
+The traces include the prompts, responses, and tool call arguments and results of the agent runs. They are pseudonymized: the ID of the user who ran the agent is never exported, but each trace has the tenant ID and the trace ID, which is also stored in the [audit record of the run](/ai/observability/#where-the-records-are-stored) in your tenant. Prompts and tool results can still contain personal data, for example, if a user enters it in a prompt.
+
+This export is independent of your own [OpenTelemetry export](#opentelemetry-export) and of its content setting.
+
+To opt out of the {{< company-c8y >}}-managed telemetry export, set `telemetryOptOut` to `true` in the settings of the AI Agent Manager. This requires ADMIN permission for the permission type "AI agent":
+
+```
+PUT /service/ai/settings
+{
+  "telemetryOptOut": true
+}
+```
+
+The opt-out is only available via the REST API. It does not affect your own OpenTelemetry export or the [**Observability**](/ai/observability/) page, which keep working.

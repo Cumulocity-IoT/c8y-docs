@@ -64,7 +64,7 @@ The AI Agent Manager provides a REST API under `/service/ai/`. With the API, you
 
 Use the REST API to integrate agents into your own applications, microservices, and workflows.
 
-**Status**: Public Preview. For details, see [REST API](/ai/rest-api/).
+**Status**: Public Preview. The OpenAPI specification of the API is available in each tenant at `/service/ai/api-json`. To browse it, install the **Api-doc** extension in **Administration** > **Ecosystem** > **Extensions** and open the **API documentation** application.
 
 {{< c8y-admon-important >}}
 The built-in tools and code mode run with the permissions of the user who runs the agent, and they can add, change, or delete data. System prompts, variables, and block inputs are vulnerable to prompt injection. Validate the input that you pass to agents, and test agents in a testing environment.

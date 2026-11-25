@@ -26,7 +26,7 @@ An AI agent is a configured assistant that answers requests in natural language 
 See also [Agents](/ai/agents/) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-Applications talk to an agent through the REST API of the AI Agent Manager, for example, with `POST /service/ai/agent/text/{agent-name}` for a text agent or `POST /service/ai/agent/object/{agent-name}` for an object agent. For details, see [REST API](/ai/rest-api/).
+Applications talk to an agent through the REST API of the AI Agent Manager, for example, with `POST /service/ai/agent/text/{agent-name}` for a text agent or `POST /service/ai/agent/object/{agent-name}` for an object agent. The OpenAPI specification is available in each tenant at `/service/ai/api-json`.
 {{< /c8y-details >}}
 
 

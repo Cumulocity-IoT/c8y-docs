@@ -262,7 +262,7 @@ Object agents cannot use custom tools. They use tools internally to structure re
 
 #### Tool approval {#tool-approval}
 
-In the **Tools** tab, you also set for each tool whether a user approves its calls before the tool runs. Tool approval also applies when applications call the agent through the REST API. For details, see [Requiring user approval](/ai/tools-mcp/#user-approval) and [Tool approval](/ai/rest-api/#tool-approval) in the REST API documentation.
+In the **Tools** tab, you also set for each tool whether a user approves its calls before the tool runs. Tool approval also applies when applications call the agent through the REST API. For details, see [Requiring user approval](/ai/tools-mcp/#user-approval) and [Agents configured through the REST API](/ai/tools-mcp/#user-approval-rest-api).
 
 ### Test {#ai-agent-test}
 

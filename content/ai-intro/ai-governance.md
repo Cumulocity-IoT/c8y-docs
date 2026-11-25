@@ -58,7 +58,7 @@ The **Tools** tab shows what each tool declares about itself.
 
 If a user denies a tool call, the tool does not run, and the **Observability** page shows the call as **Denied**. Applications that call agents through the REST API receive an approval request for such tool calls and must answer it.
 
-For details, see [Requiring user approval](/ai/tools-mcp/#user-approval) for agents and [Tool approval](/ai/rest-api/#tool-approval) in the REST API.
+For details, see [Requiring user approval](/ai/tools-mcp/#user-approval) and [Agents configured through the REST API](/ai/tools-mcp/#user-approval-rest-api).
 
 For testing agents with tool approval, see [Test](/ai/agents/#ai-agent-test).
 
@@ -86,7 +86,7 @@ For details, see [Observability](/ai/observability/) and [OpenTelemetry export](
 
 When an agent runs, the AI Agent Manager sends the system prompt, the conversation, the descriptions of the tools, and the results of the tool calls to the configured LLM provider. Your agreement with the LLM provider governs how the provider handles this data.
 
-Depending on your {{< product-c8y-iot >}} environment, the AI Agent Manager also exports traces of agent runs to a collector operated by {{< company-c8y >}}. Administrators opt out of this export through the REST API. For details, see [{{< company-c8y >}}-managed telemetry export](/ai/rest-api/#managed-telemetry-export).
+Depending on your {{< product-c8y-iot >}} environment, the AI Agent Manager also exports traces of agent runs to a collector operated by {{< company-c8y >}}. Administrators opt out of this export through the REST API. For details, see [{{< company-c8y >}}-managed telemetry export](/ai/control-panel/#managed-telemetry-export).
 
 For details on data protection and for answers to frequently asked questions, see [AI aspects](/concepts/concepts-ai/).
 

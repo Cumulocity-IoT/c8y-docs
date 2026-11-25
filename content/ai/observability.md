@@ -77,7 +77,7 @@ The AI Agent Manager stores the records as [audit logs](/standard-tenant/monitor
 
 The source of all records is a managed object named "AI Agents" of type `c8y_AiAgentService`, which the AI Agent Manager creates automatically with the first record. The records are kept according to the [retention rules](/standard-tenant/managing-data/#retention-rules) for audit logs of your tenant.
 
-To read the records programmatically, see [Observability](/ai/rest-api/#observability) in the REST API documentation.
+To read the records programmatically, use `GET /service/ai/observability` for the runs and `GET /service/ai/observability/tools?telemetryId=<telemetryId>` for the tool calls of a run. Both requests require READ or ADMIN permission for the permission type "AI agent". For the query parameters, see the OpenAPI specification in your tenant at `/service/ai/api-json`.
 
 ### Linking runs to traces {#linking-runs-to-traces}
 

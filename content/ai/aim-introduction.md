@@ -8,6 +8,8 @@ outputs:
 sector:
   - ai
 weight: 10
+aliases:
+  - /ai/rest-api/
 helpcontent:
 - label: aim-introduction
   title: AI Agent Manager
@@ -114,4 +116,4 @@ If successful, your provider is correctly configured, and you can start to use a
  - Understand the available [tools and how you can extend them with MCP](/ai/tools-mcp/).
  - Let agents work with the complete API of your tenant in [code mode with AI Workbench](/ai/ai-workbench/).
  - Monitor agent runs on the [**Observability**](/ai/observability/) page and export them to your own collector with the [OpenTelemetry export](/ai/control-panel/#opentelemetry-export).
- - You can also manage agents programmatically [via the REST API](/ai/rest-api/) for integration into your own applications and workflows. 
+ - You can also manage agents programmatically via the REST API of the AI Agent Manager for integration into your own applications and workflows. Its OpenAPI specification is available in each tenant at `/service/ai/api-json`. 
