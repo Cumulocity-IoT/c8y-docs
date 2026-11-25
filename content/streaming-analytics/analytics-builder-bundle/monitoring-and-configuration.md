@@ -437,6 +437,10 @@ After you have changed a tenant option using a REST request, the correlator will
 </thead>
 <tbody>
   <tr>
+    <td><code>aiAgent.timeoutSecs</code></td>
+    <td>The time in seconds that the AI Agent Prompt block waits for a call to an AI agent, including the rounds after a denied tool. After this time, the call ends with the error <code>TIMED_OUT</code> and the block drops a later reply. The default value is 110. The minimum value is 1 and the maximum value is 110. A value outside this range is set to the nearest limit. See also <a href="/streaming-analytics/analytics-builder/#ai-agents-controlling-calls">Controlling the number of calls</a>.</td>
+  </tr>
+  <tr>
     <td><code>numWorkerThreads</code></td>
     <td>The number of worker threads. The per-tenant microservice defaults to 1 AB worker per core. For example, the apama-ctrl-2c-8g variant will have 2 worker threads. The multi-tenant microservice defaults to 1 worker thread per tenant.See also <a href="/streaming-analytics/analytics-builder/#configuring-the-concurrency-level">Configuring the concurrency level</a>. Note that the number of worker threads cannot be changed for the microservice with multi-tenant support.</td>
   </tr>
