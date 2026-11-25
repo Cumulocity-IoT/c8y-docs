@@ -97,6 +97,12 @@ In the following screenshot, five columns are configured. Three property columns
 The resulting table is visualized as follows:
 ![Asset table widget example](/images/users-guide/cockpit/cockpit-widget-asset-table-example.png)
 
+On the dashboard, you can sort the table by using the sort button in the header of a column.
+
+{{< c8y-admon-info >}}
+Columns that show computed properties, such as **Last measurement** or **Alarm count today**, are sorted in the browser. The sorting applies only to the rows that are loaded on the current page. All other columns are sorted across all pages.
+{{< /c8y-admon-info >}}
+
 #### To add properties {#to-add-properties}
 
 Click **+Add Properties** and select one or more properties to be added.
@@ -125,12 +131,6 @@ To edit the header of a column, click on its value in the **Label** column and e
 You can rearrange the columns by clicking the icon <i class="dlt-c8y-icon-menu text-muted icon-20"></i> at the very left of a row and dragging and dropping the entry.
 
 To remove a property or an action, hover over the respective row and click **Delete** at the right.
-
-To sort the table, use the sort button in the header of a column.
-
-{{< c8y-admon-info >}}
-Columns that show computed properties, such as **Last measurement** or **Alarm count today**, are sorted in the browser. The sorting applies only to the rows that are loaded on the current page. All other columns are sorted across all pages.
-{{< /c8y-admon-info >}}
 
 ### Data graph {#data-point-graph}
 
