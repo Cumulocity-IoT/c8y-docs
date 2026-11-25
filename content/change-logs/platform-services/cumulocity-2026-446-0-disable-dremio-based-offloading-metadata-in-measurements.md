@@ -14,10 +14,8 @@ build_artifact:
 ticket: MTM-68887
 version: 2026.446.0
 ---
-Measurements in time series collections carry metadata that is specific to Dremio-based DataHub offloading, which is end of life.
+With the new feature toggle `core.measurements.disable-created-at`, the platform no longer writes the metadata that is specific to Dremio-based DataHub offloading in new measurements. The toggle takes effect only when the tenant stores measurements in time series collections only. Existing measurements are not modified.
 
-With the new feature toggle `core.measurements.disable-created-at`, the platform no longer writes this metadata for new measurements. The toggle takes effect only when the tenant stores measurements in time series collections only. The platform does not change existing measurements, and measurements written before or after enabling the toggle stay readable.
-
-Do not enable the toggle if you use Dremio-based DataHub offloading, because the offloading relies on this metadata and its pipelines can break.
+Do not enable the toggle if you use Dremio-based DataHub offloading, because it relies on this metadata.
 
 The feature toggle is disabled by default. To try the feature, enable it for a tenant.
