@@ -1,5 +1,5 @@
 ---
-date: ""
+date: 2026-11-25
 title: Filter by software type input field now shows the selected type
 product_area: Device management & connectivity
 change_type:
