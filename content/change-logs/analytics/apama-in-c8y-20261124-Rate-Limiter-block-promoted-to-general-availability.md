@@ -22,9 +22,9 @@ The block is available in the Analytics Builder palette by default and no longer
 - The first message for each device always passes. Previously, the block suppressed the first message if its timestamp was smaller than the period.
 - The block rejects a period that is not a finite and positive number.
 - The outputs of the block now have the same type as its input, so the usual rules for connecting blocks apply to them. This has two effects on existing models:
-  - A model in which the block receives a pulse and one of its outputs is connected to a float or string input can no longer be activated. Activation fails with the error `Cannot convert 'pulse' output to 'float' for input '<input name>'.` (or `to 'string'`). Such a model previously received the value 1 or the text "true". To fix it, connect the output to a pulse or boolean input.
+  - A model in which the block receives a pulse and one of its outputs is connected to a float or string input can no longer be activated. Activation fails with the error `Cannot convert 'pulse' output to 'float' for input '<input name>'.` (or `to 'string'`). Previously, a float input in such a model received the value 1 for each pulse. To fix it, connect the output to a pulse or boolean input.
   - A model in which the block receives a string and one of its outputs is connected to a float input now fails on activation with `Cannot convert 'string' output to 'float' for input '<input name>'.` Previously, such a model was activated but failed with a runtime error on the first message that passed.
-- If the block receives pulses and its output is connected to a pulse input, every pulse that passes now triggers that input. Previously, only the first pulse did, until a different value was received.
+- If the block receives pulses and its output is connected to a pulse input, every pulse that passes now triggers that input. Previously, only the first pulse did.
 
 The block has a new **Event Count** parameter, which sets the maximum number of messages that pass in each period for each device. The default is 1, which is the behavior of the block during the Public Preview.
 
