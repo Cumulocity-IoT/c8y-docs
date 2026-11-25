@@ -36,7 +36,7 @@ The block sends the following to the AI Agent Manager:
 - The text of the **Prompt template** parameter, if you set it. The block sends the text as you wrote it.
 - The variables that the block builds from its input.
 
-The AI Agent Manager combines these with the agent. The system prompt comes from the agent. The user prompt comes from the **Prompt template** parameter. If you do not set the parameter, the user prompt is the value of the input. The AI Agent Manager replaces each placeholder `{{name}}` or `{{ name }}` with the value of the variable of that name, in the system prompt and in the user prompt.
+The AI Agent Manager combines these with the agent. The system prompt comes from the agent. The user prompt comes from the **Prompt template** parameter. The parameter has a default, `Follow your instructions for this input: {{value}}`, which suits an agent whose system prompt holds all the instructions. The AI Agent Manager replaces each placeholder `{{name}}` or `{{ name }}` with the value of the variable of that name, in the system prompt and in the user prompt.
 
 #### To call an agent from a model {#to-call-an-agent-from-a-model}
 
@@ -219,7 +219,7 @@ The block was released in Public Preview before it became generally available. A
 
 - The block has one input, **Input**, instead of five. Each value that arrives starts one call, and the block has no trigger input. A wire to the second to the fifth input is not valid. To pass several values, combine them with a Set Properties block.
 - The prompt template no longer uses `{{inputs[0]}}` to `{{inputs[4]}}`. The value of the input is a variable with the name that you enter in **Value name**, or `value`. The properties of the input, `source`, and `timestamp` are variables as well. A model with `{{inputs[n]}}` in its prompt template does not activate, and the message lists the placeholders to replace.
-- The **Prompt template** parameter is optional. Without it, the value of the input is the prompt.
+- The **Prompt template** parameter has a default, so an agent whose system prompt holds all the instructions needs no template of its own.
 - The block has the **Error** output in addition to the **Result** output. For an object agent, `result` is a pulse with the fields of the reply as properties.
 - The block fails visibly. Problems that persist stop the model, and temporary problems come out of the **Error** output. In the preview, the block wrote a warning to the log and sent no output.
 - The block limits the cost. It makes one call at a time for each device, has a time limit, does not retry, and makes no calls in simulation mode.
