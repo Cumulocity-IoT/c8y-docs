@@ -112,7 +112,7 @@ curl -s -X POST \
 ```
 
 {{< c8y-admon-important >}}
-The `clientSecret` is returned only once and is never stored by the service. Store it securely immediately after creation. If the secret is lost, rotate the principal with a `PUT` request to issue a new client ID and secret. Rotating invalidates the previous secret immediately.
+The `clientSecret` is returned only once and is never stored by the service. Store it securely immediately after creation. If the secret is lost, rotate the principal with a `PUT` request to issue a new secret. The client ID does not change. Rotating invalidates the previous secret immediately.
 {{< /c8y-admon-important >}}
 
 **Listing principals**
@@ -127,7 +127,7 @@ curl -s \
 
 **Rotating credentials**
 
-To replace a lost or compromised secret. The response contains a new client ID and secret, and the previous secret is invalidated immediately.
+To replace a lost or compromised secret. The response contains the unchanged client ID and a new secret, and the previous secret is invalidated immediately.
 
 ```shell
 curl -s -X PUT \
