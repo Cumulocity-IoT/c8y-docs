@@ -84,7 +84,7 @@ Other data types, such as `uint8` and `float16`, are not supported. An input or 
 
 ### Limits {#onnx-limits}
 
-- **Size:** The file, and for a zip archive its extracted content, must not be larger than 100 MB. A zip archive must not have more than 1,000 entries. You can change the size limit with the tenant option `onnx.maxModelSizeMB`.
+- **Size:** The file, and for a ZIP archive its extracted content, must not be larger than 100 MB. A ZIP archive must not have more than 1,000 entries. You can change the size limit with the tenant option `onnx.maxModelSizeMB`.
 - **Time:** One run of the ONNX model must finish within 1 second. You can change the time limit with the tenant option `onnx.timeoutSecs`. While the ONNX model runs, the analytic model does not process other inputs, so choose a time limit that fits the rate at which your inputs arrive.
 - **Memory:** The block loads one copy of the ONNX model for each device that sends inputs to the analytic model.
 - **Activation:** The download and the check of the ONNX model must finish within 10 minutes. Otherwise, the activation fails. The download continues, so that the next activation succeeds.
