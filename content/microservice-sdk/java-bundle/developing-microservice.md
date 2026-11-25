@@ -464,9 +464,15 @@ It can be configured with the following parameters:
 |:------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                  \<arguments>                                  |                                    List\<String>                                     |                                            &#8209;Dagent-package.arguments=[...,]...                                            |                                                   ""                                                   | General command line arguments for jar startup.<br>Specify with "," separated arguments.                                                                                                                                                       |
 |                                \<containerSkip>                                |                                       Boolean                                        |                                            &#8209;Dskip.agent.package.container=...                                             |                                                 false                                                  | Skip the container packaging                                                                                                                                                                                                                   |
+| \<deleteImage> | Boolean | &#8209;Dmicroservice.package.deleteImage=... | true | Removes the image from the local Docker daemon after the image is written to the ZIP file (Docker daemon build only). |
 |                                 \<description>                                 |                                        String                                        |                                                 &#8209;Dpackage.description=...                                                 |                                         ${project.description}                                         | Microservice description                                                                                                                                                                                                                       |
+| \<dockerBuildArchs> | String | &#8209;Dmicroservice.package.dockerBuildArchs=... | `buildSpec.targetBuildArchitectures` of *cumulocity.json*, otherwise amd64 | Comma-separated target platforms, for example `amd64,arm64`. See [Building images for several platforms](/microservice-sdk/java/#package-goal-multi-platform). The former pom.xml name \<targetBuildArchs> still works but is deprecated. |
+| \<dockerBuildNetwork> | String | &#8209;Dmicroservice.package.dockerBuildNetwork=... | Docker default | Network for `RUN` instructions during the image build. Multi-platform builds support only `default`, `host`, and `none`. |
+| \<dockerBuildNoCache> | Boolean | &#8209;Dmicroservice.package.dockerBuildNoCache=... | true | Builds every layer again and pulls the base image, so that the image gets the current packages, for example Java. Set to `false` to use the Docker build cache, for example for offline builds. |
 |                             \<dockerBuildTimeout>                              |                                         Int                                          |                                       &#8209;Dmicroservice.package.dockerBuildTimeout=...                                       |                                                  360                                                   | Timeout value in seconds for the generation of a docker build                                                                                                                                                                                  |
+| \<dockerCli> | String | &#8209;Dmicroservice.package.dockerCli=... | docker | Docker CLI binary that runs `docker buildx`. |
 |                                  \<encoding>                                   |                                        String                                        |                                            &#8209;Dproject.build.sourceEncoding=...                                             |                                                 UTF-8                                                  | Define String encoding                                                                                                                                                                                                                         |
+| \<failOnJavaVersionMismatch> | Boolean | &#8209;Dmicroservice.package.failOnJavaVersionMismatch=... | false | Fails the build when the platforms of a multi-platform image have different Java versions. If set to `false`, the build logs a warning. |
 |           \<heap><br>\<min>...\</min><br>\<max>...\<max><br>\</heap>           | min, max : \<Int>m<br>(m:megabytes; for available units refer to Java documentation) | &#8209;&#8209;<br>[(Setting complex<br>command line parameter)](/microservice-sdk/java/#package-goal-command-line-complex-data) |                                        min = 128m<br>max = 384m                                        | \<heap> parameter results to &#8209;Xms\<min> &#8209;Xmx\<max> Java runtime arguments for the microservice startup.                                                                                                                                        |
 |                                   \<jvmArgs>                                   |                                    List\<String>                                     |                                             &#8209;Dagent-package.jvmArgs=[...,]...                                             | "&#8209;XX:+UseG1GC<br>&#8209;XX:+UseStringDeduplication<br>&#8209;XX:MinHeapFreeRatio=25<br>&#8209;XX:MaxHeapFreeRatio=75" | Java runtime arguments for the microservice startup. Specify with "," separated arguments. Default values will be overwritten if other options are provided.                                                                                   |
 |                                \<manifestFile>                                 |                                        String                                        |                                                    &#8209;DmanifestFile=...                                                     |                        "$\{basedir}/src/main/<br>configuration/cumulocity.json"                        | Path to the microservice manifest file location                                                                                                                                                                                                |
@@ -475,6 +481,7 @@ It can be configured with the following parameters:
 |           \<perm><br>\<min>...\</min><br>\<max>...\<max><br>\</perm>           |       min, max : \<Int>m<br>(m:megabytes; for available units refer to Java documentation)        |  &#8209;&#8209;<br>[(Setting complex<br>command line parameter)](/microservice-sdk/java/#package-goal-command-line-complex-data)   |                                        min = 64m<br>max = 128m                                         | \<perm> parameter is combined with \<metaspace> parameter values for compatibility reasons if available which results in &#8209;XX:MetaspaceSize=\<min> &#8209;XX:MaxMetaspaceSize=\<max> Java runtime arguments for the microservice startup. |
 |                                   \<rpmSkip>                                   |                                       Boolean                                        |                                               &#8209;Dskip.agent.package.rpm=...                                                |                                                  true                                                  | Skip the rpm packaging                                                                                                                                                                                                                         |
 |                                    \<skip>                                     |                                       Boolean                                        |                                                 &#8209;Dskip.agent.package=...                                                  |                                                 false                                                  | Skip the whole packaging                                                                                                                                                                                                                       |
+| \<useBuildx> | Boolean | &#8209;Dmicroservice.package.buildx=... | false | Builds the image with `docker buildx`. Required for multi-platform images. |
 
 
 Example configuration in pom.xml:
@@ -594,6 +601,79 @@ If you have defined the custom properties in your pom.xml file you can specify t
 mvn clean install -Dcustom-property.metaspace.min=400m -Dcustom-property.metaspace.max=500m
 ```
 
+#### Building images for several platforms {#package-goal-multi-platform}
+
+Available since version 2026.61.0, the package goal can build the microservice image for several target platforms and, with `docker buildx`, combine them into one multi-platform image.
+
+{{< c8y-admon-info >}}
+{{< product-c8y-iot >}} currently runs only `linux/amd64` microservices. `arm64` is not supported yet. You can build `arm64` and multi-platform images with the plugin, but you must include `amd64` to deploy the microservice to {{< product-c8y-iot >}}.
+{{< /c8y-admon-info >}}
+
+##### Target platforms {#package-goal-target-platforms}
+
+The plugin accepts `amd64` (`linux/amd64`) and `arm64` (`linux/arm64`), and the aliases `x86_64`, `aarch64`, and `arm64v8`. The plugin passes other platforms to Docker unchanged and logs a warning that {{< product-c8y-iot >}} may not support them.
+
+Set the target platforms with the `dockerBuildArchs` parameter in the *pom.xml* file, with `-Dmicroservice.package.dockerBuildArchs` on the command line, or in the microservice manifest *cumulocity.json*:
+
+```json
+"buildSpec": {
+    "targetBuildArchitectures": ["amd64", "arm64"]
+}
+```
+
+The value from the *pom.xml* file or the command line overrides the value from *cumulocity.json*. If no platform is set, the plugin builds for `amd64`.
+
+##### Docker daemon build (default) {#package-goal-docker-daemon-build}
+
+By default, the plugin builds the image through the Docker daemon API, one platform at a time:
+
+* The package goal writes one ZIP file per platform. With one platform, the plugin names the ZIP file *&lt;artifactId>-&lt;version>.zip*. With several platforms, the ZIP file for `linux/amd64` keeps this name, and the ZIP files of the other platforms add the platform to the name, for example *&lt;artifactId>-&lt;version>-linux-arm64.zip*.
+* The push goal pushes the image built last as `<name>:<version>` and `<name>:latest`. With several platforms, the build logs a warning, because all platforms share the same tags.
+
+##### Multi-platform images with docker buildx {#package-goal-buildx-build}
+
+With `-Dmicroservice.package.buildx=true`, or `<useBuildx>true</useBuildx>` in the *pom.xml* file, the plugin builds the image with `docker buildx`:
+
+* The package goal always writes one ZIP file, *&lt;artifactId>-&lt;version>.zip*. For one platform, the ZIP file contains the image in `docker save` format, the same as the Docker daemon build. For several platforms, it contains one multi-platform image (OCI image index).
+* The push goal pushes the image of the last package goal run, so the registry gets the same image as the ZIP file. For several platforms, it pushes one image index for all platforms as `<name>:<version>` and `<name>:latest`. If the package goal did not build an image for the same platforms, the push goal builds it first.
+* With `skip.microservice.package=true`, the package goal loads the image into the Docker daemon instead of writing a ZIP file. The plugin loads a multi-platform image only if the Docker daemon uses the containerd image store.
+
+Example:
+
+```sh
+mvn clean install -Dmicroservice.package.buildx=true -Dmicroservice.package.dockerBuildArchs=amd64,arm64
+```
+
+Prerequisites:
+
+* Docker with the buildx plugin 0.10 or later, for example Docker Engine 23 or later with `docker-buildx-plugin`, or Docker Desktop.
+* To build `arm64` images on an `amd64` host, install QEMU emulation. Install it again after each restart of the host:
+
+  ```sh
+  docker run --privileged --rm tonistiigi/binfmt --install arm64
+  ```
+
+The plugin does not change your buildx builders. It keeps its buildx state in *target/buildx* and the built image in *target/buildx-image*. The plugin creates a temporary `docker-container` builder and removes it after the build, so the next build cannot use the build cache of the previous one. If the Docker daemon uses the containerd image store, the plugin uses the built-in `default` builder and its build cache instead.
+
+The plugin runs the following checks:
+
+| Check | Result if the check fails | How to fix |
+|---|---|---|
+| docker buildx 0.10 or later is installed. | The build fails. | Install the buildx plugin. |
+| For several platforms, the network is `default`, `host`, or `none`. | The build fails. | Change the `dockerBuildNetwork` parameter. |
+| The builder lists all supported target platforms. | The build logs a warning. The build may fail later with `exec format error`. | Install QEMU emulation as described above. |
+| For several platforms, all platforms have the same Java version. The plugin checks this after the build. | The build logs a warning. With `failOnJavaVersionMismatch=true`, the build fails. | See [Same Java version on all platforms](#package-goal-java-version-check). |
+
+##### Same Java version on all platforms {#package-goal-java-version-check}
+
+All platforms of a multi-platform image must run the same Java version. The Java version can differ between platforms if:
+
+* the build cache holds an older Java layer for one platform,
+* the Alpine package mirrors of the architectures are briefly out of sync, or
+* a custom base image has different Java versions for its platforms.
+
+The plugin builds a multi-platform image once and runs `java -version` on each platform of the result. Then it exports or pushes exactly the layers it checked. If the versions differ, the build logs a warning with the Java version of each platform. To fail the build instead, set `-Dmicroservice.package.failOnJavaVersionMismatch=true`. After a mismatch, build the image again later or use a base image with a fixed Java version.
+
 #### Validate REST security goal {#validate-rest-security-goal}
 
 Available since version 2026.29.0, the validate REST security goal scans compiled classes to ensure all REST controller endpoints have proper security annotations. This provides build-time verification that your microservice endpoints are adequately secured.
@@ -710,6 +790,8 @@ Example configuration:
     <containerSkip>false</containerSkip>
 </configuration>
 ```
+
+With `docker buildx`, the push goal pushes the image that the package goal built. For several platforms, this is one image index for all platforms. See [Multi-platform images with docker buildx](#package-goal-buildx-build).
 
 #### Upload goal {#upload-goal}
 
