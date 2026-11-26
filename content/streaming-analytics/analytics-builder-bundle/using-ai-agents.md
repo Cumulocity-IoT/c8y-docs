@@ -198,7 +198,7 @@ Your **Prompt template** must describe the alarm and name the variables. If your
 
 ### Sample: On alarm, ask an agent and send an email {#ai-agents-sample}
 
-The sample **On alarm, ask an agent and send an email** shows the block in a model. When an alarm is raised, the model asks an agent to explain the alarm and sends the reply by email. The sample is also available as a Smart Rule template. The sample and the template are shown only for tenants that have the AI Acceleration bundle. By default, the sample calls the agent `streaming-analytics-alarm-triage`, and you can enter the name of your own agent instead. Each run of the model calls the agent and costs money.
+The sample **On alarm, ask an agent and send an email** shows the block in a model. When an alarm is raised, the model asks an agent to explain the alarm and sends the reply by email. A Rate Limiter block in front of the AI Agent Prompt block lets at most one alarm for each device through in each period, which you set when you create the instance. The other new alarms of the device in that period are not sent to the agent and get no email. The sample is also available as a Smart Rule template. The sample and the template are shown only for tenants that have the AI Acceleration bundle. By default, the sample calls the agent `streaming-analytics-alarm-triage`, and you can enter the name of your own agent instead. Each run of the model calls the agent and costs money.
 
 <!-- TODO(PAB-5481): The sample is still being built. When it is final, describe its template parameters (agent name, recipient, alarm type, and so on), the variables of the prompt template, and the subject and body of the email, and check the name of the sample and the card text on the Samples tab. -->
 
