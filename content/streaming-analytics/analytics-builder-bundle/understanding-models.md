@@ -101,6 +101,7 @@ There are different types of processing blocks. They are grouped into different 
 |---------------------|--------------------|
 |**Logic**            |perform logical operations on the data. Blocks such as **AND** and **OR** are in this category.|
 |**Calculation**      |perform mathematical operations on the data. Blocks such as **Difference**, **Threshold**, **Direction Detection**, **Delta** and **Expression** are in this category.|
+|**AI/ML**            |apply artificial intelligence and machine learning to the data. The **AI Agent Prompt** block is in this category.|
 |**Aggregate**        |perform aggregation of the data over a window of values. Blocks such as **Average \(Mean\)** and **Integral** are in this category.|
 |**Flow Manipulation**|manipulate the flow of the data. Blocks such as **Time Delay**, **Gate**, **Pulse** and **Latch Values** are in this category.|
 |**Utility**          |provide miscellaneous utility functions. Blocks such as **Toggle** and **Missing Data** are in this category.|
