@@ -125,13 +125,41 @@ It is possible to restore your dashboard to a previous state using the version h
 
 When a new version is created in the version history, it includes a brief description of the changes made. A new version is added each time when saving the dashboard in edit mode or when editing the general settings of the dashboard.
 
+Cockpit keeps the 10 most recent versions. The versions are stored in the dashboard itself, so they add to the size of the dashboard, see [To save a dashboard that is too large](#to-save-a-dashboard-that-is-too-large).
+
 <img src="/images/users-guide/cockpit/cockpit-dashboard-restore.png" name="Restore dashboard state"/>
+
+### To turn off the version history of a dashboard {#to-turn-off-the-version-history-of-a-dashboard}
+
+By default, Cockpit keeps a version history for each dashboard. Turn it off to keep a dashboard small, for example when it contains large widgets.
+
+1. Navigate to the dashboard settings and open the **Version history** tab.
+
+2. Switch off **Keep version history**.
+
+3. Click **Save**.
+
+4. If the dashboard has stored versions, click **Delete history** in the confirmation dialog.
+
+Cockpit deletes the stored versions permanently and no longer adds a version when you save the dashboard. To keep versions again, switch on **Keep version history** and save the dashboard.
+
+### To save a dashboard that is too large {#to-save-a-dashboard-that-is-too-large}
+
+A dashboard and its stored versions are saved together in a single managed object, which has a maximum document size, see [Fragments](/concepts/domain-model/#fragments). A dashboard with large widgets, for example SCADA widgets with embedded images, can exceed this size. In this case, Cockpit cannot save the dashboard and opens the **Dashboard is too large to save** dialog. Select one of the following options:
+
+- **Remove oldest version**: Cockpit removes the oldest stored version and tries to save again. If the dashboard is still too large, the dialog opens again.
+- **Turn off version history**: Cockpit deletes all stored versions, turns off the version history, and saves the dashboard.
+- **Cancel**: Cockpit does not save the dashboard. Your changes stay in edit mode, so you can change them and save again.
+
+If no stored version is left, or if the version history is already turned off, Cockpit shows a message instead of the dialog. The message lists how to reduce the size of the dashboard: turn off the version history, reduce the number of widgets, or reduce the size of embedded elements, for example SVG images in SCADA widgets.
 
 ### To copy a dashboard from one object to another {#to-copy-a-dashboard-from-one-object-to-another}
 
 1. Click **More...** in the top menu bar and from the context menu select **Copy dashboard**.
 
 2. Next, navigate to the object you want to copy the dashboard to and from the context menu select **Paste dashboard [NAME]** to insert the dashboard.
+
+If the version history of the copied dashboard is turned off, the pasted dashboard has the version history turned off as well.
 
 An alternative way to copy a dashboard is to use the
 "dashboard per type" approach.  With the "dashboard per type" approach you share the dashboard from one object with **all** objects of the same type, see [To share a dashboard](#dashboard-template).
