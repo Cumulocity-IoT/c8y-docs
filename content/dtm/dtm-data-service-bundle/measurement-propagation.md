@@ -6,7 +6,7 @@ layout: redirect
 
 ### How measurements are propagated
 
-*Measurement propagation* means that each new measurement of a source device is copied to every asset with a data point linked to it. The copy is a new measurement with the asset as source. The device measurement itself is not changed.
+*Measurement propagation* means that for each new measurement of a source device, a measurement is created on every asset with a data point linked to it. The new measurement has the asset as source. The device measurement itself is not changed.
 
 The DTM Data Service propagates measurements only while it is enabled for your tenant, see [To manage the DTM Data Service](#enable-measurement-propagation).
 
@@ -16,7 +16,7 @@ For each incoming device measurement, one measurement is created for each linked
 - Time and type of the measurement are taken from the device measurement.
 - The measurement contains the fragment `c8y_dtm_data_service`. The fragment identifies the measurement as propagated by the DTM Data Service.
 - Each linked series is created with the fragment and series of the linked data point on the asset, and with the value and unit of the device measurement. If several data points of the same asset are linked to the same device measurement, they are combined into one asset measurement.
-- Fragments and series of the device measurement which are not linked are not copied to the asset.
+- Fragments and series of the device measurement which are not linked are not included in the asset measurement.
 
 Device measurements are matched to linked data points by fragment and series only. The measurement type configured for a linked data point does not affect propagation.
 
