@@ -151,7 +151,7 @@ A dashboard and its stored versions are saved together in a single managed objec
 - **Turn off version history**: Cockpit deletes all stored versions, turns off the version history, and saves the dashboard.
 - **Cancel**: Cockpit does not save the dashboard. Your changes stay in edit mode, so you can change them and save again.
 
-If no stored version is left, or if the version history is already turned off, Cockpit shows a message instead of the dialog. The message lists how to reduce the size of the dashboard: turn off the version history, reduce the number of widgets, or reduce the size of embedded elements, for example SVG images in SCADA widgets.
+If no stored version is left, or if the version history is already turned off, Cockpit shows a message instead of the dialog. The message lists how to reduce the size of the dashboard, from the least to the most drastic option: turn off the version history, reduce the size of the widget configurations, for example by using smaller embedded files in SCADA widgets, or remove widgets.
 
 ### To copy a dashboard from one object to another {#to-copy-a-dashboard-from-one-object-to-another}
 
