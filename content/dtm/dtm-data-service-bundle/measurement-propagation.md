@@ -20,10 +20,8 @@ For each incoming device measurement, one measurement is created for each linked
 
 Device measurements are matched to linked data points by fragment and series only. The measurement type configured for a linked data point does not affect propagation.
 
-Only measurements with a device as source are propagated. Measurements with an asset as source, including propagated asset measurements, are not propagated further.
-
-Propagated asset measurements are regular measurements in {{< product-c8y-iot >}}. For details on load, limits, delivery and cost implications, see the [service-level agreement for measurement propagation](/service-terms/service-level/#dtm-data-service-sla).
+Propagated asset measurements are regular measurements in {{< product-c8y-iot >}}. For details on load, limits, delivery and cost implications, see the [DTM Data Service Service-Level Agreement](/service-terms/service-level/#dtm-data-service-sla).
 
 ### Fan-out limit {#fan-out-limit}
 
-The number of assets a single device measurement is propagated to is limited. If the limit is exceeded, measurements for further linked assets are not created and an alarm of type `c8y_DtmMeasurementFanOutLimitExceeded` is raised on the source device. For the default limit and how to request a different limit, see [Fan-out](/service-terms/service-level/#dtm-fan-out) in the service-level agreement for measurement propagation.
+The number of assets a single device measurement is propagated to is limited. If the limit is exceeded, measurements for further linked assets are not created and an alarm of type `c8y_DtmMeasurementFanOutLimitExceeded` is raised on the source device. For the default limit and how to request a different limit, see [Fan-out](/service-terms/service-level/#dtm-fan-out) in the DTM Data Service Service-Level Agreement.
