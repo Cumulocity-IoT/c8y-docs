@@ -25,6 +25,17 @@ To grant a permission to a user, assign the required permission strings, such as
 {{< /c8y-details >}}  
 
 
+### Principal {#principal}
+
+A principal is a named credential for the [Iceberg catalog](#iceberg-catalog), with a client ID and a client secret. Clients use a principal to sign in to the catalog and read the [lakehouse](#lakehouse). The **Connect to DataHub** dialog manages one principal, named `datahub`. To use one principal per application, create more principals with the API.
+
+See [Managing credentials with the API](/streaming-lake-ingestion/connecting-to-the-lakehouse/#managing-credentials-with-the-api) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+You manage principals with the API at `/service/offloading/api/v1/principals`. A tenant can have up to 100 principals.
+{{< /c8y-details >}}
+
+
 ### Private Preview {#private-preview}
 
 Private Preview denotes a feature release stage in the [Continuous Deployment model](#continuous-deployment) where a new feature is made available to a limited, invitation-only group of selected customers for feedback and testing, as opposed to [Public Preview](#public-preview) and [General Availability](#ga).
