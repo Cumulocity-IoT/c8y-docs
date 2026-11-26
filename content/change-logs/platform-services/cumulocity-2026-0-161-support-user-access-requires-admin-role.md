@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-QHwMfWtBk7
     label: cumulocity
 ticket: MTM-67983
-version: 2026.448.0
+version: 2026.0.161
 ---
 
 Only users with ADMIN permission for "Tenant" (ROLE_TENANT_ADMIN) or "Tenant management" (ROLE_TENANT_MANAGEMENT_ADMIN) can enable or disable support user access for their tenant. The following endpoints reject requests from other users with HTTP status 403:
