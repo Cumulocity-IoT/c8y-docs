@@ -33,7 +33,13 @@ The **Assistant** button appears in the header only if your user and your tenant
 
 ### How the Assistant works {#how-the-assistant-works}
 
-The Assistant is an agent of the [AI Agent Manager](/ai/aim-introduction/) with the name `c8y-assistant-agent`:
+The Assistant consists of three parts:
+
+- **The chat**: The user interface in the application. It shows the conversation and the tool calls, and it runs no AI itself.
+- **The Assistant plugin**: Adds the chat to the header of an application and provides the definition of the agent `c8y-assistant-agent`.
+- **The AI Agent Manager**: Runs the agent. It sends your messages to the model, calls the tools with your permissions, and streams the answer to the chat. For details, see [How an agent run works](/ai/aim-introduction/#how-an-agent-run-works).
+
+The agent `c8y-assistant-agent` is an agent of the [AI Agent Manager](/ai/aim-introduction/):
 
 - It uses the model that your administrator configures in the control panel.
 - It reads and changes the data of your tenant in code mode with [AI Workbench](/ai/ai-workbench/).

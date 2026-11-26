@@ -68,6 +68,17 @@ flowchart TB
 
 Note that external agents use their own LLM and connect to the AI Workbench directly. Their API calls run with the permissions of the user who connects. The model configuration of the AI Agent Manager and the kill switch do not apply to them. For details, see [AI Workbench and code mode](/ai/ai-workbench/).
 
+### Key terms {#key-terms}
+
+| Term | Meaning |
+|------|---------|
+| Agent | A configuration in the AI Agent Manager: a system prompt, a model, and tools. The agent decides which tools to call to reach its goal. For details, see [How an agent run works](/ai/aim-introduction/#how-an-agent-run-works). |
+| Tool | A function that an agent calls, for example, to read data, to call an API, or to trigger an action. For details, see [What are tools?](/ai/tools-mcp/#what-are-tools). |
+| MCP server | A standardized way to provide tools to agents. For details, see [Model Context Protocol (MCP)](/ai/tools-mcp/#mcp). |
+| `cumulocity-default` | The built-in MCP server of the AI Agent Manager. It provides a fixed set of tools for the data of your tenant. For details, see [Using and testing built-in {{< product-c8y-iot >}} tools](/ai/tools-mcp/#builtin-tools). |
+| AI Workbench | An MCP server with a single tool, `codemode`. AI Workbench is not an agent. For details, see [AI Workbench and code mode](/ai/ai-workbench/). |
+| Code mode | The agent writes a JavaScript function, and AI Workbench runs it in a sandbox with access to the complete API of your tenant. For details, see [What is code mode?](/ai/ai-workbench/#what-is-code-mode). |
+
 ### Capabilities summary {#capabilities-summary}
 
 | Part | Capability | What it does | Status | Documentation |

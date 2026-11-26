@@ -49,6 +49,28 @@ An AI agent is a configured AI assistant with a specific purpose and behavior. E
 
 Once configured, users interact with agents through natural language without needing to know technical details about APIs or system prompts.
 
+An agent is a configuration in the AI Agent Manager, not code that you write or deploy.
+
+### How an agent run works {#how-an-agent-run-works}
+
+An agent works in a loop. The AI Agent Manager runs this loop, and the model decides in each step what to do next:
+
+1. The AI Agent Manager loads the agent, which means its system prompt, its model configuration, and the descriptions of its tools.
+2. It sends the system prompt, the conversation, and the tool descriptions to the model.
+3. The model either answers or requests one or more tool calls.
+4. For each tool call, the AI Agent Manager calls the tool with the permissions of the user and adds the result to the conversation. If the tool requires approval, the user approves or denies the call first.
+5. Steps 2 to 4 repeat until the model gives its final answer or the run reaches the maximum number of steps.
+
+Note the following:
+
+- The model never runs anything itself. It only states which tool to call with which arguments. The AI Agent Manager calls the tool.
+- The model keeps nothing between the steps. Each step sends the complete conversation again, including all tool results so far. Runs with many steps therefore use many tokens. [Code mode](/ai/ai-workbench/#what-is-code-mode) reduces the number of steps.
+- An agent only does what its tools allow. For example, an agent only runs code if it has a tool for it, such as `codemode`.
+- By default, a run stops after 40 steps. To change the limit, see [Common settings](/ai/agents/#ai-agent-common-settings).
+- With streaming, the text and the tool calls reach the user interface while the run is still in progress.
+
+For how agents, tools, and the LLM provider fit together, see [How the parts fit together](/ai-intro/ai-overview/#how-the-parts-fit-together).
+
 ### What you do with AI agents {#what-you-do-with-ai-agents}
 
 - **Create specialized assistants**: Configure agents for specific use cases like equipment monitoring, predictive maintenance analysis, or device troubleshooting. Each agent has its own expertise and access to relevant data.

@@ -10,7 +10,7 @@ sector:
 weight: 20
 ---
 
-Expert agents are agents for specific tasks that come with the {{< product-c8y-iot >}} applications and plugins. You use them without writing a system prompt or selecting tools. They run in the AI Agent Manager, where they appear as [subscribed agents](/ai/agents/#subscribed-agents), and they use the model configuration of your tenant.
+Expert agents are agents for specific tasks that come with the {{< product-c8y-iot >}} applications and plugins. You use them without writing a system prompt or selecting tools. They run in the AI Agent Manager, where they appear as [subscribed agents](/ai/agents/#subscribed-agents), and they use the model configuration of your tenant. The term refers to who provides the agent, not to how agents call each other. For example, the Assistant is an expert agent itself.
 
 To change the behavior of an expert agent, create a custom agent with the same name in the AI Agent Manager. The custom agent then overrides the expert agent in all applications. For details, see [Overruling subscribed agents](/ai/agents/#aligning-subscribed-agents).
 
