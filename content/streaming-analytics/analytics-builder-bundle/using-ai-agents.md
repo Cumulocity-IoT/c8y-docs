@@ -20,7 +20,7 @@ The agent, its system prompt, its tools, and the LLM provider are configured in 
 
 - Your tenant has the AI Acceleration bundle. The block and its sample are shown only for tenants that have the bundle.
 - The AI Agent Manager is available in your tenant, with a configured LLM provider. See [Getting started by configuring a model](/ai/aim-introduction/#getting-started-by-configuring-a-global-provider).
-- The agent that you want to call exists in the AI Agent Manager, or is one of the [sample agents](#ai-agents-sample-agents). The agent must have an LLM provider. See [Agents](/ai/agents/#ai-agent-list).
+- The agent that you want to call exists in the AI Agent Manager, or is the [sample agent](#ai-agents-sample-agents). The agent must have an LLM provider. See [Agents](/ai/agents/#ai-agent-list).
 - The agent is a text agent, or an object agent that has a schema. See [Text agents](/ai/agents/#text-agents) and [Object agents](/ai/agents/#object-agents).
 - AI agents are turned on for the tenant. If the kill switch of the AI Agent Manager is on, the model does not activate. See [AI agent availability](/ai/control-panel/#ai-agent-availability).
 
