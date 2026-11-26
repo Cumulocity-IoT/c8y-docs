@@ -113,6 +113,37 @@ The database query execution timeout applies to every individual database query 
 
 See also the [Cloud Remote Access service-level agreement](/service-terms/service-level/#cloud-remote-access-sla).
 
+### AI Agent Manager {#ai-agent-manager}
+
+The AI Agent Manager is in Public Preview. The following quotas are for information purposes only, as described in the [AI Agent Manager and AI Workbench service-level agreement](/service-terms/service-level/#ai-agents-sla).
+
+| Quota                                                                              | Type |              Value |
+| ---------------------------------------------------------------------------------- | ---- | -----------------: |
+| Request body size of the [AI Agent Manager REST API](/ai/rest-api/)                | Hard |              1 MiB |
+| Result size of a successful [built-in tool](/ai/tools-mcp/#builtin-tools) call     | Hard | 200,000 characters |
+| Wait time of a built-in tool for a device restart, a shell command, or a log file  | Hard |         60 seconds |
+| Maximum conversation retention                                                     | Hard |           365 days |
+| Concurrent agent runs per tenant                                                   | Soft |              [TBD] |
+| New agent runs per tenant                                                          | Soft |       [TBD]/minute |
+
+The request body size also limits the size of a stored conversation and of the message history that a client sends with an agent run. The AI Agent Manager truncates successful results of built-in tools at the maximum size and does not mark the result as truncated. By default, conversations expire 30 days after their last change. When the retention period changes, an existing conversation keeps its expiry date until the conversation changes again.
+
+### AI Workbench {#ai-workbench}
+
+The following quotas are for information purposes only, as described in the [AI Agent Manager and AI Workbench service-level agreement](/service-terms/service-level/#ai-agents-sla).
+
+| Quota                                                                              | Type |              Value |
+| ---------------------------------------------------------------------------------- | ---- | -----------------: |
+| [Runtime of a code mode run](/ai/ai-workbench/#security-and-limits)                | Hard |        120 seconds |
+| [CPU time of a code mode run](/ai/ai-workbench/#security-and-limits)               | Hard |         50 seconds |
+| [Memory of a code mode run](/ai/ai-workbench/#security-and-limits)                 | Hard |              24 MB |
+| [API and discovery calls per code mode run](/ai/ai-workbench/#security-and-limits) | Hard |                200 |
+| Duration of a single REST API call from code mode                                  | Hard |         30 seconds |
+| Duration of a single Model Context Protocol (MCP) request from code mode           | Hard |         30 seconds |
+| Concurrent code mode runs per tenant                                               | Soft |              [TBD] |
+
+The wait for a free run slot does not count toward the runtime of a code mode run.
+
 ### DataHub 1.0
 
 | Quota                                                                                            | Type | SDE value | ADE value |
