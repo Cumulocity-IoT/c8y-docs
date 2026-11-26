@@ -186,18 +186,15 @@ To let a tool run without a person, open the agent in the AI Agent Manager, go t
 
 <!-- TODO(PAB-5481): The specification plans to replace the denial with a request for approval out of band in a later change. Update this section if that change ships with this release. -->
 
-### Sample agents {#ai-agents-sample-agents}
+### Sample agent {#ai-agents-sample-agents}
 
-Streaming Analytics provides the following agents. You can use them in the **Agent name** parameter without creating an agent. They use the LLM provider of your tenant. Both agents answer in plain text, and both have a system prompt that tells the agent to treat the text of devices and users as data and not as instructions.
+Streaming Analytics provides the agent `streaming-analytics-alarm-triage`. You can use it in the **Agent name** parameter without creating an agent. It uses the LLM provider of your tenant.
 
-| Agent | Description |
-|---|---|
-| `streaming-analytics-alarm-triage` | Explains an alarm that the prompt describes: what the alarm probably means, how urgent it is, and what to check first, in at most 120 words. The agent can look up the device, its recent alarms and events, and its recent measurements. It has only read-only tools and changes nothing. |
-| `streaming-analytics-explain` | Does what the prompt asks, in short plain text. It has no tools. |
+The agent explains an alarm that the prompt describes: what the alarm probably means, how urgent it is, and what to check first, in at most 120 words. It can look up the device, its recent alarms and events, and its recent measurements. It has only read-only tools and changes nothing. It answers in plain text, and its system prompt tells it to treat the text of devices and users as data and not as instructions.
 
-The agents do not have a prompt of their own. Your **Prompt template** must describe the task and name the variables. If your tenant has an agent with the same name, the agent of your tenant is used instead.
+Your **Prompt template** must describe the alarm and name the variables. If your tenant has an agent with the same name, the agent of your tenant is used instead.
 
-<!-- TODO(PAB-5481): Check whether these agents appear in the AI Agent Manager as subscribed agents (see /ai/agents/#subscribed-agents) and, if so, say how to find them there. The specification describes how the manager reads them but not how it lists them. -->
+<!-- TODO(PAB-5481): Check whether this agent appears in the AI Agent Manager as a subscribed agent (see /ai/agents/#subscribed-agents) and, if so, say how to find it there. -->
 
 ### Sample: On alarm, ask an agent and send an email {#ai-agents-sample}
 
