@@ -77,11 +77,28 @@ To find out which variables a prompt received, see the log on the **Logs** page 
 3. Connect the output of the Set Properties block to the **Input** port of the AI Agent Prompt block.
 4. In the prompt template, use `{{temperature}}` and `{{humidity}}`.
 
+You can use the same variables in the system prompt of the agent. The AI Agent Manager replaces `{{temperature}}` and `{{humidity}}` there as well, so an agent can hold the whole instruction and the model only supplies the values.
+
 The properties of an input that comes from another block, for example, the properties of an alarm, are variables as well, if their names are valid.
 
-{{< c8y-admon-info >}}
-The block produces its output asynchronously after the activation of the input completes. If you wire this output together with outputs of other blocks into the same downstream block, the downstream block runs in separate activations.
-{{< /c8y-admon-info >}}
+#### When the result arrives {#ai-agents-when-the-result-arrives}
+
+A call to an agent takes seconds, so the block does not send its output in the activation of the model that delivered the input. That activation ends without an output of the block. When the agent has answered, the block sends the **Result** or the **Error** output in a new activation, with a later time.
+
+This matters when the input also reaches a downstream block by another path. For example, a Measurement Input block is wired both to the AI Agent Prompt block and directly to a block that also receives the **Result** output:
+
+- In the first activation, the downstream block receives the value from the direct wire. The reply of the agent for this value does not exist yet. A value that the downstream block still holds from the **Result** output belongs to an earlier input.
+- In the second activation, seconds later, the downstream block receives the reply. The value from the direct wire is not sent again. If another input has arrived in the meantime, the value on the direct wire is already that of the newer input.
+
+The downstream block therefore runs twice for one input, and it never receives the input and its reply in the same activation. A block that acts whenever one of its inputs changes, for example, a block that sends an email or creates an alarm, can act on a new value together with an old reply.
+
+To avoid this, do the following:
+
+- Let only the **Result** output start the action. Do not wire the same source to the action by a second path.
+- Put everything that the action needs into the reply. Pass the values to the agent as variables and ask the agent to repeat them, or use an object agent and read them from the fields of the reply.
+- Use parameters, and not wires, for values that do not depend on the input, such as the subject of an email.
+
+Replies and inputs also do not pair up one to one, because an input that arrives while a call is running can be replaced. See [Controlling the number of calls](#ai-agents-controlling-calls).
 
 #### Trying a prompt first {#ai-agents-trying-a-prompt}
 
@@ -184,8 +201,6 @@ A tool can require approval of a person before it runs. See [Requiring user appr
 
 To let a tool run without a person, open the agent in the AI Agent Manager, go to the **Tools** tab, and set **User approval** of the tool to **Never**. See [Setting user approval for a tool](/ai/tools-mcp/#setting-user-approval).
 
-<!-- TODO(PAB-5481): The specification plans to replace the denial with a request for approval out of band in a later change. Update this section if that change ships with this release. -->
-
 ### Sample agent {#ai-agents-sample-agents}
 
 Streaming Analytics provides the agent `streaming-analytics-alarm-triage`. You can use it in the **Agent name** parameter without creating an agent. It uses the LLM provider of your tenant.
@@ -194,13 +209,45 @@ The agent explains an alarm that the prompt describes: what the alarm probably m
 
 Your **Prompt template** must describe the alarm and name the variables. If your tenant has an agent with the same name, the agent of your tenant is used instead.
 
-<!-- TODO(PAB-5481): Check whether this agent appears in the AI Agent Manager as a subscribed agent (see /ai/agents/#subscribed-agents) and, if so, say how to find it there. -->
+The agent is listed in the AI Agent Manager under **Agents** as a subscribed agent. See [Viewing subscribed agents](/ai/agents/#viewing-subscribed-agents). To change it for your tenant, see [Overruling subscribed agents](/ai/agents/#aligning-subscribed-agents).
 
-### Sample: On alarm, ask an agent and send an email {#ai-agents-sample}
+### Smart rule: On alarm, ask an agent and send an email {#ai-agents-sample}
 
-The sample **On alarm, ask an agent and send an email** shows the block in a model. When an alarm is raised, the model asks an agent to explain the alarm and sends the reply by email. A Rate Limiter block in front of the AI Agent Prompt block lets at most one alarm for each device through in each period, which you set when you create the instance. The other new alarms of the device in that period are not sent to the agent and get no email. The sample is also available as a Smart Rule template. The sample and the template are shown only for tenants that have the AI Acceleration bundle. By default, the sample calls the agent `streaming-analytics-alarm-triage`, and you can enter the name of your own agent instead. Each run of the model calls the agent and costs money.
+**On alarm, ask an agent and send an email** is a default smart rule. When a new alarm of the selected device or group is raised, the rule asks an agent to explain the alarm and sends the reply by email. You create the rule with the smart rules (NEW) plugin, without opening Analytics Builder. See [What is the smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin/#what-is-the-smart-rules-plugin). The rule is offered only for tenants that have the AI Acceleration bundle.
 
-<!-- TODO(PAB-5481): The sample is still being built. When it is final, describe its template parameters (agent name, recipient, alarm type, and so on), the variables of the prompt template, and the subject and body of the email, and check the name of the sample and the card text on the Samples tab. -->
+{{< c8y-admon-important >}}
+Each alarm that the rule sends to the agent is one call to the LLM provider and costs money. Data of the alarm and of the device is sent to the LLM provider that the agent uses. Use the rule for alarm types that occur rarely.
+{{< /c8y-admon-important >}}
+
+When you create the rule, you set the following:
+
+| Parameter | Description |
+|---|---|
+| **Device or group of devices** | The device, group, or asset that the rule is for. It is taken from the place where you create the rule. |
+| **Alarm type** | The type of the alarms that the rule reacts to. |
+| **Minimum time between calls for a device (seconds)** | The least time between two calls to the agent for the same device. The default is 300. It must be greater than zero. |
+| **Agent name** | The agent that writes the email. The default is the [sample agent](#ai-agents-sample-agents) `streaming-analytics-alarm-triage`. If you enter your own agent, it must be a text agent. |
+| **Subject** | The subject of the email. The default is "AI analysis of a new alarm". |
+| **To**, **CC**, **BCC**, **Reply to** | The recipients of the email. Enter at least one of **To**, **CC**, and **BCC**. |
+
+The rule works as follows:
+
+- The rule reacts to new, active alarms of the type that you entered. A change to an alarm that already exists, such as a higher count, and the clearing of an alarm do not start a call.
+- For each device, at most one alarm is sent to the agent in each period. Other new alarms of the device in that period are not sent to the agent and get no email. The rule writes a warning to the log for each alarm that it holds back.
+- The prompt is part of the rule and you cannot change it when you create the rule. It gives the agent the severity, the type, and the text of the alarm, the ID of the device, and the time at which the rule received the alarm. It asks the agent to explain what the alarm probably means and what to check first.
+- The reply of the agent is the text of the email. The reply is inserted into the email as HTML.
+- If the call fails for a temporary reason, the rule writes a warning to the log and sends no email for that alarm.
+
+The email is sent when the agent has answered, in a later activation than the one of the alarm. See [When the result arrives](#ai-agents-when-the-result-arrives). This is why the subject is a parameter and is not built from the alarm.
+
+#### To change what the rule does {#to-change-the-ai-agent-smart-rule}
+
+The rule is also available as a sample in Analytics Builder. To change the prompt, the email, or the blocks, create your own model from the sample.
+
+1. In Analytics Builder, go to the **Samples** tab. See [The Samples tab](/streaming-analytics/analytics-builder/#the-samples-tab).
+2. Create a model from the sample **On alarm, ask an agent and send an email**.
+3. Change the model in the model editor, for example, the **Prompt template** parameter of the AI Agent Prompt block.
+4. Save the model. You can then create smart rules from your model in the same way.
 
 ### Good practice {#ai-agents-good-practice}
 
