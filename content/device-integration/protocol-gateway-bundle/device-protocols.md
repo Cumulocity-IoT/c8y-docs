@@ -18,4 +18,4 @@ A data source represents a machine or a simulator. You define the data source an
 
 ![Tag](/images/device-protocols/protocol-gateway/gateway-tag.png)
 
-The tag is a holding register at address 1 by default. The gateway lists it as “40001”. To use a real PLC, leave **Simulation** at **None**, enter the IP address of the PLC, and define tags with its register addresses. For each machine, create one data source.
+The tag is a holding register at address 1 by default. Protocol Gateway lists it as “40001”. To use a real PLC, leave **Simulation** at **None**, enter the IP address of the PLC, and define tags with its register addresses. For each machine, create one data source.

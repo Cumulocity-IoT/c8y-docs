@@ -12,9 +12,9 @@ Protocol Gateway has 3 security-relevant settings: the web interface login, the 
 
 **License.**
 
-- A trial license is the file *DeviceGateway.lic* in */etc/takebishi/sd_card*. You can retrieve it through the {{< product-c8y-iot >}} configuration management. See [Operations](/device-integration/protocol-gateway/#operations).
-- A commercial license uses the Takebishi license management server. Order it in the [Takebishi web store](https://www.faweb.net/en/support/order-online/#dgw). The license file entry in the configuration plugin does not apply to it.
+- A trial license is a license file in the license folder. You can retrieve it through the {{< product-c8y-iot >}} configuration management. See [Operations](/device-integration/protocol-gateway/#operations).
+- A commercial license uses the license management server. Order it in the [license web store](https://www.faweb.net/en/support/order-online/#dgw). The license file entry in the configuration plugin does not apply to it.
 
 {{< c8y-admon-important >}}
-*setting.dxg* contains the password of the web interface in plain text. A configuration snapshot stores the file in the {{< product-c8y-iot >}} configuration repository. Change the default password first, restrict access to the repository, and treat every copy of the file as a secret.
+The Protocol Gateway configuration file contains the password of the web interface in plain text. A configuration snapshot stores the file in the {{< product-c8y-iot >}} configuration repository. Change the default password first, restrict access to the repository, and treat every copy of the file as a secret.
 {{< /c8y-admon-important >}}

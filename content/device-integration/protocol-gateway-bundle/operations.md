@@ -8,25 +8,25 @@ layout: redirect
 
 ### Service control {#service-control}
 
-Start, stop, and restart the gateway from the **Services** tab, as described in [To start, stop, or restart the gateway](/device-integration/protocol-gateway/#to-start-stop-or-restart-the-gateway).
+Start, stop, and restart Protocol Gateway from the **Services** tab, as described in [To start, stop, or restart Protocol Gateway](/device-integration/protocol-gateway/#to-start-stop-or-restart-protocol-gateway).
 
 ### Configuration management {#configuration-management}
 
-The thin-edge.io configuration plugin retrieves and replaces files on the device. Register the license file and the gateway configuration first, as described in [To prepare the device](/device-integration/protocol-gateway/#to-prepare-the-device). Open the device and click **Configuration**.
+The thin-edge.io configuration plugin retrieves and replaces files on the device. Register the license file and the Protocol Gateway configuration first, as described in [To prepare the device](/device-integration/protocol-gateway/#to-prepare-the-device). Open the device and click **Configuration**.
 
 ![Configuration tab](/images/device-protocols/protocol-gateway/configuration-tab.png)
 
-#### To change the gateway configuration {#to-change-the-gateway-configuration}
+#### To change the Protocol Gateway configuration {#to-change-the-protocol-gateway-configuration}
 
-Use the configuration repository to change the gateway configuration:
+Use the configuration repository to change the Protocol Gateway configuration:
 
 1. Click **Get snapshot from device** for “protocol-gateway.dxg”. {{< product-c8y-iot >}} stores a copy in the configuration repository.
 2. Download the file, edit it, and send the new version back to the device.
-3. Restart the gateway service from the **Services** tab, because the container reads the file only at start.
+3. Restart the Protocol Gateway service from the **Services** tab, because the container reads the file only at start.
 
 The container does not overwrite the file when it stops, so a delivered file stays in place. **Save** in the web interface writes the same file, so a snapshot shows the current configuration.
 
-**Get snapshot from device** also saves a copy of the license file *device-gateway.lic* in the configuration repository. This applies only to a license file.
+**Get snapshot from device** also saves a copy of the license file in the configuration repository. This applies only to a license file.
 
 ### To deploy the same configuration to many devices {#to-deploy-the-same-configuration-to-many-devices}
 
@@ -60,7 +60,7 @@ c8y remoteaccess server --device <device-name> --configuration <endpoint-name> -
 
 ![Remote access endpoint](/images/device-protocols/protocol-gateway/remote-access-endpoint.png)
 
-The browser warns about the self-signed certificate of the gateway. If you cannot install the go-c8y-cli, forward the port through the SSH endpoint instead:
+The browser warns about the self-signed certificate of Protocol Gateway. If you cannot install the go-c8y-cli, forward the port through the SSH endpoint instead:
 
 ```bash
 ssh -L 8443:127.0.0.1:443 <user>@<device>

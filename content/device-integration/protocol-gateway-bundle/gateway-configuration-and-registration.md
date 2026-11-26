@@ -1,15 +1,15 @@
 ---
 weight: 20
-title: Gateway configuration and registration
+title: Protocol Gateway configuration and registration
 layout: redirect
 ---
 
-The gateway keeps all its configuration in one JSON file, *setting.dxg*. The container reads the file when it starts. The web interface writes the same file when you click **Save**. Two folders on the host hold the data, so that the data stays in place when you replace the container.
+Protocol Gateway keeps all its configuration in one JSON file, *setting.dxg*. The container reads the file when it starts. The web interface writes the same file when you click **Save**. Two folders on the host hold the data, so that the data stays in place when you replace the container.
 
 | Host folder | Container folder | Content |
 |-------------|------------------|---------|
-| */etc/takebishi/sd_card* | */mnt/sdcard* | License file *DeviceGateway.lic*, logs, offline buffering, and file actions. |
-| */etc/takebishi/data* | */etc/dxpgateway* | Gateway configuration (*config/setting.dxg*) and certificates. Back up this folder. |
+| */etc/takebishi/sd_card* | */mnt/sdcard* | License file, logs, offline buffering, and file actions. |
+| */etc/takebishi/data* | */etc/dxpgateway* | Protocol Gateway configuration (*config/setting.dxg*) and certificates. Back up this folder. |
 
 ### To prepare the device {#to-prepare-the-device}
 
@@ -46,14 +46,14 @@ Prepare the device once. Run the commands in a local console or in a Secure Shel
    ```
 
    The service is `active`, and the folder contains `container` and `container-group`. In Device Management, the **Services** tab of the device lists the service `tedge-container-plugin`.
-4. Create the folders for the license and the gateway data, and copy the license file. The file name must be *DeviceGateway.lic*:
+4. Create the folders for the license and the Protocol Gateway data, and copy the license file to the license folder. Use the target file name from the command exactly:
 
    ```bash
    sudo mkdir -p /etc/takebishi/sd_card /etc/takebishi/data
    sudo cp DeviceGateway.lic /etc/takebishi/sd_card/
    ```
 
-5. Register the license file and the gateway configuration file as configuration types. Open */etc/tedge/plugins/tedge-configuration-plugin.toml* and add the entries to the existing `files` list, before the closing bracket:
+5. Register the license file and the Protocol Gateway configuration file as configuration types. Open */etc/tedge/plugins/tedge-configuration-plugin.toml* and add the entries to the existing `files` list, before the closing bracket:
 
    ```toml
    files = [
@@ -75,7 +75,7 @@ Prepare the device once. Run the commands in a local console or in a Secure Shel
    tedge mqtt sub 'te/device/main///cmd/config_snapshot'
    ```
 
-   The list of types contains *device-gateway.lic* and *protocol-gateway.dxg*.
+   The list of types contains the two types that you added.
 
 ### Container definition {#container-definition}
 
@@ -109,7 +109,7 @@ services:
 | `x-tedge.remove_volumes` | Keeps the volumes when you remove the software item. The configuration lives in bind mounts on the host. |
 | `network_mode: "host"` | The container shares the network of the device, so `127.0.0.1:1883` reaches the thin-edge.io broker. |
 | `webport`, `websport` | HTTP and HTTPS ports of the web interface. Change `webport` if another service uses port 80. |
-| `restart` | Starts the gateway again after a reboot. |
+| `restart` | Starts Protocol Gateway again after a reboot. |
 
 {{< c8y-admon-important >}}
 Do not set a top-level `name:` in the file. The container plugin uses the name of the software item as the Compose project name.
@@ -118,6 +118,6 @@ Do not set a top-level `name:` in the file. The container plugin uses the name o
 ### Additional customizations {#additional-customizations}
 
 - **Serial devices.** For a serial device, such as a USB-to-RS-232 adapter, add `devices: ["/dev/ttyUSB0"]` to the service. Do not use `privileged: true`.
-- **Image version.** The [Amazon ECR Public Gallery](https://gallery.ecr.aws/takebishi/tkbs-dgwd20) and the [Takebishi download page](https://www.faweb.net/en/download/download/#devicegateway) list the image `public.ecr.aws/takebishi/tkbs-dgwd20`. Always set a version tag, such as `3.7.0`, and do not use `latest`. The tag `3.7.0` is a multi-architecture tag, so one software item serves devices with different processor architectures. The tags `3.7.0-arm64`, `3.7.0-amd64`, and `3.7.0-arm` select one architecture.
-- **Software version in {{< product-c8y-iot >}}.** Use the same version number for the software item as for the image tag. See [To install the gateway from {{< product-c8y-iot >}}](/device-integration/protocol-gateway/#to-install-the-gateway-from-cumulocity).
+- **Image version.** The [Amazon ECR Public Gallery](https://gallery.ecr.aws/takebishi/tkbs-dgwd20) and the [Protocol Gateway download page](https://www.faweb.net/en/download/download/#devicegateway) list the image `public.ecr.aws/takebishi/tkbs-dgwd20`. Always set a version tag, such as `3.7.0`, and do not use `latest`. The tag `3.7.0` is a multi-architecture tag, so one software item serves devices with different processor architectures. The tags `3.7.0-arm64`, `3.7.0-amd64`, and `3.7.0-arm` select one architecture.
+- **Software version in {{< product-c8y-iot >}}.** Use the same version number for the software item as for the image tag. See [To install Protocol Gateway from {{< product-c8y-iot >}}](/device-integration/protocol-gateway/#to-install-protocol-gateway-from-cumulocity).
 - **Image cleanup.** By default, the container plugin removes unused images after each container operation (`pruneimages = true` in */etc/tedge/plugins/tedge-container-plugin.toml*). A failed installation can remove a pulled image, so the next installation pulls it again.

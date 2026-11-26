@@ -4,14 +4,7 @@ title: Introduction
 layout: redirect
 ---
 
-Protocol Gateway connects PLCs, CNC machines, and robots to {{< product-c8y-iot >}} without custom code. PLC stands for programmable logic controller, and CNC stands for computer numerical control. Protocol Gateway combines two components:
-
-- Takebishi DeviceGateway, the gateway that communicates with the machines through native drivers
-- thin-edge.io, which connects the device to your {{< product-c8y-iot >}} tenant
-
-{{< c8y-admon-info >}}
-{{< product-c8y-iot >}} offers Takebishi DeviceGateway as Protocol Gateway. The web interface and the Docker image still use the name DeviceGateway.
-{{< /c8y-admon-info >}}
+Protocol Gateway connects PLCs, CNC machines, and robots to {{< product-c8y-iot >}} without custom code. PLC stands for programmable logic controller, and CNC stands for computer numerical control. {{< product-c8y-iot >}} offers Protocol Gateway for use with thin-edge.io. Protocol Gateway communicates with the machines through native drivers, and thin-edge.io connects the device to your {{< product-c8y-iot >}} tenant.
 
 Protocol Gateway reads vendor-specific protocols at the edge, keeps the values as named tags, and sends them to {{< product-c8y-iot >}} as thin-edge.io MQTT (Message Queuing Telemetry Transport) messages. It provides:
 
@@ -36,7 +29,7 @@ The data flows in 3 steps:
 
 ### Supported assets and protocols {#supported-assets-and-protocols}
 
-Protocol Gateway supports more than 320 device series from more than 80 manufacturers. The following table shows examples from the product documentation. For the complete list, see the [Takebishi list of supported devices](https://www.faweb.net/en/product/devicegateway/supportlist).
+Protocol Gateway supports more than 320 device series from more than 80 manufacturers. The following table shows examples from the product documentation. For the complete list, see the [list of devices that Protocol Gateway supports](https://www.faweb.net/en/product/devicegateway/supportlist).
 
 | Category | Protocols and examples |
 |----------|------------------------|
@@ -51,14 +44,14 @@ The number of simultaneous data source connections depends on the license model,
 
 | Feature | Support | How it works |
 |---------|---------|--------------|
-| Child device registration | Yes | The gateway publishes a retained registration message with the type and device information of each machine. |
+| Child device registration | Yes | Protocol Gateway publishes a retained registration message with the type and device information of each machine. |
 | Measurements | Yes | A thin-edge.io JSON message becomes a measurement. |
-| Device information (agent, hardware) | Yes | The gateway publishes retained twin messages. |
+| Device information (agent, hardware) | Yes | Protocol Gateway publishes retained twin messages. |
 | Alarms and events | Yes | Publish thin-edge.io alarm and event messages from an event action. |
 | Software management | Yes | The container plugin installs and updates Protocol Gateway as a software item. |
 | Container control (start, stop, restart) | Yes | The container appears as a service. Requires thin-edge.io 2.1.0 or later. |
-| Configuration management | Yes | The license file and the gateway configuration file are configuration types of the thin-edge.io configuration plugin. |
-| Remote access | Yes | SSH, and the gateway web interface, through Cloud Remote Access. |
+| Configuration management | Yes | The license file and the Protocol Gateway configuration file are configuration types of the thin-edge.io configuration plugin. |
+| Remote access | Yes | SSH, and the Protocol Gateway web interface, through Cloud Remote Access. |
 
 ### Requirements {#requirements}
 
@@ -66,18 +59,18 @@ The number of simultaneous data source connections depends on the license model,
 - Docker Engine and Docker Compose on the device
 - thin-edge.io 2.1.0 or later on the device, connected to your tenant
 - The thin-edge.io container plugin. See [To prepare the device](/device-integration/protocol-gateway/#to-prepare-the-device).
-- A Protocol Gateway license. For a trial, request a *DeviceGateway.lic* file from your {{< company-c8y >}} contact or from Takebishi. Commercial licenses are available in the Takebishi web store and need the Takebishi license management server, which is also available as a Docker image. See [Authentication](/device-integration/protocol-gateway/#authentication).
+- A Protocol Gateway license. For a trial, request a license file from your {{< company-c8y >}} contact. You can buy commercial licenses in the [license web store](https://www.faweb.net/en/support/order-online/#dgw). A commercial license needs the license management server, which is also available as a Docker image. See [Authentication](/device-integration/protocol-gateway/#authentication).
 - For remote access to the web interface, the Cloud Remote Access microservice on your tenant
 
 {{< c8y-admon-info >}}
-Takebishi publishes the image for multiple processor architectures, and Docker selects the matching one. The screenshots and commands in this documentation come from a Raspberry Pi 4 Model B with arm64.
+The Protocol Gateway image is available for multiple processor architectures, and Docker selects the matching one. The screenshots and commands in this documentation come from a Raspberry Pi 4 Model B with arm64.
 {{< /c8y-admon-info >}}
 
 ### Deployment options {#deployment-options}
 
 | Option | Use when |
 |--------|----------|
-| Install from {{< product-c8y-iot >}} with the container plugin (recommended) | You manage one or more devices from Device Management. You install, update, and restart the gateway as a software item and a service, and you can deliver the same configuration to many devices. |
+| Install from {{< product-c8y-iot >}} with the container plugin (recommended) | You manage one or more devices from Device Management. You install, update, and restart Protocol Gateway as a software item and a service, and you can deliver the same configuration to many devices. |
 | Install directly with Docker Compose | You work on a single device, and you prepare it through a remote access session or a local console. |
 
-This documentation describes the recommended option first. See [Running the gateway](/device-integration/protocol-gateway/#running-gateway) for both.
+This documentation describes the recommended option first. See [Running Protocol Gateway](/device-integration/protocol-gateway/#running-gateway) for both.

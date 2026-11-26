@@ -1,10 +1,10 @@
 ---
 weight: 60
-title: Connecting the gateway to thin-edge.io
+title: Connecting Protocol Gateway to thin-edge.io
 layout: redirect
 ---
 
-After the container runs, open the web interface of the gateway, check the license, and connect the gateway to the MQTT broker of thin-edge.io.
+After the container runs, open the web interface of Protocol Gateway, check the license, and connect Protocol Gateway to the MQTT broker of thin-edge.io.
 
 ### To access the web interface {#to-access-the-web-interface}
 
@@ -20,12 +20,12 @@ Click **Change password** in the top right and set a new password.
 ![Sign-in page](/images/device-protocols/protocol-gateway/gateway-login.png)
 
 {{< c8y-admon-info >}}
-Changes in the web interface take effect in two stages. The check mark confirms a change on screen. **Save** in the top toolbar writes the configuration file and restarts the gateway functions, which briefly disconnects applications that use the gateway.
+Changes in the web interface take effect in two stages. The check mark confirms a change on screen. **Save** in the top toolbar writes the configuration file and restarts the Protocol Gateway functions, which briefly disconnects applications that use Protocol Gateway.
 {{< /c8y-admon-info >}}
 
 ### To check the license {#to-check-the-license}
 
-Go to **Management > Information > Version**. **Serial** shows your license, for example `License(Validity period 2026/11/24 - 2026/12/24)`. If it does not, check that the file is */etc/takebishi/sd_card/DeviceGateway.lic* and restart the service.
+Go to **Management > Information > Version**. **Serial** shows your license, for example `License(Validity period 2026/11/24 - 2026/12/24)`. If it does not, check that the license file is in the license folder with the file name from [To prepare the device](/device-integration/protocol-gateway/#to-prepare-the-device), and restart the service.
 
 ![License check](/images/device-protocols/protocol-gateway/gateway-license-version.png)
 
