@@ -63,7 +63,7 @@ To see events, your user needs the READ permission for **Identity** (ROLE_IDENTI
 
 ### Offloading failure alarms {#offloading-failure-alarms}
 
-When the service repeatedly fails to offload your data, for example, because it cannot access the storage of your lakehouse or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm under **Active alarms** on the [Monitoring page](#monitoring-page) and in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
+When the service repeatedly fails to offload your data, for example, because it cannot access the storage of your lakehouse or the catalog, it retries with a growing delay and raises an alarm with the severity MAJOR. You see the alarm under **Active alarms** on the [**Monitoring** page](#monitoring-page) and in the alarm viewer. While the alarm is active, no new data reaches the affected tables.
 
 Each part of the service raises its own alarm type:
 
@@ -71,4 +71,4 @@ Each part of the service raises its own alarm type:
 * **Offloading stopped: latest inventory** (`c8y_StreamingLakeIngestion_LatestWriterInitializationFailed`): The service cannot write the data files of the `latest_inventory` tables to your lakehouse.
 * **Offloading stopped: new data not committed** (`c8y_StreamingLakeIngestion_AppenderInitializationFailed`): The service cannot commit new data files to the tables, so new data does not appear in queries.
 
-The alarm text starts with "Offloading into the data lake has stopped" and ends with the cause of the failure. The Monitoring page shows the text below the alarm name. The service retries automatically and clears the alarm when that part of the service works again. If the alarm stays active, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
+The alarm text starts with "Offloading into the data lake has stopped" and ends with the cause of the failure. The **Monitoring** page shows the text below the alarm name. The service retries automatically and clears the alarm when that part of the service works again. If the alarm stays active, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
