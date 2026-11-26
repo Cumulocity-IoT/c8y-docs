@@ -38,7 +38,13 @@ The device details will be updated accordingly.
 
 Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> at the right of a device credentials entry and then click **Disable**.
 
-The device credentials will be temporarily disabled.
+The device credentials will be temporarily disabled. While they are disabled, the platform rejects every request made with them, so the device can neither send data nor receive operations. If the device is a gateway, this also applies to its child devices, because their data is sent with the gateway's credentials. The device, its child devices and their stored data remain in the inventory.
+
+To restore access, enable the credentials again with the **Active** toggle in the device details. The device keeps its username, password and roles and does not need to be registered again. Data the device tried to send while its credentials were disabled is only delivered if the device buffers and resends it.
+
+{{< c8y-admon-info >}}
+Disabling device credentials does not remove the device from the inventory. The device is still included in the device counts of the usage statistics, see [Devices count details](/enterprise-tenant/usage-and-billing/#devices-count).
+{{< /c8y-admon-info >}}
 
 ### To delete device credentials {#to-delete-device-credentials}
 
