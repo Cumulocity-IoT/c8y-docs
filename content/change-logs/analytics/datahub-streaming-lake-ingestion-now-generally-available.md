@@ -9,9 +9,9 @@ component:
   - value: component-A8vMaVaTg
     label: DataHub
 ---
-Streaming Lake Ingestion, the first capability of DataHub 2.0, is now Generally Available (GA) after its [Public Preview](/change-logs/?component=.component-A8vMaVaTg#datahub-streaming-lake-ingestions-now-in-public-preview).
+Streaming Lake Ingestion, the first capability of DataHub 2.0, is now Generally Available (GA).
 
-Streaming Lake Ingestion streams your IoT data continuously into an Apache Iceberg lakehouse provided by Cumulocity. When you subscribe to the service, the data flow automatically starts. New data is available for queries within minutes, and the tables follow changes in your data structure automatically. You read the lakehouse with any Iceberg-compliant client, for example, a query engine, a notebook, or a business intelligence tool. The [Iceberg client compatibility](https://github.com/Cumulocity-IoT/iceberg-client-compatibility) repository lists tested clients.
+Streaming Lake Ingestion streams your IoT data continuously into an Apache Iceberg lakehouse provided by {{< product-c8y-iot >}}. When you subscribe to the service, the data flow automatically starts. New data is available for queries within minutes, and the tables follow changes in your data structure automatically. You read the lakehouse with any Iceberg-compliant client, for example, a query engine, a notebook, or a business intelligence tool. The [Iceberg client compatibility](https://github.com/Cumulocity-IoT/iceberg-client-compatibility) repository lists tested clients.
 
 To subscribe your tenant, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
