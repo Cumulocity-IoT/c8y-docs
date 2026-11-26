@@ -1,5 +1,5 @@
 ---
-date: 
+date: "2026-10-22"
 title: "Data Preparation: capture the console output of a rule in the background"
 product_area: "Device management & connectivity"
 change_type:

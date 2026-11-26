@@ -1,5 +1,5 @@
 ---
-date: ""
+date: "2026-08-26"
 title: "Data Preparation now supports binary device payloads"
 product_area: "Device management & connectivity"
 change_type:
