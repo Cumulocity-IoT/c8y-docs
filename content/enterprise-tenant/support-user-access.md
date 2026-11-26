@@ -34,7 +34,7 @@ This is configured globally in the {{< management-tenant >}}. Contact your Opera
 
 If activated globally, the support user can log in to all allowed subtenants as any user without restriction.
 
-If deactivated globally, support user access can still be enabled by a subtenant user with the role `ROLE_TENANT_ADMIN` or `ROLE_TENANT_MANAGEMENT_ADMIN` if required. This is done by clicking **Enable support** in the **User** menu, see [User options and settings](/get-familiar-with-the-ui/user-settings). The support access is not restricted to the user who activated it but applies to all users of the tenant. This is necessary for retracing of role/right issues.
+If deactivated globally, support user access can still be enabled by a subtenant user with ADMIN permission for "Tenant" (ROLE_TENANT_ADMIN) or "Tenant management" (ROLE_TENANT_MANAGEMENT_ADMIN) if required. This is done by clicking **Enable support** in the **User** menu, see [User options and settings](/get-familiar-with-the-ui/user-settings). The support access is not restricted to the user who activated it but applies to all users of the tenant. This is necessary for tracing role/right issues.
 
 After a user has activated support access, the menu item changes to **Disable support**, so that the user can disable a pending support request which has been resolved actively before it expires.
 
