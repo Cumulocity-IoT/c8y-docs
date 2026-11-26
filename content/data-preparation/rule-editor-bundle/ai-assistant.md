@@ -66,7 +66,7 @@ Good prompts include:
 | "I have a Modbus device sending binary data. Here is the decode function..." | Provides the codec so the AI can integrate it directly. |
 | "Convert this climate sensor JSON to a measurement. Filter out readings where temperature is below 15°C or above 35°C." | Includes validation requirements. |
 
-The AI assistant includes the client ID in every device external ID that it generates, also when you ask it to use a field of the payload or topic as the external ID. This prevents one device from sending data as another device. See [External IDs must contain the client ID](/data-preparation/smart-functions/#external-ids).
+The AI assistant includes the client ID in every device external ID that it writes or changes, also when you ask it to use a field of the payload or topic as the external ID. For an ID from the payload or topic, it puts the client ID and a colon before that ID. This prevents one device from sending data as another device. The AI assistant keeps the external IDs that your existing code builds unless you ask it to change them, because a changed external ID creates a new device. See [External IDs must contain the client ID](/data-preparation/smart-functions/#external-ids).
 
 #### Prompts to avoid {#prompts-to-avoid}
 

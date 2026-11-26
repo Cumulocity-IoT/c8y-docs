@@ -58,10 +58,10 @@ For the full list of domain object fields, see [{{< product-c8y-iot >}} objects]
 ### External IDs must contain the client ID {#external-ids}
 
 {{< c8y-admon-important >}}
-Every external ID that a smart function returns in `externalSource` must contain `msg.clientID`. An external ID that is built only from the payload or the topic allows one device to send data as another device.
+Every external ID that a smart function returns in `externalSource` must contain `msg.clientID`. An external ID that is built only from the payload or the topic allows one device to send data as another device. The client ID identifies a device only if the device connects with a certificate, see the note at the end of this section.
 {{< /c8y-admon-important >}}
 
-A device chooses the payload and the topic of every message that it sends. A device does not choose the `clientID` of a message: the transport sets the `clientID` from the connection. If a smart function takes the external ID from a payload field such as `deviceId`, any device that can publish to the rule's topic can put the ID of another device in that field. The platform then stores the measurements, events, and alarms on the other device, and overwrites its properties if the function returns a managed object update. If no device has that external ID, the platform creates one.
+A device chooses the payload and the topic of every message that it sends. A device cannot change the `clientID` from message to message: the transport sets the `clientID` from the connection of the device. If a smart function takes the external ID from a payload field such as `deviceId`, any device that can publish to the rule's topic can put the ID of another device in that field. The platform then stores the measurements, events, and alarms on the other device, and overwrites its properties if the function returns a managed object update. If no device has that external ID, the platform creates one.
 
 Build each external ID as follows:
 
@@ -76,17 +76,19 @@ externalSource: [{ externalId: msg.clientID, type: "c8y_Serial" }]
 externalSource: [{ externalId: `${msg.clientID}:${data.deviceId}`, type: "c8y_Serial" }]
 ```
 
-With this pattern, a client can only write to devices whose external ID starts with its own client ID. Choose a separator that does not occur in your client IDs. If the client ID `gw-1:a` exists and the separator is a colon, the client `gw-1` can produce the external ID `gw-1:a:7`, which belongs to the client `gw-1:a`.
+With this pattern, a connection can only write to devices whose external ID starts with the client ID of that connection. Choose a separator that does not occur in your client IDs. If the client ID `gw-1:a` exists and the separator is a colon, the client `gw-1` can produce the external ID `gw-1:a:7`, which belongs to the client `gw-1:a`.
 
 The same rule applies to sub-devices and child devices. An ID that a gateway reports for one of its sensors is payload content, so the external ID of the sensor must also start with the client ID of the gateway.
 
+If you change the external IDs of a rule that is already deployed, the new external IDs do not match the existing devices, and the platform creates a new device for each of them. Plan how to move the existing devices to the new external IDs before you change a deployed rule.
+
 {{< c8y-admon-info >}}
-The client ID identifies a device only if the transport binds the client ID to the credentials of the device. The MQTT Service does this when a device connects with a certificate: the Common Name of the certificate must match the client ID. With basic authentication, the MQTT Service does not check which user connects with which client ID. See [Client identifiers](/device-integration/mqtt-service/#client-id) and [Authentication](/device-integration/mqtt-service/#authentication) in the MQTT Service documentation.
+The client ID identifies a device only if the transport binds the client ID to the credentials of the device. The MQTT Service does this when a device connects with a certificate: the Common Name of the certificate must match the client ID. With basic authentication, the MQTT Service does not check which user connects with which client ID, so a device can connect with the client ID of another device. See [Client identifiers](/device-integration/mqtt-service/#client-id) and [Authentication](/device-integration/mqtt-service/#authentication) in the MQTT Service documentation.
 {{< /c8y-admon-info >}}
 
 ### When devices are created {#when-devices-created}
 
-If a returned object specifies an `externalSource` that does not match an existing device, that device is created automatically with a default configuration. This is one reason why the external ID must contain the client ID: otherwise any device can create devices under IDs of its choice.
+If a returned object specifies an `externalSource` that does not match an existing device, that device is created automatically with a default configuration. This is one reason why the external ID must contain the client ID: otherwise any device can create a device under any external ID.
 
 ### Behavior notes {#behavior-notes}
 

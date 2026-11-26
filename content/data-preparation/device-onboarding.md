@@ -26,5 +26,5 @@ The properties of automatically created devices cannot be customized.
 {{< /c8y-admon-info >}}
 
 {{< c8y-admon-important >}}
-Every external ID that a rule produces must contain the client ID of the message. If a rule takes the external ID only from the payload or the topic, any device that can publish to the rule's topic can create devices, and can send data as another device. See [External IDs must contain the client ID](/data-preparation/smart-functions/#external-ids).
+Every external ID that a rule produces must contain the client ID of the message. If a rule takes the external ID only from the payload or the topic, any device that can publish to the rule's topic can create a device under any external ID, and can send data as another device. See [External IDs must contain the client ID](/data-preparation/smart-functions/#external-ids).
 {{< /c8y-admon-important >}}
