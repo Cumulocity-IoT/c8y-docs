@@ -51,13 +51,42 @@ The function returns an array of {{< product-c8y-iot >}} domain objects: `Measur
 
 - Each object is created in the {{< product-c8y-iot >}} operational store.
 - Returning an empty array (`[]`) drops the message --- no objects are created and no error is reported.
-- Each object must specify an `externalSource` to identify the target device.
+- Each object must specify an `externalSource` to identify the target device. The external ID must contain `msg.clientID`, see [External IDs must contain the client ID](#external-ids).
 
 For the full list of domain object fields, see [{{< product-c8y-iot >}} objects](#cumulocity-objects).
 
+### External IDs must contain the client ID {#external-ids}
+
+{{< c8y-admon-important >}}
+Every external ID that a smart function returns in `externalSource` must contain `msg.clientID`. An external ID that is built only from the payload or the topic allows one device to send data as another device.
+{{< /c8y-admon-important >}}
+
+A device chooses the payload and the topic of every message that it sends. A device does not choose the `clientID` of a message: the transport sets the `clientID` from the connection. If a smart function takes the external ID from a payload field such as `deviceId`, any device that can publish to the rule's topic can put the ID of another device in that field. The platform then stores the measurements, events, and alarms on the other device, and overwrites its properties if the function returns a managed object update. If no device has that external ID, the platform creates one.
+
+Build each external ID as follows:
+
+- **The device that sent the message**: use `msg.clientID` as the external ID.
+- **A device behind the sender**, for example a sensor that reports through a gateway, or a device that names itself with a serial number in the payload or topic: use the client ID, a separator, and the ID from the message.
+
+```javascript
+// The device that sent the message
+externalSource: [{ externalId: msg.clientID, type: "c8y_Serial" }]
+
+// A device named in the payload, behind the client that sent the message
+externalSource: [{ externalId: `${msg.clientID}:${data.deviceId}`, type: "c8y_Serial" }]
+```
+
+With this pattern, a client can only write to devices whose external ID starts with its own client ID. Choose a separator that does not occur in your client IDs. If the client ID `gw-1:a` exists and the separator is a colon, the client `gw-1` can produce the external ID `gw-1:a:7`, which belongs to the client `gw-1:a`.
+
+The same rule applies to sub-devices and child devices. An ID that a gateway reports for one of its sensors is payload content, so the external ID of the sensor must also start with the client ID of the gateway.
+
+{{< c8y-admon-info >}}
+The client ID identifies a device only if the transport binds the client ID to the credentials of the device. The MQTT Service does this when a device connects with a certificate: the Common Name of the certificate must match the client ID. With basic authentication, the MQTT Service does not check which user connects with which client ID. See [Client identifiers](/device-integration/mqtt-service/#client-id) and [Authentication](/device-integration/mqtt-service/#authentication) in the MQTT Service documentation.
+{{< /c8y-admon-info >}}
+
 ### When devices are created {#when-devices-created}
 
-If a returned object specifies an `externalSource` that does not match an existing device, that device is created automatically with a default configuration.
+If a returned object specifies an `externalSource` that does not match an existing device, that device is created automatically with a default configuration. This is one reason why the external ID must contain the client ID: otherwise any device can create devices under IDs of its choice.
 
 ### Behavior notes {#behavior-notes}
 

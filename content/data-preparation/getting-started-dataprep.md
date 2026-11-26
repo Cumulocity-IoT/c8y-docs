@@ -77,6 +77,8 @@ When you have finished editing your smart function, click **Save and deploy**. T
 
 If a measurement or alarm is produced for a device the platform has not seen before, a new device is created automatically based on the `externalSource` in the object returned by the smart function. For details, see [Device onboarding](/data-preparation/device-onboarding/).
 
+Check that every external ID in the smart function contains `msg.clientID`. For the example payload, the external ID is the client ID alone, or the client ID combined with the `deviceId` field, and never the `deviceId` field alone. See [External IDs must contain the client ID](/data-preparation/smart-functions/#external-ids).
+
 ### Draft and deployed states {#draft-deployed}
 
 Each rule has two versions:

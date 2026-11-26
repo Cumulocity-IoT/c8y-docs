@@ -8,6 +8,8 @@ This section provides practical examples of `onMessage` smart functions for Data
 
 For the data types used in these examples, see [Data types](#data-types). For the runtime guarantees that apply, see [Runtime behavior and limits](#limits).
 
+In these examples, the payload names the device that a reading belongs to. Each function combines that ID with `msg.clientID` to build the external ID, because an external ID must always contain the client ID. See [External IDs must contain the client ID](#external-ids). The outputs assume that the client with the client ID `gateway-01` sent the message. If the device that sends the message is the device that the data belongs to, use `msg.clientID` alone as the external ID.
+
 ### Parse JSON and create a measurement {#parse-json-measurement}
 
 Decode a JSON payload and produce a temperature measurement. This example also parses a timestamp from the payload and uses it instead of the message arrival time.
@@ -33,12 +35,12 @@ export function onMessage(msg, context) {
         T: { value: data.tempCelsius, unit: "C" }
       }
     },
-    externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
+    externalSource: [{ externalId: `${msg.clientID}:${data.deviceId}`, type: "c8y_Serial" }]
   }];
 }
 ```
 
-**Output**: one `Measurement` of type `c8y_Temperature` for device `SN-001`, with the timestamp parsed from the payload.
+**Output**: one `Measurement` of type `c8y_Temperature` for the device with the external ID `gateway-01:SN-001`, with the timestamp parsed from the payload.
 
 ---
 
@@ -72,7 +74,7 @@ export function onMessage(msg, context) {
         T: { value: data.temperature, unit: "C" }
       }
     },
-    externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
+    externalSource: [{ externalId: `${msg.clientID}:${data.deviceId}`, type: "c8y_Serial" }]
   }];
 }
 ```
@@ -106,7 +108,7 @@ export function onMessage(msg, context) {
         text: `Pressure exceeded threshold: ${data.pressure} hPa`,
         time: msg.time
       },
-      externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
+      externalSource: [{ externalId: `${msg.clientID}:${data.deviceId}`, type: "c8y_Serial" }]
     }];
   }
 
@@ -114,7 +116,7 @@ export function onMessage(msg, context) {
 }
 ```
 
-**Output**: one `Alarm` of type `c8y_PressureAlarm` with severity `MAJOR` for device `SN-003`.
+**Output**: one `Alarm` of type `c8y_PressureAlarm` with severity `MAJOR` for the device with the external ID `gateway-01:SN-003`.
 
 ---
 
@@ -146,12 +148,12 @@ export function onMessage(msg, context) {
         alt: data.alt
       }
     },
-    externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
+    externalSource: [{ externalId: `${msg.clientID}:${data.deviceId}`, type: "c8y_Serial" }]
   }];
 }
 ```
 
-**Output**: one `Event` of type `c8y_LocationUpdate` with a `c8y_Position` fragment for device `SN-004`.
+**Output**: one `Event` of type `c8y_LocationUpdate` with a `c8y_Position` fragment for the device with the external ID `gateway-01:SN-004`.
 
 ---
 
@@ -178,12 +180,12 @@ export function onMessage(msg, context) {
       c8y_Firmware: { version: data.firmwareVersion },
       c8y_Hardware: { model: data.hwModel }
     },
-    externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
+    externalSource: [{ externalId: `${msg.clientID}:${data.deviceId}`, type: "c8y_Serial" }]
   }];
 }
 ```
 
-**Output**: one `managedObject` update for device `SN-005`, changing the name to `Sensor 5`, and setting the `c8y_Firmware` and `c8y_Hardware` fragments. All other fragments on the managed object are unchanged.
+**Output**: one `managedObject` update for the device with the external ID `gateway-01:SN-005`, changing the name to `Sensor 5`, and setting the `c8y_Firmware` and `c8y_Hardware` fragments. All other fragments on the managed object are unchanged.
 
 ---
 
@@ -208,12 +210,12 @@ export function onMessage(msg, context) {
     payload: {
       c8y_Firmware: null
     },
-    externalSource: [{ externalId: data.deviceId, type: "c8y_Serial" }]
+    externalSource: [{ externalId: `${msg.clientID}:${data.deviceId}`, type: "c8y_Serial" }]
   }];
 }
 ```
 
-**Output**: one `managedObject` update. The `c8y_Firmware` fragment is removed from the managed object for device `SN-006`.
+**Output**: one `managedObject` update. The `c8y_Firmware` fragment is removed from the managed object for the device with the external ID `gateway-01:SN-006`.
 
 ---
 
@@ -249,7 +251,7 @@ export function onMessage(msg, context) {
         time: msg.time,
         c8y_Temperature: { T: { value: temperature, unit: "C" } }
       },
-      externalSource: [{ externalId: deviceId, type: "c8y_Serial" }]
+      externalSource: [{ externalId: `${msg.clientID}:${deviceId}`, type: "c8y_Serial" }]
     },
     {
       cumulocityType: "measurement",
@@ -258,10 +260,10 @@ export function onMessage(msg, context) {
         time: msg.time,
         c8y_Battery: { level: { value: battery, unit: "%" } }
       },
-      externalSource: [{ externalId: deviceId, type: "c8y_Serial" }]
+      externalSource: [{ externalId: `${msg.clientID}:${deviceId}`, type: "c8y_Serial" }]
     }
   ];
 }
 ```
 
-**Output**: two `Measurement` objects --- one `c8y_Temperature` and one `c8y_Battery` --- for the device identified by the first four bytes of the payload.
+**Output**: two `Measurement` objects --- one `c8y_Temperature` and one `c8y_Battery` --- for the device whose external ID is the client ID, a colon, and the device ID from the first four bytes of the payload.
