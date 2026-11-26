@@ -64,7 +64,7 @@ The block sends each variable as text. A string is sent as it is, a boolean is s
 
 The following rules apply:
 
-- If the prompt uses a variable that the block does not provide, the AI Agent Manager leaves the placeholder, for example `{{humidity}}`, in the text. The agent then reads the placeholder. The block writes a warning to the log when the prompt uses a variable that the input does not provide, and an information message when the input provides a variable that the prompt does not use. The block reports each name once.
+- If the prompt uses a variable that the block does not provide, the AI Agent Manager leaves the placeholder, for example `{{humidity}}`, in the text. The agent then reads the placeholder. The block writes a warning to the log when the prompt uses a variable that the input does not provide. The block reports each name once.
 - If a value contains two opening braces, the block inserts a space between them, so `{{` becomes `{ {`. This keeps a value from being replaced as a placeholder. The text that the agent reads differs from the value only by these spaces.
 - A placeholder with a name that has other characters than letters, digits, and underscores, such as `{{a.b}}`, cannot be replaced. The block writes a warning when it activates the model.
 
