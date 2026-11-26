@@ -26,6 +26,9 @@ permissions:
   pull-requests: write
   issues: write
 
+env:
+  NODE_VERSION: "24"
+
 jobs:
   determine-branches:
     name: Determine branches to check
@@ -75,7 +78,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "latest"
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install Dependencies
         run: |
