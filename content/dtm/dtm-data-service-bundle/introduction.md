@@ -11,17 +11,7 @@ helpContent:
   The service propagates measurements only while it is enabled for your tenant. Use **Manage DTM Data Service** in the **Data points** tab of an asset to see whether the service is enabled, and to enable or disable it."
 ---
 
-The *DTM Data Service* is the {{< product-c8y-iot >}} service that propagates measurements from devices to assets in the Digital Twin Manager (DTM) application.
-
-### What the DTM Data Service is used for {#what-it-is-used-for}
-
-In an asset hierarchy, devices send measurements, but the assets that represent machines, rooms, or buildings do not. To view the data of an asset, you would need to look at each device that belongs to it.
-
-With [linked data points](/dtm/asset-hierarchy/#datapoints), you define which measurement series of a device belong to an asset. The DTM Data Service then copies each new measurement of that series from the device to the asset. As a result, you can:
-
-- View the data of an asset in one place, even if several devices deliver it.
-- Use the measurements of an asset in dashboards, analytics, and other applications in the same way as measurements of any other managed object.
-- Keep the device measurements unchanged, because the service creates new measurements on the asset and does not modify the device measurements.
+The *DTM Data Service* is the {{< product-c8y-iot >}} service that [propagates measurements](#measurement-propagation) from devices to assets in the Digital Twin Manager (DTM) application. It copies the new measurements of a device to an asset based on the [linked data points](/dtm/asset-hierarchy/#datapoints) you create on the asset, so you can use the data of an asset in dashboards, analytics, and other applications.
 
 ### How it works {#how-it-works}
 
