@@ -60,9 +60,7 @@ When an attempt to set up your tenant does not complete, for example, because a 
 
 The alarm text starts with "Setting up the data lake failed" and names the setup step that failed and the reason, such as a missing permission on your storage. If a later attempt fails for a different reason, the service clears the alarm and raises a new one with the new text.
 
-Fix the cause and try again. For details, see [If something fails on AWS](#if-something-fails-on-aws) or [If something fails on Microsoft Azure](#if-something-fails-on-azure). The service clears the alarm when the setup succeeds.
-
-If the **Data Lake configuration** page refuses your entries, for example, a rejected external ID or a base location that overlaps the location of another tenant, it shows the reason. A refused attempt raises no alarm and leaves an open alarm unchanged.
+If you use your own storage, fix the cause and try again. For details, see [If something fails on AWS](#if-something-fails-on-aws) or [If something fails on Microsoft Azure](#if-something-fails-on-azure). If {{< company-c8y >}} provides your storage, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/). The service clears the alarm when the setup succeeds.
 
 ### Offloading failure alarms {#offloading-failure-alarms}
 
