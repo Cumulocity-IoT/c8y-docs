@@ -1,5 +1,5 @@
 ---
-date: 
+date: "2026-10-22"
 title: "Data Preparation: view the logs of your rules"
 product_area: "Device management & connectivity"
 change_type:

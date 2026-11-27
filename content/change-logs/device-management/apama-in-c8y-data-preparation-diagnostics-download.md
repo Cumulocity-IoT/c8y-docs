@@ -1,5 +1,5 @@
 ---
-date: 
+date: "2026-10-22"
 title: "Data Preparation: download a diagnostics archive"
 product_area: "Device management & connectivity"
 change_type:
