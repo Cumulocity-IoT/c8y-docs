@@ -441,6 +441,14 @@ After you have changed a tenant option using a REST request, the correlator will
     <td>The number of worker threads. The per-tenant microservice defaults to 1 AB worker per core. For example, the apama-ctrl-2c-8g variant will have 2 worker threads. The multi-tenant microservice defaults to 1 worker thread per tenant.See also <a href="/streaming-analytics/analytics-builder/#configuring-the-concurrency-level">Configuring the concurrency level</a>. Note that the number of worker threads cannot be changed for the microservice with multi-tenant support.</td>
   </tr>
   <tr>
+    <td><code>onnx.maxModelSizeMB</code></td>
+    <td>The maximum size in megabytes of an ONNX model that the ONNX block downloads from the files repository. For a ZIP archive, the limit also applies to the extracted content. The default value is 100. The maximum value is 1024. See also <a href="/streaming-analytics/analytics-builder/#running-onnx-models">Running ONNX models</a>.</td>
+  </tr>
+  <tr>
+    <td><code>onnx.timeoutSecs</code></td>
+    <td>The time in seconds that the ONNX block waits for one run of an ONNX model. After this time, the block stops the run and the analytic model fails. The default value is 1. The maximum value is 30. See also <a href="/streaming-analytics/analytics-builder/#running-onnx-models">Running ONNX models</a>.</td>
+  </tr>
+  <tr>
     <td><code>retention.virtualDevicesMaxDays</code></td>
     <td>The retention period in days for keeping virtual devices. The default value is 30 days. See also <a href="/streaming-analytics/analytics-builder/#virtual-devices">Virtual devices</a>.</td>
   </tr>
