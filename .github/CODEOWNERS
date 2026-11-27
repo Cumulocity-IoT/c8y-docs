@@ -26,7 +26,7 @@
 /content/console/ @bbyreddy @tydunne @BeateRixen
 /content/data-broker/ @scmi-c8y @schmiel-cumulocity @BeateRixen
 /content/datahub/ @cheinz-sag @BeateRixen
-/content/datahub/streaming-lake-ingestion-bundle/ @eickler @jaro-herod @riemenschneider @afri-c8y @flsc-c8y @BeateRixen
+/content/streaming-lake-ingestion/ @eickler @jaro-herod @riemenschneider @afri-c8y @flsc-c8y @BeateRixen
 /content/device-certificate-authentication/ @mgrumann @BeateRixen
 /content/device-integration/ @Oezge-Akin @l2p- @eliasweingaertner
 /content/device-integration/mqtt*.md @scmi-c8y @schmiel-cumulocity @BeateRixen
@@ -47,3 +47,6 @@
 /content/data-preparation/ @skom-c8y @ben-c8y @BeateRixen
 # 'block-reference-bundle' is automatically and frequently committed to - don't bother _too many_ CODEOWNERS
 /content/streaming-analytics/block-reference-bundle/ @skom-c8y @ben-c8y
+# CICD-10976
+/content/service-terms/ @JanePorter @neuerburg @vaillant @cloudguy11 @juergenkraemer
+/content/legal-notices/ @JanePorter @neuerburg @vaillant @cloudguy11 @juergenkraemer

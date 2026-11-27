@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-11-20'
   - label: jp.cumulocity.com
     date: '2026-11-20'
+  - label: us.cumulocity.com
+    date: '2026-11-23'
+  - label: cumulocity.com
+    date: '2026-11-23'
 ---
 Previously, subtenants required a Digital Twin Manager (DTM) setting to be configured in the tenant itself or in the parent {{< enterprise-tenant >}}, which caused unnecessary duplication and made it difficult to apply consistent settings across the tenant hierarchy in your {{< product-c8y-iot >}} instance. Now, subtenants inherit DTM settings from the {{< management-tenant >}} when the settings are not configured in the subtenant itself or in the {{< enterprise-tenant >}}.
 
