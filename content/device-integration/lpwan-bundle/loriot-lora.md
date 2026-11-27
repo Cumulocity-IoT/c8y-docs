@@ -383,7 +383,7 @@ On receiving an uplink message, the {{< product-c8y-iot >}} platform creates the
 
 ### Troubleshooting {#loriot-troubleshooting}
 
-#### Device registration {#loriot-device-registration}
+#### Device registration {#loriot-troubleshooting-device-registration}
 
 **No LoRa device registered in {{< product-c8y-iot >}} after configuring the Loriot agent endpoint in the Loriot Network Server account**
 

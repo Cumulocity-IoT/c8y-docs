@@ -222,7 +222,7 @@ we can see a message on the topic because the template `999` is unknown.
 
 In this tutorial, you will learn how to use MQTT client in C with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-#### Prerequisites {#prerequisites}
+#### Prerequisites {#hello-mqtt-c-prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -364,7 +364,7 @@ Now that you have done your first step, check out the section [Hello MQTT](/devi
 
 In this tutorial, you will learn how to use the Java MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-#### Prerequisites {#prerequisites}
+#### Prerequisites {#hello-mqtt-java-prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -381,7 +381,7 @@ OS name: "mac os x", version: "10.14.2", arch: "x86_64", family: "mac"
 
 Maven can be downloaded from the [Maven website](http://maven.apache.org).
 
-#### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-client}
+#### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-java-client}
 
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
@@ -524,7 +524,7 @@ What does the code in `main` do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given ``clientId``, the server will not accept it.
 
-##### Build and run the application {#build-and-run-the-application}
+##### Build and run the application {#build-and-run-the-java-application}
 
 Use the following commands to build the application:
 
@@ -566,7 +566,7 @@ After starting the application, you should see a new registered device in the De
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), information about it will be printed to the console.
 
-#### Improving the agent {#improving-the-agent}
+#### Improving the agent {#improving-the-java-agent}
 
 Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
 
@@ -576,7 +576,7 @@ In this tutorial, you will learn how to use the Java MQTT client with {{< produc
 
 In the GitHub repository [cumulocity-examples]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/mqtt-client), you can find a sample Java MQTT client using X.509 certificates and all necessary scripts used in this tutorial.
 
-#### Prerequisites {#prerequisites}
+#### Prerequisites {#hello-mqtt-java-certificates-prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -681,13 +681,13 @@ You do not need to set a password, user or tenant for the MQTT client connecting
 
 In this tutorial, you will learn how to use the browser-based MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-#### Prerequisites {#prerequisites}
+#### Prerequisites {#hello-mqtt-browser-prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
 * You have a valid tenant, a user, and a password in order to access {{< product-c8y-iot >}}.
 
-#### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-client}
+#### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-browser-client}
 
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
@@ -829,7 +829,7 @@ Open the *hello_mqtt_js.html* file in a browser. You should see a new registered
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information will be displayed in the browser page.
 
-#### Improving the agent {#improving-the-agent}
+#### Improving the agent {#improving-the-browser-agent}
 
 Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
 
@@ -837,14 +837,14 @@ Now that you have done your first step, check out the section [Hello MQTT](/devi
 
 In this tutorial, you will learn how to use the Node.js MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-#### Prerequisites {#prerequisites}
+#### Prerequisites {#hello-mqtt-nodejs-prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
 * You have Node.js and the package manager (npm) installed.
 * You have a valid tenant, a user, and a password in order to access {{< product-c8y-iot >}}.
 
-#### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-client}
+#### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-nodejs-client}
 
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
@@ -944,7 +944,7 @@ What does the code do?
 
 Note that the subscription is established after the device creation, otherwise if there is no device for a given `clientId`, the server will not accept it.
 
-##### Run the application {#run-the-application}
+##### Run the application {#run-the-nodejs-application}
 
 Before running the application, the MQTT middleware must be installed. To achieve this, execute the following command:
 
@@ -962,7 +962,7 @@ You should see a new registered device in the Device Management application, lis
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), related information about it will be printed to the console.
 
-#### Improving the agent {#improving-the-agent}
+#### Improving the agent {#improving-the-nodejs-agent}
 
 Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.
 
@@ -970,7 +970,7 @@ Now that you have done your first step, check out the section [Hello MQTT](/devi
 
 In this tutorial, you will learn how to use the Python MQTT client with {{< product-c8y-iot >}} using pre-defined messages (called "static templates").
 
-#### Prerequisites {#prerequisites}
+#### Prerequisites {#hello-mqtt-python-prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 
@@ -996,7 +996,7 @@ The above command installs Paho on your system. You may want to use [virtualenv]
 On macOS you may need to execute `sudo easy_install pip` in case the `pip` command is not found.
 {{< /c8y-admon-info >}}
 
-#### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-client}
+#### Developing the "Hello, MQTT world!" client {#developing-the-hello-mqtt-world-python-client}
 
 To develop a very simple "Hello, world!" MQTT client for {{< product-c8y-iot >}}, you must
 
@@ -1136,6 +1136,6 @@ After starting the application you should see a new registered device in the Dev
 
 Additionally, if there will be a new operation created for this device (for example `c8y_Restart`), information about it will be printed to the console.
 
-#### Improving the agent {#improving-the-agent}
+#### Improving the agent {#improving-the-python-agent}
 
 Now that you have done your first step, check out the section [Hello MQTT](/device-integration/mqtt/#hello-mqtt) to learn more about {{< product-c8y-iot >}} MQTT and improve your application.

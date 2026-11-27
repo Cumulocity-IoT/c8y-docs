@@ -158,7 +158,7 @@ Refer to the section on [Device integration](/device-integration/device-integrat
 In this section, we will learn how to generate a JWT token using mTLS protocol with {{< product-c8y-iot >}}.
 For authentication with {{< product-c8y-iot >}} we use X.509 certificates. To learn more about X.509 certificates, refer to [Device certificates](/device-certificate-authentication/device-certificates/). The Device access token API is only accessible on port 8443.
 
-#### Prerequisites {#prerequisites}
+#### Prerequisites {#hello-x509-rest-prerequisites}
 
 In order to follow this tutorial, check the following prerequisites:
 * Verify that you have Maven 3 and at least Java 8 installed.

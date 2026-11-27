@@ -93,7 +93,7 @@ This fragment holds an array of strings listing the supported protocols.
 
 Valid protocol values are `SSH`, `TELNET`, `VNC`, and `PASSTHROUGH`.
 
-##### Example 
+##### Example {#rest-api-example}
 ```json
 {
     "c8y_RemoteAccessSupportedProtocols": ["PASSTHROUGH", "SSH"]
@@ -103,7 +103,7 @@ Valid protocol values are `SSH`, `TELNET`, `VNC`, and `PASSTHROUGH`.
 #### Using SmartREST {#using-smartrest}
 Alternatively, the set of supported CRA protocols can be configured using the SmartREST template 150. It sets the fragment using a message containing a list
 of supported protocol names. See [MQTT Static template 150](/smartrest/mqtt-static-templates/#150) for more information.
-##### Example
+##### Example {#smartrest-example}
 ```text
 150,SSH,PASSTHROUGH
 ```

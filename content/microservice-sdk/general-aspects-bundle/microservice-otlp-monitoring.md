@@ -47,7 +47,7 @@ To convert a tenant option to an environment variable, these steps are applied a
 
 For example, the `otel.sdk.disabled` tenant option is equivalent to the `OTEL_SDK_DISABLED` environment variable.
 
-##### Encryption {#encryption}
+##### Encryption {#otlp-encryption}
 Tenant options containing values to be encrypted, like passwords or access tokens, must be preceded with a `credentials.` prefix,
 as described in the [Encryption](/microservice-sdk/general-aspects/#encryption) section.
 

@@ -10,7 +10,7 @@ In this example you will learn how to create and deploy a Node.js-based microser
 
 It uses the {{< product-c8y-iot >}} [@c8y/client JavaScript library](https://www.npmjs.com/package/@c8y/client) to subscribe to alarms. When a new alarm is created, a Slack channel gets notified.
 
-### Prerequisites {#prerequisites}
+### Prerequisites {#nodejs-prerequisites}
 
 - {{< product-c8y-iot >}} credentials (tenant, user and password).
 - Slack channel to post messages to, [Slack app and OAuth token](https://slack.dev/node-slack-sdk/getting-started).
@@ -376,6 +376,6 @@ If there are active alarms on your tenant, your Slack channel will get notified.
 
 ![Slack app posting alarms](/images/microservices-sdk/microservice-slack-alarms.png)
 
-### Source code {#source-code}
+### Source code {#nodejs-source-code}
 
 The code of this [node-microservice]({{< link-c8y-github >}}/cumulocity-examples/tree/develop/microservices/node-microservice) can be found in our public GitHub repositories.

@@ -85,7 +85,7 @@ The MQTT Service supports wildcard subscriptions in compliance with MQTT version
   It must be the last character in the topic string. 
   For example, `sensors/#` matches `sensors/room1/temperature` and `sensors/room2/basement/humidity`.
 
-##### Device isolation {#device-isolation}
+##### Device isolation {#wildcard-subscriptions-device-isolation}
 Device isolation remains active when using wildcards. 
 A wildcard subscription does not grant access to topics that the client is not already authorized to see.
 
