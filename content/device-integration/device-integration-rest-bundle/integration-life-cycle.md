@@ -69,6 +69,10 @@ The device issues this request repeatedly. While the user has not yet registered
 
 The device can now connect to {{< product-c8y-iot >}} using the tenant ID, username and password. User alias is not supported for devices.
 
+{{< c8y-admon-info >}}
+Over REST, the bootstrap credentials can only be used to request device credentials, as shown above. {{< product-c8y-iot >}} rejects any other request authenticated with the bootstrap credentials with "401 Unauthorized". Use the generated device credentials for all other requests.
+{{< /c8y-admon-info >}}
+
 With the introduction of the concept of {{< enterprise-tenant >}}s, it is no longer safe to assume the tenant name is the same as the tenant ID. The credentials request returns the tenant ID only. This cannot be used as the subdomain, combined with the domain name to provide a tenant URL that can be accessed with username only (and password). Access to the correct tenant can only be ensured by using the tenant ID and the username in authentication, for example, `<tenant ID>/<username>` with the password returned by the credentials request. In this case, the subdomain is irrelevant.
 
 Request header should be:
