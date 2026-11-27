@@ -97,6 +97,12 @@ In the following screenshot, five columns are configured. Three property columns
 The resulting table is visualized as follows:
 ![Asset table widget example](/images/users-guide/cockpit/cockpit-widget-asset-table-example.png)
 
+On the dashboard, you can sort the table by using the sort button in the header of a column.
+
+{{< c8y-admon-info >}}
+Columns that show computed properties, such as **Last measurement** or **Alarm count today**, are sorted in the browser. The sorting applies only to the rows that are loaded on the current page. All other columns are sorted across all pages. The values of computed properties are loaded once and updated when the table is refreshed. A refresh also applies the sort again.
+{{< /c8y-admon-info >}}
+
 #### To add properties {#to-add-properties}
 
 Click **+Add Properties** and select one or more properties to be added.
