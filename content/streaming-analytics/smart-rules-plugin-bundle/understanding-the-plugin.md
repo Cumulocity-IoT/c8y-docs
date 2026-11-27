@@ -43,14 +43,14 @@ A rule has the following fields and properties:
 
 |   Field              | Description           |
 |----------------------| ----------------------|
-| **Name**             | The name of the rule. A name is mandatory. The name must be unique among the rules of the same rule template.<br>The field is populated with the name of the rule template. When you create more than one rule from the same rule template without changing the name, the plugin appends #1, #2, #3, and so on. Rules are sorted by name. |
+| **Name**             | The name of the rule. A name is mandatory. The name must be unique among the rules of the device, group, or asset.<br>The field is populated with the name of the rule template. When you create more than one rule from the same rule template without changing the name, the plugin appends #1, #2, #3, and so on. Rules are sorted by name. |
 | **Note**             | You can add a note for the rule.                                                                                                                                                                                                                                |
 | **Created**          | Shows the timestamp when the rule was created.                                                                                                                                                                                                               |
 | **Last Updated**     | Shows the timestamp when the rule was last updated.                                                                                                                                                                                                          |
 | **Model Name**       | Displays the name of the model associated with the rule. This field is read-only.                                                                                                                                        |
 | **Origin**           | The origin of the rule template, **Official** or **Custom**. This field is read-only. |
 | **Parameters**       | The parameters of the rule template.<br>The input source parameter takes its value from the current device, group, or asset context. You cannot change the context. For a group or an asset, you select the deployment target, see [Selecting the deployment target](#selecting-the-deployment-target).<br>You can edit all other parameters. |
-| **Active/Inactive**  | Deploy the rule by toggling from inactive to active state.<br>Once the rule is deployed, all fields and properties become read-only unless the rule is undeployed.                                                        |
+| **Active/Inactive**  | Switch the rule to **Active** to save and activate it.<br>While the rule is active, all fields and properties are read-only. To edit the rule, switch it to **Inactive**. |
 
 ![Rule from a custom rule template in the smart rules (NEW) plugin](/images/streaming-analytics/smart-rules-plugin/rule-editor.png)
 
@@ -108,13 +108,11 @@ If a rule cannot be activated or deactivated, the dialog shows the number of fai
 
 ### Integration with Analytics Builder instance editor {#integration-with-analytics-builder-instance-editor}
 
-Rules that you create with the smart rules plugin are also shown in the instance editor of their rule template in Analytics Builder. You can edit or delete them there. For an official rule template, you cannot open the model, but you can manage its rules from the plugin.
-
-**[TODO PAB-5296: confirm with the team how rules of official rule templates are reached in Analytics Builder in the GA UI, and update the sentence above.]**
+Rules of a custom rule template that you create with the smart rules plugin are also shown in the instance editor of the rule template in Analytics Builder. You can edit or delete them there. Official rule templates are not shown in Analytics Builder. You manage the rules of an official rule template only in the smart rules plugin.
 
 Rules created in the Analytics Builder instance editor appear in the smart rules plugin only when the mode is set to **Production**. Non-production modes indicate the rule is under development or testing and not ready for deployment.
 
-The instance editor validates the instance name. The instance name is required and must be unique. You can only deploy the instance after you enter a unique, non-empty instance name.
+The instance editor validates the instance name. The instance name is required and must be unique among the instances of the model. You can only deploy the instance after you enter a unique, non-empty instance name.
 
 {{< c8y-admon-info>}}
 This validation applies only to models configured with template parameters with the value selection set to "From Context".

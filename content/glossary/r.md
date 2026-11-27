@@ -55,7 +55,7 @@ This permission strings are frequently referred to as "roles" throughout the API
 
 ### Rule instance {#rule-instance}
 
-A rule instance is a smart rule (NEW) that is created from a [rule template](#rule-template) for a specific [device](#device), [group](#group), or [asset](#asset), with its own name and parameter values. A rule instance is either active or inactive. The name of a rule instance is mandatory and unique among the rule instances of the same rule template.
+A rule instance is a smart rule (NEW) that is created from a [rule template](#rule-template) for a specific [device](#device), [group](#group), or [asset](#asset), with its own name and parameter values. A rule instance is either active or inactive. The name of a rule instance is mandatory.
 
 See also [Smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin/#rule-templates-and-rule-instances) in the documentation.
 

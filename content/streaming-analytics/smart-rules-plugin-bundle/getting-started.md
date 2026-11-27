@@ -23,8 +23,6 @@ Before you use the smart rules (NEW) plugin, make sure that the following requir
 - The smart rules (NEW) plugin is installed in the application that you want to use, and the **Smart rules (NEW) plugin** is enabled in **Preview feature**.
 - You have the required permissions to view or manage smart rules (NEW). See [Managing permissions to smart rules (NEW) instances](#managing-permissions-to-smart-rules-instances).
 
-**[TODO PAB-5459: at the preview-to-GA cutover, remove the "Preview feature" condition from the second prerequisite: "The smart rules (NEW) plugin is installed in the application that you want to use."]**
-
 #### Managing permissions to smart rules (NEW) instances {#managing-permissions-to-smart-rules-instances}
 
 The **Smart rule instances** permission under [global roles](/standard-tenant/managing-permissions/#to-add-a-global-role) controls access to smart rules (NEW).
@@ -49,7 +47,7 @@ The permission is also added to these roles in existing tenants. Users who have 
 
 Other global roles, including the global roles that you created yourself, do not include the **Smart rule instances** permission. To grant access to smart rules (NEW) with such a role, add the permission to the role. For details, see [To add a global role](/standard-tenant/managing-permissions/#to-add-a-global-role).
 
-The **CEP management** permissions also grant access to smart rules (NEW). The **Smart rule instances** permission grants read-only access to the underlying Analytics Builder model. To create, edit, or delete Analytics Builder models, you need the **CEP management** permissions. For details, see [Permissions](/streaming-analytics/introduction-analytics/#permissions).
+Users with the **CEP management** permission with the ADMIN level can also create, edit, activate, deactivate, and delete rules in the plugin. The **Smart rule instances** permission grants read-only access to the underlying Analytics Builder model. To create, edit, or delete Analytics Builder models, you need the **CEP management** permissions. For details, see [Permissions](/streaming-analytics/introduction-analytics/#permissions).
 
 ### Creating your first smart rule {#creating-your-first-smart-rule}
 
@@ -60,24 +58,21 @@ At least one device must be registered in {{< product-c8y-iot >}}. Preferably, t
 #### To create a smart rule from an official rule template {#to-create-a-smart-rule-from-an-official-rule-template}
 
 1. In the Device Management application, navigate to **Devices** > **All devices** and select a device.
-2. Click the **Smart rules (NEW)** tab.
-   **[TODO PAB-5551: the screenshot shows the tab as "Smart rules" with a "New" badge, not "Smart rules (NEW)". Confirm the GA tab label, then align this step and the other pages that name the tab (cockpit-smart-rules-plugin.md, viewing-device-details.md, new-and-legacy-smart-rules.md, understanding-the-plugin.md).]**
+2. Click the **Smart rules** tab with the **New** label.
    ![Smart rules tab](/images/streaming-analytics/smart-rules-plugin/empty-smart-rule.png)
 3. Click **Add rule**.
    The **Add rule** dialog lists the rule templates that apply to the current context. Each rule template shows an **Official** or **Custom** label. To find a rule template, enter a part of its name, description, or tag in the search field.
    ![Add rule dialog with official and custom rule templates](/images/streaming-analytics/smart-rules-plugin/add-rule-dialog.png)
 4. Select the rule template "On measurement explicit threshold create alarm" and click **OK**.
-   The plugin creates the rule as an inactive rule and opens it.
+   The plugin creates the rule immediately as an inactive rule with a default name, and opens it. **Cancel** discards your unsaved changes, but does not remove the rule. If you do not want to keep the rule, click **Delete**.
 5. Configure the rule:
-   - In the name field, enter a name for the rule. A name is mandatory. It must be unique among the rules of the same rule template.
+   - In the name field, enter a name for the rule. A name is mandatory. It must be unique among the rules of the device, group, or asset.
    - Optionally, add a note.
    - The **Device or group of devices** parameter takes its value from the current context. You cannot change it.
-   - In **Input fragment and series**, select the measurement that the rule monitors.
+   - In **Input fragment and series**, enter the fragment and series of the measurement that the rule monitors, for example, `c8y_Temperature.T`.
    - In **Threshold lower range** and **Threshold upper range**, enter the range of valid values.
    - Optionally, change **Alarm type** and **Alarm text**.
 6. Click **Save** to save the rule. To save and activate the rule at the same time, switch the rule to **Active**.
-
-**[TODO PAB-5296: confirm with Dev (1) that switching the rule to "Active" also saves it, and (2) whether clicking "OK" in step 4 keeps the rule when you then click "Cancel". If that behavior ships at GA, add to step 4: "To discard the rule, delete it."]**
 
 The rule is shown in the list of rules with its status (**Active** or **Inactive**). While the rule is active, it creates an alarm each time a measurement value is outside the threshold range.
 

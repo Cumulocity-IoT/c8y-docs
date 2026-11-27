@@ -18,7 +18,7 @@ With smart rules (NEW), you create and manage rules directly from the context of
 
 Smart rules (NEW) replace the [legacy smart rules](/cockpit/smart-rules/), which are deprecated. For guidance, see [Smart rules (NEW) and legacy smart rules](/streaming-analytics/smart-rules-plugin/#new-and-legacy-smart-rules).
 
-The **Smart rules (NEW)** tab shows the rules of the current device, group, or asset. On this tab, you create, edit, activate, deactivate, and delete rules.
+The **Smart rules** tab with the **New** label shows the rules of the current device, group, or asset. On this tab, you create, edit, activate, deactivate, and delete rules.
 
 ![New smart rules tab](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
 

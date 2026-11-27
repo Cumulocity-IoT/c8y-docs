@@ -10,7 +10,7 @@ By default, all official rule templates are available in the smart rules (NEW) p
 
 You restrict the official rule templates with the `smartrules.samples.allowlist` tenant option in the `streaminganalytics` category. The value is a JSON array of the English names of the Analytics Builder samples, as a string. For example:
 
-```
+```json
 {
    "category": "streaminganalytics",
    "key": "smartrules.samples.allowlist",
@@ -27,13 +27,12 @@ The tenant option has the following effect:
 |A JSON array of sample names|Only the official rule templates in the list.|
 |A value that is not a valid JSON array|All official rule templates. The microservice logs a warning.|
 
-Always use the English name of a sample, also if your users work with a different language. The restriction applies to all languages. Names that do not match a sample are ignored, and the microservice logs a warning. The restriction also applies to the **Samples** page in Analytics Builder.
+Always use the English name of a sample, also if your users work with a different language. The restriction applies to all languages. Names that do not match a sample are ignored, and the microservice logs a warning.
 
-**[TODO PAB-5296: confirm that the restriction applies to the Samples page in Analytics Builder in the GA release (PAB-5290 filters abSamples.evt).]**
+The restriction also applies to the **Samples** page in Analytics Builder. Samples that are not in the list are not shown there, including samples that are not official rule templates, such as "Aggregate measurements per input source". To keep such a sample available in Analytics Builder, add its name to the list.
 
 The official rule templates have the following English names:
 
-- Aggregate measurements per input source
 - Calculate energy consumption
 - On alarm duration increase severity
 - On alarm execute operation
@@ -44,8 +43,6 @@ The official rule templates have the following English names:
 - On measurement explicit threshold create alarm
 - On measurement threshold create alarm
 - On missing measurements create alarm
-
-**[TODO PAB-5296: re-check the list of sample names against src/analytics-builder-samples/ at the GA release.]**
 
 #### When a change of the tenant option takes effect {#when-a-change-of-the-tenant-option-takes-effect}
 
@@ -60,9 +57,9 @@ When you remove an official rule template from the list, its existing rules are 
 
 - Existing rules continue to run. You can still view, edit, activate, deactivate, and delete them.
 - You cannot create new rules from the rule template. The rule template is no longer shown in the **Add rule** dialog.
-- If the rule template has no rules, it is removed.
+- If the rule template has no rules, it is deleted.
 
-When you add the rule template to the list again, you can create new rules from it again.
+When you add the rule template to the list again, the microservice makes it available again, and you can create new rules from it.
 
 ### Sizing guidance {#sizing-guidance}
 
@@ -70,7 +67,7 @@ Smart rules (NEW) run in the Apama-ctrl microservice of your tenant, together wi
 
 The smart rules (NEW) plugin requires a microservice variant with the Analytics Builder capability. The Apama-ctrl-smartrules and Apama-ctrl-smartrulesmt microservices do not support smart rules (NEW).
 
-**[TODO PAB-5296: confirm whether active rule instances count towards the limit of 3 active analytic models of the Apama-ctrl-starter microservice.]**
+The Apama-ctrl-starter microservice allows at most 3 active analytic models. A rule template with one or more active rules counts as one active model, regardless of the number of its active rules. Rule templates and your other active Analytics Builder models count towards the same limit. For example, if no other model is active, you can activate any number of rules of 3 different rule templates, but no rule of a fourth rule template.
 
 The following factors drive the resource usage of smart rules (NEW):
 

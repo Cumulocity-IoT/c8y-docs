@@ -69,9 +69,7 @@ When you select a model, the URL of the page changes to include the model. You c
 
 You can also view the logs of a model from the model editor. See [Viewing the logs of a model](/streaming-analytics/analytics-builder/#viewing-the-logs-of-a-model).
 
-Smart rules (NEW) are Analytics Builder model instances. To see the messages of a rule of a custom rule template, select the model and then the instance. Messages of legacy smart rules are only shown when no model is selected.
-
-**[TODO PAB-5296: official rule templates are not shown in the Analytics Builder model list. Describe how to see the messages of a rule of an official rule template.]**
+Smart rules (NEW) are Analytics Builder model instances. To see the messages of a rule of a custom rule template, select the model and then the instance. Official rule templates are not shown in the Analytics Builder model list. To see the messages of a rule of an official rule template, do not select a model. The messages of the rule start with `[model=<ID of the rule>]` and include the name of the rule. Messages of legacy smart rules are also only shown when no model is selected.
 
 ### Automatic refresh {#logs-auto-refresh}
 
