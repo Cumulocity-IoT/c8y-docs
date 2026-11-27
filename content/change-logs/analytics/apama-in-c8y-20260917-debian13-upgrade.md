@@ -13,7 +13,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAM-35403
-version: 27.256.0
+version: 27.254.0
 ---
 
 In an upcoming release, the {{< product-c8y-iot >}} Streaming Analytics (Apama) runtime images are upgraded to Debian 13 (Trixie) as their base operating system, replacing Debian 12 (Bookworm). The upgrade also introduces a new Java version and changes the location of the Python 3 interpreter.

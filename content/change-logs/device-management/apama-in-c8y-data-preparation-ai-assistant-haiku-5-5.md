@@ -1,5 +1,5 @@
 ---
-date: "2026-11-12"
+date: "2026-11-19"
 title: "Data Preparation AI assistant improved and Haiku-5-5 is now the recommended model"
 product_area: "Device management & connectivity"
 change_type:

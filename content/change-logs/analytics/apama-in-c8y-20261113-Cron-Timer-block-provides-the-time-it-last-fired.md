@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-5518
-version: 27.319.0
+version: 27.316.0
 ---
 
 Analytics Builder models that use the **Cron Timer** block often need the time at which the timer fired, for example, to set the time of an alarm or to show the time in a message. Previously, models had no way to get this time.
