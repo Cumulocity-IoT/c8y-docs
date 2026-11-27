@@ -20,7 +20,22 @@ This process requires switching between applications and can be time-consuming w
 For detailed information about the instance editor workflow, refer to [Instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor).
 
 #### With smart rules plugin {#with-smart-rules-plugin}
-The smart rules plugin streamlines this process by enabling Analytics Builder model instance creation and deployment directly from device and group contexts, eliminating the need for switching to a different application.
+The smart rules plugin lets you create, configure, and activate rules directly from the context of a device, group, or asset. You do not switch to a different application. You also do not need to create an Analytics Builder model to use an official rule template.
+
+### Rule templates and rule instances {#rule-templates-and-rule-instances}
+
+A **rule template** defines the logic of a rule and the parameters that you configure. A **rule instance** is a rule that you create from a rule template for a specific device, group, or asset, with your own parameter values. In the plugin, a rule instance is shown as a rule.
+
+The plugin shows all rule templates in one list, sorted by name. Each rule template has an origin label:
+
+|Origin|Description|
+|:---|:---|
+|**Official**|A rule template that {{< product-c8y-iot >}} provides. Official rule templates are based on the Analytics Builder samples. They are managed by the system. You cannot edit or delete them, and they are not shown in the Analytics Builder model list.|
+|**Custom**|A rule template that is created in your tenant. It is an Analytics Builder model with a template parameter with the value selection set to "From Context".|
+
+When {{< product-c8y-iot >}} updates an official rule template, existing rules keep their configuration and continue to run.
+
+Your administrator can restrict which official rule templates are available, see [Restricting the available official rule templates](#restricting-the-available-official-rule-templates).
 
 ### Understanding the smart rules interface {#understanding-the-smart-rules-interface}
 
@@ -28,23 +43,76 @@ A rule has the following fields and properties:
 
 |   Field              | Description           |
 |----------------------| ----------------------|
-| **Name**             | Automatically populated with the model name but can be customized for more descriptive names.<br>When creating multiple rules from the same model without changing the rule name, the plugin automatically appends #1, #2, #3, etc. to differentiate instances. Rules are sorted by instance name. |
+| **Name**             | The name of the rule. A name is mandatory. The name must be unique among the rules of the device, group, or asset.<br>The field is populated with the name of the rule template. When you create more than one rule from the same rule template without changing the name, the plugin appends #1, #2, #3, and so on. Rules are sorted by name. |
 | **Note**             | You can add a note for the rule.                                                                                                                                                                                                                                |
 | **Created**          | Shows the timestamp when the rule was created.                                                                                                                                                                                                               |
 | **Last Updated**     | Shows the timestamp when the rule was last updated.                                                                                                                                                                                                          |
 | **Model Name**       | Displays the name of the model associated with the rule. This field is read-only.                                                                                                                                        |
-| **Template parameters** | Template parameters configured as "From Context" are automatically populated based on your current device/group context.<br>Context-based parameters are read-only as they inherit values from the current context.<br>Non-context template parameters remain editable for user configuration. |
-| **Active/Inactive**  | Deploy the rule by toggling from inactive to active state.<br>Once the rule is deployed, all fields and properties become read-only unless the rule is undeployed.                                                        |
+| **Origin**           | The origin of the rule template, **Official** or **Custom**. This field is read-only. |
+| **Parameters**       | The parameters of the rule template.<br>The input source parameter takes its value from the current device, group, or asset context. You cannot change the context. For a group or an asset, you select the deployment target, see [Selecting the deployment target](#selecting-the-deployment-target).<br>You can edit all other parameters. |
+| **Active/Inactive**  | Switch the rule to **Active** to save and activate it.<br>While the rule is active, all fields and properties are read-only. To edit the rule, switch it to **Inactive**. |
+
+![Rule from a custom rule template in the smart rules (NEW) plugin](/images/streaming-analytics/smart-rules-plugin/rule-editor.png)
+
+### Selecting the deployment target {#selecting-the-deployment-target}
+
+The deployment target defines which objects a rule applies to. The plugin shows it in the **Input source** section of the rule, below the name of the input source parameter.
+
+When you create a rule in the context of a group or an asset, you select the deployment target with radio buttons. For a device or a smart group, there is no choice, and the plugin shows the deployment target as text.
+
+|Context|Deployment target|Description|
+|:---|:---|:---|
+|Device|Device &lt;name&gt;|The rule applies to the device. There is no choice.|
+|Group|All devices of group &lt;name&gt;|The rule applies to all devices beneath the group, including the devices in its subgroups. This is the default.|
+|Group|Assets of group &lt;name&gt;|The rule applies to the assets beneath the group, including the assets in its subgroups, but not to the devices. This option is not available by default, see below.|
+|Smart group|All devices of smart group &lt;name&gt;|The rule applies to all devices in the smart group. There is no choice.|
+|Asset|All devices of asset &lt;name&gt;|The rule applies to all devices beneath the asset, including the devices of its child assets. This is the default.|
+|Asset|Asset &lt;name&gt;|The rule applies only to the asset itself, not to the devices beneath it.|
+
+The **Assets of group** option is only shown if it is enabled for your tenant. If it is not enabled, the plugin shows **All devices of group** as text, and you cannot select a different deployment target for a group. To enable the option, contact [product support](/additional-resources/contacting-support/). An existing rule that already applies to the assets of a group keeps this deployment target and shows the option, also if it is not enabled for your tenant.
+
+To change the deployment target of an existing rule, switch the rule to **Inactive** first. While a rule is active, its deployment target is read-only.
+
+The following images show the deployment target for a group, with the **Assets of group** option enabled, and for an asset:
+
+![Deployment target for a group](/images/streaming-analytics/smart-rules-plugin/deployment-target-group.png)
+
+![Deployment target for an asset](/images/streaming-analytics/smart-rules-plugin/deployment-target-asset.png)
+
+### Activating or deactivating all rules of a rule template {#activating-or-deactivating-all-rules-of-a-rule-template}
+
+You can activate or deactivate all rules of a custom rule template in one step. You do this in Analytics Builder, in the model editor or the instance editor of the rule template. You need the **CEP management** permission with the ADMIN level. The **Smart rule instances** permission is not sufficient.
+
+Official rule templates are not shown in Analytics Builder. To activate or deactivate the rules of an official rule template, switch each rule to **Active** or **Inactive** in the smart rules (NEW) plugin.
+
+#### To activate or deactivate all rules of a rule template {#to-activate-or-deactivate-all-rules-of-a-rule-template}
+
+1. In Analytics Builder, open the model editor or the instance editor of the custom rule template.
+2. In the top bar, click the instance summary, for example, "3/5 instances active".
+3. Select **Activate all** or **Deactivate all**.
+   **Activate all** is only shown if the rule template has inactive rules in **Production** mode. **Deactivate all** is only shown if the rule template has active rules.
+   ![Instance summary menu with Activate all and Deactivate all](/images/streaming-analytics/smart-rules-plugin/bulk-instances-menu.png)
+4. Check the summary in the confirmation dialog and confirm.
+   ![Confirmation dialog for activating all rules](/images/streaming-analytics/smart-rules-plugin/bulk-activate-dialog.png)
+
+The rules are changed one at a time, and the dialog shows the progress. You can cancel the operation. In this case, the operation stops after the current rule.
+
+**Deactivate all** deactivates all active rules of the rule template. **Activate all** activates the inactive rules in **Production** mode, except for the following rules, which the summary lists as skipped:
+
+- Rules without a name.
+- Rules with a required parameter that has no value.
+
+Rules in other modes are not activated.
+
+If a rule cannot be activated or deactivated, the dialog shows the number of failed rules. Click **Show details** to see the affected rules and the reason. The rules that were changed successfully keep their new state. The operation does not undo them.
 
 ### Integration with Analytics Builder instance editor {#integration-with-analytics-builder-instance-editor}
 
-The smart rules plugin maintains seamless bidirectional integration with the Analytics Builder instance editor.
+Rules of a custom rule template that you create with the smart rules plugin are also shown in the instance editor of the rule template in Analytics Builder. You can edit or delete them there. Official rule templates are not shown in Analytics Builder. You manage the rules of an official rule template only in the smart rules plugin.
 
 Rules created in the Analytics Builder instance editor appear in the smart rules plugin only when the mode is set to **Production**. Non-production modes indicate the rule is under development or testing and not ready for deployment.
 
-Rules created through the smart rules plugin automatically appear in the corresponding model's instance editor. These rules can be edited, modified, or deleted from the instance editor.
-
-To prevent deployment of incomplete rules, the instance editor includes enhanced validation on the instance name. The instance name is required and must be unique within your tenant. The instance is available for deployment only after you provide a unique, non-empty instance name.
+The instance editor validates the instance name. The instance name is required and must be unique among the instances of the model. You can only deploy the instance after you enter a unique, non-empty instance name.
 
 {{< c8y-admon-info>}}
 This validation applies only to models configured with template parameters with the value selection set to "From Context".

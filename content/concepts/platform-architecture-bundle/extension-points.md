@@ -18,7 +18,7 @@ Both architectures share a consistent set of extension points, so you can adapt 
 
 **[Smart functions](/concepts/smart-function-concept/)** embed lightweight Javascript logic directly inside a component, such as a Data Preparation rule or a Streaming Analytics model. There is no container to build or deploy — use them for targeted transformation, enrichment, or analytics logic.
 
-**[Smart rules](/cockpit/smart-rules/)** apply a [Streaming Analytics](/streaming-analytics/introduction-analytics/) model to automate a common real-time reaction. A set of defaults is available out of the box, and you customize their behavior with your own analytics models.
+**[Smart rules](/streaming-analytics/smart-rules-plugin/#getting-started)** automate a common real-time reaction in [Streaming Analytics](/streaming-analytics/introduction-analytics/). You create them from official rule templates, which are ready to use, or from custom rule templates that you build with Analytics Builder. The [legacy smart rules](/cockpit/smart-rules/) are deprecated.
 
 **[Web applications](https://cumulocity.com/codex/) and [HTML widgets](/cockpit/widgets-collection/#html)** customize the user-facing layer, from an individual dashboard widget to a complete application.
 

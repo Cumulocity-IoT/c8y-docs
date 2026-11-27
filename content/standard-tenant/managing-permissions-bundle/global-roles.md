@@ -178,7 +178,7 @@ The following permission categories are available by default:
 
 <tr>
 <td align="left">Global smart rules</td>
-<td align="left">Configure global smart rules.</td>
+<td align="left">Configure global legacy smart rules.</td>
 </tr>
 
 <tr>
@@ -244,6 +244,8 @@ The following permission categories are available by default:
 </table>
 
 There may be additional permissions visible depending on the features in your subscription plan. These are documented along with the respective feature.
+
+For example, if your tenant is subscribed to Streaming Analytics, the **Smart rule instances** permission controls access to smart rules (NEW). The Global Manager and business roles include READ and ADMIN, and the Global Reader and readers roles include READ. For details, see [Managing permissions to smart rules (NEW) instances](/streaming-analytics/smart-rules-plugin/#managing-permissions-to-smart-rules-instances).
 
 {{< c8y-admon-important >}}
 When new features with new permissions are added to {{< product-c8y-iot >}}, these are not automatically added to existing roles. If you notice that you cannot use a new feature that was recently announced, check your permissions.

@@ -11,11 +11,18 @@ sector:
 helpcontent:
 - label: smart-rules
   title: Smart rules
-  content: "Smart rules are a useful means to analyze data in realtime and to perform actions based on data. The global smart rules displayed here apply to a global context (in contrast to local ones for specific groups or devices). Note that you need specific permissions to see and manage smart rules.
+  content: "Legacy smart rules are deprecated. Their removal is planned for 2027. Use smart rules (NEW) for all new rules. See *Smart rules (NEW) and legacy smart rules* in the user documentation for the migration steps.
+
+
+  Smart rules are a useful means to analyze data in realtime and to perform actions based on data. The global smart rules displayed here apply to a global context (in contrast to local ones for specific groups or devices). Note that you need specific permissions to see and manage smart rules.
 
 
   Cumulocity includes preset smart rules templates, for example 'On measurement threshold create alarm'. Since the functionality of the various smart rule types differs, different parameters are required to configure it. See *Smart rules collection* in the user documentation for details on each smart rule template and its configuration."
 ---
+
+{{< c8y-admon-important >}}
+Legacy smart rules are deprecated. Their removal is planned for 2027. Use [smart rules (NEW)](/streaming-analytics/smart-rules-plugin/#getting-started) for all new rules. For a comparison and the migration steps, see [Smart rules (NEW) and legacy smart rules](/streaming-analytics/smart-rules-plugin/#new-and-legacy-smart-rules). Existing legacy smart rules continue to work until their removal.
+{{< /c8y-admon-important >}}
 
 {{< product-c8y-iot >}} includes the Streaming Analytics application which can analyze data in realtime and perform actions based on data.
 

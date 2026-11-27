@@ -53,7 +53,7 @@ The **Alarms** tab provides information on the alarms of a device. See [Working 
 This feature is in Public Preview and may be subject to change in the future.
 {{< /c8y-admon-preview >}}
 
-The **Smart rules (NEW)** tab allows to create and manage the Analytics Builder model instances directly from the context of a device or group.
+The **Smart rules** tab with the **New** label shows the rules of the device. On this tab, you create, edit, activate, deactivate, and delete rules. You create a rule from an official rule template, which is ready to use, or from a custom rule template that is built with Analytics Builder.
 
 ![Smart rules new tab](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
 

@@ -64,6 +64,8 @@ Analytics Builder allows you to configure its settings by changing the tenant op
 
 Once you see this alarm, you can be sure that your change is effective.
 
+This alarm is also raised when you change the `smartrules.samples.allowlist` tenant option, which restricts the official rule templates of smart rules (NEW). In a multi-tenant Apama-ctrl microservice, a change of this tenant option does not raise the alarm and does not restart the microservice. For details, see [Restricting the available official rule templates](/streaming-analytics/smart-rules-plugin/#restricting-the-available-official-rule-templates).
+
 
 #### Safe mode on startup {#apama_safe_mode}
 
@@ -335,7 +337,7 @@ In case of multiple duplicates, this alarm is only listed once.
 
 #### Smart rule configuration failed {#smart-rule-configuration-failed}
 
-This alarm is raised if a smart rule contains an invalid configuration.
+This alarm is raised if a legacy smart rule contains an invalid configuration. It does not apply to smart rules (NEW). Errors of a smart rule (NEW) are shown as a runtime error of the rule and on the [Logs](#logs-view) page.
 
 - Alarm type: `smartrule_configuration_error`
 - Alarm text: &lt;Smart rule identifier&gt;: Smart rule create/edit failed. One or more fields are invalid, please check smart rule configuration.
@@ -347,7 +349,7 @@ The Apama microservice log contains more details on the reason for the smart rul
 
 #### Smart rule restore failed {#smart-rule-restore-failed}
 
-This alarm is raised if a corrupt smart rule is present in the inventory and the correlator therefore fails to recover it correctly during startup.
+This alarm is raised if a corrupt legacy smart rule is present in the inventory and the correlator therefore fails to recover it correctly during startup.
 
 - Alarm type: `smartrule_restore_failed`
 - Alarm text: Smart rule restore failed. Contact support.
