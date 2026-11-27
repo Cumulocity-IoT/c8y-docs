@@ -1,6 +1,6 @@
 ---
 date:
-title: Smart rules (NEW) is generally available and legacy smart rules are deprecated
+title: Smart rules (NEW) offers official rule templates and legacy smart rules are deprecated
 change_type:
   - value: change-QHu1GdukP
     label: Feature
@@ -17,11 +17,11 @@ ticket: PAB-5296
 version: 27.306.0
 ---
 
-Smart rules (NEW) is now generally available. Smart rules (NEW) lets you create and manage rules directly from the context of a device, group, or asset in applications such as Device Management, Cockpit, and Digital Twin Manager. The rules run in Streaming Analytics.
+Smart rules (NEW) lets you create and manage rules directly from the context of a device, group, or asset in applications such as Device Management, Cockpit, and Digital Twin Manager. The rules run in Streaming Analytics.
 
 You can now create a rule directly from an official rule template, which is labeled **Official** in the **Add rule** dialog. You no longer need to create an Analytics Builder model first. Custom rule templates that you build with Analytics Builder are labeled **Custom** and are shown in the same list. A rule name is mandatory.
 
-The general availability release includes the following changes:
+This release includes the following changes:
 
 - **Restricting the official rule templates**: Administrators can restrict the available official rule templates with the `smartrules.samples.allowlist` tenant option.
 - **Deployment target selection**: For an asset, you select whether the rule applies to all devices beneath the asset or to the asset itself. For a group, the rule applies to all devices beneath the group. If it is enabled for your tenant, you can also apply the rule to the assets of the group.

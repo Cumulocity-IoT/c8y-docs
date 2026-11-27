@@ -15,7 +15,7 @@ Legacy smart rules are deprecated. Their removal is planned for 2027. Use smart 
 
 |Topic|Smart rules (NEW)|Legacy smart rules|
 |:---|:---|:---|
-|Status|Generally available.|Deprecated. Removal is planned for 2027.|
+|Status|Public Preview.|Deprecated. Removal is planned for 2027.|
 |Rule templates|Official rule templates, and custom rule templates that you create in Analytics Builder.|A fixed set of rule templates.|
 |Where you create rules|The **Smart rules** tab with the **New** label of a device, group, or asset in Device Management, Cockpit, Digital Twin Manager, and other applications with the plugin.|The **Smart rules** tab of a device or group in Cockpit, or the **Global smart rules** page in Cockpit.|
 |Deployment target|A device, a group, or an asset. A rule on a group applies to all devices beneath the group, including the devices in its subgroups.|A device, a group and its direct children, or the whole inventory (global smart rules).|
