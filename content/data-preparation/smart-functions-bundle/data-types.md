@@ -134,10 +134,10 @@ A device to create.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `cumulocityType` | `"device"` | Yes | Identifies the object as a device. Must be `"device"`. |
-| `externalSource` | [`ExternalId[]`](#external-id) | No | The external IDs to register for the device. A device with no external IDs cannot be named as a parent. |
+| `externalSource` | [`ExternalId[]`](#external-id) | Yes | The external IDs to register for the device. |
 | `payload` | `object` | Yes | The fields of the new device. See below. |
 | `parentDevice` | [`ExternalId`](#external-id) or [`CreateDevice`](#create-device) | No | The parent device: the external ID of an existing device, a device listed earlier in the returned array, or a device returned by another call for the same message. The platform adds the new device to the child devices of the parent. |
-| `parentAssets` | (`string` or [`CreateAsset`](#create-asset) or [`CreateGroup`](#create-group))`[]` | No | The parent assets and groups. Name an asset by its `externalAssetId`, or an asset or group object from earlier in the returned array. The platform adds the new device to the child assets of each parent. |
+| `parentAssets` | ([`ExternalAssetId`](#external-asset-id) or [`GroupPath`](#group-path) or [`CreateAsset`](#create-asset) or [`CreateGroup`](#create-group))`[]` | No | The direct parent assets and groups. Name an existing asset by its [`ExternalAssetId`](#external-asset-id), an existing group by its [`GroupPath`](#group-path), or give an asset or group object from earlier in the returned array. The platform adds the new device to the child assets of each parent. |
 
 | Payload field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -154,9 +154,9 @@ An asset to create, for example, a site or a building.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `cumulocityType` | `"asset"` | Yes | Identifies the object as an asset. Must be `"asset"`. |
-| `externalAssetId` | `string` | No | The ID of the asset. The platform registers it as an external ID of type `c8y_Asset`, and also sets it as the fragment `c8y_ExternalId`. An asset with no `externalAssetId` cannot be named as a parent. |
+| `externalAssetId` | `string` | Yes | The ID of the asset. The platform registers it as an external ID of type `c8y_Asset`, and also sets it as the fragment `c8y_ExternalId`. |
 | `payload` | `object` | Yes | The fields of the new asset. See below. |
-| `parentAssets` | (`string` or [`CreateAsset`](#create-asset))`[]` | No | The parent assets. Name an asset by its `externalAssetId`, or an asset object from earlier in the returned array. The platform adds the new asset to the child assets of each parent. |
+| `parentAssets` | ([`ExternalAssetId`](#external-asset-id) or [`CreateAsset`](#create-asset))`[]` | No | The direct parent assets. Name an existing asset by its [`ExternalAssetId`](#external-asset-id), or give an asset object from earlier in the returned array. An asset cannot be in a group. The platform adds the new asset to the child assets of each parent. |
 
 | Payload field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -172,12 +172,28 @@ A group, which the platform finds by its path, or creates if it does not exist. 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `cumulocityType` | `"group"` | Yes | Identifies the object as a group. Must be `"group"`. |
-| `parentAsset` | `string` or [`CreateAsset`](#create-asset) | No | If `path` starts in an asset rather than at the top level, that asset. Name the asset by its `externalAssetId`, or give an asset object from earlier in the returned array. If the asset does not exist, the platform does not create the group, and raises a `c8y_DataPrep_DeviceCreateFailure` alarm. |
-| `path` | `string[]` | Yes | The names of the groups from the top level, or from `parentAsset`, down to this group, ending with its own name, for example, `["Plant", "Line 1"]`. The platform finds each group in the path and creates any that do not exist. |
+| `groupPath` | [`GroupPath`](#group-path) | Yes | The path of the group, for example, `{ path: ["Plant", "Line 1"] }`. The platform creates any groups in the path that do not exist. If a `rootAsset` is given but does not exist, the platform does not create the group, and raises a `c8y_DataPrep_DeviceCreateFailure` alarm. |
 | `payload` | `object` | Yes | The fields of the new group. See below. |
 
 | Payload field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `owner` | `string` | No | The owner of the group. The owner must be a user in the tenant. If not set, the owner is the service user of the Data Preparation microservice that creates the group. |
 | `[fragment: string]` | `any` | No | Any custom fragment. Do not set `name` or `type`, because the platform sets them from the path. |
+
+#### ExternalAssetId {#external-asset-id}
+
+An existing asset, named by its external ID.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `externalAssetId` | `string` | Yes | The ID of the asset, which is registered as an external ID of type `c8y_Asset`. |
+
+#### GroupPath {#group-path}
+
+A group, named by its path. In the `parentAssets` of a device, it names an existing group. The platform finds the group, but never creates it. If the group does not exist, the platform creates the device without the link to it, and raises an alarm. To create the group if it does not exist, return a [`CreateGroup`](#create-group) instead.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `path` | `string[]` | Yes | The names of the groups from the top level, or from `rootAsset`, down to this group, ending with its own name, for example, `["Plant", "Line 1"]`. |
+| `rootAsset` | [`ExternalAssetId`](#external-asset-id) or [`CreateAsset`](#create-asset) | No | The asset that the groups in `path` start in. If not set, the path starts at the top level. For example, for the hierarchy Asset A > Asset B > Group 1 > Group 2, `rootAsset` is Asset B and `path` is `["Group 1", "Group 2"]`. Name an existing asset by its [`ExternalAssetId`](#external-asset-id), or give an asset object from earlier in the returned array. |
 

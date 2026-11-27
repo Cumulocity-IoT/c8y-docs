@@ -4,7 +4,7 @@ title: Device creation
 layout: redirect
 ---
 
-This page describes the optional smart function that decides what the platform creates when a rule sends data for a device that does not exist yet. You implement the function as `onDeviceCreate`, in the same Javascript file as `onMessage`. If a rule does not define it, the platform creates a basic device. For details, see [Automatically created devices](/data-preparation/device-onboarding/#automatically-created-devices).
+This page describes the optional smart function that decides what the platform creates when a rule sends data for a device that does not exist yet. You implement the function as `onDeviceCreate`, in the same Javascript file as `onMessage`. If a rule does not define it, the platform creates a default device. For details, see [Automatically created devices](/data-preparation/device-onboarding/#automatically-created-devices).
 
 ### Purpose {#device-create-purpose}
 
@@ -56,9 +56,9 @@ For the full list of fields of these objects, see [Objects to create](#objects-t
 
 Invalid results include:
 
-- Two objects in the result have the same external ID, or two groups have the same `path` and `parentAsset`.
+- Two objects in the result have the same external ID, or two groups have the same `path` and `rootAsset`.
 - An object names a parent that comes later in the result. List parents before their children.
-- An object names as a parent an object that is not in the result, or an object without an ID.
+- An object names as a parent an object that is not in the result.
 - A device's `parentDevice` is an asset. An external ID of type `c8y_Asset` always names an asset.
 - The `owner` of an object is not a user in the tenant.
 - An object sets the marker fragments of another kind of object, for example, an asset with `c8y_IsDevice`.
