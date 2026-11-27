@@ -153,6 +153,8 @@ A dashboard and its stored versions are saved together in a single managed objec
 
 If no stored version is left, or if the version history is already turned off, Cockpit shows a message instead of the dialog. The message lists how to reduce the size of the dashboard, from the least to the most drastic option: turn off the version history, reduce the size of the widget configurations, for example by using smaller embedded files in SCADA widgets, or remove widgets.
 
+Cockpit shows this message in the same way when a dashboard is too large in other cases: when you create a dashboard or a report, when you paste a dashboard, or when you send a widget from the data point explorer to dashboards or reports. The message names the dashboards that cannot be saved. If a widget cannot be added to several dashboards, one message lists all of them.
+
 ### To copy a dashboard from one object to another {#to-copy-a-dashboard-from-one-object-to-another}
 
 1. Click **More...** in the top menu bar and from the context menu select **Copy dashboard**.
