@@ -48,7 +48,7 @@ Click the arrow at the start of a row to expand the run. The tool calls of the r
 
 ![An expanded run shows its tool calls as a timeline](/images/agents/observability_tool_calls.png)
 
-For each tool call, the timeline shows the time, the name of the tool, and the duration in milliseconds. The icon shows whether the tool call succeeded or failed. If a tool call [requires approval](/ai/agents/#ai-agent-test) and the user rejected it, the tool call is marked as **Denied**. Denied tool calls never run, so they have no duration.
+For each tool call, the timeline shows the time, the name of the tool, and the duration in milliseconds. The icon shows whether the tool call succeeded or failed. If a tool call [requires approval](/ai/tools-mcp/#user-approval), it is marked as **Approved** or **Denied**. Denied tool calls never run, so they have no duration. Tool calls that did not require approval have no marker.
 
 If the agent did not call any tools, "No tool calls for this run." is shown.
 
@@ -62,6 +62,8 @@ The audit trail only contains metadata. For each run, the AI Agent Manager recor
 - The trace ID (`telemetryId`).
 
 For each tool call, it records the agent and tool name, the trace ID of the run, the user, whether the call succeeded, failed, or was denied, and its duration. For failed tool calls, only the type of the error is recorded, not the error message.
+
+If a tool call required approval, the record also contains the approval decision in the `approvalDecision` field, with the value `approved` or `denied`, and its audit log text includes the decision, for example, `Tool "x" approved, succeeded`. The `user` of the record is the user whose chat session sent the approval. An approval given automatically in the [chat](/ai/tools-mcp/#user-approval-in-the-chat), by **Auto** mode or by a remembered "always approve" answer, is recorded in the same way as an approval that the user clicked. So `approved` means that the tool call was approved in the user's session, not that the user approved it manually.
 
 The audit trail never contains prompts, system prompts, responses, or tool call arguments and results. To analyze the content of agent runs, export the runs to your own collector with the [OpenTelemetry export](/ai/control-panel/#opentelemetry-export).
 
