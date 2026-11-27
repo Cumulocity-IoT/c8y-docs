@@ -124,6 +124,7 @@ We only share your personal data with recipients if this is necessary for fulfil
 * our subsidiaries to fulfill the purposes stated in this Privacy Notice;
 * service providers, to provide IT and system administration, hosting, analytics, marketing, and customer purchase management services in accordance with the purposes stated above;
 * our customers, if they provide you with access our Online Services or if the transfer is necessary to resolve suspicious account activity or contract terms;
+* our business partners, where you have expressed an interest in their products or services;
 * third parties who operate forums, portals, marketing activities, or host events. In some countries, your prior consent is required and will be requested at the appropriate place. Details will be available there;
 * consultants, to pursue our legitimate interests or to comply with legal requirements;
 * users of our forums and portals, as far as posts and comments submitted by you are concerned;
