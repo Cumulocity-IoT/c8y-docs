@@ -25,7 +25,7 @@ To monitor Streaming Lake Ingestion, open the Administration application and cli
 * **Schema changes**: The number of new tables and new columns in the last 7 days, and the date of the last change.
 * **Ingestion**: The share of the message backlog in use and the time the service last finished a batch, read from the Messaging service. From 50 % the tile shows a warning. If the last batch is more than 15 minutes old and messages are waiting, processing has stopped. If the last batch is more than 15 minutes old and nothing is waiting, no new data arrives. The tile appears only if you can open the Messaging service pages.
 
-The service automatically updates the data lake schema when the structure of the incoming data changes. It reports schema changes as {{< product-c8y-iot >}} events and schema violations as alarms. Until setup completes, the page shows no events. If the setup fails, the page shows the [setup failure alarm](#setup-failure-alarm).
+The service automatically updates the data lake schema when the structure of the incoming data changes. It reports schema changes as {{< product-c8y-iot >}} events and schema violations as alarms. Until the setup completes, the page shows no events. If the setup fails, the page shows the [setup failure alarm](#setup-failure-alarm).
 
 #### Active alarms {#active-alarms}
 
