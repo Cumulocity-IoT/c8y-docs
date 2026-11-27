@@ -167,6 +167,17 @@ For each branch, the workflow:
    branch-specific label if needed, and a GitHub issue if the test fails
 6. for the PR-label trigger only: posts a summary comment on the PR
 
+### Stuck runs
+
+`run.cjs` stops Cypress and fails the run when Cypress prints nothing for 5
+minutes. A single link needs about 2-3 minutes at most (10 retries with 10 s
+timeouts), so a longer silence means Cypress is stuck, for example on a page that
+never finishes loading, and its own timeouts do not fire. The error names the
+last link in the output and the link that most likely caused the stall. To
+reproduce it, run `npm test -- --urls-with=<part of that link> --diagnostics`.
+
+Set `LINK_CHECK_STALL_TIMEOUT_MINUTES` to change the limit.
+
 ## Where to update the code
 
 All repo/site-specific customization - own domains, excluded links, and
