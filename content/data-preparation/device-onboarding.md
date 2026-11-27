@@ -147,6 +147,10 @@ For a `CreateGroup`, if a group in the path does not exist, the platform creates
 
 Users with inventory roles for a group can access the devices in the group. If the platform adds a device to a group, those users get access to the device.
 
+### Testing onDeviceCreate {#testing-ondevicecreate}
+
+When you run tests in the rule editor, the output of each test shows the devices, assets, and groups that `onDeviceCreate` would create for the test message. The test does not create them in the platform. Save the output as the expected output to detect changes to the created objects in later test runs. For details, see [Test data](/data-preparation/rule-editor/#inspecting-outputs).
+
 ### Ways to use onDeviceCreate {#ways-to-use-ondevicecreate}
 
 The `inputMsg` argument is a `DeviceMessage`. Its `payload` is a `Uint8Array`, so decode JSON payloads before you use them.

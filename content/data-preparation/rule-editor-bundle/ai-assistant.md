@@ -143,7 +143,7 @@ The AI only writes `onDeviceCreate` when you ask to control how new devices are 
 | "Messages arrive on `sites/<site>/<device>`. Put each new device under an asset for its site, named 'Site' followed by the site from the topic. Create the site's asset if it doesn't exist yet." | The platform creates the site as an asset, and the device under it. |
 | "Each message comes from a gateway and has readings for its sensors. Create new sensors as child devices of the gateway, and create the gateway too if it's new." | The platform creates the gateway, and its sensors as child devices. |
 
-Before you deploy the rule, review the generated `onDeviceCreate` function and its test outputs. Check that the new objects to be created have the correct external IDs, parents, and other required fields.
+Before you deploy the rule, review the generated `onDeviceCreate` function and its [test outputs](/data-preparation/rule-editor/#inspecting-outputs). Check that the new objects to be created have the correct external IDs, parents, and other required fields.
 
 ### Test generation {#test-generation}
 
