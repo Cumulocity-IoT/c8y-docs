@@ -2,6 +2,8 @@
 weight: 90
 title: LWM2M device firmware update (FOTA)
 layout: redirect
+skills:
+  - lwm2m-firmware-update
 ---
 
 The {{< product-c8y-iot >}} LWM2M agent supports FOTA (Firmware update Over The Air) using a firmware binary that is uploaded to the {{< product-c8y-iot >}} platform or hosted externally.

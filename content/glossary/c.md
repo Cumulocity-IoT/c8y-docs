@@ -18,6 +18,17 @@ The calculation is performed offline for billing based on resource requests in t
 {{< /c8y-details >}}   
 
 
+### Change data capture (CDC) {#change-data-capture}
+
+Change data capture (CDC) records every change to IoT data as a separate record, together with the kind of change, for example, the creation or the update of a [managed object](#managed-object). [Streaming Lake Ingestion](#streaming-lake-ingestion) writes these records to the `cdc_` tables of the [lakehouse](#lakehouse), which hold the complete history of your IoT data. The `latest_inventory` tables, by contrast, hold only the current state of the [inventory](#inventory).
+
+See [Understanding the lakehouse](/streaming-lake-ingestion/understanding-the-lakehouse/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+Each record in a change data capture table has an `eventType` column with the kind of change, for example, `MANAGED_OBJECT_UPDATE`.
+{{< /c8y-details >}}
+
+
 ### Change logs {#change-logs}
 
 Change logs are the official record of {{< product-c8y-iot >}} product changes and announcements, published for all cloud deployments ([Continous Deployment](#continuous-deployment)), detailing updates such as new features, improvements, and API changes or deprecations. Corresponds to the [release notes](#release-notes) in the [Yearly releases](#yearly-release).
@@ -100,6 +111,17 @@ In the {{< product-c8y-iot >}} Continuous Deployment (CD) model, the different c
 See also [Private Preview](#private-preview), [Public Preview](#public-preview) and [General Availability](#ga).
 
 
+### Credential vending {#credential-vending}
+
+Credential vending means that the [Iceberg catalog](#iceberg-catalog) gives a client a short-lived, read-only storage credential for each table that the client reads. The client reads the data files of the table with this credential and needs no storage keys of its own.
+
+See [Catalog settings](/streaming-lake-ingestion/connecting-to-the-lakehouse/#catalog-settings) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+A client requests credential vending with the header `X-Iceberg-Access-Delegation: vended-credentials`. Without the header, tables load but reading data fails.
+{{< /c8y-details >}}
+
+
 ### {{< product-c8y-iot >}} CLI (Command Line Interface) {#cumulocity-cli}
 
 The {{< product-c8y-iot >}} CLI (Command Line Interface) is a software tool provided by {{< product-c8y-iot >}} that offers a command-line interface for interacting with the platform. It enables developers, administrators, and automation scripts to manage platform resources directly from a terminal. See also the [CLI documentation](https://goc8ycli.netlify.app/docs/introduction/).
@@ -119,12 +141,12 @@ Core functionalities are accessed via the main REST APIs (such as [Inventory API
 
 ### {{< product-c8y-iot >}} DataHub {#datahub}
 
-{{< product-c8y-iot >}} Datahub is a {{< product-c8y-iot >}} [application](#application) for periodically offloading data from the [{{< product-c8y-iot >}} operational store](#operational-store) to a [data lake](#data-lake) and querying the data lake contents.
+{{< product-c8y-iot >}} DataHub makes the IoT data of {{< product-c8y-iot >}} available for long-term analytics and AI. DataHub 2.0 uses [Streaming Lake Ingestion](#streaming-lake-ingestion) to stream the data continuously from the [{{< product-c8y-iot >}} operational store](#operational-store) into a [lakehouse](#lakehouse) of [Apache Iceberg](#iceberg) tables. You query the lakehouse with the Iceberg clients of your choice. DataHub 1.0, the previous version, offloads the data periodically to a [data lake](#data-lake) with offloading jobs.
 
-See also [DataHub](/datahub/datahub-overview/) in the documentation.
+See also [DataHub 2.0 overview](/streaming-lake-ingestion/datahub-2-overview/) and [{{< product-c8y-iot >}} DataHub overview](/datahub/datahub-overview/) (DataHub 1.0) in the documentation.
 
 {{< c8y-details title="Developer details" >}}
-DataHub provides a REST API (`/service/datahub/`) to proxy query-related requests to the Dremio engine.
+DataHub 2.0 provides an [Iceberg catalog](#iceberg-catalog) for Iceberg clients and an API to manage the [principals](#principal) of the catalog (`/service/offloading/api/v1/principals`). For details, see [Connecting to the lakehouse](/streaming-lake-ingestion/connecting-to-the-lakehouse/).
 {{< /c8y-details >}}
 
 

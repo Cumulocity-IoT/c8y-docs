@@ -182,7 +182,7 @@ For example, `[t12345|model=87104] Received value 42` is shown in the logs of mo
 Messages that do not start with a valid prefix are not shown on the **Logs** page or in the model editor. They are still written to the log file of the Apama-ctrl microservice. See [Log files of the Apama-ctrl microservice](/streaming-analytics/troubleshooting/#logfiles).
 
 {{< c8y-admon-important >}}
-The framework does not check the prefix of messages written by custom blocks. A custom block that writes an incorrect prefix causes its messages to be shown for a different model, or not at all. Do not add other fields to the prefix. A prefix with other fields is not valid.
+The framework does not check the prefix of messages written by custom blocks. A custom block that writes an incorrect prefix causes its messages to be shown for a different model, or not at all. Do not add other fields to the prefix. Any field other than those shown here makes the prefix invalid, and the message is not shown.
 {{< /c8y-admon-important >}}
 
 ### Wires {#wires}

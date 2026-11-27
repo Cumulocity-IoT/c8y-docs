@@ -20,6 +20,10 @@ environment_availability:
     date: '2026-10-23'
   - label: jp.cumulocity.com
     date: '2026-10-23'
+  - label: us.cumulocity.com
+    date: '2026-10-26'
+  - label: cumulocity.com
+    date: '2026-10-26'
 ---
 Every {{< product-c8y-iot >}} Codex page now has exactly one H1 heading: the page title in the header. Other headings keep their look but no longer use H1. This gives each page a clearer structure for screen readers and search engines.
 

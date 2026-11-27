@@ -10,11 +10,12 @@ This agreement is made between {{< company-c8y >}} ("Provider") and the Customer
 
 * VPN and Direct Line services.
 * Backup replication services.
-* Status page services.
 
 ### VPN and Direct Line services
 
 #### Service description
+
+**Available on {{< product-c8y-iot >}} Advanced Dedicated Environments.**
 
 {{< product-c8y-iot >}} VPN services connect Customer's existing infrastructure to Customer's dedicated {{< product-c8y-iot >}} SaaS instance through the internet using secure, encrypted connections. {{< product-c8y-iot >}} VPN service is based on [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html) if the SaaS instance is hosted on Amazon Web Service. The VPN service is based on [Azure VPN Gateway](https://azure.microsoft.com/en-US/products/vpn-gateway) if the SaaS instance is hosted on Microsoft Azure.
 
@@ -81,6 +82,8 @@ Customer acknowledges the following limitations and constraints in using the VPN
 
 #### Service description
 
+**Available on {{< product-c8y-iot >}} Advanced Dedicated Environments.**
+
 The backup replication service provides automated replication of your cloud virtual machine backups to a secondary geographical region for disaster recovery and business continuity. {{< company-c8y >}} configures and manages the process, ensuring your backups are securely copied and readily available in another region should your primary region experience an outage. For Amazon Web Services, this includes setup of cross-region copy mechanisms and lifecycle management. For Azure, we leverage Azure Site Recovery or similar services for consistent replication. The service optionally includes testing to validate recoverability.
 
 #### Service features
@@ -109,13 +112,13 @@ Recovery Time Objective (RTO) and Recovery Point Objective (RPO) are the same as
 
 #### Service description
 
-{{< product-c8y-iot >}} status page is a public web page reflecting the current status of a {{< product-c8y-iot >}} dedicated SaaS instance in realtime and any scheduled and unscheduled maintenance. The service is based on [Atlassian Statuspage](https://www.atlassian.com/software/statuspage).
+{{< product-c8y-iot >}} status page is a public web page reflecting the current status of {{< product-c8y-iot >}} Environments and any scheduled and unscheduled maintenance.
 
 #### Service features
 
 Key features include:
 
-* **Real-time status updates**: The service is with up-to-the-minute information on the health and availability of {{< product-c8y-iot >}} services from {{< company-c8y >}} operations.
+* **Current status updates**: The service is with up-to-the-minute information on the health and availability of {{< product-c8y-iot >}} services from {{< company-c8y >}} operations.
 * **Incident communication**: {{< company-c8y >}} operations provide information on ongoing incidents, including their impact and estimated resolution times.
 * **Scheduled maintenance notifications**: {{< company-c8y >}} operations provide information on planned maintenance activities in advance.
 * **Email and SMS notifications**: Optionally, subscribe to receive notifications through email or SMS.
@@ -126,4 +129,3 @@ Customer acknowledges the following limitations and constraints in using the sta
 
 * The status page is public. Private status pages are currently not available.
 * Customer's proprietary services can currently not be added to the status page.
-* Availability management of the status page is carried out by Atlassian.

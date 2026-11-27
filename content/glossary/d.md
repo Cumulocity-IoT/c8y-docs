@@ -43,10 +43,10 @@ The data explorer UI component uses the [Measurement API](https://cumulocity.com
 
 ### Data lake {#data-lake}
 
-Data lakes are used in the context of [{{< product-c8y-iot >}} DataHub](#datahub). A data lake serves as a storage container for offloaded data, for example, ADLS Gen2/Azure Storage (Azure), S3 (Amazon), or a NAS.  
+A data lake stores large amounts of data as files, for example, in ADLS Gen2/Azure Storage (Azure), S3 (Amazon), or a NAS. [{{< product-c8y-iot >}} DataHub](#datahub) 1.0 offloads data to a data lake. DataHub 2.0 stores data in a [lakehouse](#lakehouse), which adds a catalog, table schemas, and transactions to the files of a data lake.
 
 {{< c8y-details title="Developer details" >}}
-The data lake is an external storage which can only be accessed through the DataHub application and Dremio, and not via API.
+The data lake of DataHub 1.0 is an external storage which can only be accessed through the DataHub application and Dremio, and not via API.
 {{< /c8y-details >}}
 
 ### Data point {#data-point}

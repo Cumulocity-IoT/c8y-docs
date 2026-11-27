@@ -1,0 +1,32 @@
+---
+date: '2026-11-19'
+title: >-
+  Corrected the Asset API documentation for creating and updating asset
+  definitions
+product_area: Application enablement & solutions
+change_type:
+  - value: change-VSkj2iV9m
+    label: Fix
+component:
+  - value: component-Tl88RYb4A
+    label: Digital Twin Manager
+build_artifact:
+  - value: tc-wYIY0MBDO
+    label: dtm
+ticket: CTM-3347
+version: 1025.17.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-19'
+  - label: apj.cumulocity.com
+    date: '2026-11-20'
+  - label: jp.cumulocity.com
+    date: '2026-11-20'
+  - label: us.cumulocity.com
+    date: '2026-11-23'
+  - label: cumulocity.com
+    date: '2026-11-23'
+---
+The Asset API documentation for creating an asset definition stated that you can't change its schema after creation and that a change creates a new version. The service doesn't version asset definitions, and you can change them with the update operation. The documentation no longer contains this incorrect statement.
+
+The documentation for creating and updating asset definitions now describes how the service builds the JSON schema from the composition and which requests cause HTTP 400, 403, 404, and 409 responses. The update operation now also declares the HTTP 400 response code.

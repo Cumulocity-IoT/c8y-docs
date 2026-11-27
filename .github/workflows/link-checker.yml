@@ -26,6 +26,9 @@ permissions:
   pull-requests: write
   issues: write
 
+env:
+  NODE_VERSION: '24'
+
 jobs:
   determine-branches:
     name: Determine branches to check
@@ -54,6 +57,8 @@ jobs:
     name: Run Link Check
     needs: determine-branches
     runs-on: ubuntu-latest
+    # A full run takes about 60 minutes. Without this, GitHub cancels a hung job after 6 hours.
+    timeout-minutes: 120
     strategy:
       fail-fast: false
       matrix:
@@ -75,7 +80,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'latest'
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install Dependencies
         run: |
