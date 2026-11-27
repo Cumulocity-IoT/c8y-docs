@@ -40,7 +40,7 @@ To make sure, we recommend you to use reverse domain names, for example:
 
 We also recommend you to add the protocol version as a postfix in the X-ID.
 
-##### Processing mode {#processing-mode}
+##### Processing mode {#mqtt-processing-mode}
 
 Since the {{< product-c8y-iot >}} SmartREST protocol supports TRANSIENT processing mode for avoiding storage of sent data in the database, publishing on MQTT <kbd>t/</kbd> topic instead of <kbd>s/</kbd> topic will only pass the data to real-time processing.
 

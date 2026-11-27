@@ -50,7 +50,7 @@ To extend the AI Agent Manager with custom tools, develop an MCP server that:
 
 For MCP server implementation details, refer to the Model Context Protocol specification. You can also find an article on how to build MCP servers with NestJS and publish them on the {{< product-c8y-iot >}} platform as a microservice in the [Cumulocity TechCommunity](https://community.cumulocity.com/t/ai-agent-manager-using-a-mcp-server-to-generate-widgets/14172).
 
-### Best practices {#best-practices}
+### Best practices {#mcp-servers-best-practices}
 
 - **Tool naming**: Use clear, descriptive names for custom MCP tools. The agent uses tool names and descriptions to decide when to call them.
 

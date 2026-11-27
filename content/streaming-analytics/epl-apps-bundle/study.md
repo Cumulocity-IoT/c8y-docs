@@ -4,7 +4,7 @@ title: Study - Circular geofence alarms
 layout: redirect
 ---
 
-### Overview {#overview}
+### Overview {#study-overview}
 
 This section gives an in-depth example how you can create more complex rules. It uses multiple of the features explained before in the other sections of this guide.
 

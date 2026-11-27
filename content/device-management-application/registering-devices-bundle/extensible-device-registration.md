@@ -9,8 +9,8 @@ To address the growing number of IoT protocols and certain restrictions in the g
 The general concept is based on extending the device registration using a metadata-based approach. Microservices and agents that implement current device registrations can add custom forms to the device registration wizard by providing simple descriptions of the required registration attributes. The metadata is then used by the UI to render a corresponding device registration wizard.
 
 There are two possible ways to extend the UI:
-- with a [single device registration](#single-device-registration) form
-- with a [bulk device registration](#bulk-device-registration) form
+- with a [single device registration](#extensible-single-device-registration) form
+- with a [bulk device registration](#extensible-bulk-device-registration) form
 
 {{< c8y-admon-req >}}
 Extensible device registration requires [application extensions](#extension-enabling) to be defined, and the microservice to implement the predefined endpoints used for getting device registration metadata and creating the device.
@@ -60,7 +60,7 @@ There are two types of extensions:
 ]
 ```
 
-### Single device registration {#single-device-registration}
+### Single device registration {#extensible-single-device-registration}
 
 After enabling the `extensibleDeviceRegistration` extension type, the **Devices** > **Register device** menu in the Device Management application is extended with an entry corresponding to the extension `name` property.
 
@@ -166,7 +166,7 @@ The following diagram visualizes the single device registration flow:
 ![Single diagram](/images/concepts-guide/extensible-device-registration/single-diagram.png)
 
 
-### Bulk device registration {#bulk-device-registration}
+### Bulk device registration {#extensible-bulk-device-registration}
 
 Many device integrations require the registration of many devices at the same time. Currently, all protocols must rely on the bulk registration mechanism of the platform, which often either requires too many fields or requires custom fields to be added. The latter ones can however so far not be validated, as the core directly creates devices -- and microservices and agents have no control over the properties being written to the managed objects.
 
@@ -194,7 +194,7 @@ As a result the following wizard will be displayed:
 
 ![example-wizard-bulk](/images/concepts-guide/extensible-device-registration/extensible-bulk-device-reg.png)
 
-#### API specification {#api-specification}
+#### API specification {#bulk-device-registration-api-specification}
 
 The device integration microservices must implement the following REST endpoints:
 

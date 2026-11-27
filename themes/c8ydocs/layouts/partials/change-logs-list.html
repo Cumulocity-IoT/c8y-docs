@@ -170,11 +170,11 @@
           </div>
           {{- .Content | replaceRE `<script[\s\S]*?</script>` "" | replaceRE `\s+on\w+\s*=\s*"[^"]*"` "" | replaceRE `\s+on\w+\s*=\s*'[^']*'` "" | safeHTML -}}
           <div class="change-log__details">
-            <button class="collapse-btn btn-clean collapsed d-flex a-i-center" data-toggle="collapse" data-target="#collapse-{{(replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot) | urlize }}">
+            <button class="collapse-btn btn-clean collapsed d-flex a-i-center" data-toggle="collapse" data-target="#collapse-{{ .File.ContentBaseName | urlize }}">
               Technical details
               <i class="dlt-c8y-icon-chevron-down "></i>
             </button>
-            <div id="collapse-{{(replace .Title "var-product-c8y-iot" .Site.Params.product_c8y_iot) | urlize }}" class="collapse">
+            <div id="collapse-{{ .File.ContentBaseName | urlize }}" class="collapse">
               <div class="metadata p-16">
                 <button class="btn-metadata " data-tag="technicalcomponent-{{(index .Params.build_artifact 0).label | urlize}}">
                   <small class="text-muted">Build artifact {{ if .Params.version}}/ version{{end}}</small>

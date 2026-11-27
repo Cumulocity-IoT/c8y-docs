@@ -63,7 +63,7 @@ The microservice installer injects the `TZ` environment variable into the micros
 
 The tenant option has higher priority, that means, if the parameter is set in both places, the value from the tenant option is taken.
 
-##### Example {#example}
+##### Example {#timezone-variable-example}
 
 Assuming that the microservice owner has the tenant option:
 

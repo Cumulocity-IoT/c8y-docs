@@ -443,7 +443,7 @@ For details, refer to the [Web developer codex](https://cumulocity.com/codex/).
 
 ![Microservice tracking](/images/microservices-sdk/ms-tracking-map.png)
 
-#### Run the Docker container {#run-the-docker-container}
+#### Run the Docker container {#run-the-ip-tracker-docker-container}
 
 The Docker image is built and added to the local Docker repository during the [Maven build](#build-the-microservice-application) if the following property is set `microservice.package.deleteImage=false`.
 As you have learned in our [Hello world tutorial for Java](/microservice-sdk/java/#java-hello-world-tutorial), you can [run the Docker container](/microservice-sdk/java/#run-the-docker-container) locally.

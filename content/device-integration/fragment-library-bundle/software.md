@@ -320,7 +320,7 @@ PUT /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-##### SmartREST example {#smartrest-example}
+##### SmartREST example {#adding-software-packages-smartrest-example}
 
 Devices also use the SmartREST static template 141 instead. Similarly to 140, it takes a list of software packages of
 dynamic
@@ -349,21 +349,21 @@ DELETE /service/advanced-software-mgmt/software?deviceId=<deviceId>
 ]
 ```
 
-##### SmartREST example {#smartrest-example}
+##### SmartREST example {#removing-software-smartrest-example}
 
 Devices may also use the SmartREST static template 142 instead. It takes a list of software packages of dynamic length,
 where each package is represented by its name and version, as URL and software type are not used to identify a package:
 
 `142,software_a,3.0.0,software_b,2.0.0`
 
-#### Changing installed software {#changing-installed-software}
+#### Changing installed software {#changing-installed-advanced-software}
 
 Similarly, in the Advanced Software Management approach updating software packages requires sending to the device one of
 the operations: `c8y_SoftwareUpdate` or `c8y_SoftwareList`, depending on which are specified
 in `c8y_SupportedOperations` fragment. The only difference is that now software type property is required for software
 packages.
 
-##### Software update {#software-update}
+##### Software update {#advanced-software-update}
 
 The `c8y_SoftwareUpdate` operation contains also partial list of software packages, each with an instruction whether it
 should be installed or uninstalled. This is very similar to legacy software management, however an additional parameter

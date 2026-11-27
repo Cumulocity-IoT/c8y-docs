@@ -8,13 +8,13 @@ aliases:
 
 This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} Cloud Remote Access ("Service") for remotely accessing Internet of Things ("IoT") devices ("devices") through Provider's cloud instances ("software-as-a-service", "SaaS").
 
-### Service description
+### Service description {#cra-service-description}
 
 {{< product-c8y-iot >}} Cloud Remote Access lets authorized users connect to devices and to other devices in the local network of a gateway without opening inbound ports on the device. The connection is always initiated by the device. The Service tunnels the connection through secure WebSocket connections between the user's client, the Service, and the device agent. For more information, see [How Cloud Remote Access works](/cloud-remote-access/cra-introduction/#how-it-works). {{< product-c8y-iot >}} Cloud Remote Access is designed for interactive remote management of devices, such as SSH, Telnet, and VNC sessions and comparable interactive access to device interfaces.
 
 This agreement defines the service level of {{< product-c8y-iot >}} Cloud Remote Access as part of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}. {{< product-c8y-iot >}} Edge is outside the scope of this agreement.
 
-### Service features
+### Service features {#cra-service-features}
 
 {{< product-c8y-iot >}} Cloud Remote Access provides the following features.
 
@@ -55,7 +55,7 @@ Service availability for {{< product-c8y-iot >}} Cloud Remote Access is measured
 
 Connections to Customer's devices are not part of the availability calculation, as they depend on factors outside of the control of {{< company-c8y >}}.
 
-### Support and maintenance
+### Support and maintenance {#cra-support-and-maintenance}
 
 Support and maintenance are provided as outlined in the [platform service-level agreement](/service-terms/service-level/#support-and-maintenance).
 

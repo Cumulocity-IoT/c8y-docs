@@ -21,13 +21,13 @@ This change only affects the new {{< product-c8y-iot >}} [MQTT Service](/device-
 The existing {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt/) capability is **not** affected.
 {{< /c8y-admon-caution >}}
 
-### Introduction
+### Introduction {#cn-validation-api-change-introduction}
 
 As [previously announced](/change-logs/#mqtt-service-0.9.x-cn-validation-announcement), the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) now enforces **Common Name (CN) validation** during client certificate authentication.
 
 This update strengthens identity assurance by ensuring a tight binding between a device's identity and the certificate it presents. By requiring the certificate's CN to match the MQTT client identifier, we significantly reduce the risk of certificate misuse across different devices.
 
-### What is changing?
+### What is changing? {#cn-validation-api-change-what-is-changing}
 
 When an MQTT client connects using certificate-based authentication, the platform now validates that the **Common Name (CN)** field in the provided certificate matches the **MQTT Client ID**.
 

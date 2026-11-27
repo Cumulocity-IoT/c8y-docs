@@ -8,7 +8,7 @@ aliases:
 
 This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who wishes to use support services for {{< product-c8y-iot >}}.
 
-### Service description
+### Service description {#support-service-description}
 
 This document outlines the maintenance and support services provided for different levels of support.
 The services are provided as follows for the different pricing packs, as detailed on Provider's pricing page: https://www.cumulocity.com/pricing/.
@@ -127,7 +127,7 @@ The following conditions apply to all support levels:
 
 We treat all security-related issues with the highest priority. If you suspect that your support request involves a security vulnerability or incident, you must explicitly indicate this when opening your ticket. Please do this by clearly noting your suspicion within the ticket description. Once an issue is identified as a security concern, it is immediately flagged on our internal priority dashboards. The ticket is then handled according to our specialized Security Incident Management process, which includes an accelerated escalation path and direct involvement from our IT Security Team and Chief Information Security Officer (CISO) to ensure rapid containment and resolution.
 
-### Customer responsibilities
+### Customer responsibilities {#support-customer-responsibilities}
 
 * Customer assigns Authorized Technical Contacts (ATCs) and communicates any changes to the list of ATCs to Provider.
 * Customer's ATC is responsible for cooperating with Provider's Support and providing necessary information to reproduce, troubleshoot and resolve the experienced issue.

@@ -31,6 +31,6 @@ You can now navigate to the Device Management application or the Cockpit applica
 
 ![Data broker group in cockpit app](/images/users-guide/enterprise-tenant/et-data-broker-group-created.png)
 
-### To delete a data connector {#to-delete-a-data-connector}
+### To delete a data connector {#to-delete-a-data-connector-from-subscriptions}
 
 Click the menu icon <i class="dlt-c8y-icon-menu-vertical text-muted icon-20"></i> and then click **Delete** to stop data forwarding and delete the data connector.

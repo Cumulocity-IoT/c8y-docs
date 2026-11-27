@@ -20,7 +20,7 @@ This change only affects the new {{< product-c8y-iot >}} [MQTT Service](/device-
 The existing {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt/) capability is **not** affected.
 {{< /c8y-admon-caution >}}
 
-### Introduction
+### Introduction {#cn-validation-announcement-introduction}
 
 To strengthen identity assurance for certificate-authenticated MQTT clients, the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) will begin enforcing **Common Name (CN) validation** during client certificate authentication.
 
@@ -28,7 +28,7 @@ Currently, the MQTT Service accepts certificates where the CN does not match the
 After this change, the CN must match the client ID used during connection.
 This tight binding of certificates to devices will significantly reduce the risk of certificate misuse.
 
-### What is changing?
+### What is changing? {#cn-validation-announcement-what-is-changing}
 
 When an MQTT client connects using certificate-based authentication, **the Common Name (CN) in the certificate must match the MQTT device ID**.
 
@@ -53,7 +53,7 @@ Customers should verify and update their certificate issuance processes during t
 
 Please contact [Cumulocity Support](/additional-resources/contacting-support/) if you have any questions or concerns about these changes.
 
-### Roll-out plan
+### Roll-out plan {#cn-validation-announcement-roll-out-plan}
 
 {{< c8y-admon-info >}}
 Because the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) is currently in Public Preview, it is not subject to the standard 6-month compatibility notice period defined in the Cumulocity IoT [Compatibility policy](/service-terms/compatibility-policy/).

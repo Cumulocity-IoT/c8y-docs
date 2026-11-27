@@ -346,11 +346,11 @@ Endpoint: `/service/cep/eplfiles`
 | -------- | ------------------------------------------------------------ |
 | contents | Boolean type. Fetches the EPL files with their contents. This is an optional query parameter. |
 
-##### Example request {#example-request}
+##### Example request {#get-all-with-contents-example-request}
 
 `GET /service/cep/eplfiles?contents=true`
 
-##### Responses {#responses}
+##### Responses {#get-all-with-contents-responses}
 
 | Code | Description                                             |
 | ---- | ------------------------------------------------------- |
@@ -381,17 +381,17 @@ Example value for response code 200:
 
 Endpoint: `/service/cep/eplfiles/{id}`
 
-##### Request parameters {#request-parameters}
+##### Request parameters {#get-by-id-request-parameters}
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | id   | Identifier of the EPL file to be fetched. This is a mandatory parameter. |
 
-##### Example request {#example-request}
+##### Example request {#get-by-id-example-request}
 
 `GET /service/cep/eplfiles/{{id}}`
 
-##### Responses {#responses}
+##### Responses {#get-by-id-responses}
 
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
@@ -419,7 +419,7 @@ Example value for response code 200:
 
 Endpoint: `/service/cep/eplfiles`
 
-##### Example request {#example-request}
+##### Example request {#post-example-request}
 
 `POST /service/cep/eplfiles`
 
@@ -441,7 +441,7 @@ Note the following:
 - `description` is optional and can be empty.
 
 
-##### Responses {#responses}
+##### Responses {#post-responses}
 
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
@@ -494,13 +494,13 @@ Example for response code 201 when created with warnings or errors:
 
 Endpoint: `/service/cep/eplfiles/{id}`
 
-##### Request parameters {#request-parameters}
+##### Request parameters {#put-request-parameters}
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | id   | Identifier of the EPL file to be updated. The identifier must be included in the path. This is a mandatory parameter. |
 
-##### Example request {#example-request}
+##### Example request {#put-example-request}
 
 `PUT /service/cep/eplfiles/{id}`
 
@@ -517,7 +517,7 @@ The following is an example of a request body:
 
 See also the information given for the POST request.
 
-##### Responses {#responses}
+##### Responses {#put-responses}
 
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
@@ -570,17 +570,17 @@ Example value for response code 200 when updated with errors or warnings:
 
 Endpoint: `/service/cep/eplfiles/{id}`
 
-##### Request parameters {#request-parameters}
+##### Request parameters {#delete-request-parameters}
 
 | Name | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | id   | Identifier of the EPL file to be deleted. The identifier must be included in the path. This is a mandatory parameter. |
 
-##### Example request {#example-request}
+##### Example request {#delete-example-request}
 
 `DELETE /service/cep/eplfiles/{{id}}`
 
-##### Responses {#responses}
+##### Responses {#delete-responses}
 
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |

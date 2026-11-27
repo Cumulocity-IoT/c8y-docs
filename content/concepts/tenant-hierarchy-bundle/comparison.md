@@ -30,7 +30,7 @@ Before going into detail with certain use cases we must clarify the general setu
 
 Handling everything in a single tenant usually starts by creating an asset hierarchy in which you create separate folders for your customers. Details of the asset hierarchy can be customized but at some point you will probably end up with one folder for each customer. Your customers will then only have access to their folders and will not be able to see anything outside of that folder.
 
-#### Multi-tenancy {#multi-tenancy}
+#### Multi-tenancy {#comparison-multi-tenancy}
 
 Creating a tenant for each customer will separate your customers at the tenant level. Your customers will get access to their tenants only and can work in this tenant the same way you do in yours (with whatever specific access you want to grant them). In the use cases we will assume that the customer is the admin of his tenant and therefore has full access.
 
