@@ -12,7 +12,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAM-35437
-version: 
+version: 27.310.0
 ---
 
 The [Smart Function](/streaming-analytics/block-reference/#smart-function) block, which is in Public Preview, now converts the values your Javascript code returns more consistently, and reports an error instead of silently returning a wrong value.
