@@ -240,7 +240,7 @@ The following table gives a brief description of all blocks that can be selected
 </tr>
 <tr>
 <td><a href="#rate-limiter">Rate Limiter</a></td>
-<td><span>Suppresses all but the first message received per specified time period.</span>
+<td><span>Limits how often messages pass, for each device. Sends a limited number of messages in each time period to the rate limited output and the other messages to the suppressed output.</span>
 </td>
 </tr>
 <tr>
