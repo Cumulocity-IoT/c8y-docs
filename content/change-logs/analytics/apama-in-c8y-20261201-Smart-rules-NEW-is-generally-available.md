@@ -14,6 +14,7 @@ build_artifact:
   - value: tc-KXXmo2SUR
     label: apama-in-c8y
 ticket: PAB-5296
+version: 27.306.0
 ---
 
 Smart rules (NEW) is now generally available. Smart rules (NEW) lets you create and manage rules directly from the context of a device, group, or asset in applications such as Device Management, Cockpit, and Digital Twin Manager. The rules run in Streaming Analytics.
