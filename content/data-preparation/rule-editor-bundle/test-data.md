@@ -100,10 +100,24 @@ The platform executes your smart function against every test input. The outputs 
 The **Outputs** section displays the results for each test after a test run. Each test produces its own output, so you can review results individually. The output includes:
 
 - **Function return values** — the {{< product-c8y-iot >}} objects (measurements, events, alarms, and operations) that the smart function produces for each test message. Each one also identifies the {{< product-c8y-iot >}} external "source" device they would be created on. 
+- **Objects that would be created** — the devices, assets, and groups displayed in their hierarchy that the `onDeviceCreate` function would create for the test, if the rule has this function. For details, see [To inspect the objects that would be created](/data-preparation/rule-editor/#inspecting-created-objects).
 - **Log messages** — any log output from the smart function. Log messages appear below the function return values in the output section.
 - **Errors and exceptions** — if the smart function throws an error or encounters an exception during execution, the error message and stack trace (if available) appear in the output section for that test.
 
 Review the output carefully to confirm that the smart function produces the correct {{< product-c8y-iot >}} objects and does not create any unexpected errors.
+
+#### To inspect the objects that would be created {#inspecting-created-objects}
+
+If the rule has an `onDeviceCreate` function, a summary of the devices, assets, and groups that it would create appears above the function return values.
+
+1. Click the summary to show the objects as a tree.
+2. Click an object to see its details and parents.
+
+The test treats every external ID as missing, so it shows what `onDeviceCreate` creates for a new device. The test does not create anything in the platform.
+
+If `onDeviceCreate` returns `[]`, no device is created for this message and the message is discarded. If `onDeviceCreate` throws an error or returns an invalid result, an error appears for each external ID that it cannot create.
+
+For details on `onDeviceCreate`, see [Customizing device creation](/data-preparation/device-onboarding/#customizing-device-creation).
 
 #### To detect failures {#detecting-failures}
 
@@ -127,7 +141,7 @@ To ensure the expected output can be compared, avoid using the current time (`ne
 3. Click the menu icon <i class="dlt-c8y-icon-ellipsis-v text-primary icon-20"></i> in the output section.
 4. Under **EXPECTED OUTPUT** click **Save**.
 
-The current output is now stored as the expected output for that test.
+The current output is now stored as the expected output for that test. This includes any objects that `onDeviceCreate` would create.
 
 #### To detect regressions {#detecting-regressions}
 
@@ -136,6 +150,8 @@ After you save expected outputs, every subsequent test run compares the actual o
 - An error icon appears next to the test name dropdown.
 - Within the dropdown, an error icon appears next to the specific tests that are failing.
 - A comparison between the **Actual output** and **Expected output** is displayed. This helps to identify which part of the output has changed.
+
+If the rule has an `onDeviceCreate` function, a test also fails when the objects that it would create differ from the saved ones. The **Expected output** tab then shows the differences.
 
 Run the tests after each change to your smart function and check for regressions against your saved expected outputs.
 

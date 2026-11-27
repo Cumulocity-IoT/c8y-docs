@@ -57,7 +57,7 @@ For the full list of domain object fields, see [{{< product-c8y-iot >}} objects]
 
 ### When devices are created {#when-devices-created}
 
-If a returned object specifies an `externalSource` that does not match an existing device, that device is created automatically with a default configuration.
+If a returned object specifies an `externalSource` that does not match an existing device, the platform creates the device before it sends the object. If the rule defines `onDeviceCreate`, that function decides what the platform creates, or whether it creates nothing and drops the object. If not defined, the platform creates a device with a default configuration. For details, see [Device creation](#function-device-create) and [Device onboarding](/data-preparation/device-onboarding/).
 
 ### Behavior notes {#behavior-notes}
 

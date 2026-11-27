@@ -77,7 +77,7 @@ See also [Data Preparation](/data-preparation/) in the documentation.
 
 ### Data Preparation rule {#data-preparation-rule}
 
-A Data Preparation rule is a configurable pipeline that selects a subset of inbound device traffic and processes it through a [smart function](#smart-function) to produce {{< product-c8y-iot >}} domain objects such as [measurements](#measurement), [events](#event), [alarms](#alarm), or [operations](#operation). Each rule comprises exactly one smart function, which performs all transformation, enrichment, and mapping.
+A Data Preparation rule is a configurable pipeline that selects a subset of inbound device traffic and processes it through a [smart function](#smart-function) to produce {{< product-c8y-iot >}} domain objects such as [measurements](#measurement), [events](#event), [alarms](#alarm), or [operations](#operation). Each rule has a smart function, `onMessage`, which performs all transformation, enrichment, and mapping. A rule can also have an optional second smart function, `onDeviceCreate`, which decides what the platform creates when the rule sends data for a device that does not exist yet, including assets, groups, and their hierarchy. Without it, the platform creates a basic device.
 
 See also [Data Preparation](/data-preparation/) in the documentation.
 
