@@ -14,7 +14,7 @@ A `DeviceMessage` represents a message received from a device transport.
 |-------|------|----------|-------------|
 | `payload` | `Uint8Array` | Yes | The message payload as bytes. Always present, even if empty. Use `TextDecoder` to decode text-based payloads, or use a [binary library](#libraries) (protobufjs, cbor2) for binary formats. |
 | `transportID` | `string` | Yes | Identifier of the source transport, for example `"mqtt"`. |
-| `clientID` | `string` | No | Identifier of the transport client. For MQTT, this is the MQTT client ID. |
+| `clientID` | `string` | No | Identifier of the transport client. For MQTT, this is the MQTT client ID. The transport sets this value, not the content of the message, so use it in every external ID. See [External IDs must contain the client ID](#external-ids). |
 | `topic` | `string` | Yes | The topic, path, or equivalent on the transport. For MQTT this is the MQTT topic. |
 | `transportFields` | `{ [key: string]: string }` | No | Optional dictionary of transport-specific metadata. Values are strings. |
 | `time` | `Date` | No | Timestamp the message was received by the platform. |
@@ -29,7 +29,7 @@ When you return objects from `onMessage`, you return one of five domain object t
 |-------|------|----------|-------------|
 | `cumulocityType` | `string` | Yes | Discriminator for the object type. One of: `"measurement"`, `"event"`, `"alarm"`, `"operation"`, `"managedObject"`. |
 | `payload` | `object` | Yes | The object data, in the same shape as the {{< product-c8y-iot >}} REST API, but without the source field. These are described for each type below. |
-| `externalSource` | `ExternalId[]` | Yes | One or more external IDs (externalId and type pair) identifying the target device. The platform looks these up to find the {{< product-c8y-iot >}} device. |
+| `externalSource` | `ExternalId[]` | Yes | One or more external IDs (externalId and type pair) identifying the target device. The platform looks these up to find the {{< product-c8y-iot >}} device. Each external ID must contain `msg.clientID`, see [External IDs must contain the client ID](#external-ids). |
 | `destination` | `string` | No | Advanced. Destination for the object. Defaults to `"cumulocity"`, to create the object in the operational store. |
 
 #### Measurement {#measurement}
