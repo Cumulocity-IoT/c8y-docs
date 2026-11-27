@@ -75,7 +75,7 @@ When you have finished editing your smart function, click **Save and deploy**. T
 - Saves the current draft code and also copies it to the deployed version of the rule.
 - Starts the rule running against live device traffic, so that incoming messages will be transformed into {{< product-c8y-iot >}} objects using your smart function.
 
-If a measurement or alarm is produced for a device the platform has not seen before, a new device is created automatically based on the `externalSource` in the object returned by the smart function. For details, see [Device onboarding](/data-preparation/device-onboarding/).
+If a measurement or alarm is produced for a device the platform has not seen before, a new device is created automatically based on the `externalSource` in the object returned by the smart function. To control what the platform creates, add an `onDeviceCreate` function to the rule. For details, see [Device onboarding](/data-preparation/device-onboarding/).
 
 ### Draft and deployed states {#draft-deployed}
 
