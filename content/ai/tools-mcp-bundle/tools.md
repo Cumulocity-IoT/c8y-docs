@@ -152,6 +152,32 @@ A tool without `approval` requires approval for every call, unless the tool decl
 
 Applications that call an agent through the REST API must handle approval requests: the agent stops at the tool call and returns a `tool-approval-request`. To continue, the application sends the conversation again, including the user's decision. To receive and answer approval requests, send the request with `fullResponse=true`. Without it, a text agent that waits for approval returns HTTP 409 with the pending approvals.
 
+With `fullResponse=true`, the content of the last step contains a part with the type `tool-approval-request`, with the `approvalId` and the planned tool call, and each step contains the messages of the response in `response.messages`. To answer, send the conversation again in `messages`, with the messages of the response and a message with the role `tool` that contains a part with the type `tool-approval-response` for each approval request:
+
+```
+POST /service/ai/agent/text/{agent-name}?fullResponse=true
+{
+  "messages": [
+    { "role": "user", "content": "Acknowledge the alarm 1752." },
+    {
+      "role": "assistant",
+      "content": [
+        { "type": "tool-call", "toolCallId": "toolu_123", "toolName": "cumulocity-update-alarm-status", "input": { "id": "1752", "status": "ACKNOWLEDGED" } },
+        { "type": "tool-approval-request", "approvalId": "aitxt-abc123", "toolCallId": "toolu_123" }
+      ]
+    },
+    {
+      "role": "tool",
+      "content": [
+        { "type": "tool-approval-response", "approvalId": "aitxt-abc123", "approved": true }
+      ]
+    }
+  ]
+}
+```
+
+Set `approved` to `false` to deny the call, and optionally add a `reason`. The agent then receives the denial and the reason as the result of the tool call and continues without the tool. The agent can call further tools that require approval in the same run, so repeat these steps until the response contains no more approval requests.
+
 ### Best practices {#best-practices}
 
 - **Tool selection**: Assign only the tools an agent actually needs. Too many tools confuse the agent and increase processing time.

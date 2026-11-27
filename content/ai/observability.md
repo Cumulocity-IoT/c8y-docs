@@ -6,13 +6,13 @@ outputs:
   - json
   - markdown
 sector:
-  - app_enablement
+  - ai
 weight: 57
 ---
 
 The **Observability** page shows an audit trail of all agent runs in your tenant and the tool calls of each run. Use it to see which agents run, who runs them, whether they succeed, how long they take, and how many tokens they use. To open it, navigate to **AI Agent Manager** > **Observability** in the Administration application. The page remains available while AI agents are disabled with the [kill switch](/ai/control-panel/#ai-agent-availability), so you can still review past agent runs.
 
-The AI Agent Manager records every agent run, including calls via the REST API, AI chat widgets, AI assistants in other applications, and tests in the AI Agent Manager. The audit trail only contains metadata and never the content of a run, see [What is recorded](/ai/observability/#what-is-recorded).
+The AI Agent Manager records every agent run, including calls via the REST API, the [Assistant](/assistant/assistant-introduction/), the [expert agents](/ai-intro/expert-agents/) of other applications, and tests in the AI Agent Manager. The audit trail only contains metadata and never the content of a run. For details, see [What is recorded](/ai/observability/#what-is-recorded).
 
 {{< c8y-admon-req >}}
 ROLES & PERMISSIONS:
@@ -48,7 +48,7 @@ Click the arrow at the start of a row to expand the run. The tool calls of the r
 
 ![An expanded run shows its tool calls as a timeline](/images/agents/observability_tool_calls.png)
 
-For each tool call, the timeline shows the time, the name of the tool, and the duration in milliseconds. The icon shows whether the tool call succeeded or failed. If a tool call [requires approval](/ai/agents/#ai-agent-test) and the user rejected it, the tool call is marked as **Denied**. Denied tool calls never run, so they have no duration.
+For each tool call, the timeline shows the time, the name of the tool, and the duration in milliseconds. The icon shows whether the tool call succeeded or failed. If a tool call [requires approval](/ai/tools-mcp/#user-approval) and the user rejected it, the tool call is marked as **Denied**. Denied tool calls never run, so they have no duration.
 
 If the agent did not call any tools, "No tool calls for this run." is shown.
 
@@ -77,7 +77,7 @@ The AI Agent Manager stores the records as [audit logs](/standard-tenant/monitor
 
 The source of all records is a managed object named "AI Agents" of type `c8y_AiAgentService`, which the AI Agent Manager creates automatically with the first record. The records are kept according to the [retention rules](/standard-tenant/managing-data/#retention-rules) for audit logs of your tenant.
 
-To read the records programmatically, see [Observability](/ai/rest-api/#observability) in the REST API documentation.
+To read the records programmatically, use `GET /service/ai/observability` for the runs and `GET /service/ai/observability/tools?telemetryId=<telemetryId>` for the tool calls of a run. Both requests require READ or ADMIN permission for the permission type "AI agent". For the query parameters, see the OpenAPI specification in your tenant at `/service/ai/api-json`.
 
 ### Linking runs to traces {#linking-runs-to-traces}
 

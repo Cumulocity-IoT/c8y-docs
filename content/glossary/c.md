@@ -73,6 +73,17 @@ The Cockpit UI uses core REST APIs: [Inventory API](https://cumulocity.com/api/c
 {{< /c8y-details >}}
 
 
+### Code mode {#code-mode}
+
+In code mode, an [AI agent](#ai-agent) writes and runs a small JavaScript function against the {{< product-c8y-iot >}} APIs instead of calling a separate tool for each API operation. The code runs in an isolated sandbox, and only its result goes back to the model. The microservice AI Workbench provides code mode.
+
+See also [AI Workbench and code mode](/ai/ai-workbench/) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+AI Workbench is an [MCP](#mcp) server with the single tool `codemode`. Assign this tool to an agent in the AI Agent Manager, or connect to AI Workbench from any MCP-capable client.
+{{< /c8y-details >}}
+
+
 ### Communication hierarchy {#communication-hierarchy}
 
 The communication hierarchy models how [devices](#device) are connected to the platform from a network communication perspective. It is built using the [child devices](#child-device) relationship, with agents or gateways typically forming the root of the hierarchy. This structure reflects the physical or network topology, as opposed to the logical business structure represented by the [asset hierarchy](#asset-hierarchy).  

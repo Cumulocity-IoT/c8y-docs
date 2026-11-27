@@ -1,6 +1,6 @@
 ---
 title: "Application enablement & solutions"
-description: "Build and extend Cumulocity applications with the Cockpit, Digital Twin Manager, the web and microservice SDKs, and AI capabilities."
+description: "Build and extend Cumulocity applications with the Cockpit, Digital Twin Manager, and the web and microservice SDKs."
 outputs: ["HTML", "llmstxt"]
 icon: "c8y-icon c8y-icon-tools"
 weight: 40

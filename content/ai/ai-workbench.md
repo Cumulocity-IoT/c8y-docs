@@ -6,7 +6,7 @@ outputs:
   - json
   - markdown
 sector:
-  - app_enablement
+  - ai
 weight: 55
 ---
 

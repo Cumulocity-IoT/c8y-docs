@@ -34,7 +34,7 @@ Consider the following:
 | Aspect | Global provider | Local provider |
 |--------|-----------------|----------------|
 | Scope | All agents without local providers | Single agent only |
-| Configuration location | **Control panel** > **Model configuration** | **Local provider** tab of the agent |
+| Configuration location | **Control panel** > **Model configuration** | **Model configuration** tab of the agent |
 | Fallback | Used when no local provider is defined | Overrides global provider |
 | Use case | Default for most agents | Special requirements |
 
@@ -43,10 +43,18 @@ Consider the following:
 To configure a local provider for an agent:
 
 1. Navigate to **AI Agent Manager** > **Agents**.
-2. Open the custom agent you want to configure or create a new agent. Subscribed agents don't provide a **Local provider** tab, clone them first.
-3. Open the **Local provider** tab.
-4. Define the local provider in JSON format. The editor validates the configuration against the settings of the selected provider.
+2. Open the custom agent you want to configure or create a new agent. Subscribed agents don't provide a **Model configuration** tab, clone them first.
+3. Open the **Model configuration** tab. The tab lists the settings of the model configuration of the control panel, for example, **Provider**, **Model**, **API key**, and **Custom provider settings**. Settings that you don't override show the tag **Inherited** and use the values of the control panel.
+4. Activate the switch in the **Override** column of each setting that you want to change, and enter the value. For example, to use another model of the same provider, override only **Model**.
 5. Click **Save**.
+
+![The Model configuration tab of an agent with the inherited settings of the control panel](/images/agents/model_configuration_tab.png)
+
+If you override **Provider** with a different provider, the agent doesn't inherit the model, the API key, or other settings of the control panel, so enter all required settings. The same applies if you override the endpoint of a self-hosted provider. A separate endpoint needs a separate API key.
+
+#### Editing the local provider in JSON format {#editing-the-local-provider-in-json-format}
+
+To edit the local provider in JSON format instead, click **JSON** in the **Model configuration** tab. The editor validates the configuration against the settings of the selected provider. To return to the form, click **Form**.
 
 Depending on the provider to use, you can define the provider `name`, the `model`, the `apiKey`, and further provider-specific settings. The `name` is one of `openai`, `anthropic`, `google`, `azure`, `xai`, `groq`, `deepinfra`, `mistral`, `togetherai`, `cohere`, `fireworks`, `deepseek`, `cerebras`, `perplexity`, `ollama`, or `echo`. How the local provider is combined with the global provider depends on the provider name:
 
@@ -94,7 +102,7 @@ You configure local providers independently for each agent. This allows you to:
 
 ### Removing a local provider {#removing-local-provider}
 
-To remove a local provider and revert to the global provider simply empty the JSON object.
+To remove a local provider and use the model configuration of the control panel again, deactivate all switches in the **Override** column of the **Model configuration** tab, or empty the JSON object in the **JSON** view. Then click **Save**.
 
 ### Troubleshooting local providers {#troubleshooting}
 

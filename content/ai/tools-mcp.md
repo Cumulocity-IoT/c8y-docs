@@ -6,7 +6,7 @@ outputs:
   - json
   - markdown
 sector:
-  - app_enablement
+  - ai
 weight: 50
 helpcontent:
 - label: tools-mcp

@@ -5,11 +5,12 @@ type: root
 layout: redirect
 bundlefolder: ai
 sector:
-  - app_enablement
+  - ai
 audience:
   - Users
-weight: 40
+  - Administrators
+  - Developers
+weight: 30
 ---
 
-With the AI Agent Manager application you can connect your IoT Data to large language models and build agentic workflows in the {{< product-c8y-iot >}} platform.
-
+Create AI agents in the AI Agent Manager, connect them to your IoT data and to external tools, and control and monitor how they run in your tenant.

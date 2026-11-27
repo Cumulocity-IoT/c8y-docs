@@ -6,8 +6,10 @@ outputs:
   - json
   - markdown
 sector:
-  - app_enablement
+  - ai
 weight: 10
+aliases:
+  - /ai/rest-api/
 helpcontent:
 - label: aim-introduction
   title: AI Agent Manager
@@ -31,6 +33,8 @@ To get started, open **AI Agent Manager** > **Control panel** in the Administrat
 The feature is currently in Public Preview and might change or is not feature complete. While we try to keep changes as low as possible, breaking changes and feature removals happen. To enable the feature, open the right drawer (by clicking on your username initials) in the Administration application and select **Manage preview features**. Then activate the toggle next to **AI Agent Manager**.
 {{< /c8y-admon-preview >}}
 
+The AI Agent Manager is the part of the [agentic AI capabilities](/ai-intro/ai-overview/) of {{< product-c8y-iot >}} in which you build, govern, and monitor AI agents.
+
 The AI Agent Manager enables you to create and manage AI agents—intelligent assistants that help users interact with your IoT data and systems through natural language conversations. Instead of building custom AI integrations from scratch, you configure pre-built agents that understand your specific use cases and have access to the tools required to be helpful.
 
 ![Testing an agent in the AI Agent Manager](/images/agents/testing_an_agent.png)
@@ -45,11 +49,33 @@ An AI agent is a configured AI assistant with a specific purpose and behavior. E
 
 Once configured, users interact with agents through natural language without needing to know technical details about APIs or system prompts.
 
+An agent is a configuration in the AI Agent Manager, not code that you write or deploy.
+
+### How an agent run works {#how-an-agent-run-works}
+
+An agent works in a loop. The AI Agent Manager runs this loop, and the model decides in each step what to do next:
+
+1. The AI Agent Manager loads the agent, which means its system prompt, its model configuration, and the descriptions of its tools.
+2. It sends the system prompt, the conversation, and the tool descriptions to the model.
+3. The model either answers or requests one or more tool calls.
+4. For each tool call, the AI Agent Manager calls the tool with the permissions of the user and adds the result to the conversation. If the tool requires approval, the user approves or denies the call first.
+5. Steps 2 to 4 repeat until the model gives its final answer or the run reaches the maximum number of steps.
+
+Note the following:
+
+- The model never runs anything itself. It only states which tool to call with which arguments. The AI Agent Manager calls the tool.
+- The model keeps nothing between the steps. Each step sends the complete conversation again, including all tool results so far. Runs with many steps therefore use many tokens. [Code mode](/ai/ai-workbench/#what-is-code-mode) reduces the number of steps.
+- An agent only does what its tools allow. For example, an agent only runs code if it has a tool for it, such as `codemode`.
+- By default, a run stops after 40 steps. To change the limit, see [Common settings](/ai/agents/#ai-agent-common-settings).
+- With streaming, the text and the tool calls reach the user interface while the run is still in progress.
+
+For how agents, tools, and the LLM provider fit together, see [How the parts fit together](/ai-intro/ai-overview/#how-the-parts-fit-together).
+
 ### What you do with AI agents {#what-you-do-with-ai-agents}
 
 - **Create specialized assistants**: Configure agents for specific use cases like equipment monitoring, predictive maintenance analysis, or device troubleshooting. Each agent has its own expertise and access to relevant data.
 
-- **Add tools and capabilities**: Connect agents to {{< product-c8y-iot >}} data through built-in tools or extend them with custom tools via MCP (Model Context Protocol) servers. This allows agents to query device data, retrieve measurements, or trigger actions.
+- **Add tools and capabilities**: Connect agents to {{< product-c8y-iot >}} data through built-in tools or extend them with custom tools via MCP (Model Context Protocol) servers. This allows agents to query device data, retrieve measurements, or trigger actions. For each tool, you set whether a user approves its calls before the tool runs.
 
 - **Test and refine**: Use the built-in test interface to interact with your agents and see how they respond. The test interface shows you exactly what tools the agent is calling and how it reasons about your questions.
 
@@ -112,4 +138,4 @@ If successful, your provider is correctly configured, and you can start to use a
  - Understand the available [tools and how you can extend them with MCP](/ai/tools-mcp/).
  - Let agents work with the complete API of your tenant in [code mode with AI Workbench](/ai/ai-workbench/).
  - Monitor agent runs on the [**Observability**](/ai/observability/) page and export them to your own collector with the [OpenTelemetry export](/ai/control-panel/#opentelemetry-export).
- - You can also manage agents programmatically [via the REST API](/ai/rest-api/) for integration into your own applications and workflows. 
+ - You can also manage agents programmatically via the REST API of the AI Agent Manager for integration into your own applications and workflows. Its OpenAPI specification is available in each tenant at `/service/ai/api-json`. 
