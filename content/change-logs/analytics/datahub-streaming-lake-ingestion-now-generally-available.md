@@ -15,6 +15,6 @@ Streaming Lake Ingestion streams your IoT data continuously into an Apache Icebe
 
 To subscribe your tenant, contact [{{< company-c8y >}} support](/additional-resources/contacting-support/).
 
-DataHub 2.0 replaces DataHub 1.0. You can run both in parallel and migrate your queries step by step. For details, see [How can I migrate from DataHub 1.0?](/streaming-lake-ingestion/faq/#migrating-from-datahub-1)
+DataHub 2.0 replaces DataHub 1.0. You can run both in parallel and migrate your queries step by step. For details, see [How can I migrate from DataHub 1.0?](/streaming-lake-ingestion/faq/#migrating-from-datahub-1).
 
 To learn more, see the [DataHub 2.0 documentation](/streaming-lake-ingestion/datahub-2-overview/), the [service-level agreement](/service-terms/service-level/#datahub-2-sla), and the [quotas](/service-terms/quotas/#datahub-2).
