@@ -71,6 +71,10 @@ thin-edge.io creates the child device with a name only. To give every machine th
    - **Message to send:** `{"@type":"child-device","@parent":"device/main//","name":"plc01","type":"ProtocolGateway"}`
 4. Click the check marks and **Save**, and start the event with the play button.
 
+![Registration event](/images/device-protocols/protocol-gateway/gateway-register-event.png)
+
 The registration topic has 2 slashes after the device name, while the measurement topic has 3. `device/main//` identifies the thin-edge.io device, so keep it exactly like this. **Retain** keeps the message in the broker, so thin-edge.io applies it even if it starts after Protocol Gateway. For each additional machine, add an action with its own topic and name, such as `te/device/plc02//`.
 
 In Device Management, open *plc01* and click **Info**. **Type** shows `ProtocolGateway`.
+
+![Child device information](/images/device-protocols/protocol-gateway/child-device-info.png)
