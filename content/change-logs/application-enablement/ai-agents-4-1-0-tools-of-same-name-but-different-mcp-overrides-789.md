@@ -1,5 +1,5 @@
 ---
-date: ""
+date: '2026-11-27'
 title: Tools with the same name on different MCP servers no longer replace each other
 product_area: Application enablement & solutions
 change_type:
@@ -13,6 +13,9 @@ build_artifact:
     label: ai-agents
 ticket: MTM-67607
 version: 4.1.0
+environment_availability:
+  - label: eu-latest.cumulocity.com
+    date: '2026-11-27'
 ---
 If two MCP servers provided a tool with the same name, one tool replaced the other and agents could use only one of them. Tools from MCP servers other than `cumulocity-default` now carry the server name as a prefix, in the form `{server}__{tool}`, so both tools stay available. Tools from the `cumulocity-default` server keep their names. If two tool names still collide after the prefix is added, the request fails with HTTP status 400.
 
