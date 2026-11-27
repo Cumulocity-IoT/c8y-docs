@@ -14,11 +14,7 @@ Protocol Gateway provides:
 
 Protocol Gateway is managed through thin-edge.io, which runs on the same device. thin-edge.io connects the device to your {{< product-c8y-iot >}} tenant, installs and updates Protocol Gateway as a software item, and manages its configuration files. For details, see [Device integration using thin-edge.io](https://cumulocity.com/docs/thin-edge/thin-edge).
 
-```text
-Machines    -->  Protocol Gateway  -->  thin-edge.io  -->  Cumulocity
-(PLC, CNC,       protocol adapter,      MQTT broker,       measurements of
- robots)         tags, MQTT client      mapper, bridge     the child device
-```
+![Protocol Gateway architecture](/images/device-protocols/protocol-gateway/architecture.svg)
 
 The architecture diagram shows the data path from left to right:
 
