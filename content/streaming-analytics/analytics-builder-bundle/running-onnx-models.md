@@ -23,7 +23,7 @@ The block runs ONNX models with ONNX Runtime 1.24.1 on the CPU. The block is ava
 
 When you activate the analytic model, the block downloads the file and checks that the ONNX model can be loaded. If this is not possible, the analytic model does not activate and shows the reason.
 
-If you upload a new version of the file, deactivate and activate the analytic models that use it. An active analytic model keeps the version that it was activated with. If several files in the files repository have the same name, the block uses the most recently updated file.
+If you upload a new version of the file, deactivate and activate the analytic models that use it. An active analytic model keeps the version that it was activated with. A version that was in use stays on the disk of the microservice until the microservice restarts, so each new version of a file that is in use takes additional disk space until then. If several files in the files repository have the same name, the block uses the most recently updated file.
 
 ### Passing inputs and reading outputs {#onnx-inputs-and-outputs}
 
@@ -85,7 +85,7 @@ Other data types, such as `uint8` and `float16`, are not supported. An input or 
 ### Limits {#onnx-limits}
 
 - **Size:** The file, and for a zip archive its extracted content, must not be larger than 100 MB. A zip archive must not have more than 1,000 entries. You can change the size limit with the tenant option `onnx.maxModelSizeMB`.
-- **Time:** One run of the ONNX model must finish within 1 second. You can change the time limit with the tenant option `onnx.timeoutSecs`. While the ONNX model runs, the analytic model does not process other inputs, so choose a time limit that fits the rate at which your inputs arrive.
+- **Time:** One run of the ONNX model must finish within 1 second. You can change the time limit with the tenant option `onnx.timeoutSecs`. While the ONNX model runs, the analytic model does not process other inputs, so choose a time limit that fits the rate at which your inputs arrive. The block checks the time limit between the operations of the ONNX model. If a single operation is still running at the time limit, the analytic model fails at the time limit, but that operation continues in the background and uses processing capacity until it finishes.
 - **Memory:** The block loads one copy of the ONNX model for each device that sends inputs to the analytic model.
 - **Activation:** The download and the check of the ONNX model must finish within 10 minutes. Otherwise, the activation fails. The download continues, so that the next activation succeeds.
 
