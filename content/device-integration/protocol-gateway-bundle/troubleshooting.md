@@ -1,5 +1,5 @@
 ---
-weight: 130
+weight: 90
 title: Troubleshooting
 layout: redirect
 ---
@@ -8,14 +8,12 @@ layout: redirect
 |---------|---------------|
 | The software installation fails with `no image detected in file` | The software item has the type `container`. Change the type to `container-group`. |
 | The software type `container-group` is not offered for the device | Restart `tedge-agent` after you install the container plugin. |
-| The Services tab shows no commands | The device runs thin-edge.io 2.0.0 or earlier. Upgrade to 2.1.0 or later, restart `tedge-container-plugin`, and refresh the browser. |
-| {{< product-c8y-iot >}} shows a series without values | **Message to send** is empty, or the macro names a data source or tag that does not exist. Check the payload with `tedge mqtt sub 'te/device/plc01/#'`. |
+| The Services tab shows the service without commands | The device runs a thin-edge.io version earlier than 2.1.0. Upgrade thin-edge.io, restart `tedge-container-plugin`, and refresh the browser. |
+| The installation succeeds, but the web interface does not respond | Check the container on the device with `sudo docker ps --format '{{.Names}} {{.Status}}'`. The Protocol Gateway container has the status `Up`. |
+| {{< product-c8y-iot >}} shows a series without values | **Message to send** is empty, or the macro names a data source or tag that does not exist. Check the payload with `tedge mqtt sub 'te/device/plc01/#'`. Every 10 seconds, a message like `[te/device/plc01///m/simulated] {"simulator": {"sine_wave": 25488}}` appears. The values are raw register values, not engineering units. |
+| The child device has no type | The registration event is not running, or its topic has the wrong number of slashes. The topic is `te/device/plc01//` with 2 slashes. Check with `tedge mqtt sub 'te/device/plc01/#' --duration 3s`. |
 | The **Destination server** list is empty | The MQTT client is not saved. Create and save it in **IoT Interface** first. |
-| The MQTT client shows an error | **Host** and **Client ID** are required. Check that thin-edge.io runs with `sudo tedge connect c8y --test`. |
-| The check mark is disabled when you create a data source | Enter a name first. |
-| **Serial** shows no license | Check that the license file is in the license folder with the correct file name, and restart the service. |
-| The child device has no type or device information | The registration event is not running, or a topic has the wrong number of slashes. Check with `tedge mqtt sub 'te/device/plc01/#' --duration 3s`. |
-| A delivered configuration file has no effect | The container reads the file only at start. Restart the service. |
-| A failed installation removes a cached image | The container plugin removes unused images by default. Set `pruneimages = false` in */etc/tedge/plugins/tedge-container-plugin.toml* if you want to keep them. |
-| The Docker installation stops with the connection | Run the installation in a session that does not time out. If it stopped, run `sudo dpkg --configure -a` and the script again. |
+| The MQTT client shows an error | **Host** and **Client ID** are required. Check that thin-edge.io runs with `sudo tedge connect c8y --test`. To check that the broker accepted the client, run `sudo journalctl -u mosquitto --since "-5min" --no-pager \| grep tkb-ras`. The output contains `New client connected from 127.0.0.1:<port> as tkb-ras`. |
+| **Serial** shows no license | Check that the license file is in the license folder with the correct file name, and restart Protocol Gateway. |
+| A delivered configuration file has no effect | The container reads the file only at start. Restart Protocol Gateway. |
 | The browser warns about the certificate | Protocol Gateway uses a self-signed certificate. Accept it on a trusted network, or install your own certificate. |

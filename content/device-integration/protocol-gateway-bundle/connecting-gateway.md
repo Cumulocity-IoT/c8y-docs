@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 40
 title: Connecting Protocol Gateway to thin-edge.io
 layout: redirect
 ---
@@ -8,7 +8,17 @@ After the container runs, open the web interface of Protocol Gateway, check the 
 
 ### To access the web interface {#to-access-the-web-interface}
 
-The web interface answers on port 80 (HTTP) and 443 (HTTPS) of the device. On a trusted network, open `http://<device-ip>`. To reach it from {{< product-c8y-iot >}}, use [Remote access](/device-integration/protocol-gateway/#remote-access).
+The web interface answers on port 80 (HTTP) and 443 (HTTPS) of the device. On a trusted network, open `http://<device-ip>`.
+
+To reach it from {{< product-c8y-iot >}}, use Cloud Remote Access. In Device Management, open the device, click **Remote access**, and add an endpoint of type **Passthrough** with the host “127.0.0.1” and the port “443” (or “80” for HTTP). Open the endpoint with a local proxy, such as the go-c8y-cli:
+
+```bash
+c8y remoteaccess server --device <device-name> --configuration <endpoint-name> --listen 127.0.0.1:8443 --browser --scheme https
+```
+
+For details, see [Setting up Cloud Remote Access](https://cumulocity.com/docs/cloud-remote-access/setting-up-cloud-remote-access/).
+
+![Remote access endpoint](/images/device-protocols/protocol-gateway/remote-access-endpoint.png)
 
 Sign in with the default login:
 
@@ -19,13 +29,17 @@ Click **Change password** in the top right and set a new password.
 
 ![Sign-in page](/images/device-protocols/protocol-gateway/gateway-login.png)
 
+{{< c8y-admon-important >}}
+The Protocol Gateway configuration file contains the password of the web interface in plain text. A configuration snapshot stores the file in the {{< product-c8y-iot >}} configuration repository. Change the default password first, restrict access to the repository, and treat every copy of the file as a secret.
+{{< /c8y-admon-important >}}
+
 {{< c8y-admon-info >}}
 Changes in the web interface take effect in two stages. The check mark confirms a change on screen. **Save** in the top toolbar writes the configuration file and restarts the Protocol Gateway functions, which briefly disconnects applications that use Protocol Gateway.
 {{< /c8y-admon-info >}}
 
 ### To check the license {#to-check-the-license}
 
-Go to **Management > Information > Version**. **Serial** shows your license, for example `License(Validity period 2026/11/24 - 2026/12/24)`. If it does not, check that the license file is in the license folder with the file name from [To prepare the device](/device-integration/protocol-gateway/#to-prepare-the-device), and restart the service.
+Go to **Management > Information > Version**. **Serial** shows your license, for example `License(Validity period 2026/11/24 - 2026/12/24)`. If it does not, check that the license file is in the license folder with the file name from [Set up the license and configuration files](/device-integration/protocol-gateway/#set-up-the-license-and-configuration-files), and restart the service.
 
 ![License check](/images/device-protocols/protocol-gateway/gateway-license-version.png)
 
@@ -41,14 +55,6 @@ Go to **Management > Information > Version**. **Serial** shows your license, for
 6. Open **Summary** and start the client with the play button.
 
 ![MQTT client](/images/device-protocols/protocol-gateway/gateway-mqtt-client.png)
-
-Check on the device that the broker accepted the client:
-
-```bash
-sudo journalctl -u mosquitto --since "-5min" --no-pager | grep tkb-ras
-```
-
-The output contains `New client connected from 127.0.0.1:<port> as tkb-ras`.
 
 {{< c8y-admon-important >}}
 Create and save the MQTT client first. Until then, the **Destination server** list in the **Event** tab is empty.

@@ -4,67 +4,73 @@ title: Introduction
 layout: redirect
 ---
 
-Protocol Gateway connects PLCs, CNC machines, and robots to {{< product-c8y-iot >}} without custom code. PLC stands for programmable logic controller, and CNC stands for computer numerical control. {{< product-c8y-iot >}} offers Protocol Gateway for use with thin-edge.io. Protocol Gateway communicates with the machines through native drivers, and thin-edge.io connects the device to your {{< product-c8y-iot >}} tenant.
+Industrial machines speak many vendor-specific protocols. Protocol Gateway reads them at the edge through native drivers and sends the values to {{< product-c8y-iot >}}, without custom code. It supports more than 320 device series from more than 80 manufacturers, including programmable logic controllers (PLCs), computer numerical control (CNC) machines, and robots.
 
-Protocol Gateway reads vendor-specific protocols at the edge, keeps the values as named tags, and sends them to {{< product-c8y-iot >}} as thin-edge.io MQTT (Message Queuing Telemetry Transport) messages. It provides:
+Protocol Gateway provides:
 
 - **Protocol normalization.** Native drivers turn vendor protocols into one tag model, and you map the tags to one MQTT message format. You do not write driver code.
 - **Offline buffering.** Protocol Gateway buffers messages on the device during network interruptions.
 - **Configuration in a web interface.** You define data sources, tags, events, and actions without code.
 
-Protocol Gateway runs as a Docker container on the same device as thin-edge.io. Both communicate through the local MQTT broker of thin-edge.io on `localhost:1883`. thin-edge.io maps the messages to the {{< product-c8y-iot >}} data model and manages the connection to the cloud.
+Protocol Gateway is managed through thin-edge.io, which runs on the same device. thin-edge.io connects the device to your {{< product-c8y-iot >}} tenant, installs and updates Protocol Gateway as a software item, and manages its configuration files. For details, see [Device integration using thin-edge.io](https://cumulocity.com/docs/thin-edge/thin-edge).
 
 ```text
 Machines    -->  Protocol Gateway  -->  thin-edge.io  -->  Cumulocity
-(PLC, CNC,       (Docker container)     (local MQTT        (Device Management)
- robots)         data sources, tags,     broker, mapper)
-                 events, MQTT client     localhost:1883
+(PLC, CNC,       protocol adapter,      MQTT broker,       measurements of
+ robots)         tags, MQTT client      mapper, bridge     the child device
 ```
 
-The data flows in 3 steps:
+The architecture diagram shows the data path from left to right:
 
-1. Protocol Gateway reads the machines through its data sources and keeps the current tag values.
-2. An event runs on a trigger, such as a cycle, and its **Send MQTT** action publishes a thin-edge.io JSON message.
-3. thin-edge.io receives the message and sends the measurement to the child device in {{< product-c8y-iot >}}.
+1. **Read.** The protocol adapter of Protocol Gateway reads the machines through native drivers and stores the values as tags.
+2. **Publish.** An event with a **Send MQTT** action publishes the values through the MQTT client to the thin-edge.io MQTT broker.
+3. **Deliver.** The {{< product-c8y-iot >}} mapper of thin-edge.io converts the message, and the bridge sends it to {{< product-c8y-iot >}} as a measurement of the child device.
+
+Protocol Gateway and thin-edge.io exchange the messages through the local MQTT broker on `127.0.0.1:1883`. The connection stays on the device, so it uses plain MQTT. thin-edge.io secures the connection to {{< product-c8y-iot >}} with TLS.
 
 ### Supported assets and protocols {#supported-assets-and-protocols}
 
-Protocol Gateway supports more than 320 device series from more than 80 manufacturers. The following table shows examples from the product documentation. For the complete list, see the [list of devices that Protocol Gateway supports](https://www.faweb.net/en/product/devicegateway/supportlist).
+Protocol Gateway connects to a wide range of industrial devices, from PLCs and CNC machines to meters, sensors, and building automation equipment. It supports both vendor-specific protocols and standardized protocols. For the complete list, see the [list of devices that Protocol Gateway supports](https://www.faweb.net/en/product/devicegateway/supportlist).
 
-| Category | Protocols and examples |
-|----------|------------------------|
-| PLCs | Siemens SIMATIC S7, Mitsubishi Electric MELSEC, OMRON SYSMAC, Keyence KV, Allen-Bradley (AB Ethernet), Panasonic FP, Yokogawa FA-M3, Fuji Electric MICREX, Hitachi HIDIC, JTEKT TOYOPUC, Toshiba |
-| Machine tools and robots | FANUC and Mitsubishi DPRNT (serial), MTConnect, Yamaha robots |
-| Open protocols | Modbus TCP and RTU, EtherNet/IP, BACnet/IP, DNP3, IEC 61850 MMS |
-| IT interfaces | MQTT client, MQTT Sparkplug B client, HTTP client, SQL client, FTP, SNMP agent |
+**Vendor-specific protocols**
 
-The number of simultaneous data source connections depends on the license model, for example 16 for DGW-D20 and 64 for DGW-D20H.
+| Device type | Vendors and product families |
+|-------------|------------------------------|
+| PLCs | Mitsubishi Electric MELSEC (iQ-R, iQ-F, Q, L, FX), Siemens SIMATIC (S7-1500, S7-1200, S7-400, S7-300, S7-200), Rockwell Automation (ControlLogix, CompactLogix, GuardLogix, Micro800, MicroLogix, SLC500), OMRON SYSMAC (NX, NJ, CJ, CS, CP), Yokogawa (e-RT3, FA-M3), Keyence KV, Panasonic FP, Fuji Electric MICREX, Hitachi (HX, EH150), JTEKT TOYOPUC, Toshiba (nv, V, PROSEC T), Yaskawa MP, Delta (AH500, DVP), IDEC MicroSmart, Koyo, Sharp, GE 90-30, CODESYS-based controllers |
+| CNC machines and machine tools | FANUC, Mitsubishi Electric, Shibaura Machine, Mazak |
+| Motion and robot controllers | Yamaha, IAI, Sanyo Denki |
+| Remote I/O | WAGO, Phoenix Contact, Anywire, MG, MTT, Comtrol |
+| Meters, recorders, and controllers | Azbil, Yokogawa, Eurotherm, RKC Instrument, Chino, Graphtec, Hioki, Mitutoyo, Panasonic, Mitsubishi Electric |
+| Other devices | Hakko MONITOUCH display panels, Cognex In-Sight vision sensors, MOXA network switches, and sensors from vendors such as OMRON, ifm, and Murata |
 
-### Supported Cumulocity features {#supported-cumulocity-features}
+**Standardized protocols**
 
-| Feature | Support | How it works |
-|---------|---------|--------------|
-| Child device registration | Yes | Protocol Gateway publishes a retained registration message with the type and device information of each machine. |
-| Measurements | Yes | A thin-edge.io JSON message becomes a measurement. |
-| Device information (agent, hardware) | Yes | Protocol Gateway publishes retained twin messages. |
-| Alarms and events | Yes | Publish thin-edge.io alarm and event messages from an event action. |
-| Software management | Yes | The container plugin installs and updates Protocol Gateway as a software item. |
-| Container control (start, stop, restart) | Yes | The container appears as a service. Requires thin-edge.io 2.1.0 or later. |
-| Configuration management | Yes | The license file and the Protocol Gateway configuration file are configuration types of the thin-edge.io configuration plugin. |
-| Remote access | Yes | SSH, and the Protocol Gateway web interface, through Cloud Remote Access. |
+| Protocol | Typical devices |
+|----------|-----------------|
+| Modbus TCP, Modbus ASCII, and Modbus RTU (serial) | Meters, remote I/O, controllers, display panels, and many other devices |
+| EtherNet/IP | Remote I/O, motion controllers, and monitoring devices |
+| SLMP | Devices that support the Seamless Message Protocol |
+| MTConnect | Machine tools |
+| DPRNT (serial) | CNC machines from FANUC and Mitsubishi Electric |
+| BACnet/IP | Building automation |
+| IEC 61850 MMS | Power and substation equipment |
+| DNP3 | Energy and utility equipment |
+| Digital and analog I/O | Signals from I/O hardware |
+| Serial user protocol | Devices with a custom ASCII protocol that you define |
+| Bluetooth beacons | Location data from Bluetooth tags |
+
+{{< c8y-admon-info >}}
+Protocol Gateway requires a license. One license supports up to 64 data source connections and 65,536 tags.
+{{< /c8y-admon-info >}}
 
 ### Requirements {#requirements}
 
-- A device that runs Linux with a 64-bit processor (arm64 or x86_64) and at least 2 GB RAM. The commands in this documentation use Debian-based distributions.
-- Docker Engine and Docker Compose on the device
-- thin-edge.io 2.1.0 or later on the device, connected to your tenant
-- The thin-edge.io container plugin. See [To prepare the device](/device-integration/protocol-gateway/#to-prepare-the-device).
-- A Protocol Gateway license. For a trial, request a license file from your {{< company-c8y >}} contact. You can buy commercial licenses in the [license web store](https://www.faweb.net/en/support/order-online/#dgw). A commercial license needs the license management server, which is also available as a Docker image. See [Authentication](/device-integration/protocol-gateway/#authentication).
-- For remote access to the web interface, the Cloud Remote Access microservice on your tenant
-
-{{< c8y-admon-info >}}
-The Protocol Gateway image is available for multiple processor architectures, and Docker selects the matching one. The screenshots and commands in this documentation come from a Raspberry Pi 4 Model B with arm64.
-{{< /c8y-admon-info >}}
+- A device that runs Linux with a 64-bit processor (arm64 or x86_64) and at least 2 GB RAM.
+- Docker Engine and Docker Compose on the device. See the [Docker documentation](https://docs.docker.com/engine/install/).
+- thin-edge.io on the device, connected to your tenant. See [Device integration using thin-edge.io](https://cumulocity.com/docs/thin-edge/thin-edge) and the [thin-edge.io installation guide](https://thin-edge.github.io/thin-edge.io/install/).
+- The thin-edge.io container plugin on the device. The first step of [Set up the license and configuration files](/device-integration/protocol-gateway/#set-up-the-license-and-configuration-files) installs it.
+- A Protocol Gateway license. Protocol Gateway licenses are part of the {{< product-c8y-iot >}} product catalog. For a license or a trial license, contact your {{< product-c8y-iot >}} sales representative.
+- For remote access to the web interface, the Cloud Remote Access microservice on your tenant.
 
 ### Deployment options {#deployment-options}
 

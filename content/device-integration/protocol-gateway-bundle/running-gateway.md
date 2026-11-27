@@ -20,37 +20,39 @@ layout: redirect
 
    ![Install the software item](/images/device-protocols/protocol-gateway/software-install.png)
 
-The operation is `successful` when the container runs. On the device, check:
-
-```bash
-sudo docker ps --format '{{.Names}} {{.Status}}'
-```
-
-The Protocol Gateway container has the status `Up`. The plugin stores the Compose file at */var/tedge-container-plugin/compose/protocol-gateway/docker-compose.yaml*.
+The installation is complete when the operation shows the status `successful`. If it fails, see [Troubleshooting](/device-integration/protocol-gateway/#troubleshooting).
 
 ### To start, stop, or restart Protocol Gateway {#to-start-stop-or-restart-protocol-gateway}
 
-The container plugin registers each container as a service of the device. Open the device and click **Services**. **Services** lists the Protocol Gateway service with the type “container-group”. Click the restart icon of the service to restart Protocol Gateway, or open the menu of the service to start or stop it.
+Open the device and click **Services**. Click the restart icon of the Protocol Gateway service, or open the menu of the service to start or stop it.
 
 ![Services tab](/images/device-protocols/protocol-gateway/services-tab.png)
 
 {{< c8y-admon-info >}}
-The commands on the service need thin-edge.io 2.1.0 or later. With thin-edge.io 2.0.0, the service shows no commands. After an upgrade, restart `tedge-container-plugin` and refresh the browser.
+The start, stop, and restart commands need thin-edge.io 2.1.0 or later. With an earlier version, the Services tab lists the service without commands.
 {{< /c8y-admon-info >}}
 
 ### To update Protocol Gateway {#to-update-protocol-gateway}
 
-To update, add a new version to the software item and install it on the device. The bind mounts keep the license and the configuration. Back up the data folder first. See [Protocol Gateway upgrade notes](/device-integration/protocol-gateway/#upgrading).
+Before you update, see the [Takebishi release notes](https://www.faweb.net/en/product/devicegateway/releasenote) for changes. The version in this documentation is 3.7.0.2490.
+
+1. Back up the data folder on the device:
+
+   ```bash
+   sudo cp -a /etc/takebishi /etc/takebishi.backup
+   ```
+
+2. Add the new version to the software item and install it on the device. The bind mounts keep the license and the configuration.
+3. If the new version fails, install the previous version again and restore the folder from the backup.
 
 ### To run Protocol Gateway directly with Docker Compose {#to-run-protocol-gateway-directly-with-docker-compose}
 
-For a single device without the container plugin, save the *docker-compose.yml* file from [Container definition](/device-integration/protocol-gateway/#container-definition) without the `x-tedge` block as *~/protocol-gateway/docker-compose.yml* on the device, and start it. To reach the device from Device Management, see [Remote access](/device-integration/protocol-gateway/#remote-access).
+For a single device without the container plugin, save the *docker-compose.yml* file from [Container definition](/device-integration/protocol-gateway/#container-definition) without the `x-tedge` block as *~/protocol-gateway/docker-compose.yml* on the device, and start it:
 
 ```bash
 cd ~/protocol-gateway
 sudo docker compose up -d
 sudo docker compose ps
-sudo docker logs --tail 10 takebishi-device-gateway
 ```
 
-The status shows `Up`, and the log contains `Start main process.`, `Start setting process.`, and `Start lighttpd.`. The log also warns that the OpenSSL library is outdated. This does not affect the setup. Restart Protocol Gateway with `sudo docker compose restart`.
+The status shows `Up`. Restart Protocol Gateway with `sudo docker compose restart`.

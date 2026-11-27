@@ -1,5 +1,5 @@
 ---
-weight: 80
+weight: 50
 title: Device protocols
 layout: redirect
 ---

@@ -1,5 +1,5 @@
 ---
-weight: 90
+weight: 60
 title: Data reporting
 layout: redirect
 ---
@@ -34,7 +34,7 @@ An event sends the tag values to thin-edge.io. An event consists of a trigger an
 5. Click the check marks and **Save**, and start the event with the play button. **Event Summary** shows `Running`.
 
 {{< c8y-admon-important >}}
-If **Message to send** is empty, the event still shows `Running` and publishes an empty message every 10 seconds, and {{< product-c8y-iot >}} receives no values. Check the message on the device as described below.
+If **Message to send** is empty, the event still shows `Running` and publishes an empty message every 10 seconds, and {{< product-c8y-iot >}} receives no values. To check the message on the device, see [Troubleshooting](/device-integration/protocol-gateway/#troubleshooting).
 {{< /c8y-admon-important >}}
 
 ### Topic and payload mapping {#topic-and-payload-mapping}
@@ -48,20 +48,6 @@ If **Message to send** is empty, the event still shows `Running` and publishes a
 
 Use one topic for each machine, so that each machine becomes its own child device. If one PLC represents several machines, split the data further. A plain value, for example `{"sine_wave": 123}`, creates a fragment and a series with the same name. For the complete topic and payload structure, see the [thin-edge.io documentation](https://thin-edge.github.io/thin-edge.io/understand/thin-edge-json/).
 
-Check the messages on the device:
-
-```bash
-tedge mqtt sub 'te/device/plc01/#'
-```
-
-Every 10 seconds, a message like this appears:
-
-```text
-[te/device/plc01///m/simulated] {"simulator": {"sine_wave": 25488}}
-```
-
-The values are raw simulated register values, not engineering units.
-
 ### To monitor measurements {#to-monitor-measurements}
 
 In Device Management, open the thin-edge.io device and click **Child devices**. The device *plc01* appears within a few seconds of the first message. Open *plc01* and click **Measurements**. The series `sine_wave` of the fragment `simulator` shows a new value every 10 seconds.
@@ -69,3 +55,22 @@ In Device Management, open the thin-edge.io device and click **Child devices**. 
 ![Measurements](/images/device-protocols/protocol-gateway/measurements.png)
 
 The measurement carries the time at which thin-edge.io received the message. If you do not see values, make sure the time range of the chart includes the current time.
+
+### To set the type of a child device {#to-set-the-type-of-a-child-device}
+
+thin-edge.io creates the child device with a name only. To give every machine the type `ProtocolGateway`, let Protocol Gateway publish a registration message for it:
+
+1. Open **Event**, click the plus, click **Event**, and enter the name “register-plc01”.
+2. Add a trigger of type **Cycle** with **Cycle(msec)** “3600000”, and enable **Force Initial Activating**. The event runs when Protocol Gateway starts and then every hour.
+3. Add an action of type **Send MQTT** and set:
+   - **Destination server:** “thin-edge”
+   - **Topic name:** “te/device/plc01//”
+   - **Message Type:** “Text”
+   - **Publishing QoS:** “1”
+   - **Retain:** enabled
+   - **Message to send:** `{"@type":"child-device","@parent":"device/main//","name":"plc01","type":"ProtocolGateway"}`
+4. Click the check marks and **Save**, and start the event with the play button.
+
+The registration topic has 2 slashes after the device name, while the measurement topic has 3. `device/main//` identifies the thin-edge.io device, so keep it exactly like this. **Retain** keeps the message in the broker, so thin-edge.io applies it even if it starts after Protocol Gateway. For each additional machine, add an action with its own topic and name, such as `te/device/plc02//`.
+
+In Device Management, open *plc01* and click **Info**. **Type** shows `ProtocolGateway`.
