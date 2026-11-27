@@ -23,7 +23,7 @@ Before you use the smart rules (NEW) plugin, make sure that the following requir
 - The smart rules (NEW) plugin is installed in the application that you want to use, and the **Smart rules (NEW) plugin** is enabled in **Preview feature**.
 - You have the required permissions to view or manage smart rules (NEW). See [Managing permissions to smart rules (NEW) instances](#managing-permissions-to-smart-rules-instances).
 
-**[TODO PAB-5296: at the preview-to-GA cutover (PAB-5459), remove the "Preview feature" condition from the second prerequisite: "The smart rules (NEW) plugin is installed in the application that you want to use."]**
+**[TODO PAB-5459: at the preview-to-GA cutover, remove the "Preview feature" condition from the second prerequisite: "The smart rules (NEW) plugin is installed in the application that you want to use."]**
 
 #### Managing permissions to smart rules (NEW) instances {#managing-permissions-to-smart-rules-instances}
 
@@ -61,7 +61,7 @@ At least one device must be registered in {{< product-c8y-iot >}}. Preferably, t
 
 1. In the Device Management application, navigate to **Devices** > **All devices** and select a device.
 2. Click the **Smart rules (NEW)** tab.
-   **[TODO PAB-5296: the screenshot shows the tab as "Smart rules" with a "New" badge, not "Smart rules (NEW)". Confirm the GA tab label, then align this step and the other pages that name the tab (cockpit-smart-rules-plugin.md, viewing-device-details.md, new-and-legacy-smart-rules.md, understanding-the-plugin.md).]**
+   **[TODO PAB-5551: the screenshot shows the tab as "Smart rules" with a "New" badge, not "Smart rules (NEW)". Confirm the GA tab label, then align this step and the other pages that name the tab (cockpit-smart-rules-plugin.md, viewing-device-details.md, new-and-legacy-smart-rules.md, understanding-the-plugin.md).]**
    ![Smart rules tab](/images/streaming-analytics/smart-rules-plugin/empty-smart-rule.png)
 3. Click **Add rule**.
    The **Add rule** dialog lists the rule templates that apply to the current context. Each rule template shows an **Official** or **Custom** label. To find a rule template, enter a part of its name, description, or tag in the search field.

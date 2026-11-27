@@ -87,39 +87,11 @@ The following images show the deployment target for a group, with the **Assets o
 
 ![Deployment target for an asset](/images/streaming-analytics/smart-rules-plugin/deployment-target-asset.png)
 
-#### Deployment target in the Smart Rules API {#deployment-target-in-the-smart-rules-api}
-
-In the Smart Rules API, the deployment target of a rule instance is defined by its `context` object. The `context` object contains the `id` of the device, group, or asset, and the following optional lookup options:
-
-|Lookup option|Description|Default when omitted|
-|:---|:---|:---|
-|`subDevices`|Includes the child devices of the context.|`true`|
-|`recurseGroups`|Includes the subgroups of a group, recursively.|`true`|
-|`recurseAssets`|Includes the child assets of an asset, recursively.|`true`|
-|`subAssets`|Includes the child assets of the context.|`false`|
-|`selectRoot`|Includes the context object itself. A device is always included, regardless of this option.|`false`|
-
-A `context` object with only an `id` behaves like the default deployment target in the plugin: for a device, the rule applies to the device. For a group or an asset, the rule applies to all devices beneath it. The API stores the resolved values of all five lookup options with the rule instance.
-
-The deployment targets of the plugin correspond to the following lookup options:
-
-|Deployment target|`subDevices`|`recurseGroups`|`recurseAssets`|`subAssets`|`selectRoot`|
-|:---|:---|:---|:---|:---|:---|
-|Device &lt;name&gt;, All devices of group &lt;name&gt;, All devices of smart group &lt;name&gt;, All devices of asset &lt;name&gt; (the defaults)|`true`|`true`|`true`|`false`|`false`|
-|Assets of group &lt;name&gt;|`false`|`true`|`false`|`true`|`false`|
-|Asset &lt;name&gt;|`false`|`false`|`false`|`false`|`true`|
-
-**[TODO PAB-5296: before publication, confirm the defaults and the mapping table against the T099 test and the implemented Smart Rules API. On apama-in-c8y develop (2026-11-18), the v1 endpoints return "not implemented" (T018, T020) and T099 is open. The defaults above are taken from the v1 contract (`smartrules-v1.openapi.yaml`) and research decision D7a, and the mapping from the plugin code (`deployment-target.ts`). Add the link to the published Smart Rules API specification (T053).]**
-
-For the complete description of the Smart Rules API, see **[TODO PAB-5296: link to the Smart Rules API in the {{< openapi >}}]**.
-
 ### Activating or deactivating all rules of a rule template {#activating-or-deactivating-all-rules-of-a-rule-template}
 
 You can activate or deactivate all rules of a custom rule template in one step. You do this in Analytics Builder, in the model editor or the instance editor of the rule template. You need the **CEP management** permission with the ADMIN level. The **Smart rule instances** permission is not sufficient.
 
 Official rule templates are not shown in Analytics Builder. To activate or deactivate the rules of an official rule template, switch each rule to **Active** or **Inactive** in the smart rules (NEW) plugin.
-
-**[TODO PAB-5296: describe the bulk state change operation of the Smart Rules API (`PUT /service/cep/smartrules/v1/templates/{templateId}/instances/state`) once it is implemented (T057, T058). It also covers official rule templates. On develop (2026-11-17) the endpoint exists but returns "not implemented".]**
 
 #### To activate or deactivate all rules of a rule template {#to-activate-or-deactivate-all-rules-of-a-rule-template}
 

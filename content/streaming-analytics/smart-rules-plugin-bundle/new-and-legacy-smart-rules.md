@@ -20,10 +20,9 @@ Legacy smart rules are deprecated. Their removal is planned for 2027. Use smart 
 |Where you create rules|The **Smart rules (NEW)** tab of a device, group, or asset in Device Management, Cockpit, Digital Twin Manager, and other applications with the plugin.|The **Smart rules** tab of a device or group in Cockpit, or the global smart rules in Cockpit.|
 |Deployment target|A device, a group, or an asset. For a group or an asset, you select the deployment target.|A device, a group, or all devices (global smart rules).|
 |Activating or deactivating many rules|All rules of a custom rule template in one step, in Analytics Builder.|One rule at a time.|
-|Programmatic access|The Smart Rules API.|The legacy smart rules REST API.|
 |Restricting the available rule templates|With the `smartrules.samples.allowlist` tenant option.|Not available.|
 
-**[TODO PAB-5296: confirm the "Programmatic access" and "Where you create rules" rows with PM, and add the link to the Smart Rules API specification once it is published.]**
+**[TODO PAB-5296: confirm the "Where you create rules" row with PM.]**
 
 ### Migrating from legacy smart rules {#migrating-from-legacy-smart-rules}
 
@@ -59,5 +58,7 @@ Most legacy rule templates have an official rule template with the same name:
 A global legacy smart rule applies to all devices. To migrate it, create the new rule on a group that contains the devices.
 
 While both rules are active, both rules create alarms, emails, or operations. Deactivate the legacy smart rule as soon as you have checked the new rule.
+
+If you need help with the migration, contact [product support](/additional-resources/contacting-support/).
 
 For details on creating rules, see [Creating your first smart rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
