@@ -125,8 +125,8 @@ Each item in `inputs` has the following fields:
 |-------|------|----------|-------------|
 | `payload` | string | Yes | Message payload. |
 | `payloadFormat` | string | Yes | Format of the `payload` field. One of `text`, `json`, or `base64`. |
-| `topic` | string | Yes | Topic string. |
-| `clientID` | string | Yes | Device client ID. |
+| `topic` | string | Yes | Topic string matching the `topicPattern` of the rule. |
+| `clientID` | string | Yes | Device client ID matching the `clientIDPattern` of the rule. |
 | `time` | string | Yes | ISO 8601 timestamp, for example `2026-01-01T12:00:00.000Z`. |
 
 Example *tests/temperature-reading.yaml*:
@@ -138,7 +138,7 @@ inputs:
         "temperature": 25.5
       }
     payloadFormat: json
-    topic: "devices/sensor01/data"
+    topic: "sensors/temperature/sensor01"
     clientID: "sensor01"
     time: "2026-01-01T12:00:00.000Z"
 
