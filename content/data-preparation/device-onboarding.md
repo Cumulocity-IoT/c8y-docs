@@ -114,6 +114,8 @@ The platform drops the output and raises an alarm of type `c8y_DataPrep_DeviceCr
 
 The platform does not remember a failure. If the failed attempt did not create the object with the missing external ID, the next message that names the external ID invokes `onDeviceCreate` again. The platform then uses any objects that the failed attempt created, and does not create them again. If the failed attempt did create the object, for example, when only linking failed, later messages use that object. The platform does not invoke `onDeviceCreate` again, and does not make the missing links. Create them yourself, for example, in the Device Management application.
 
+The platform writes a message to the log of the rule for each output that it drops, including when `onDeviceCreate` returns `[]`. For details on logging, see [Logs and diagnostics](/data-preparation/logs-and-diagnostics/).
+
 #### Managed object updates from onMessage {#managed-object-updates-from-onmessage}
 
 A managed object update from `onMessage` is an output like any other. If its device does not exist, `onDeviceCreate` decides what the platform creates, and then the platform applies the update to the new device. This gives you two places to set the fields of a device:
@@ -144,6 +146,10 @@ The platform finds each group in the path as the Device Management application d
 For a `CreateGroup`, if a group in the path does not exist, the platform creates it in the group or asset before it. Only the last group of the path gets the payload that you return. The platform creates the groups before it with only their names. If the group already exists, the platform uses it and ignores the payload.
 
 Users with inventory roles for a group can access the devices in the group. If the platform adds a device to a group, those users get access to the device.
+
+### Testing onDeviceCreate {#testing-ondevicecreate}
+
+When you run tests in the rule editor, the output of each test shows the devices, assets, and groups that `onDeviceCreate` would create for the test message. The test does not create them in the platform. Save the output as the expected output to detect changes to the created objects in later test runs. For details, see [Test data](/data-preparation/rule-editor/#inspecting-outputs).
 
 ### Ways to use onDeviceCreate {#ways-to-use-ondevicecreate}
 

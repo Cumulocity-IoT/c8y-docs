@@ -70,3 +70,13 @@ For information about uploading extensions for Analytics Builder, see [Creating 
 {{< c8y-details title="Developer details" >}}
 Individual extensions are bundled into a package which is installed as an application via the [Application API](https://cumulocity.com/api/core/#tag/Application-API) (`/application/applications`) and contains an `isPackage` flag inside the manifest. Additionally, extensions use the [Versioning API](https://cumulocity.com/api/core/#tag/Application-versions), to ensure compatibility when they are integrated into an application.
 {{< /c8y-details >}}
+
+### External ID {#external-id}
+
+An external ID identifies a [managed object](#managed-object), such as a [device](#device), by an identifier from outside {{< product-c8y-iot >}}, for example, a serial number or an asset tag. Each external ID has a type and a value, and one managed object can have several external IDs. Devices and integrations use external IDs to find the managed object they send data for.
+
+See also [Identity](/device-management-application/viewing-device-details/#identity) in the documentation.
+
+{{< c8y-details title="Developer details" >}}
+Use the [Identity API](https://{{< domain-c8y >}}/api/core/#tag/Identity-API) (`/identity/externalIds`) to manage external IDs.
+{{< /c8y-details >}}
