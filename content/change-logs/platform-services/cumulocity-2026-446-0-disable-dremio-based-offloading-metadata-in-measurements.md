@@ -1,6 +1,6 @@
 ---
 date:
-title: Option to disable Dremio-based offloading metadata in measurements, available as public preview
+title: Option to disable Dremio-based offloading metadata in measurements
 product_area: Platform services
 change_type:
   - value: change-pXAlHAWka
