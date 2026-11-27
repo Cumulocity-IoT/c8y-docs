@@ -6,7 +6,7 @@ sector:
   - device_management
 ---
 
-When a data preparation rule produces a message containing an external ID that does not yet exist in {{< product-c8y-iot >}}, the platform creates the device before it sends the message. By default, it creates a basic device and associates that external ID with it, so that your rules do not lose data due to a missing device.
+When a data preparation rule produces a message containing an external ID that does not yet exist in {{< product-c8y-iot >}}, the platform creates the device before it sends the message. Unless the rule has an `onDeviceCreate` function, it creates a default device and associates that external ID with it, so that your rules do not lose data due to a missing device.
 
 To specify what the platform creates, add an `onDeviceCreate` function to the rule. The function can set the name, type, and fragments of new devices. It can place them under gateways, assets, and groups, or create nothing for clients that you do not recognize.
 
@@ -102,7 +102,7 @@ If a parent is listed after its child in the same returned list, the platform re
 
 If a parent does not exist and no call for the message returns it, the platform creates the object without the link to that parent. It raises an alarm that names the missing parent, and never creates a parent in its place. Create the link yourself, for example, in the Device Management application.
 
-If the `parentAsset` of a group does not exist, or finding or creating the group fails, the platform does not create the group or link any object to it. It raises an alarm that names the group and the reason.
+If a group sets a `rootAsset` that does not exist, or finding or creating the group fails, the platform does not create the group or link any object to it. It raises an alarm that names the group and the reason.
 
 #### When creation fails {#when-creation-fails}
 
@@ -133,15 +133,15 @@ If the function returns only one device for each call, the platform invokes it o
 
 #### Groups {#groups}
 
-A group has no external IDs. You name it by its `path`, the names of the groups from the top level to the group, for example, `["Plant", "Line 1"]`. If the path starts in an asset rather than at the top level, set `parentAsset` to that asset. Groups that you create in the Device Management application have no external IDs either, so `onDeviceCreate` can use them in the same way.
+A group has no external IDs. You name it by a group path, `{ path, rootAsset }`. The `path` is the names of the groups from the top level to the group, for example, `["Plant", "Line 1"]`. If the path starts in an asset rather than at the top level, set `rootAsset` to that asset. Groups that you create in the Device Management application have no external IDs either, so `onDeviceCreate` can use them in the same way.
 
 The platform finds each group in the path as the Device Management application does:
 
-- It finds the first group by its name among the groups at the top level, or among the groups in the `parentAsset`.
+- It finds the first group by its name among the groups at the top level, or among the groups in the `rootAsset`.
 - It finds each later group by its name among the groups in the group before it.
 - Names are case-sensitive. If several groups have the same name, the platform uses the oldest one.
 
-If a group in the path does not exist, the platform creates it in the group or asset before it. Only the last group of the path gets the payload that you return. The platform creates the groups before it with only their names. If the group already exists, the platform uses it and ignores the payload.
+For a `CreateGroup`, if a group in the path does not exist, the platform creates it in the group or asset before it. Only the last group of the path gets the payload that you return. The platform creates the groups before it with only their names. If the group already exists, the platform uses it and ignores the payload.
 
 Users with inventory roles for a group can access the devices in the group. If the platform adds a device to a group, those users get access to the device.
 
@@ -231,7 +231,7 @@ export function onDeviceCreate(inputMsg, externalId, context) {
 
 #### Place a device under an existing gateway and asset {#under-an-existing-gateway-and-asset}
 
-Name an existing gateway by its external ID, and an existing asset by its `externalAssetId`. If a parent does not exist, the platform creates the device without the link to that parent, and raises an alarm that names the missing parent.
+Name an existing gateway by its external ID, and an existing asset by its [`ExternalAssetId`](/data-preparation/smart-functions/#external-asset-id). If a parent does not exist, the platform creates the device without the link to that parent, and raises an alarm that names the missing parent.
 
 ```javascript
 export function onDeviceCreate(inputMsg, externalId, context) {
@@ -240,7 +240,7 @@ export function onDeviceCreate(inputMsg, externalId, context) {
     cumulocityType: "device",
     externalSource: [externalId],
     payload: { name: "Pump " + externalId.externalId, type: "acme_pump" },
-    parentAssets: [siteId]
+    parentAssets: [{ externalAssetId: siteId }]
   };
   // The gateway's own data names the gateway, which can't be its own parent
   if (externalId.externalId !== inputMsg.clientID) {
@@ -304,7 +304,7 @@ The platform finds the group by its path, or creates it if it does not exist. Fo
 
 ```javascript
 export function onDeviceCreate(inputMsg, externalId, context) {
-  const fleet = { cumulocityType: "group", path: ["Fleets", "North fleet"], payload: {} };
+  const fleet = { cumulocityType: "group", groupPath: { path: ["Fleets", "North fleet"] }, payload: {} };
   return [
     fleet,
     {
@@ -328,7 +328,7 @@ export function onDeviceCreate(inputMsg, externalId, context) {
     externalAssetId: "site-berlin",
     payload: { name: "Berlin plant" }
   };
-  const sensors = { cumulocityType: "group", parentAsset: site, path: ["Sensors"], payload: {} };
+  const sensors = { cumulocityType: "group", groupPath: { rootAsset: site, path: ["Sensors"] }, payload: {} };
   return [
     site,
     sensors,
@@ -339,5 +339,20 @@ export function onDeviceCreate(inputMsg, externalId, context) {
       parentAssets: [sensors]
     }
   ];
+}
+```
+
+#### Add a device to an existing group {#device-in-an-existing-group}
+
+Name the group by its path. The platform does not create the group. If the group does not exist, the platform creates the device without the link to it, and raises an alarm that names the group.
+
+```javascript
+export function onDeviceCreate(inputMsg, externalId, context) {
+  return [{
+    cumulocityType: "device",
+    externalSource: [externalId],
+    payload: { name: "Truck " + externalId.externalId, type: "acme_truck" },
+    parentAssets: [{ path: ["Fleets", "North fleet"] }]
+  }];
 }
 ```
