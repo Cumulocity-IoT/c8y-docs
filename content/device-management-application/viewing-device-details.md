@@ -57,9 +57,9 @@ The **Smart rules (NEW)** tab shows the rules of the device. On this tab, you cr
 
 ![Smart rules new tab](/images/streaming-analytics/smart-rules-plugin/smart-rules-list.png)
 
-To create your first rule, refer to [Creating your first smart rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
+To create your first rule, refer to [Create your first rule](/streaming-analytics/smart-rules-plugin/#creating-your-first-smart-rule).
 
-For more details about smart rules (NEW), refer to [Smart rules (NEW) plugin](/streaming-analytics/smart-rules-plugin/#getting-started).
+For more details about smart rules (NEW), refer to [Smart rules plugin](/streaming-analytics/smart-rules-plugin/#getting-started).
 
 
 ### Availability {#availability}

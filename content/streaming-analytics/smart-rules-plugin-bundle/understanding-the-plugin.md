@@ -7,21 +7,19 @@ layout: redirect
 ### Analytics Builder workflow versus smart rules plugin {#analytics-builder-workflow-versus-smart-rules-plugin}
 
 #### Standard Analytics Builder workflow {#standard-analytics-builder-workflow}
-
-In the standard Analytics Builder workflow, you switch from your primary workflow to Analytics Builder to deploy analytics instances:
+In the standard Analytics Builder workflow, to deploy analytics instances, users must switch from their primary workflow to the Analytics Builder:
 
 1. Navigate to the Streaming Analytics application.
 2. Go to **Analytics Builder**.
 3. Select your model and navigate to the **Instances** page.
-4. Create instances for the model in the instance editor.
-5. Configure and deploy the instances from the instance editor.
+4. Create instances/rules for the model in the instance editor.
+5. Configure and deploy rules from the instance editor.
 
-This process requires switching between applications. It takes time when you manage rules for many devices or groups.
+This process requires switching between applications and can be time-consuming when managing rules for multiple devices or groups.
 
-For details about the instance editor workflow, see [Instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor).
+For detailed information about the instance editor workflow, refer to [Instance editor](/streaming-analytics/analytics-builder/#using-the-instance-editor).
 
 #### With smart rules plugin {#with-smart-rules-plugin}
-
 The smart rules plugin lets you create, configure, and activate rules directly from the context of a device, group, or asset. You do not switch to a different application. You also do not need to create an Analytics Builder model to use an official rule template.
 
 ### Rule templates and rule instances {#rule-templates-and-rule-instances}
@@ -41,24 +39,18 @@ Your administrator can restrict which official rule templates are available, see
 
 ### Understanding the smart rules interface {#understanding-the-smart-rules-interface}
 
-The **Smart rules (NEW)** tab shows the list of rules on the left and the details of the selected rule on the right.
-
-To find a rule, enter a part of its name in the **Search rule** field above the list. The search is not case-sensitive. While a search is active, the list shows the number of matching rules.
-
-Below the list, a counter shows which rules are shown, for example, "1 - 25 of 60". The list shows 25 rules per page. If there are more rules, use the page buttons to move between the pages. If there are more than 25 rules, you can show 50 or 100 rules per page with **Items per page**.
-
 A rule has the following fields and properties:
 
 |   Field              | Description           |
 |----------------------| ----------------------|
 | **Name**             | The name of the rule. A name is mandatory. The name must be unique among the rules of the same rule template.<br>The field is populated with the name of the rule template. When you create more than one rule from the same rule template without changing the name, the plugin appends #1, #2, #3, and so on. Rules are sorted by name. |
-| **Note**             | An optional note for the rule. |
-| **Created**          | The time when the rule was created. |
-| **Last updated**     | The time when the rule was last updated. |
-| **Model name**       | The name of the rule template of the rule. This field is read-only. |
+| **Note**             | You can add a note for the rule.                                                                                                                                                                                                                                |
+| **Created**          | Shows the timestamp when the rule was created.                                                                                                                                                                                                               |
+| **Last Updated**     | Shows the timestamp when the rule was last updated.                                                                                                                                                                                                          |
+| **Model Name**       | Displays the name of the model associated with the rule. This field is read-only.                                                                                                                                        |
 | **Origin**           | The origin of the rule template, **Official** or **Custom**. This field is read-only. |
 | **Parameters**       | The parameters of the rule template.<br>The input source parameter takes its value from the current device, group, or asset context. You cannot change the context. For a group or an asset, you select the deployment target, see [Selecting the deployment target](#selecting-the-deployment-target).<br>You can edit all other parameters. |
-| **Active/Inactive**  | Switch the rule to **Active** to deploy it.<br>While the rule is active, all fields and properties are read-only. To edit the rule, switch it to **Inactive**. |
+| **Active/Inactive**  | Deploy the rule by toggling from inactive to active state.<br>Once the rule is deployed, all fields and properties become read-only unless the rule is undeployed.                                                        |
 
 ![Rule from a custom rule template in the smart rules (NEW) plugin](/images/streaming-analytics/smart-rules-plugin/rule-editor.png)
 
@@ -120,15 +112,17 @@ Rules that you create with the smart rules plugin are also shown in the instance
 
 **[TODO PAB-5296: confirm with the team how rules of official rule templates are reached in Analytics Builder in the GA UI, and update the sentence above.]**
 
-Rules that you create in the Analytics Builder instance editor are shown in the smart rules plugin only if their mode is set to **Production**. Other modes indicate that the rule is under development or testing.
+Rules created in the Analytics Builder instance editor appear in the smart rules plugin only when the mode is set to **Production**. Non-production modes indicate the rule is under development or testing and not ready for deployment.
 
 The instance editor validates the instance name. The instance name is required and must be unique. You can only deploy the instance after you enter a unique, non-empty instance name.
 
-{{< c8y-admon-info >}}
-This validation applies only to models with template parameters with the value selection set to "From Context".
-{{< /c8y-admon-info >}}
+{{< c8y-admon-info>}}
+This validation applies only to models configured with template parameters with the value selection set to "From Context".
+{{< /c8y-admon-info>}}
 
-- When the instance name is empty, the message **Set distinct instance name to select production mode** is shown below the mode field.
-- When you enter a duplicate instance name, the error message **Instance name already exists** is shown below the instance name field. You cannot proceed.
+- When the instance name is empty, a message **Set distinct instance name to select production mode** is displayed below the mode field.
+- If you enter a duplicate instance name, an error message **Instance name already exists** appears below the instance name field and prevents you from proceeding.
 
 ![Production mode validation](/images/streaming-analytics/smart-rules-plugin/production-mode-validation.png)
+
+This validation ensures that all production-ready rules have proper identification and prevents deployment conflicts.
