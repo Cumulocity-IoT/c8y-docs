@@ -14,7 +14,7 @@ build_artifact:
 issue: MTM-64099
 ---
 
-### Introduction {#device-isolation-announcement-introduction}
+### Introduction
 
 The Public Preview release of the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) currently enforces *tenant* isolation.
 An MQTT device (client) connected to the MQTT Service can subscribe to any topic, and receive messages published by other devices to that topic on the same tenant.
@@ -27,7 +27,7 @@ In effect, each MQTT client identifier will have its own private topic space tha
 
 We are making this change to align the MQTT Service with the behavior of the existing [Core MQTT](/device-integration/mqtt/) capability, and to improve out-of-the-box security for typical IoT applications where direct inter-device communication is not required.
 
-### Impact on MQTT devices and microservices connecting to the MQTT Service {#device-isolation-announcement-impact-on-mqtt-devices-and-microservices}
+### Impact on MQTT devices and microservices connecting to the MQTT Service
 
 This is a **breaking change** and affected applications **must** be updated to continue working after the GA version of the MQTT Service is deployed.
 
@@ -48,7 +48,7 @@ Microservices that are affected by device isolation, and that are **not** curren
 
 Microservices that are already using the Java client SDK may continue to do so until the new API is available.
 
-### Roll-out plan {#device-isolation-announcement-roll-out-plan}
+### Roll-out plan
 
 To allow customers to plan a managed migration to the new device isolation behavior, it will be rolled out in several phases, as described below.
 

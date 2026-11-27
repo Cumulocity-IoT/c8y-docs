@@ -21,7 +21,7 @@ This change only affects the new {{< product-c8y-iot >}} [MQTT Service](/device-
 The existing {{< product-c8y-iot >}} [Core MQTT](/device-integration/mqtt/) capability is **not** affected.
 {{< /c8y-admon-caution >}}
 
-### Introduction {#device-isolation-api-change-introduction}
+### Introduction
 
 As [previously announced](/change-logs/#mqtt-service-0.9.x-device-isolation-announcement), when the {{< product-c8y-iot >}} [MQTT Service](/device-integration/mqtt-service/) transitions from Public Preview to General Availability (GA), the MQTT Service will enforce **device** isolation.
 MQTT devices will be able to subscribe to any topic, but will not automatically receive messages published to that topic by other devices.
@@ -49,7 +49,7 @@ Then, `publish-client` publishes a message to `my-topic`:
 
 A microservice can receive all messages published by all MQTT clients, and choose whether to forward messages to other clients.
 
-### Impact on MQTT devices and microservices connecting to the MQTT Service {#device-isolation-api-change-impact-on-mqtt-devices-and-microservices}
+### Impact on MQTT devices and microservices connecting to the MQTT Service
 
 This is a **breaking change** and affected applications **must** be updated to continue working after the GA version of the MQTT Service is deployed.
 
