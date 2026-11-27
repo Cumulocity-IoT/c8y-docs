@@ -10,13 +10,13 @@ aliases:
 
 This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who uses {{< product-c8y-iot >}} DataHub 1.0 ("Service") for offloading and analyzing Internet of Things ("IoT") data using Provider's cloud instances ("software-as-a-service", "SaaS").
 
-### Service description {#datahub-1-service-description}
+### Service description
 
 {{< product-c8y-iot >}} DataHub is a component of the {{< product-c8y-iot >}} platform that enables efficient long-term storage and analysis of IoT data. It offloads data from the operational store to a data lake, allowing for scalable SQL-based querying via standard interfaces like ODBC and JDBC.
 
 This agreement defines the service level of {{< product-c8y-iot >}} Software-as-a-Service operated by {{< company-c8y >}}. {{< product-c8y-iot >}} Edge is outside the scope of this agreement.
 
-### Service features {#datahub-1-service-features}
+### Service features
 
 {{< product-c8y-iot >}} DataHub provides the following features.
 
@@ -24,7 +24,7 @@ This agreement defines the service level of {{< product-c8y-iot >}} Software-as-
 * **Advanced data querying:** Long-term data is made available for in-depth analysis to SQL-based analytics tools such as business intelligence, notebook, and dashboarding applications.
 * **Configurable offloading:** So-called "offloading pipelines" permit you to select what data is offloaded and how it is mapped into the data lake for user-friendly, SQL-based querying.
 
-### Customer responsibilities {#datahub-1-customer-responsibilities}
+### Customer responsibilities
 
 Customers are encouraged to review the [{{< product-c8y-iot >}} DataHub documentation](/datahub). In particular, Customer acknowledges the following Customer responsibilities:
 
@@ -37,7 +37,7 @@ Customers are encouraged to review the [{{< product-c8y-iot >}} DataHub document
 * **Security:** Customer is responsible for selecting strong passwords for Dremio access and maintaining the passwords safely. Customer is advised to create Dremio users solely through the {{< product-c8y-iot >}} DataHub to prevent data leaks between tenants.
 * **Driver usage:** For JDBC and ODBC usage, Customer is advised to download drivers using the [links in the documentation](/datahub/working-with-datahub/#connecting-via-jdbc).
 
-### Limitations and constraints {#datahub-1-limitations-and-constraints}
+### Limitations and constraints
 
 Customer acknowledges the following limitations and constraints in using Service.
 
@@ -46,7 +46,7 @@ Customer acknowledges the following limitations and constraints in using Service
 * **Query performance:** No response time guarantee can be given for queries, as they can be of arbitrary complexity and are scheduled for execution on shared resources. Overly long-running or resource-consuming queries may be canceled by {{< product-c8y-iot >}}'s capacity management.
 
 
-### Service availability {#datahub-1-service-availability}
+### Service availability
 
 {{< company-c8y >}} is committed to providing reliable service. The specific service availability targets for {{< product-c8y-iot >}} DataHub are as follows:
 
@@ -57,7 +57,7 @@ Service availability for [{{< product-c8y-iot >}} DataHub APIs](https://cumuloci
 
 Offloading jobs may not run at a scheduled time if a previous offloading job is still in progress (for example, due to an initial larger volume upload or after a longer period of inactivity) or during scheduled maintenance. Subsequent offloading jobs will eventually catch up with remaining data.
 
-### Support and maintenance {#datahub-1-support-and-maintenance}
+### Support and maintenance
 
 Support and maintenance are provided as outlined in the [platform service-level agreement](/service-terms/service-level/#support-and-maintenance).
 

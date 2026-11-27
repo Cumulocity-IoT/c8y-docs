@@ -6,7 +6,7 @@ weight: 23
 
 This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who uses the {{< product-c8y-iot >}} Digital Twin Manager Data Service ("Service") for propagating Internet of Things ("IoT") device measurements to assets on Provider's cloud instances ("software-as-a-service", "SaaS").
 
-### Service description {#dtm-service-description}
+### Service description
 
 The Service propagates measurements from devices to the assets they are linked to in Digital Twin Manager assets. The Service performs the following core functions:
 
@@ -28,7 +28,7 @@ Asset measurements are regular platform measurements and add to the load on the 
 
 When asset measurements are discarded by the fan-out limit, the Service raises a `c8y_DtmMeasurementFanOutLimitExceeded` alarm with severity MINOR on the source device. The alarm names the device measurement, its type and series, the number of asset measurements it would have created, and the limit. Customer must check for these alarms to find device measurements whose fan-out exceeds the limit. The Service raises the alarm at most once per minute and names only one device measurement each time. Other devices that exceed the limit within the same minute do not receive an alarm for it. The Service does not clear the alarm. If Customer clears it while device measurements are still limited, the Service raises it again.
 
-### Customer responsibilities {#dtm-customer-responsibilities}
+### Customer responsibilities
 
 Customer acknowledges the following Customer responsibilities:
 
@@ -71,6 +71,6 @@ The service-level indicators are defined as follows:
 * **Upstream measurement rate**: The number of asset measurements per second required by Customer's linking configuration within the fan-out limit, as defined under [Fan-out](#dtm-fan-out). Asset measurements discarded under overload count towards the upstream measurement rate.
 * **Sustained load**: The regular and predictable steady-state upstream measurement rate within the per-tenant traffic limit. Sustained load is the 95th percentile of the upstream measurement rate over the previous 30 days.
 
-### Support and maintenance {#dtm-support-and-maintenance}
+### Support and maintenance
 
 Support and maintenance are provided as outlined in the [Platform service-level agreement](/service-terms/service-level/#support-and-maintenance).

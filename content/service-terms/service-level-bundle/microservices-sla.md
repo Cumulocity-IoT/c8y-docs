@@ -9,11 +9,11 @@ aliases:
 
 This agreement is made between {{< company-c8y >}} ("Provider") and the Customer ("Customer") who utilizes {{< product-c8y-iot >}} Microservices ("Service", “Container-as-a-Service") for deploying Customer Microservices ("Microservices") on {{< product-c8y-iot >}} cloud instances.
 
-### Service description {#microservices-service-description}
+### Service description
 
 The Provider hosts and manages a Container-as-a-Service cluster based on Kubernetes that allows the Customer to run custom Microservices within their {{< product-c8y-iot >}} tenants (purchased separately). This Service includes the orchestration of Microservices through Kubernetes, ensuring scalability, high availability, and efficient resource management.
 
-### Service features {#microservices-service-features}
+### Service features
 
 {{< product-c8y-iot >}} Microservices includes the following features.
 
@@ -27,7 +27,7 @@ The Provider hosts and manages a Container-as-a-Service cluster based on Kuberne
 * **Subscription management**: {{< product-c8y-iot >}} Microservices lets you [subscribe your customers](/enterprise-tenant/managing-tenants/#subscribing-applications) to Microservices.
 * **Metering and billing**: {{< product-c8y-iot >}} Microservices [meters the infrastructure resource usage](/enterprise-tenant/usage-and-billing/) of the Microservices.
 
-### Customer responsibilities {#microservices-customer-responsibilities}
+### Customer responsibilities
 
 Customer acknowledges the following Customer responsibilities. Customers are encouraged to review the {{< product-c8y-iot >}} Microservices documentation, particularly the [developer’s guides](/microservice-sdk/microservice-sdk-introduction/) and [change logs](/change-logs/).
 
@@ -43,7 +43,7 @@ Customer acknowledges the following Customer responsibilities. Customers are enc
 * **Microservice operations:** While {{< product-c8y-iot >}} Microservices provides means for resource management and high availability, it is in Customer's responsibility to monitor and operate Microservices. {{< product-c8y-iot >}} Microservices will provide information about the runtime state of Microservices (such as log information from Microservices), but it is in Customer's responsibility to troubleshoot and rectify out-of-memory conditions, crashes, or restarts of Microservices as required by Customer.
 * **Usage monitoring**: Microservices are charged based on parameters such as running number of Microservices instances and defined resource limits. It is the Customer's responsibility to determine unused or underused Microservices.
 
-### Limitations and constraints {#microservices-limitations-and-constraints}
+### Limitations and constraints
 
 Customer acknowledges the following limitations and constraints in using Service.
 
@@ -60,15 +60,15 @@ Customer acknowledges the following limitations and constraints in using Service
 * **Security and performance management**: Provider may stop or remove Microservices in case of a severe security or performance impact to {{< product-c8y-iot >}}. Customers are expressly prohibited from engaging in any destructive activities on the {{< product-c8y-iot >}} production infrastructure. This includes penetration testing, performance testing, stress testing, or any other activities that may compromise the integrity, performance, or security of our systems.
 * **Quotas** as [documented](/service-terms/quotas).
 
-### Service availability {#microservices-service-availability}
+### Service availability
 
 Service availability of {{< product-c8y-iot >}} Microservices follows the [general service terms](/service-terms/service-level/#platform-sla) of {{< product-c8y-iot >}}.
 
-### Support and maintenance {#microservices-support-and-maintenance}
+### Support and maintenance
 
 * **Technical support:** The Provider will offer [technical support](/additional-resources/contacting-support/) for issues related to the Kubernetes infrastructure and the deployment of Microservices via the Service. Support for developing or debugging Microservices is outside the scope of this service-level agreement but can be requested from Provider Professional Services.
 * **Maintenance windows:** Scheduled maintenance will be communicated in advance through Provider’s status notification system (for example,[ https://status.cumulocity.com/](https://status.cumulocity.com/) for EU, US, EMEA), and efforts will be made to minimize disruption during these periods.
 
-### Acceptance {#microservices-acceptance}
+### Acceptance
 
 By using the Services provided by {{< company-c8y >}}, the Customer agrees to adhere to the terms outlined in this SLA.
