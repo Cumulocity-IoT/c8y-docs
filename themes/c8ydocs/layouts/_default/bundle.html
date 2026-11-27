@@ -44,6 +44,9 @@
       {{ range $reusablePages}}
         <article id="{{substr .Name 0 -3}}" class="page-section">
           <div class="article-content">
+            {{/* Former anchors of a renamed section, so old links still land here.
+                 Inside .article-content: the article is a two-column grid. */}}
+            {{ range .Params.anchor_aliases }}<span id="{{ . }}"></span>{{ end }}
             <h2>
               <button class="btn-link bookmark" data-clipboard-text="#{{substr .Name 0 -3}}">
                 <span class="fa dlt-c8y-icon-link"></span>

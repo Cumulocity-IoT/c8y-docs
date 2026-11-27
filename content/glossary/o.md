@@ -9,15 +9,6 @@ build:
 
 ---
 
-### Offloading pipeline {#offloading-pipeline}
-
-An offloading pipeline is a configurable job within [{{< product-c8y-iot >}} DataHub](#datahub) that defines the process of extracting data from a specific collection in the [operational store](#operational-store), transforming it, and loading it into a target table within a [data lake](#data-lake).  
-
-{{< c8y-details title="Developer details" >}}
-Offloading pipelines are configured and managed via the {{< product-c8y-iot >}} DataHub application UI. There is no public REST API for programmatically managing the pipeline configurations.
-{{< /c8y-details >}}  
-
-
 ### Operation {#operation}
 
 Operations are instructions sent to a [device](#device) or [asset](#asset) to perform a specific action, such as control, configuration, or maintenance. Operations are linked to a source [managed object](#managed-object), and are delivered asynchronously via {{< product-c8y-iot >}}’s reliable queuing mechanism. Devices execute operations and report results back, enabling consistent remote management and automation. Typical operations include installing a new firmware, switching a relay in a power meter or sending a credit to a vending machine.  

@@ -4,6 +4,10 @@ title: Documentation overview
 layout: redirect
 ---
 
+{{< c8y-admon-info >}}
+DataHub 1.0 offloads your data with scheduled offloading jobs, and DataHub 2.0 streams it into a lakehouse continuously with Streaming Lake Ingestion. For DataHub 2.0, see [DataHub 2.0](/streaming-lake-ingestion/).
+{{< /c8y-admon-info >}}
+
 The following sections will walk you through all the functionalities of {{< product-c8y-iot >}} DataHub in detail.
 
 For your convenience, here is an overview of the contents of this document:
