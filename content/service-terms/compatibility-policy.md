@@ -12,7 +12,7 @@ weight: 20
 {{< product-c8y-iot >}} provides the highest possible level of compatibility to make sure that your investments into developing solutions with {{< product-c8y-iot >}} are maintained.
 
 {{< c8y-admon-info >}}
-For details on the release types (such as GA release, Yearly release or Maintenance release) and their version labels see [Release types](https://{{< domain-c8y >}}/releasenotes/about/release-types/).
+For details on the release types (such as GA release, Yearly release or Maintenance release) and their version labels see [Release policy](/service-terms/releases/).
 {{< /c8y-admon-info >}}
 
 The current compatibility statements are described as follows.
